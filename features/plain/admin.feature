@@ -22,8 +22,7 @@ Feature: Admin Actions
   Scenario: See a company detail
     Given there is a company with name "Company1" in city "Monterrey"
     And I am on the company index
-    And show me the page
-    When I press "Company1"
-    Then I should see "My First Company"
+    When I follow "Company1"
+    Then I should see "Company1"
     And I should see "Monterrey"
-    And I should see "This is my company :)"
+    And I should see "This is my company"
