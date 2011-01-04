@@ -1,0 +1,43 @@
+es: 
+  
+  #General
+  edit:                   "Editar"
+  cancel:                 "Cancelar"
+  update:                 "Actualizar"
+  
+  #Models
+  companies: 
+    registrations:
+      new:
+        company_info:     "Datos de la empresa"
+        company_desc:     "Descripción de la empresa"
+    index:
+      companies:          "Listado de compañías registradas"
+      city:               "Ciudad"
+      description:        "Descripción"
+      title:              "Nombre"
+    show:
+      company_detail:     "Detalle de la compañía"
+      city:               "Localizada en:"
+      description:        "Detalles:"
+      company_index:      "Listado de compañías"
+      no_picture:         "Aún no tienes un logo"
+    form:
+      change:             "Cambiar"
+  
+  notice:
+    company:
+      successfully_updated: "Tu información ha sido actualizada"
+           
+  activerecord:
+    models:
+      company:            "Compañía"
+    attributes:
+      company:
+        title:            "Título"
+        city:             "Ciudad"
+        email:            "Email"
+        password:         "Contraseña"
+        password_confirmation:  "Confirmar contraseña"
+        logo:             "Logo"
+        description:      "Descripción"

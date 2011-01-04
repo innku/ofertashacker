@@ -1,0 +1,22 @@
+<h1><%= t ('.companies') %></h1>
+
+<table>
+  <tr>
+    <td></td>
+    <td><%= t('.title') %></td>
+    <td><%= t('.city') %></td>
+    <td><%= t('.description') %></td>
+  </tr>
+  <% @companies.each do |company| %>
+  <tr>
+    <td>
+      <% if company.logo? %>
+        <%= image_tag company.logo.url(:thumb) %>
+        <% end %>
+    </td>
+    <td><%= link_to company.title, company_path(company) %></td>
+    <td><%= company.city %></td>
+    <td><%= company.description %></td>
+  </tr>
+  <% end %>
+</table>

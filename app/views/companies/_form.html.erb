@@ -1,0 +1,25 @@
+<% form_for @company, :html => { :multipart => true } do |f| %>
+<%= f.error_messages %>
+
+<p><%= f.label :title %><br />
+<%= f.text_field :title %></p>
+
+<p><%= f.label :city %><br />
+<%= f.text_field :city %></p>
+
+<div id="logo">
+  <% if @company.logo? %>
+    <%= image_tag @company.logo.url(:medium) %><br />
+    <%= t('.change') %>
+  <% end %>
+  <%= f.label :logo %><br />
+   <%= f.file_field :logo %>
+</div>
+
+<p><%= f.label :description %><br />
+<%= f.text_area :description %></p>
+
+<%= f.submit t(:update) %> |
+<%= link_to t(:cancel), company_path(@company) %>
+
+<% end %>

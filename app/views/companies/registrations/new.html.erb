@@ -1,0 +1,33 @@
+<h2><%= t('.company_info') %></h2>
+
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :multipart => true }) do |f| %>
+  <%= devise_error_messages! %>
+  
+  <p><%= f.label :title %><br />
+  <%= f.text_field :title %></p>
+
+  <p><%= f.label :city %><br />
+  <%= f.text_field :city %></p>
+  
+  <p><%= f.label :email %><br />
+  <%= f.text_field :email %></p>
+
+  <p><%= f.label :password %><br />
+  <%= f.password_field :password %></p>
+
+  <p><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></p>
+  
+  <p><%= f.label :logo %><br />
+  <%= f.file_field :logo %></p>
+  
+  <h2><%= t('.company_desc') %></h2>
+
+  <p><%= f.label :description %><br />
+  <%= f.text_area :description %></p>
+  
+  <p><%= f.submit "Crear" %></p>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

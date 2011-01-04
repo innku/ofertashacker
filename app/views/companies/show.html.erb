@@ -1,0 +1,18 @@
+<h2><%= t('.company_detail') %></h2>
+
+<h1><%= @company.title %></h1>
+<p><%= t('.city') %> <%= @company.city %></p>
+<% if @company.logo? %>
+  <p><%= image_tag @company.logo.url(:medium) %></p>
+<% else %>
+  <p><%= t('.no_picture') %></p>
+<% end %>
+<p><%= t('.description') %><br />
+<%= @company.description %></p>
+
+<% if can? :manage, @company %>
+  <%= link_to t(:edit), edit_company_path(@company) %> | 
+<% end %>
+<% if current_company.admin? %>
+  <%= link_to t('.company_index'), companies_path() %>
+<% end %>
