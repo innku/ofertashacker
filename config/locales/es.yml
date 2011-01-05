@@ -4,7 +4,13 @@ es:
   edit:                   "Editar"
   cancel:                 "Cancelar"
   update:                 "Actualizar"
+  create:                 "Crear"
   
+  layouts:
+    application: 
+      new_job:            "Publicar Oferta"
+      sign_out:           "Salir"
+      
   #Models
   companies: 
     registrations:
@@ -28,10 +34,13 @@ es:
   notice:
     company:
       successfully_updated: "Tu información ha sido actualizada"
+    job:
+      successfully_created: "Tu oferta se ha publicada"
            
   activerecord:
     models:
       company:            "Compañía"
+      job:                "Ofertas de trabajo"
     attributes:
       company:
         title:            "Título"
@@ -41,3 +50,11 @@ es:
         password_confirmation:  "Confirmar contraseña"
         logo:             "Logo"
         description:      "Descripción"
+      job:
+        title:            "Título"
+        state:            "Estado"
+        full_time:        "Tiempo completo"
+        part_time:        "Medio tiempo"
+        remote:           "Remoto"
+        flexible:         "Horario Flexible"
+        description:      "Oferta"

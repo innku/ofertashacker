@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110103231233) do
+ActiveRecord::Schema.define(:version => 20110104233451) do
 
   create_table "companies", :force => true do |t|
     t.string   "email",                               :default => "",       :null => false
@@ -42,5 +42,18 @@ ActiveRecord::Schema.define(:version => 20110103231233) do
   add_index "companies", ["confirmation_token"], :name => "index_companies_on_confirmation_token", :unique => true
   add_index "companies", ["email"], :name => "index_companies_on_email", :unique => true
   add_index "companies", ["reset_password_token"], :name => "index_companies_on_reset_password_token", :unique => true
+
+  create_table "jobs", :force => true do |t|
+    t.integer  "company_id"
+    t.string   "title"
+    t.string   "state"
+    t.boolean  "full_time",   :default => false
+    t.boolean  "part_time",   :default => false
+    t.boolean  "remote",      :default => false
+    t.boolean  "flexible",    :default => false
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

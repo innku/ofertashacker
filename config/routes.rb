@@ -3,6 +3,7 @@ Rubypros::Application.routes.draw do
   devise_for :companies
 
   resources :companies
+  resources :jobs
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

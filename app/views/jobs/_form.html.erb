@@ -1,0 +1,25 @@
+<% form_for @job do |f| %>
+  
+  <p><%= f.label :title %><br />
+  <%= f.text_field :title %></p>
+  
+  <p><%= f.label :state %><br />
+  <%= f.text_field :state %></p>
+  
+  <p><%= f.label :full_time %><br /> 
+  <%= f.check_box :full_time %></p>
+  
+  <p><%= f.label :part_time %><br /> 
+  <%= f.check_box :part_time %></p>
+  
+  <p><%= f.label :remote %><br /> 
+  <%= f.check_box :remote %></p>
+  
+  <p><%= f.label :flexible %><br /> 
+  <%= f.check_box :flexible %></p>
+  
+  <p><%= f.label :description %><br /> 
+  <%= f.text_area :description %></p>
+  
+  <p><%= f.submit t(:create) %> | <%= link_to t(:cancel), jobs_path() %></p>
+<% end %>

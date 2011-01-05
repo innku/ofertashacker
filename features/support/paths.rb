@@ -17,6 +17,8 @@ module NavigationHelpers
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))
 
+    when /^the new job page$/i
+      new_job_path()
     when /^the new company page$/i
       new_company_registration_path()
     when /^the company index$/i
