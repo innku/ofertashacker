@@ -31,12 +31,22 @@ es:
     form:
       change:             "Cambiar"
   
+  jobs:
+    form:
+      job_detail:         "Datos de la Oferta"
+      job_type:           "Tipo de Empleo"
+      required_profile:   "Perfil requerido"
+      job_description:    "Descripción de la Oferta"
+      skills:             "Habilidades"
+  
+  #Notice messages
   notice:
     company:
       successfully_updated: "Tu información ha sido actualizada"
     job:
       successfully_created: "Tu oferta se ha publicada"
-           
+  
+  #Active Record
   activerecord:
     models:
       company:            "Compañía"

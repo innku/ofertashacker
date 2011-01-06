@@ -3,7 +3,7 @@ class JobsController < ApplicationController
   load_and_authorize_resource
   
   def new
-    
+    @job.required_skills.build
   end
   
   def create

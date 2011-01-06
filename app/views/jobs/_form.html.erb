@@ -1,11 +1,14 @@
 <% form_for @job do |f| %>
   
+  <h2><%= t('.job_detail') %></h2>
+  
   <p><%= f.label :title %><br />
   <%= f.text_field :title %></p>
   
   <p><%= f.label :state %><br />
   <%= f.text_field :state %></p>
   
+  <h5><%= t('.job_type') %></h5>
   <p><%= f.label :full_time %><br /> 
   <%= f.check_box :full_time %></p>
   
@@ -18,6 +21,25 @@
   <p><%= f.label :flexible %><br /> 
   <%= f.check_box :flexible %></p>
   
+  <h2><%= t('.required_profile') %></h2>
+  
+  <h5><%= t('.skills') %></h5>
+  <ul id="job_skills">
+    <li class="skill">Ruby</li>
+    <li class="skill">MySql</li>
+    <li class="skill">CSS</li>
+    <li class="skill">JavaScript</li>
+    <li class="skill">jQuery</li>
+    <li class="skill">Ajax</li>
+    <li class="skill">Diseño</li>
+  </ul>
+  
+  <h5><%= t('.required_profile') %></h5>
+  
+  <ul id="job_required_profile">
+  </ul>
+  
+  <h2><%= t('.job_description') %></h2>
   <p><%= f.label :description %><br /> 
   <%= f.text_area :description %></p>
   

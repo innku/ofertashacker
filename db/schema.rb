@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110104233451) do
+ActiveRecord::Schema.define(:version => 20110106164317) do
 
   create_table "companies", :force => true do |t|
     t.string   "email",                               :default => "",       :null => false
@@ -52,6 +52,13 @@ ActiveRecord::Schema.define(:version => 20110104233451) do
     t.boolean  "remote",      :default => false
     t.boolean  "flexible",    :default => false
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "required_skills", :force => true do |t|
+    t.string   "skill_name"
+    t.integer  "job_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
