@@ -10,6 +10,7 @@ es:
     application: 
       new_job:            "Publicar Oferta"
       sign_out:           "Salir"
+      my_vacancies:       "Mis ofertas"
       
   #Models
   companies: 
@@ -38,6 +39,14 @@ es:
       required_profile:   "Perfil requerido"
       job_description:    "Descripción de la Oferta"
       skills:             "Habilidades"
+    index:
+      my_vacancies:       "Lista de todas las vacantes de"
+      in:                 "en"
+      full_time:          "Tiempo completo"
+      part_time:          "Medio tiempo"
+      remote:             "Remoto"
+      flexible:           "Horario flexible"
+      more:               "Ver más"
   
   #Notice messages
   notice:

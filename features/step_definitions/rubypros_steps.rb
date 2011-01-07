@@ -29,3 +29,11 @@ Given /^there is a company with name "([^"]*)" in city "([^"]*)" and email "([^"
   @company = Factory(:company, :title => name, :city => city, :email => email)
 end
 
+Given /^there is a job vacancy with title "([^"]*)" created by "([^"]*)"$/ do |title, email|
+  @company = Company.find_by_email(email)
+  if !@company
+    @company = Factory(:company, :email => email)
+  end
+  @job = Factory(:job, :company => @company, :title => title)
+end
+

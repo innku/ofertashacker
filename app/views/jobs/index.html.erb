@@ -1,0 +1,10 @@
+<h1><%= t('.my_vacancies') %> <%= current_company.title %></h1>
+
+<% @jobs.each do |job| %>
+  <div class="job">
+    <h1><%= job.title %></h1>
+    <p><%= job.company.title %> <%= t('.in') %> <%= job.state %></p>
+    <%= get_job_type(job) %>
+    <p><%= link_to t('.more'), job_path(job) %></p>
+  </div>
+<% end %>

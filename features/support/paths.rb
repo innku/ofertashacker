@@ -19,6 +19,8 @@ module NavigationHelpers
 
     when /^the new job page$/i
       new_job_path()
+    when /^the index job page$/i
+      jobs_path()
     when /^the new company page$/i
       new_company_registration_path()
     when /^the company index$/i

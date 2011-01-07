@@ -12,6 +12,7 @@
       <% if current_company %>
         <%= link_to current_company.title, company_path(current_company) %> |
         <%= link_to t('.new_job'),  new_job_path() %> |
+        <%= link_to t('.my_vacancies'), jobs_path() %> |
         <%= link_to t('.sign_out'), destroy_company_session_path() %>
       <% else %>
         <%= link_to "Entrar", new_company_session_path() %> |
