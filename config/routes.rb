@@ -1,11 +1,11 @@
 Rubypros::Application.routes.draw do
 
   devise_for :companies
-
+  
   resources :companies
-  resources :jobs do
-    resources :required_skills
-  end
+  resources :jobs 
+  resources :required_skills
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

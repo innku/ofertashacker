@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.1'
 
-gem 'pg'
+gem 'sqlite3'
 gem 'devise'
 gem 'cancan'
 gem "nifty-generators"
