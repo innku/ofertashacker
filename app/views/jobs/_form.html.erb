@@ -1,5 +1,16 @@
 <% form_for @job do |f| %>
-  
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% @job.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   <h2><%= t('.job_detail') %></h2>
   
   <p><%= f.label :title %><br />
@@ -21,24 +32,29 @@
   <p><%= f.label :flexible %><br /> 
   <%= f.check_box :flexible %></p>
   
-  <h2><%= t('.required_profile') %></h2>
-  
-  <h5><%= t('.skills') %></h5>
-  <ul id="job_skills">
-    <li class="skill">Ruby</li>
-    <li class="skill">MySql</li>
-    <li class="skill">CSS</li>
-    <li class="skill">JavaScript</li>
-    <li class="skill">jQuery</li>
-    <li class="skill">Ajax</li>
-    <li class="skill">Diseño</li>
-  </ul>
-  
-  <h5><%= t('.required_profile') %></h5>
-  
-  <ul id="job_required_profile">
-  </ul>
-  
+ 
+    <h2><%= t('.required_profile') %></h2>  
+  <div id="all_skills">
+
+    <ul id="job_skills">
+      <h5><%= t('.skills') %></h5>
+      <li class="skill">Ruby</li>
+      <li class="skill">MySql</li>
+      <li class="skill">CSS</li>
+      <li class="skill">JavaScript</li>
+      <li class="skill">jQuery</li>
+      <li class="skill">Ajax</li>
+      <li class="skill">Diseño</li>
+    </ul>
+   
+    
+    <ul id="job_required_profile">
+        <h5><%= t('.required_profile') %></h5>
+    </ul>
+    <%=image_tag 'arrow.jpg', :id=>"arrow"%>
+    <%=image_tag 'arrow_back.jpg', :id=>"arrow_back"%>
+  </div>  
+
   <h2><%= t('.job_description') %></h2>
   <p><%= f.label :description %><br /> 
   <%= f.text_area :description %></p>

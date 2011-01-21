@@ -9,6 +9,8 @@ class Company < ActiveRecord::Base
 
   has_many :jobs
   
+  validates_presence_of :title, :description, :city
+  
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :title, :city, :logo, :description
   

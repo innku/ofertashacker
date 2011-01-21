@@ -3,7 +3,7 @@ class CompaniesController < ApplicationController
   load_and_authorize_resource
   
   def index
-    @companies = []
+        @companies = Company.all
     if current_company && current_company.admin?
       @companies = Company.members
     end

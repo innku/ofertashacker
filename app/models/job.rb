@@ -5,4 +5,14 @@ class Job < ActiveRecord::Base
   
   accepts_nested_attributes_for :required_skills
   
+  validates_presence_of :company_id, :title, :description, :state
+  validates_presence_of :full_time, :if=> :not_part_time_present
+  
+  def not_part_time_present
+    !part_time
+  end
+  
+
+      
+  
 end

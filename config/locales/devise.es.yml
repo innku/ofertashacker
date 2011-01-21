@@ -4,6 +4,9 @@ es:
       not_found: 'no encontrado'
       already_confirmed: 'ya ha sido confirmada'
       not_locked: 'no está bloqueada'
+      invalid: "es invalido"
+      confirmation: 'no coincide con su confirmación'
+      too_short: 'es demasiado corta, minimo 6 caracteres'
 
   devise:
     failure:

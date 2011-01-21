@@ -26,6 +26,40 @@ a {
   border: solid 1px black;
   margin-top: 20px;
 }
+/*Job Skills*/
+
+#all_skills{
+    width:400px;
+    position:relative;
+    height:200px;
+    -webkit-box-shadow: -5px 5px 20px #074900;
+    -moz-box-shadow: -5px 5px 20px #074900;
+}
+#job_skills{
+    position:absolute;
+    top:0px;
+    left:0px;
+    width: 40%;
+    color:red;
+
+}
+#job_required_profile{
+    position:absolute;
+    top:0px;
+    right:0px;
+    width:40%;
+    color:green;
+}
+#all_skills #arrow{
+    position:absolute;
+    top:50px;
+    left:160px;
+}
+#all_skills #arrow_back{
+    position:absolute;
+    top:80px;
+    left:160px;
+}
 
 #flash_notice, #flash_error, #flash_alert {
   padding: 5px 8px;

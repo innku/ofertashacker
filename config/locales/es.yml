@@ -57,6 +57,9 @@ es:
   
   #Active Record
   activerecord:
+    errors:
+      messages:
+        blank:            "no puede estar vacío" 
     models:
       company:            "Compañía"
       job:                "Ofertas de trabajo"
