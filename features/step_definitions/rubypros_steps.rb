@@ -37,3 +37,4 @@ Given /^there is a job vacancy with title "([^"]*)" created by "([^"]*)"$/ do |t
   @job = Factory(:job, :company => @company, :title => title)
 end
 
+

@@ -53,7 +53,8 @@ es:
     company:
       successfully_updated: "Tu información ha sido actualizada"
     job:
-      successfully_created: "Tu oferta se ha publicada"
+      successfully_created: "Tu oferta ha sido publicada"
+      successfully_updated: "Tu oferta ha sido actualizada"
   
   #Active Record
   activerecord:

@@ -1,3 +1,4 @@
+@wip
 Feature: Admin Actions
 
   As an admin
@@ -7,6 +8,7 @@ Feature: Admin Actions
   Background:
     Given I am logged as an admin
   
+  @wip
   Scenario: See all companies
     Given there is a company with name "My First Company" in city "Monterrey"
     And there is a company with name "My Second Company" in city "Guadalajara"

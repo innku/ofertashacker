@@ -1,3 +1,4 @@
+@wip
 Feature: Company Actions
 
   As a company
@@ -44,5 +45,5 @@ Feature: Company Actions
     Then I should see "Company1"
     And I should see "Monterrey"
     And I should see "This is my company"
-     
+    
     
