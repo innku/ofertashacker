@@ -2,6 +2,7 @@
 <h1><%=@job.company.title%> <%=image_tag @job.company.logo.url%>
 </div>
 <h2><%= @job.title%></h2>
+En <%=@job.state%>
 <p>Características</p>
   <ul>
     <li><%= @job.full_time ? "Tiempo Completo" : nil%></li>

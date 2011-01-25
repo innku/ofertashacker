@@ -14,7 +14,7 @@ class Company < ActiveRecord::Base
   
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :title, :city, :logo, :description
-	metropoli_for :city
+	metropoli_for :city, :as=>:city_name
   scope :members, where(:role => "member")
   
   has_attached_file :logo, :styles => {:medium => "300x300>", :thumb => "100x100>"},

@@ -1,4 +1,4 @@
-
+@jobs  
 Feature: Job cycle
 
   As a company
@@ -9,10 +9,10 @@ Feature: Job cycle
   
   Background:
    Given there is a company with name "RubyPros Company" in city "Monterrey" and email "admin@rubypros.com"   
-    
+
   Scenario: Publish a new job vacancy
    And I am logged as a "admin@rubypros.com"
-   And I am on the new job page
+   And I go to new job page
    When I fill in "job_title" with "Ruby Sr Programmer"
    And I fill in "job_state" with "Nuevo Leon"
    And I check "job_full_time"
@@ -27,6 +27,7 @@ Feature: Job cycle
     And there is a job vacancy with title "Web Design" created by "admin@rubypros.com"
     And I am logged as a "admin@rubypros.com"
     And I am on the index job page
+    And show me the page
     Then I should see "Ruby Sr Programmer"
     And I should see "Ruby Jr Programmer"
     And I should see "Web Design"

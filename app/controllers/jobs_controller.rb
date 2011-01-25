@@ -1,10 +1,9 @@
 class JobsController < ApplicationController
 
- load_and_authorize_resource :through => :current_company
+ load_and_authorize_resource :through => :current_company, :except=>'show'
 
   
   def new
-
     @job.required_skills.build
   end
   
@@ -24,6 +23,7 @@ class JobsController < ApplicationController
   end
   
   def show
+    @job=Job.find(params[:id])
   end
   
   def edit
