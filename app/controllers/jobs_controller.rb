@@ -16,6 +16,9 @@ class JobsController < ApplicationController
     end
   end
   
+  def available
+    @jobs= Job.all
+  end
   def index
     @jobs = current_company.jobs
   end

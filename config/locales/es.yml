@@ -32,7 +32,16 @@ es:
     form:
       change:             "Cambiar"
   
-  jobs:
+  jobs: 
+    available: 
+      vacancies:       "Lista de todas las vacantes en Ruby Pros"        
+    jobs:
+      in:                 "en"
+      full_time:          "Tiempo completo"
+      part_time:          "Medio tiempo"
+      remote:             "Remoto"
+      flexible:           "Horario flexible"
+      more:               "Ver más"  
     form:
       job_detail:         "Datos de la Oferta"
       job_type:           "Tipo de Empleo"
