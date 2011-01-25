@@ -1,1 +1,14 @@
-Detalles de la Oferta
+<div id="comany">
+<h1><%=@job.company.title%>
+<%=image_tag @job.company.logo.url%></h1>
+</div>
+<h2><%=@job.title%></h2>
+<p>Estado: <%=@job.state%></p>
+<p>Caracteristicas: 
+	<ul>
+		<li><%=@job.full_time ? "Tiempo completo" : nil%></li>
+		<li><%=@job.part_time ? "Medio Tiempo" : nil%></li>
+		<li><%=@job.remote ? "Remoto" : nil%></li>
+		<li><%=@job.flexible ? "Flexible" : nil %></li>
+	</ul>
+
