@@ -16,7 +16,6 @@ class Ability
       can :manage, Company do |c|
         c == company
       end
-      
       can :read, Job
       can :create, Job
       can :manage, Job do |j|
