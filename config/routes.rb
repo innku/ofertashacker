@@ -1,5 +1,7 @@
 Rubypros::Application.routes.draw do
 
+  metropoli_for :cities, :states, :countries
+
   devise_for :companies
   
   resources :companies

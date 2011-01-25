@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110106164317) do
+ActiveRecord::Schema.define(:version => 20110125155214) do
+
+  create_table "cities", :force => true do |t|
+    t.integer "state_id"
+    t.string  "name"
+  end
+
+  add_index "cities", ["name"], :name => "index_cities_on_name"
+  add_index "cities", ["state_id"], :name => "index_cities_on_state_id"
 
   create_table "companies", :force => true do |t|
     t.string   "email",                               :default => "",       :null => false
@@ -37,11 +45,21 @@ ActiveRecord::Schema.define(:version => 20110106164317) do
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
     t.string   "role",                                :default => "member"
+    t.integer  "city_id"
   end
 
+  add_index "companies", ["city_id"], :name => "index_companies_on_city_id"
   add_index "companies", ["confirmation_token"], :name => "index_companies_on_confirmation_token", :unique => true
   add_index "companies", ["email"], :name => "index_companies_on_email", :unique => true
   add_index "companies", ["reset_password_token"], :name => "index_companies_on_reset_password_token", :unique => true
+
+  create_table "countries", :force => true do |t|
+    t.string "name"
+    t.string "abbr"
+  end
+
+  add_index "countries", ["abbr"], :name => "index_countries_on_abbr"
+  add_index "countries", ["name"], :name => "index_countries_on_name"
 
   create_table "jobs", :force => true do |t|
     t.integer  "company_id"
@@ -54,7 +72,10 @@ ActiveRecord::Schema.define(:version => 20110106164317) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "state_id"
   end
+
+  add_index "jobs", ["state_id"], :name => "index_jobs_on_state_id"
 
   create_table "required_skills", :force => true do |t|
     t.string   "skill_name"
@@ -62,5 +83,15 @@ ActiveRecord::Schema.define(:version => 20110106164317) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "states", :force => true do |t|
+    t.integer "country_id"
+    t.string  "name"
+    t.string  "abbr"
+  end
+
+  add_index "states", ["abbr"], :name => "index_states_on_abbr"
+  add_index "states", ["country_id"], :name => "index_states_on_country_id"
+  add_index "states", ["name"], :name => "index_states_on_name"
 
 end

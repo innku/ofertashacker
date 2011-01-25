@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   
-  load_and_authorize_resource :through => :current_company
+  load_and_authorize_resource
   
   def new
 
@@ -17,7 +17,7 @@ class JobsController < ApplicationController
   
   def index
     
-    @jobs = current_company.jobs
+    @jobs = Job.all
   end
   
   def show

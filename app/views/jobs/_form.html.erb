@@ -17,7 +17,7 @@
   <%= f.text_field :title %></p>
   
   <p><%= f.label :state %><br />
-  <%= f.text_field :state %></p>
+   <%=f.text_field :state_name, :class => 'state_autocomplete'%></p>
   
   <h5><%= t('.job_type') %></h5>
   <p><%= f.label :full_time %><br /> 

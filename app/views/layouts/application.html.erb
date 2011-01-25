@@ -3,7 +3,10 @@
   <head>
     <title><%= @content_for_title%> Ruby Pros</title>
     <%= stylesheet_link_tag "application", "jquery-ui" %>
-    <%= javascript_include_tag :all %>
+    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag 'rails' %>
+    <%= javascript_include_tag 'metropoli.jquery.ui' %>
+
     <%= csrf_meta_tag %>
     
     <%= yield(:head) %>
