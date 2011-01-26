@@ -13,6 +13,8 @@ class Job < ActiveRecord::Base
   end
   
 
-      
+  def skills_to_delete(ids)
+    ids.map {|id| self.required_skills.find(id).destroy }
+  end      
   
 end

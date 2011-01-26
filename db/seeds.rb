@@ -8,5 +8,6 @@ C = Company.find_or_initialize_by_role(
   :role => 'admin' )
 C.save
 C.role='admin'
+C.confirmed_at=Time.now
 C.save
   
