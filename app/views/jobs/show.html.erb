@@ -1,16 +1,23 @@
-<div id="company">
-<h1><%=@job.company.title%> <%=image_tag @job.company.logo.url%>
+<div class="job">
+  <div id="company">
+  <h1><%=@job.company.title%> <%=image_tag @job.company.logo.url%>
+  </div>
+  <h2><%= @job.title%></h2>
+  En <%=@job.state%>
+  <p>Características</p>
+    <ul>
+      <li><%= @job.full_time ? "Tiempo Completo" : nil%></li>
+      <li><%= @job.part_time ? "Medio Tiempo" : nil%></li>
+      <li><%= @job.remote ? "Remoto" : nil%></li>
+      <li><%= @job.flexible ? "Horario Flexible" : nil%></li>
+    </ul>
+     <h2>Habilidades Requeridas</h2>
+    <ul>
+    <%for skill in @job.required_skills%>
+      <li><%=skill.skill_name%></li>
+    <%end%>
+    </ul>
+
+  <h2>Descripción</h2>
+  <p><%= @job.description%></p>
 </div>
-<h2><%= @job.title%></h2>
-En <%=@job.state%>
-<p>Características</p>
-  <ul>
-    <li><%= @job.full_time ? "Tiempo Completo" : nil%></li>
-    <li><%= @job.part_time ? "Medio Tiempo" : nil%></li>
-    <li><%= @job.remote ? "Remoto" : nil%></li>
-    <li><%= @job.flexible ? "Horario Flexible" : nil%></li>
-  </ul>
-
-
-<h2>Descripción</h2>
-<p><%= @job.description%></p>
