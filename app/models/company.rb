@@ -10,10 +10,11 @@ class Company < ActiveRecord::Base
   has_many :jobs
   
   validates_presence_of :title, :description, :city
+  validates_attachment_content_type :logo, :content_type => ['image/jpg','image/jpeg', 'image/png']
   
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :title, :city, :logo, :description
-  
+	metropoli_for :city, :as=>:city_name
   scope :members, where(:role => "member")
   
   has_attached_file :logo, :styles => {:medium => "300x300>", :thumb => "100x100>"},

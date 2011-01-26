@@ -28,6 +28,14 @@ a {
   border: solid 1px black;
   margin-top: 20px;
 }
+.job{
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    background:#eee;
+    padding:10px;
+    margin-bottom:10px;
+}
 /*Job Skills*/
 
 #all_skills{

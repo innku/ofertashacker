@@ -1,21 +1,12 @@
-Company.destroy_all
-
-Company.create(
+C = Company.find_or_initialize_by_role(
   :email => "admin@innku.com",
   :title => "Innku",
   :city => "Monterrey",
   :password => "secret",
   :password_confirmation => "secret",
   :description => "Agile web solutions",
-  :role => "admin" )
+  :role => 'admin' )
+C.save
+C.role='admin'
+C.save
   
-Company.create(
-  :email => "admin@apple.com",
-  :title => "Apple",
-  :city => "Silicon",
-  :password => "secret",
-  :password_confirmation => "secret",
-  :description => "Macworld",
-  :role => "admin" )
-  
-

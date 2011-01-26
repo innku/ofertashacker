@@ -9,7 +9,7 @@ gem "nifty-generators"
 gem 'paperclip'
 gem 'aws-s3', :require => 'aws/s3'
 gem 'ruby-debug'
-
+gem 'metropoli', :git => 'git://github.com/adriancuadros/metropoli.git'
 group :development, :test do 
 	gem 'capybara'
   gem 'database_cleaner'

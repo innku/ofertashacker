@@ -3,7 +3,10 @@
   <head>
     <title><%= @content_for_title%>Ruby Pros</title>
     <%= stylesheet_link_tag "application", "jquery-ui" %>
-    <%= javascript_include_tag :all %>
+    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag 'rails' %>
+    <%= javascript_include_tag 'metropoli.jquery.ui' %>
+
     <%= csrf_meta_tag %>
     
     <%= yield(:head) %>
@@ -14,6 +17,7 @@
         <%= link_to current_company.title, company_path(current_company) %> |
         <%= link_to t('.new_job'),  new_job_path() %> |
         <%= link_to t('.my_vacancies'), jobs_path() %> |
+        <%= link_to t('.all_vacancies'), available_path() %> |
         <%= link_to t('.sign_out'), destroy_company_session_path() %>
       <% else %>
         <%= link_to "Entrar", new_company_session_path() %> |

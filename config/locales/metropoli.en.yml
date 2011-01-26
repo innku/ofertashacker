@@ -1,0 +1,7 @@
+en:
+  metropoli:
+      module:
+          couldnt_find: "couldn't find it"
+          found_too_many: "please be more specific"
+          not_enough: "not enough"
+          too_many: "too many"

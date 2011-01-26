@@ -7,7 +7,7 @@ class Job < ActiveRecord::Base
   
   validates_presence_of :company_id, :title, :description, :state
   validates_presence_of :full_time, :if=> :not_part_time_present
-  
+	metropoli_for :state, :as => :sate_name
   def not_part_time_present
     !part_time
   end

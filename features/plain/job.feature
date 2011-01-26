@@ -1,4 +1,4 @@
-
+@jobs  
 Feature: Job cycle
 
   As a company
@@ -9,7 +9,7 @@ Feature: Job cycle
   
   Background:
    Given there is a company with name "RubyPros Company" in city "Monterrey" and email "admin@rubypros.com"   
-    
+
   Scenario: Publish a new job vacancy
    And I am logged as a "admin@rubypros.com"
    And I am on the new job page
@@ -22,7 +22,7 @@ Feature: Job cycle
    Then I should see "Tu oferta ha sido publicada"
    
   Scenario: See all my vacancies
-    Given there is a job vacancy with title "Ruby Sr Programmer" created by "admin@rubypros.com"
+    And there is a job vacancy with title "Ruby Sr Programmer" created by "admin@rubypros.com"
     And there is a job vacancy with title "Ruby Jr Programmer" created by "admin@rubypros.com"
     And there is a job vacancy with title "Web Design" created by "admin@rubypros.com"
     And I am logged as a "admin@rubypros.com"
@@ -57,7 +57,7 @@ Feature: Job cycle
     And I am logged as a "admin@rubypros.com"
     And I am on the index job page
     When I follow "Ver más"
-    Then I should see "Detalles de la Oferta"
-    
+    Then I should see "Características"
+    And I should see "Descripción"
       
       

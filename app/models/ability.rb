@@ -1,8 +1,8 @@
 class Ability
   include CanCan::Ability
   
-  def initialize(company, member)
-    company ||=Company.new
+  def initialize(company)
+    company ||=Company.new :role=>'user'
     if company.admin?
       can :manage, Company do |c|
         c == company
@@ -12,11 +12,10 @@ class Ability
       can :manage, Job do |j|
         j.company == company
       end
-    else if company.member?
+    else  
       can :manage, Company do |c|
         c == company
       end
-      
       can :read, Job
       can :create, Job
       can :manage, Job do |j|
