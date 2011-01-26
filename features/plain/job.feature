@@ -12,7 +12,7 @@ Feature: Job cycle
 
   Scenario: Publish a new job vacancy
    And I am logged as a "admin@rubypros.com"
-   And I go to new job page
+   And I am on the new job page
    When I fill in "job_title" with "Ruby Sr Programmer"
    And I fill in "job_state" with "Nuevo Leon"
    And I check "job_full_time"
@@ -22,12 +22,11 @@ Feature: Job cycle
    Then I should see "Tu oferta ha sido publicada"
    
   Scenario: See all my vacancies
-    Given there is a job vacancy with title "Ruby Sr Programmer" created by "admin@rubypros.com"
+    And there is a job vacancy with title "Ruby Sr Programmer" created by "admin@rubypros.com"
     And there is a job vacancy with title "Ruby Jr Programmer" created by "admin@rubypros.com"
     And there is a job vacancy with title "Web Design" created by "admin@rubypros.com"
     And I am logged as a "admin@rubypros.com"
     And I am on the index job page
-    And show me the page
     Then I should see "Ruby Sr Programmer"
     And I should see "Ruby Jr Programmer"
     And I should see "Web Design"
@@ -58,7 +57,7 @@ Feature: Job cycle
     And I am logged as a "admin@rubypros.com"
     And I am on the index job page
     When I follow "Ver más"
-    Then I should see "Detalles de la Oferta"
-    
+    Then I should see "Características"
+    And I should see "Descripción"
       
       

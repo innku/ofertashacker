@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
 
- load_and_authorize_resource :through => :current_company, :except=>'show'
+ load_and_authorize_resource :through => :current_company, :except=>[:index,:show]
 
   
   def new
@@ -19,7 +19,11 @@ class JobsController < ApplicationController
     @jobs= Job.all
   end
   def index
-    @jobs = current_company.jobs
+    if current_company
+      @jobs = current_company.jobs
+    else
+      @jobs = Job.all
+    end
   end
   
   def show

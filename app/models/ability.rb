@@ -2,7 +2,7 @@ class Ability
   include CanCan::Ability
   
   def initialize(company)
-    company ||=Company.new
+    company ||=Company.new :role=>'user'
     if company.admin?
       can :manage, Company do |c|
         c == company

@@ -1,14 +1,16 @@
-<%@jobs.each do |job| %>
-  <div class="job">
-    <h1><%= job.title %></h1>
-    <p><%= job.company.title %> <%= t('.in') %> <%= job.state %></p>
-    <%= get_job_type(job) %>
-    <p><%= link_to "Ver más", job_path(job) %></p>
-    <%if can? :manage, job%>
-      <div id="admin">
-      <%=link_to "Editar", edit_job_path(job)%> | 
-        <%= link_to 'Borrar', job, :confirm => '¿Estas Seguro que deseas borrar la oferta?', :method => :delete %>
+  <%@jobs.each do |job| %>
+      <div class="job">
+        <h1><%= job.title %></h1>
+        <p><%= job.company.title %> <%= t('.in') %> <%= job.state %></p>
+        <%= get_job_type(job) %>
+        <p><%= link_to "Ver más", job_path(job) %></p>
+        <%if can? :manage, job%>
+          <div id="admin">
+          <%=link_to "Editar", edit_job_path(job)%> | 
+            <%= link_to 'Borrar', job, :confirm => '¿Estas Seguro que deseas borrar la oferta?', :method => :delete %>
+          </div>
+        <%end%>
       </div>
-    <%end%>
-  </div>
-<% end %>
+  <% end %>
+
+

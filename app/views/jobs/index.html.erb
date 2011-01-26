@@ -1,3 +1,9 @@
 <% custom_title "Ofertas disponibles"%>
-<h1><%= t('.my_vacancies') %> <%= current_company.title %></h1>
+<h1>
+<%if current_company%>
+  <%= t('.my_vacancies') %> <%= current_company.title %>
+<%else%>
+  Lista de ofertas disponibles en Ruby Pros
+<%end%>
+</h1>
 <%=render 'jobs'%>
