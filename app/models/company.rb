@@ -26,4 +26,8 @@ class Company < ActiveRecord::Base
   def admin?
     self.role == "admin"
   end
+  
+  def member?
+    self.role == "member"
+  end
 end
