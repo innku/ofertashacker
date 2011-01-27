@@ -7,9 +7,10 @@ Feature: Job Actions
     Given there is a company with name "RubyPros Company" in city "Monterrey" and email "admin@rubypros.com"  
     And I am logged as a "admin@rubypros.com"
     And I am on the new job page
-    When I select "Ruby" from "li"
-    And I select "Ajax" from "li"
-    And I select "MySql" from "li"
+    Then show me the page
+    When I simulateclick "Ruby" within "li"
+    And I simulateclick "Ajax" within "li"
+    And I simulateclick "MySql" within "li"
     Then I should see "Ruby" within "job_required_profile"
     And I should see "Ajax" within "job_required_profile"
     And I should see "MySql" within "job_required_profile"

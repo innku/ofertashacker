@@ -1,5 +1,6 @@
 class Company < ActiveRecord::Base
   
+  #TODO remove
   production = Rails.env.production?
   
   # Include default devise modules. Others available are:
