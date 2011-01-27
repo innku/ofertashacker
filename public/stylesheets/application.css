@@ -1,5 +1,7 @@
 body {
-  background-color: #4B7399;
+  position:relative;
+  width:85%;
+  background-color: #4b3831;
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
 }
@@ -10,10 +12,17 @@ a img {
 
 a {
   color: #0000FF;
+  text-decoration:none;
 }
-#company a{color:#fff;text-decoration:none;}
-#company a:hover{text-decoration:underline;}
+a:hover{text-decoration:underline;}
+#header{
+    height:50px;
+}
 
+#header #search_form{position:absolute;right:-42px;top:0px;}
+#menu{position:relative;top:40px;}
+#menu a{color:#fff;text-decoration:none;}
+#menu a:hover{text-decoration:underline;}
 .clear {
   clear: both;
   height: 0;
@@ -21,10 +30,10 @@ a {
 }
 
 #container {
-  width: 75%;
+  width: 100%;
   margin: 0 auto;
   background-color: #FFF;
-  padding: 20px 40px;
+  padding: 20px 20px;
   border: solid 1px black;
   margin-top: 20px;
 }
@@ -32,9 +41,30 @@ a {
     -moz-border-radius:5px;
     -webkit-border-radius:5px;
     border-radius:5px;
-    background:#eee;
+    background:#fff;
     padding:10px;
-    margin-bottom:10px;
+    margin:10px;
+    -webkit-box-shadow: -5px 5px 15px #666;
+    -moz-box-shadow: -5px 5px 15px #666;
+}
+#job_wrapper .job{
+    width:60%;
+    display:inline-block;
+    height:180px;
+    overflow:hidden;
+    position:relative;
+}
+#job_wrapper .job img{
+    position:absolute;
+    top:10px;
+    right:10px;
+}
+#job_wrapper .job:hover{background:#eee;}
+
+#job_wrapper .job #options{
+    position:absolute;
+    bottom:10px;
+    right:10px;
 }
 /*Job Skills*/
 
@@ -42,8 +72,8 @@ a {
     width:400px;
     position:relative;
     height:200px;
-    -webkit-box-shadow: -5px 5px 20px #074900;
-    -moz-box-shadow: -5px 5px 20px #074900;
+    -webkit-box-shadow: -5px 5px 10px #666;
+    -moz-box-shadow: -5px 5px 10px #666;
 }
 #job_skills{
     position:absolute;
@@ -70,7 +100,52 @@ a {
     top:80px;
     left:160px;
 }
+/*Form CSS3*/
 
+input, textarea { 
+	padding: 9px;
+	border: solid 1px #D4D4D4;
+	outline: 0;
+	font: normal 13px/100% Verdana, Tahoma, sans-serif;
+	width: 200px;
+	background: #FFFFFF url('bg_form.png') left top repeat-x;
+	background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+	background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 15px);
+	box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	}
+
+textarea { 
+	width: 400px;
+	max-width: 400px;
+	height: 150px;
+	line-height: 150%;
+	}
+
+input:hover, textarea:hover,
+input:focus, textarea:focus { 
+	border-color: #C9C9C9; 
+	-webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;
+	}
+
+.form label { 
+	margin-left: 10px; 
+	color: #999999; 
+	}
+
+ input.submit  {
+	width: auto;
+	padding: 9px 15px;
+	background: #2c89a0;
+	border: 0;
+	font-size: 14px;
+	color: #FFFFFF;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	}
+
+/*Flash and Errors*/
 #flash_notice, #flash_error, #flash_alert {
   padding: 5px 8px;
   margin: 10px 0;

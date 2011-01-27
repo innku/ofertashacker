@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20110126201110) do
 
   create_table "required_skills", :force => true do |t|
     t.string   "skill_name"
+    t.integer  "job_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

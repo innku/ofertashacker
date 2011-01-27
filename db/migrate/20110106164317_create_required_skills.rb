@@ -4,6 +4,7 @@ class CreateRequiredSkills < ActiveRecord::Migration
       t.string :skill_name
       t.timestamps
     end
+      add_index :required_skills, :skill_name,:unique => true
   end
 
   def self.down

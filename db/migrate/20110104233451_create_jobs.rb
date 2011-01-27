@@ -12,6 +12,8 @@ class CreateJobs < ActiveRecord::Migration
 
       t.timestamps
     end
+      add_index :jobs, :title,                :unique => false
+      add_index :jobs, :state,                :unique => false
   end
 
   def self.down

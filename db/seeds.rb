@@ -8,5 +8,13 @@ C = Company.find_or_initialize_by_role(
   :role => 'admin' )
 C.save
 C.role='admin'
+C.confirmed_at=Time.now
 C.save
   
+RequiredSkill.find_or_create_by_skill_name(:skill_name=>'Ruby')
+RequiredSkill.find_or_create_by_skill_name(:skill_name=>'CSS')
+RequiredSkill.find_or_create_by_skill_name(:skill_name=>'JQuery')
+RequiredSkill.find_or_create_by_skill_name(:skill_name=>'MySql')
+RequiredSkill.find_or_create_by_skill_name(:skill_name=>'Sinatra')
+RequiredSkill.find_or_create_by_skill_name(:skill_name=>'Ajax')
+RequiredSkill.find_or_create_by_skill_name(:skill_name=>'Javascript')

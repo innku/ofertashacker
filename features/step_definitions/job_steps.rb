@@ -1,3 +1,3 @@
 When /^(?:|I )simulateclick "([^"]*)"(?: within "([^"]*)")?$/ do |link, selector|
-  page.evaluate_script("$('\##{selector}').click()")
+  page.execute_script("$('#{selector}').click()")
 end

@@ -26,5 +26,11 @@ class Job < ActiveRecord::Base
     id_collection = required_skills.collect{|rs| rs.id }
     id_collection.inject(""){|result,id| result += (id.to_s + (id == id_collection.last ?  '' : ','))}
   end
-  
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
 end

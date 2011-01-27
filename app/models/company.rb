@@ -23,7 +23,7 @@ class Company < ActiveRecord::Base
                             :s3_credentials => "#{Rails.root}/config/s3.yml",
                             :path => production ? ":attachment/:id/:style/:filename" : "public/system/:attachment/:id/:style/:filename",
                             :bucket => "rubypros",
-                            :default_url => "/images/missing.jpg"
+                            :default_url => "/images/missing.png"
                             
   def admin?
     self.role == "admin"
