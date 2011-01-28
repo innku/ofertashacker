@@ -40,7 +40,7 @@ end
 
 Given /^there is a job vacancy with title "([^"]*)" created by "([^"]*)" with required skill "([^"]*)"$/ do |title, email, rs|
   @company = Company.find_by_email(email)
-  @rsa = Factory(:required_skill, :skill_name => name)
+  @rsa = Factory(:required_skill, :skill_name => rs)
   if !@company
     @company = Factory(:company, :email => email)
   end

@@ -1,7 +1,7 @@
 body {
   position:relative;
   width:85%;
-  background-color: #4b3831;
+  background-color: #1B3037;
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
 }
@@ -36,6 +36,25 @@ a:hover{text-decoration:underline;}
   padding: 20px 20px;
   border: solid 1px black;
   margin-top: 20px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 10px #222;
+    -moz-box-shadow: 5px 5px 10px #222;
+}
+
+#footer{
+    text-align:center;
+    margin-top:5px;
+    border: solid 1px black;
+    width:100%;
+    padding: 1px 20px;
+    height:23px;
+    background:#2c89a0;
+	font-size: 14px;
+	color: #FFFFFF;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+    
 }
 .job{
     -moz-border-radius:5px;
@@ -100,6 +119,8 @@ a:hover{text-decoration:underline;}
     top:80px;
     left:160px;
 }
+#job_required_profile{list-style-image:url(/images/bullet_checkmark.jpg);}
+#job_skills{list-style-image:url(/images/bullet_cross.gif);}
 /*Form CSS3*/
 
 input, textarea { 
