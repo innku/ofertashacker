@@ -23,7 +23,7 @@ class JobsController < ApplicationController
     if current_company
       @jobs = current_company.jobs.search(params[:search])
     else
-      @jobs = Job.all.search(params[:search])
+      @jobs = Job.search(params[:search])
 
     end
   end

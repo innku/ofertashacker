@@ -61,6 +61,7 @@ Then /^(?:|I )should see "([^"]*)" within a li with class "([^"]*)"$/ do |text, 
     end
   end
 end
+
 Then /^(?:|I )should not see "([^"]*)" within a li with class "([^"]*)"$/ do |text, selector|
   with_scope(".#{selector}") do
     if page.respond_to? :should
