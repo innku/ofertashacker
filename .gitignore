@@ -33,5 +33,6 @@ capybara-*.html
 /coverage/
 /spec/tmp/*
 **.orig
-config/*.yml
+config/database.yml
+config/cucumber.yml
 rerun.txt
