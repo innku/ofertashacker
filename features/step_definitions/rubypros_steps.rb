@@ -52,7 +52,8 @@ Given /^there is a required skill with name "([^"]*)"$/ do |name|
   @required_skill = Factory(:required_skill, :skill_name => name)
 end
 
-Then /^(?:|I )should see "([^"]*)"(?: within a li with class "([^"]*)")?$/ do |text, selector|
+
+Then /^I should see "([^"]*)" within a li with class "([^"]*)"$/ do |text, selector|
   with_scope(".#{selector}") do
     if page.respond_to? :should
       page.should have_content(text)
@@ -61,7 +62,7 @@ Then /^(?:|I )should see "([^"]*)"(?: within a li with class "([^"]*)")?$/ do |t
     end
   end
 end
-Then /^(?:|I )should not see "([^"]*)"(?: within a li with class "([^"]*)")?$/ do |text, selector|
+Then /^I should not see "([^"]*)" within a li with class "([^"]*)"$/ do |text, selector|
   with_scope(".#{selector}") do
     if page.respond_to? :should
       page.should have_no_content(text)
