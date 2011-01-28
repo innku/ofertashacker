@@ -1,7 +1,84 @@
 id,name,abbr,country_id
-1,Cochabamba,CBB,1
-2,Santa Cruz,SCZ,1
-3,Nuevo Leon,NLE,2
-4,Jalisco,JAL,2
-5,Florida,FL,3
-6,Texas,TX,3
+1,Aguascalientes,AG,1
+2,Baja California,BC,1
+3,Baja California Sur,BS,1
+4,Campeche,CM,1
+5,Coahuila,CO,1
+6,Colima,CL,1
+7,Chiapas,CS,1
+8,Chihuahua,CH,1
+9,Distrito Federal,DF,1
+10,Durango,DG,1
+11,Guanajuato,GT,1
+12,Guerrero,GR,1
+13,Hidalgo,HG,1
+14,Jalisco,JA,1
+15,México,ME,1
+16,Michoacán,MI,1
+17,Morelos,MO,1
+18,Nayarit,NA,1
+19,Nuevo León,NL,1
+20,Oaxaca,OA,1
+21,Puebla,PB,1
+22,Querétaro,QT,1
+23,Quintana Roo,QR,1
+24,San Luís Potosí,SL,1
+25,Sinaloa,SI,1
+26,Sonora,SO,1
+27,Tabasco,TB,1
+28,Tamaulipas,TM,1
+29,Tlaxcala,TL,1
+30,Veracruz,VE,1
+31,Yucatán,YU,1
+32,Zacatecas,ZA,1
+33,Alabama,AL,2
+34,Alaska,AK,2
+35,Arizona,AZ,2
+36,Arkansas,AR,2
+37,California,CA,2
+38,Colorado,CO,2
+39,Connecticut,CT,2
+40,Delaware,DE,2
+41,District of Columbia,DC,2
+42,Florida,FL,2
+43,Georgia,GA,2
+44,Hawaii,HI,2
+45,Idaho,ID,2
+46,Illinois,IL,2
+47,Indiana,IN,2
+48,Iowa,IA,2
+49,Kansas,KS,2
+50,Kentucky,KY,2
+51,Louisiana,LA,2
+52,Maine,ME,2
+53,Maryland,MD,2
+54,Massachusetts,MA,2
+55,Michigan,MI,2
+56,Minnesota,MN,2
+57,Mississippi,MS,2
+58,Missouri,MO,2
+59,Montana,MT,2
+60,Nebraska,NE,2
+61,Nevada,NV,2
+62,New Hampshire,NH,2
+63,New Jersey,NJ,2
+64,New Mexico,NM,2
+65,New York,NY,2
+66,North Carolina,NC,2
+67,North Dakota,ND,2
+68,Ohio,OH,2
+69,Oklahoma,OK,2
+70,Oregon,OR,2
+71,Pennsylvania,PA,2
+72,Rhode Island,RI,2
+73,South Carolina,SC,2
+74,South Dakota,SD,2
+75,Tennessee,TN,2
+76,Texas,TX,2
+77,Utah,UT,2
+78,Vermont,VT,2
+79,Virginia,VA,2
+80,Washington,WA,2
+81,West Virginia,WV,2
+82,Wisconsin,WI,2
+83,Wyoming,WY,2
