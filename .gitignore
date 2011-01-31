@@ -31,6 +31,11 @@ capybara-*.html
 /db/*.sqlite3
 /public/system/*
 /coverage/
+/config/database.yml
+config/database.yml
+
+/config/s3.yml
+config/s3.yml
 
 /spec/tmp/*
 /public/files/*
