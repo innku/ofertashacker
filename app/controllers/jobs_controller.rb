@@ -16,7 +16,7 @@ class JobsController < ApplicationController
   end
   
   def available
-    @jobs= Job.all
+    @jobs= Job.find(:all,:order=>'created_at DESC')
   end
   
   def index

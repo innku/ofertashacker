@@ -1,4 +1,4 @@
-<%= form_for @job do |f| %>
+<%= form_for @job do |f| %> 
   <% if @job.errors.any? %>
     <div id="error_explanation">
       
@@ -13,11 +13,11 @@
   <% end %>
   <h2><%= t('.job_detail') %></h2>
   
-  <p><%= f.label :title %><br />
-  <%= f.text_field :title %></p>
+  <p><%= f.label :title, t('.title') + " *" %><br />
+  <%= f.text_field :title, :required => "required" %></p>
   
-  <p><%= f.label :state %><br />
-   <%=f.text_field :state, :class => 'state_autocomplete'%></p>
+  <p><%= f.label :state, t('.state') + " *" %><br />
+   <%=f.text_field :state, :class => 'state_autocomplete', :required => "required"%></p>
   
   <h5><%= t('.job_type') %></h5>
   <p><%= f.label :full_time %><br /> 
@@ -59,9 +59,9 @@
     <%=image_tag 'arrow_back.jpg', :id=>"arrow_back"%>
   </div>  
 
-  <h2><%= t('.job_description') %></h2>
-  <p><%= f.label :description %><br /> 
-  <%= f.text_area :description %></p>
+  <p><%= f.label :description, t('.job_description') + " *" %><br /> 
+  <%= f.text_area :description, :required => "required" %></p>
   
-  <p><%= f.submit t(:create) %> | <%= link_to t(:cancel), jobs_path() %></p>
+  <p><%= f.submit t(:create) %>  <%= button_to t(:cancel), jobs_path() %></p>
 <% end %>
+

@@ -90,7 +90,7 @@ a:hover{text-decoration:underline;}
 #all_skills{
     width:400px;
     position:relative;
-    height:200px;
+    height:300px;
     -webkit-box-shadow: -5px 5px 10px #666;
     -moz-box-shadow: -5px 5px 10px #666;
 }
@@ -98,9 +98,18 @@ a:hover{text-decoration:underline;}
     position:absolute;
     top:0px;
     left:0px;
-    width: 40%;
+    width: 30%;
     color:red;
+}
+.skill, .required_skill{
 
+    cursor:pointer;
+    margin-bottom:2px;
+}
+
+.skill:hover, .required_skill:hover{
+    color:#fff;
+    background:#333;
 }
 #job_required_profile{
     position:absolute;
@@ -204,6 +213,30 @@ input:focus, textarea:focus {
   margin: 0;
   background-color: #c00;
   color: #fff;
+}
+
+/* mensajes de error para formas */
+.error {
+	/* supply height to ensure consistent positioning for every browser */
+	height:25px;
+	background-color:#2c89a0;
+	border:1px solid #E1E16D;
+	font-size:11px;
+	color:#fff;
+	padding:3px 10px;
+	margin-top:-5px;
+	margin-left:-2px;
+
+
+	/* CSS3 spicing for mozilla and webkit */
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	-moz-border-radius-bottomleft:0;
+	-moz-border-radius-topleft:0;
+	-webkit-border-bottom-left-radius:0;
+	-webkit-border-top-left-radius:0;
+	-moz-box-shadow:0 0 6px #ddd;
+	-webkit-box-shadow:0 0 6px #ddd;
 }
 
 .error_messages p {
