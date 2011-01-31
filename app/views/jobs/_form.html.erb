@@ -1,3 +1,4 @@
+
 <%= form_for @job do |f| %> 
   <% if @job.errors.any? %>
     <div id="error_explanation">
@@ -20,17 +21,13 @@
    <%=f.text_field :city, :class => 'city_autocomplete', :required => "required"%></p>
   
   <h5><%= t('.job_type') %></h5>
-  <p><%= f.label :full_time %><br /> 
-  <%= f.check_box :full_time %></p>
+  <p><%= f.check_box :full_time %> <%= f.label :full_time %> </p>
   
-  <p><%= f.label :part_time %><br /> 
-  <%= f.check_box :part_time %></p>
+  <p><%= f.check_box :part_time %> <%= f.label :part_time %></p>
   
-  <p><%= f.label :remote %><br /> 
-  <%= f.check_box :remote %></p>
+  <p><%= f.check_box :remote %> <%= f.label :remote %></p>
   
-  <p><%= f.label :flexible %><br /> 
-  <%= f.check_box :flexible %></p>
+  <p><%= f.check_box :flexible %> <%= f.label :flexible %> </p>
   
  
   <h2><%= t('.required_profile') %></h2>  
