@@ -5,12 +5,13 @@ class Job < ActiveRecord::Base
   
   accepts_nested_attributes_for :required_skills
   
-  validates_presence_of :company_id, :title, :description, :state
+  validates_presence_of :company_id, :title, :description, :city
   validates_presence_of :full_time, :if=> :not_part_time_present
 	
 	#SEARCH_TYPES = ['Title','Company', 'State']
 	
-	metropoli_for :state, :as => :sate_name
+	attr_accessible :city
+	metropoli_for :city, :as => :city_name
 	
   def not_part_time_present
     !part_time

@@ -57,7 +57,7 @@ es:
       more:               "Ver más"
     form:
       title:              "Nombre"  
-      state:              "Estado"
+      city:               "Ciudad"
       job_detail:         "Datos de la Oferta"
       job_type:           "Tipo de Empleo"
       required_profile:   "Perfil requerido"
