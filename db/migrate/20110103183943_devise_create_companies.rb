@@ -13,7 +13,8 @@ class DeviseCreateCompanies < ActiveRecord::Migration
       t.text    :description
       t.timestamps
     end
-
+    add_index :companies, :title,                :unique => true
+    add_index :companies, :city,                :unique => false
     add_index :companies, :email,                :unique => true
     add_index :companies, :reset_password_token, :unique => true
     add_index :companies, :confirmation_token,   :unique => true

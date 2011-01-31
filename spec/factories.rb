@@ -18,3 +18,9 @@ Factory.define :job do |f|
   f.description "We required 3 ruby programmers"
   f.association :company, :factory => :company
 end
+
+Factory.define :required_skill do |rs|
+  rs.skill_name "Ruby"
+end
+
+

@@ -12,18 +12,29 @@
     <%= yield(:head) %>
   </head>
   <body>
-    <div id="company">
-      <% if current_company %>
-        <%= link_to current_company.title, company_path(current_company) %> |
-        <%= link_to t('.new_job'),  new_job_path() %> |
-        <%= link_to t('.my_vacancies'), jobs_path() %> |
-        <%= link_to t('.all_vacancies'), available_path() %> |
-        <%= link_to t('.sign_out'), destroy_company_session_path() %>
-      <% else %>
-        <%= link_to "Entrar", new_company_session_path() %> |
-        <%= link_to "¿Empresa?, Regístrate", new_company_registration_path()%>
+    <div id ="header">
+      <div id="menu">
+        <% if current_company %>
+          <%= link_to current_company.title, company_path(current_company) %> |
+          <%= link_to t('.new_job'),  new_job_path() %> |
+          <%= link_to t('.my_vacancies'), jobs_path() %> |
+          <%= link_to t('.all_vacancies'), available_path() %> |
+          <%= link_to t('.sign_out'), destroy_company_session_path() %>
+        <% else %>
+          <%= link_to "Entrar", new_company_session_path() %> |
+          <%= link_to "¿Empresa?, Regístrate", new_company_registration_path()%>
+        <% end %>
+      </div>
+      <div id="search_form">
+       <% form_tag jobs_path, :method => 'get'  do %>
+        <p>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Buscar Trabajo", :name => nil, :class=>'submit' %>
+        </p>
       <% end %>
-    </div>
+      </div><!-- /search -->
+    </div><!-- /header -->
+
     <div id="container">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
@@ -31,5 +42,10 @@
       <%= content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
     </div>
+    <div id="footer">
+        <p>
+          RubyPros
+        </p>
+    </div><!--/footer -->
   </body>
 </html>

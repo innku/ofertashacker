@@ -1,7 +1,5 @@
 class Company < ActiveRecord::Base
   
-  production = Rails.env.production?
-  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable,
@@ -18,10 +16,16 @@ class Company < ActiveRecord::Base
   scope :members, where(:role => "member")
   
   has_attached_file :logo, :styles => {:medium => "300x300>", :thumb => "100x100>"},
-                            :storage => production ? :s3 : :filesystem,
+                            :storage => {
+                              'development' => :filesystem,
+                              'test' => :filesystem,
+                              'staging' => :s3,
+                              'production' => :s3
+                            }[Rails.env],
                             :s3_credentials => "#{Rails.root}/config/s3.yml",
-                            :path => production ? ":attachment/:id/:style/:filename" : "public/system/:attachment/:id/:style/:filename",
-                            :bucket => "rubypros",
+                            :url => "#{ENV['RAILS_ENV']}/:attachment/:id/:style/:basename.:extension",
+                            :path => "public/files/#{Rails.env}/:attachment/:id/:style/:basename.:extension",
+                            :bucket => 'rubypros',
                             :default_url => "/images/missing.png"
                             
   def admin?

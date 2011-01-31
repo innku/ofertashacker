@@ -5,16 +5,25 @@ Feature: Job Actions
   
   Scenario: Add several skills to my job opportunity
     Given there is a company with name "RubyPros Company" in city "Monterrey" and email "admin@rubypros.com"  
+    And there is a required skill with name "Ruby"  
     And I am logged as a "admin@rubypros.com"
     And I am on the new job page
-    When I select "Ruby" from "li"
-    And I select "Ajax" from "li"
-    And I select "MySql" from "li"
-    Then I should see "Ruby" within "job_required_profile"
-    And I should see "Ajax" within "job_required_profile"
-    And I should see "MySql" within "job_required_profile"
-    Then I should not see "Ruby" within "li"
-    And I should not see "Ajax" within "li"
-    And I should not see "MySql" within "li"
+    Then I should see "Ruby" within a li with class "skill"
+    When I simulateclick "Ruby" within "li"
+    Then I should see "Ruby" within a li with class "required_skill"
+    And I should not see "Ruby" within a li with class "skill"
 
-     
+  Scenario: Edit skills of my job opportunity
+    Given there is a company with name "RubyPros Company" in city "Monterrey" and email "admin@rubypros.com"  
+    And there is a required skill with name "Ruby"  
+    And there is a job vacancy with title "Ruby Jr Programmer" created by "admin@rubypros.com" with required skill "Ruby"
+    And I am logged as a "admin@rubypros.com"
+    And I am on the index job page
+    And I follow "Editar"
+    Then I should see "Ruby" within a li with class "skill"
+    When I simulateclick "Ruby" within "li"
+    Then I should see "Ruby" within a li with class "required_skill"
+    And I should not see "Ruby" within a li with class "skill"
+
+
+

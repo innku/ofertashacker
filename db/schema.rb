@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110125155214) do
+ActiveRecord::Schema.define(:version => 20110126201110) do
 
   create_table "cities", :force => true do |t|
     t.integer "state_id"
@@ -76,6 +76,13 @@ ActiveRecord::Schema.define(:version => 20110125155214) do
   end
 
   add_index "jobs", ["state_id"], :name => "index_jobs_on_state_id"
+
+  create_table "jobs_required_skills", :id => false, :force => true do |t|
+    t.integer "job_id"
+    t.integer "required_skill_id"
+  end
+
+  add_index "jobs_required_skills", ["job_id", "required_skill_id"], :name => "index_jobs_required_skills_on_job_id_and_required_skill_id"
 
   create_table "required_skills", :force => true do |t|
     t.string   "skill_name"

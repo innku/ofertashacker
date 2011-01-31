@@ -1,7 +1,7 @@
 <% form_for @company, :html => { :multipart => true } do |f| %>
 <%= f.error_messages %>
 
-<p><%= f.label :title %><br />
+<p><%= f.label :title, t('.title') %><br />
 <%= f.text_field :title %></p>
 
 <p><%= f.label :city %><br />

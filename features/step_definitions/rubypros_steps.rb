@@ -21,6 +21,7 @@ Given /^I am logged as a "([^"]*)"$/ do |email|
   click_button "company_submit"
 end
 
+
 Given /^there is a company with name "([^"]*)" in city "([^"]*)"$/ do |name, city|
   @company = Factory(:company, :title => name, :city => city)
 end
@@ -36,5 +37,40 @@ Given /^there is a job vacancy with title "([^"]*)" created by "([^"]*)"$/ do |t
   end
   @job = Factory(:job, :company => @company, :title => title)
 end
+
+Given /^there is a job vacancy with title "([^"]*)" created by "([^"]*)" with required skill "([^"]*)"$/ do |title, email, rs|
+  @company = Company.find_by_email(email)
+  @rsa = Factory(:required_skill, :skill_name => name)
+  if !@company
+    @company = Factory(:company, :email => email)
+  end
+  @job = Factory(:job, :company => @company, :title => title)
+  @job.required_skill_ids_string="#{@rsa.id}"
+end
+
+Given /^there is a required skill with name "([^"]*)"$/ do |name|
+  @required_skill = Factory(:required_skill, :skill_name => name)
+end
+
+Then /^(?:|I )should see "([^"]*)" within a li with class "([^"]*)"$/ do |text, selector|
+  with_scope(".#{selector}") do
+    if page.respond_to? :should
+      page.should have_content(text)
+    else
+      assert page.has_content?(text)
+    end
+  end
+end
+
+Then /^(?:|I )should not see "([^"]*)" within a li with class "([^"]*)"$/ do |text, selector|
+  with_scope(".#{selector}") do
+    if page.respond_to? :should
+      page.should have_no_content(text)
+    else
+      assert page.has_no_content?(text)
+    end
+  end
+end
+
 
 

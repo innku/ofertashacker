@@ -18,11 +18,13 @@ class JobsController < ApplicationController
   def available
     @jobs= Job.all
   end
+  
   def index
     if current_company
-      @jobs = current_company.jobs
+      @jobs = current_company.jobs.search(params[:search])
     else
-      @jobs = Job.all
+      @jobs = Job.search(params[:search])
+
     end
   end
   
@@ -31,9 +33,11 @@ class JobsController < ApplicationController
   end
   
   def edit
+
   end
+  
   def update
-    if @job.save
+    if @job.update_attributes(params[:job])
       redirect_to jobs_path, :notice => I18n.t("notice.job.successfully_updated")
     else
       render :action => "new"

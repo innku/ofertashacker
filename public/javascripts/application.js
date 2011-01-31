@@ -3,15 +3,51 @@ var index = 0;
 $(function(){
 	
 	$(".skill").live('click', function(){
-		var skill = $(this).text();
-		$("#job_required_profile").append("<li class='required_skill'>"+skill+"<input id='job_required_skills_attributes_"+index+"_skill_name' type='hidden' value="+skill+" name='job[required_skills_attributes]["+index+"][skill_name]'></li>");
+	    required_skill_html = required_skill_template($(this).attr('data-skill-id'), $(this).text());
+		$("#job_required_profile").append(required_skill_html);
+		append_skill_id($(this).attr('data-skill-id'));
 		$(this).remove();		
 		index++;
 	})
 	
 	$("li.required_skill").live('click', function(){
-		var skill = $(this).text();
-		$("#job_skills").append("<li class='skill'>"+skill+"</li>")
+	    job_skill_html = job_skill_template($(this).attr('data-skill-id'), $(this).text());
+		$("#job_skills").append(job_skill_html);
+		remove_skill_id($(this).attr('data-skill-id'));
 		$(this).remove();
+		
 	})
+	
 });
+
+function required_skill_template(id, text){
+    return "<li class='required_skill' data-skill-id='" + id + "'>" + text + "</li>";
+}
+
+function job_skill_template(id, text){
+    return "<li class='skill' data-skill-id='" + id + "'>" + text + "</li>";
+}
+
+function append_skill_id(skill_id){
+    if($('#job_required_skill_ids_string').val() == ''){
+        $('#job_required_skill_ids_string').val(skill_id);
+    }else{
+        $('#job_required_skill_ids_string').val($('#job_required_skill_ids_string').val() + ',' + skill_id);
+    }
+}
+
+function remove_skill_id(skill_id){
+    ids = $('#job_required_skill_ids_string').val();
+    ids_array = ids.split(',');
+    if(ids_array.length == 1){
+        $('#job_required_skill_ids_string').val('');
+    }
+    else if(ids_array.length > 1){
+        if(ids_array[0] == skill_id)
+            new_ids = ids.replace(skill_id + ',', '');
+        else     
+            new_ids = ids.replace(',' + skill_id, '');
+        $('#job_required_skill_ids_string').val(new_ids);
+    }
+        
+}
