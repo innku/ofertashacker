@@ -72,9 +72,16 @@ es:
       remote:             "Remoto"
       flexible:           "Horario flexible"
       more:               "Ver más"
-  
+  required_skills:
+    form:
+      skill_detail:       "Datos de la Habilidad"
+      skill_name:         "Nombre"
   #Notice messages
   notice:
+    required_skill:
+      successfully_updated: "La habilidad ha sido actualizada"        
+      successfully_created: "La habilidad ha sido creada"
+      successfully_deleted: "La habilidad ha sido borrada"
     company:
       successfully_updated: "Tu información ha sido actualizada"
     job:

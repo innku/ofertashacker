@@ -1,0 +1,9 @@
+  <h2><%= t('.skill_detail') %></h2>
+<%form_for @required_skill do |f|%>
+
+  <p>
+    <%=f.label :skill_name, t('.skill_name')+ "* "%><br />
+    <%=f.text_field :skill_name, :required=>'required'%>
+  </p>
+  <%=f.submit "Crear"%>
+<%end%>

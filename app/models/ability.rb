@@ -7,12 +7,14 @@ class Ability
       can :manage, Company do |c|
         c == company
       end
+      can :manage, RequiredSkill
       can :read, Company
       can :create, Job
       can :manage, Job do |j|
         j.company == company
       end
     else  
+      can :read, RequiredSkill
       can :manage, Company do |c|
         c == company
       end

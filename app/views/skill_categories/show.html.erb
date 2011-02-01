@@ -1,0 +1,12 @@
+<% title "Skill Category" %>
+
+<p>
+  <strong>Category:</strong>
+  <%= @skill_category.category %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_skill_category_path(@skill_category) %> |
+  <%= link_to "Destroy", @skill_category, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", skill_categories_path %>
+</p>

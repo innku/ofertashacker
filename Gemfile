@@ -22,3 +22,4 @@ group :development, :test do
   gem "ruby-debug"
   gem "selenium-client"
 end
+gem "mocha", :group => :test

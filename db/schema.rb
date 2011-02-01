@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110201044107) do
+ActiveRecord::Schema.define(:version => 20110201155355) do
 
   create_table "cities", :force => true do |t|
     t.integer "state_id"
@@ -91,6 +91,13 @@ ActiveRecord::Schema.define(:version => 20110201044107) do
   create_table "required_skills", :force => true do |t|
     t.string   "skill_name"
     t.integer  "job_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "skill_category_id"
+  end
+
+  create_table "skill_categories", :force => true do |t|
+    t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

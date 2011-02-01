@@ -1,0 +1,17 @@
+<% title "Skill Categories" %>
+
+<table>
+  <tr>
+    <th>Category</th>
+  </tr>
+  <% for skill_category in @skill_categories %>
+    <tr>
+      <td><%= skill_category.category %></td>
+      <td><%= link_to "Show", skill_category %></td>
+      <td><%= link_to "Edit", edit_skill_category_path(skill_category) %></td>
+      <td><%= link_to "Destroy", skill_category, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Skill Category", new_skill_category_path %></p>
