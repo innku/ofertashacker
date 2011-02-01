@@ -14,7 +14,7 @@ class SkillCategoriesController < ApplicationController
   def create
     @skill_category = SkillCategory.new(params[:skill_category])
     if @skill_category.save
-      flash[:notice] = "Successfully created skill category."
+      flash[:notice] = "La categoría ha sido creada"
       redirect_to @skill_category
     else
       render :action => 'new'
@@ -28,7 +28,7 @@ class SkillCategoriesController < ApplicationController
   def update
     @skill_category = SkillCategory.find(params[:id])
     if @skill_category.update_attributes(params[:skill_category])
-      flash[:notice] = "Successfully updated skill category."
+      flash[:notice] = "La categoría ha sido actualizada"
       redirect_to @skill_category
     else
       render :action => 'edit'
@@ -38,7 +38,7 @@ class SkillCategoriesController < ApplicationController
   def destroy
     @skill_category = SkillCategory.find(params[:id])
     @skill_category.destroy
-    flash[:notice] = "Successfully destroyed skill category."
+    flash[:notice] = "La categoria ha sido borrada"
     redirect_to skill_categories_url
   end
 end

@@ -74,6 +74,7 @@ es:
       more:               "Ver más"
   required_skills:
     form:
+      skill_category:     "Categoria"
       skill_detail:       "Datos de la Habilidad"
       skill_name:         "Nombre"
   #Notice messages

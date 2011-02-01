@@ -24,3 +24,7 @@ Factory.define :required_skill do |rs|
 end
 
 
+Factory.define :skill_category do |c|
+  c.category "Ruby"
+end
+

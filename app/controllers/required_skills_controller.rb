@@ -4,6 +4,7 @@ class RequiredSkillsController < ApplicationController
   end
 
   def new
+    @skill_categories=SkillCategory.all
   end
   
   def create
@@ -23,6 +24,7 @@ class RequiredSkillsController < ApplicationController
     end
   end
   def edit
+    @skill_categories=SkillCategory.all
   end
   def update
     if @required_skill.update_attributes(params[:required_skill])

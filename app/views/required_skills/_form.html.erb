@@ -2,8 +2,25 @@
 <%form_for @required_skill do |f|%>
 
   <p>
-    <%=f.label :skill_name, t('.skill_name')+ "* "%><br />
+    <%=f.label :skill_name, t('.skill_name')+ " *"%><br />
     <%=f.text_field :skill_name, :required=>'required'%>
   </p>
+  <p>
+    <%=f.label :skill_category_id, t('.skill_category')+ " *"%><br />
+    <select name="required_skill[skill_category_id]">
+      <%for category in @skill_categories do%>
+        <%if category.id==@required_skill.skill_category_id%>
+          <option value="<%=category.id%>" selected="selected">
+        <%else%>
+          <option value="<%=category.id%>">
+        <%end%>
+        <%=category.category%></option>
+      <%end%>
+    </select>
+  </p>
   <%=f.submit "Crear"%>
+  
 <%end%>
+
+
+
