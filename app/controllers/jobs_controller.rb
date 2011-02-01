@@ -24,8 +24,8 @@ class JobsController < ApplicationController
       @jobs = current_company.jobs.search(params[:search])
     else
       @jobs = Job.search(params[:search])
-
     end
+    @rs=RequiredSkill.all
   end
   
   def show

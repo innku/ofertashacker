@@ -6,7 +6,7 @@ describe Job do
     @job=Job.new(
       :title => "foo", 
       :company_id => "1",
-      :state => "Nuevo Leon",
+      :city => "Monterrey",
       :description => "Hola",
       :full_time=> true,
       :part_time=> false,
@@ -30,8 +30,8 @@ describe Job do
     @job.should_not be_valid
   end
 
-  it "is not valid without state" do
-    @job.state=nil
+  it "is not valid without city" do
+    @job.city=nil
     @job.should_not be_valid
   end
 

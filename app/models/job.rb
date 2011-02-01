@@ -28,6 +28,8 @@ class Job < ActiveRecord::Base
     id_collection = required_skills.collect{|rs| rs.id }
     id_collection.inject(""){|result,id| result += (id.to_s + (id == id_collection.last ?  '' : ','))}
   end
+  
+  #search simple de trabajos
   def self.search(search)
     if search
       find(:all, :conditions => ['title LIKE ?', "%#{search}%"], :order=>'created_at DESC')
@@ -35,4 +37,5 @@ class Job < ActiveRecord::Base
       find(:all, :order=>'created_at DESC')
     end
   end
+
 end

@@ -14,4 +14,4 @@ Feature: User Actions
   Scenario: I can view a list of all vacancies
     Given there is a job vacancy with title "RoR" created by "admin@rubypros.com"
     And I am on the available page
-    Then I should see "Lista de todas las vacantes en Ruby Pros"
+    Then I should see "Vacantes más recientes de Ruby Pros"

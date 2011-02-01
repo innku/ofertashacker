@@ -175,6 +175,24 @@ input:focus, textarea:focus {
 	-webkit-border-radius: 5px;
 	}
 
+#skill_sidebar{
+    float:right;
+    margin-right:40px;
+    list-style:none;
+}
+#skill_sidebar li{
+    margin-bottom:5px;
+    background:#ccc;
+    padding:5px;
+    cursor:pointer;
+}
+#skill_sidebar li:hover{
+    background:#aaa;
+    
+
+}
+
+
 /*Flash and Errors*/
 #flash_notice, #flash_error, #flash_alert {
   padding: 5px 8px;
@@ -246,3 +264,4 @@ input:focus, textarea:focus {
 .error_messages ul {
   margin: 0;
 }
+

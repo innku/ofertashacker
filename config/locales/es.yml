@@ -65,7 +65,7 @@ es:
       skills:             "Habilidades"
       extra_skill:        "Habilidades Extra"
     index:
-      my_vacancies:       "Vacantes más recientes"
+      my_vacancies:       "Vacantes más recientes de "
       in:                 "en"
       full_time:          "Tiempo completo"
       part_time:          "Medio tiempo"
