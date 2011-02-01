@@ -10,7 +10,6 @@ class Job < ActiveRecord::Base
 	
 	#SEARCH_TYPES = ['Title','Company', 'State']
 	
-	attr_accessible :city
 	metropoli_for :city, :as => :city_name
 	
   def not_part_time_present
@@ -31,9 +30,9 @@ class Job < ActiveRecord::Base
   end
   def self.search(search)
     if search
-      find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+      find(:all, :conditions => ['title LIKE ?', "%#{search}%"], :order=>'created_at DESC')
     else
-      find(:all)
+      find(:all, :order=>'created_at DESC')
     end
   end
 end

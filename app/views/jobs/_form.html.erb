@@ -55,7 +55,9 @@
     <%=image_tag 'arrow.jpg', :id=>"arrow"%>
     <%=image_tag 'arrow_back.jpg', :id=>"arrow_back"%>
   </div>  
-
+  <p><%= f.label :extra_skill, t('.extra_skill') %><br />
+   <%=f.text_field :extra_skill, :cols=>3%></p>
+   
   <p><%= f.label :description, t('.job_description') + " *" %><br /> 
   <%= f.text_area :description, :required => "required" %></p>
   
