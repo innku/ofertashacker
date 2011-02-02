@@ -32,7 +32,6 @@ capybara-*.html
 /public/system/*
 /coverage/
 /config/*.yml
-config/*.yml
 
 /spec/tmp/*
 /public/files/*
