@@ -25,6 +25,10 @@ class JobsController < ApplicationController
     else
       @jobs = Job.search(params[:search])
     end
+    if(params[:skill])
+      skill=params[:skill]
+      @jobs = Job.all(:include => :required_skills, :conditions => ["required_skills.id = ?", skill])
+    end
     @rs=RequiredSkill.all
   end
   

@@ -21,6 +21,12 @@
           <%= link_to t('.my_vacancies'), jobs_path() %> |
           <%= link_to t('.all_vacancies'), available_path() %> |
           <%= link_to t('.sign_out'), destroy_company_session_path() %>
+          <%if can? :manage, RequiredSkill%>
+            | <%= link_to t('.required_skills'),required_skills_path %>
+          <%end%>
+          <%if can? :manage, SkillCategory%>
+            | <%= link_to t('.skill_category'), skill_categories_path %>
+          <%end%>
         <% else %>
           <%= link_to "Entrar", new_company_session_path() %> |
           <%= link_to "¿Empresa?, Regístrate", new_company_registration_path()%>

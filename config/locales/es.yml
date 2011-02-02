@@ -13,6 +13,8 @@ es:
       sign_out:           "Salir"
       my_vacancies:       "Mis ofertas"
       all_vacancies:      "Ofertas disponibles"
+      required_skills:    "Ver Habilidades"
+      skill_category:     "Ver Categorias"
       
   #Models
   companies:

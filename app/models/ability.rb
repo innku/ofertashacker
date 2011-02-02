@@ -8,6 +8,7 @@ class Ability
         c == company
       end
       can :manage, RequiredSkill
+      can :manage, SkillCategory
       can :read, Company
       can :create, Job
       can :manage, Job do |j|

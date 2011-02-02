@@ -1,7 +1,20 @@
-require File.dirname(__FILE__) + '/../spec_helper'
+require 'spec_helper'
 
 describe SkillCategory do
-  it "should be valid" do
-    SkillCategory.new.should be_valid
+  
+  before(:each) do
+    @sc=SkillCategory.new(
+      :category => "Back End"
+    )
   end
+
+  it "is valid with valid attributes" do
+    @sc.should be_valid
+  end
+
+  it "is not valid without category" do
+    @sc.category=nil
+    @sc.should_not be_valid
+  end
+
 end

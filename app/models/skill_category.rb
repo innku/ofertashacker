@@ -2,6 +2,9 @@ class SkillCategory < ActiveRecord::Base
   has_many :required_skills
   attr_accessible :category
   
+  validates_presence_of :category
+  validates_uniqueness_of :category
+  
   CATEGORIES = ['Front end', 'Back end']
   
   def categories_array

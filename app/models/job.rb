@@ -28,6 +28,18 @@ class Job < ActiveRecord::Base
     id_collection = required_skills.collect{|rs| rs.id }
     id_collection.inject(""){|result,id| result += (id.to_s + (id == id_collection.last ?  '' : ','))}
   end
+
+  def comparar (param)
+    bueno=[]
+    jobs=find(:all)
+    for job in jobs do
+      for skill in job.required_skills do
+        if !skill.to_s.equals(param.to_s)
+        end  
+      end
+    end
+    
+  end
   
   #search simple de trabajos
   def self.search(search)

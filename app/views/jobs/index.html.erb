@@ -1,12 +1,29 @@
+<div class="clearfix">
+  <% custom_title "Ofertas disponibles"%>
+  
+  <div id="skill_sidebar">
+    <h3>Filtrar Ofertas</h3>
+    <% for skill in @rs do %>
+        <% unless skill.id.to_s==params[:skill].to_s%>
+         <%= link_to skill.skill_name, jobs_path(:skill=>skill.id), :class=>'unfiltered'%>
+        <%end%>
+    <% end %>
+    <h3>Filtrado por: </h3>
+    <% if params[:skill]%>
+      <%=link_to "X", jobs_path%>
+      <%=RequiredSkill.find(params[:skill]).skill_name%>
+    <% end %>
 
-<% custom_title "Ofertas disponibles"%>
-
-<h1>
-<%if current_company%>
-  <%= t('.my_vacancies') %> <%= current_company.title %>
-<%else%>
-  Lista de ofertas disponibles en Ruby Pros
-<%end%>
-</h1>
-<%=render 'jobs'%>
+  </div>
+  <div id="skill_main">
+    <h1>
+    <%if current_company%>
+      <%= t('.my_vacancies') %> <%= current_company.title %>
+    <%else%>
+      Lista de ofertas disponibles en Ruby Pros
+    <%end%>
+    </h1>
+    <%=render 'jobs'%>
+  </div>
+</div>
 

@@ -5,6 +5,27 @@ body {
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
 }
+body #skill_sidebar{
+    float:left;
+    background:#ccc;
+    padding:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    width:200px;
+    height:600px;
+    margin-right:30px;
+    
+}
+body #skill_sidebar a.unfiltered{
+    display: block;
+    margin-bottom:5px;
+    padding: 3px;
+}
+
+#skill_sidebar a.unfiltered:hover {
+    background-color: #A59B9B;
+    text-decoration: none;
+}
 
 a img {
   border: none;
@@ -28,6 +49,28 @@ a:hover{text-decoration:underline;}
   height: 0;
   overflow: hidden;
 }
+/* float clearing for IE6 */
+* html .clearfix{
+  height: 1%;
+  overflow: visible;
+}
+
+/* float clearing for IE7 */
+*+html .clearfix{
+  min-height: 1%;
+}
+
+/* float clearing for everyone else */
+.clearfix:after{
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  font-size: 0;
+}
+
+
 
 #container {
   width: 100%;
@@ -63,8 +106,8 @@ a:hover{text-decoration:underline;}
     background:#fff;
     padding:10px;
     margin:10px;
-    -webkit-box-shadow: -5px 5px 15px #666;
-    -moz-box-shadow: -5px 5px 15px #666;
+    -webkit-box-shadow: -2px 2px 5px #666;
+    -moz-box-shadow: -2px 2px 5px #666;
 }
 #job_wrapper .job{
     width:60%;
@@ -130,6 +173,19 @@ a:hover{text-decoration:underline;}
 }
 #job_required_profile{list-style-image:url(/images/bullet_checkmark.jpg);}
 #job_skills{list-style-image:url(/images/bullet_cross.gif);}
+#skills ul{
+    list-style:none;
+    
+}
+#skills ul li{
+    padding:5px;
+    width:400px;
+    background:#ddd;
+    margin-bottom:5px;
+    
+}
+#skills ul li a{}
+#skills ul li:hover{background:#ccc;}
 /*Form CSS3*/
 
 input, textarea { 
@@ -175,22 +231,6 @@ input:focus, textarea:focus {
 	-webkit-border-radius: 5px;
 	}
 
-#skill_sidebar{
-    float:right;
-    margin-right:40px;
-    list-style:none;
-}
-#skill_sidebar li{
-    margin-bottom:5px;
-    background:#ccc;
-    padding:5px;
-    cursor:pointer;
-}
-#skill_sidebar li:hover{
-    background:#aaa;
-    
-
-}
 
 
 /*Flash and Errors*/
