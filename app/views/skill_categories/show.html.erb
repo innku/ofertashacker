@@ -1,0 +1,27 @@
+<% title "Skill Category" %>
+
+<p>
+  <strong>Category:</strong>
+  <%= @skill_category.category %>
+</p>
+
+<p>
+  <%= link_to "Editar", edit_skill_category_path(@skill_category) %> |
+  <%= link_to "Borrar", @skill_category, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Ver Todas", skill_categories_path %>
+</p>
+<div id="skills">
+<h2>Habilidades de esta categoría</h2>
+<ul>
+<% for skill in @required_skills do%>
+  <li>
+    <%=skill.skill_name%>
+    <% if can? :manage, RequiredSkill%>
+    
+      <%=link_to "Editar"%> |
+      <%=link_to "X"%>
+    <% end %>
+  </li>
+<% end %>
+</ul>
+</div>

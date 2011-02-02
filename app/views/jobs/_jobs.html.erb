@@ -1,8 +1,9 @@
+
 <div id="job_wrapper">
   <%@jobs.each do |job| %>
       <div class="job">
         <h1><%= truncate(job.title) %></h1>
-        <p><%= job.company.title %> <%= t('.in') %> <%= job.state %></p>
+        <p><%= job.company.title %> <%= t('.in') %> <%= job.city %></p>
         <%= get_job_type(job) %>
         <p><%= link_to "Ver más", job_path(job) %></p>
         <%=image_tag job.company.logo.url(:thumb)%>

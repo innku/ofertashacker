@@ -14,7 +14,7 @@ Feature: Job cycle
    And I am logged as a "admin@rubypros.com"
    And I am on the new job page
    When I fill in "job_title" with "Ruby Sr Programmer"
-   And I fill in "job_state" with "Nuevo Leon"
+   And I fill in "job_city" with "Monterrey"
    And I check "job_full_time"
    And I check "job_part_time"
    And I fill in "job_description" with "We need 2 ruby programmers"

@@ -1,13 +1,13 @@
 <% custom_title "Nueva cuenta"%>
-<h2>Forgot your password?</h2>
+<h2>¿Olvidaste tu contraseña?</h2>
 
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <p><%= f.label :email %><br />
+  <p><%= f.label :email, :requied=>'required' %><br />
   <%= f.text_field :email %></p>
 
-  <p><%= f.submit "Send me reset password instructions" %></p>
+  <p><%= f.submit "Enviar" %></p>
 <% end %>
 
-<%= render :partial => "devise/shared/links" %>
+<%= render :partial => "companies/shared/links" %>

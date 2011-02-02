@@ -40,7 +40,7 @@ end
 
 Given /^there is a job vacancy with title "([^"]*)" created by "([^"]*)" with required skill "([^"]*)"$/ do |title, email, rs|
   @company = Company.find_by_email(email)
-  @rsa = Factory(:required_skill, :skill_name => name)
+  @rsa = Factory(:required_skill, :skill_name => rs)
   if !@company
     @company = Factory(:company, :email => email)
   end
@@ -51,7 +51,9 @@ end
 Given /^there is a required skill with name "([^"]*)"$/ do |name|
   @required_skill = Factory(:required_skill, :skill_name => name)
 end
-
+Given /^there is a skill category with name "([^"]*)"$/ do |name|
+  @skill_category = Factory(:skill_category, :category => name)
+end
 Then /^(?:|I )should see "([^"]*)" within a li with class "([^"]*)"$/ do |text, selector|
   with_scope(".#{selector}") do
     if page.respond_to? :should

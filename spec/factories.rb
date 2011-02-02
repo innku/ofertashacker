@@ -10,7 +10,7 @@ end
 
 Factory.define :job do |f|
   f.title "Ruby Programmer"
-  f.state "Nuevo Leon"
+  f.city "Monterrey"
   f.full_time true
   f.part_time false
   f.remote true
@@ -23,4 +23,8 @@ Factory.define :required_skill do |rs|
   rs.skill_name "Ruby"
 end
 
+
+Factory.define :skill_category do |c|
+  c.category "Ruby"
+end
 

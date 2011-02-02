@@ -5,12 +5,12 @@ class Job < ActiveRecord::Base
   
   accepts_nested_attributes_for :required_skills
   
-  validates_presence_of :company_id, :title, :description, :state
+  validates_presence_of :company_id, :title, :description, :city
   validates_presence_of :full_time, :if=> :not_part_time_present
 	
 	#SEARCH_TYPES = ['Title','Company', 'State']
 	
-	metropoli_for :state, :as => :sate_name
+	metropoli_for :city, :as => :city_name
 	
   def not_part_time_present
     !part_time
@@ -35,11 +35,26 @@ class Job < ActiveRecord::Base
     id_collection = required_skills.collect{|rs| rs.id }
     id_collection.inject(""){|result,id| result += (id.to_s + (id == id_collection.last ?  '' : ','))}
   end
+
+  def comparar (param)
+    bueno=[]
+    jobs=find(:all)
+    for job in jobs do
+      for skill in job.required_skills do
+        if !skill.to_s.equals(param.to_s)
+        end  
+      end
+    end
+    
+  end
+  
+  #search simple de trabajos
   def self.search(search)
     if search
-      find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+      find(:all, :conditions => ['title LIKE ?', "%#{search}%"], :order=>'created_at DESC')
     else
-      find(:all)
+      find(:all, :order=>'created_at DESC')
     end
   end
+
 end

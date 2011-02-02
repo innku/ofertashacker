@@ -1,4 +1,3 @@
-@wip
 Feature: Company Actions
 
   As a company

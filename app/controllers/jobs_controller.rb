@@ -16,7 +16,7 @@ class JobsController < ApplicationController
   end
   
   def available
-    @jobs= Job.all
+    @jobs= Job.find(:all,:order=>'created_at DESC')
   end
   
   def index
@@ -24,8 +24,12 @@ class JobsController < ApplicationController
       @jobs = current_company.jobs.search(params[:search])
     else
       @jobs = Job.search(params[:search])
-
     end
+    if(params[:skill])
+      skill=params[:skill]
+      @jobs = Job.all(:include => :required_skills, :conditions => ["required_skills.id = ?", skill])
+    end
+    @rs=RequiredSkill.all
   end
   
   def show

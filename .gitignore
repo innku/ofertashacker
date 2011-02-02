@@ -31,8 +31,11 @@ capybara-*.html
 /db/*.sqlite3
 /public/system/*
 /coverage/
+/config/*.yml
+config/*.yml
+
 /spec/tmp/*
 /public/files/*
 **.orig
-config/*.yml
+
 rerun.txt

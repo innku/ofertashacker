@@ -1,9 +1,30 @@
 body {
   position:relative;
   width:85%;
-  background-color: #4b3831;
+  background-color: #1B3037;
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
+}
+body #skill_sidebar{
+    float:left;
+    background:#ccc;
+    padding:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    width:200px;
+    height:600px;
+    margin-right:30px;
+    
+}
+body #skill_sidebar a.unfiltered{
+    display: block;
+    margin-bottom:5px;
+    padding: 3px;
+}
+
+#skill_sidebar a.unfiltered:hover {
+    background-color: #A59B9B;
+    text-decoration: none;
 }
 
 a img {
@@ -28,6 +49,28 @@ a:hover{text-decoration:underline;}
   height: 0;
   overflow: hidden;
 }
+/* float clearing for IE6 */
+* html .clearfix{
+  height: 1%;
+  overflow: visible;
+}
+
+/* float clearing for IE7 */
+*+html .clearfix{
+  min-height: 1%;
+}
+
+/* float clearing for everyone else */
+.clearfix:after{
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  font-size: 0;
+}
+
+
 
 #container {
   width: 100%;
@@ -36,6 +79,25 @@ a:hover{text-decoration:underline;}
   padding: 20px 20px;
   border: solid 1px black;
   margin-top: 20px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 10px #222;
+    -moz-box-shadow: 5px 5px 10px #222;
+}
+
+#footer{
+    text-align:center;
+    margin-top:5px;
+    border: solid 1px black;
+    width:100%;
+    padding: 1px 20px;
+    height:23px;
+    background:#2c89a0;
+	font-size: 14px;
+	color: #FFFFFF;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+    
 }
 .job{
     -moz-border-radius:5px;
@@ -44,8 +106,8 @@ a:hover{text-decoration:underline;}
     background:#fff;
     padding:10px;
     margin:10px;
-    -webkit-box-shadow: -5px 5px 15px #666;
-    -moz-box-shadow: -5px 5px 15px #666;
+    -webkit-box-shadow: -2px 2px 5px #666;
+    -moz-box-shadow: -2px 2px 5px #666;
 }
 #job_wrapper .job{
     width:60%;
@@ -71,7 +133,7 @@ a:hover{text-decoration:underline;}
 #all_skills{
     width:400px;
     position:relative;
-    height:200px;
+    height:300px;
     -webkit-box-shadow: -5px 5px 10px #666;
     -moz-box-shadow: -5px 5px 10px #666;
 }
@@ -79,9 +141,18 @@ a:hover{text-decoration:underline;}
     position:absolute;
     top:0px;
     left:0px;
-    width: 40%;
+    width: 30%;
     color:red;
+}
+.skill, .required_skill{
 
+    cursor:pointer;
+    margin-bottom:2px;
+}
+
+.skill:hover, .required_skill:hover{
+    color:#fff;
+    background:#333;
 }
 #job_required_profile{
     position:absolute;
@@ -100,6 +171,21 @@ a:hover{text-decoration:underline;}
     top:80px;
     left:160px;
 }
+#job_required_profile{list-style-image:url(/images/bullet_checkmark.jpg);}
+#job_skills{list-style-image:url(/images/bullet_cross.gif);}
+#skills ul{
+    list-style:none;
+    
+}
+#skills ul li{
+    padding:5px;
+    width:400px;
+    background:#ddd;
+    margin-bottom:5px;
+    
+}
+#skills ul li a{}
+#skills ul li:hover{background:#ccc;}
 /*Form CSS3*/
 
 input, textarea { 
@@ -145,6 +231,8 @@ input:focus, textarea:focus {
 	-webkit-border-radius: 5px;
 	}
 
+
+
 /*Flash and Errors*/
 #flash_notice, #flash_error, #flash_alert {
   padding: 5px 8px;
@@ -185,6 +273,30 @@ input:focus, textarea:focus {
   color: #fff;
 }
 
+/* mensajes de error para formas */
+.error {
+	/* supply height to ensure consistent positioning for every browser */
+	height:25px;
+	background-color:#2c89a0;
+	border:1px solid #E1E16D;
+	font-size:11px;
+	color:#fff;
+	padding:3px 10px;
+	margin-top:-5px;
+	margin-left:-2px;
+
+
+	/* CSS3 spicing for mozilla and webkit */
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	-moz-border-radius-bottomleft:0;
+	-moz-border-radius-topleft:0;
+	-webkit-border-bottom-left-radius:0;
+	-webkit-border-top-left-radius:0;
+	-moz-box-shadow:0 0 6px #ddd;
+	-webkit-box-shadow:0 0 6px #ddd;
+}
+
 .error_messages p {
   margin: 8px 10px;
 }
@@ -192,3 +304,4 @@ input:focus, textarea:focus {
 .error_messages ul {
   margin: 0;
 }
+

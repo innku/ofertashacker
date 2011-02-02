@@ -1,4 +1,7 @@
 var index = 0;
+ $(document).ready(function() {
+  $("form").validator();
+ });
 
 $(function(){
 	
@@ -17,7 +20,7 @@ $(function(){
 		$(this).remove();
 		
 	})
-	
+
 });
 
 function required_skill_template(id, text){

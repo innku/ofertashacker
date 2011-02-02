@@ -98,6 +98,8 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    mocha (0.9.10)
+      rake
     nifty-generators (0.4.3)
     nokogiri (1.4.4)
     paperclip (2.3.8)
@@ -179,6 +181,7 @@ DEPENDENCIES
   factory_girl_rails
   launchy
   metropoli!
+  mocha
   nifty-generators
   paperclip
   rails (= 3.0.1)

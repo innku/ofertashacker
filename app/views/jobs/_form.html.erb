@@ -1,4 +1,5 @@
-<%= form_for @job do |f| %>
+
+<%= form_for @job do |f| %> 
   <% if @job.errors.any? %>
     <div id="error_explanation">
       
@@ -13,24 +14,20 @@
   <% end %>
   <h2><%= t('.job_detail') %></h2>
   
-  <p><%= f.label :title %><br />
-  <%= f.text_field :title %></p>
+  <p><%= f.label :title, t('.title') + " *" %><br />
+  <%= f.text_field :title, :required => "required" %></p>
   
-  <p><%= f.label :state %><br />
-   <%=f.text_field :state, :class => 'state_autocomplete'%></p>
+  <p><%= f.label :city, t('.city') + " *" %><br />
+   <%=f.text_field :city, :class => 'city_autocomplete', :required => "required"%></p>
   
   <h5><%= t('.job_type') %></h5>
-  <p><%= f.label :full_time %><br /> 
-  <%= f.check_box :full_time %></p>
+  <p><%= f.check_box :full_time %> <%= f.label :full_time %> </p>
   
-  <p><%= f.label :part_time %><br /> 
-  <%= f.check_box :part_time %></p>
+  <p><%= f.check_box :part_time %> <%= f.label :part_time %></p>
   
-  <p><%= f.label :remote %><br /> 
-  <%= f.check_box :remote %></p>
+  <p><%= f.check_box :remote %> <%= f.label :remote %></p>
   
-  <p><%= f.label :flexible %><br /> 
-  <%= f.check_box :flexible %></p>
+  <p><%= f.check_box :flexible %> <%= f.label :flexible %> </p>
   
  
   <h2><%= t('.required_profile') %></h2>  
@@ -61,10 +58,12 @@
     <%=image_tag 'arrow.jpg', :id=>"arrow"%>
     <%=image_tag 'arrow_back.jpg', :id=>"arrow_back"%>
   </div>  
-
-  <h2><%= t('.job_description') %></h2>
-  <p><%= f.label :description %><br /> 
-  <%= f.text_area :description %></p>
+  <p><%= f.label :extra_skill, t('.extra_skill') %><br />
+   <%=f.text_field :extra_skill, :cols=>3%></p>
+   
+  <p><%= f.label :description, t('.job_description') + " *" %><br /> 
+  <%= f.text_area :description, :required => "required" %></p>
   
-  <p><%= f.submit t(:create) %> | <%= link_to t(:cancel), jobs_path() %></p>
+  <p><%= f.submit t(:create) %>  <%= button_to t(:cancel), jobs_path() %></p>
 <% end %>
+

@@ -1,10 +1,11 @@
 es: 
-  
+
   #General
   edit:                   "Editar"
   cancel:                 "Cancelar"
   update:                 "Actualizar"
   create:                 "Crear"
+
   
   layouts:
     application: 
@@ -12,13 +13,26 @@ es:
       sign_out:           "Salir"
       my_vacancies:       "Mis ofertas"
       all_vacancies:      "Ofertas disponibles"
+      required_skills:    "Ver Habilidades"
+      skill_category:     "Ver Categorias"
       
   #Models
-  companies: 
+  companies:
+    sessions:
+      new:
+        email:            "Correo electrónico"
+        password:         "Contraseña"  
+        remember_me:      "Recordar datos"
     registrations:
       new:
         company_info:     "Datos de la empresa"
         company_desc:     "Descripción de la empresa"
+        title:            "Nombre" 
+        city:             "Ciudad"
+        email:            "Correo electrónico"
+        password:         "Contraseña"
+        password_confirmation: "Confirmar contraseña"
+        description:      "Descripción de la empresa" 
     index:
       companies:          "Listado de compañías registradas"
       city:               "Ciudad"
@@ -35,31 +49,42 @@ es:
   
   jobs: 
     available: 
-      vacancies:       "Lista de todas las vacantes en Ruby Pros"        
+      vacancies:       "Vacantes más recientes de Ruby Pros"        
     jobs:
       in:                 "en"
       full_time:          "Tiempo completo"
       part_time:          "Medio tiempo"
       remote:             "Remoto"
       flexible:           "Horario flexible"
-      more:               "Ver más"  
+      more:               "Ver más"
     form:
+      title:              "Nombre"  
+      city:               "Ciudad"
       job_detail:         "Datos de la Oferta"
       job_type:           "Tipo de Empleo"
       required_profile:   "Perfil requerido"
       job_description:    "Descripción de la Oferta"
       skills:             "Habilidades"
+      extra_skill:        "Habilidades Extra"
     index:
-      my_vacancies:       "Lista de todas las vacantes de"
+      my_vacancies:       "Vacantes más recientes de "
       in:                 "en"
       full_time:          "Tiempo completo"
       part_time:          "Medio tiempo"
       remote:             "Remoto"
       flexible:           "Horario flexible"
       more:               "Ver más"
-  
+  required_skills:
+    form:
+      skill_category:     "Categoria"
+      skill_detail:       "Datos de la Habilidad"
+      skill_name:         "Nombre"
   #Notice messages
   notice:
+    required_skill:
+      successfully_updated: "La habilidad ha sido actualizada"        
+      successfully_created: "La habilidad ha sido creada"
+      successfully_deleted: "La habilidad ha sido borrada"
     company:
       successfully_updated: "Tu información ha sido actualizada"
     job:

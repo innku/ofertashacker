@@ -1,2 +1,8 @@
-<h1>RequiredSkills#index</h1>
-<p>Find me in app/views/required_skills/index.html.erb</p>
+<% custom_title "Skills requeridos"%>
+<%for skill in @required_skills do%>
+<%=skill.skill_name%> 
+<%=link_to "Ver"%> |
+<%=link_to "Editar", edit_required_skill_path(skill)%> |
+<%= link_to 'Borrar', skill, :confirm => '¿Estas Seguro que deseas borrar la oferta?', :method => :delete %>
+<br />
+<%end%>
