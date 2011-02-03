@@ -24,3 +24,5 @@ group :development, :test do
 end
 gem "mocha", :group => :test
 gem 'RedCloth'
+gem "meta_search"
+gem "meta_where"

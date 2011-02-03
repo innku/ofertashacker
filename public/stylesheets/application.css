@@ -116,7 +116,8 @@ a:hover{text-decoration:underline;}
     overflow:hidden;
     position:relative;
 }
-#job_wrapper .job img{
+
+#job_wrapper .job img#logo{
     position:absolute;
     top:10px;
     right:10px;

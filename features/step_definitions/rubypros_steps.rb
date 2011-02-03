@@ -21,7 +21,6 @@ Given /^I am logged as a "([^"]*)"$/ do |email|
   click_button "company_submit"
 end
 
-
 Given /^there is a company with name "([^"]*)" in city "([^"]*)"$/ do |name, city|
   @company = Factory(:company, :title => name, :city => city)
 end

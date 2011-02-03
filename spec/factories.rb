@@ -21,6 +21,7 @@ end
 
 Factory.define :required_skill do |rs|
   rs.skill_name "Ruby"
+  rs.skill_category_id 1
 end
 
 

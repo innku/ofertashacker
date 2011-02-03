@@ -52,8 +52,9 @@ Feature: Admin Actions
     And I press "Crear"    
     Then I should see "La habilidad ha sido actualizada"    
     And I should see "Ruby on Rails"    
-  
+
   Scenario: I can create a new required skill
+    And there is a skill category with name "Front end"
     And I am on the new required skill page
     Then I fill in "required_skill_skill_name" with "Ruby on Rails"
     And I press "Crear"    

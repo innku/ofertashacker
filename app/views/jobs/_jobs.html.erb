@@ -1,15 +1,22 @@
 
-<div id="job_wrapper">
+<div id="job_wrapper" class="discounted-item reduced">
   <%@jobs.each do |job| %>
-      <div class="job">
+      <div class="job <%=addclass job%>">
         <h1><%= truncate(job.title) %></h1>
         <p><%= job.company.title %> <%= t('.in') %> <%= job.city %></p>
         <%= get_job_type(job) %>
-        <p><%= link_to "Ver más", job_path(job) %></p>
-        <%=image_tag job.company.logo.url(:thumb)%>
+        <%=image_tag job.company.logo.url(:thumb), :id=>'logo'%>
+        <div id="features">
+          <%= job.full_time ? image_tag("full_time.gif") : ""%>
+          <%= job.part_time ? image_tag("half_time.gif") : ""%>
+          <%= job.remote ? image_tag("remote.gif") : ""%>
+          <%= job.flexible ? image_tag("flexible.gif") : ""%>
+        </div>
         <div id="options">
+                <p><%= link_to "Ver más", job_path(job) %></p>
             <%if can? :manage, job%>
               <div id="admin">
+              
               <%=link_to "Editar", edit_job_path(job)%> | 
                 <%= link_to 'Borrar', job, :confirm => '¿Estas Seguro que deseas borrar la oferta?', :method => :delete %>
               </div>
