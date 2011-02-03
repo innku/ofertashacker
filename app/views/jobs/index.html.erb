@@ -1,13 +1,5 @@
 <div class="clearfix">
-  <% custom_title "Ofertas disponibles"%>
-<p id="picker">
-<a href="#" id="all" class="current">Todas</a> |
-<a href="#" id="full_time" class="filter">Tiempo completo</a> |
-<a href="#" id="part_time" class="filter">Medio tiempo</a> |
-<a href="#" id="remote" class="filter">Remoto</a> |
-<a href="#" id="flexible" class="filter">Flexible</a>
-</p>
-  
+  <% custom_title "Ofertas disponibles"%> 
   <div id="skill_sidebar">
     <h3>Filtrar Ofertas</h3>
     <% for skill in @rs do %>
@@ -20,6 +12,13 @@
       <%=link_to "X", jobs_path%>
       <%=RequiredSkill.find(params[:skill]).skill_name%>
     <% end %>
+    <ul>
+      <li id="all">Ver Todas</li>
+      <li id="full_time">Tiempo completo</li>
+      <li id="part_time">Medio tiempo</li>
+      <li id="remote">Remoto</li>
+      <li id="flexible">Flexible</li>
+    </ul>
 
   </div>
   <div id="skill_main">
@@ -30,7 +29,7 @@
       Lista de ofertas disponibles en Ruby Pros
     <%end%>
     </h1>
-    
+     
     <%=render 'jobs'%>
   </div>
 </div>

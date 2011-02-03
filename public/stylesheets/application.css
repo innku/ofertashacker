@@ -26,6 +26,18 @@ body #skill_sidebar a.unfiltered{
     background-color: #A59B9B;
     text-decoration: none;
 }
+#skill_sidebar li{
+    list-style:none;
+    cursor:pointer; 
+    margin-bottom:5px;
+    padding: 3px;
+    text-decoration: none;
+       
+}
+
+#skill_sidebar li:hover, #skill_sidebar li.selected{
+        background-color: #A59B9B;  
+}
 
 a img {
   border: none;
@@ -84,6 +96,7 @@ a:hover{text-decoration:underline;}
     -webkit-box-shadow: 5px 5px 10px #222;
     -moz-box-shadow: 5px 5px 10px #222;
 }
+
 
 #footer{
     text-align:center;

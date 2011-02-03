@@ -1,71 +1,30 @@
-(function($){
-
-// Shuffle function from: http://james.padolsey.com/javascript/shuffling-the-dom/
-    
-$.fn.shuffle = function() {
-
-        var allElems = this.get(),
-            getRandom = function(max) {
-                return Math.floor(Math.random() * max);
-            },
-            shuffled = $.map(allElems, function(){
-                var random = getRandom(allElems.length),
-                    randEl = $(allElems[random]).clone(true)[0];
-                allElems.splice(random, 1);
-                return randEl;
-            });
-        
-        this.each(function(i){
-            $(this).replaceWith($(shuffled[i]));
-        });
-        
-        return $(shuffled);
-    };
-})(jQuery);
-   
-$(function(){
-	       
-   $(".discounted-item")
-        .css("opacity","0.8")
-       .hover(function(){
-           $(this).css("opacity","1");
-       }, function() {
-           $(this).css("opacity","0.8");
-       })
-       /*.click(function(){
-           location.href = $(this).attr("rel"); 
-           return false;
-       }) 
-       
-       UNCOMMENT THIS TO MAKE THE BLOCKS CLICKABLE TO THEIR REL ATTRIBUTES
-       
-       */;
-       
-   $("#all").click(function(){
-       $(".discounted-item").slideDown();
-       $("#picker a").removeClass("current");
-       $(this).addClass("current");
-       return false;
-   });
-   
-   $(".filter").click(function(){
-        var thisFilter = $(this).attr("id");
-        $(".discounted-item").slideUp();
-        $("."+ thisFilter).slideDown();
-        $("#picker a").removeClass("current");
-        $(this).addClass("current");
-        return false;
-   });
-   
-   $(".discounted-item").shuffle();
-
-});
-
-
 
 var index = 0;
  $(document).ready(function() {
   $("form").validator();
+  $("li#full_time").click(function(){
+    $('.job').fadeOut();
+    $('.job.full_time').fadeIn();
+    $('.job.full_time').each().addClass('selected');
+    $('li#full_time').addClass('selected');
+  });
+  $("li#part_time").click(function(){
+    $('.job').fadeOut();
+    $('.job.part_time').fadeIn();
+    $('li#part_time').addClass('selected');
+  });
+  $("li#remote").click(function(){
+    $('.job').fadeOut();
+    $('.job.remote').fadeIn();
+    $('li#remote').addClass('selected');
+
+  });
+  $("li#flexible").click(function(){
+    $('.job').fadeOut();
+    $('.job.flexible').fadeIn();
+    $('li#flexible').addClass('selected');
+  });
+
  });
 
 $(function(){
