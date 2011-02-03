@@ -90,7 +90,6 @@ ActiveRecord::Schema.define(:version => 20110201155355) do
 
   create_table "required_skills", :force => true do |t|
     t.string   "skill_name"
-    t.integer  "job_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "skill_category_id"

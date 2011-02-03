@@ -23,3 +23,4 @@ group :development, :test do
   gem "selenium-client"
 end
 gem "mocha", :group => :test
+gem 'RedCloth'

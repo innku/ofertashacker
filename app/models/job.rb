@@ -16,20 +16,14 @@ class Job < ActiveRecord::Base
     !part_time
   end
   
-<<<<<<< HEAD
 
-  def skills_to_delete(ids)
-    ids.map {|id| self.required_skills.find(id).destroy }
-  end      
-=======
   def required_skill_ids_string=(string_ids)
     unless string_ids.blank?
       self.required_skill_ids = string_ids.split(',')
     else
       self.required_skill_ids = []
     end
-  end
->>>>>>> 43046c700597b8fe5953973e3d7bb3ad6e27fa7d
+  end 
   
   def required_skill_ids_string
     id_collection = required_skills.collect{|rs| rs.id }

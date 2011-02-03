@@ -44,16 +44,12 @@
     
     <ul id="job_required_profile">
         <h5><%= t('.required_profile') %></h5>
-<<<<<<< HEAD
- 
-=======
         <% @job.required_skills.each do |required_skill| %>
         <li class="required_skill" data-skill-id='<%= required_skill.id %>' >
           <%= required_skill.skill_name%>
         </li>
       <% end %> 
         <%= f.hidden_field :required_skill_ids_string %>
->>>>>>> 43046c700597b8fe5953973e3d7bb3ad6e27fa7d
     </ul>
     <%=image_tag 'arrow.jpg', :id=>"arrow"%>
     <%=image_tag 'arrow_back.jpg', :id=>"arrow_back"%>
