@@ -1,33 +1,48 @@
+$(document).ready(function() {
+  $("form").validator();
+  
+  $("li#all").click(function(){
+    $('.job').each(function() {
+        $(this).fadeIn();   
+    });
+    $('#features li').removeClass('selected');
+    $('#features li#all').addClass('selected');
+  });
+  
+  
+  $("#features li.filter").click(function(){
+      $('#features li#all').removeClass('selected');
+    var thisFilter = $(this).attr("id");
+    /*
+    if ($(this).hasClass('selected')){
+         $('.job').each(function() {
+            if($(this).hasClass(thisFilter)){
+                $(this).fadeIn();
+            }
+          }
+        )
+        $(this).removeClass('selected'); 
+           
+    }else{
+    */
+         $('.job').each(function() {
+            if(!$(this).hasClass(thisFilter)){
+                $(this).fadeOut();
+            }
+          }
+        )
+        $(this).addClass('selected');
+    //}
+  });
+
+});
+
+
 
 var index = 0;
- $(document).ready(function() {
-  $("form").validator();
-  $("li#full_time").click(function(){
-    $('.job').fadeOut();
-    $('.job.full_time').fadeIn();
-    $('.job.full_time').each().addClass('selected');
-    $('li#full_time').addClass('selected');
-  });
-  $("li#part_time").click(function(){
-    $('.job').fadeOut();
-    $('.job.part_time').fadeIn();
-    $('li#part_time').addClass('selected');
-  });
-  $("li#remote").click(function(){
-    $('.job').fadeOut();
-    $('.job.remote').fadeIn();
-    $('li#remote').addClass('selected');
 
-  });
-  $("li#flexible").click(function(){
-    $('.job').fadeOut();
-    $('.job.flexible').fadeIn();
-    $('li#flexible').addClass('selected');
-  });
-
- });
-
-$(function(){
+$(function()
+{
 	
 	$(".skill").live('click', function(){
 	    required_skill_html = required_skill_template($(this).attr('data-skill-id'), $(this).text());

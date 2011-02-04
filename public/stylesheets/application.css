@@ -26,18 +26,19 @@ body #skill_sidebar a.unfiltered{
     background-color: #A59B9B;
     text-decoration: none;
 }
-#skill_sidebar li{
+#features li{
     list-style:none;
     cursor:pointer; 
     margin-bottom:5px;
     padding: 3px;
     text-decoration: none;
+    display:inline;
+    padding:4px;
        
 }
 
-#skill_sidebar li:hover, #skill_sidebar li.selected{
-        background-color: #A59B9B;  
-}
+#features li:hover{background-color: #ddd;}
+#features li.selected{background-color: #2c89a0;color:white;}
 
 a img {
   border: none;
