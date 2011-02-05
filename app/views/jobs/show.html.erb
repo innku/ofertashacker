@@ -3,13 +3,13 @@
   <h1><%=@job.company.title%> <%=image_tag @job.company.logo.url%>
   </div>
   <h2><%= @job.title%></h2>
-  En <%=@job.state%>
+  En <%=@job.city%>
   <p>Características</p>
     <ul>
-      <li><%= @job.full_time ? "Tiempo Completo" : nil%></li>
-      <li><%= @job.part_time ? "Medio Tiempo" : nil%></li>
-      <li><%= @job.remote ? "Remoto" : nil%></li>
-      <li><%= @job.flexible ? "Horario Flexible" : nil%></li>
+      <%= @job.full_time ? '<li> Tiempo Completo </li>'.html_safe : nil%>
+      <%= @job.part_time ? "<li>Medio Tiempo</li>".html_safe : nil%>
+      <%= @job.remote ? "<li>Remoto</li>".html_safe : nil%>
+      <%= @job.flexible ? "<li>Horario Flexible</li>".html_safe : nil%>
     </ul>
      <h2>Habilidades Requeridas</h2>
     <ul>

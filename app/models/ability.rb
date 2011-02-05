@@ -16,6 +16,7 @@ class Ability
       end
     else  
       can :read, RequiredSkill
+      can :read, Company
       can :manage, Company do |c|
         c == company
       end

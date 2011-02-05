@@ -34,7 +34,6 @@ body #skill_sidebar a.unfiltered{
     text-decoration: none;
     display:inline;
     padding:4px;
-       
 }
 
 #features li:hover{background-color: #ddd;}
@@ -131,7 +130,7 @@ a:hover{text-decoration:underline;}
     position:relative;
 }
 
-#job_wrapper .job img#logo{
+#job_wrapper .job a#logo{
     position:absolute;
     top:10px;
     right:10px;

@@ -14,7 +14,7 @@
 <% if can? :manage, @company %>
   <%= link_to t(:edit), edit_company_path(@company) %> | 
 <% end %>
-<% if current_company.admin? %>
+<% if current_company && current_company.admin? %>
   <%= link_to t('.company_index'), companies_path() %>
 <% end %>
 

@@ -8,7 +8,7 @@ class Job < ActiveRecord::Base
   validates_presence_of :company_id, :title, :description, :city
   validates_presence_of :full_time, :if=> :not_part_time_present
 	
-	#SEARCH_TYPES = ['Title','Company', 'State']
+	SEARCH_TYPES = ['Title','Company', 'City']
 	
 	metropoli_for :city, :as => :city_name
 	
@@ -43,9 +43,9 @@ class Job < ActiveRecord::Base
   end
   
   #search simple de trabajos
-  def self.search(search)
+  def self.search(search, type)
     if search
-      find(:all, :conditions => ['title LIKE ?', "%#{search}%"], :order=>'created_at DESC')
+      find(:all, :conditions => [''+type+' LIKE ?', "%#{search}%"], :order=>'created_at DESC')
     else
       find(:all, :order=>'created_at DESC')
     end

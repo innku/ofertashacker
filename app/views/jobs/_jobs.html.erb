@@ -3,10 +3,10 @@
   <ul>
   <%@jobs.each do |job| %>
       <li class="job <%=addclass job%>">
-        <h1><%= truncate(job.title) %></h1>
+        <h1><%=link_to truncate(job.title), job_path(job) %></h1>
         <p><%= job.company.title %> <%= t('.in') %> <%= job.city %></p>
         <%= get_job_type(job) %>
-        <%=image_tag job.company.logo.url(:thumb), :id=>'logo'%>
+        <%=link_to (image_tag job.company.logo.url(:thumb)), company_path(job.company), :id=>'logo'%>
         <div id="features">
           <%= job.full_time ? image_tag("full_time.gif") : ""%>
           <%= job.part_time ? image_tag("half_time.gif") : ""%>
@@ -23,7 +23,7 @@
               </div>
             <%end%>
         </div><!--/options -->
-      </li>
+      </lijob_path(job)>
   <% end %>
   </ul>
 </div>
