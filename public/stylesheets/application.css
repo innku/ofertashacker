@@ -16,28 +16,19 @@ body #skill_sidebar{
     margin-right:30px;
     
 }
-body #skill_sidebar a.unfiltered{
-    display: block;
-    margin-bottom:5px;
-    padding: 3px;
-}
 
-#skill_sidebar a.unfiltered:hover {
-    background-color: #A59B9B;
-    text-decoration: none;
-}
-#features li{
+#features li, #skill_sidebar li{
     list-style:none;
     cursor:pointer; 
     margin-bottom:5px;
     padding: 3px;
     text-decoration: none;
-    display:inline;
+
     padding:4px;
 }
-
-#features li:hover{background-color: #ddd;}
-#features li.selected{background-color: #2c89a0;color:white;}
+#features li{display:inline;}
+#features li:hover,#skill_sidebar li:hover{background-color: #ddd;}
+#features li.selected, #skill_sidebar li.selected{background-color: #2c89a0;color:white;}
 
 a img {
   border: none;

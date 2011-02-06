@@ -13,6 +13,9 @@
           <%= job.remote ? image_tag("remote.gif") : ""%>
           <%= job.flexible ? image_tag("flexible.gif") : ""%>
         </div>
+         <%for skill in job.required_skills%>
+          <%=skill.skill_name%>, 
+        <%end%>
         <div id="options">
                 <p><%= link_to "Ver más", job_path(job) %></p>
             <%if can? :manage, job%>

@@ -2,17 +2,14 @@
 
   <div id="skill_sidebar">
     <h3>Filtrar Ofertas</h3>
+    <ul>
+      <li id="all">Ver todas</li>
     <% for skill in @rs do %>
         <% unless skill.id.to_s==params[:skill].to_s%>
-         <%= link_to skill.skill_name, jobs_path(:skill=>skill.id), :class=>'unfiltered'%>
+         <li class="unfiltered" id="<%=skill.id%>"><%=skill.skill_name%></li>
         <%end%>
     <% end %>
-    <h3>Filtrado por: </h3>
-    <% if params[:skill]%>
-      <%=link_to "X", jobs_path%>
-      <%=RequiredSkill.find(params[:skill]).skill_name%>
-    <% end %>
-
+    </ul>
 
   </div>
   <div id="skill_main">

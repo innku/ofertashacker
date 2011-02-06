@@ -1,30 +1,34 @@
 $(document).ready(function() {
+  //jquery forms
   $("form").validator();
   
+  //filtering by skills
+  
+  $("li.unfiltered").click(function(){
+        $('li#all').removeClass('selected');
+        var thisFilter = $(this).attr("id");
+         $('.job').each(function() {
+            if(!$(this).hasClass('rs'+thisFilter+"")){
+                $(this).fadeOut();
+            }
+          }
+        )
+        $(this).addClass('selected');
+  }); 
+  //filtering by type
   $("li#all").click(function(){
     $('.job').each(function() {
         $(this).fadeIn();   
     });
     $('#features li').removeClass('selected');
-    $('#features li#all').addClass('selected');
+    $('#skill_sidebar li').removeClass('selected');
+    $('li#all').addClass('selected');
   });
   
   
   $("#features li.filter").click(function(){
-      $('#features li#all').removeClass('selected');
+      $('li#all').removeClass('selected');
     var thisFilter = $(this).attr("id");
-    /*
-    if ($(this).hasClass('selected')){
-         $('.job').each(function() {
-            if($(this).hasClass(thisFilter)){
-                $(this).fadeIn();
-            }
-          }
-        )
-        $(this).removeClass('selected'); 
-           
-    }else{
-    */
          $('.job').each(function() {
             if(!$(this).hasClass(thisFilter)){
                 $(this).fadeOut();
@@ -32,7 +36,6 @@ $(document).ready(function() {
           }
         )
         $(this).addClass('selected');
-    //}
   });
 
 });
