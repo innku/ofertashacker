@@ -11,6 +11,7 @@ Rubypros::Application.routes.draw do
   resources :required_skills
   
   match 'available'=>'jobs#available', :as=>:available
+  # match "jobs/see/:id" => "jobs#show"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
