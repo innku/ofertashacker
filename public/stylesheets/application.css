@@ -103,6 +103,10 @@ a:hover{text-decoration:underline;}
 	-webkit-border-radius: 5px;
     
 }
+#contacto img{
+    position:relative;
+    top:17px;
+}
 .job{
     -moz-border-radius:5px;
     -webkit-border-radius:5px;
@@ -133,6 +137,7 @@ a:hover{text-decoration:underline;}
     bottom:10px;
     right:10px;
 }
+
 /*Job Skills*/
 
 #all_skills{
@@ -192,7 +197,7 @@ a:hover{text-decoration:underline;}
 #skills ul li a{}
 #skills ul li:hover{background:#ccc;}
 /*Form CSS3*/
-
+/*
 input, textarea { 
 	padding: 9px;
 	border: solid 1px #D4D4D4;
@@ -237,7 +242,7 @@ input:focus, textarea:focus {
 	}
 
 
-
+*/
 /*Flash and Errors*/
 #flash_notice, #flash_error, #flash_alert {
   padding: 5px 8px;
