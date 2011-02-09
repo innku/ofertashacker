@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110201155355) do
+ActiveRecord::Schema.define(:version => 20110208151539) do
 
   create_table "cities", :force => true do |t|
     t.integer "state_id"
@@ -46,6 +46,12 @@ ActiveRecord::Schema.define(:version => 20110201155355) do
     t.datetime "logo_updated_at"
     t.string   "role",                                :default => "member"
     t.integer  "city_id"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "linkedin"
+    t.string   "phone1"
+    t.string   "phone2"
+    t.string   "phone3"
   end
 
   add_index "companies", ["city_id"], :name => "index_companies_on_city_id"
@@ -90,6 +96,7 @@ ActiveRecord::Schema.define(:version => 20110201155355) do
 
   create_table "required_skills", :force => true do |t|
     t.string   "skill_name"
+    t.integer  "job_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "skill_category_id"

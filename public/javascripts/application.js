@@ -1,6 +1,6 @@
 $(document).ready(function() {
   //jquery forms
-  $("form").validator();
+ // $("form").validator();
   
   //filtering by skills
   
