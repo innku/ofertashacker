@@ -1,79 +1,79 @@
 <%= stylesheet_link_tag "tabbed-forms", "jquery-ui" %>
 <%= javascript_include_tag "tabbed-forms"%>
 <% custom_title "Registro"%>
-<h2><%= t('.company_info') %></h2>
-<div id="wrapper">
-  <div id="steps">
+  <h2><%= t('.company_info') %></h2>
+  <div id="wrapper">
+    <div id="steps">
 
-    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name),  :html => { :id=>"formElem", :name=>"formElem", :multipart => true }) do |f| %>
-      <%= devise_error_messages! %>
-      <fieldset class="step"> 
-        <legend>Información principal</legend>
-        <p><%= f.label :title, t('.title') + " *" %><br />
-        <%= f.text_field :title, :required=>"required", :pattern=>"[a-zA-Z ]{5,}" %></p>
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name),  :html => { :id=>"formElem", :name=>"formElem", :multipart => true }) do |f| %>
+        <%= devise_error_messages! %>
+        <fieldset class="step"> 
+          <legend>Información principal</legend>
+          <p><%= f.label :title, t('.title') + " *" %><br />
+          <%= f.text_field :title, :required=>"required", :pattern=>"[a-zA-Z ]{5,}" %></p>
 
-        <p><%= f.label :city, t('.city') + " *" %><br />
-        <%= f.text_field :city, :class => 'city_autocomplete', :required=>"required"%></p></p>
-        
-        <p><%= f.label :email,  t('.email') + " *" %><br />
-        <%= f.text_field :email, :required=>"required", :type=>"email" %></p>
+          <p><%= f.label :city, t('.city') + " *" %><br />
+          <%= f.text_field :city, :class => 'city_autocomplete', :required=>"required"%></p></p>
+          
+          <p><%= f.label :email,  t('.email') + " *" %><br />
+          <%= f.text_field :email, :required=>"required", :type=>"email" %></p>
 
-        <p><%= f.label :password,  t('.password') + " *" %><br />
-        <%= f.password_field :password, :required=>"required" %></p>
+          <p><%= f.label :password,  t('.password') + " *" %><br />
+          <%= f.password_field :password, :required=>"required" %></p>
 
-        <p><%= f.label :password_confirmation,  t('.password_confirmation') + " *" %><br />
-        <%= f.password_field :password_confirmation, :required=>"required"%></p>
-      </fieldset>
-      <fieldset class="step"> 
-        <legend>Account</legend>
-        <p><%= f.label :logo %><br />
-        <%= f.file_field :logo %></p>
-        
-        <p><%= f.label :description,  t('.description') + " *" %><br />
-        <%= f.text_area :description, :required=>"required" %></p>
-      </fieldset>
-      <fieldset class="step"> 
-        <legend>Contacto</legend>
-        <div id="contacto">
-          <h3>Contacto:</h3>
-          <p><%= image_tag 'facebook-logo.gif'%>
-        <%= f.text_field :facebook %></p>
-          <p><%= image_tag 'twitter-logo.gif'%>
-        <%= f.text_field :twitter %></p>
-         <p><%= image_tag 'linkedin-logo.jpg'%>
-        <%= f.text_field :linkedin %></p>
-          <p><%= image_tag 'phone-logo.jpg'%>
-        <%= f.text_field :phone1 %></p>
-          <p><%= image_tag 'phone-logo.jpg'%>
-        <%= f.text_field :phone2 %></p>
-          <p><%= image_tag 'phone-logo.jpg'%>
-        <%= f.text_field :phone3 %></p>
-        </div>
-      </fieldset>
-      <fieldset class="step">
-        <p><%= f.submit "Crear" %></p>
-      </fieldset>
-    <% end %>
-  </div><!--/steps -->
-  <div id="navigation" style="display:none;">
-		<ul>
-			<li class="selected">
-				<a href="#">Información principal</a>
-			</li>
-			<li>
-				<a href="#">Account</a>
-			</li>
-			<li>
-				<a href="#">Payment</a>
-			</li>
-			<li>
-				<a href="#">Settings</a>
-			</li>
-			<li>
-				<a href="#">Confirm</a>
-			</li>
-		</ul>
-	</div>
-  </div>
-</div>  
+          <p><%= f.label :password_confirmation,  t('.password_confirmation') + " *" %><br />
+          <%= f.password_field :password_confirmation, :required=>"required"%></p>
+        </fieldset>
+        <fieldset class="step"> 
+          <legend>Account</legend>
+          <p><%= f.label :logo %><br />
+          <%= f.file_field :logo %></p>
+          
+          <p><%= f.label :description,  t('.description') + " *" %><br />
+          <%= f.text_area :description, :required=>"required" %></p>
+        </fieldset>
+        <fieldset class="step"> 
+          <legend>Contacto</legend>
+          <div id="contacto">
+            <h3>Contacto:</h3>
+            <p><%= image_tag 'facebook-logo.gif'%>
+          <%= f.text_field :facebook %></p>
+            <p><%= image_tag 'twitter-logo.gif'%>
+          <%= f.text_field :twitter %></p>
+           <p><%= image_tag 'linkedin-logo.jpg'%>
+          <%= f.text_field :linkedin %></p>
+            <p><%= image_tag 'phone-logo.jpg'%>
+          <%= f.text_field :phone1 %></p>
+            <p><%= image_tag 'phone-logo.jpg'%>
+          <%= f.text_field :phone2 %></p>
+            <p><%= image_tag 'phone-logo.jpg'%>
+          <%= f.text_field :phone3 %></p>
+          </div>
+        </fieldset>
+        <fieldset class="step">
+          <p><%= f.submit "Crear" %></p>
+        </fieldset>
+      <% end %>
+    </div><!--/steps -->
+    <div id="navigation" style="display:none;">
+		  <ul>
+			  <li class="selected">
+				  <a href="#">Información principal</a>
+			  </li>
+			  <li>
+				  <a href="#">Account</a>
+			  </li>
+			  <li>
+				  <a href="#">Payment</a>
+			  </li>
+			  <li>
+				  <a href="#">Settings</a>
+			  </li>
+			  <li>
+				  <a href="#">Confirm</a>
+			  </li>
+		  </ul>
+	  </div>
+    </div>
+  </div>  
 

@@ -13,6 +13,7 @@
     <%= stylesheet_link_tag 'style', :media=>"screen" %>
 	  <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 	  <link href='http://fonts.googleapis.com/css?family=Arvo:bold' rel='stylesheet' type='text/css'>
+
     <%= javascript_include_tag :defaults %>
     <%= javascript_include_tag 'rails' %>
     <%= javascript_include_tag 'validator' %>
@@ -45,9 +46,9 @@
 		  </ul>
 		  
 		  <div class="logo clear span-5">
-			  <a href=""><img class="" alt="Ruby Job Board" src="images/jobBoard_logo.png" width="194" height="150"></a>
+			  <a href=""><%=image_tag "jobBoard_logo.png", :alt=>"Ruby Job Board", :width=>"194", :height=>"150" %></a>
 			</div>
-	    <%= render 'layouts/filter'%>
+
 		  <div><img class="" alt="" src="images/shareIcon.png" width="" height=""></div>
 		</div>
 		
@@ -55,7 +56,15 @@
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
       <%= content_tag :h1, yield(:title) if show_title? %>
-      <%= yield %>
+
+      <%=request.path%>
+      <% if check_path_for request.path%>
+            <div class="mainContent span-23">
+              <%= yield %>
+            </div>
+      <%else%>
+              <%= yield %>
+      <%end%>
       
 		<div id="footer" class="clear span-24 last">
       <ul>

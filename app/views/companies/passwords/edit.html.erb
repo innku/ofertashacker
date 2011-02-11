@@ -1,17 +1,18 @@
-<% custom_title "Modificar contraseña"%>
-<h2>Cambiar contraseña</h2>
 
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
+  <% custom_title "Modificar contraseña"%>
+  <h2>Cambiar contraseña</h2>
 
-  <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
+  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+    <%= devise_error_messages! %>
+    <%= f.hidden_field :reset_password_token %>
 
-  <p><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></p>
+    <p><%= f.label :password %><br />
+    <%= f.password_field :password %></p>
 
-  <p><%= f.submit "Cambiar" %></p>
-<% end %>
+    <p><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %></p>
 
-<%= render :partial => "companies/shared/links" %>
+    <p><%= f.submit "Cambiar" %></p>
+  <% end %>
+
+  <%= render :partial => "companies/shared/links" %>
