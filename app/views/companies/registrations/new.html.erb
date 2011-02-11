@@ -3,7 +3,7 @@
 <% custom_title "Registro"%>
 <h2><%= t('.company_info') %></h2>
 <div id="wrapper">
-  <div id="step">
+  <div id="steps">
 
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name),  :html => { :id=>"formElem", :name=>"formElem", :multipart => true }) do |f| %>
       <%= devise_error_messages! %>
@@ -24,7 +24,7 @@
         <p><%= f.label :password_confirmation,  t('.password_confirmation') + " *" %><br />
         <%= f.password_field :password_confirmation, :required=>"required"%></p>
       </fieldset>
-      <fieldset>
+      <fieldset class="step"> 
         <legend>Account</legend>
         <p><%= f.label :logo %><br />
         <%= f.file_field :logo %></p>
@@ -32,7 +32,7 @@
         <p><%= f.label :description,  t('.description') + " *" %><br />
         <%= f.text_area :description, :required=>"required" %></p>
       </fieldset>
-      <fieldset>
+      <fieldset class="step"> 
         <legend>Contacto</legend>
         <div id="contacto">
           <h3>Contacto:</h3>
@@ -50,19 +50,18 @@
         <%= f.text_field :phone3 %></p>
         </div>
       </fieldset>
-      <fieldset>
+      <fieldset class="step">
         <p><%= f.submit "Crear" %></p>
       </fieldset>
-      
     <% end %>
   </div><!--/steps -->
   <div id="navigation" style="display:none;">
 		<ul>
 			<li class="selected">
-				<a href="#">Account</a>
+				<a href="#">Información principal</a>
 			</li>
 			<li>
-				<a href="#">Personal Details</a>
+				<a href="#">Account</a>
 			</li>
 			<li>
 				<a href="#">Payment</a>
@@ -75,7 +74,6 @@
 			</li>
 		</ul>
 	</div>
-
-</div>
-      </div>  
+  </div>
+</div>  
 
