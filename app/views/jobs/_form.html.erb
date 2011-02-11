@@ -1,4 +1,4 @@
-
+		<div class="mainContent clear span-16">
 <%= form_for @job do |f| %> 
   <% if @job.errors.any? %>
     <div id="error_explanation">
@@ -63,4 +63,4 @@
   
   <p><%= f.submit t(:create) %>  <%= button_to t(:cancel), jobs_path() %></p>
 <% end %>
-
+</div>
