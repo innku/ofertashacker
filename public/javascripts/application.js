@@ -16,6 +16,7 @@ $(document).ready(function() {
         $(this).addClass('selected');
   }); 
   //filtering by type
+  /*  
   $("li#all").click(function(){
     $('.job').each(function() {
         $(this).fadeIn();   
@@ -24,23 +25,44 @@ $(document).ready(function() {
     $('#skill_sidebar li').removeClass('selected');
     $('li#all').addClass('selected');
   });
-  
-  
-  $("#features li.filter").click(function(){
-      $('li#all').removeClass('selected');
+  */
+
+  $("#mainMenu input").click(function(){
+      //$('li#all').removeClass('selected');
     var thisFilter = $(this).attr("id");
+    if(!$(this).is(":checked")){
+        thisFilter = check_job_types();
+
+        $('.job').each(function() {
+            if($(this).is(thisFilter) || thisFilter==""){
+                $(this).fadeIn();
+            }
+        });
+    } else {
          $('.job').each(function() {
             if(!$(this).hasClass(thisFilter)){
                 $(this).fadeOut();
             }
-          }
-        )
-        $(this).addClass('selected');
+          });              
+    }
+        //$(this).addClass('selected');
   });
 
 });
 
-
+function check_job_types() {
+    var str="";
+    $("#mainMenu input").each(function() {
+        if($(this).is(":checked")) {
+            if(!$(this+":last")){
+                str += "."+$(this).attr("id") + ","+ " ";
+            } else {
+                str += "."+$(this).attr("id") + " ";
+            }
+        }
+    });
+    return str;
+}
 
 var index = 0;
 
