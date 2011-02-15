@@ -1,9 +1,16 @@
+
 es: 
 
   #General
   edit:                   "Editar"
   cancel:                 "Cancelar"
   update:                 "Actualizar"
+  in:                		  "en"
+  full_time:          		"Tiempo completo"
+  part_time:          		"Medio tiempo"
+  remote:             		"Remoto"
+  flexible:          		  "Horario flexible"
+  more:               		"Ver más"
   create:                 "Crear"
 
   
@@ -64,6 +71,9 @@ es:
       remote:             "Remoto"
       flexible:           "Horario flexible"
       more:               "Ver más"
+      job:
+      
+      	
     form:
       title:              "Nombre"  
       city:               "Ciudad"

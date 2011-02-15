@@ -5,10 +5,10 @@ module JobsHelper
     content = "".html_safe
     job_options = []
     
-    job.full_time ? job_options << t('.full_time') : ""
-    job.part_time ? job_options << t('.part_time') : ""
-    job.remote ? job_options << t('.remote') : ""
-    job.flexible ? job_options << t('.flexible') : ""
+    job.full_time ? job_options << "Tiempo completo" : ""
+    job.part_time ? job_options << "Medio Tiempo" : ""
+    job.remote ? job_options << "Remoto" : ""
+    job.flexible ? job_options << "Flexible" : ""
     
     if text_only
       content +=job_options.join(", ")
@@ -32,6 +32,7 @@ module JobsHelper
     job.company ? str+=job.company.title : ""
     job.city ? str+=" in #{job.city} " : ""
     str+=get_job_type(job,true)
+    puts str
     str
     
   end

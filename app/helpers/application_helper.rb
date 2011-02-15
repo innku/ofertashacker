@@ -23,8 +23,6 @@ module ApplicationHelper
   def check_path_for path
     exceptions=['/jobs','/']
     for e in exceptions do
-      puts e.to_s
-      puts path.to_s
       if path.to_s == e.to_s
         return false
       end

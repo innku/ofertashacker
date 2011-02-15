@@ -1,15 +1,15 @@
 
 <div id="job_wrapper" class="discounted-item mainContent clear span-12">
     <ul class="posts">
-      <% display_segmented_list jobs, 'odd' do |job| %>
-        <%=render :partial =>'job', :locals=>{:job => job}%>
+      <% display_segmented_list jobs, 'even' do |job| %>
+        <%=render :partial =>'jobs/job', :locals=>{:job => job}%>
     <% end %>
     </ul>
 </div>
 <div id="job_wrapper" class="discounted-item mainContent last span-12">
     <ul class="posts">
-     <% display_segmented_list jobs, 'even' do |job| %>
-        <%=render :partial =>'job', :locals=>{:job => job}%>
+     <% display_segmented_list jobs, 'odd' do |job| %>
+        <%=render :partial =>'jobs/job', :locals=>{:job => job}%>
     <% end %>
     </ul>
 </div>
