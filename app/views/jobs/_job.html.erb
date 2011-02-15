@@ -1,0 +1,9 @@
+<li class="job <%=addclass job%>">
+  <%link_to(job) do%>          
+    <div class="span-4 prepend-8 last">
+        <%=image_tag job.company.logo.url(:thumb)%>
+    </div>
+  <h1><%= truncate(job.title, :length => 40) %></h1>            
+  <p><%= truncate(condensed_information(job),:length => 70) %> </p>
+  <%end%>
+</li>

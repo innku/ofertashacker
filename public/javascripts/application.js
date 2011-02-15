@@ -1,6 +1,6 @@
 $(document).ready(function() {
   //jquery forms
- // $("form").validator();
+  $("form").validator();
   
   //filtering by skills
   
@@ -32,7 +32,6 @@ $(document).ready(function() {
     var thisFilter = $(this).attr("id");
     if(!$(this).is(":checked")){
         thisFilter = check_job_types();
-
         $('.job').each(function() {
             if($(this).is(thisFilter) || thisFilter==""){
                 $(this).fadeIn();

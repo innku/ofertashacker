@@ -14,13 +14,6 @@ class JobsController < ApplicationController
       render :action => "new"
     end
   end
-  
-  def available
-    @jobs= Job.find(:all,:order=>'created_at DESC')
-
-
-  end
-  
   def index
     if current_company
       @jobs = current_company.jobs.search(params[:search],params[:type])

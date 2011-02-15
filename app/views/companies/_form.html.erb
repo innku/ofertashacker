@@ -1,26 +1,42 @@
-<% form_for @company, :html => { :multipart => true } do |f| %>
-<%= f.error_messages %>
+<%= stylesheet_link_tag "jquery-ui" %>
+<% custom_title "Editar Perfil"%>
+  <h2><%= t('.company_info') %></h2>
+      <% form_for @company, :html => { :multipart => true } do |f| %>
+          <%= f.error_messages %>
+          <p><%= f.label :title, t('.title') + " *" %><br />
+          <%= f.text_field :title, :required=>"required", :pattern=>"[a-zA-Z ]{5,}" %></p>
 
-<p><%= f.label :title, t('.title') %><br />
-<%= f.text_field :title %></p>
+          <p><%= f.label :city, t('.city') + " *" %><br />
+          <%= f.text_field :city, :class => 'city_autocomplete'%></p></p>
+          
+          <p><%= f.label :email,  t('.email') + " *" %><br />
+          <%= f.text_field :email, :required=>"required", :type=>"email" %></p>
 
-<p><%= f.label :city %><br />
-<%= f.text_field :city, :class => 'city_autocomplete'%></p>
+          <p><%= f.label :logo %><br />
+          <%= f.file_field :logo %></p>
+          
+          <p><%= f.label :description,  t('.description') + " *" %><br />
+          <%= f.text_area :description %></p>
+          
+          <div id="contacto">
+            <h3>Contacto:</h3>
+            <p><%= image_tag 'facebook-logo.gif'%>
+          <%= f.text_field :facebook %></p>
+            <p><%= image_tag 'twitter-logo.gif'%>
+          <%= f.text_field :twitter %></p>
+           <p><%= image_tag 'linkedin-logo.jpg'%>
+          <%= f.text_field :linkedin %></p>
+            <p><%= image_tag 'phone-logo.jpg'%>
+          <%= f.text_field :phone1 %></p>
+            <p><%= image_tag 'phone-logo.jpg'%>
+          <%= f.text_field :phone2 %></p>
+            <p><%= image_tag 'phone-logo.jpg'%>
+          <%= f.text_field :phone3 %></p>
+          </div>
+          <p>
+          <%= f.submit t(:update) %> 
+          <%= button_to t(:cancel), company_path(@company) %>
+          </p>
 
+      <% end %>
 
-<div id="logo">
-  <% if @company.logo? %>
-    <%= image_tag @company.logo.url(:medium) %><br />
-    <%= t('.change') %>
-  <% end %>
-  <%= f.label :logo %><br />
-   <%= f.file_field :logo %>
-</div>
-<p><%= f.label :description %><br />
-<%= f.text_area :description %></p>
-
-
-<%= f.submit t(:update) %> |
-<%= link_to t(:cancel), company_path(@company) %>
-
-<% end %>

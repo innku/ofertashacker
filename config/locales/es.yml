@@ -45,7 +45,14 @@ es:
       company_index:      "Listado de compañías"
       no_picture:         "Aún no tienes un logo"
     form:
-      change:             "Cambiar"
+        company_info:     "Datos de la empresa"
+        company_desc:     "Descripción de la empresa"
+        title:            "Nombre" 
+        city:             "Ciudad"
+        email:            "Correo electrónico"
+        password:         "Contraseña"
+        password_confirmation: "Confirmar contraseña"
+        description:      "Descripción de la empresa" 
   
   jobs: 
     available: 

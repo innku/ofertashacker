@@ -35,7 +35,8 @@ Feature: Job cycle
     And there is a job vacancy with title "RoR" created by "admin@rubypros.com"
     And I am logged as a "admin@rubypros.com"
     And I am on the index job page
-    And I follow "Editar"
+    And I follow "RoR"
+    Then I follow "Editar"
     Then I should see "Datos de la Oferta"
       
   Scenario: I cannot edit other Companies vacancies
@@ -49,14 +50,15 @@ Feature: Job cycle
     And there is a job vacancy with title "RoR" created by "admin@rubypros.com"
     And I am logged as a "admin@rubypros.com"
     And I am on the index job page
-    When I follow "Borrar"
+    Then I follow "RoR"
+    And I follow "Borrar"
     Then I should see "La vacante fue eliminada correctamente"
 
   Scenario: I can view vacancies details
     And there is a job vacancy with title "RoR" created by "admin@rubypros.com"
     And I am logged as a "admin@rubypros.com"
     And I am on the index job page
-    When I follow "Ver más"
+    When I follow "RoR"
     Then I should see "Características"
     And I should see "Descripción"
       

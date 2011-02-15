@@ -22,14 +22,4 @@ describe Company do
     @company.should_not be_valid
   end
 
-  it "is not valid without a city" do
-    @company.city=nil
-    @company.should_not be_valid
-  end
-
-  it "is not valid without a description" do
-    @company.description=nil
-    @company.should_not be_valid
-  end
-
 end

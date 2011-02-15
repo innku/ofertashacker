@@ -1,3 +1,4 @@
+@companies
 Feature: Company Actions
 
   As a company
@@ -7,12 +8,9 @@ Feature: Company Actions
   Scenario: Register a company
     Given I am on the new company page
     When I fill in "company_title" with "Best Company"
-    And I fill in "company_city" with "Monterrey"
     And I fill in "company_email" with "contact_me@best_company.com"
     And I fill in "company_password" with "mycompany"
     And I fill in "company_password_confirmation" with "mycompany"
-    And I attach the file "spec/fixtures/images/twitter_icon.jpg" to "company_logo"
-    And I fill in "company_description" with "Best Company looks for people with ruby experience"
     And I press "Crear"
     Then I should see "Te has registrado correctamente"
     

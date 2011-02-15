@@ -1,70 +1,15 @@
-<%= render 'layouts/filter'%>
-<div id="job_wrapper" class="discounted-item mainContent clear span-12">
 
+<div id="job_wrapper" class="discounted-item mainContent clear span-12">
     <ul class="posts">
-    <%@jobs.each_with_index do |job, index| %>
-        <% unless index%2!=0%>
-        <li class="job <%=addclass job%>">
-          <a href="">          
-            <div class="span-4 prepend-8 last">
-                <%=image_tag job.company.logo.url(:thumb)%>
-            </div>
-          <h1><%= truncate(job.title) %></h1>            
-            <p><%= job.company.title %> <%= t('.in') %> <%= job.city %></p>
-          </a>
-          <div id="features">
-            <% job.full_time ? image_tag("full_time.gif") : ""%>
-            <% job.part_time ? image_tag("half_time.gif") : ""%>
-            <% job.remote ? image_tag("remote.gif") : ""%>
-            <% job.flexible ? image_tag("flexible.gif") : ""%>
-          </div>
-          <div id="options">
-              <%if can? :manage, job%>
-                <div id="admin">
-                
-                <%=link_to "Editar", edit_job_path(job)%> | 
-                  <%= link_to 'Borrar', job, :confirm => '¿Estas Seguro que deseas borrar la oferta?', :method => :delete %>
-                </div>
-              <%end%>
-          </div><!--/options -->
-        </li>
-        <%end%>
+      <% display_segmented_list jobs, 'odd' do |job| %>
+        <%=render :partial =>'job', :locals=>{:job => job}%>
     <% end %>
     </ul>
 </div>
-
-
-
 <div id="job_wrapper" class="discounted-item mainContent last span-12">
-
     <ul class="posts">
-    <%@jobs.each_with_index do |job, index| %>
-        <% unless index%2==0%>
-        <li class="job <%=addclass job%>">
-          <a href="">          
-            <div class="span-4 prepend-8 last">
-                <%=image_tag job.company.logo.url(:thumb)%>
-            </div>
-          <h1><%= truncate(job.title) %></h1>            
-            <p><%= job.company.title %> <%= t('.in') %> <%= job.city %></p>
-          </a>
-          <div id="features">
-            <% job.full_time ? image_tag("full_time.gif") : ""%>
-            <% job.part_time ? image_tag("half_time.gif") : ""%>
-            <% job.remote ? image_tag("remote.gif") : ""%>
-            <% job.flexible ? image_tag("flexible.gif") : ""%>
-          </div>
-          <div id="options">
-              <%if can? :manage, job%>
-                <div id="admin">
-                
-                <%=link_to "Editar", edit_job_path(job)%> | 
-                  <%= link_to 'Borrar', job, :confirm => '¿Estas Seguro que deseas borrar la oferta?', :method => :delete %>
-                </div>
-              <%end%>
-          </div><!--/options -->
-        </li>
-        <%end%>
+     <% display_segmented_list jobs, 'even' do |job| %>
+        <%=render :partial =>'job', :locals=>{:job => job}%>
     <% end %>
     </ul>
 </div>

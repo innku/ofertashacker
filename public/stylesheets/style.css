@@ -21,7 +21,7 @@ body {
 
 
 h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
-.container{position:relative;}
+
 #header {
 	font-family: 'Arvo', arial, serif;
 	height:144px;
@@ -58,24 +58,11 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 	position: relative;
 	top:-18px;
 }
-
-/*Flash and Errors*/
-#flash_notice, #flash_error, #flash_alert {
-    position: absolute;
-    top: 40px;
-    left: 200px;
-    color: #CC0000;
-}
-
-
-
 #mainMenu {
 	text-transform:lowercase;
 	display:block;
-	margin:54px 0 0 250px;
+	margin:54px 0 0 0;
 	padding:0px 0px 0px 0px !important;
-	position:absolute;
-	top:30px;
 }
 #mainMenu li {
 	text-transform:lowercase;
@@ -93,8 +80,8 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
     padding:20px;
     padding-top: 30px;
     margin-bottom:10px;
-    background:#eee;    
 }
+
 
 /*================== HERE COMES THE CONTENT STYLES ====================*/
 
@@ -115,10 +102,9 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 	-moz-box-shadow: 0px 3px 7px #000;
 	-webkit-box-shadow: 0px 3px 7px #000;
 	box-shadow: 0px 3px 7px #000;
-	height:180px;
+	height:170px;
 }
-#test{display:inline;float:left;}
-
+.mainContent ul.posts li h1{height:132px;}
 .mainContent a h1 {
 	margin-bottom:0.2em !important;
 }
@@ -163,50 +149,3 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 #footer ul li a:hover {
 	text-decoration:underline;
 }
-/*Form CSS3*/
-/*
-input, textarea { 
-	padding: 9px;
-	border: solid 1px #D4D4D4;
-	outline: 0;
-	font: normal 13px/100% Verdana, Tahoma, sans-serif;
-	width: 200px;
-	background: #FFFFFF url('bg_form.png') left top repeat-x;
-	background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
-	background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 15px);
-	box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
-	-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
-	-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
-	}
-
-textarea { 
-	width: 400px;
-	max-width: 400px;
-	height: 150px;
-	line-height: 150%;
-	}
-
-input:hover, textarea:hover,
-input:focus, textarea:focus { 
-	border-color: #C9C9C9; 
-	-webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;
-	}
-
-.form label { 
-	margin-left: 10px; 
-	color: #999999; 
-	}
-
- input.submit  {
-	width: auto;
-	padding: 9px 15px;
-	background: #2c89a0;
-	border: 0;
-	font-size: 14px;
-	color: #FFFFFF;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	}
-
-
-*/

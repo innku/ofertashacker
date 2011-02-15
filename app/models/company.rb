@@ -7,7 +7,7 @@ class Company < ActiveRecord::Base
 
   has_many :jobs
   
-  validates_presence_of :title, :description, :city
+  validates_presence_of :title, :email
   validates_attachment_content_type :logo, :content_type => ['image/jpg','image/jpeg', 'image/png']
   
   # Setup accessible (or protected) attributes for your model
@@ -26,7 +26,7 @@ class Company < ActiveRecord::Base
                             :url => "#{ENV['RAILS_ENV']}/:attachment/:id/:style/:basename.:extension",
                             :path => "public/files/#{Rails.env}/:attachment/:id/:style/:basename.:extension",
                             :bucket => 'rubypros',
-                            :default_url => "/images/missing.png"
+                            :default_url => "/images/shareIcon.gif"
                             
   def admin?
     self.role == "admin"
@@ -36,3 +36,4 @@ class Company < ActiveRecord::Base
     self.role == "member"
   end
 end
+

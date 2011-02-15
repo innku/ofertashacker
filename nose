@@ -1,0 +1,1000 @@
+ 1004  rake db:seed
+ 1005  exit
+ 1006  find my
+ 1007  ls
+ 1008  find ~/ ccm
+ 1009  find / mysql.soc
+ 1010  clear
+ 1011  exit
+ 1012  cd INNKU/
+ 1013  l
+ 1014  ls
+ 1015  cd mpd/
+ 1016  sudo service mysql start
+ 1017  rails s
+ 1018  cp /home/rogelio/Diaspora/diaspora/config/database.yml config/
+ 1019  cd config/
+ 1020  ls
+ 1021  cd //
+ 1022  cd ..
+ 1023  cd /home/rogelio/INNKU/mpd/
+ 1024  ls
+ 1025  gedit config/database.example.yml 
+ 1026  rails s
+ 1027  rvm gem install activerecord-mysql2-adapter
+ 1028  vi Gemfile
+ 1029  bundle install
+ 1030  rvm gem install activerecord-mysql2-adapter
+ 1031  rails s
+ 1032  \tils.rb:73:in `initialize': Address already in use - bind(2) (Errno::EADDRINUSE)
+ 1033  sudo service mysql start 
+ 1034  sudo service mysql stop
+ 1035  sudo service mysql start 
+ 1036  rails s
+ 1037  rails s -p 3001
+ 1038  ls /var/lib/mysql/
+ 1039  sudo ls /var/lib/mysql/
+ 1040  sudo ls -a /var/lib/mysql/
+ 1041  sudo ls -a -ls /var/lib/mysql/
+ 1042  bundle install
+ 1043  rails s
+ 1044  rails s -p 3001
+ 1045  man touch
+ 1046  sudo touch /var/run/mysqld/mysqld.sock
+ 1047  sudo service mysql stop
+ 1048  sudo service mysql start
+ 1049  sudo service mysql stop
+ 1050  Mysql::Error (Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)):
+ 1051  sudo chown -R mysql /var/run/mysqld/ 
+ 1052  sudo service mysql start
+ 1053  rails s
+ 1054  cd /home/rogelio/INNKU/rubypros/
+ 1055  rails s
+ 1056  git add .
+ 1057  git commit -m "Working with time filters"
+ 1058  vi .gitignore 
+ 1059  git push
+ 1060  ls
+ 1061  s
+ 1062  ls
+ 1063  cd INNKU/rubypros/
+ 1064  rails s
+ 1065  rails s -p 3001
+ 1066  rails s -p 3002
+ 1067  netstat
+ 1068  cucumber
+ 1069  rake db:seed
+ 1070  rake routes
+ 1071  rails c
+ 1072  rake routes
+ 1073  rake db:dev_data
+ 1074  vi Gemfile
+ 1075  rake db:seed
+ 1076  exit
+ 1077  rails c
+ 1078  exit
+ 1079  rvm gem install mysql
+ 1080  which ruby
+ 1081  locate mysql_config
+ 1082  vi /usr/bin/mysql_config 
+ 1083  cd ../mpd/
+ 1084  rails s
+ 1085  rails s -3001
+ 1086  rails s -3002
+ 1087  rails s -p 3001
+ 1088  exit
+ 1089  cd ../rubypros/
+ 1090  cd ../mpd/
+ 1091  rails s
+ 1092  rails s -p 3001
+ 1093  exit
+ 1094  cd INNKU/rubypros/
+ 1095  rails s
+ 1096  git add .
+ 1097  git commit -m "Finished with filters"
+ 1098  git push
+ 1099  rails s
+ 1100  exit
+ 1101  cd Web/
+ 1102  ;s
+ 1103  ls
+ 1104  rails new facebooker
+ 1105  git add .
+ 1106  git init
+ 1107  git add .
+ 1108  heroku create
+ 1109  git push heroku master
+ 1110  heroku keys:add
+ 1111  git push heroku master
+ 1112  exit
+ 1113  rake db:seed
+ 1114  rake routes
+ 1115  cucumber -p selenium
+ 1116  cucumber -p selenium --default
+ 1117  cucumber
+ 1118  bundle exec
+ 1119  rails c
+ 1120  rake db:seed
+ 1121  rake db:seed:dev_data
+ 1122  rake db:seed
+ 1123  rake db:migrate
+ 1124  rake db:seed
+ 1125  rake routes
+ 1126  exit
+ 1127  cd INNKU/mpd/
+ 1128  rake db:rollback
+ 1129  reset db:reset
+ 1130  rake db:reset
+ 1131  rake db:migrate
+ 1132  rails s
+ 1133  exit
+ 1134  rake doc:app
+ 1135  exit
+ 1136  cd INNKU/M
+ 1137  cd INNKU/mpd/
+ 1138  rails s
+ 1139  exit
+ 1140  ls
+ 1141  rails s
+ 1142  cd INNKU/mpd/
+ 1143  rails c
+ 1144  rake db:test:prepare
+ 1145  rails c
+ 1146  Factory.define :brand do |brand|   brand.name  "LG"
+ 1147  Factory.define :brand do |brand|   brand.name  "LG"
+ 1148  Factory.define :brand do |brand|   brand.name  "LG"
+ 1149  rails c
+ 1150  cd Web/
+ 1151  rm facebooker/
+ 1152  rmdir facebooker/
+ 1153  rm -r facebooker/
+ 1154  ls
+ 1155  rails new mystats
+ 1156  cd mystats/
+ 1157  ls
+ 1158  bundle install
+ 1159  cd ..
+ 1160  rails new tastethatdream
+ 1161  cd tastethatdream/
+ 1162  ls
+ 1163  git stauts
+ 1164  git status
+ 1165  gitk
+ 1166  git add .
+ 1167  git commit -m "Time filters working"
+ 1168  rails c
+ 1169  git add .
+ 1170  git commit -m "Filter by multiple skills and multiple time criterias"
+ 1171  git push
+ 1172  git pull
+ 1173  exit
+ 1174  cd INNKU/
+ 1175  rails new booklive
+ 1176  cd booklive/
+ 1177  vi Gemfile 
+ 1178  ls
+ 1179  bundle install
+ 1180  vi Gemfile
+ 1181  bundle install
+ 1182  rails generate deivse_install
+ 1183  rails g
+ 1184  rails generate deivse:install
+ 1185  rails generate devise:install
+ 1186  cd ..
+ 1187  cp -r booklive/ /home/rogelio/Web/
+ 1188  cd /home/rogelio/Web/
+ 1189  ls
+ 1190  cd booklive/
+ 1191  rails generate devise User
+ 1192  rm public/index.html 
+ 1193  rake db:migrate
+ 1194  rails s
+ 1195  cd /home/rogelio/INNKU/rubypros/
+ 1196  ls
+ 1197  rails s
+ 1198  exit
+ 1199  cd exit
+ 1200  exit
+ 1201  cd TEC/
+ 1202  cd Programacion\ Avanzada/
+ 1203  ls
+ 1204  rm Untitled\ Document\ 1 
+ 1205  gcc tarea4_p1.c 
+ 1206  clear
+ 1207  gcc tarea4_p1.c 
+ 1208  ls
+ 1209  ./a.out 
+ 1210  ls
+ 1211  gcc tarea4_p1.c 
+ 1212  rm a.out 
+ 1213  gcc tarea4_p1.c 
+ 1214  ./a.out 
+ 1215  gcc tarea4_p1.c 
+ 1216  ./a.out 
+ 1217  gcc tarea4_p1.c 
+ 1218  ./a.out 
+ 1219  gcc tarea4_p1.c 
+ 1220  ./a.out \
+ 1221  ./a.out 
+ 1222  ./a.out \
+ 1223  gcc tarea4_p1.c 
+ 1224  ./a.out 
+ 1225  gcc tarea4_p1.c 
+ 1226  ./a.out 
+ 1227  gcc tarea4_p1.c 
+ 1228  ./a.out 
+ 1229  gcc tarea4_p1.c 
+ 1230  ./a.out 
+ 1231  gcc tarea4_p1.c 
+ 1232  ./a.out 
+ 1233  cd Web/git/bien/centrodecancer/
+ 1234  raiils c
+ 1235  script/server
+ 1236  git add  app/models/articulo.rb
+ 1237  git commit -m "Updates categorias@articulos"
+ 1238  git push heroku
+ 1239  exit
+ 1240  cd TEC/Programacion\ Avanzada/
+ 1241  gcc tarea4_p1.c 
+ 1242  ./a.out 
+ 1243  gcc tarea4_p1.c 
+ 1244  ./a.out 
+ 1245  gcc tarea4_p1.c 
+ 1246  ./a.out 
+ 1247  gcc tarea4_p1.c 
+ 1248  ./a.out 
+ 1249  gcc tarea4_p1.c 
+ 1250  ./a.out 
+ 1251  gcc tarea4_p1.c 
+ 1252  ./a.out 
+ 1253  gcc tarea4_p1.c 
+ 1254  ./a.out 
+ 1255  gcc tarea4_p1.c 
+ 1256  ./a.out 
+ 1257  gcc tarea4_p1.c 
+ 1258  ./a.out 
+ 1259  gcc tarea4_p1.c 
+ 1260  ./a.out 
+ 1261  ho
+ 1262  ./a.out 
+ 1263  gcc tarea4_p1.c 
+ 1264  ./a.out 
+ 1265  gcc tarea4_p1.c 
+ 1266  ./a.out 
+ 1267  gcc tarea4_p1.c 
+ 1268  ./a.out 
+ 1269  gcc tarea4_p1.c 
+ 1270  ./a.out 
+ 1271  gcc tarea4_p1.c 
+ 1272  ./a.out 
+ 1273  gcc tarea4_p1.c 
+ 1274  ./a.out 
+ 1275  gcc tarea4_p1.c 
+ 1276  ./a.out 
+ 1277  gcc tarea4_p1.c 
+ 1278  ./a.out 
+ 1279  gcc tarea4_p1.c 
+ 1280  ./a.out 
+ 1281  gcc tarea4_p1.c 
+ 1282  ./a.out 
+ 1283  gcc tarea4_p1.c 
+ 1284  ./a.out 
+ 1285  clear
+ 1286  cd We
+ 1287  cd /home/rogelio/Web/git/bien/dlt/
+ 1288  script/server 
+ 1289  heroku info
+ 1290  git add .
+ 1291  git commit -m "re First commit"
+ 1292  vi Gemfile 
+ 1293  cp ../centrodecancer/Gemfile Gemfile 
+ 1294  vi Gemfile 
+ 1295  bundle install
+ 1296  bundle install --path gems
+ 1297  git push heroku master
+ 1298  git push heroku
+ 1299  heroku create
+ 1300  git push heroku master 
+ 1301  git push heroku
+ 1302  exit
+ 1303  cd INNKU/mpd/
+ 1304  sudo apt-get update && sudo apt-get install skype
+ 1305  ls
+ 1306  rake dev_data:load
+ 1307  rake tasks
+ 1308  rake custom_page:load
+ 1309  rake dev_data:load
+ 1310  rake dev_data:load\
+ 1311  rake dev_data:load
+ 1312  rails s
+ 1313  cd ../rubypros/
+ 1314  rails s
+ 1315  git add .
+ 1316  git commit -m "Test"
+ 1317  git push
+ 1318  ls
+ 1319  cd doc/
+ 1320  ls
+ 1321  cd ..
+ 1322  ls
+ 1323  rake doc:app
+ 1324  rm -r doc/ap
+ 1325  rm -r doc/app
+ 1326  cd ..
+ 1327  cd mpd/
+ 1328  ls
+ 1329  cd doc/
+ 1330  ls
+ 1331  cd app/
+ 1332  .s
+ 1333  ls
+ 1334  open index.html 
+ 1335  launch index.html 
+ 1336  open index.html 
+ 1337  firefox index.html 
+ 1338  cd /home/rogelio/Web/git/bien/centrodecancer/
+ 1339  vi app/views/ligas/_liga.html.erb 
+ 1340  rails s
+ 1341  script/server
+ 1342  git add /
+ 1343  git add .
+ 1344  git commit -m "removed users from ligas and open them in new page"
+ 1345  git push
+ 1346  git push heroku
+ 1347  vi app/views/ligas/_liga.html.erb 
+ 1348  git add .
+ 1349  git commit -m "Also ligas title open in new page"
+ 1350  git push heroku
+ 1351  exit
+ 1352  rails c
+ 1353  cd ../
+ 1354  ls
+ 1355  cd rubypros/
+ 1356  ls
+ 1357  vi .gitignore 
+ 1358  git pull
+ 1359  cd ../mpd/
+ 1360  ls
+ 1361  rails 
+ 1362  rails s
+ 1363  exit
+ 1364  rake dev_data:load
+ 1365  rake dev_data:load --trace
+ 1366  rake routes
+ 1367  exit
+ 1368  sudo apt-get install dhcp3-server firestarter
+ 1369  sudo vi /etc/default/dhcp3-server 
+ 1370  ssh frontrow@appletv.local
+ 1371  it
+ 1372  exit
+ 1373  compiz&
+ 1374  cd Web/git/bien/dlt/
+ 1375  git status
+ 1376  git branch
+ 1377  git branch prueba
+ 1378  git prue
+ 1379  git checkout prueba
+ 1380  git pull
+ 1381  git pull heroku
+ 1382  git status
+ 1383  git checkout master 
+ 1384  git add /
+ 1385  git add .
+ 1386  git commit -m "All"
+ 1387  git push heroku master
+ 1388  git push --help
+ 1389  git push heroku master -f
+ 1390  heroku rake db:migrate
+ 1391  heroku logs
+ 1392  heroku rake db:seed
+ 1393  heroku logs
+ 1394  git add app/models/user.rb
+ 1395  git commit -m "Attr accessor"
+ 1396  git push heroku
+ 1397  heroku rake db:seed
+ 1398  heroku console
+ 1399  compiz
+ 1400  ls
+ 1401  cd TEC/Programacion\ Avanzada/
+ 1402  ls
+ 1403  gcc nose.c 
+ 1404  ./a.out 
+ 1405  gcc nose.c 
+ 1406  ./a.out 
+ 1407  gcc nose.c 
+ 1408  ./a.out 
+ 1409  gcc nose.c 
+ 1410  ./a.out 
+ 1411  gcc abc.c 
+ 1412  ./a.out 
+ 1413  gcc abc.c 
+ 1414  ./a.out 
+ 1415  gcc abc.c 
+ 1416  ./a.out 
+ 1417  gcc abc.c 
+ 1418  ./a.out 
+ 1419  gcc abc.c 
+ 1420  ./a.out 
+ 1421  gcc abc.c 
+ 1422  ./a.out 
+ 1423  gcc abc.c 
+ 1424  ./a.out 
+ 1425  gcc abc.c 
+ 1426  ./a.out 
+ 1427  gcc abc.c 
+ 1428  ./a.out 
+ 1429  gcc abc.c 
+ 1430  ./a.out 
+ 1431  gcc abc.c 
+ 1432  ./a.out 
+ 1433  gcc abc.c 
+ 1434  ./a.out 
+ 1435  gcc abc.c 
+ 1436  ./a.out 
+ 1437  gcc abc.c 
+ 1438  ./a.out 
+ 1439  gcc abc.c 
+ 1440  ./a.out 
+ 1441  gcc abc.c 
+ 1442  ./a.out 
+ 1443  gcc abc.c 
+ 1444  ./a.out 3 4
+ 1445  gcc abc.c 
+ 1446  ./a.out 3 4
+ 1447  ./a.out 3 4\
+ 1448  gcc abc.c 
+ 1449  ./a.out 3 4
+ 1450  gcc abc.c 
+ 1451  ./a.out 3 4
+ 1452  gcc abc.c 
+ 1453  ./a.out 3 4
+ 1454  gcc abc.c 
+ 1455  ./a.out 3 4
+ 1456  ./a.out
+ 1457  ./a.out 3 4
+ 1458  gcc abc.c 
+ 1459  ./a.out
+ 1460  cd ../rubypros/
+ 1461  rails s -p 3001
+ 1462  git add .
+ 1463  git commit -m "Before adding contact to companies"
+ 1464  git commit -a -m "Before adding contact to companies"
+ 1465  vi .gitignore 
+ 1466  git push
+ 1467  rails g migration add_contact_to_company facebook:string twitter:string linkedin:string phone1:string phone2:string phone3:string
+ 1468  rake db:migrate
+ 1469  exit
+ 1470  cd ../mpd/
+ 1471  rails c
+ 1472  exit
+ 1473  cd ..
+ 1474  ls
+ 1475  cd testcenter/
+ 1476  ls
+ 1477  git clone git@heroku.com:mpd.git
+ 1478  exit
+ 1479  cd INNKU/mpd/
+ 1480  rails s
+ 1481  exit
+ 1482  rails c
+ 1483  rake db:drop
+ 1484  rake db:seed
+ 1485  rake db:create
+ 1486  rake db:migrate
+ 1487  rake db:seed
+ 1488  rails c
+ 1489  git status
+ 1490  git add MJ12_237AA65B82F8B9222403CD0DCAAC8EEB.txt
+ 1491  git status
+ 1492  git add config/routes.rb
+ 1493  git status
+ 1494  git add public/robots.txt
+ 1495  git status
+ 1496  git add config/routes.rb
+ 1497  git status
+ 1498  git commit -m "Changes deals route to namespace /see and adds robots file"
+ 1499  git status
+ 1500  git stash
+ 1501  git status
+ 1502  git rm db/seed/custom_page.rb
+ 1503  git status
+ 1504  rm db/seed/custom_page.rb
+ 1505  git status
+ 1506  rm db/seed/seeds.rb 
+ 1507  rm db/seed/schema.rb 
+ 1508  rm db/seed/dev_data.rb 
+ 1509  rm -rf doc/app/
+ 1510  git status
+ 1511  git push herok master
+ 1512  git remote
+ 1513  git push origin master
+ 1514  heroku rake db:migrate
+ 1515  heroku rake db:seed
+ 1516  heroku console
+ 1517  git status
+ 1518  rails c
+ 1519  exit
+ 1520  rake routes
+ 1521  rake dev_data:load
+ 1522  git status
+ 1523  git config
+ 1524  gedit .git/config 
+ 1525  rake dev_data:load
+ 1526  rake dev_data:load --trace
+ 1527  man rake
+ 1528  rake db:drop
+ 1529  rake db:migrate
+ 1530  rake db:create
+ 1531  rake db:migrate
+ 1532  rake db:seed
+ 1533  rake custom_page:load --trace
+ 1534  rake associate:load
+ 1535  rake csv_proccessor
+ 1536  rake -t
+ 1537  ls
+ 1538  man rake
+ 1539  rake -g
+ 1540  rake -h
+ 1541  rake -T
+ 1542  rake db:test:prepare
+ 1543  rake -T
+ 1544  rake dev_data:load
+ 1545  rake routes
+ 1546  rake routes more
+ 1547  rails c
+ 1548  git status
+ 1549  git add spec/factories/models.rb
+ 1550  git status
+ 1551  git commit -m "Modified Factories"
+ 1552  git push
+ 1553  heroku console
+ 1554  exit
+ 1555  rake spec
+ 1556  exit
+ 1557  cd INNKU/mpd/
+ 1558  rake spec
+ 1559  rails c
+ 1560  rake spec
+ 1561  cd ..
+ 1562  cd testcenter/mpd/
+ 1563  bundle install
+ 1564  rake spec
+ 1565  rake db:create
+ 1566  rake db:migrate
+ 1567  rake db:test:prepare
+ 1568  rake spec
+ 1569  exit
+ 1570  cd ../../mpd/
+ 1571  rake spec
+ 1572  rake db:test:prepare
+ 1573  rake spec
+ 1574  bundle install
+ 1575  rake spec
+ 1576  bundle install
+ 1577  rake tasks
+ 1578  rake --tasks
+ 1579  cucumber
+ 1580  heroku console
+ 1581  git stauts
+ 1582  git status
+ 1583  git add  spec/factories/models.rb
+ 1584  git commit -m "Modified models factorie"
+ 1585  git push
+ 1586  git status
+ 1587  heroku console
+ 1588  exit
+ 1589  git status
+ 1590  exit
+ 1591  heroku logs
+ 1592  heroku console
+ 1593  heroku rake db:push
+ 1594  heroku db:push
+ 1595  rvm gem install taps
+ 1596  heroku db:push
+ 1597  heroku db:push --confirm mpd
+ 1598  heroku console
+ 1599  git stauts
+ 1600  git status
+ 1601  cd ../testcenter/
+ 1602  cd mpd/
+ 1603  bundle exec cucumber
+ 1604  rake db:test:prepare
+ 1605  cd ../testcenter/
+ 1606  rake db:test:prepare
+ 1607  bundle exec cucumber
+ 1608  rake spec
+ 1609  cd ../../rubypros/
+ 1610  rails s
+ 1611  bundle install
+ 1612  rails s
+ 1613  rails s -p 3001
+ 1614  git status
+ 1615  git add .
+ 1616  git status
+ 1617  git commit -m "Fancy forms"
+ 1618  git status
+ 1619  git push
+ 1620  rails c
+ 1621  railsc
+ 1622  rails \c
+ 1623  rails c
+ 1624  clear
+ 1625  rails c
+ 1626  rake spec
+ 1627  rails c
+ 1628  rake spec
+ 1629  cucumber
+ 1630  cucumber rerun
+ 1631  cucumber -p rerun
+ 1632  cucumber -p wip
+ 1633  bundle exec
+ 1634  bundle exec bundler
+ 1635  gem list bundler
+ 1636  gem list
+ 1637  rvm gem list
+ 1638  cucumber
+ 1639  rvm gem uninstall builder
+ 1640  cucumber
+ 1641  bundle install
+ 1642  cucumber
+ 1643  rvm gem uninstall bundler
+ 1644  rvm gem uninstall builder
+ 1645  bundle install
+ 1646  cucumber
+ 1647  You have already activated builder 3.0.0, but your Gemfile requires builder 2.1.2. Consider using bundle exec. (Gem::LoadError)
+ 1648  rvm gem uninstall gherkin
+ 1649  gem list -d gherkin
+ 1650  rvm gem list -d gherkin
+ 1651  which ruby
+ 1652  cucumber
+ 1653  bundle install
+ 1654  cucumber
+ 1655  gem list'
+ 1656  rvm gem list
+ 1657  bundle install
+ 1658  cucumber\
+ 1659  cucumber
+ 1660  bundle exec
+ 1661  bundle exec gherkin
+ 1662  vi Gemfile
+ 1663  rvm gem install gherkin
+ 1664  cucumber
+ 1665  'cucumber' gem version
+ 1666  'cucumber' gemversion
+ 1667  rvm gem uninstall cucumber
+ 1668  bundle install
+ 1669  cuucmber
+ 1670  cucucmber
+ 1671  cucumber
+ 1672  bundle exec cucumber
+ 1673  rake db:test:prepare
+ 1674  bundle exec cucumber
+ 1675  rake spec
+ 1676  rails s
+ 1677  tail -f log/development.log 
+ 1678  tail -f log/test.log 
+ 1679  tail -f log/development.log 
+ 1680  rake --tasks
+ 1681  heroku logs
+ 1682  heroku console
+ 1683  cucumber
+ 1684  rails c
+ 1685  cd /home/rogelio/INNKU/rubypros 
+ 1686  rtk
+ 1687  cd INNKU/deploy/rack-machine/
+ 1688  ls
+ 1689  cd ..
+ 1690  cd rack-machine/
+ 1691  rvm gemset create
+ 1692  cd ..
+ 1693  cd rack-machine/
+ 1694  cd rack-machine/ 'rack-machine'
+ 1695  cd ..
+ 1696  cd rack-machine/ 'rack-machine'
+ 1697  cd ..
+ 1698  rvm gemset create 'rack-machine'
+ 1699  cd rack-machine/
+ 1700  ls
+ 1701  cp Onafile.sample Onafile.sample 
+ 1702  cp Onafile.sample Onafile
+ 1703  gedit Onafile
+ 1704  cp config/sample_dna.rb.sample config/sample_dna.rb
+ 1705  ls
+ 1706  ~ ona
+ 1707  ona
+ 1708  cd ..
+ 1709  cd rack-machine/ ~ ona
+ 1710  rake spec
+ 1711  cd INNKU/deploy/mpd/
+ 1712  vi .gitignore 
+ 1713  cd ..
+ 1714  cd rack-machine/
+ 1715  cd .rvmrc
+ 1716  vi .rvmrc 
+ 1717  vi Gemfile
+ 1718  cd ../mpd/
+ 1719  ls
+ 1720  vi Gemfile
+ 1721  vi .gitignore 
+ 1722  echo 'rvm ruby-1.8.7@rack-machine' > .rvmrc
+ 1723  rvm reload
+ 1724  bundle install
+ 1725  rm .rvmrc 
+ 1726  bundle install
+ 1727  which ruby
+ 1728  gem list
+ 1729  rvm gem list
+ 1730  cd ..
+ 1731  cd mpd/
+ 1732  bundle install
+ 1733  cd  ../deploy/mpd/
+ 1734  bundle install
+ 1735  cd rack-machine/which ruby
+ 1736  which ruby
+ 1737  cd ../../rubypros/
+ 1738  cucumber
+ 1739  cd INNKU/rubypros/
+ 1740  rails s
+ 1741  rvm gem list
+ 1742  cd ../deploy/rack-machine/
+ 1743  ls
+ 1744  rails s
+ 1745  gedit Onafile
+ 1746  cd ../../rubypros/
+ 1747  rails s
+ 1748  cd Desktop/
+ 1749  ls
+ 1750  cd Tibia/
+ 1751  ls
+ 1752  ./StartTibia.sh
+ 1753  halt
+ 1754  sudo halt
+ 1755  git status
+ 1756  git commit -m "Preparing adding design"
+ 1757  git add .
+ 1758  git commit -m "Preparing adding design"
+ 1759  git status
+ 1760  git branch design
+ 1761  git checkout design 
+ 1762  git status
+ 1763  git add .
+ 1764  git commit -m "Starting with design"
+ 1765  git branch
+ 1766  git push
+ 1767  git branch
+ 1768  git checkout 
+ 1769  git add .
+ 1770  git commit -m "test"
+ 1771  git checkout
+ 1772  git checkout master
+ 1773  git status
+ 1774  git merge design 
+ 1775  git status
+ 1776  git branch
+ 1777  git push
+ 1778  cucumber
+ 1779  rake spec
+ 1780  git status
+ 1781  git add .
+ 1782  git commit -m "Working with design "
+ 1783  git push
+ 1784  rails c
+ 1785  exit
+ 1786  cp -r /home/rogelio/Desktop/assets /home/rogelio/INNKU/
+ 1787  cd INNKU/
+ 1788  l
+ 1789  ls
+ 1790  git stauts
+ 1791  git status
+ 1792  cd rubypros/
+ 1793  git status
+ 1794  rails s
+ 1795  git status
+ 1796  rails s
+ 1797  exitr
+ 1798  exit
+ 1799  cd Web/
+ 1800  git clone git://github.com/tpope/vim-rails.git
+ 1801  cd vim-rails/
+ 1802  ls
+ 1803  vi Re
+ 1804  cd /home/rogelio/INNKU/rubypros/
+ 1805  vim app/models/company.rb
+ 1806  rails s
+ 1807  exit
+ 1808  cd Web/vim-rails/
+ 1809  vim README 
+ 1810  ls
+ 1811  cd doc/
+ 1812  ls
+ 1813  vim rails.txt 
+ 1814  cd /home/rogelio/.vim
+ 1815  mkdir vim
+ 1816  cd vim/
+ 1817  git clone git://github.com/scrooloose/nerdtree.git
+ 1818  cd nerdtree/
+ 1819  ls
+ 1820  cd doc/
+ 1821  ls
+ 1822  cd N
+ 1823  vim Ne
+ 1824  ls
+ 1825  rm N
+ 1826  rm Ne
+ 1827  vim n
+ 1828  vim NERD_tree.txt 
+ 1829  ls
+ 1830  cd ..
+ 1831  ls
+ 1832  cd nerdtree_plugin/
+ 1833  ls
+ 1834  cd ..
+ 1835  cd plugin/l
+ 1836  cd plugin/
+ 1837  ls
+ 1838  mkdir ~/.vim
+ 1839  cd ../../
+ 1840  cp -r nerdtree/nerdtree_plugin/ ~/.vim
+ 1841  cp -r nerdtree/plugin/ ~/.vim
+ 1842  cd /home/rogelio/.vim/
+ 1843  ls
+ 1844  exit
+ 1845  ifconfig
+ 1846  ping www.google.com
+ 1847  exit
+ 1848  cd INNKU/
+ 1849  l
+ 1850  ls
+ 1851  l
+ 1852  ls
+ 1853  cd rubypros/
+ 1854  git stauts
+ 1855  git status
+ 1856  git pull
+ 1857  git remote
+ 1858  git pull
+ 1859  netstat
+ 1860  exit
+ 1861  heroku console
+ 1862  exit
+ 1863  who
+ 1864  who | awk {print $4}
+ 1865  who | awk '{print $4}'
+ 1866  vi datos
+ 1867  cd Web/git/bien/centrodecancer/
+ 1868  rails c
+ 1869  script/console
+ 1870  git status
+ 1871  git add app/models/articulo.rb
+ 1872  git commit -m "Added category personal to articulos"
+ 1873  git push
+ 1874  heroku info
+ 1875  git status
+ 1876  git add app/views/ligas/_liga.html.erb
+ 1877  git commit -m "fixed ligas index"
+ 1878  git push heroku'
+ 1879  git push heroku
+ 1880  script/server
+ 1881  ls
+ 1882  awk -f fac datos
+ 1883  vim fac
+ 1884  awk -f fac datos
+ 1885  cd TEC/
+ 1886  ls
+ 1887  numeros.dat | awk
+ 1888  ls
+ 1889  cat numeros.dat | awk sqrt($1)
+ 1890  cat numeros.dat | awk {sqrt($1)}
+ 1891  awk '{}
+ 1892  awk '{print $1}'
+ 1893  exi
+ 1894  exit
+ 1895  cd TEC/
+ 1896  ls
+ 1897  cd num
+ 1898  cat numeros.dat 
+ 1899  cat numeros.dat | awk '{SUM += $1}'
+ 1900  cat numeros.dat | awk '{SUM += $1} END {print SUM}'
+ 1901  cat numeros.dat | awk '{print $1*$1}'
+ 1902  cat numeros.dat | awk '{print $2*$2*$2}'
+ 1903  cat numeros.dat | awk '{SUM += $1} END { print sqrt(SUM)}'
+ 1904  cat numeros.dat | awk '{SUM += $1*$1} END { print sqrt(SUM)}'
+ 1905  cat numeros.dat | awk '{sort$1} END { print sqrt(SUM)}'
+ 1906  cat numeros.dat | awk '{print sort($1)}'
+ 1907  awk 'gsub(/ /,"\n") gsub("\n","\n") {print}' numeros.dat | sort | uniq -c >> $out
+ 1908  awk 'gsub(/ /,"\n") gsub("\n","\n") {print}' numeros.dat | sort | uniq -c >> hola
+ 1909  cat hola
+ 1910  vi novela
+ 1911  awk 'gsub(/ /,"\n") gsub("\n","\n") {print}' novela | sort | uniq -c >> hola
+ 1912  hola
+ 1913  vi hola
+ 1914  echo "" >> hola
+ 1915  hola
+ 1916  echo "" > hola
+ 1917  vi hola
+ 1918  awk 'gsub(/ /,"\n") gsub("\n","\n") {print}' novela | sort | uniq -c >> hola
+ 1919  vi hola
+ 1920  man
+ 1921  man awk
+ 1922  man awk string'
+ 1923  man awk string
+ 1924  awk 'gsub(/ /,"\n") gsub("\n","\n") {print}' novela | sort | uniq -c >> palabras
+ 1925  awk '{split($2,a,"*")}' '{print}' palabras >> dic
+ 1926  awk '{split($2,a,"*") print}' palabras >> dic
+ 1927  awk 'split($2,a,"*") {print}' palabras >> dic
+ 1928  dic
+ 1929  cat dic
+ 1930  more dic
+ 1931  more hola
+ 1932  cat palabras | awk '{split($2,a,"*") print a}'| >> dic
+ 1933  cat palabras | awk '{split($2,a,"*")} {print a}'| >> dic
+ 1934  cat palabras | awk '{split($2,$a,"*")} {print $a}'| >> dic
+ 1935  cat palabras | awk '{split($2,a,"*")} {print a}'| >> dic
+ 1936  cat palabras | awk '{split($2,a,"*")}'| >> dic
+ 1937  cat palabras | awk '{split($2,a,"*")}'| > dic
+ 1938  more dic
+ 1939  dic
+ 1940  cat dic
+ 1941  cat palabras | awk '{split($2,a,"*") print a}'| > dic
+ 1942  cat palabras | awk '{split($2,a,"*") {print a}}'| > dic
+ 1943  cat palabras | awk '{split($2,a,"*"); print a}'| > dic
+ 1944  cat palabras | awk '{split($2,a,"*"); for (i=1; i<=3; i++) print a[i]'| > dic
+ 1945  cat palabras | awk '{split($2,a,"*"); for (i=1; i<=3; i++) print a[i]}'| > dic
+ 1946  cat dic
+ 1947  cat palabras | awk '{split($2,a,"*"); for (i=1; i<=a; i++) print a[i]'| > dic
+ 1948  cat palabras | awk '{split($2,a,"/[a-z][A-Z]/"); for (i=1; i<=a; i++) print a[i]'| > dic
+ 1949  vi tiempos
+ 1950  gedit tiempos 
+ 1951  clear
+ 1952  cat tiempos 
+ 1953  cat numeros.dat | awk '{SUM += $6;I+=1} END { print SUM/I}'
+ 1954  cat numeros.dat | awk '{SUM += $6;I+=1} END { print SUM}'
+ 1955  cat numeros.dat | awk '{SUM += $6;} END { print SUM}'
+ 1956  cat tiempos | awk '{SUM += $6;} END { print SUM}'
+ 1957  sum
+ 1958  sum 19 + 21
+ 1959  sum 19+21
+ 1960  cat tiempos | awk '{SUM += $6;COUNT+=1} END { print SUM/COUNT}'
+ 1961  cat tiempos | awk '{SUM += $6;COUNT+=1} END { print COUNT}'
+ 1962  cat tiempos | awk '{COUNT=0;SUM += $6;COUNT+=1} END { print COUNT}'
+ 1963  cat tiempos | awk '{SUM += $6;COUNT+=1} END { print COUNT}'
+ 1964  cat tiempos | awk '{SUM += $6;COUNT+=1} END { print SUM/COUNT}'
+ 1965  cat tiempos | awk '{SUM += $6;COUNT+=1} END { print "TOTAL: "SUM/COUNT}'
+ 1966  cat tiempos | awk '{SUM += $6;COUNT+=1} END { print "TOTAL: "SUM "\nPROMEDIO: "SUM/COUNT}'
+ 1967  cat tiempos | awk '{SUM += $6;COUNT+=1} END { print "TOTAL: "SUM "\nPROMEDIO: "COUNT}'
+ 1968  cat tiempos | awk '{SUM += $6;} END { print "TOTAL: "SUM "\nPROMEDIO: "COUNT}'
+ 1969  cat tiempos | awk '{SUM += $6;} END { print "TOTAL: "SUM "\nPROMEDIO: "sum/5}'
+ 1970  cat tiempos | awk '{SUM += $6;} END { print "TOTAL: "SUM "\nPROMEDIO: "SUM/5}'
+ 1971  locate suma
+ 1972  cd ..
+ 1973  ls
+ 1974  cat tutor 
+ 1975  cd Desktop/
+ 1976  ls
+ 1977  more palabras
+ 1978  rails s
+ 1979  cd INNKU/R
+ 1980  cd INNKU/rubypros/
+ 1981  ls
+ 1982  git pull
+ 1983  ls
+ 1984  rails s
+ 1985  git branch
+ 1986  git checkout design 
+ 1987  git stash
+ 1988  git design
+ 1989  git checkout design
+ 1990  rails s
+ 1991  cd /home/rogelio/Desktop/
+ 1992  ls
+ 1993  cd rafmagana-rubypros-10a0099482a5b2424b0b96f689a83f638c21fd7f/
+ 1994  rake db:migrate
+ 1995  cp /home/rogelio/INNKU/rubypros/config/database.yml config/database.yml
+ 1996  rake db:migrate
+ 1997  rake db:seed
+ 1998  rails s
+ 1999  rails c
+ 2000  history | nose
+ 2001  vi nose
+ 2002  history | nose
+ 2003  history > nose

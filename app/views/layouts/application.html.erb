@@ -30,7 +30,6 @@
           <% if current_company %>
             <li><%= link_to "<span>Salir</span>".html_safe, destroy_company_session_path() %></li>
             <li><%= link_to "<span>Perfil</span>".html_safe, company_path(current_company) %></li>
-            <li><%= link_to "<span>Ofertas disponibles</span>".html_safe, available_path() %></li>
             <li><%= link_to "<span>Publicar oferta</span>".html_safe,  new_job_path() %></li>
             <li><%= link_to "<span>Mis ofertas</span>".html_safe, jobs_path() %></li>
             <%if can? :manage, RequiredSkill%>
@@ -46,10 +45,11 @@
 		  </ul>
 		  
 		  <div class="logo clear span-5">
-			  <a href=""><%=image_tag "jobBoard_logo.png", :alt=>"Ruby Job Board", :width=>"194", :height=>"150" %></a>
+			  <%=link_to (image_tag "jobBoard_logo.png", :alt=>"Ruby Job Board", :width=>"194", :height=>"150"), root_path%>
 			</div>
-
-		  <div><img class="" alt="" src="images/shareIcon.png" width="" height=""></div>
+			<% unless check_path_for request.path%>
+			  <%=render 'layouts/filter'%>
+			<% end%>
 		</div>
 		
       <% flash.each do |name, msg| %>
@@ -67,9 +67,9 @@
       
 		<div id="footer" class="clear span-24 last">
       <ul>
-        <li><a href="">ofertas</a></li>
-		    <li><a href="">publicar ofertas</a></li>
-		    <li><a href="">contáctanos</a></li>
+        <li><%=link_to "ofertas", jobs_path%></li>
+		    <li><%=link_to "publicar ofertas", new_job_path%></li>
+		    <li><%=link_to "contáctanos"%></li>
       </ul>
 		</div>
 	</div>
