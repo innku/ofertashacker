@@ -23,8 +23,11 @@ class JobsController < ApplicationController
     if(params[:skill])
       skill=params[:skill]
       @jobs = Job.all(:include => :required_skills, :conditions => ["required_skills.id = ?", skill])
+
     end
+    @jobs=@jobs.paginate :page => params[:page], :per_page => 6
     @rs=RequiredSkill.all
+   
   end
   
   def show

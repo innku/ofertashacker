@@ -24,5 +24,5 @@ group :development, :test do
 end
 gem "mocha", :group => :test
 gem 'RedCloth'
-gem "meta_search"
-gem "meta_where"
+gem "will_paginate", "~> 3.0.pre2"
+
