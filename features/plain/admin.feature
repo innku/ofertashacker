@@ -82,7 +82,7 @@ Feature: Admin Actions
     And there is a skill category with name "Back end"
     And I am on the skill category index page
     And I should see "Back end"
-    When I follow "Borrar"
+    When I follow "X"
     Then I should see "La categoria ha sido borrada"    
     And I should not see "Back end"
  

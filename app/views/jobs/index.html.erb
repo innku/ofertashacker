@@ -1,38 +1,5 @@
 <div class="clearfix">
-
-  <!--
-  <div id="skill_sidebar">
-    <h3>Filtrar Ofertas</h3>
-    <ul>
-      <li id="all">Ver todas</li>
-    <% for skill in @rs do %>
-        <% unless skill.id.to_s==params[:skill].to_s%>
-         <li class="unfiltered" id="<%=skill.id%>"><%=skill.skill_name%></li>
-        <%end%>
-    <% end %>
-    </ul>
-  </div>
-  
-    <ul id="features">
-      <li id="all">Ver Todas</li>
-      <li class="filter" id="full_time">Tiempo completo</li>
-      <li class="filter" id="part_time">Medio tiempo</li>
-      <li class="filter" id="remote">Remoto</li>
-      <li class="filter" id="flexible">Flexible</li>
-    </ul>
-   -->
-
      <div id="skill_main">
-        <!--div class="mainContent span-23">
-          <h1>
-          <%if current_company%>
-            <%= t('.my_vacancies') %> <%= current_company.title %>
-          <%else%>
-            Lista de ofertas disponibles en Ruby Pros
-          <%end%>
-          </h1>
-            <% custom_title "Ofertas disponibles"%> 
-        </div -->       
         <% if @jobs.empty?%>
           <div class="mainContent span-23">
             <h1>Aun no tienes ofertas publicadas</h1>
