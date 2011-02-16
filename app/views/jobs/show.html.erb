@@ -1,6 +1,10 @@
 <div class="job">
   <div id="company">
-  <h1><%=@job.company.title%> <%=image_tag @job.company.logo.url%>
+    <h1><%= link_to @job.company.title, @job.company %></h1>
+    <%=image_tag @job.company.logo.url(:thumb)%>
+    <p>Correo: <%= mail_to @job.company.contact_email %></p>
+    <p>Telefono:<%= @job.company.phone1 %></p>
+    <p>Facebook:<%= link_to @job.company.facebook %></p>
   </div>
   <h2><%= @job.title%></h2>
   En <%=@job.city%>
@@ -21,8 +25,8 @@
   <h2>Descripción</h2>
   <p><%= RedCloth.new(@job.description).to_html.html_safe %></p>
   <% if can? :manage, @job%>  
-    <%=link_to "Editar", edit_job_path(@job)%> |
-    <%= link_to 'Borrar', @job, :confirm => '¿Estas Seguro que deseas borrar la oferta?', :method => :delete %>
+    <%=link_to "Editar", edit_job_path(@job), :class => "button"%> 
+    <%= link_to 'Borrar', @job, :confirm => '¿Estas Seguro que deseas borrar la oferta?', :method => :delete, :class => "button" %>
   <% end%>
 </div>
 

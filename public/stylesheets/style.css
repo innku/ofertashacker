@@ -5,20 +5,7 @@ html {
 body {
 	background:url("../images/bkg_line_pattern.png") repeat-x 0px 34px;
 	
-}http://localhost:3000/availablehttp://localhost:3000/available
-@font-face {
-  font-family: 'Arvo';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Arvo'), url('http://themes.googleusercontent.com/font?kit=MViwy4K6e56oHcyeMzjbCQ') format('truetype');
 }
-@font-face {
-  font-family: 'Arvo';
-  font-style: normal;
-  font-weight: bold;
-  src: local('Arvo Bold'), local('Arvo-Bold'), url('http://themes.googleusercontent.com/font?kit=F-uvpIj1hF17IDyvQvI50Q') format('truetype');
-}
-
 
 h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 

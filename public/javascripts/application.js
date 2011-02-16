@@ -26,7 +26,7 @@ $(document).ready(function() {
     $('li#all').addClass('selected');
   });
   */
-/*
+
   $("#mainMenu input").click(function(){
       //$('li#all').removeClass('selected');
     var thisFilter = $(this).attr("id");
@@ -46,7 +46,7 @@ $(document).ready(function() {
     }
         //$(this).addClass('selected');
   });
-*/
+    
 });
 
 function check_job_types() {

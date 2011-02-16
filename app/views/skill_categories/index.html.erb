@@ -1,15 +1,16 @@
-<table>
-  <tr>
-    <th>Category</th>
-  </tr>
-  <% for skill_category in @skill_categories %>
-    <tr>
-      <td><%= skill_category.category %></td>
-      <td><%= link_to "Ver", skill_category %></td>
-      <td><%= link_to "Editar", edit_skill_category_path(skill_category) %></td>
-      <td><%= link_to "Borrar", skill_category, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
+<%custom_title "Manejar skills"%>
+
+<h1>Skills</h1>
+<% for skill_category in @skill_categories %>
+  <p>
+    <%= skill_category.category%>      
+    <%= link_to "Ver", skill_category %> 
+    <% if can? :manage, skill_category%>
+     | <%= link_to "Editar", edit_skill_category_path(skill_category) %> |
+      <%= link_to "X", skill_category, :confirm => 'Are you sure?', :method => :delete %>
+    <% end %>
+  </p>
   <% end %>
 </table>
 
-<p><%= link_to "New Skill Category", new_skill_category_path %></p>
+<p><%= link_to "Crear nueva categoria", new_skill_category_path, :class => "button" %></p>

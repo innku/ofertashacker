@@ -14,7 +14,8 @@ class Ability
       can :manage, Job do |j|
         j.company == company
       end
-    else  
+    elsif company.member?
+      can :read, SkillCategory 
       can :read, RequiredSkill
       can :read, Company
       can :manage, Company do |c|
@@ -25,6 +26,9 @@ class Ability
       can :manage, Job do |j|
         j.company == company
       end
+    else
+      can :read, Company
+      can :read, Job
     end
   end
   

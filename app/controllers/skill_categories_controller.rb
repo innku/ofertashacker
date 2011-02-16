@@ -1,4 +1,5 @@
 class SkillCategoriesController < ApplicationController
+  load_and_authorize_resource
   def index
     @skill_categories = SkillCategory.all
   end

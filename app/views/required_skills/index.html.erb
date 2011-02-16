@@ -1,8 +1,11 @@
 <% custom_title "Skills requeridos"%>
 <%for skill in @required_skills do%>
-<%=skill.skill_name%> 
-<%=link_to "Ver"%> |
-<%=link_to "Editar", edit_required_skill_path(skill)%> |
-<%= link_to 'Borrar', skill, :confirm => '¿Estas Seguro que deseas borrar la oferta?', :method => :delete %>
-<br />
+  <%=skill.skill_name%> 
+  <%=link_to "Ver", skill%> 
+
+  <% if can? :manage, skill %> 
+    | <%=link_to "Editar", edit_required_skill_path(skill)%> |
+    <%= link_to 'Borrar', skill, :confirm => '¿Estas Seguro que deseas borrar la oferta?', :method => :delete %>
+  <% end %>
+    <br />  
 <%end%>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110208151539) do
+ActiveRecord::Schema.define(:version => 20110216182227) do
 
   create_table "cities", :force => true do |t|
     t.integer "state_id"
@@ -51,15 +51,13 @@ ActiveRecord::Schema.define(:version => 20110208151539) do
     t.string   "linkedin"
     t.string   "phone1"
     t.string   "phone2"
-    t.string   "phone3"
+    t.string   "contact_email"
   end
 
-  add_index "companies", ["city"], :name => "index_companies_on_city"
   add_index "companies", ["city_id"], :name => "index_companies_on_city_id"
   add_index "companies", ["confirmation_token"], :name => "index_companies_on_confirmation_token", :unique => true
   add_index "companies", ["email"], :name => "index_companies_on_email", :unique => true
   add_index "companies", ["reset_password_token"], :name => "index_companies_on_reset_password_token", :unique => true
-  add_index "companies", ["title"], :name => "index_companies_on_title", :unique => true
 
   create_table "countries", :force => true do |t|
     t.string "name"
@@ -87,9 +85,7 @@ ActiveRecord::Schema.define(:version => 20110208151539) do
   end
 
   add_index "jobs", ["city_id"], :name => "index_jobs_on_city_id"
-  add_index "jobs", ["state"], :name => "index_jobs_on_state"
   add_index "jobs", ["state_id"], :name => "index_jobs_on_state_id"
-  add_index "jobs", ["title"], :name => "index_jobs_on_title"
 
   create_table "jobs_required_skills", :id => false, :force => true do |t|
     t.integer "job_id"
@@ -100,12 +96,11 @@ ActiveRecord::Schema.define(:version => 20110208151539) do
 
   create_table "required_skills", :force => true do |t|
     t.string   "skill_name"
+    t.integer  "job_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "skill_category_id"
   end
-
-  add_index "required_skills", ["skill_name"], :name => "index_required_skills_on_skill_name", :unique => true
 
   create_table "skill_categories", :force => true do |t|
     t.string   "category"

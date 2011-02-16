@@ -1,11 +1,11 @@
-<p>
-  <strong>Category:</strong>
-  <%= @skill_category.category %>
-</p>
 
+<%custom_title "Ver categoria"%>
+<h1><%=@skill_category.category%></h1>
 <p>
-  <%= link_to "Editar", edit_skill_category_path(@skill_category) %> |
-  <%= link_to "Borrar", @skill_category, :confirm => 'Are you sure?', :method => :delete %> |
+  <% if can? :manage, @skill_category%>
+    <%= link_to "Editar", edit_skill_category_path(@skill_category) %> |
+    <%= link_to "X", @skill_category, :confirm => '¿Estas seguro de que deseas borrarlo?', :method => :delete %> |
+  <% end %>
   <%= link_to "Ver Todas", skill_categories_path %>
 </p>
 <div id="skills">
@@ -15,11 +15,11 @@
   <li>
     <%=skill.skill_name%>
     <% if can? :manage, RequiredSkill%>
-    
-      <%=link_to "Editar"%> |
-      <%=link_to "X"%>
+      <%= link_to "Editar", edit_required_skill_path(skill) %> |
+      <%= link_to "X", skill, :confirm => '¿Estas seguro de que deseas borrarlo?', :method => :delete %>
     <% end %>
   </li>
 <% end %>
 </ul>
 </div>
+<%= link_to "Crear nueva habilidad", new_required_skill_path, :class => "button"%>

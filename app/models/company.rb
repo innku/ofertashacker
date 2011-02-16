@@ -8,14 +8,17 @@ class Company < ActiveRecord::Base
   has_many :jobs
   
   validates_presence_of :title, :email
-  validates_attachment_content_type :logo, :content_type => ['image/jpg','image/jpeg', 'image/png']
+  validates_attachment_content_type :logo, :content_type => ['image/jpg','image/jpeg', 'image/png', 'image/gif']
   
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :title, :city, :logo, :description
+  attr_accessible :phone1, :phone2, :contact_email, :linkedin, :facebook, :twitter
+
 	metropoli_for :city, :as=>:city_name
   scope :members, where(:role => "member")
   
-  has_attached_file :logo, :styles => {:medium => "300x300>", :thumb => "100x100>"},
+  has_attached_file :logo, :styles => {:medium => "300x300>", :thumb => "149x149>"},
+                          :default_style => :medium,
                             :storage => {
                               'development' => :filesystem,
                               'test' => :filesystem,
@@ -23,7 +26,7 @@ class Company < ActiveRecord::Base
                               'production' => :s3
                             }[Rails.env],
                             :s3_credentials => "#{Rails.root}/config/s3.yml",
-                            :url => "#{ENV['RAILS_ENV']}/:attachment/:id/:style/:basename.:extension",
+                            :url => "../files/#{ENV['RAILS_ENV']}/:attachment/:id/:style/:basename.:extension",
                             :path => "public/files/#{Rails.env}/:attachment/:id/:style/:basename.:extension",
                             :bucket => 'rubypros',
                             :default_url => "/images/shareIcon.gif"
