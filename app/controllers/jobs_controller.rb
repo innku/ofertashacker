@@ -20,14 +20,18 @@ class JobsController < ApplicationController
     else
       @jobs = Job.search(params[:search],params[:type])
     end
-    if(params[:skill])
-      skill=params[:skill]
-      @jobs = Job.all(:include => :required_skills, :conditions => ["required_skills.id = ?", skill])
-
+    if params[:filter]
+      @jobs=Job.filter_it(
+            params[:full_time],
+            params[:part_time],
+            params[:flexible],
+            params[:remote])      
     end
     @jobs=@jobs.paginate :page => params[:page], :per_page => 6
-    @rs=RequiredSkill.all
-   
+    respond_to do |format|
+      format.html {render :action => "index"}  
+      format.json {render :text => @jobs.to_json}
+    end
   end
   
   def show

@@ -11,6 +11,24 @@ class Job < ActiveRecord::Base
 	SEARCH_TYPES = ['Title','Company', 'City']
 	
 	metropoli_for :city, :as => :city_name
+
+  def self.filter_it(full_time,part_time,flexible,remote)
+    jobs=Job.all
+    if full_time=="false"
+        jobs=where(:full_time=>false)
+    end
+    if part_time=="false"
+        jobs=where(:part_time=>false)
+    end
+    if flexible=="false"
+        jobs=where(:flexible=>false)
+    end
+    if remote=="false"
+        jobs=where(:remote=>false)
+    end
+    jobs 
+  end
+
 	
   def not_part_time_present
     !part_time
@@ -30,17 +48,6 @@ class Job < ActiveRecord::Base
     id_collection.inject(""){|result,id| result += (id.to_s + (id == id_collection.last ?  '' : ','))}
   end
 
-  def comparar (param)
-    bueno=[]
-    jobs=find(:all)
-    for job in jobs do
-      for skill in job.required_skills do
-        if !skill.to_s.equals(param.to_s)
-        end  
-      end
-    end
-    
-  end
   
   #search simple de trabajos
   def self.search(search, type)
@@ -50,5 +57,4 @@ class Job < ActiveRecord::Base
       find(:all, :order=>'created_at DESC')
     end
   end
-
 end

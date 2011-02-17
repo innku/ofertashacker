@@ -1,5 +1,6 @@
 module JobsHelper
 
+
   def get_job_type(job, text_only=false)
     
     content = "".html_safe

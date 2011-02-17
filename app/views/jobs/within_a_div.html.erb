@@ -1,0 +1,7 @@
+<h1 style="color:red;margin-bottom:3em">Listing articles</h1>
+
+<%= render(:partial => "job", :collection => @jobs) %>
+
+<br />
+<%= pageless(@jobs.total_pages, jobs_path, "#nose") %>
+
