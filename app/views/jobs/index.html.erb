@@ -7,7 +7,9 @@
           </div>
         <% else %>
           <%= render :partial =>'jobs', :locals => {:jobs => @jobs} %>
+          <div id="loader"></div>
 	      <% end %>
+	      
     </div>
      
 </div>

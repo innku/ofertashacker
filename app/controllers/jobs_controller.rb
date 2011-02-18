@@ -25,8 +25,9 @@ class JobsController < ApplicationController
             params[:full_time],
             params[:part_time],
             params[:flexible],
-            params[:remote])      
+            params[:remote])  
     end
+    #@jobs=Job.find_all_by_full_time_and_part_time(true,false)
     @jobs=@jobs.paginate :page => params[:page], :per_page => 6
     respond_to do |format|
       format.html {render :action => "index"}  

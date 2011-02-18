@@ -11,22 +11,18 @@ class Job < ActiveRecord::Base
 	SEARCH_TYPES = ['Title','Company', 'City']
 	
 	metropoli_for :city, :as => :city_name
-
+	
   def self.filter_it(full_time,part_time,flexible,remote)
     jobs=Job.all
-    if full_time=="false"
-        jobs=where(:full_time=>false)
-    end
-    if part_time=="false"
-        jobs=where(:part_time=>false)
-    end
-    if flexible=="false"
-        jobs=where(:flexible=>false)
-    end
-    if remote=="false"
-        jobs=where(:remote=>false)
-    end
-    jobs 
+    arr=[]
+    full_time=="false" ? arr << "\"jobs\".\"full_time\" = 'f'" : ""
+    part_time=="false" ? arr << "\"jobs\".\"part_time\" = 'f'" : ""
+    remote=="false" ? arr << "\"jobs\".\"remote\" = 'f'" : ""
+    flexible=="false" ? arr << "\"jobs\".\"flexible\" = 'f'" : ""
+	puts arr.join " AND "
+	find(:all, :conditions => "#{arr.join(" AND ")}", :order=>'created_at DESC')
+
+
   end
 
 	

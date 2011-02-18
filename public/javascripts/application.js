@@ -17,8 +17,16 @@ function is_even(num){
 $(window).scroll(function(){
     var i=0;
     if(isScrollBottom()){
+    	$("#loader").html("<img alt=\"Loader\"src=\"/images/ajax-loader.gif\"  />");
         current_page++;
-        $.getJSON('/jobs.json',{page:current_page}, function(data) {
+	    var filter_info = get_checkbox_status("#mainMenu input");
+        $.getJSON('/jobs.json',{filter:'true',
+                            full_time:filter_info[0],
+                            part_time:filter_info[1],
+                            remote:filter_info[2],
+                            flexible:filter_info[3],
+                            page:current_page
+                            }, function(data) {
             $.each(data,function(){
                 if (is_even(i)) {
                     $(".posts.even").append(job_template(this.job));
@@ -28,6 +36,7 @@ $(window).scroll(function(){
                 i++;
             });
         });
+        $("#loader").html("");
     }
 });
 
@@ -43,27 +52,20 @@ $(document).ready(function() {
   
   //filtering by skills
   
-  $("li.unfiltered").click(function(){
-        $('li#all').removeClass('selected');
-        var thisFilter = $(this).attr("id");
-         $('.job').each(function() {
-            if(!$(this).hasClass('rs'+thisFilter+"")){
-                $(this).fadeOut();
-            }
-          }
-        )
-        $(this).addClass('selected');
-  }); 
-
   $("#mainMenu input").click(function(){
+  	current_page=1;
     var filter_info = get_checkbox_status("#mainMenu input");
      $(".posts").html("");
+ 	$("#loader").append("<img alt=\"Loader\"src=\"/images/ajax-loader.gif\"  />");
      $.getJSON('/jobs.json',{filter:'true',
                             full_time:filter_info[0],
                             part_time:filter_info[1],
                             remote:filter_info[2],
-                            flexible:filter_info[3]}, function(data) {
+                            flexible:filter_info[3],
+                            page:current_page
+                            }, function(data) {
             var i=0;
+            
             $.each(data,function(){
                 if (is_even(i)) {
                     $(".posts.even").append(job_template(this.job));
@@ -71,9 +73,9 @@ $(document).ready(function() {
                     $(".posts.odd").append(job_template(this.job)); 
                 }
                 i++;
-            });
+            });   
     });
-    
+    $("#loader").html("");
   });
     
 });
