@@ -8,21 +8,25 @@ class Job < ActiveRecord::Base
   validates_presence_of :company_id, :title, :description, :city
   validates_presence_of :full_time, :if=> :not_part_time_present
 	
-	SEARCH_TYPES = ['Title','Company', 'City']
-	
 	metropoli_for :city, :as => :city_name
 	
-  def self.filter_it(full_time,part_time,flexible,remote)
-    jobs=Job.all
-    arr=[]
-    full_time=="false" ? arr << "\"jobs\".\"full_time\" = 'f'" : ""
-    part_time=="false" ? arr << "\"jobs\".\"part_time\" = 'f'" : ""
-    remote=="false" ? arr << "\"jobs\".\"remote\" = 'f'" : ""
-    flexible=="false" ? arr << "\"jobs\".\"flexible\" = 'f'" : ""
-	puts arr.join " AND "
-	find(:all, :conditions => "#{arr.join(" AND ")}", :order=>'created_at DESC')
+	scope   :full_time, where(:full_time => true)
+	scope   :part_time, where(:part_time => true)
+	scope   :remote,    where(:remote => true)
+	scope   :flexible, where(:flexible => true)
+	scope   :ordered, order('id DESC')
 
-
+	
+  def self.filter_it(filters={})
+    results = Job.includes(:company)
+      unless filters.blank?  
+        results = results.full_time if eval(filters[:full_time])
+        results = results.part_time if eval(filters[:part_time])
+        results = results.remote if eval(filters[:remote])
+        results = results.flexible if eval(filters[:flexible])
+        puts results
+	    end
+	  results
   end
 
 	
@@ -42,15 +46,5 @@ class Job < ActiveRecord::Base
   def required_skill_ids_string
     id_collection = required_skills.collect{|rs| rs.id }
     id_collection.inject(""){|result,id| result += (id.to_s + (id == id_collection.last ?  '' : ','))}
-  end
-
-  
-  #search simple de trabajos
-  def self.search(search, type)
-    if search
-      find(:all, :conditions => [''+type+' LIKE ?', "%#{search}%"], :order=>'created_at DESC')
-    else
-      find(:all, :order=>'created_at DESC')
-    end
   end
 end
