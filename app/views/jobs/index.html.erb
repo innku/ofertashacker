@@ -1,3 +1,4 @@
+<%javascript 'endless'%>
 <div class="clearfix">
      <div id="skill_main">
         <% if @jobs.empty?%>
@@ -7,10 +8,9 @@
           </div>
         <% else %>
           <%= render :partial =>'jobs', :locals => {:jobs => @jobs} %>
-          <div class="mainContent span-23" id="bottom">
-		        <%= will_paginate @jobs, :class => 'pagination ajax' %>
-		      </div>
+          <div id="loader"></div>
 	      <% end %>
+	      
     </div>
      
 </div>

@@ -3,51 +3,20 @@ $(document).ready(function() {
   $("form").validator();
   
   //filtering by skills
-  
-  $("li.unfiltered").click(function(){
-        $('li#all').removeClass('selected');
-        var thisFilter = $(this).attr("id");
-         $('.job').each(function() {
-            if(!$(this).hasClass('rs'+thisFilter+"")){
-                $(this).fadeOut();
-            }
-          }
-        )
-        $(this).addClass('selected');
-  }); 
-  //filtering by type
-  /*  
-  $("li#all").click(function(){
-    $('.job').each(function() {
-        $(this).fadeIn();   
-    });
-    $('#features li').removeClass('selected');
-    $('#skill_sidebar li').removeClass('selected');
-    $('li#all').addClass('selected');
-  });
-  */
-
-  $("#mainMenu input").click(function(){
-      //$('li#all').removeClass('selected');
-    var thisFilter = $(this).attr("id");
-    if(!$(this).is(":checked")){
-        thisFilter = check_job_types();
-        $('.job').each(function() {
-            if($(this).is(thisFilter) || thisFilter==""){
-                $(this).fadeIn();
-            }
-        });
-    } else {
-         $('.job').each(function() {
-            if(!$(this).hasClass(thisFilter)){
-                $(this).fadeOut();
-            }
-          });              
-    }
-        //$(this).addClass('selected');
-  });
     
 });
+//check whether a collection of checkboxes are checked or not
+function get_checkbox_status(selector){
+    var str=[];
+    $(selector).each(function(){
+        if($(this).is(':checked')){
+            str.push(true);
+        }else{
+            str.push(false);
+        }
+    });
+    return str;
+}
 
 function check_job_types() {
     var str="";

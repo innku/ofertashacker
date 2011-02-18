@@ -1,5 +1,6 @@
 module JobsHelper
 
+
   def get_job_type(job, text_only=false)
     
     content = "".html_safe
@@ -32,7 +33,6 @@ module JobsHelper
     job.company ? str+=job.company.title : ""
     job.city ? str+=" in #{job.city} " : ""
     str+=get_job_type(job,true)
-    puts str
     str
     
   end

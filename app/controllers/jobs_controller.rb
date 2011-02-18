@@ -15,19 +15,14 @@ class JobsController < ApplicationController
     end
   end
   def index
-    if current_company
-      @jobs = current_company.jobs.search(params[:search],params[:type])
-    else
-      @jobs = Job.search(params[:search],params[:type])
+    @jobs =  Job.filter_it(params[:filters])
+    @jobs &= Job.where(:company_id => current_company.id) if current_company
+    @jobs = @jobs.ordered.paginate :page => params[:page], :per_page => 8
+    respond_to do |format|
+      format.html {render :action => "index"}  
+      format.json {render :text => @jobs.to_json }
+      #(:includes => {:company => {:only => [:name], :methods => [:logo_url]}})
     end
-    if(params[:skill])
-      skill=params[:skill]
-      @jobs = Job.all(:include => :required_skills, :conditions => ["required_skills.id = ?", skill])
-
-    end
-    @jobs=@jobs.paginate :page => params[:page], :per_page => 6
-    @rs=RequiredSkill.all
-   
   end
   
   def show
