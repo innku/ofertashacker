@@ -9,17 +9,22 @@
   <%= link_to "Ver Todas", skill_categories_path %>
 </p>
 <div id="skills">
-<h2>Habilidades de esta categoría</h2>
-<ul>
-<% for skill in @required_skills do%>
-  <li>
-    <%=skill.skill_name%>
-    <% if can? :manage, RequiredSkill%>
-      <%= link_to "Editar", edit_required_skill_path(skill) %> |
-      <%= link_to "X", skill, :confirm => '¿Estas seguro de que deseas borrarlo?', :method => :delete %>
-    <% end %>
-  </li>
-<% end %>
-</ul>
+  <h2>Habilidades de esta categoría</h2>
+  <ul>
+  <% for skill in @required_skills do%>
+    <li>
+      <%=skill.skill_name%>
+      <% if can? :manage, RequiredSkill%>
+        <%= link_to "Editar", edit_required_skill_path(skill) %> |
+        <%= link_to "X", skill, :confirm => '¿Estas seguro de que deseas borrarlo?', :method => :delete %>
+      <% end %>
+    </li>
+  <% end %>
+  </ul>
 </div>
-<%= link_to "Crear nueva habilidad", new_required_skill_path, :class => "button"%>
+<br/>
+
+<div id="new_skill" style="display:none">
+  <%= render "required_skills/form" %>
+</div>
+<%= link_to "Crear nueva habilidad", "#", :class => "button", :id => "new_skill_trigger" %>

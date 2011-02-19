@@ -2,7 +2,10 @@ $(document).ready(function() {
   //jquery forms
   $("form").validator();
   
-  //filtering by skills
+  $("#new_skill_trigger").click(function() {
+    $('#new_skill').show();
+
+    });   
     
 });
 //check whether a collection of checkboxes are checked or not

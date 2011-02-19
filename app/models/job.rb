@@ -22,9 +22,8 @@ class Job < ActiveRecord::Base
       unless filters.blank?  
         results = results.full_time if eval(filters[:full_time])
         results = results.part_time if eval(filters[:part_time])
-        results = results.remote if eval(filters[:remote])
         results = results.flexible if eval(filters[:flexible])
-        puts results
+        results = results.remote if eval(filters[:remote])
 	    end
 	  results
   end

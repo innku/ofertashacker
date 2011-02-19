@@ -7,6 +7,8 @@ class SkillCategoriesController < ApplicationController
   def show
     @skill_category = SkillCategory.find(params[:id])
     @required_skills = RequiredSkill.find_all_by_skill_category_id(@skill_category.id)
+    @required_skill = RequiredSkill.new
+    @skill_categories=SkillCategory.all
   end
 
   def new

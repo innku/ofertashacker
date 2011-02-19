@@ -52,7 +52,7 @@ $(window).scroll(function(){
     var i=0;
     if(isScrollBottom()){
     	$("#loader").html("<img alt=\"Loader\"src=\"/images/ajax-loader.gif\"  />");
-        current_page++;
+        alert(current_page);
 	    var filter_info = get_checkbox_status("#mainMenu input");
         getJobsJSON(filter_info);
     }
