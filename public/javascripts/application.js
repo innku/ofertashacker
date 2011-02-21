@@ -3,8 +3,8 @@ $(document).ready(function() {
   $("form").validator();
   
   $("#new_skill_trigger").click(function() {
-    $('#new_skill').show();
-
+    $('.new_skill').slideToggle("slow");
+    $('#new_skill_trigger').fadeOut();
     });   
     
 });
@@ -42,7 +42,8 @@ $(function()
 	
 	$(".skill").live('click', function(){
 	    required_skill_html = required_skill_template($(this).attr('data-skill-id'), $(this).text());
-		$("#job_required_profile").append(required_skill_html);
+	    category = $(this).parent().parent().attr('class');
+		$("#all_skills."+category+" #job_required_profile").append(required_skill_html);
 		append_skill_id($(this).attr('data-skill-id'));
 		$(this).remove();		
 		index++;
@@ -50,7 +51,8 @@ $(function()
 	
 	$("li.required_skill").live('click', function(){
 	    job_skill_html = job_skill_template($(this).attr('data-skill-id'), $(this).text());
-		$("#job_skills").append(job_skill_html);
+	    category = $(this).parent().parent().attr('class');
+		$("#all_skills."+category+" #job_skills").append(job_skill_html);
 		remove_skill_id($(this).attr('data-skill-id'));
 		$(this).remove();
 		

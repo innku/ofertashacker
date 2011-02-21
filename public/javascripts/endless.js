@@ -23,23 +23,30 @@ function getJobsJSON(filter_info){
 }
 
 //renders a job template 
-function job_template(job) {
-    var str="<li class=\"job\">";
+function condensed_info(job){
     
-    str += "<a href=\"/jobs/"+job.id+"\">";
-    str += "<div class=\"span-4 prepend-8 last\">";
-    str += "<img alt=\"Shareicon\" src=\"/images/../files/development/logos/7/thumb/shareIcon.gif\" /></div>";
-    if(job.title.length <= 40)        
-        str += "<h1>" + job.title + "</h1>";
-    else
-        str += "<h1>" + job.title.substring(0,40) + "...</h1>";
-    str += "<p>En Monterrey, Nuevo Leon, MX";
+    str = job.company.title + " en " + job.city ;
     (job.full_time) ? str+=", Tiempo completo" : "";
     (job.part_time) ? str+=", Medio tiempo" : "";
     (job.flexible) ? str+=", Flexible" : "";
     (job.remote) ? str+=", Remoto" : "";
-    str += "</p>";
+    if (str.length<=70)
+        return str;
+    return str.substring(0,70) + "...";
     
+}
+
+//renders a job template 
+function job_template(job) {
+    var str="<li class=\"job\">";
+    str += "<a href=\"/jobs/"+job.id+"\">";
+    str += "<div class=\"span-4 prepend-8 last\">";
+    str += "<img alt=\"Shareicon\" src=\"/images/shareIcon.gif\" /></div>";
+    if(job.title.length <= 40)        
+        str += "<h1>" + job.title + "</h1>";
+    else
+        str += "<h1>" + job.title.substring(0,40) + "...</h1>"; 
+    str +="<p>" + condensed_info(job) + "</p>"
     str += "</a></li>";
     return str;
 }
@@ -52,7 +59,7 @@ $(window).scroll(function(){
     var i=0;
     if(isScrollBottom()){
     	$("#loader").html("<img alt=\"Loader\"src=\"/images/ajax-loader.gif\"  />");
-        alert(current_page);
+        current_page++;
 	    var filter_info = get_checkbox_status("#mainMenu input");
         getJobsJSON(filter_info);
     }

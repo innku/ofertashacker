@@ -24,7 +24,17 @@
 </div>
 <br/>
 
-<div id="new_skill" style="display:none">
-  <%= render "required_skills/form" %>
+<div class="new_skill" style="display:none">
+<%form_for @required_skill do |f|%>
+
+  <p>
+    <%=f.text_field :skill_name, :required=>'required'%>
+    <%=f.hidden_field :skill_category_id, :value => @skill_category.id %>
+    <%=f.submit "Crear nueva habilidad"%>
+  </p>
+  
+<%end%>
+
+
 </div>
 <%= link_to "Crear nueva habilidad", "#", :class => "button", :id => "new_skill_trigger" %>

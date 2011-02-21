@@ -32,29 +32,33 @@
   
  
   <h2><%= t('.required_profile') %></h2>  
-  <div id="all_skills">
-    <ul id="job_skills">
-      <h5><%= t('.skills') %></h5>
-      <% (RequiredSkill.all - @job.required_skills).each do |required_skill| %>
-        <li id="<%= required_skill.id %>" class="skill" data-skill-id='<%= required_skill.id %>' >
-          <%= required_skill.skill_name%>
-        </li>
-      <% end %>  
-    </ul>
-   
-    
-    <ul id="job_required_profile">
-        <h5><%= t('.required_profile') %></h5>
-        <% @job.required_skills.each do |required_skill| %>
-        <li class="required_skill" data-skill-id='<%= required_skill.id %>' >
-          <%= required_skill.skill_name%>
-        </li>
-      <% end %> 
-        <%= f.hidden_field :required_skill_ids_string %>
-    </ul>
-    <%=image_tag 'arrow.jpg', :id=>"arrow"%>
-    <%=image_tag 'arrow_back.jpg', :id=>"arrow_back"%>
-  </div>  
+  <%for category in SkillCategory.all%>
+            <h3><%= category.category %></h3>
+    <div id="all_skills"class="c<%=category.id%>">
+      <ul id="job_skills" >
+        <h5><%= t('.skills') %></h5>
+        <% (RequiredSkill.find_all_by_skill_category_id(category.id) - @job.required_skills).each do |required_skill| %>
+          <li id="<%= required_skill.id %>" class="skill" data-skill-id='<%= required_skill.id %>' >
+            <%= required_skill.skill_name%>
+          </li>
+        <% end %>  
+      </ul>
+     
+      
+      <ul id="job_required_profile">
+          <h5><%= t('.required_profile') %></h5>
+          <% @job.required_skills.find_all_by_skill_category_id(category).each do |required_skill| %>
+            <li class="required_skill" data-skill-id='<%= required_skill.id %>' >
+              <%= required_skill.skill_name%>
+            </li>
+          <% end %> 
+      </ul>
+      <%=image_tag 'arrow.jpg', :id=>"arrow"%>
+      <%=image_tag 'arrow_back.jpg', :id=>"arrow_back"%>
+    </div>  
+  <% end %>
+  <%= f.hidden_field :required_skill_ids_string %>
+  
   <p><%= f.label :extra_skill, t('.extra_skill') %><br />
    <%=f.text_field :extra_skill, :cols=>3%></p>
    

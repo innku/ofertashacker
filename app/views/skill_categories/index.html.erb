@@ -13,4 +13,12 @@
   <% end %>
 </table>
 
-<p><%= link_to "Crear nueva categoria", new_skill_category_path, :class => "button" %></p>
+<div class="new_skill" style="display:none">
+<%form_for @skill_category do |f|%>
+  <p>
+    <%= f.text_field :category %>
+    <%= f.submit "Crear" %>
+  </p>
+<% end %>
+</div>
+<p><%= link_to "Crear nueva categoria", "#", :class => "button", :id => "new_skill_trigger" %></p>

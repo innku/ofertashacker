@@ -10,20 +10,20 @@ class Job < ActiveRecord::Base
 	
 	metropoli_for :city, :as => :city_name
 	
-	scope   :full_time, where(:full_time => true)
-	scope   :part_time, where(:part_time => true)
-	scope   :remote,    where(:remote => true)
-	scope   :flexible, where(:flexible => true)
+	scope   :full_time, where(:full_time => false)
+	scope   :part_time, where(:part_time => false)
+	scope   :remote,    where(:remote => false)
+	scope   :flexible, where(:flexible => false)
 	scope   :ordered, order('id DESC')
 
 	
   def self.filter_it(filters={})
     results = Job.includes(:company)
       unless filters.blank?  
-        results = results.full_time if eval(filters[:full_time])
-        results = results.part_time if eval(filters[:part_time])
-        results = results.flexible if eval(filters[:flexible])
-        results = results.remote if eval(filters[:remote])
+        results = results.full_time if !eval(filters[:full_time])
+        results = results.part_time if !eval(filters[:part_time])
+        results = results.flexible if !eval(filters[:flexible])
+        results = results.remote if !eval(filters[:remote])
 	    end
 	  results
   end
