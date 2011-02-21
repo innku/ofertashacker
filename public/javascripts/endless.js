@@ -73,6 +73,7 @@ function isScrollBottom() {
 } 
 $(document).ready(function() {
     $("#mainMenu input").click(function(){
+    
         $(".posts").html("");
         $("#loader").append("<img alt=\"Loader\"src=\"/images/ajax-loader.gif\"  />");
         current_page=1;

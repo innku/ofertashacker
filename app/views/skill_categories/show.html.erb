@@ -15,8 +15,8 @@
     <li>
       <%=skill.skill_name%>
       <% if can? :manage, RequiredSkill%>
-        <%= link_to "Editar", edit_required_skill_path(skill) %> |
-        <%= link_to "X", skill, :confirm => '¿Estas seguro de que deseas borrarlo?', :method => :delete %>
+        <%= link_to "Editar", edit_skill_category_required_skill_path(@skill_category, skill) %> |
+        <%= link_to "X", [@skill_category, skill], :confirm => '¿Estas seguro de que deseas borrarlo?', :method => :delete %>
       <% end %>
     </li>
   <% end %>
@@ -25,14 +25,12 @@
 <br/>
 
 <div class="new_skill" style="display:none">
-<%form_for @required_skill do |f|%>
-
+<%form_for [@skill_category, @required_skill] do |f|%>
   <p>
     <%=f.text_field :skill_name, :required=>'required'%>
     <%=f.hidden_field :skill_category_id, :value => @skill_category.id %>
     <%=f.submit "Crear nueva habilidad"%>
   </p>
-  
 <%end%>
 
 

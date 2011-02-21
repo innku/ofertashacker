@@ -8,23 +8,20 @@ class Job < ActiveRecord::Base
   validates_presence_of :company_id, :title, :description, :city
   validates_presence_of :full_time, :if=> :not_part_time_present
 	
+	FILTERS = %w{full_time part_time flexible remote}
+	
 	metropoli_for :city, :as => :city_name
 	
-	scope   :full_time, where(:full_time => false)
-	scope   :part_time, where(:part_time => false)
-	scope   :remote,    where(:remote => false)
-	scope   :flexible, where(:flexible => false)
 	scope   :ordered, order('id DESC')
-
 	
-  def self.filter_it(filters={})
+  def self.filter_it(filters={}, company=nil)
     results = Job.includes(:company)
-      unless filters.blank?  
-        results = results.full_time if !eval(filters[:full_time])
-        results = results.part_time if !eval(filters[:part_time])
-        results = results.flexible if !eval(filters[:flexible])
-        results = results.remote if !eval(filters[:remote])
+      unless filters.blank?
+        results = results.where(FILTERS.collect do |filter|
+          %|jobs.#{filter} = 't'| if eval(filters[filter.to_sym]) 
+        end.compact.join(' OR '))
 	    end
+	  results = Job.where(:company_id => company.id) if company
 	  results
   end
 
