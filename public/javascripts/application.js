@@ -42,8 +42,8 @@ $(function()
 	
 	$(".skill").live('click', function(){
 	    required_skill_html = required_skill_template($(this).attr('data-skill-id'), $(this).text());
-	    category = $(this).parent().parent().attr('class');
-		$("#all_skills."+category+" #job_required_profile").append(required_skill_html);
+	    category = $(this).parent().parent().parent().parent().attr('class');
+		$("#all_skills."+category+" .profileArea .profileList #job_required_profile").append(required_skill_html);
 		append_skill_id($(this).attr('data-skill-id'));
 		$(this).remove();		
 		index++;
@@ -51,8 +51,8 @@ $(function()
 	
 	$("li.required_skill").live('click', function(){
 	    job_skill_html = job_skill_template($(this).attr('data-skill-id'), $(this).text());
-	    category = $(this).parent().parent().attr('class');
-		$("#all_skills."+category+" #job_skills").append(job_skill_html);
+	    category = $(this).parent().parent().parent().parent().attr('class');
+		$("#all_skills."+category+" ul#job_skills").append(job_skill_html);
 		remove_skill_id($(this).attr('data-skill-id'));
 		$(this).remove();
 		

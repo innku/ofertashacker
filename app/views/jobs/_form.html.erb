@@ -1,70 +1,107 @@
-
-<%= form_for @job do |f| %> 
-  <% if @job.errors.any? %>
-    <div id="error_explanation">
+<div class="mainContent clear span-24">
+  <hr noshade="noshade" width="100%" class="topSpacing"/>
+  <div class="infoCompany span-4 last">
+  <p>Datos de la oferta</p>
+  </div>
+  <div class="generalForm span-20 last">
+    <%= form_for @job do |f| %> 
+      <% if @job.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+          <ul>
+          <% @job.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>   
+	    <div class="firstColumn span-9 prepend-1">
+			  <label>	<h1><%=t('.title') + " *" %></h1>	</label> 
+        <%= f.text_field :title, :required => "required" %></p>
+        
+			  <label>	<h1><%=t('.city') + " *" %></h1>	</label> 
+         <%=f.text_field :city, :class => 'city_autocomplete', :required => "required"%></p>
+      </div>
       
-      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
-    
-    
-      <ul>
-      <% @job.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+	    <div class="secondColumn span-9 prepend-1 last">
+		    <h1><%= t('.job_type') %>:</h1>
+		    <ul>
+		      <li><%= f.check_box :full_time %> <%= f.label :full_time %> </li>
+		      <li><%= f.check_box :remote %> <%= f.label :remote %></li>
+		      <li><%= f.check_box :part_time %> <%= f.label :part_time %></li>
+		      <li><%= f.check_box :flexible %> <%= f.label :flexible %></li>
+		    </ul>
+	    </div>
     </div>
-  <% end %>
-  <h2><%= t('.job_detail') %></h2>
-   
-  <p><%= f.label :title, t('.title') + " *" %><br />
-  <%= f.text_field :title, :required => "required" %></p>
-  
-  <p><%= f.label :city, t('.city') + " *" %><br />
-   <%=f.text_field :city, :class => 'city_autocomplete', :required => "required"%></p>
-  
-  <h5><%= t('.job_type') %></h5>
-  <p><%= f.check_box :full_time %> <%= f.label :full_time %> </p>
-  
-  <p><%= f.check_box :part_time %> <%= f.label :part_time %></p>
-  
-  <p><%= f.check_box :remote %> <%= f.label :remote %></p>
-  
-  <p><%= f.check_box :flexible %> <%= f.label :flexible %> </p>
-  
- 
-  <h2><%= t('.required_profile') %></h2>  
-  <%for category in SkillCategory.all%>
-            <h3><%= category.category %></h3>
-    <div id="all_skills"class="c<%=category.id%>">
-      <ul id="job_skills" >
-        <h5><%= t('.skills') %></h5>
-        <% (RequiredSkill.find_all_by_skill_category_id(category.id) - @job.required_skills).each do |required_skill| %>
-          <li id="<%= required_skill.id %>" class="skill" data-skill-id='<%= required_skill.id %>' >
-            <%= required_skill.skill_name%>
-          </li>
-        <% end %>  
-      </ul>
-     
-      
-      <ul id="job_required_profile">
-          <h5><%= t('.required_profile') %></h5>
-          <% @job.required_skills.find_all_by_skill_category_id(category).each do |required_skill| %>
-            <li class="required_skill" data-skill-id='<%= required_skill.id %>' >
-              <%= required_skill.skill_name%>
-            </li>
-          <% end %> 
-      </ul>
-      <%=image_tag 'arrow.jpg', :id=>"arrow"%>
-      <%=image_tag 'arrow_back.jpg', :id=>"arrow_back"%>
-    </div>  
-  <% end %>
-  <%= f.hidden_field :required_skill_ids_string %>
-  
-  <p><%= f.label :extra_skill, t('.extra_skill') %><br />
-   <%=f.text_field :extra_skill, :cols=>3%></p>
-   
-  <p><%= f.label :description, t('.job_description') + " *" %><br /> 
-  <%= f.text_area :description, :required => "required" %></p>
-  
-  <p><%= f.submit t(:create) %>  <%= button_to t(:cancel), jobs_path() %></p>
-<% end %>
+	  <div class="divShadow span-24">
+      <div class="infoCompany span-4 last">
+	    <p><%= t('.required_profile') %></p>
+      </div>
+      <div class="part2 span-20 last">
+		      <%for category in SkillCategory.all%>		
+						  <div id="all_skills" class="c<%=category.id%>">
+						    <div class="habilitiesArea span-6 prepend-1">
+						     	<h1>Habilidades</h1>
+						     	  <div id="" class="habilitiesList span-6">
+									    <ul id="job_skills" >
+                        <% (RequiredSkill.find_all_by_skill_category_id(category.id) - @job.required_skills).each do |required_skill| %>
+                          <li id="<%= required_skill.id %>" class="skill" data-skill-id='<%= required_skill.id %>' >
+                            <%= required_skill.skill_name%>
+                          </li>
+                        <% end %>  
+                      </ul>
+								    </div>
+						    </div>	
+						
+						    <div class="addRemove span-3 last">	
+								    <a class="addButton" href="">Agregar»</a>
+								    <a class="removeButton" href="">«Remover</a>			
+						    </div>
+						
+						    <div class="profileArea span-8 prepend-1 last">
+						     	<h1><%=category.category%></h1>
+								    <div class="profileList span-6">
+									    <ul id="job_required_profile">
+                          <% @job.required_skills.find_all_by_skill_category_id(category).each do |required_skill| %>
+                            <li class="required_skill" data-skill-id='<%= required_skill.id %>' >
+                              <%= required_skill.skill_name%>
+                            </li>
+                          <% end %> 
+                      </ul>
+								    </div>
+						        </div>
+						        
+						    </div>
+              <% end %>
+        			<div id="extra_skill">
+        			  <label>	<h1><%=t('.extra_skill') %></h1>	</label> 
+                <%=f.text_field :extra_skill, :cols=>3%></p>
+              </div>
+					  </div>
+    <%= f.hidden_field :required_skill_ids_string %>
+    <div class="divShadow span-24">
+	    <div class="infoCompany span-4 last">
+		  <p>Descripción de la Oferta</p>
+	    </div>
+		  <div class="descriptionForm span-20 last">
+			  <div class="span-16 prepend-1">
+				  <h1>Oferta*</h1>
+          <%= f.text_area :description, :required => "required" %>
+			  </div>		
+		  </div>
 
+     
+	  </div>
+	  <div class="divShadow span-24">
+			  <div class="buttons1 span-5">
+				  <div class="cancelButton">
+             <%=link_to "Cancelar", :back%>
+				  </div>
+				  <div class="calltoAction">
+            <%= f.submit t(:create) %>
+				  </div>
+			  </div>
+		  </div>
+  <% end %>
+  </div>
+</div>

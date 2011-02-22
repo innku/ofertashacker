@@ -19,7 +19,8 @@ function getJobsJSON(filter_info){
                     i++;
                 });   
             });
-    $("#loader").html("");
+      $("#loader").html("");
+
 }
 
 //renders a job template 

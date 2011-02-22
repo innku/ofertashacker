@@ -10,12 +10,26 @@
   font-weight: bold;
   src: local('Arvo Bold'), local('Arvo-Bold'), url('http://themes.googleusercontent.com/font?kit=F-uvpIj1hF17IDyvQvI50Q') format('truetype');
 }
+div#contacto{padding-top:20px;}
+.divShadow.span-24.buttons{height:80px;}
+.calltoAction input{
+    width:105px;
+    height:30px;
+	background:#333333;
+	border-top:1px solid #999999;
+	border-left:1px solid #CCCCCC;
+	border-right:1px solid #CCCCCC;
+	font-size:16px;
+	color:#D9D93F;
+	padding:5px 32px;
+}
 
 .mainContent.span-23 {
     padding:20px;
     padding-top: 30px;
     margin-bottom:10px;
 }
+.mainContent ul.posts li {height:170px;}
 
 #bottom.mainContent.span-23{
 	padding-top:5px;
@@ -35,6 +49,7 @@ a.button  {
 	text-decoration:none;
     
 }
+#extra_skill{padding-left:40px;}
 a.button:hover{background:#C00;}
 .job #company{
     float:right;
@@ -49,65 +64,5 @@ a.button:hover{background:#C00;}
     margin-bottom: 15px;
 }
 #loader{margin-left:450px;margin-top:40px;}
-
-/*Job Skills*/
-
-#all_skills{
-    width:400px;
-    position:relative;
-    height:300px;
-    margin-top:10px;
-    margin-bottom:30px;
-    -webkit-box-shadow: -5px 5px 10px #666;
-    -moz-box-shadow: -5px 5px 10px #666;
-}
-#job_skills{
-    position:absolute;
-    top:0px;
-    left:0px;
-    width: 30%;
-    color:red;
-}
-.skill, .required_skill{
-
-    cursor:pointer;
-    margin-bottom:2px;
-}
-
-.skill:hover, .required_skill:hover{
-    color:#fff;
-    background:#333;
-}
-#job_required_profile{
-    position:absolute;
-    top:0px;
-    right:0px;
-    width:40%;
-    color:green;
-}
-#all_skills #arrow{
-    position:absolute;
-    top:50px;
-    left:160px;
-}
-#all_skills #arrow_back{
-    position:absolute;
-    top:80px;
-    left:160px;
-}
-
-#skills ul{
-    list-style:none;
-    
-}
-#skills ul li{
-    padding:5px;
-    width:400px;
-    background:#ddd;
-    margin-bottom:5px;
-    
-}
-#skills ul li a{}
-#skills ul li:hover{background:#ccc;}
 
 

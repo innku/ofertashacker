@@ -49,6 +49,11 @@
 			<% unless check_path_for request.path%>
 			  <%=render 'layouts/filter'%>
 			<% end%>
+				<a class="twitter" href="">
+				<span>
+					
+				</span>
+			</a>
 		</div>
 		
       <% flash.each do |name, msg| %>
@@ -57,7 +62,7 @@
       <%= content_tag :h1, yield(:title) if show_title? %>
 
       <% if check_path_for request.path%>
-            <div class="mainContent span-23">
+        		<div class="mainContent clear span-23">
               <%= yield %>
             </div>
       <%else%>

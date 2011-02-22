@@ -29,6 +29,7 @@ class RequiredSkillsController < ApplicationController
   
   def edit
     @skill_categories=SkillCategory.all
+    @skill_category = SkillCategory.find(params[:skill_category_id])
   end
   
   def update

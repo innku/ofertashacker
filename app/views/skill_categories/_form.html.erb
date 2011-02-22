@@ -1,8 +1,10 @@
-<%= form_for @skill_category do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :category %><br />
-    <%= f.text_field :category %>
-  </p>
-  <p><%= f.submit "Crear" %></p>
-<% end %>
+<div class="mainContent clear span-23">
+  <%= form_for @skill_category do |f| %>
+    <%= f.error_messages %>
+    <p>
+      <%= f.label :category %><br />
+      <%= f.text_field :category %>
+    </p>
+    <p><%= f.submit "Crear" %></p>
+  <% end %>
+</div>

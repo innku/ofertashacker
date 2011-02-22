@@ -33,7 +33,7 @@ es:
     registrations:
       new:
         company_info:     "Datos de la empresa"
-        company_desc:     "Descripción de la empresa"
+        company_desc:     "Descripción"
         title:            "Nombre" 
         city:             "Ciudad"
         email:            "Correo electrónico"
@@ -56,10 +56,10 @@ es:
         company_desc:     "Descripción de la empresa"
         title:            "Nombre" 
         city:             "Ciudad"
-        email:            "Correo electrónico"
+        email:            "Email"
         password:         "Contraseña"
         password_confirmation: "Confirmar contraseña"
-        description:      "Descripción de la empresa" 
+        description:      "Descripción" 
   
   jobs: 
     available: 

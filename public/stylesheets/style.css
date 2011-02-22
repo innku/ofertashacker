@@ -1,10 +1,9 @@
 html {
-	background:url("../images/bkg_pattern.png") repeat 0 0;
+	background:url("/images/bkg_pattern.png") repeat 0 0;
 }
 
 body {
-	background:url("../images/bkg_line_pattern.png") repeat-x 0px 34px;
-	
+	background:url("/images/bkg_line_pattern.png") repeat-x 0px 34px;
 }
 
 h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
@@ -12,6 +11,7 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 #header {
 	font-family: 'Arvo', arial, serif;
 	height:144px;
+	position:relative;
 }
 #header .topMenu {
 	text-transform:uppercase;
@@ -35,7 +35,7 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 	padding:10px 10px 2px 15px;
 }
 #header .topMenu a:hover span {
-	background:url("../images/bkg_topMenu.png") repeat-x 0 0;
+	background:url("/images/bkg_topMenu.png") repeat-x 0 0;
 	/*background:transparent;
 	-moz-box-shadow:inset 0 0 10px #000000;
 	-webkit-box-shadow:inset 0 0 10px #000000;
@@ -44,7 +44,22 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 #header .logo {
 	position: relative;
 	top:-18px;
+	z-index:1;
 }
+
+#header a.twitter span {
+	background:url("../images/icon_twitter.png") no-repeat 0 0;
+	position:absolute;
+
+	padding:24px;
+	bottom:-5px;
+	right:-22px;	
+}
+
+#header a:hover.twitter span {	
+	background-position:0 -49px;
+}
+
 #mainMenu {
 	text-transform:lowercase;
 	display:block;
@@ -65,14 +80,35 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 }
 
 
+
 /*================== HERE COMES THE CONTENT STYLES ====================*/
+#leftMenu {
+	padding:50px 0 0 0;
+}
+
+#leftMenu ul {
+	margin:0;
+	padding:15px 0px;
+	background:#DADADA;
+	display:block;
+	overflow:hidden;
+}
+
+#leftMenu ul li {
+	float:left;
+	width:80%;
+	background:#DADADA;
+	padding:5px 15px;
+}
 
 .mainContent {
 	background:#fff;
 	-moz-box-shadow: 1px 2px 9px #000;
 	-webkit-box-shadow: 1px 2px 9px #000;
 	box-shadow: 1px 2px 9px #000;
+	position:relative;
 }
+
 
 .mainContent ul.posts {
 	margin:0px;
@@ -84,11 +120,15 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 	-moz-box-shadow: 0px 3px 7px #000;
 	-webkit-box-shadow: 0px 3px 7px #000;
 	box-shadow: 0px 3px 7px #000;
-	height:170px;
 }
-.mainContent ul.posts li h1{height:132px;}
+
 .mainContent a h1 {
 	margin-bottom:0.2em !important;
+}
+
+.mainContent a {
+	text-decoration:none;
+	border-bottom:0px;
 }
 
 .mainContent a:hover h1 {
@@ -111,6 +151,214 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 	color:#666;
 }
 
+.mainContent .infoCompany {
+	font-family: arial, serif;
+	padding-top:30px;
+	text-align:right;
+	border-right:1px solid #132E43;
+}
+
+.mainContent .infoCompany p{
+	font-family: arial, serif;
+	font-size:16px;
+	margin:0 10px 0 0;
+	
+	
+}
+
+.mainContent .generalForm {
+	margin:26px 0px 20px 0;	
+}
+
+.mainContent input{
+	width:349px;
+	height:35px;
+	background:#F1F1F1;
+	border:1px solid #d9d9d9;
+	margin-bottom:30px;
+	font-size:16px !important;
+	padding-left:15px;
+}
+
+.mainContent input[type=file] {
+	padding-right:15px;
+	color:green;
+}
+
+.firstColumn{
+	float:left;
+}
+
+.secondColumn input[type=checkbox] {
+	width:20px;
+	height:20px;
+	float:left;
+}
+
+.secondColumn ul{
+	margin-top:30px;
+}
+
+.secondColumn ul li{
+	float:left;
+	margin:0 10px 15px 0;
+	width:145px;
+}
+
+.secondColumn label {
+	margin-left:10px;
+	float:left;
+}
+
+.topSpacing{
+	margin-top:35px;
+	margin-bottom:0 !important;
+	color:none;
+	border: 1px solid #FFFFFF;
+}
+
+.generalForm img {
+	float:left;
+}
+
+.generalForm span {
+	float:left;
+	margin:8px 62px 0 81px;
+	color:#999999;
+}
+
+.generalButton{
+	float:left;
+	margin-right:15px;	
+}
+
+.generalButton a{
+	background:#CCCC00;
+	border-top:1px solid #B8B800;
+	border-left:1px solid #C3C300;
+	border-right:1px solid #C3C300;
+	font-size:16px;
+	color:#003300;
+	padding:5px 15px;
+}
+
+.generalButton a:hover{
+	background:#33CCFF;
+	border-top:1px solid #24A1CA;
+	border-left:1px solid #29B5E4;
+	border-right:1px solid #29B5E4;
+}
+
+.addRemove{
+	padding: 110px 0 0 40px;
+	text-align:center;
+}
+
+.addButton {
+	background:#333333;
+	border-top:1px solid #999999;
+	border-left:1px solid #CCCCCC;
+	border-right:1px solid #CCCCCC;
+	font-size:16px;
+	color:#D9D93F;
+	padding:3px 20px;
+	float:left;
+}
+
+.removeButton {
+	background:#CCCC00;
+	border-top:1px solid #B8B800;
+	border-left:1px solid #C3C300;
+	border-right:1px solid #C3C300;
+	font-size:16px;
+	color:#003300;
+	padding:3px 15px;
+	float:left;
+	margin-top:15px;
+}
+
+.addRemove .addbuton a:hover {
+	background:#33CCFF;
+	border-top:1px solid #24A1CA;
+	border-left:1px solid #29B5E4;
+	border-right:1px solid #29B5E4;
+}
+
+.cancelButton a{
+	float:left;
+	margin-right:15px;
+	text-decoration:underline;
+	color:#003300;
+	font-size:14px;
+}
+
+.calltoAction a{
+	background:#333333;
+	border-top:1px solid #999999;
+	border-left:1px solid #CCCCCC;
+	border-right:1px solid #CCCCCC;
+	font-size:16px;
+	color:#D9D93F;
+	padding:5px 32px;
+}
+
+.buttons1{
+	right:33px;
+	margin:32px 0px 20px 721px;
+}
+
+.closeIcon{
+	float:left;
+	margin:8px !important;
+	width:13px;
+}
+
+.divShadow{
+	background:url("/images/shadow.png") repeat-x 0 0;
+}
+
+.part2{
+	margin-top:24px;
+}
+
+.habilitiesList{
+	background:#EDEDED;
+	border:1px solid #D9D9D9;
+	height:220px;
+	margin-bottom:20px;
+}
+
+.habilitiesList ul li{
+	color:#666666;
+	font-size:16px;	
+}
+
+.profileList{
+	background:#EDEDED;
+	border:1px solid #D9D9D9;
+	height:220px;
+	margin-bottom:20px;
+}
+
+.profileList ul li{
+	color:#666666;
+	font-size:16px;	
+}
+
+.descriptionForm{
+	margin-top:49px;
+}
+
+.descriptionForm textarea{
+	font-family: arial, serif;
+	width:630px;
+	height:116px;
+	background:#F1F1F1;
+	border:1px solid #d9d9d9;
+	margin-bottom:30px;
+	font-size:16px !important;
+	padding-left:15px;
+}
 
 /*================== HERE COMES THE FOOTER STYLES ====================*/
 #footer {
