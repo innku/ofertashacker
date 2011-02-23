@@ -21,6 +21,7 @@ class Job < ActiveRecord::Base
           %|jobs.#{filter} = 't'| if eval(filters[filter.to_sym]) 
         end.compact.join(' OR '))
 	    end
+	   puts results.to_sql
 	  #results = Job.where(:company_id => company.id) if company
 	  results
   end
