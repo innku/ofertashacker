@@ -1,19 +1,30 @@
-<% custom_title "Iniciar sesión"%>
-<h2>Iniciar sesión</h2>
+<div class="mainContent clear span-24">
+  <% custom_title "Iniciar sesión" %>
+  <hr noshade="noshade" width="100%" class="topSpacing"/>
+  <div class="infoCompany span-4">
+    <p>Iniciar sesión</p>
+  </div>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <p><%= f.label :email, t('.email') + " *" %><br />
-  <%= f.text_field :email, :required=>'required' %></p>
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <div class="generalForm span-12 prepend-1">
+      <label><h1><%= t('.email') %></h1></label>
+      <%= f.text_field :email, :required=>'required' %></p>
 
-  <p><%= f.label :password, t('.password') + " *" %><br />
-  <%= f.password_field :password, :required=>'required', :type => "password", :minlength => "6"%></p>
+      <label><h1><%= t('.password') %></h1></label>
+      <%= f.password_field :password, :required=>'required', :type => "password", :minlength => "6"%></p>
 
-  <% if devise_mapping.rememberable? -%>
-    <p><%= f.check_box :remember_me %> <%= f.label :remember_me, t('.remember_me') %></p>
-  <% end -%>
-
-  <p><%= f.submit "Ingresar" %></p>
-<% end %>
-
-<%= render :partial => "companies/shared/links" %>
-
+      <% if devise_mapping.rememberable? -%>
+        <p><%= f.check_box :remember_me %> <%= f.label :remember_me, t('.remember_me') %></p>
+      <% end -%>
+    
+    </div>
+    <div class="divShadow span-24 buttons">
+	    <div class="buttons1 span-5">
+		    <div class="calltoAction">
+          <p><%= f.submit "Ingresar" %></p>
+		    </div>
+	    </div>
+    </div>
+  <% end %>
+  <%= render :partial => "companies/shared/links" %>
+</div>

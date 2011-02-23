@@ -64,5 +64,8 @@ a.button:hover{background:#C00;}
     margin-bottom: 15px;
 }
 #loader{margin-left:450px;margin-top:40px;}
+.mainContent a div img {padding-left:5px;}
+.mainContent ul.posts li{position:relative;}
+.mainContent ul.posts p{position:absolute; bottom:0px;}
 
 

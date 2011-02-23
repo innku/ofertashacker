@@ -6,7 +6,7 @@ class Job < ActiveRecord::Base
   accepts_nested_attributes_for :required_skills
   
   validates_presence_of :company_id, :title, :description, :city
-  validates_presence_of :full_time, :if=> :not_part_time_present
+  validates_presence_of :at_least_one_type
 	
 	FILTERS = %w{full_time part_time flexible remote}
 	
@@ -21,13 +21,16 @@ class Job < ActiveRecord::Base
           %|jobs.#{filter} = 't'| if eval(filters[filter.to_sym]) 
         end.compact.join(' OR '))
 	    end
-	  results = Job.where(:company_id => company.id) if company
+	  #results = Job.where(:company_id => company.id) if company
 	  results
   end
 
 	
-  def not_part_time_present
-    !part_time
+  def at_least_one_type
+    if(full_time || part_time || remote || flexible)
+      return true
+    end
+    return false
   end
   
 

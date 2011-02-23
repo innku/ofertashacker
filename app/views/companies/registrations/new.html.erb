@@ -8,18 +8,18 @@
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
       <div class="generalForm span-12 prepend-1">
         <%= devise_error_messages! %>
-          <h1><p><%= f.label :title, t('.title') %><br />
-          <%= f.text_field :title, :required=>"required", :pattern=>"[a-zA-Z ]{5,}" %></p>
+          <label><h1><%= t('.title') %></h1></label> 
+          <%= f.text_field :title, :required=>"required", :pattern=>"[a-zA-Z ]{5,}" %>
 
-          <p><%= f.label :email,  t('.email')%><br />
-          <%= f.text_field :email, :required=>"required", :type=>"email" %></p>
+          <label>	<h1><%= t('.email') %></h1>	</label> 
+          <%= f.text_field :email, :required=>"required", :type=>"email" %>
 
-          <p><%= f.label :password,  t('.password') %><br />
-          <%= f.password_field :password, :required=>"required" %></p>
+          <label>	<h1><%= t('.password') %></h1>	</label> 
+          <%= f.password_field :password, :required=>"required" %>
 
-          <p><%= f.label :password_confirmation,  t('.password_confirmation') %><br />
-          <%= f.password_field :password_confirmation, :required=>"required"%></p></h1>
-        </div><!--/generalForm -->
+          <label>	<h1><%= t('.password_confirmation') %></h1>	</label> 
+          <%= f.password_field :password_confirmation, :required=>"required"%>
+        </div>
         <div class="divShadow span-24 buttons">
 					    <div class="buttons1 span-5">
 						    <div class="cancelButton">
@@ -28,7 +28,7 @@
 						    <div class="calltoAction">
                   <p><%= f.submit "Crear"%></p>
 						    </div>
-					    </div><!--/buttons1 span-5 -->
+					    </div>
 			    </div>
     <% end %>
 </div>

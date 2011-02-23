@@ -46,19 +46,19 @@
 		  <div class="logo clear span-5">
 			  <%=link_to (image_tag "jobBoard_logo.png", :alt=>"Ruby Job Board", :width=>"194", :height=>"150"), root_path%>
 			</div>
-			<% unless check_path_for request.path%>
+			<% unless needs_filter? request.path%>
 			  <%=render 'layouts/filter'%>
 			<% end%>
-				<a class="twitter" href="">
+				<a class="twitter" href="http://www.twitter.com/innku" target="_blank">
 				<span>
 					
 				</span>
 			</a>
 		</div>
 		
-      <% flash.each do |name, msg| %>
+      <!--><% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <% end %>
+      <% end %>-->
       <%= content_tag :h1, yield(:title) if show_title? %>
 
       <% if check_path_for request.path%>
