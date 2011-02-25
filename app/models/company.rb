@@ -26,7 +26,7 @@ class Company < ActiveRecord::Base
                               'production' => :s3
                             }[Rails.env],
                             :s3_credentials => "#{Rails.root}/config/s3.yml",
-                            :url => "#{ENV['RAILS_ENV']}/:attachment/:id/:style/:basename.:extension",
+                            :url => "../files/#{ENV['RAILS_ENV']}/:attachment/:id/:style/:basename.:extension",
                             :path => "public/files/#{Rails.env}/:attachment/:id/:style/:basename.:extension",
                             :bucket => 'rubypros',
                             :default_url => "/images/shareIcon.gif"
