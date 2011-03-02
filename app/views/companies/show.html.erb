@@ -13,6 +13,7 @@
 
 <% if can? :manage, @company %>
   <%= link_to t(:edit), edit_company_path(@company), :class => "button" %>
+  <%= link_to "Borrar", company_path(@company), :class => "button", :confirm => "¿Estás seguro de eliminar #{@company.title}?", :method => :delete %>
 <% end %>
 <% if current_company && current_company.admin? %>
     <%= link_to t('.company_index'), companies_path(), :class => "button"  %>

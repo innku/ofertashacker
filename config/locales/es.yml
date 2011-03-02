@@ -41,7 +41,7 @@ es:
         password_confirmation: "Confirmar contraseña"
         description:      "Descripción de la empresa" 
     index:
-      companies:          "Listado de compañías registradas"
+      companies:          "Compañías registradas"
       city:               "Ciudad"
       description:        "Descripción"
       title:              "Nombre"

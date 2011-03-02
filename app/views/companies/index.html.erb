@@ -18,6 +18,10 @@
     <td><%= link_to company.title, company_path(company) %></td>
     <td><%= company.city %></td>
     <td><%= company.description %></td>
+    <td><% if can? :manage, company %>
+          <%= link_to "Eliminar", company, :confirm => "¿Estás seguro de eliminar #{company.title}?", :method => :delete %>
+        <% end %>
+    </td>
   </tr>
   <% end %>
 </table>

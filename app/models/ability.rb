@@ -10,6 +10,7 @@ class Ability
       can :manage, RequiredSkill
       can :manage, SkillCategory
       can :read, Company
+      can :manage, Company
       can :create, Job
       can :manage, Job do |j|
         j.company == company

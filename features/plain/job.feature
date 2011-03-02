@@ -18,7 +18,7 @@ Feature: Job cycle
    And I check "job_full_time"
    And I check "job_part_time"
    And I fill in "job_description" with "We need 2 ruby programmers"
-   And I press "Crear"
+   When I follow "Crear"
    Then I should see "Tu oferta ha sido publicada"
    
   Scenario: See all my vacancies
@@ -36,8 +36,8 @@ Feature: Job cycle
     And I am logged as a "admin@rubypros.com"
     And I am on the index job page
     And I follow "RoR"
-    Then I follow "Editar"
-    Then I should see "Datos de la Oferta"
+    When I follow "Editar"
+    Then I should see "Datos de la oferta"
       
   Scenario: I cannot edit other Companies vacancies
     And there is a job vacancy with title "RoR" created by "admin@rubypros.com"
