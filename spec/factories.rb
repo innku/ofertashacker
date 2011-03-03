@@ -13,7 +13,7 @@ Factory.define :job do |f|
   f.city "Monterrey"
   f.full_time true
   f.part_time false
-  f.remote true
+  f.remote false
   f.flexible false
   f.description "We required 3 ruby programmers"
   f.association :company, :factory => :company
