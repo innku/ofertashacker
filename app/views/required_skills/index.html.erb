@@ -5,7 +5,7 @@
 
   <% if can? :manage, skill %> 
     | <%=link_to "Editar", edit_required_skill_path(skill)%> |
-    <%= link_to "Borrar", skill, :confirm => '¿Estás seguro que deseas borrar la oferta?', :method => :delete %>
+    <%= link_to 'Borrar', skill, :confirm => '¿Estás seguro que deseas borrar la oferta?', :method => :delete %>
   <% end %>
     <br />  
 <%end%>

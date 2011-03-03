@@ -35,9 +35,11 @@ describe Job do
     @job.should_not be_valid
   end
 
-  it "is not valid without a a full_time/part_time especification" do
+  it "is not valid without a job type especification" do
     @job.full_time=nil
     @job.part_time=nil
+    @job.flexible=nil
+    @job.remote=nil
     @job.should_not be_valid
   end
   it "is not valid without a description" do

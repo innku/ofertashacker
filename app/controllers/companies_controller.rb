@@ -24,7 +24,7 @@ class CompaniesController < ApplicationController
     end
   end
   
-  def destroy
+   def destroy
     @company.destroy
     respond_to do |format|
       format.html { redirect_to(companies_url, :notice=>"La empresa fue eliminada correctamente") }

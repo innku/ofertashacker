@@ -68,4 +68,18 @@ a.button:hover{background:#C00;}
 .mainContent ul.posts li{position:relative;}
 .mainContent ul.posts p{position:absolute; bottom:0px;}
 
+/*Flash and Errors*/
+#flash_notice, #flash_error, #flash_alert {
+  padding: 5px 8px;
+  margin: 7px 0;
+}
 
+#flash_notice {
+  color: #FFF;
+  position: absolute;
+}
+
+#flash_error, #flash_alert {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}

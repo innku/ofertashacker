@@ -1,7 +1,7 @@
 <div class="mainContent clear span-24">
   <hr noshade="noshade" width="100%" class="topSpacing"/>
   <div class="infoCompany span-4 last">
-  <p>Datos de la oferta</p>
+    <p>Datos de la oferta</p>
   </div>
   <div class="generalForm span-20 last">
     <%= form_for @job do |f| %> 
@@ -32,11 +32,12 @@
 		      <li><%= f.check_box :flexible %> <%= f.label :flexible %></li>
 		    </ul>
 	    </div>
-    </div>
+   </div>
 	  <div class="divShadow span-24">
       <div class="infoCompany span-4 last">
-	    <p><%= t('.required_profile') %></p>
+	      <p><%= t('.required_profile') %></p>
       </div>
+      <p>Clickea las habilidades que deseas agregar al perfil requerido de la oferta</p>
       <div class="part2 span-20 last">
 		      <%for category in SkillCategory.all%>		
 						  <div id="all_skills" class="c<%=category.id%>">
@@ -53,10 +54,10 @@
 								    </div>
 						    </div>	
 						
-						    <div class="addRemove span-3 last">	
+						    <!--<div class="addRemove span-3 last">	
 								    <a class="addButton" href="">Agregar»</a>
 								    <a class="removeButton" href="">«Remover</a>			
-						    </div>
+						    </div>-->
 						
 						    <div class="profileArea span-8 prepend-1 last">
 						     	<h1><%=category.category%></h1>
@@ -88,17 +89,15 @@
 				  <h1>Oferta*</h1>
           <%= f.text_area :description, :required => "required" %>
 			  </div>		
-		  </div>
-
-     
+		  </div>     
 	  </div>
-	  <div class="divShadow span-24">
+	  <div class="divShadow span-24 buttons">
 			  <div class="buttons1 span-5">
 				  <div class="cancelButton">
-             <%=link_to "Cancelar", :back%>
+             <%= link_to "Cancelar", :back%>
 				  </div>
 				  <div class="calltoAction">
-            <%= f.submit t(:create) %>
+            <p><%= f.submit "Crear" %></p>
 				  </div>
 			  </div>
 		  </div>

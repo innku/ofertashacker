@@ -19,7 +19,7 @@
     <td><%= company.city %></td>
     <td><%= company.description %></td>
     <td><% if can? :manage, company %>
-          <%= link_to "Eliminar", company, :confirm => "¿Estás seguro de eliminar #{company.title}", :method => :delete %>
+          <%= link_to "Eliminar", company, :confirm => "¿Estás seguro de eliminar #{company.title}?", :method => :delete %>
         <% end %>
     </td>
   </tr>

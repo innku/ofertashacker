@@ -5,7 +5,7 @@ class Company < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  has_many :jobs
+  has_many :jobs, :dependent => :destroy
   
   validates_presence_of :title, :email
   validates_attachment_content_type :logo, :content_type => ['image/jpg','image/jpeg', 'image/png', 'image/gif']
