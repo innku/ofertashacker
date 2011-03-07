@@ -8,11 +8,13 @@ class Company < ActiveRecord::Base
   has_many :jobs, :dependent => :destroy
   
   validates_presence_of :title, :email
-  validates_attachment_content_type :logo, :content_type => ['image/jpg','image/jpeg', 'image/png', 'image/gif']
+  validates_attachment_content_type :logo, 
+                                    :content_type => ['image/jpg','image/jpeg', 
+                                                      'image/png', 'image/gif']
   
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :title, :city, :logo, :description
-  attr_accessible :phone1, :phone2, :contact_email, :linkedin, :facebook, :twitter
+  attr_accessible :email, :password, :password_confirmation, 
+                  :remember_me, :title, :city, :logo, :description,
+                  :phone1, :phone2, :contact_email, :linkedin, :facebook, :twitter
 
 	metropoli_for :city, :as=>:city_name
   scope :members, where(:role => "member")
@@ -38,6 +40,7 @@ class Company < ActiveRecord::Base
   def member?
     self.role == "member"
   end
+  
   def logo_url
     self.logo.path[6..-1]
   end

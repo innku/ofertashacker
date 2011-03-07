@@ -10,8 +10,12 @@ gem 'paperclip'
 gem 'aws-s3', :require => 'aws/s3'
 gem 'ruby-debug'
 gem 'metropoli', :git => 'git://github.com/adriancuadros/metropoli.git'
+gem "mocha", :group => :test
+gem 'RedCloth'
+gem "will_paginate", "~> 3.0.pre2"
+
 group :development, :test do 
-	gem 'capybara'
+  gem 'capybara'
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'cucumber'
@@ -22,7 +26,3 @@ group :development, :test do
   gem "ruby-debug"
   gem "selenium-client"
 end
-gem "mocha", :group => :test
-gem 'RedCloth'
-gem "will_paginate", "~> 3.0.pre2"
-
