@@ -1,9 +1,9 @@
 html {
-	background:url("/images/bkg_pattern.png") repeat 0 0;
+	background:url("../images/bkg_pattern.png") repeat 0 0;
 }
 
 body {
-	background:url("/images/bkg_line_pattern.png") repeat-x 0px 34px;
+	background:url("../images/bkg_line_pattern.png") repeat-x 0px 34px;
 }
 
 h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
@@ -35,7 +35,7 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 	padding:10px 10px 2px 15px;
 }
 #header .topMenu a:hover span {
-	background:url("/images/bkg_topMenu.png") repeat-x 0 0;
+	background:url("../images/bkg_topMenu.png") repeat-x 0 0;
 	/*background:transparent;
 	-moz-box-shadow:inset 0 0 10px #000000;
 	-webkit-box-shadow:inset 0 0 10px #000000;
@@ -301,6 +301,11 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 	color:#D9D93F;
 	padding:5px 32px;
 }
+.calltoAction input:hover{
+	background: #5B5B5B;
+	color: #EDED00;
+	cursor: pointer;
+}
 
 .buttons1{
 	right:33px;
@@ -314,7 +319,7 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 }
 
 .divShadow{
-	background:url("/images/shadow.png") repeat-x 0 0;
+	background:url("../images/shadow.png") repeat-x 0 0;
 }
 
 .part2{
@@ -379,3 +384,89 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 #footer ul li a:hover {
 	text-decoration:underline;
 }
+
+/*================== HERE COMES THE INFO STYLES ====================*/
+
+#right{
+	float: right;
+	width: 650px;
+}
+
+#right h1{
+	margin-bottom: 3px;
+}
+
+#right h2{
+	font-size: 18px;
+	margin-top: 10px;
+	margin-bottom: 3px;
+}
+
+#right h4{
+	color: #888;
+	font-size: 13px;
+	font-style: italic;
+}
+
+#right p{
+	line-height: 20px;
+}
+
+#left{
+	float: left;
+	border-right: 1px solid #132E43;
+	padding-right: 20px;
+}
+
+.span-23{
+	 margin-bottom: 10px;
+     padding: 30px 20px 20px;
+}
+
+.generalForm .tag span{
+	background-color: #EFF2DF;
+	padding: 4px;
+	margin:0;
+	color: #333333;
+}
+
+.tagimg{
+	margin-right: 10px;
+}
+
+div.clear{
+	clear:both;
+}
+
+#info{
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	background-color: #FDFFE3;
+	padding: 15px;
+	margin-top: 20px;
+}
+
+#info ul{
+	margin: 0;
+}
+
+#info h2{
+	color: #005B60;
+	font-size: 16px;
+	margin-left: 15px;
+}
+
+#info li a{
+	font-family: georgia, helvetica neue;
+	color: #333333;
+	font-size: 14px;
+	
+}
+
+#info li a:hover{
+	font-family: georgia, helvetica neue;
+	color: #005B60;
+	text-decoration: underline;
+	
+}
+

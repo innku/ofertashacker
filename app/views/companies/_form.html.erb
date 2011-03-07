@@ -1,11 +1,11 @@
 <div class="mainContent clear span-24">
-<%= stylesheet_link_tag "jquery-ui" %>
-<% custom_title "Editar Perfil"%>
-<hr noshade="noshade" width="100%" class="topSpacing"/>
-<div class="infoCompany span-4">
-<p>Datos de la empresa</p>
-</div>
-<div class="generalForm span-12 prepend-1">
+  <%= stylesheet_link_tag "jquery-ui" %>
+  <% custom_title "Editar Perfil"%>
+  <hr noshade="noshade" width="100%" class="topSpacing"/>
+  <div class="infoCompany span-4">
+    <p>Datos de la empresa</p>
+  </div>
+  <div class="generalForm span-12 prepend-1">
       <% form_for @company, :html => { :multipart => true } do |f| %>
           <%= f.error_messages %>
     			<label>	<h1><%=t('.title') + " *" %></h1>	</label> 
@@ -32,50 +32,45 @@
 						</a>
 					<span>
 					
-		    </div><!--/generalform -->
-		    <div class="divShadow span-24">
+  </div><!--/generalform -->
+	    <div class="divShadow span-24">
+	    
+		    <div class="infoCompany span-4">
+			  <p>Descripción de la empresa</p>
+		    </div>
 		    
-			    <div class="infoCompany span-4">
-				  <p>Descripción de la empresa</p>
-			    </div>
-			    
-					<div class="descriptionForm span-16 prepend-1">
-          			<label>	<h1><%=t('.description') + " *" %></h1>	</label> 
-            <%= f.text_area :description %>
-          </div>
-        </div><!--/description -->
+				<div class="descriptionForm span-16 prepend-1">
+        			<label>	<h1><%=t('.description') + " *" %></h1>	</label> 
+          <%= f.text_area :description %>
+        </div>
+      </div><!--/description -->
 
-  	    <div class="divShadow span-24">
-		      <div class="infoCompany span-4">
-			    <p>Contacto</p>
-		      </div>
-          <div id="contacto" class="span-16 prepend-1">
-            
-            <p><%= image_tag 'facebook-logo.gif'%>
-            <%= f.text_field :facebook %></p>
-            <p><%= image_tag 'twitter-logo.gif'%>
-            <%= f.text_field :twitter %></p>
-            <p><%= image_tag 'linkedin-logo.jpg'%>
-            <%= f.text_field :linkedin %></p>
-            <p><%= image_tag 'email-icon.jpg'%>
-            <%= f.text_field :contact_email %></p>
-            <p><%= image_tag 'phone-logo.jpg'%>
-            <%= f.text_field :phone1 %></p>
-            <p><%= image_tag 'phone-logo.jpg'%>
-            <%= f.text_field :phone2 %></p>
-          </div>
-      </div>
+	    <div class="divShadow span-24">
+	      <div class="infoCompany span-4">
+		      <p>Contacto</p>
+	      </div>
+        <div id="contacto" class="span-16 prepend-1">
+          
+          <p>facebook.com/
+          <%= f.text_field :facebook %></p>
+          <p>@ejemplo
+          <%= f.text_field :twitter %></p>
+          <p>linkedin.com/
+          <%= f.text_field :linkedin %></p>
+          <p>e-mail
+          <%= f.text_field :contact_email %></p>
+        </div>
+    </div>
 
-        <div class="divShadow span-24">
-							<div class="buttons1 span-5">
-								<div class="cancelButton">
-                 <%=link_to "Cancelar", :back%>
-								</div>
-		
-								<div class="calltoAction">
-                  <%= f.submit t(:update) %> 
-								</div>
-							</div>
-					</div> 
-      <% end %>
+    <div class="divShadow span-24 buttons">
+		  <div class="buttons1 span-5">
+		    <div class="cancelButton">
+          <%= link_to "Cancelar", :back %>
+		    </div>
+			  <div class="calltoAction">
+          <%= f.submit "Actualizar" %> 
+		    </div>
+		  </div>
+		</div> 
+    <% end %>
 </div>
