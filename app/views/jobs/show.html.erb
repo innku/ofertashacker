@@ -1,32 +1,40 @@
-<div class="job">
-  <div id="company">
-    <h1><%= link_to @job.company.title, @job.company %></h1>
-    <%=image_tag @job.company.logo.url(:thumb)%>
-    <p>Correo: <%= mail_to @job.company.contact_email %></p>
-    <p>Telefono:<%= @job.company.phone1 %></p>
-    <p>Facebook:<%= link_to @job.company.facebook %></p>
-  </div>
-  <h2><%= @job.title%></h2>
-  En <%=@job.city%>
-  <p>Características</p>
-    <ul>
-      <%= @job.full_time ? '<li> Tiempo Completo </li>'.html_safe : nil%>
-      <%= @job.part_time ? "<li>Medio Tiempo</li>".html_safe : nil%>
-      <%= @job.remote ? "<li>Remoto</li>".html_safe : nil%>
-      <%= @job.flexible ? "<li>Horario Flexible</li>".html_safe : nil%>
-    </ul>
-     <h2>Habilidades Requeridas</h2>
-    <ul>
-    <%for skill in @job.required_skills%>
-      <li><%=skill.skill_name%></li>
-    <%end%>
-    </ul>
-
-  <h2>Descripción</h2>
-  <p><%= RedCloth.new(@job.description).to_html.html_safe %></p>
-  <% if can? :manage, @job%>  
-    <%=link_to "Editar", edit_job_path(@job), :class => "button"%> 
-    <%= link_to 'Borrar', @job, :confirm => '¿Estas Seguro que deseas borrar la oferta?', :method => :delete, :class => "button" %>
-  <% end%>
+<div class="generalForm">
+  <div id="left"><!--left-->
+    <div id="logo">
+			<%= image_tag @job.company.logo.url(:thumb) %>
+  	</div>
+		<div class="clear"></div>
+		<div id="info"> 
+			<h2>Contacto</h2>
+			<ul>
+				<li><%= @job.company.phone1 %></li>
+				<li><%= mail_to @job.company.contact_email %></li>
+				<li><%= link_to @job.company.facebook %></li>
+			</ul>
+		</div>
+		<%= image_tag "shadow.gif" %>
+  </div><!--/left-->
+  <div id="right"><!--right-->
+    <h1><%= @job.title%></h1>
+    <h4>En <%=@job.city%>
+      <%= @job.full_time ? ", Tiempo Completo".html_safe : nil%>
+      <%= @job.part_time ? ", Medio Tiempo".html_safe : nil%>
+      <%= @job.remote ? ", Remoto".html_safe : nil%>
+      <%= @job.flexible ? ", Horario Flexible".html_safe : nil%>
+    </h4>
+    <% for skill in @job.required_skills %>
+      <div class="tag">
+        <span><%= skill.skill_name %></span>
+        <%= image_tag "tag.gif", :class => "tagimg" %>
+      </div>
+    <% end %>
+    <div class="clear"></div>
+    <h2>Descripción</h2>
+    <p><%= RedCloth.new(@job.description).to_html.html_safe %></p>
+    <% if can? :manage, @job%>    
+      <%=link_to "Editar", edit_job_path(@job), :class => "button"%> 
+      <%= link_to 'Borrar', @job, :confirm => '¿Estas Seguro que deseas borrar la oferta?', :method => :delete, :class => "button" %>
+    <% end%>
+  </div><!--/right-->
 </div>
 

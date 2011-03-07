@@ -3,14 +3,14 @@ Feature: Company Actions
 
   As a company
   I want to register my company
-  And update my company information
+  And see my company information
   
   Scenario: Register a company
     Given I am on the new company page
     When I fill in "company_title" with "Best Company"
+    And I fill in "company_password_confirmation" with "mycompany"
     And I fill in "company_email" with "contact_me@best_company.com"
     And I fill in "company_password" with "mycompany"
-    And I fill in "company_password_confirmation" with "mycompany"
     And I press "Crear"
     Then I should see "Te has registrado correctamente"
     
@@ -21,19 +21,6 @@ Feature: Company Actions
     Then the "company_title" field should contain "Company1"
     And the "company_city" field should contain "Monterrey"
     And the "company_description" field should contain "This is my company"
-  
-  Scenario: Update my company information
-    Given there is a company with name "Company1" in city "Monterrey" and email "company1@mycompany.com"  
-    And I am logged as a "company1@mycompany.com"
-    And I am on the edit company page for "company1@mycompany.com"
-    When I fill in "company_title" with "Best Company"
-    And I fill in "company_city" with "San Nicolas de los Garza"
-    And I fill in "company_description" with "The best company around the world"
-    And I press "Actualizar"
-    Then I should see "Tu información ha sido actualizada"
-    And I should see "Best Company"
-    And I should see "San Nicolas de los Garza"
-    And I should see "The best company around the world"
     
   Scenario: Show my company information
     Given there is a company with name "Company1" in city "Monterrey" and email "company1@mycompany.com" 
