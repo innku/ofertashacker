@@ -45,7 +45,7 @@
 		  
 		  <div class="logo clear span-5">
 			  <%=link_to (image_tag "jobBoard_logo.png", :alt=>"Ruby Job Board", :width=>"194", :height=>"150"), root_path%>
-			</div>
+		  </div>
 			<% unless needs_filter? request.path%>
 			  <%=render 'layouts/filter'%>
 			<% end%>
@@ -59,23 +59,24 @@
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
+
       <%= content_tag :h1, yield(:title) if show_title? %>
 
       <% if check_path_for request.path%>
         		<div class="mainContent clear span-23">
-              <%= yield %>
-            </div>
+              		<%= yield %>
+            	</div>
       <%else%>
               <%= yield %>
       <%end%>
       
 		<div id="footer" class="clear span-24 last">
-      <ul>
-        <li><%=link_to "ofertas", jobs_path%></li>
-		    <li><%=link_to "publicar ofertas", new_job_path%></li>
-		    <li><%=link_to "contáctanos", contact_path%></li>
-		    <li><%=link_to "acerca de", about_path%></li>
-      </ul>
+		      <ul>
+		        <li><%=link_to "ofertas", jobs_path%></li>
+				    <li><%=link_to "publicar ofertas", new_job_path%></li>
+				    <li><%=link_to "contáctanos", contact_path%></li>
+				    <li><%=link_to "acerca de", about_path%></li>
+		      </ul>
 		</div>
 	</div>
   </body>

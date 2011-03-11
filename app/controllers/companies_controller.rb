@@ -4,9 +4,6 @@ class CompaniesController < ApplicationController
   
   def index
     @companies = Company.all
-    #if current_company && current_company.admin?
-     # @companies = Company.members
-    #end
   end
   
   def show
@@ -14,6 +11,7 @@ class CompaniesController < ApplicationController
   end
   
   def edit
+    
   end
   
   def update
