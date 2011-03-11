@@ -12,17 +12,6 @@
 }
 div#contacto{padding-top:20px;}
 .divShadow.span-24.buttons{height:80px;}
-.calltoAction input{
-    width:105px;
-    height:30px;
-	background:#333333;
-	border-top:1px solid #999999;
-	border-left:1px solid #CCCCCC;
-	border-right:1px solid #CCCCCC;
-	font-size:16px;
-	color:#D9D93F;
-	padding:5px 32px;
-}
 
 .mainContent.span-23 {
     padding:20px;

@@ -26,10 +26,7 @@ class Job < ActiveRecord::Base
 
 	
   def at_least_one_type
-    if(full_time || part_time || remote || flexible)
-      return true
-    end
-    return false
+    full_time || part_time || remote || flexible
   end
   
 

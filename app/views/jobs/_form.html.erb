@@ -16,10 +16,10 @@
         </div>
       <% end %>   
 	    <div class="firstColumn span-9 prepend-1">
-			  <label>	<h1><%=t('.title') + " *" %></h1>	</label> 
+		<h1><%=t('.title') + " *" %></h1>
         <%= f.text_field :title, :required => "required" %></p>
         
-			  <label>	<h1><%=t('.city') + " *" %></h1>	</label> 
+			  	<h1><%=t('.city') + " *" %></h1>	 
          <%=f.text_field :city, :class => 'city_autocomplete', :required => "required"%></p>
       </div>
       
@@ -37,45 +37,37 @@
       <div class="infoCompany span-4 last">
 	      <p><%= t('.required_profile') %></p>
       </div>
-      <p>Clickea las habilidades que deseas agregar al perfil requerido de la oferta</p>
       <div class="part2 span-20 last">
-		      <%for category in SkillCategory.all%>		
-						  <div id="all_skills" class="c<%=category.id%>">
-						    <div class="habilitiesArea span-6 prepend-1">
-						     	<h1>Habilidades</h1>
-						     	  <div id="" class="habilitiesList span-6">
-									    <ul id="job_skills" >
-                        <% (RequiredSkill.find_all_by_skill_category_id(category.id) - @job.required_skills).each do |required_skill| %>
-                          <li id="<%= required_skill.id %>" class="skill" data-skill-id='<%= required_skill.id %>' >
-                            <%= required_skill.skill_name%>
-                          </li>
-                        <% end %>  
-                      </ul>
-								    </div>
-						    </div>	
-						
-						    <!--<div class="addRemove span-3 last">	
-								    <a class="addButton" href="">Agregar»</a>
-								    <a class="removeButton" href="">«Remover</a>			
-						    </div>-->
-						
-						    <div class="profileArea span-8 prepend-1 last">
-						     	<h1><%=category.category%></h1>
-								    <div class="profileList span-6">
-									    <ul id="job_required_profile">
-                          <% @job.required_skills.find_all_by_skill_category_id(category).each do |required_skill| %>
-                            <li class="required_skill" data-skill-id='<%= required_skill.id %>' >
-                              <%= required_skill.skill_name%>
-                            </li>
-                          <% end %> 
-                      </ul>
-								    </div>
-						        </div>
-						        
-						    </div>
-              <% end %>
+	  <%for category in SkillCategory.all%>		
+	 	 <div id="all_skills" class="c<%=category.id%>">
+			<h1 class='prepend-1'><%=category.category%></h1>
+		    <div class="habilitiesArea span-6 prepend-1">
+		     	  <div id="" class="habilitiesList span-6">
+					    <ul id="job_skills" >
+	                   <% (RequiredSkill.find_all_by_skill_category_id(category.id) - @job.required_skills).each do |required_skill| %>
+	                     <li id="<%= required_skill.id %>" class="skill" data-skill-id='<%= required_skill.id %>' >
+	                       <%= required_skill.skill_name%>
+	                     </li>
+	                   <% end %>  
+	                 </ul>
+				  </div>
+		    </div>	
+		    <div class="profileArea span-8 prepend-1 last">
+				    <div class="profileList span-6">
+					    <ul id="job_required_profile">
+	                     <% @job.required_skills.find_all_by_skill_category_id(category).each do |required_skill| %>
+	                       <li class="required_skill" data-skill-id='<%= required_skill.id %>' >
+	                         <%= required_skill.skill_name%>
+	                       </li>
+	                     <% end %> 
+	                 </ul>
+				    </div>
+		        </div>    
+		    </div>
+			<div class='clear'></div>
+      <% end %>
         			<div id="extra_skill">
-        			  <label>	<h1><%=t('.extra_skill') %></h1>	</label> 
+        			  	<h1><%=t('.extra_skill') %></h1>	 
                 <%=f.text_field :extra_skill, :cols=>3%></p>
               </div>
 					  </div>
@@ -92,15 +84,14 @@
 		  </div>     
 	  </div>
 	  <div class="divShadow span-24 buttons">
-			  <div class="buttons1 span-5">
-				  <div class="cancelButton">
-             <%= link_to "Cancelar", :back%>
-				  </div>
+			<div class="infoCompany span-4 last"></div>
+			<div class="span-20 last">
 				  <div class="calltoAction">
-            <p><%= f.submit "Crear" %></p>
+		          	 <p><%= f.submit "Crear" %></p>
 				  </div>
-			  </div>
-		  </div>
+			</div>
+		</div>
+	  </div>
   <% end %>
   </div>
 </div>
