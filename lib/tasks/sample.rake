@@ -9,7 +9,7 @@ namespace :db do
         :city => "Monterrey",
         :password => "secret",
         :password_confirmation => "secret",
-        :description => "Agile web solutions")
+        :description => "Web solutions")
       
       if SkillCategory.count.zero?
         front = SkillCategory.create(:category =>'Front end')  

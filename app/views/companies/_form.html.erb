@@ -1,36 +1,25 @@
 <div class="mainContent clear span-24">
   <%= stylesheet_link_tag "jquery-ui" %>
   <% custom_title "Editar Perfil"%>
-  <hr noshade="noshade" width="100%" class="topSpacing"/>
+  <hr width="100%" class="topSpacing"/>
   <div class="infoCompany span-4">
     <p>Datos de la empresa</p>
   </div>
   <div class="generalForm span-12 prepend-1">
       <% form_for @company, :html => { :multipart => true } do |f| %>
           <%= f.error_messages %>
-    			<label>	<h1><%=t('.title') + " *" %></h1>	</label> 
+    			<h1><%=t('.title') + " *" %></h1>
           <%= f.text_field :title, :required=>"required", :pattern=>"[a-zA-Z ]{5,}" %>
-
-    			<label>	<h1><%=t('.city') + " *" %></h1>	</label> 
+    			<h1><%=t('.city') + " *" %></h1>
           <%= f.text_field :city, :class => 'city_autocomplete'%>
+    			<h1><%=t('.email') + " *" %></h1>
+          <%= f.text_field :email, :required=>"required" %>
           
-    			<label>	<h1><%=t('.email') + " *" %></h1>	</label> 
-          <%= f.text_field :email, :required=>"required", :type=>"email" %>
-    			<label>	<h1>Logo</h1>	</label> 
-          <%= f.file_field :logo %></p>
+    			<h1>Logo</h1>
+          <%= f.file_field :logo %>
           <hr class="span-12">	
           <%=image_tag @company.logo.url %>
 				  <span class="clear">Logo</span>
-				  
-				  <div class="generalButton">
-						<a href="">Remplazar</a>
-					</div>
-					
-					<span class="closeIcon">
-						<a href="">
-							<img src="images/close-icon.png" width="13" height="14">
-						</a>
-					<span>
 					
   </div><!--/generalform -->
 	    <div class="divShadow span-24">
@@ -63,12 +52,9 @@
     </div>
 
     <div class="divShadow span-24 buttons">
-		  <div class="buttons1 span-5">
-		    <div class="cancelButton">
-          <%= link_to "Cancelar", :back %>
-		    </div>
+			<div class="span-20 prepend-9 last">
 			  <div class="calltoAction">
-          <%= f.submit "Actualizar" %> 
+          <p><%= f.submit "Actualizar" %></p>
 		    </div>
 		  </div>
 		</div> 

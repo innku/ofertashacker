@@ -1,7 +1,7 @@
 <div class="mainContent clear span-24">
   <%= stylesheet_link_tag "jquery-ui" %>
   <% custom_title "Registro"%>
-  <hr noshade="noshade" width="100%" class="topSpacing"/>
+  <hr width="100%" class="topSpacing"/>
   <div class="infoCompany span-4">
     <p>Datos de la empresa</p>
   </div>
@@ -20,8 +20,8 @@
       <h1><%= t('.password_confirmation') %></h1>
       <%= f.password_field :password_confirmation, :required=>"required"%>
       
-	  <div class='calltoAction login'>
-			<%= f.submit "Crear" %>
+	  <div class='calltoAction'>
+			<p><%= f.submit "Registrar" %></p>
 	  </div>
     </div>
   <% end %>

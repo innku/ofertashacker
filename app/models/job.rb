@@ -28,18 +28,5 @@ class Job < ActiveRecord::Base
   def at_least_one_type
     full_time || part_time || remote || flexible
   end
-  
 
-  def required_skill_ids_string=(string_ids)
-    unless string_ids.blank?
-      self.required_skill_ids = string_ids.split(',')
-    else
-      self.required_skill_ids = []
-    end
-  end 
-  
-  def required_skill_ids_string
-    id_collection = required_skills.collect{|rs| rs.id }
-    id_collection.inject(""){|result,id| result += (id.to_s + (id == id_collection.last ?  '' : ','))}
-  end
 end

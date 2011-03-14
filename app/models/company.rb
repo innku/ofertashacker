@@ -19,7 +19,7 @@ class Company < ActiveRecord::Base
 	metropoli_for :city, :as=>:city_name
   scope :members, where(:role => "member")
   
-  has_attached_file :logo, :styles => {:medium => "300x300>", :thumb => "120x29#"},
+  has_attached_file :logo, :styles => {:medium => "300x300>", :thumb => "149x149>"},
                             :default_style => :thumb,
                             :storage => {
                               'development' => :filesystem,

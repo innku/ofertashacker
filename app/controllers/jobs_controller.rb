@@ -32,6 +32,7 @@ class JobsController < ApplicationController
   end
   
   def update
+    params[:job][:required_skill_ids] = [] if params[:job][:required_skill_ids].nil?
     if @job.update_attributes(params[:job])
       redirect_to jobs_path, :notice => I18n.t("notice.job.successfully_updated")
     else

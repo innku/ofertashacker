@@ -1,5 +1,5 @@
 <div class="mainContent clear span-24">
-  <hr noshade="noshade" width="100%" class="topSpacing"/>
+  <hr width="100%" class="topSpacing"/>
   <div class="infoCompany span-4 last">
     <p>Datos de la oferta</p>
   </div>
@@ -38,40 +38,22 @@
 	      <p><%= t('.required_profile') %></p>
       </div>
       <div class="part2 span-20 last">
-	  <%for category in SkillCategory.all%>		
-	 	 <div id="all_skills" class="c<%=category.id%>">
-			<h1 class='prepend-1'><%=category.category%></h1>
-		    <div class="habilitiesArea span-6 prepend-1">
-		     	  <div id="" class="habilitiesList span-6">
-					    <ul id="job_skills" >
-	                   <% (RequiredSkill.find_all_by_skill_category_id(category.id) - @job.required_skills).each do |required_skill| %>
-	                     <li id="<%= required_skill.id %>" class="skill" data-skill-id='<%= required_skill.id %>' >
-	                       <%= required_skill.skill_name%>
-	                     </li>
-	                   <% end %>  
-	                 </ul>
-				  </div>
-		    </div>	
-		    <div class="profileArea span-8 prepend-1 last">
-				    <div class="profileList span-6">
-					    <ul id="job_required_profile">
-	                     <% @job.required_skills.find_all_by_skill_category_id(category).each do |required_skill| %>
-	                       <li class="required_skill" data-skill-id='<%= required_skill.id %>' >
-	                         <%= required_skill.skill_name%>
-	                       </li>
-	                     <% end %> 
-	                 </ul>
-				    </div>
-		        </div>    
-		    </div>
-			<div class='clear'></div>
-      <% end %>
-        			<div id="extra_skill">
-        			  	<h1><%=t('.extra_skill') %></h1>	 
-                <%=f.text_field :extra_skill, :cols=>3%></p>
-              </div>
-					  </div>
-    <%= f.hidden_field :required_skill_ids_string %>
+       
+        <% for category in SkillCategory.all %>
+            <h1><%= category %></h1>
+             <ul>
+              <% for skill in category.required_skills %>
+		            <li><%= check_box_tag 'job[required_skill_ids][]', skill.id, @job.required_skill_ids.include?(skill.id) %> <%= label_tag skill.skill_name %> </li>
+		          <% end %>
+		        </ul>
+        <% end %>
+	      
+   			<div id="extra_skill">
+			    <h1><%=t('.extra_skill') %></h1>	 
+          <%=f.text_field :extra_skill, :cols=>3%></p>
+        </div>
+      </div>
+		</div>
     <div class="divShadow span-24">
 	    <div class="infoCompany span-4 last">
 		  <p>Descripción de la Oferta</p>
@@ -84,14 +66,16 @@
 		  </div>     
 	  </div>
 	  <div class="divShadow span-24 buttons">
-			<div class="infoCompany span-4 last"></div>
-			<div class="span-20 last">
+			<div class="span-20 prepend-9 last">
 				  <div class="calltoAction">
-		          	 <p><%= f.submit "Crear" %></p>
+				      <% if @job.new_record? %>
+		          	 <p><%= f.submit "Publicar oferta" %></p>
+		          <% else %>
+    		         <p><%= f.submit "Actualizar oferta" %></p>
+    		      <% end %>
 				  </div>
 			</div>
 		</div>
-	  </div>
   <% end %>
   </div>
 </div>

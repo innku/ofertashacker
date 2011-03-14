@@ -134,13 +134,9 @@ a:hover{
 	margin-bottom:0.2em !important;
 }
 
-.mainContent a {
-	text-decoration:none;
-	border-bottom:0px;
-}
-
 .mainContent a:hover h1 {
 	color:#CC3333;
+	text-decoration: none;
 }
 
 .mainContent a h1, .mainContent a p {
@@ -173,22 +169,23 @@ a:hover{
 }
 
 .session_links{
+	font-family: georgia, helvetica neue;
 	margin-top:0px;
+	padding-right: 20px;
 }
 
 .mainContent label{
-	font-size:20px;
+	font-size:16px;
 }
 
 .mainContent a{
-	font-family: georgia, helvetica neue;
 	color: #333333;
-	font-size: 14px;	
+	font-size: 12px;
+	text-decoration:none;
+	border-bottom:0px;	
 }
 
-
 .mainContent a:hover{
-	font-family: georgia, helvetica neue;
 	color: #005B60;
 	text-decoration: underline;
 }
@@ -339,11 +336,9 @@ a:hover{
 	border-right:1px solid #CCCCCC;
 	font-size:22px;
 	color:#D9D93F;
-	display:block;	
 	cursor: pointer;
 	padding:5px 32px;
-	float:left;
-	
+	float: left;
 }
 
 .remember_me{
@@ -504,7 +499,7 @@ div.clear{
 #info li a{
 	font-family: georgia, helvetica neue;
 	color: #333333;
-	font-size: 14px;
+	font-size: 12px;
 	
 }
 

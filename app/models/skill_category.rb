@@ -13,4 +13,8 @@ class SkillCategory < ActiveRecord::Base
     end
     array
   end
+  
+  def to_s
+    category
+  end
 end
