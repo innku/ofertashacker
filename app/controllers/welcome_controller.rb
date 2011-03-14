@@ -1,7 +1,8 @@
 class WelcomeController < ApplicationController
   
   def index
-    @jobs = Job.all :limit => 4
+    @jobs = Job.find(:all, :order => "id DESC")
+    @jobs = @jobs.paginate :page => params[:page], :per_page => 8
   end
   
   def about

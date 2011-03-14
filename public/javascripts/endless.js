@@ -11,10 +11,10 @@ function getJobsJSON(filter_info){
                 var i=0;
                 $.each(data,function(){
                     if (is_even(i)) {
-                        $(".posts.even").append(job_template(this.job));
+                        $(".posts.even").append(job_template(this.job)).hide().fadeIn();
                      
                     } else {
-                        $(".posts.odd").append(job_template(this.job)); 
+                        $(".posts.odd").append(job_template(this.job)).hide().fadeIn(); 
                     }
                     i++;
                 });   
@@ -74,7 +74,6 @@ function isScrollBottom() {
 } 
 $(document).ready(function() {
     $("#mainMenu input").click(function(){
-    
         $(".posts").html("");
         $("#loader").append("<img alt=\"Loader\"src=\"/images/ajax-loader.gif\"  />");
         current_page=1;
