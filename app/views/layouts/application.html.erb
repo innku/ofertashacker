@@ -43,15 +43,14 @@
           <% end %>
 		  </ul>
 		  
-		  <div class="logo clear span-5">
-			  <%=link_to (image_tag "jobBoard_logo.png", :alt=>"Ruby Job Board", :width=>"194", :height=>"150"), root_path%>
+		  <div class="logo clear span-6">
+			  <%= link_to (image_tag "logo.png", :alt=>"Rubypros", :width=>"245", :height=>"150"), root_path%>
 		  </div>
-			<% unless needs_filter? request.path%>
-			  <%=render 'layouts/filter'%>
+			<% unless needs_filter? request.path %>
+			  <%= render 'layouts/filter' %>
 			<% end%>
 				<a class="twitter" href="http://www.twitter.com/innku" target="_blank">
 				<span>
-					
 				</span>
 			</a>
 		</div>
@@ -72,10 +71,10 @@
       
 		<div id="footer" class="clear span-24 last">
 		      <ul>
-		        <li><%=link_to "ofertas", jobs_path%></li>
-				    <li><%=link_to "publicar ofertas", new_job_path%></li>
-				    <li><%=link_to "contáctanos", contact_path%></li>
-				    <li><%=link_to "acerca de", about_path%></li>
+		        <li><%= link_to "ofertas", jobs_path %></li>
+				    <li><%= link_to "publicar ofertas", new_job_path %></li>
+				    <li><%= link_to "contáctanos", contact_path %></li>
+				    <li><%= link_to "acerca de", about_path %></li>
 		      </ul>
 		</div>
 	</div>

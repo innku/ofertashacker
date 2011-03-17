@@ -366,6 +366,11 @@ a:hover{
 	margin-top:24px;
 }
 
+.skills li{
+	float:left;
+	margin:0 10px 15px 0;
+}
+
 .habilitiesList{
 	background:#EDEDED;
 	border:1px solid #D9D9D9;

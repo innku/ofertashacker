@@ -9,7 +9,8 @@
 			<ul>
 				<li><%= @job.company.phone1 %></li>
 				<li><%= mail_to @job.company.contact_email %></li>
-				<li><%= link_to @job.company.facebook %></li>
+				<li><%= link_to "twitter", @job.company.twitter, :target => :blank %></li>
+				<li><%= link_to "Facebook page", @job.company.facebook, :target => :blank %></li>
 			</ul>
 		</div>
 		<%= image_tag "shadow.gif" %>
