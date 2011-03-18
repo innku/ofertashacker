@@ -39,14 +39,16 @@
 		      <p>Contacto</p>
 	      </div>
         <div id="contacto" class="span-16 prepend-1">
-          
+          <p>website
+          <%= f.text_field :website %></p>
           <p>facebook
-          <%= f.text_field :facebook %></p>
+          <%= f.text_field :facebook, :value => "http://www.facebook.com/" %></p>
           <p>twitter
-          <%= f.text_field :twitter %></p>
-          <p>LinkedIn
+          <%= f.text_field :twitter, :value => "http://www.twitter.com/" %></p>
+<!--           <p>LinkedIn
           <%= f.text_field :linkedin %></p>
-          <p>e-mail
+           -->
+          <p>contact e-mail
           <%= f.text_field :contact_email %></p>
         </div>
     </div>

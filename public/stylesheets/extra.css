@@ -31,24 +31,6 @@ div#contacto{
 	padding-bottom:5px;
 	margin-top:10px;	
 }
-a.button  {
-	width: auto;
-	padding: 9px 15px;
-	background: #066;
-	border: 0;
-	font-size: 14px;
-	color: #FFFFFF;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	cursor:pointer;
-	text-decoration:none;
-    
-}
-
-a.button:hover{
-    background:#C00; 
-    color: #FFFFFF;
-}
 
 #extra_skill{padding-left:40px;}
 

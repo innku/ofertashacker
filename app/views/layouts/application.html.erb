@@ -32,7 +32,7 @@
             <li><%= link_to "<span>Salir</span>".html_safe, destroy_company_session_path() %></li>
             <li><%= link_to "<span>Perfil</span>".html_safe, company_path(current_company) %></li>
             <li><%= link_to "<span>Publicar oferta</span>".html_safe,  new_job_path() %></li>
-            <li><%= link_to "<span>Mis ofertas</span>".html_safe, jobs_path() %></li>
+            <li><%= link_to "<span>Ofertas</span>".html_safe, jobs_path() %></li>
             <%if can? :manage, SkillCategory%>
               <li><%= link_to "<span>Skills</span>".html_safe, skill_categories_path %></li>
             <%end%>

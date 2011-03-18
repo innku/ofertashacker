@@ -7,6 +7,7 @@
 		<div id="info"> 
 			<h2>Contacto</h2>
 			<ul>
+			  <li><%= link_to "#{@job.company.title} website", @job.company.website, :target => :blank %></li>
 				<li><%= @job.company.phone1 %></li>
 				<li><%= mail_to @job.company.contact_email %></li>
 				<li><%= link_to "twitter", @job.company.twitter, :target => :blank %></li>

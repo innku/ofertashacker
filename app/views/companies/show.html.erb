@@ -1,21 +1,31 @@
 <% custom_title @company.title%>
-<h2><%= t('.company_detail') %></h2>
 
-<h1><%= @company.title %></h1>
-<p><%= t('.city') %> <%= @company.city %></p>
-<% if @company.logo? %>
-  <p><%= image_tag @company.logo.url(:medium) %></p>
-<% else %>
-  <p><%= t('.no_picture') %></p>
-<% end %>
-<p><%= t('.description') %><br />
-<%= @company.description ? RedCloth.new(@company.description).to_html.html_safe : "" %></p>
+<div id="logoperfil"><!--logoperfil-->
+     <% if @company.logo? %>
+      <p><%= image_tag @company.logo.url(:medium) %></p>
+    <% else %>
+      <p><%= t('.no_picture') %></p>
+    <% end %>
+</div><!--/logoperfil-->
 
-<% if can? :manage, @company %>
-  <%= link_to t(:edit), edit_company_path(@company), :class => "button" %>
-  <%= link_to "Borrar", company_path(@company), :class => "button", :confirm => "¿Estás seguro de eliminar #{@company.title}?", :method => :delete %>
-<% end %>
-<% if current_company && current_company.admin? %>
-    <%= link_to t('.company_index'), companies_path(), :class => "button"  %>
-<% end %>
+<div id="perfil"><!--perfil-->
+  <div id="Localizacion"><!--Localizacion-->
+  	<h2><%= t('.city') %> </h2>
+    <p><%= @company.city %></p>
+  </div><!--/Localizacion-->
+  <div id="detalles"><!--detalles-->
+    <h2><%= t('.description') %></h2>
+    <p><%= @company.description ? RedCloth.new(@company.description).to_html.html_safe : "" %></p>
+	</div><!--/detalles-->
+	<div id="buttons"><!--botones editar borrar-->
+    <% if can? :manage, @company %>
+      <%= link_to t(:edit), edit_company_path(@company), :class => "button" %>
+      <%= link_to "Borrar", company_path(@company), :class => "button", :confirm => "¿Estás seguro de eliminar #{@company.title}?", :method => :delete %>
+    <% end %>
+    <% if current_company && current_company.admin? %>
+        <%= link_to t('.company_index'), companies_path(), :class => "button"  %>
+    <% end %>
+  </div><!--/botones editar borrar-->
+	<div class="clear"></div>
+</div><!--/perfil-->
 

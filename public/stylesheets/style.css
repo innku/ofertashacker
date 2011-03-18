@@ -9,7 +9,7 @@ body {
 h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 
 a:hover{
-	text-decoration:none;
+	text-decoration:none !important;
 }
 
 .mainContent ul li label{
@@ -430,6 +430,65 @@ a:hover{
 	text-decoration:underline;
 }
 
+/*================== PERFIL ====================*/			
+
+#perfil h2{
+	font-size: 18px;
+	margin-bottom: 3px;
+	margin-top: 10px;
+}
+
+#perfil p{
+	font-size: 13px;
+	font-family: helvetica;	
+	margin-top: 0px;
+}
+
+#perfil a{
+	color: #FFF;
+	font-family: Helvetica;
+	font-size: 14px;
+}
+
+.button{
+    color: #FFF!important;
+	padding: 10px;
+	background: -moz-linear-gradient(top,  #304F4F, #1C3030);
+	background: -webkit-gradient(linear, left top, left bottom, from(#304F4F), to(#1C3030));
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 2px solid #122626;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.button:active{
+	background: -moz-linear-gradient(top,  #1C3030, #304F4F);
+	background: -webkit-gradient(linear, left top, left bottom, from(#304F4F), to(#1C3030));
+	border: 2px solid #2A4646;
+	
+}
+
+#buttons{
+	float: right;
+	margin-right: 10px;
+}
+
+#Localizacion{
+	float: left;
+	padding-right: 50px;
+	margin-right: 50px;
+	border-right: 3px solid #CC3333;
+}
+
+#logoperfil{
+	margin-top: 15px;
+}
+
+div.clear{
+	clear:both;
+}
+
 /*================== HERE COMES THE INFO STYLES ====================*/
 
 #right{
@@ -504,7 +563,7 @@ div.clear{
 #info li a{
 	font-family: georgia, helvetica neue;
 	color: #333333;
-	font-size: 12px;
+	font-size: 14px;
 	
 }
 
