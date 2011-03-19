@@ -9,7 +9,7 @@
       <% form_for @company, :html => { :multipart => true } do |f| %>
           <%= f.error_messages %>
     			<h1><%=t('.title') + " *" %></h1>
-          <%= f.text_field :title, :required=>"required", :pattern=>"[a-zA-Z ]{5,}" %>
+          <%= f.text_field :title, :required=>"required" %>
     			<h1><%=t('.city') + " *" %></h1>
           <%= f.text_field :city, :class => 'city_autocomplete'%>
     			<h1><%=t('.email') + " *" %></h1>
@@ -17,7 +17,7 @@
           
     			<h1>Logo</h1>
           <%= f.file_field :logo %>
-          <hr class="span-12">	
+          <hr class="span-12">
           <%=image_tag @company.logo.url %>
 				  <span class="clear">Logo</span>
 					
@@ -25,11 +25,11 @@
 	    <div class="divShadow span-24">
 	    
 		    <div class="infoCompany span-4">
-			  <p>Descripción de la empresa</p>
+			    <p>Descripción de la empresa</p>
 		    </div>
-		    
 				<div class="descriptionForm span-16 prepend-1">
-        			<label>	<h1><%=t('.description') + " *" %></h1>	</label> 
+        	<h1><%=t('.description') + " *" %></h1>
+        	<p>Este text area permite textile, simples códigos para formatear el texto.</p>
           <%= f.text_area :description %>
         </div>
       </div><!--/description -->
@@ -39,20 +39,22 @@
 		      <p>Contacto</p>
 	      </div>
         <div id="contacto" class="span-16 prepend-1">
-          <p>website
-          <%= f.text_field :website %></p>
-          <p>facebook
-          <%= f.text_field :facebook, :value => "http://www.facebook.com/" %></p>
-          <p>twitter
-          <%= f.text_field :twitter, :value => "http://www.twitter.com/" %></p>
+          <h1>website</h1>
+          <%= f.text_field :website %>
+          <h1>e-mail de contacto</h1>
+          <%= f.text_field :contact_email %>
+          <h1>facebook</h1>
+          <p>http://facebook.com/
+          <%= f.text_field :facebook %>
+          <h1>twitter</h1>
+          <p>http://twitter.com/
+          <%= f.text_field :twitter %></p>
 <!--           <p>LinkedIn
           <%= f.text_field :linkedin %></p>
            -->
-          <p>contact e-mail
-          <%= f.text_field :contact_email %></p>
+         
         </div>
     </div>
-
     <div class="divShadow span-24 buttons">
 			<div class="span-20 prepend-5 last">
 			  <div class="calltoAction">

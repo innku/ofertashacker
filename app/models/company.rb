@@ -31,7 +31,7 @@ class Company < ActiveRecord::Base
                             :url => "../files/#{ENV['RAILS_ENV']}/:attachment/:id/:style/:basename.:extension",
                             :path => "public/files/#{Rails.env}/:attachment/:id/:style/:basename.:extension",
                             :bucket => 'rubypros',
-                            :default_url => "/images/shareIcon.gif"
+                            :default_url => "/images/shareIcon.png"
                             
   def admin?
     self.role == "admin"

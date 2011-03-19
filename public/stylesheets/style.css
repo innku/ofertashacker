@@ -165,7 +165,7 @@ a:hover{
 .mainContent .infoCompany p{
 	font-family: arial, serif;
 	font-size:16px;
-	margin:0 10px 0 0;	
+	margin:20px 10px 5px 10px;	
 }
 
 .session_links{
@@ -241,12 +241,6 @@ a:hover{
 
 .generalForm img {
 	float:left;
-}
-
-.generalForm span {
-	float:left;
-	margin:8px 62px 0 81px;
-	color:#999999;
 }
 
 .generalButton{
@@ -528,6 +522,7 @@ div.clear{
 }
 
 .generalForm .tag span{
+    float: left;
 	background-color: #EFF2DF;
 	padding: 4px;
 	margin:0;
@@ -564,7 +559,6 @@ div.clear{
 	font-family: georgia, helvetica neue;
 	color: #333333;
 	font-size: 14px;
-	
 }
 
 #info li a:hover{
