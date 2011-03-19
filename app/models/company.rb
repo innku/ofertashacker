@@ -14,7 +14,7 @@ class Company < ActiveRecord::Base
   
   attr_accessible :email, :password, :password_confirmation, 
                   :remember_me, :title, :city, :logo, :description,
-                  :phone1, :phone2, :contact_email, :linkedin, :facebook, :twitter
+                  :phone1, :phone2, :contact_email, :linkedin, :facebook, :twitter, :website
 
 	metropoli_for :city, :as=>:city_name
   scope :members, where(:role => "member")
@@ -31,7 +31,7 @@ class Company < ActiveRecord::Base
                             :url => "../files/#{ENV['RAILS_ENV']}/:attachment/:id/:style/:basename.:extension",
                             :path => "public/files/#{Rails.env}/:attachment/:id/:style/:basename.:extension",
                             :bucket => 'rubypros',
-                            :default_url => "/images/shareIcon.gif"
+                            :default_url => "/images/shareIcon.png"
                             
   def admin?
     self.role == "admin"

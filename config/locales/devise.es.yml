@@ -4,9 +4,9 @@ es:
       not_found: 'no encontrado'
       already_confirmed: 'ya ha sido confirmada'
       not_locked: 'no está bloqueada'
-      invalid: "es invalido"
+      invalid: "es inválido"
       confirmation: 'no coincide con su confirmación'
-      too_short: 'es demasiado corta, minimo 6 caracteres'
+      too_short: 'es demasiado corta, mínimo 6 caracteres'
 
   devise:
     failure:
@@ -38,8 +38,8 @@ es:
       failure: 'No has sido autorizado en la cuenta %{kind} porque "%{reason}".'
     mailer:
       confirmation_instructions:
-        subject: 'Instrucciones de confirmación'
+        subject: '[Rubypros] Instrucciones de confirmación'
       reset_password_instructions:
-        subject: 'Instrucciones para cambiar tu contraseña'
+        subject: '[Rubypros] Instrucciones para cambiar tu contraseña'
       unlock_instructions:
-        subject: 'Instrucciones para desbloquear tu cuenta'
+        subject: '[Rubypros] Instrucciones para desbloquear tu cuenta'

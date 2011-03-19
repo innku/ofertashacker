@@ -1,15 +1,17 @@
 <div class="generalForm">
   <div id="left"><!--left-->
     <div id="logo">
-			<%= image_tag @job.company.logo.url(:thumb) %>
+			<%= link_to (image_tag @job.company.logo.url(:thumb)), company_path(@job.company) %>
   	</div>
 		<div class="clear"></div>
 		<div id="info"> 
 			<h2>Contacto</h2>
 			<ul>
+			  <li><%= link_to "#{@job.company.website}", prepend_http(@job.company.website), :target => :blank %></li>
 				<li><%= @job.company.phone1 %></li>
 				<li><%= mail_to @job.company.contact_email %></li>
-				<li><%= link_to @job.company.facebook %></li>
+				<li><%= link_to "@#{@job.company.twitter}", prepend_twitter(@job.company.twitter), :target => :blank %></li>
+				<li><%= link_to "facebook.com/#{@job.company.facebook}", prepend_facebook(@job.company.facebook), :target => :blank %></li>
 			</ul>
 		</div>
 		<%= image_tag "shadow.gif" %>
@@ -30,11 +32,13 @@
     <% end %>
     <div class="clear"></div>
     <h2>Descripción</h2>
+    <p>
     <p><%= RedCloth.new(@job.description).to_html.html_safe %></p>
     <% if can? :manage, @job%>    
       <%=link_to "Editar", edit_job_path(@job), :class => "button"%> 
       <%= link_to 'Borrar', @job, :confirm => '¿Estas Seguro que deseas borrar la oferta?', :method => :delete, :class => "button" %>
     <% end%>
   </div><!--/right-->
+  <div class="clear"></div>
 </div>
 

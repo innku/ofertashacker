@@ -38,18 +38,20 @@
 	      <p><%= t('.required_profile') %></p>
       </div>
       <div class="part2 span-20 last">
-       
-        <% for category in SkillCategory.all %>
-            <h1><%= category %></h1>
-             <ul>
-              <% for skill in category.required_skills %>
-		            <li><%= check_box_tag 'job[required_skill_ids][]', skill.id, @job.required_skill_ids.include?(skill.id) %> <%= label_tag skill.skill_name %> </li>
-		          <% end %>
-		        </ul>
-        <% end %>
-	      
+        <div class="skills span-20 prepend-1">
+          <% for category in SkillCategory.all %>
+              <div class="clear"></div>
+              <h1><%= category %></h1>
+               <ul>
+                <% for skill in category.required_skills %>
+		              <li><%= check_box_tag 'job[required_skill_ids][]', skill.id, @job.required_skill_ids.include?(skill.id) %> <%= label_tag skill.skill_name %> </li>
+		            <% end %>
+		          </ul>
+          <% end %>
+        </div>
+        <div class="clear"></div>
    			<div id="extra_skill">
-			    <h1><%=t('.extra_skill') %></h1>	 
+		      <h1><%=t('.extra_skill') %></h1>	 
           <%=f.text_field :extra_skill, :cols=>3%></p>
         </div>
       </div>
@@ -61,12 +63,13 @@
 		  <div class="descriptionForm span-20 last">
 			  <div class="span-16 prepend-1">
 				  <h1>Oferta*</h1>
+				  <p>Este text area permite textile, simples códigos para formatear el texto.</p>
           <%= f.text_area :description, :required => "required" %>
 			  </div>		
 		  </div>     
 	  </div>
 	  <div class="divShadow span-24 buttons">
-			<div class="span-20 prepend-9 last">
+			<div class="span-20 prepend-5 last">
 				  <div class="calltoAction">
 				      <% if @job.new_record? %>
 		          	 <p><%= f.submit "Publicar oferta" %></p>
@@ -77,5 +80,4 @@
 			</div>
 		</div>
   <% end %>
-  </div>
 </div>

@@ -11,10 +11,9 @@ function getJobsJSON(filter_info){
                 var i=0;
                 $.each(data,function(){
                     if (is_even(i)) {
-                        $(".posts.even").append(job_template(this.job));
-                     
+                        $(".posts.even").append(job_template(this.job)).hide().fadeIn();
                     } else {
-                        $(".posts.odd").append(job_template(this.job)); 
+                        $(".posts.odd").append(job_template(this.job)).hide().fadeIn(); 
                     }
                     i++;
                 });   
@@ -72,15 +71,30 @@ function isScrollBottom() {
   var scrollPosition = $(window).height() + $(window).scrollTop();
   return (documentHeight == scrollPosition);
 } 
+
+function countChecked(filter_info) {
+    var unchecked=0;
+     $.each(filter_info, function(i, value) {
+        if(!value)
+            unchecked++;
+    });
+    return unchecked;
+}
+
 $(document).ready(function() {
     $("#mainMenu input").click(function(){
-    
         $(".posts").html("");
         $("#loader").append("<img alt=\"Loader\"src=\"/images/ajax-loader.gif\"  />");
         current_page=1;
         var filter_info = get_checkbox_status("#mainMenu input");
+        if(countChecked(filter_info) == 4) {
+            $("#mainMenu input").each(function() {
+                $(this).attr('checked', true);
+            });
+        }
         getJobsJSON(filter_info);
       });
 });
+
 
 
