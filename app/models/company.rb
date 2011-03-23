@@ -19,7 +19,7 @@ class Company < ActiveRecord::Base
 	metropoli_for :city, :as=>:city_name
   scope :members, where(:role => "member")
   
-  has_attached_file :logo, :styles => {:medium => "300x300>", :thumb => "149x149>"},
+  has_attached_file :logo, :styles => {:medium => "300x300>", :thumb => "149x65>"},
                             :default_style => :thumb,
                             :storage => {
                               'development' => :filesystem,
@@ -28,7 +28,7 @@ class Company < ActiveRecord::Base
                               'production' => :s3
                             }[Rails.env],
                             :s3_credentials => "#{Rails.root}/config/s3.yml",
-                            :url => "../files/#{ENV['RAILS_ENV']}/:attachment/:id/:style/:basename.:extension",
+                            :url => "#{ENV['RAILS_ENV']}/:attachment/:id/:style/:basename.:extension",
                             :path => "public/files/#{Rails.env}/:attachment/:id/:style/:basename.:extension",
                             :bucket => 'rubypros',
                             :default_url => "/images/shareIcon.png"
