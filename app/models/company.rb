@@ -7,7 +7,8 @@ class Company < ActiveRecord::Base
 
   has_many :jobs, :dependent => :destroy
   
-  validates_presence_of :title, :email
+  validates :title, :presence => true
+  validates :email, :presence => true, :uniqueness => true
   validates_attachment_content_type :logo, 
                                     :content_type => ['image/jpg','image/jpeg', 
                                                       'image/png', 'image/gif']
