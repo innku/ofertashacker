@@ -4,7 +4,8 @@ company = Company.find_or_initialize_by_role(
   :city => "Monterrey",
   :password => "secret",
   :password_confirmation => "secret",
-  :description => "Agile web solutions")
+  :description => "Agile web solutions",
+  :role => 'admin')
 company.save
 company.role='admin'
 company.confirmed_at=Time.now
