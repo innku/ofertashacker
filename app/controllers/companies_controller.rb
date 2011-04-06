@@ -6,10 +6,7 @@ class CompaniesController < ApplicationController
     @companies = Company.all
   end
   
-  def show
-    debugger
-    true
-    
+  def show    
   end
   
   def edit

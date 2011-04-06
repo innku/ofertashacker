@@ -18,6 +18,15 @@ class RequiredSkillsController < ApplicationController
     end
   end
   
+  def update
+    @skill_category = SkillCategory.find(params[:skill_category_id])
+    if @required_skill.update_attributes(params[:required_skill])
+      redirect_to skill_category_path(@skill_category), 
+                  :notice => I18n.t("notice.required_skill.successfully_updated")
+    else
+      render :action => "new"
+    end
+  end
 
   def destroy
     @skill_category = SkillCategory.find(params[:skill_category_id])
@@ -32,16 +41,6 @@ class RequiredSkillsController < ApplicationController
   def edit
     @skill_categories=SkillCategory.all
     @skill_category = SkillCategory.find(params[:skill_category_id])
-  end
-  
-  def update
-    @skill_category = SkillCategory.find(params[:skill_category_id])
-    if @required_skill.update_attributes(params[:required_skill])
-      redirect_to skill_category_path(@skill_category), 
-                  :notice => I18n.t("notice.required_skill.successfully_updated")
-    else
-      render :action => "new"
-    end
   end
 
 end
