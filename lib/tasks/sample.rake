@@ -10,6 +10,8 @@ namespace :db do
         :password => "secret",
         :password_confirmation => "secret",
         :description => "Web solutions")
+      company.confirmed_at=Time.now
+      company.save
       
       if SkillCategory.count.zero?
         front = SkillCategory.create(:category =>'Front end')  

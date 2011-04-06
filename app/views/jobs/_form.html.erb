@@ -1,3 +1,4 @@
+<%javascript 'overlay'%>
 <div class="mainContent clear span-24">
   <hr width="100%" class="topSpacing"/>
   <div class="infoCompany span-4 last">
@@ -63,7 +64,15 @@
 		  <div class="descriptionForm span-20 last">
 			  <div class="span-16 prepend-1">
 				  <h1>Oferta*</h1>
-				  <p>Este text area permite textile, simples códigos para formatear el texto.</p>
+         	<a href="#" rel="#trigger">Guia de formatos</a>
+          <div class="overlay" id="trigger">  
+	            <h2 style="margin:0px">Guia para formato de text areas</h2> 
+	            <div id="formatting_guide">
+	              <p>
+	                <%= render '/layouts/textileguide' %>
+	              </p> 
+	           </div>
+          </div>
           <%= f.text_area :description, :required => "required" %>
 			  </div>		
 		  </div>     
