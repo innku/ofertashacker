@@ -7,6 +7,8 @@ class CompaniesController < ApplicationController
   end
   
   def show
+    debugger
+    true
     
   end
   
