@@ -1,4 +1,4 @@
-<%javascript 'overlay'%>
+<%javascript 'overlay', 'textile'%>
 <div class="mainContent clear span-24">
   <hr width="100%" class="topSpacing"/>
   <div class="infoCompany span-4 last">
@@ -8,7 +8,6 @@
     <%= form_for @job do |f| %> 
       <% if @job.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
           <ul>
           <% @job.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
@@ -18,10 +17,10 @@
       <% end %>   
 	    <div class="firstColumn span-9 prepend-1">
 		<h1><%=t('.title') + " *" %></h1>
-        <%= f.text_field :title, :required => "required" %></p>
+        <%= f.text_field :title %></p>
         
 			  	<h1><%=t('.city') + " *" %></h1>	 
-         <%=f.text_field :city, :class => 'city_autocomplete', :required => "required"%></p>
+         <%=f.text_field :city, :class => 'city_autocomplete' %></p>
       </div>
       
 	    <div class="secondColumn span-9 prepend-1 last">
@@ -73,10 +72,10 @@
 	              </p> 
 	           </div>
           </div>
-          <%= f.text_area :description, :required => "required" %>
+          <%= f.text_area :description %>
 			  </div>		
 		  </div>     
-	  </div>
+	  </div> 
 	  <div class="divShadow span-24 buttons">
 			<div class="span-20 prepend-5 last">
 				  <div class="calltoAction">

@@ -9,16 +9,16 @@
     <div class="generalForm span-12 prepend-1">
       <%= devise_error_messages! %>
       <h1><%= t('.title') %></h1> 
-      <%= f.text_field :title, :required=>"required", :pattern=>"[a-zA-Z ]{5,}" %>
+      <%= f.text_field :title %>
 
   	  <h1><%= t('.email') %></h1>
-      <%= f.text_field :email, :required=>"required" %>
+      <%= f.text_field :email %>
 
       <h1><%= t('.password') %></h1>
-      <%= f.password_field :password, :required=>"required" %>
+      <%= f.password_field :password%>
 
       <h1><%= t('.password_confirmation') %></h1>
-      <%= f.password_field :password_confirmation, :required=>"required"%>
+      <%= f.password_field :password_confirmation%>
       
 	  <div class='calltoAction'>
 			<p><%= f.submit "Registrar" %></p>

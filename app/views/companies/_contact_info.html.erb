@@ -1,0 +1,17 @@
+<ul>
+  <% if company.website? %>
+    <li><%= link_to "#{truncate(company.website, :length => 20)}", prepend_http(company.website), :target => :blank%></li>
+  <% end %>
+  <% if company.website? %>
+    <li> <%= truncate(company.phone1, :length=> 20)%> </li>
+  <% end %>
+  <% if company.contact_email? %>
+    <li> <%= mail_to truncate(company.contact_email, :length => 20)%> </li>
+  <% end %>
+  <% if company.twitter? %>
+    <li> <%= link_to "@#{truncate(company.twitter, :length => 20)}", prepend_twitter(company.twitter), :target => :blank%> </li>
+  <% end %>
+  <% if company.facebook? %>
+    <li> <%= link_to "facebook.com/#{truncate(company.facebook, :length =>10)}", prepend_facebook(company.facebook), :target => :blank%> </li>
+  <%end%>
+</ul>

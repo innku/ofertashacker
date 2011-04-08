@@ -23,7 +23,7 @@ module ApplicationHelper
   end
   
   def check_path_for path
-    exceptions = ["/jobs","/",'edit','jobs/new','jobs/new','skill_categories/new',"sign_up", "sign_in"]
+    exceptions = ["/jobs","/",'edit','jobs/new','jobs/new','skill_categories/new',"companies","sign_up", "sign_in", "my_jobs"]
     for e in exceptions do 
        if path.to_s == e or path.to_s.ends_with?(e)
          return false

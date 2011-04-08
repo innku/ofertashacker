@@ -11,45 +11,42 @@
   font-weight: bold;
   src: local('Arvo Bold'), local('Arvo-Bold'), url('http://themes.googleusercontent.com/font?kit=F-uvpIj1hF17IDyvQvI50Q') format('truetype');
 }
-
 div#contacto{
-    padding-top:20px;
-    
+  padding-top:20px;
+
 }
 
 .divShadow.span-24.buttons{height:80px;}
 
 .mainContent.span-23 {
-    padding:20px;
-    padding-top: 30px;
-    margin-bottom:10px;
+  padding:20px;
+  padding-top: 30px;
+  margin-bottom:10px;
 }
 .mainContent ul.posts li {height:170px;}
 
 #bottom.mainContent.span-23{
-	padding-top:5px;
-	padding-bottom:5px;
-	margin-top:10px;	
+  padding-top:5px;
+  padding-bottom:5px;
+  margin-top:10px;	
 }
 
 #extra_skill{padding-left:40px;}
 
 .job #company{
-    float:right;
-    padding:10px;
-    padding-right: 50px;
+  float:right;
+  padding:10px;
+  padding-right: 50px;
 }
 .buttons{float:right;}
-.ui-autocomplete-loading {
-  background: #f00 url("images/loading.gif") right center no-repeat;
-}
+
 
 #company:hover{
-    background-color:#eee;
+  background-color:#eee;
 }
 #company img {
-    margin-top: 15px;
-    margin-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 #loader{margin-left:450px;margin-top:40px;}
 .mainContent a div img {padding-left:13px;}
@@ -60,14 +57,33 @@ div#contacto{
 #flash_notice, #flash_error, #flash_alert {
   padding: 5px 8px;
   margin: 7px 0;
-}
-
-#flash_notice {
   color: #FFF;
   position: absolute;
+  top: 60px;
+  left: 355px;
+  width:650px;
+
+}
+#flash_notice {
+  background: green;
+}
+#flash_error, #flash_alert {
+  background-color: #F00;
+  border: solid 1px #C66;
 }
 
-#flash_error, #flash_alert {
-  background-color: #FCC;
-  border: solid 1px #C66;
+/* LINKS *************/
+
+a {
+  color: #0000FF;
+  text-decoration:none;
+}
+
+a:hover { 
+  text-decoration:underline;
+}
+
+#job_wrapper a {
+  text-decoration: none !important;
+
 }

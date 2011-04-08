@@ -7,17 +7,16 @@
     <title><%= @content_for_title%>Ruby Pros</title>
 	  <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
 	
-    <%= stylesheet_link_tag "jquery-ui" %>
     <%= stylesheet_link_tag 'blueprint/screen', :media=>"screen, projection" %>
     <%= stylesheet_link_tag 'blueprint/print', :media=>"print" %>
     <%= stylesheet_link_tag 'style', :media=>"screen" %>
     <%= stylesheet_link_tag 'extra' %>
 	  <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 	  <link href='http://fonts.googleapis.com/css?family=Arvo:bold' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag "jquery-ui" %>
 
     <%= javascript_include_tag :defaults,'jquery.infinitescroller' %>
     <%= javascript_include_tag 'rails' %>
-    <%= javascript_include_tag 'validator' %>
     <%= javascript_include_tag 'metropoli.jquery.ui' %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
@@ -33,6 +32,7 @@
             <li><%= link_to "<span>Perfil</span>".html_safe, company_path(current_company) %></li>
             <li><%= link_to "<span>Publicar oferta</span>".html_safe,  new_job_path() %></li>
             <li><%= link_to "<span>Ofertas</span>".html_safe, jobs_path() %></li>
+            <li><%= link_to "<span>Mis ofertas</span>".html_safe, my_jobs_company_path(current_company) %></li>
             <%if can? :manage, SkillCategory%>
               <li><%= link_to "<span>Skills</span>".html_safe, skill_categories_path %></li>
             <%end%>

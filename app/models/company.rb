@@ -9,6 +9,8 @@ class Company < ActiveRecord::Base
   
   validates :title, :presence => true
   validates :email, :presence => true, :uniqueness => true
+  validates_format_of :website, :with => /^(w{3}[.])\w+[.]\w{2,}/
+  
   validates_attachment_content_type :logo, 
                                     :content_type => ['image/jpg','image/jpeg', 
                                                       'image/png', 'image/gif']
@@ -20,7 +22,9 @@ class Company < ActiveRecord::Base
 	metropoli_for :city, :as=>:city_name
   scope :members, where(:role => "member")
   
-  has_attached_file :logo, :styles => {:medium => "300x300>", :thumb => "149x35>"},
+  DEFAUL_LOGO_ROUTE = "/images/shareIcon.png"
+
+  has_attached_file :logo, :styles => {:medium => "200x100>", :thumb => "149x35>"},
                             :default_style => :thumb,
                             :storage => {
                               'development' => :filesystem,
@@ -32,7 +36,7 @@ class Company < ActiveRecord::Base
                             :url => "../files/#{ENV['RAILS_ENV']}/:attachment/:id/:style/:basename.:extension",
                             :path => "public/files/#{Rails.env}/:attachment/:id/:style/:basename.:extension",
                             :bucket => 'rubypros',
-                            :default_url => "/images/shareIcon.png"
+                            :default_url => DEFAUL_LOGO_ROUTE
                             
   def admin?
     self.role == "admin"
@@ -43,14 +47,14 @@ class Company < ActiveRecord::Base
   end
   
   def logo_url
-    self.logo.path[6..-1]
+    self.logo.path.nil? ?  DEFAUL_LOGO_ROUTE : self.logo.path[6..-1]
   end
  
   def facebook?
     !self.facebook.blank?
   end
 
-  def webiste?
+  def website?
     !self.website.blank?
   end
 
@@ -65,8 +69,5 @@ class Company < ActiveRecord::Base
     !self.phone1.blank?
   end
 
-  def facebook?
-    !self.facebook.blank?
-  end
 end
 

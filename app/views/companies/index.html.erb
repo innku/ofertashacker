@@ -1,23 +1,26 @@
-<% custom_title "Compañias disponibles"%>
-<h1><%= t ('.companies') %></h1>
 
-<table id = "companies ">
-  <tr>
-    <td></td>
-    <td><h3><%= t('.title') %></h3></td>
-    <td><h3><%= t('.city') %></h3></td>
-    <td><h3><%= t('.description') %></h3></td>
+<div class="mainContent clear span-23">
+  <% custom_title "Compañias disponibles"%>
+  <h1><%= t ('.companies') %></h1>
+
+  <table id = "companies ">
+    <tr>
+      <td></td>
+      <td><h3><%= t('.title') %></h3></td>
+      <td><h3><%= t('.city') %></h3></td>
+      <td><h3><%= t('.description') %></h3></td>
+    </tr>
+    <% @companies.each do |company| %>
+      <tr id = "<%= cycle('par','non')%>">
+        <td>
+          <% if company.logo? %>
+            <%= image_tag company.logo.url(:thumb) %>
+          <% end %>
+        </td>
+        <td><%= link_to company.title, company_path(company) %></td>
+        <td><%= company.city %></td>
+        <td><%= company.description %></td>
       </tr>
-      <% @companies.each do |company| %>
-        <tr id = "<%= cycle('par','non')%>">
-          <td>
-            <% if company.logo? %>
-              <%= image_tag company.logo.url(:thumb) %>
-            <% end %>
-          </td>
-          <td><%= link_to company.title, company_path(company) %></td>
-          <td><%= company.city %></td>
-          <td><%= company.description %></td>
-        </tr>
-      <% end %>
-    </table>
+    <% end %>
+  </table>
+</div>
