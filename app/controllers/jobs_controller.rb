@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
 
- load_and_authorize_resource :through => :current_company, :except=>[:index,:show]
+ load_and_authorize_resource :through => :current_company, :except=>[:index,:show,:my_jobs]
 
   def new
     @job.required_skills.build
@@ -30,6 +30,7 @@ class JobsController < ApplicationController
   def edit
 
   end
+
   
   def update
     params[:job][:required_skill_ids] = [] if params[:job][:required_skill_ids].nil?

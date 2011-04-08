@@ -6,7 +6,12 @@ Rubypros::Application.routes.draw do
 
   devise_for :companies
   
-  resources :companies
+  resources :companies do
+    member do
+      get "my_jobs"
+    end
+  end
+  
   resources :jobs 
   
   resources :skill_categories do

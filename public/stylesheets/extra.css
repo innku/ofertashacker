@@ -11,7 +11,6 @@
   font-weight: bold;
   src: local('Arvo Bold'), local('Arvo-Bold'), url('http://themes.googleusercontent.com/font?kit=F-uvpIj1hF17IDyvQvI50Q') format('truetype');
 }
-
 div#contacto{
     padding-top:20px;
     
@@ -40,9 +39,7 @@ div#contacto{
     padding-right: 50px;
 }
 .buttons{float:right;}
-.ui-autocomplete-loading {
-  background: #f00 url("images/loading.gif") right center no-repeat;
-}
+
 
 #company:hover{
     background-color:#eee;
@@ -70,4 +67,20 @@ div#contacto{
 #flash_error, #flash_alert {
   background-color: #FCC;
   border: solid 1px #C66;
+}
+
+/* LINKS *************/
+
+a {
+  color: #0000FF;
+  text-decoration:none;
+}
+
+a:hover { 
+	text-decoration:underline;
+}
+
+#job_wrapper a {
+	text-decoration: none !important;
+	
 }

@@ -1,13 +1,10 @@
 $(document).ready(function() {
-  //jquery forms
-  $("form").validator();
   
   $("#new_skill_trigger").click(function() {
     $('.new_skill').slideToggle("slow");
     $('#new_skill_trigger').fadeOut();
     });
     
-    $("a[rel]").overlay({mask: '#000', effect: 'apple'})   
     
 });
 //check whether a collection of checkboxes are checked or not

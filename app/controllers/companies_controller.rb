@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
     
-  load_and_authorize_resource
+  load_and_authorize_resource :except=>[:my_jobs]
   
   def index
     @companies = Company.all
@@ -27,5 +27,10 @@ class CompaniesController < ApplicationController
       format.html { redirect_to(companies_url, :notice=>"La empresa fue eliminada correctamente") }
       format.xml  { head :ok }
     end
+  end
+  
+  def my_jobs
+    authorize! :my_jobs, current_company
+    @jobs = current_company.jobs
   end
 end

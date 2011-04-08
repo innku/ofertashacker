@@ -11,7 +11,7 @@
 
 <div id="logoperfil"><!--logoperfil-->
   <% if @company.logo? %>
-    <p><%= image_tag @company.logo.url(:thumb) %></p>
+    <p><%= image_tag @company.logo.url(:medium) %></p>
   <% else %>
     <p><%= t('.no_picture') %></p>
   <% end %>

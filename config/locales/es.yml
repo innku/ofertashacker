@@ -112,6 +112,7 @@ es:
   activerecord:
     errors:
       messages:
+        record_invalid:   "es inválido"
         blank:            "no puede estar vacío" 
     models:
       company:            "Compañía"

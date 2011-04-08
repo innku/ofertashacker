@@ -8,10 +8,6 @@ body {
 
 h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 
-a:hover{
-	text-decoration:none !important;
-}
-
 .mainContent ul li label{
 	font-size:12px;
 }
@@ -179,15 +175,14 @@ a:hover{
 }
 
 .mainContent a{
-	color: #333333;
+	color: #005B60;
 	font-size: 12px;
-	text-decoration:none;
+	text-decoration: underline;
 	border-bottom:0px;	
 }
 
 .mainContent a:hover{
-	color: #005B60;
-	text-decoration: underline;
+	color: #2C89A0;
 }
 
 .mainContent .generalForm {
