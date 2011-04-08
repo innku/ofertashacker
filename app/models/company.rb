@@ -9,6 +9,8 @@ class Company < ActiveRecord::Base
   
   validates :title, :presence => true
   validates :email, :presence => true, :uniqueness => true
+  validates_format_of :website, :with => /^(w{3}[.])\w+[.]\w{2,}/
+  
   validates_attachment_content_type :logo, 
                                     :content_type => ['image/jpg','image/jpeg', 
                                                       'image/png', 'image/gif']
@@ -52,7 +54,7 @@ class Company < ActiveRecord::Base
     !self.facebook.blank?
   end
 
-  def webiste?
+  def website?
     !self.website.blank?
   end
 
@@ -67,8 +69,5 @@ class Company < ActiveRecord::Base
     !self.phone1.blank?
   end
 
-  def facebook?
-    !self.facebook.blank?
-  end
 end
 
