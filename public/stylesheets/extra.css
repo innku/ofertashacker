@@ -39,6 +39,11 @@ div#contacto{
     padding:10px;
     padding-right: 50px;
 }
+.buttons{float:right;}
+.ui-autocomplete-loading {
+  background: #f00 url("images/loading.gif") right center no-repeat;
+}
+
 #company:hover{
     background-color:#eee;
 }

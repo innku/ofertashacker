@@ -45,5 +45,28 @@ class Company < ActiveRecord::Base
   def logo_url
     self.logo.path[6..-1]
   end
+ 
+  def facebook?
+    !self.facebook.blank?
+  end
+
+  def webiste?
+    !self.website.blank?
+  end
+
+  def twitter?
+    !self.twitter.blank?
+  end
+  def contact_email?
+    !self.contact_email.blank?
+  end
+  
+  def phone1?
+    !self.phone1.blank?
+  end
+
+  def facebook?
+    !self.facebook.blank?
+  end
 end
 

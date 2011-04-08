@@ -1,27 +1,23 @@
 <% custom_title "Compañias disponibles"%>
 <h1><%= t ('.companies') %></h1>
 
-<table>
+<table id = "companies ">
   <tr>
     <td></td>
-    <td><%= t('.title') %></td>
-    <td><%= t('.city') %></td>
-    <td><%= t('.description') %></td>
-  </tr>
-  <% @companies.each do |company| %>
-  <tr>
-    <td>
-      <% if company.logo? %>
-        <%= image_tag company.logo.url(:thumb) %>
-        <% end %>
-    </td>
-    <td><%= link_to company.title, company_path(company) %></td>
-    <td><%= company.city %></td>
-    <td><%= company.description %></td>
-    <td><% if can? :manage, company %>
-          <%= link_to "Eliminar", company, :confirm => "¿Estás seguro de eliminar #{company.title}?", :method => :delete %>
-        <% end %>
-    </td>
-  </tr>
-  <% end %>
-</table>
+    <td><h3><%= t('.title') %></h3></td>
+    <td><h3><%= t('.city') %></h3></td>
+    <td><h3><%= t('.description') %></h3></td>
+      </tr>
+      <% @companies.each do |company| %>
+        <tr id = "<%= cycle('par','non')%>">
+          <td>
+            <% if company.logo? %>
+              <%= image_tag company.logo.url(:thumb) %>
+            <% end %>
+          </td>
+          <td><%= link_to company.title, company_path(company) %></td>
+          <td><%= company.city %></td>
+          <td><%= company.description %></td>
+        </tr>
+      <% end %>
+    </table>
