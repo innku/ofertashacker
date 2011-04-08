@@ -7,7 +7,7 @@ $(document).ready(function() {
     $('#new_skill_trigger').fadeOut();
     });
     
-    $("a[rel]").overlay({mask: '#000', effect: 'apple'})   
+    $("a[rel]").overlay({mask: '#000', effect: 'apple'});   
     
 });
 //check whether a collection of checkboxes are checked or not
