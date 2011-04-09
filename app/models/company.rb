@@ -9,7 +9,7 @@ class Company < ActiveRecord::Base
   
   validates :title, :presence => true
   validates :email, :presence => true, :uniqueness => true
-  validates_format_of :website, :with => /^(w{3}[.])\w+[.]\w{2,}/
+  validates_format_of :website, :with => /^(w{3}[.])\w+[.]\w{2,}/, :on => :update
   
   validates_attachment_content_type :logo, 
                                     :content_type => ['image/jpg','image/jpeg', 
