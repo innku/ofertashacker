@@ -189,7 +189,6 @@ function countChecked(filter_info) {
 
 $(document).ready(function() {
     $("body").append("<div id=\"loader\"><p>Cargando Ofertas...</p><img alt=\"Loader\"src=\"/images/ajax-loader.gif\"  /></div>");
-    $("#loader").hide();
     $("#mainMenu input").click(function(){
         $('#loader').fadeIn();
         $.dimScreen(500, 0.7, null);

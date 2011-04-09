@@ -48,7 +48,7 @@ div#contacto{
   margin-top: 15px;
   margin-bottom: 15px;
 }
-#loader{position:fixed; top:50%;left:50%;margin-left:-110px;z-index:9999; }
+#loader{position:fixed; top:50%;left:50%;margin-left:-110px;z-index:9999;display:none; }
 #loader img{position:relative; top:-25px;}
 #loader p{font-size:18px; color:#fff;text-align:center;}
 .mainContent a div img {padding-left:13px;}
