@@ -440,7 +440,8 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 }
 
 .button{
-    color: #FFF!important;
+    color: #FFF !important;
+    text-decoration: none !important;
 	padding: 10px;
 	background: -moz-linear-gradient(top,  #304F4F, #1C3030);
 	background: -webkit-gradient(linear, left top, left bottom, from(#304F4F), to(#1C3030));
@@ -537,7 +538,7 @@ div.clear{
 	-webkit-border-radius: 2px;
 	background-color: #FDFFE3;
 	padding: 15px;
-	margin-top: 20px;
+	margin-top: 20px
 }
 
 #info ul{
@@ -554,6 +555,7 @@ div.clear{
 	font-family: georgia, helvetica neue;
 	color: #333333;
 	font-size: 14px;
+	text-decoration: none;
 }
 
 #info li a:hover{
