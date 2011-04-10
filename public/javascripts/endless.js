@@ -69,6 +69,7 @@ function getJobsJSON(filter_info,remove){
                 if(remove){
                   $(".posts").children(".job").each(function(){
                    if(should_be_deleted($(this).attr("id"),data)){
+                      $(this).fadeOut();
                       $(this).remove();
                     }
                  });
@@ -78,10 +79,18 @@ function getJobsJSON(filter_info,remove){
                     if (is_even(i)) {
                         if(!remove || check_for_existance(this.job.id)){
                           $(".posts.even").append(job_template(this.job));
+                          if(remove) {
+                            $(".posts.even").children('.job').last().hide();
+                            $(".posts.even").children('.job').last().slideDown(700).delay(200);
+                          }
                         }
                     } else {
                         if(!remove || check_for_existance(this.job.id)){
                           $(".posts.odd").append(job_template(this.job)); 
+                          if(remove) {
+                            $(".posts.odd").children('.job').last().hide();
+                            $(".posts.odd").children('.job').last().slideDown(700).delay(200);
+                          }
                           
                         }
                     }
@@ -191,7 +200,7 @@ $(document).ready(function() {
     $("body").append("<div id=\"loader\"><p>Cargando Ofertas...</p><img alt=\"Loader\"src=\"/images/ajax-loader.gif\"  /></div>");
     $("#mainMenu input").click(function(){
         $('#loader').fadeIn();
-        $.dimScreen(500, 0.7, null);
+        $.dimScreen(500, 0.5, null);
         current_page=1;
         var filter_info = get_checkbox_status("#mainMenu input");
         if(countChecked(filter_info) == 4) {
