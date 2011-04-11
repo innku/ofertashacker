@@ -47,7 +47,11 @@ class Company < ActiveRecord::Base
   end
   
   def logo_url
-    self.logo.path.nil? ?  DEFAUL_LOGO_ROUTE : self.logo.path[6..-1]
+    if Rails.env == 'production'
+      self.logo.url
+    else
+     self.logo.path.nil? ?  DEFAUL_LOGO_ROUTE : self.logo.path[6..-1]
+    end
   end
  
   def facebook?
