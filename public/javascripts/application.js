@@ -1,5 +1,8 @@
 $(document).ready(function() {
-  
+  $("#company_jobs").hide();
+  $("#company_jobs_button").click(function(){
+    $("#company_jobs").slideToggle("slow");
+  });
   $("#new_skill_trigger").click(function() {
     $('.new_skill').slideToggle("slow");
     $('#new_skill_trigger').fadeOut();

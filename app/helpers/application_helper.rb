@@ -29,7 +29,14 @@ module ApplicationHelper
          return false
        end
     end
+    regex = [/companies\/\d+/]
+    for r in regex do
+      unless r.match(path.to_s).nil?
+        return false
+      end
+    end
     return true
+
   end
   def needs_filter? path
     exceptions = ["/jobs","/"]

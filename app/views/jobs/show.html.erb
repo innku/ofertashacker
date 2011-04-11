@@ -1,7 +1,7 @@
 <div class="generalForm">
   <div id="left"><!--left-->
     <div id="logo">
-			<%= link_to (image_tag @job.company.logo.url(:thumb)), company_path(@job.company) %>
+      <%= link_to (image_tag @job.company.logo.url(:medium)), company_path(@job.company), :style => 'float:right;' %>
   	</div>
 		<div class="clear"></div>
 		<div id="info"> 

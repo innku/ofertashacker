@@ -3,7 +3,7 @@
   <% custom_title "Compañias disponibles"%>
   <h1><%= t ('.companies') %></h1>
 
-  <table id = "companies ">
+  <table id="companies">
     <tr>
       <td></td>
       <td><h3><%= t('.title') %></h3></td>
@@ -19,7 +19,7 @@
         </td>
         <td><%= link_to company.title, company_path(company) %></td>
         <td><%= company.city %></td>
-        <td><%= company.description %></td>
+        <td><%= truncate(company.description, :length => 80) %></td>
       </tr>
     <% end %>
   </table>

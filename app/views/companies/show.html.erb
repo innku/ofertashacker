@@ -1,3 +1,4 @@
+<div class="mainContent clear span-23">
 <% custom_title @company.title%>
 <div class = "buttons">
   <% if current_company && current_company.admin? %>
@@ -36,5 +37,8 @@
   </div><!--/right-->
   <div class="clear"></div>
 </div>
-
-
+<%=link_to "Ver ofertas de #{@company.title}", '#', :style=> "float:right",:class => 'button', :id => "company_jobs_button"%>
+</div>
+<div id="company_jobs">
+  <%=render :partial => 'jobs/jobs', :locals => {:jobs => @company.jobs}%>
+</div>

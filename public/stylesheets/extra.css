@@ -32,14 +32,20 @@ div#contacto{
 }
 
 #extra_skill{padding-left:40px;}
-
+table#skills{width:500px;}
+table#skills td{ padding-bottom:10px;}
+table#skills tr:hover,table#companies tr:hover{background:#ccc;}
+table#skills td, table#companies td{
+  width:300px;
+  border-bottom: 1px solid #ccc;
+}
+table#skills td#buttons{text-align:right;}
 .job #company{
   float:right;
   padding:10px;
   padding-right: 50px;
 }
 .buttons{float:right;}
-
 
 #company:hover{
   background-color:#eee;
