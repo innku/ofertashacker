@@ -1,5 +1,4 @@
 require 'factory_girl'
-Factory.find_definitions
 
 desc 'Seeds sample jobs and categories'
 namespace :db do
@@ -40,7 +39,7 @@ namespace :db do
           Factory(:job_for_seed, :full_time=>true, :title=> "MySql Pro",:company =>  Company.last)
           Factory(:job_for_seed, :part_time=>true, :title=> "Mister Ruby",:company =>  Company.first)
           Factory(:job_for_seed, :part_time=>true, :title=> "Rails Lover",:company =>  Company.last)
-          Factory(:job_for_seed, :remote=>true, :title=> "Fron end expert",:company =>  Company.first)
+          Factory(:job_for_seed, :remote=>true, :title=> "Front end expert",:company =>  Company.first)
           Factory(:job_for_seed, :remote=>true, :title=> "Sinatra master",:company =>  Company.last)
           Factory(:job_for_seed, :flexible=>true, :title=> "Ruby developer",:company =>  Company.first)
           Factory(:job_for_seed, :flexible=>true, :title=> "Excelente programador",:company =>  Company.last)
@@ -52,7 +51,7 @@ namespace :db do
           Factory(:job_for_seed, :full_time=>true, :title=> "Ruby on Rails developer",:company =>  Company.last)
           Factory(:job_for_seed, :part_time=>true, :title=> "BDD Tester",:company =>  Company.first)
           Factory(:job_for_seed, :part_time=>true, :title=> "Web app developer",:company =>  Company.last)
-          Factory(:job_for_seed, :remote=>true, :title=> "Software engenner",:company =>  Company.first)
+          Factory(:job_for_seed, :remote=>true, :title=> "Software engineer",:company =>  Company.first)
           Factory(:job_for_seed, :remote=>true, :title=> "MySql GURU",:company =>  Company.last)
           Factory(:job_for_seed, :flexible=>true, :title=> "Test Driven engineer",:company =>  Company.first)
           Factory(:job_for_seed, :flexible=>true, :title=> "Rails Ninja",:company =>  Company.last)
