@@ -76,6 +76,92 @@ describe Company do
         end
       end
     end
+    
+    describe '.facebook?' do
+      context 'With facebook page' do
+        it 'Returns true' do
+          @company.update_attribute('facebook', 'foobar')
+          @company.facebook?.should be_true
+        end
+
+      end
+
+      context 'Without facebook page' do
+        it 'Returns false' do
+          @company.update_attribute('facebook', nil)
+          @company.facebook?.should be_false
+        end
+      end
+    end
+
+    describe '.website?' do
+      context 'With website page' do
+        it 'Returns true' do
+          @company.update_attribute('website', 'foobar')
+          @company.website?.should be_true
+        end
+
+      end
+
+      context 'Without website page' do
+        it 'Returns false' do
+          @company.update_attribute('website', nil)
+          @company.website?.should be_false
+        end
+      end
+    end
+
+    describe '.twitter?' do
+      context 'With twitter page' do
+        it 'Returns true' do
+          @company.update_attribute('twitter', 'foobar')
+          @company.twitter?.should be_true
+        end
+
+      end
+
+      context 'Without twitter page' do
+        it 'Returns false' do
+          @company.update_attribute('twitter', nil)
+          @company.twitter?.should be_false
+        end
+      end
+    end
+    
+    describe '.contact_email' do
+      context 'With contact_email page' do
+        it 'Returns true' do
+          @company.update_attribute('contact_email', 'foobar')
+          @company.contact_email?.should be_true
+        end
+
+      end
+
+      context 'Without contact_email page' do
+        it 'Returns false' do
+          @company.update_attribute('contact_email', nil)
+          @company.contact_email?.should be_false
+        end
+      end
+    end
+
+    describe '.phone1?' do
+      context 'With phone1 page' do
+        it 'Returns true' do
+          @company.update_attribute('phone1', 'foobar')
+          @company.phone1?.should be_true
+        end
+
+      end
+
+      context 'Without phone1 page' do
+        it 'Returns false' do
+          @company.update_attribute('phone1', nil)
+          @company.phone1?.should be_false
+        end
+      end
+    end
+
 
     describe 'logo_url' do
         pending

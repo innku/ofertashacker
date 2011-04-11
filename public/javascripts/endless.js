@@ -107,7 +107,7 @@ function getJobsJSON(filter_info,remove){
 function calibrate(){
   evens = 0;
   odds = 0;
-  iguales = 0;
+  iguales = false;
   do {
   $(".posts.even").children(".job").each(function(){evens++;});
   $(".posts.odd").children(".job").each(function(){odds++;});
@@ -117,9 +117,9 @@ function calibrate(){
   } else if(evens - 1 > odds) {
     $(".posts.even").children(".job").last().appendTo(".posts.odd")
   } else {
+    iguales = true;
   }
-  iguales++;
-  }while(iguales < 10);
+  }while(!iguales);
 }
 function check_for_existance(id) {
   rtn = true;
