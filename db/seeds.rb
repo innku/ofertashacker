@@ -1,5 +1,5 @@
 require 'factory_girl'
-require File.dirname(__FILE__) + "../../spec/factories.rb"
+require "/spec/factories.rb"
 company = Company.find_or_initialize_by_role(
   :email => "admin@innku.com",
   :title => "Innku",
