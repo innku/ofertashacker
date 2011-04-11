@@ -3,6 +3,7 @@ company = Company.find_or_initialize_by_role(
   :title => "Innku",
   :city => "Monterrey",
   :password => "secret",
+  :website => 'www.innku.com',
   :password_confirmation => "secret",
   :description => "Agile web solutions",
   :role => 'admin')

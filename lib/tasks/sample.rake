@@ -9,6 +9,7 @@ namespace :db do
         :email => "sample@company.com",
         :title => "Sample Company",
         :city => "Monterrey",
+        :website => 'www.innku.com',
         :password => "secret",
         :password_confirmation => "secret",
         :description => "Web solutions")
