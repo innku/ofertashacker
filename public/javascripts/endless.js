@@ -1,62 +1,3 @@
-//dimScreen()
-//by Brandon Goldman
-jQuery.extend({
-    //dims the screen
-    dimScreen: function(speed, opacity, callback) {
-        if(jQuery('#__dimScreen').size() > 0) return;
-        
-        if(typeof speed == 'function') {
-            callback = speed;
-            speed = null;
-        }
-
-        if(typeof opacity == 'function') {
-            callback = opacity;
-            opacity = null;
-        }
-
-        if(speed < 1) {
-            var placeholder = opacity;
-            opacity = speed;
-            speed = placeholder;
-        }
-        
-        if(opacity >= 1) {
-            var placeholder = speed;
-            speed = opacity;
-            opacity = placeholder;
-        }
-
-        speed = (speed > 0) ? speed : 500;
-        opacity = (opacity > 0) ? opacity : 0.5;
-        return jQuery('<div></div>').attr({
-                id: '__dimScreen'
-                ,fade_opacity: opacity
-                ,speed: speed
-            }).css({
-            background: '#000'
-            ,height: '100%'
-            ,left: '0px'
-            ,opacity: 0
-            ,position: 'absolute'
-            ,top: '0px'
-            ,width: '100%'
-            ,zIndex: 999
-        }).appendTo(document.body).fadeTo(speed, opacity, callback);
-    },
-    
-    //stops current dimming of the screen
-    dimScreenStop: function(callback) {
-        var x = jQuery('#__dimScreen');
-        var opacity = x.attr('fade_opacity');
-        var speed = x.attr('speed');
-        x.fadeOut(speed, function() {
-            x.remove();
-            if(typeof callback == 'function') callback();
-        });
-    }
-});
-
 var current_page=1; //current_page for pagination
 
 function getJobsJSON(filter_info,remove){
@@ -69,8 +10,7 @@ function getJobsJSON(filter_info,remove){
                 if(remove){
                   $(".posts").children(".job").each(function(){
                    if(should_be_deleted($(this).attr("id"),data)){
-                      $(this).fadeOut();
-                      $(this).remove();
+                      $(this).slideUp({complete:function(){$(this).remove();}});
                     }
                  });
                 }
@@ -183,7 +123,7 @@ $(window).scroll(function(){
 function isScrollBottom() {
   var documentHeight = $(document).height();
   var scrollPosition = $(window).height() + $(window).scrollTop();
-  return (documentHeight <= (200 + scrollPosition));
+  return (documentHeight <= (300 + scrollPosition));
 } 
 
 function countChecked(filter_info) {
@@ -199,7 +139,6 @@ $(document).ready(function() {
     $("body").append("<div id=\"loader\"><p>Cargando Ofertas...</p><img alt=\"Loader\"src=\"/images/ajax-loader.gif\"  /></div>");
     $("#mainMenu input").click(function(){
         $('#loader').fadeIn();
-        $.dimScreen(500, 0.5, null);
         current_page=1;
         var filter_info = get_checkbox_status("#mainMenu input");
         if(countChecked(filter_info) == 4) {
@@ -208,7 +147,6 @@ $(document).ready(function() {
             });
         }
         getJobsJSON(filter_info,true);
-        $.dimScreenStop();
         $("#loader").fadeOut();
       });
 
