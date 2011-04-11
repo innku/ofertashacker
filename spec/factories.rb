@@ -49,15 +49,15 @@ Factory.define :country, :class => Metropoli::CountryModel do |f|
   f.abbr            "MX"
 end
 
-Factory.define :job_for_seed  do |j|
-  f.title                 "Ruby Programmer"
-  f.city                  "Monterrey"
-  f.full_time             false
-  f.part_time             false
-  f.remote                false
-  f.flexible              false
-  f.description           "Faltan required skills!"
-  f.association           :company, :factory => :company
-  f.required_skills {|rs|[rs.association :required_skill]}
+Factory.define :job_for_seed, :class => Job do |j|
+  j.title                 "Ruby Programmer"
+  j.city                  "Monterrey"
+  j.full_time             false
+  j.part_time             false
+  j.remote                false
+  j.flexible              false
+  j.description           "Faltan required skills!"
+  j.association           :company, :factory => :company
+  # j.required_skills {|rs|[rs.association :required_skill]}
 end
 
