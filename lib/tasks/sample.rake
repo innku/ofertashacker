@@ -1,3 +1,5 @@
+require 'factory_girl'
+
 desc 'Seeds sample jobs and categories'
 namespace :db do
   namespace :seed do
