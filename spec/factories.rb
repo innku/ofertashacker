@@ -33,22 +33,6 @@ Factory.define :skill_category do |c|
   c.category              "Ruby"
 end
 
-Factory.define :city, :class => Metropoli::CityModel do |f|
-  f.name            "Monterrey"
-  f.association     :state, :factory => :state
-end
-
-Factory.define :state, :class => Metropoli::StateModel do |f|
-  f.name           "Nuevo León"
-  f.abbr            "NL"
-  f.association     :country, :factory => :country
-end
-
-Factory.define :country, :class => Metropoli::CountryModel do |f|
-  f.name            "México"
-  f.abbr            "MX"
-end
-
 Factory.define :job_for_seed, :class => Job do |j|
   j.title                 "Ruby Programmer"
   j.city                  "Monterrey"
