@@ -36,14 +36,12 @@
             <%if can? :manage, SkillCategory%>
               <li><%= link_to "<span>Skills</span>".html_safe, skill_categories_path %></li>
             <%end%>
-            <% if  current_company.admin? %>
-              <li><%= link_to "<span>Compañias</span>".html_safe, companies_path %></li>
-            <% end %>
           <% else %>
             <li><%= link_to "<span>Entrar</span>".html_safe, new_company_session_path() %></li>
             <li><%= link_to "<span>¿Empresa?, Regístrate</span>".html_safe, new_company_registration_path()%></li>
             <li><%= link_to "<span>Ver ofertas</span>".html_safe, jobs_path() %></li>
           <% end %>
+          <li><%= link_to "<span>Compañías</span>".html_safe, companies_path %></li>
 		  </ul>
 		  
 		  <div class="logo clear span-6">

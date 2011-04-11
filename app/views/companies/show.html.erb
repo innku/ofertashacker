@@ -1,44 +1,48 @@
 <div class="mainContent clear span-23">
-<% custom_title @company.title%>
-<div class = "buttons">
-  <% if current_company && current_company.admin? %>
-    <%= link_to t('.company_index'), companies_path(), :class => "button"  %>
-  <% end %>
-  <% if can? :manage, @company %>
-    <%= link_to t(:edit), edit_company_path(@company), :class => "button" %>
-    <%= link_to "Eliminar empresa", company_path(@company), :class => "button", :confirm => "¿Estás seguro de eliminar #{@company.title}?", :method => :delete %>
-  <% end %>
-</div>
+  <% custom_title @company.title%>
+  <div class = "buttons">
+    <% if current_company && current_company.admin? %>
+      <%= link_to t('.company_index'), companies_path(), :class => "button"  %>
+    <% end %>
+    <% if can? :manage, @company %>
+      <%= link_to t(:edit), edit_company_path(@company), :class => "button" %>
+      <%= link_to "Eliminar empresa", company_path(@company), :class => "button", :confirm => "¿Estás seguro de eliminar #{@company.title}?", :method => :delete %>
+    <% end %>
+  </div>
 
-<div id="logoperfil"><!--logoperfil-->
-  <% if @company.logo? %>
-    <p><%= image_tag @company.logo.url(:medium) %></p>
-  <% else %>
-    <p><%= t('.no_picture') %></p>
-  <% end %>
-</div><!--/logoperfil-->
-<div class="generalForm">
-  <div id="left"><!--left-->
-    <div id="info">
-      <% unless @company.city.blank?%>
-        <h2><%= t('.city') %></h2>
-        <ul>
-          <li><%= @company.city %></li>
-        </ul>
-      <% end %>
-      <%= render :partial => 'contact_info', :locals => {:company => @company}%>
+  <div id="logoperfil">
+    <% if @company.logo? %>
+      <p><%= image_tag @company.logo.url(:medium) %></p>
+    <% else %>
+      <p><%= t('.no_picture') %></p>
+    <% end %>
+  </div>
+  <div class="generalForm">
+    <div id="left">
+      <div id="info">
+        <% unless @company.city.blank?%>
+          <h2><%= t('.city') %></h2>
+          <ul>
+            <li><%= @company.city %></li>
+          </ul>
+        <% end %>
+        <%= render :partial => 'contact_info', :locals => {:company => @company}%>
+      </div>
+      <%= image_tag "shadow.gif" %>
     </div>
-    <%= image_tag "shadow.gif" %>
-  </div><!--/left-->
-  <div id="right"><!--right-->
-    <h2><%= @company.title %></h2>
-    <p><%= @company.description ? RedCloth.new(@company.description).to_html.html_safe : "" %></p>
+    <div id="right">
+      <h2><%= @company.title %></h2>
+      <p><%= @company.description ? RedCloth.new(@company.description).to_html.html_safe : "" %></p>
+      <div class="clear"></div>
+    </div>
     <div class="clear"></div>
-  </div><!--/right-->
-  <div class="clear"></div>
+  </div>
 </div>
+<!-- COMPLETO: Temporalmente desactivado - Boton que despliega las ofertas de la empresa en el perfil
 <%=link_to "Ver ofertas de #{@company.title}", '#', :style=> "float:right",:class => 'button', :id => "company_jobs_button"%>
-</div>
+
 <div id="company_jobs">
   <%=render :partial => 'jobs/jobs', :locals => {:jobs => @company.jobs}%>
 </div>
+Desplegar ofertas de la empresa dentro de su perfil -->
+
