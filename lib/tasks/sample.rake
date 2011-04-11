@@ -1,4 +1,5 @@
 require 'factory_girl'
+Factory.find_definitions
 
 desc 'Seeds sample jobs and categories'
 namespace :db do
