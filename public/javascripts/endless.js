@@ -51,20 +51,22 @@ function get_json_path(){
 }
 
 function calibrate(){
-  evens = 0;
-  odds = 0;
-  iguales = 0;
   do {
-  $(".posts.even").children(".job").each(function(){evens++;});
-  $(".posts.odd").children(".job").each(function(){odds++;});
+    evens = 0;
+    odds = 0;
+    iguales = false;
+    $(".posts.even").children(".job").each(function(){evens++;});
+    $(".posts.odd").children(".job").each(function(){odds++;});
 
-  if(odds-1 > evens) {
-    $(".posts.odd").children(".job").last().appendTo(".posts.even")
-  } else if(evens - 1 > odds) {
-    $(".posts.even").children(".job").last().appendTo(".posts.odd")
-  }
-  iguales++;
-  }while(iguales < 10);
+    if(odds > evens) {
+      alert("odds: " + odds + "\nevens: " + evens);
+      $(".posts.odd").children(".job").last().appendTo(".posts.even")
+    } else if(evens - 1 > odds) {
+      $(".posts.even").children(".job").last().appendTo(".posts.odd")
+    }else{
+      iguales = true;
+    }
+  }while(!iguales);
 }
 function check_for_existance(id) {
   rtn = true;
@@ -117,14 +119,14 @@ function is_even(num){
     return num%2==0
 }
 //renders new jobs when scroll reaches the bottom
-$(window).scroll(function(){
-    var i=0;
-    if(isScrollBottom()){
-        current_page++;
-      var filter_info = get_checkbox_status("#mainMenu input");
-        getJobsJSON(filter_info,false);
-    }
-});
+// $(window).scroll(function(){
+//     var i=0;
+//     if(isScrollBottom()){
+//         current_page++;
+//       var filter_info = get_checkbox_status("#mainMenu input");
+//         getJobsJSON(filter_info,false);
+//     }
+// });
 //checks if scroll has reached the bottom
 function isScrollBottom() {
   var documentHeight = $(document).height();
