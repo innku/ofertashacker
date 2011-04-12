@@ -54,7 +54,6 @@ function calibrate(){
   do {
     evens = 0;
     odds = 0;
-    iguales = 0;
     $(".posts.even").children(".job").each(function(){evens++;});
     $(".posts.odd").children(".job").each(function(){odds++;});
 
@@ -63,8 +62,7 @@ function calibrate(){
     } else if(evens - 1 > odds) {
       $(".posts.even").children(".job").last().appendTo(".posts.odd")
     }
-    iguales++;
-  }while(iguales < 10);
+  }while((even-1)!=odds && (odds-1)!=evens && evens!=odds);
 }
 function check_for_existance(id) {
   rtn = true;
