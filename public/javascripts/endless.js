@@ -59,7 +59,6 @@ function calibrate(){
     $(".posts.odd").children(".job").each(function(){odds++;});
 
     if(odds > evens) {
-      alert("odds: " + odds + "\nevens: " + evens);
       $(".posts.odd").children(".job").last().appendTo(".posts.even")
     } else if(evens - 1 > odds) {
       $(".posts.even").children(".job").last().appendTo(".posts.odd")
