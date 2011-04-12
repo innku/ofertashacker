@@ -118,14 +118,14 @@ function is_even(num){
     return num%2==0
 }
 //renders new jobs when scroll reaches the bottom
-// $(window).scroll(function(){
-//     var i=0;
-//     if(isScrollBottom()){
-//         current_page++;
-//       var filter_info = get_checkbox_status("#mainMenu input");
-//         getJobsJSON(filter_info,false);
-//     }
-// });
+$(window).scroll(function(){
+    var i=0;
+    if(isScrollBottom()){
+        current_page++;
+      var filter_info = get_checkbox_status("#mainMenu input");
+        getJobsJSON(filter_info,false);
+    }
+});
 //checks if scroll has reached the bottom
 function isScrollBottom() {
   var documentHeight = $(document).height();
