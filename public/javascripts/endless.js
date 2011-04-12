@@ -54,18 +54,17 @@ function calibrate(){
   do {
     evens = 0;
     odds = 0;
-    iguales = false;
+    iguales = 0;
     $(".posts.even").children(".job").each(function(){evens++;});
     $(".posts.odd").children(".job").each(function(){odds++;});
 
-    if(odds > evens) {
+    if(odds-1 > evens) {
       $(".posts.odd").children(".job").last().appendTo(".posts.even")
     } else if(evens - 1 > odds) {
       $(".posts.even").children(".job").last().appendTo(".posts.odd")
-    }else{
-      iguales = true;
     }
-  }while(!iguales);
+    iguales++;
+  }while(iguales < 10);
 }
 function check_for_existance(id) {
   rtn = true;
