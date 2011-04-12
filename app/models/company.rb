@@ -9,7 +9,7 @@ class Company < ActiveRecord::Base
   
   validates :title, :presence => true
   validates :email, :presence => true, :uniqueness => true
-  validates_format_of :website, :with => /^(w{3}[.])\w+[.]\w{2,}/, :on => :update
+  validates_format_of :website, :with => /^(w{3}[.])\w+[.]\w{2,}/, :on => :update, :if => :website?
   
   validates_attachment_content_type :logo, 
                                     :content_type => ['image/jpg','image/jpeg', 
@@ -71,6 +71,13 @@ class Company < ActiveRecord::Base
   
   def phone1?
     !self.phone1.blank?
+  end
+
+  def all_contact_info_blank?
+    if phone1? && contact_email? && twitter? && website? && facebook?
+      return false
+    end
+    true
   end
 
 end

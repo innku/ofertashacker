@@ -1,7 +1,7 @@
 var current_page=1; //current_page for pagination
 
 function getJobsJSON(filter_info,remove){
-  $.getJSON('/jobs.json',{filters: { full_time:filter_info[0],
+  $.getJSON(get_json_path(),{filters: { full_time:filter_info[0],
                                        part_time:filter_info[1],
                                        flexible:filter_info[2],
                                        remote:filter_info[3],
@@ -44,6 +44,12 @@ function getJobsJSON(filter_info,remove){
 
 
 }
+function get_json_path(){
+  if($("#endless_path").val()=="my_jobs") 
+    return ("/companies/"+ $("#endless_path").attr("company") +"/my_jobs.json");
+  return "/jobs.json"
+}
+
 function calibrate(){
   evens = 0;
   odds = 0;
