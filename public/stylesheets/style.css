@@ -208,23 +208,23 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 	float:left;
 }
 
-.secondColumn input[type=checkbox] {
+.secondColumn input[type=checkbox],.firstColumn input[type=checkbox]  {
 	width:20px;
 	height:20px;
 	float:left;
 }
 
-.secondColumn ul{
+.secondColumn ul, .job_type ul{
 	margin-top:30px;
 }
 
-.secondColumn ul li{
+.secondColumn ul li, .job_type ul li{
 	float:left;
 	margin:0 10px 15px 0;
 	width:145px;
 }
 
-.secondColumn label {
+.secondColumn label, .job_type ul li {
 	margin-left:10px;
 	float:left;
 }

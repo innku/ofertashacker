@@ -10,7 +10,7 @@
 		<%= image_tag "shadow.gif" %>
   </div><!--/left-->
   <div id="right"><!--right-->
-    <h1><%= @job.title%></h1>
+    <div style="width:100%;overflow:hidden;"><h1><%= @job.title%></h1></div>
     <h4>En <%=@job.city%>
       <%= @job.full_time ? ", Tiempo Completo".html_safe : nil%>
       <%= @job.part_time ? ", Medio Tiempo".html_safe : nil%>

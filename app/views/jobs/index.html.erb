@@ -1,16 +1,17 @@
 <%javascript 'endless'%>
 <div class="clearfix">
-     <div id="skill_main">
-        <% if @jobs.empty?%>
-          <div class="mainContent span-23">
-            <h1>Aun no tienes ofertas publicadas</h1>
-            <%=link_to "Publica tu primera oferta", new_job_path, :class => "button"%>
-          </div>
-        <% else %>
-          <%= render :partial =>'jobs', :locals => {:jobs => @jobs} %>
-	      <% end %>
-	      
-    </div>
-     
+  <div id="skill_main">
+    <% if @jobs.empty?%>
+      <div class="mainContent span-23">
+        <h1>Aun no tienes ofertas publicadas</h1>
+        <%=link_to "Publica tu primera oferta", new_job_path, :class => "button"%>
+      </div>
+    <% else %>
+      <%=hidden_field_tag :endless_path, "all_jobs"%>
+      <%= render :partial =>'jobs', :locals => {:jobs => @jobs} %>
+    <% end %>
+
+  </div>
+
 </div>
 

@@ -1,15 +1,17 @@
 var current_page=1; //current_page for pagination
-
+var changes;
 function getJobsJSON(filter_info,remove){
-  $.getJSON('/jobs.json',{filters: { full_time:filter_info[0],
+  $.getJSON(get_json_path(),{filters: { full_time:filter_info[0],
                                        part_time:filter_info[1],
                                        flexible:filter_info[2],
                                        remote:filter_info[3],
                                        },page:current_page }, 
               function(data) {
+                changes = false;
                 if(remove){
                   $(".posts").children(".job").each(function(){
                    if(should_be_deleted($(this).attr("id"),data)){
+                     changes = true;
                       $(this).slideUp({complete:function(){$(this).remove();}});
                     }
                  });
@@ -18,6 +20,7 @@ function getJobsJSON(filter_info,remove){
                 $.each(data,function(){
                     if (is_even(i)) {
                         if(!remove || check_for_existance(this.job.id)){
+                          changes = true;
                           $(".posts.even").append(job_template(this.job));
                           if(remove) {
                             $(".posts.even").children('.job').last().hide();
@@ -26,6 +29,7 @@ function getJobsJSON(filter_info,remove){
                         }
                     } else {
                         if(!remove || check_for_existance(this.job.id)){
+                          changes = true;
                           $(".posts.odd").append(job_template(this.job)); 
                           if(remove) {
                             $(".posts.odd").children('.job').last().hide();
@@ -37,28 +41,50 @@ function getJobsJSON(filter_info,remove){
                     i++;
                 });
                 if(remove) {
-                  calibrate(); 
-                }
+                  calibrate();
+                  if(!changes){
+                    $(".posts").fadeTo(1000,0.1);
+                    $(".posts").fadeTo(1000,1.0);                    
+
+                    // $(".posts").children(".job").each(function(){
+                    //     $(this).slideUp('slow');
+                    //  });
+                    // $(".posts").children(".job").each(function(){
+                    //     $(this).slideDown('slow');
+                    //  });
+
+                    // $(".posts").effect("highlight",{},300);
+                    // $(".posts").children(".job").each(function(){
+                    //     $(this).effect("highlight", {}, 300);
+                    //  });
+                  }
+                } 
             });
 
 
 
 }
-function calibrate(){
-  evens = 0;
-  odds = 0;
-  iguales = 0;
-  do {
-  $(".posts.even").children(".job").each(function(){evens++;});
-  $(".posts.odd").children(".job").each(function(){odds++;});
+function get_json_path(){
+  if($("#endless_path").val()=="my_jobs") 
+    return ("/companies/"+ $("#endless_path").attr("company") +"/my_jobs.json");
+  return "/jobs.json"
+}
 
-  if(odds-1 > evens) {
-    $(".posts.odd").children(".job").last().appendTo(".posts.even")
-  } else if(evens - 1 > odds) {
-    $(".posts.even").children(".job").last().appendTo(".posts.odd")
-  }
-  iguales++;
-  }while(iguales < 10);
+function calibrate(){
+  var evens;
+  var odds;
+  do {
+    evens = 0;
+    odds = 0;
+    $(".posts.even").children(".job").each(function(){evens++;});
+    $(".posts.odd").children(".job").each(function(){odds++;});
+
+    if(odds-1 > evens) {
+      $(".posts.odd").children(".job").last().appendTo(".posts.even")
+    } else if(evens - 1 > odds) {
+      $(".posts.even").children(".job").last().appendTo(".posts.odd")
+    }
+  }while((evens-1)!=odds && (odds-1)!=evens && evens!=odds);
 }
 function check_for_existance(id) {
   rtn = true;

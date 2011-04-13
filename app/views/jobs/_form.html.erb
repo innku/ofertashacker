@@ -23,11 +23,11 @@
          <%=f.text_field :city, :class => 'city_autocomplete' %></p>
       </div>
       
-	    <div class="secondColumn span-9 prepend-1 last">
+	    <div class="job_type span-10 prepend-1">
 		    <h1><%= t('.job_type') %>:</h1>
 		    <ul>
 		      <li><%= f.check_box :full_time %> <%= f.label :full_time %> </li>
-		      <li><%= f.check_box :remote %> <%= f.label :remote %></li>
+          <li><%= f.check_box :remote %> <%= f.label :remote %></li>
 		      <li><%= f.check_box :part_time %> <%= f.label :part_time %></li>
 		      <li><%= f.check_box :flexible %> <%= f.label :flexible %></li>
 		    </ul>

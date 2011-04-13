@@ -1,2 +1,3 @@
 <%javascript 'endless'%>
+<%=hidden_field_tag :endless_path, "my_jobs", :company=> "#{current_company.id}"%>
 <%= render :partial => "jobs/jobs", :locals => {:jobs => @jobs} %>
