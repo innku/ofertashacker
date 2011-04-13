@@ -39,15 +39,13 @@
       </div>
       <div class="part2 span-20 last">
         <div class="skills span-20 prepend-1">
-          <% for category in SkillCategory.all %>
-              <div class="clear"></div>
-              <h1><%= category %></h1>
-               <ul>
-                <% for skill in category.required_skills %>
+          <div class="clear"></div>
+          <h1>Habilidades requeridas</h1>
+            <ul>
+              <% for skill in RequiredSkill.all %>
 		              <li><%= check_box_tag 'job[required_skill_ids][]', skill.id, @job.required_skill_ids.include?(skill.id) %> <%= label_tag skill.skill_name %> </li>
-		            <% end %>
-		          </ul>
-          <% end %>
+              <% end %>
+	          </ul>
         </div>
         <div class="clear"></div>
    			<div id="extra_skill">

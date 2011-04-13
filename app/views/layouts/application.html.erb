@@ -33,8 +33,8 @@
             <li><%= link_to "<span>Publicar oferta</span>".html_safe,  new_job_path() %></li>
             <li><%= link_to "<span>Ofertas</span>".html_safe, jobs_path() %></li>
             <li><%= link_to "<span>Mis ofertas</span>".html_safe, my_jobs_company_path(current_company) %></li>
-            <%if can? :manage, SkillCategory%>
-              <li><%= link_to "<span>Skills</span>".html_safe, skill_categories_path %></li>
+            <%if can? :manage, RequiredSkill%>
+              <li><%= link_to "<span>Skills</span>".html_safe, required_skills_path %></li>
             <%end%>
           <% else %>
             <li><%= link_to "<span>Entrar</span>".html_safe, new_company_session_path() %></li>
