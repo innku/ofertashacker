@@ -73,12 +73,5 @@ class Company < ActiveRecord::Base
     !self.phone1.blank?
   end
 
-  def all_contact_info_blank?
-    if phone1? && contact_email? && twitter? && website? && facebook?
-      return false
-    end
-    true
-  end
-
 end
 
