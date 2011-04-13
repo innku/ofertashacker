@@ -1,15 +1,21 @@
 <div class="generalForm">
-  <div id="left"><!--left-->
+  <div id="left">
     <div id="logo">
       <%= link_to (image_tag @job.company.logo.url(:medium)), company_path(@job.company), :style => 'float:right;' %>
   	</div>
 		<div class="clear"></div>
 		<div id="info"> 
+		  <% unless @job.company.city.blank?%>
+        <h2><%= t('.city') %></h2>
+        <ul>
+          <li><%= @job.company.city %></li>
+        </ul>
+      <% end %>
       <%=render :partial =>'companies/contact_info', :locals => {:company => @job.company}%>
 		</div>
 		<%= image_tag "shadow.gif" %>
-  </div><!--/left-->
-  <div id="right"><!--right-->
+  </div>
+  <div id="right">
     <div style="width:100%;overflow:hidden;"><h1><%= @job.title%></h1></div>
     <h4>En <%=@job.city%>
       <%= @job.full_time ? ", Tiempo Completo".html_safe : nil%>

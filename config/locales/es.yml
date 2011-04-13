@@ -70,10 +70,9 @@ es:
       part_time:          "Medio tiempo"
       remote:             "Remoto"
       flexible:           "Horario flexible"
-      more:               "Ver más"
-      job:
-      
-      	
+      more:               "Ver más"      
+    show:
+      city:               "Localizada en:"
     form:
       title:              "Nombre"  
       city:               "Ciudad"
