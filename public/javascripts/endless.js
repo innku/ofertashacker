@@ -43,10 +43,10 @@ function getJobsJSON(filter_info,remove){
                 if(remove) {
                   calibrate();
                   if(!changes){
-                    $(".posts").fadeTo('slow',0.2);
-                    $(".posts").fadeTo('slow',1.0);                    
+                    $(".posts").fadeTo(1000,0.1);
+                    $(".posts").fadeTo(1000,1.0);                    
 
-                       // $(".posts").children(".job").each(function(){
+                    // $(".posts").children(".job").each(function(){
                     //     $(this).slideUp('slow');
                     //  });
                     // $(".posts").children(".job").each(function(){
