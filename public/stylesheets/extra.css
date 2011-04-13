@@ -61,6 +61,7 @@ table#skills td#buttons{text-align:right;}
 .mainContent ul.posts li{position:relative;}
 .mainContent ul.posts p{position:absolute; bottom:0px;}
 
+
 /*Flash and Errors*/
 #flash_notice, #flash_error, #flash_alert {
   padding: 5px 8px;
@@ -95,3 +96,5 @@ a:hover {
   text-decoration: none !important;
 
 }
+
+

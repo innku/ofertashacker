@@ -23,8 +23,8 @@
          <%=f.text_field :city, :class => 'city_autocomplete' %></p>
       </div>
       
-	    <div class="job_type span-10 prepend-1">
-		    <h1><%= t('.job_type') %>:</h1>
+	    <div class="skills span-20 prepend-1">
+		    <h1><%= t('.job_type') + " *" %><span class="desc">selecciona por lo menos un tipo</span></h1>
 		    <ul>
 		      <li><%= f.check_box :full_time %> <%= f.label :full_time %> </li>
           <li><%= f.check_box :remote %> <%= f.label :remote %></li>
@@ -63,7 +63,7 @@
 		  <div class="descriptionForm span-20 last">
 			  <div class="span-16 prepend-1">
 				  <h1>Oferta*</h1>
-         	<a href="#" rel="#trigger">Guia de formatos</a>
+         	<a href="#" rel="#trigger">Guía para formatear textareas</a>
           <div class="overlay" id="trigger">  
 	            <h2 style="margin:0px">Guia para formato de text areas</h2> 
 	            <div id="formatting_guide">
