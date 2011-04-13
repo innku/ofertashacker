@@ -71,6 +71,7 @@ function get_json_path(){
 }
 
 function calibrate(){
+
   var evens;
   var odds;
   do {
