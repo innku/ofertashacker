@@ -537,7 +537,7 @@ div.clear{
 	color: #333333;
 }
 
-.generalForm span.desc {
+.generalForm span.desc, #extra_skill span.desc {
     color: #888;
 	font-size: 13px;
 	font-style: italic;

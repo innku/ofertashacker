@@ -43,20 +43,9 @@ function getJobsJSON(filter_info,remove){
                 if(remove) {
                   calibrate();
                   if(!changes){
-                    $(".posts").fadeTo(1000,0.1);
-                    $(".posts").fadeTo(1000,1.0);                    
-
-                    // $(".posts").children(".job").each(function(){
-                    //     $(this).slideUp('slow');
-                    //  });
-                    // $(".posts").children(".job").each(function(){
-                    //     $(this).slideDown('slow');
-                    //  });
-
-                    // $(".posts").effect("highlight",{},300);
-                    // $(".posts").children(".job").each(function(){
-                    //     $(this).effect("highlight", {}, 300);
-                    //  });
+                    $(".posts").fadeTo(500,0.2);
+                    $(".posts").fadeTo(500,1.0); 
+                    
                   }
                 } 
             });
