@@ -30,7 +30,7 @@
 		    </div>
 				<div class="descriptionForm span-16 prepend-1">
         	<h1><%=t('.description') + " *" %></h1>
-         	<a href="#" rel="#trigger">Guia de formatos</a>
+         	<a href="#" rel="#trigger">Guía para formatear textareas</a>
           <div class="overlay" id="trigger">  
 	            <h2 style="margin:0px">Guia para formato de text areas</h2> 
 	            <div id="formatting_guide">
@@ -49,7 +49,8 @@
 	      </div>
         <div id="contacto" class="span-16 prepend-1">
           <h1>website *</h1>
-          <%= f.text_field :website %>
+          <p>http://
+          <%= f.text_field :website %></p>
           <h1>e-mail de contacto</h1>
           <%= f.text_field :contact_email %>
           <h1>facebook</h1>

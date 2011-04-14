@@ -13,10 +13,7 @@ Rubypros::Application.routes.draw do
   end
   
   resources :jobs 
-  
-  resources :skill_categories do
-    resources :required_skills
-  end
+  resources :required_skills
   
   match 'jobs/see/:id' => 'jobs#show'
   

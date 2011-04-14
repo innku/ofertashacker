@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110318155657) do
+ActiveRecord::Schema.define(:version => 20110413211825) do
 
   create_table "cities", :force => true do |t|
     t.integer "state_id"
@@ -103,16 +103,9 @@ ActiveRecord::Schema.define(:version => 20110318155657) do
     t.string   "skill_name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "skill_category_id"
   end
 
   add_index "required_skills", ["skill_name"], :name => "index_required_skills_on_skill_name", :unique => true
-
-  create_table "skill_categories", :force => true do |t|
-    t.string   "category"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "states", :force => true do |t|
     t.integer "country_id"

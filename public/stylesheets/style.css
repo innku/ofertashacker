@@ -357,7 +357,7 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 
 .skills li{
 	float:left;
-	margin:0 10px 15px 0;
+	margin:10px; 10px 15px 0;
 }
 
 .habilitiesList{
@@ -388,13 +388,21 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 	margin-top:49px;
 }
 
+.descriptionForm h1 {
+    display: inline; 
+       
+}
+.descriptionForm a {
+    margin-left: 15px;
+}
+
 .descriptionForm textarea{
 	font-family: arial, serif;
 	width:630px;
 	height:116px;
 	background:#F1F1F1;
 	border:1px solid #d9d9d9;
-	margin-bottom:30px;
+	margin: 20px 0 30px 0;
 	font-size:16px !important;
 	padding-left:15px;
 }
@@ -529,6 +537,13 @@ div.clear{
 	color: #333333;
 }
 
+.generalForm span.desc {
+    color: #888;
+	font-size: 13px;
+	font-style: italic;
+	font-weight: normal;
+}
+
 .tagimg{
 	margin-right: 10px;
   margin-bottom:10px
@@ -605,7 +620,7 @@ div#formatting_guide table th {
   border: 1px solid #ddd;
   padding: 5px;
   font-weight: normal;
-  background: #666;
+  background: #304F4F;
   color: #fff;
 }
 
