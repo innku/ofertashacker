@@ -1,6 +1,6 @@
 <div class="mainContent clear span-23">
   <% custom_title @company.title%>
-  <div class = "buttons">
+  <div class = "nav-buttons">
     <% if current_company && current_company.admin? %>
       <%= link_to t('.company_index'), companies_path(), :class => "button"  %>
     <% end %>

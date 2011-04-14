@@ -517,16 +517,21 @@ div.clear{
      padding: 30px 20px 20px;
 }
 
+.generalForm .tag{
+  padding:4px 10px 0px 5px;
+  background:#EFF2DF url(/images/tag.gif) no-repeat right top;
+  float:left;
+  margin:0px 10px 10px 0px;
+  height:22px;
+}
+
 .generalForm .tag span{
-    float: left;
-	background-color: #EFF2DF;
-	padding: 4px;
-	margin:0;
 	color: #333333;
 }
 
 .tagimg{
 	margin-right: 10px;
+  margin-bottom:10px
 }
 
 div.clear{

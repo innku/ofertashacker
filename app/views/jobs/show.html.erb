@@ -1,4 +1,10 @@
 <div class="generalForm">
+  <div class="nav-buttons">
+  <% if can? :manage, @job%>    
+      <%=link_to "Editar", edit_job_path(@job), :class => "button"%> 
+      <%= link_to 'Borrar', @job, :confirm => '¿Estas Seguro que deseas borrar la oferta?', :method => :delete, :class => "button" %>
+    <% end%>
+    </div>
   <div id="left"><!--left-->
     <div id="logo">
       <%= link_to (image_tag @job.company.logo.url(:medium)), company_path(@job.company), :style => 'float:right;' %>
@@ -20,18 +26,19 @@
     <% for skill in @job.required_skills %>
       <div class="tag">
         <span><%= skill.skill_name %></span>
-        <%= image_tag "tag.gif", :class => "tagimg" %>
       </div>
     <% end %>
+    
+    <% for skill in @job.format_extra_skills%>
+      <div class="tag">
+        <span><%= truncate(skill, :length => 110) %></span>
+      </div>
+    <% end %>
+
     <div class="clear"></div>
-    <h2>Descripción</h2>
     <p>
     <p><%= RedCloth.new(@job.description).to_html.html_safe %></p>
-    <% if can? :manage, @job%>    
-      <%=link_to "Editar", edit_job_path(@job), :class => "button"%> 
-      <%= link_to 'Borrar', @job, :confirm => '¿Estas Seguro que deseas borrar la oferta?', :method => :delete, :class => "button" %>
-    <% end%>
-  </div><!--/right-->
+   </div><!--/right-->
   <div class="clear"></div>
 </div>
 

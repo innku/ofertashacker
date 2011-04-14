@@ -46,7 +46,11 @@ table#skills td#buttons{text-align:right;}
   padding-right: 50px;
 }
 .buttons{float:right;}
-
+.nav-buttons{
+  position:absolute;
+  top:30px;
+  right:18px;
+}
 #company:hover{
   background-color:#eee;
 }

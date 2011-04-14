@@ -7,6 +7,7 @@ class Job < ActiveRecord::Base
   
   validates_presence_of :company_id, :title, :description, :city
   validates_presence_of :at_least_one_type
+  validate :extra_skill, :length => {:maximum => 140}
 	
 	FILTERS = %w{full_time part_time flexible remote}
 	
@@ -29,4 +30,7 @@ class Job < ActiveRecord::Base
     full_time || part_time || remote || flexible
   end
 
+  def format_extra_skills
+    extra_skill.split(',')
+  end
 end
