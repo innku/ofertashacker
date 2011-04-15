@@ -20,6 +20,7 @@ es:
     sessions:
       signed_in: 'Has ingresado correctamente.'
       signed_out: 'Has salido correctamente.'
+
     passwords:
       send_instructions: 'Recibirás un email con instrucciones para cambiar tu contraseña en poco minutos.'
       updated: 'Tu contraseña ha sido modificada. Ya has accedido a tu cuenta.'
@@ -27,7 +28,7 @@ es:
       send_instructions: 'Recibirás un email con instrucciones para confirmar tu cuenta en poco minutos.'
       confirmed: 'Tu cuenta ha sido confirmada. Ya has accedido a tu cuenta.'
     registrations:
-      signed_up: 'Te has registrado correctamente. Si está disponible, te habremos enviado un email de confirmación.'
+      signed_up: 'Te has registrado con éxito, agrega al perfil de tu empresa datos importantes sobre ella'
       updated: 'Has actualizado tu cuenta correctamente.'
       destroyed: '!Adiós! Tu cuenta ha sido cancelada. Esperamos verte pronto.'
     unlocks:

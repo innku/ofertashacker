@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110413211825) do
+ActiveRecord::Schema.define(:version => 20110415155333) do
 
   create_table "cities", :force => true do |t|
     t.integer "state_id"
@@ -32,9 +32,6 @@ ActiveRecord::Schema.define(:version => 20110413211825) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
     t.string   "title"
     t.string   "city"
     t.text     "description"
@@ -57,7 +54,6 @@ ActiveRecord::Schema.define(:version => 20110413211825) do
 
   add_index "companies", ["city"], :name => "index_companies_on_city"
   add_index "companies", ["city_id"], :name => "index_companies_on_city_id"
-  add_index "companies", ["confirmation_token"], :name => "index_companies_on_confirmation_token", :unique => true
   add_index "companies", ["email"], :name => "index_companies_on_email", :unique => true
   add_index "companies", ["reset_password_token"], :name => "index_companies_on_reset_password_token", :unique => true
   add_index "companies", ["title"], :name => "index_companies_on_title", :unique => true

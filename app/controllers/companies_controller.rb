@@ -37,7 +37,7 @@ class CompaniesController < ApplicationController
       format.json {render :text => @jobs.to_json(:include => {:company => {:only => [:title], :methods => [:logo_url]}}) }
     end
   end
-
+ 
   private
 
   def get_layout
