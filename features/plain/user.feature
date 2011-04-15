@@ -8,6 +8,7 @@ Feature: User Actions
   And see a vacancy detail through the root page
   And see all companies
   And see a company detail
+  And I can register my company
 
   Scenario: I can view a list of all vacancies
     Given there is a job vacancy with title "RoR" created by "admin@rubypros.com"
@@ -48,7 +49,6 @@ Feature: User Actions
     And I should see "Guadalajara"
     And I should see "My Third Company"
     And I should see "Mexico, D. F."
-    
 
   Scenario: I can see a company detail
     Given there is a company with name "Company1" in city "Monterrey"
@@ -57,4 +57,13 @@ Feature: User Actions
     Then I should see "Company1"
     And I should see "Monterrey"
     And I should see "This is my company"
+
+  Scenario: Register a company
+    Given I am on the new company page
+    When I fill in "company_title" with "Best Company"
+    And I fill in "company_password_confirmation" with "mycompany"
+    And I fill in "company_email" with "contact_me@best_company.com"
+    And I fill in "company_password" with "mycompany"
+    And I press "Registrar"
+    Then I should see "Te has registrado con éxito, agrega al perfil de tu empresa datos importantes sobre ella"
 
