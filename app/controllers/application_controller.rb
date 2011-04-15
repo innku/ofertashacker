@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     @current_ability ||= Ability.new(current_company)
   end
 
-  def after_sign_up_path_for(resource)
+  def after_sign_in_path_for(resource)
    company_path(current_company)
   end
  

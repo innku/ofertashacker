@@ -24,7 +24,7 @@ class Company < ActiveRecord::Base
   
   DEFAUL_LOGO_ROUTE = "/images/shareIcon.png"
 
-  has_attached_file :logo, :styles => {:medium => "200x100>", :thumb => "149x35>"},
+  has_attached_file :logo, :styles => {:medium => "200x100>", :thumb => "130x35>"},
                             :default_style => :thumb,
                             :storage => {
                               'development' => :filesystem,
