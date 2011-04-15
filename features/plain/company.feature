@@ -4,6 +4,9 @@ Feature: Company Actions
   As a company
   I want to register my company
   And see my company information
+  And edit my company information
+  And update my company information
+  And see my company job vacancies
   
   Scenario: Register a company
     Given I am on the new company page

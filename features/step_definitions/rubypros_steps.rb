@@ -2,8 +2,6 @@ Given /^I am logged as an admin$/ do
   @admin_company = Company.find_by_role("admin")
   if !@admin_company
     @admin_company = Factory(:company, :role => "admin")
-    @admin_company.update_attribute(:confirmation_token, nil)
-    @admin_company.update_attribute(:confirmed_at, Time.now)
   end
   visit new_company_session_path
   fill_in "company_email", :with => @admin_company.email
@@ -13,8 +11,6 @@ end
 
 Given /^I am logged as a "([^"]*)"$/ do |email|
   @company = Company.find_by_email(email)
-  @company.update_attribute(:confirmation_token, nil)
-  @company.update_attribute(:confirmed_at, Time.now)
   visit new_company_session_path
   fill_in "company_email", :with => email
   fill_in "company_password", :with => "secret"
