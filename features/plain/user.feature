@@ -4,13 +4,7 @@ Feature: User Actions
   I want to see vacancies
   And see vacancy details
   
-  Scenario: I can view vacancies details
-    Given there is a job vacancy with title "RoR" created by "admin@rubypros.com"
-    And I am on the root page
-    When I follow "RoR"
-    Then I should see "Características"
-    And I should see "Descripción"
-  
+
   Scenario: I can view a list of all vacancies
     Given there is a job vacancy with title "RoR" created by "admin@rubypros.com"
     And there is a job vacancy with title "Sinatra developer" created by "admin@rubypros.com"

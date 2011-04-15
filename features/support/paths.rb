@@ -20,12 +20,8 @@ module NavigationHelpers
     when /^the new job page$/i
       new_job_path()
       
-    when /^the new skill category page$/i
-      new_skill_category_path()
     when /^the required skill index page$/i
       required_skills_path()  
-    when /^the skill category index page$/i
-      skill_categories_path()  
     when /^the index job page$/i
       jobs_path()
     when /^the new company page$/i

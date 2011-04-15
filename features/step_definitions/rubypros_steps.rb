@@ -17,7 +17,7 @@ Given /^I am logged as a "([^"]*)"$/ do |email|
   @company.update_attribute(:confirmed_at, Time.now)
   visit new_company_session_path
   fill_in "company_email", :with => email
-  fill_in "company_password", :with => "justme"
+  fill_in "company_password", :with => "secret"
   click_button "company_submit"
 end
 
@@ -46,6 +46,15 @@ Given /^there is a job vacancy with title "([^"]*)" created by "([^"]*)" with re
   @job = Factory(:job, :company => @company, :title => title)
   @job.required_skill_ids_string="#{@rsa.id}"
 end
+
+Given /^there is a job vacancy with title "([^"]*)" created by "([^"]*)" and description "([^"]*)"$/ do |title, email, description|
+  @company = Company.find_by_email(email)
+  if !@company
+    @company = Factory(:company, :email => email)
+  end
+  @job = Factory(:job, :company => @company, :title => title, :description => description)
+end
+
 
 Given /^there is a required skill with name "([^"]*)"$/ do |name|
   @required_skill = Factory(:required_skill, :skill_name => name)

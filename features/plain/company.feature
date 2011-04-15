@@ -12,7 +12,7 @@ Feature: Company Actions
     And I fill in "company_email" with "contact_me@best_company.com"
     And I fill in "company_password" with "mycompany"
     And I press "Registrar"
-    Then I should see "Te has registrado correctamente"
+    Then I should see "Te has registrado con éxito, agrega al perfil de tu empresa datos importantes sobre ella"
     
   Scenario: Edit my company information
     Given there is a company with name "Company1" in city "Monterrey" and email "company1@mycompany.com"  

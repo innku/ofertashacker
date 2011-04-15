@@ -1,4 +1,4 @@
-@jobs  
+@wip  
 Feature: Job cycle
 
   As a company
@@ -43,11 +43,10 @@ Feature: Job cycle
     Then I should see "La vacante fue eliminada correctamente"
 
   Scenario: I can view vacancies details
-    And there is a job vacancy with title "RoR" created by "admin@rubypros.com"
+    And there is a job vacancy with title "RoR" created by "admin@rubypros.com" and description "Foo bar description"
     And I am logged as a "admin@rubypros.com"
     And I am on the index job page
     When I follow "RoR"
-    Then I should see "Características"
-    And I should see "Descripción"
+    Then I should see "Foo bar description"
       
       

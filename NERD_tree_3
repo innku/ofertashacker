@@ -1,0 +1,50 @@
+" Press ? for help
+
+.. (up a dir)
+/Users/chinog9/rubypros/
+▶ app/
+▶ config/
+▼ db/
+  ▶ csv/
+  ▼ migrate/
+    20110103183943_devise_create_companies.rb
+    20110103211837_add_attachment_logo_to_company.rb
+    20110103231233_add_role_to_company.rb
+    20110104233451_create_jobs.rb
+    20110106164317_create_required_skills.rb
+    20110125151448_create_metropoli_countries.rb
+    20110125151449_create_metropoli_states.rb
+    20110125151450_create_metropoli_cities.rb
+    20110125152358_add_city_to_companies.rb
+    20110125155214_add_state_to_jobs.rb
+    20110126201110_job_required_skills.rb
+    20110131175320_add_city_to_jobs.rb
+    20110201044107_add_extra_skills_to_jobs.rb
+    20110201155248_create_skill_categories.rb
+    20110201155355_add_skill_category_id_to_required_skill.rb
+    20110208151539_add_contact_to_company.rb
+    20110216182022_remove_phone3_from_companies.rb
+    20110216182227_add_contact_email_to_companies.rb
+    20110318155657_add_website_to_companies.rb
+    20110413210729_delete_skill_category_id_from_required_skills.rb
+    20110413211825_delete_skill_categories_table.rb
+  development.sqlite3
+  schema.rb
+  seeds.rb
+  test.sqlite3
+▶ doc/
+▶ features/
+▶ lib/
+▶ log/
+▶ public/
+▶ script/
+▶ spec/
+▶ test/
+▶ tmp/
+▶ vendor/
+config.ru
+Gemfile
+Gemfile.lock
+nose
+Rakefile
+README
