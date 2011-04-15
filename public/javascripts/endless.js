@@ -114,7 +114,7 @@ function condensed_info(job){
 function job_template(job) {
     var str="<li class=\"job\"" + " id=\"" + job.id +"\" >";
     str += "<a href=\"/jobs/"+job.id+"\">";
-    str += "<div class=\"span-4 prepend-7 last\">";
+    str += "<div class=\"span-4 prepend-8 last\">";
     str += "<img alt=\""+job.company.title+"\" src="+job.company.logo_url+" /></div>";
     if(job.title.length <= 40)
         str += "<h1>" + job.title + "</h1>";
