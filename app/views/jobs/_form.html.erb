@@ -1,5 +1,4 @@
 <%javascript 'overlay', 'textile'%>
-<div class="mainContent clear span-24">
   <hr width="100%" class="topSpacing"/>
   <div class="infoCompany span-4 last">
     <p>Datos de la oferta</p>
@@ -25,7 +24,7 @@
       
 	    <div class="skills span-20 prepend-1">
 		    <h1><%= t('.job_type') + " *" %><span class="desc">selecciona por lo menos un tipo</span></h1>
-		    <ul>
+        <ul class="form_checkboxes">
 		      <li><%= f.check_box :full_time %> <%= f.label :full_time %> </li>
           <li><%= f.check_box :remote %> <%= f.label :remote %></li>
 		      <li><%= f.check_box :part_time %> <%= f.label :part_time %></li>
@@ -41,9 +40,9 @@
         <div class="skills span-20 prepend-1">
           <div class="clear"></div>
           <h1>Habilidades requeridas</h1>
-            <ul>
+            <ul class="form_checkboxes">
               <% for skill in RequiredSkill.all %>
-		              <li><%= check_box_tag 'job[required_skill_ids][]', skill.id, @job.required_skill_ids.include?(skill.id) %> <%= label_tag skill.skill_name %> </li>
+                <li><%= check_box_tag 'job[required_skill_ids][]', skill.id, @job.required_skill_ids.include?(skill.id) %> <%= label_tag truncate(skill.skill_name, :length => 18) %> </li>
               <% end %>
 	          </ul>
         </div>
@@ -70,7 +69,7 @@
 	              </p> 
 	           </div>
           </div>
-          <%= f.text_area :description %>
+          <%= f.text_area :description, :rows=>"300"%>
 			  </div>		
 		  </div>     
 	  </div> 
@@ -86,4 +85,3 @@
 			</div>
 		</div>
   <% end %>
-</div>

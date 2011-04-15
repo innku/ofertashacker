@@ -1,6 +1,6 @@
 Rubypros::Application.routes.draw do
 
-  root :to => 'welcome#index'
+  root :to => 'jobs#index'
 
   metropoli_for :cities, :states, :countries
 

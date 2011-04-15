@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
 
- load_and_authorize_resource :through => :current_company, :except=>[:index,:show,:my_jobs]
+  load_and_authorize_resource :through => :current_company, :except=>[:index,:show,:my_jobs]
+  layout :get_layout
 
   def new
     @job.required_skills.build
@@ -48,4 +49,11 @@ class JobsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  private
+
+  def get_layout
+    (['index'].include? action_name) ? 'double_div' : 'application'
+  end
+
 end

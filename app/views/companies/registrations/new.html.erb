@@ -1,4 +1,3 @@
-<div class="mainContent clear span-24">
   <%= stylesheet_link_tag "jquery-ui" %>
   <% custom_title "Registro"%>
   <hr width="100%" class="topSpacing"/>
@@ -11,7 +10,7 @@
       <h1><%= t('.title') %></h1> 
       <%= f.text_field :title %>
 
-  	  <h1><%= t('.email') %></h1>
+      <h1><%= t('.email') %></h1>
       <%= f.text_field :email %>
 
       <h1><%= t('.password') %></h1>
@@ -19,11 +18,10 @@
 
       <h1><%= t('.password_confirmation') %></h1>
       <%= f.password_field :password_confirmation%>
-      
-	  <div class='calltoAction'>
-			<p><%= f.submit "Registrar" %></p>
-	  </div>
+
+      <div class='calltoAction'>
+        <p><%= f.submit "Registrar" %></p>
+      </div>
     </div>
   <% end %>
-</div>
 

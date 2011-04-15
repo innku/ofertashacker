@@ -25,21 +25,16 @@ company = Company.find_or_initialize_by_role(
     company.confirmed_at=Time.now
     company.save
 
-    if SkillCategory.count.zero?
-      front = SkillCategory.create(:category =>'Front end')  
-      back = SkillCategory.create(:category =>'Back end')
-    end
-
     if RequiredSkill.count.zero?
       RequiredSkill.create [
-        {:skill_name =>'Ajax', :skill_category => front },
-        {:skill_name =>'Javascript', :skill_category => front },
-        {:skill_name =>'CSS', :skill_category => front },
-        {:skill_name =>'JQuery', :skill_category => front },
-        {:skill_name =>'MySql', :skill_category => back },
-        {:skill_name =>'Sinatra', :skill_category => back },
-        {:skill_name =>'Ruby', :skill_category => back },
-        {:skill_name =>'Ruby on Rails', :skill_category => back }
+        {:skill_name =>'Ajax'},
+        {:skill_name =>'Javascript'},
+        {:skill_name =>'CSS'},
+        {:skill_name =>'JQuery'},
+        {:skill_name =>'MySql'},
+        {:skill_name =>'Sinatra'},
+        {:skill_name =>'Ruby'},
+        {:skill_name =>'Ruby on Rails'}
       ]
     end
 

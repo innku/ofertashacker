@@ -1,12 +1,14 @@
-<h2>Desbloquear cuenta</h2>
+<div class="content">
+  <h2>Desbloquear cuenta</h2>
 
-<%= form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f| %>
+    <%= devise_error_messages! %>
 
-  <p><%= f.label :email %><br />
-  <%= f.text_field :email %></p>
+    <p><%= f.label :email %><br />
+    <%= f.text_field :email %></p>
 
-  <p><%= f.submit "Resend unlock instructions" %></p>
-<% end %>
+    <p><%= f.submit "Resend unlock instructions" %></p>
+  <% end %>
 
-<%= render :partial => "companies/shared/links" %>
+  <%= render :partial => "companies/shared/links" %>
+</div>

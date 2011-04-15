@@ -2,7 +2,9 @@ class RequiredSkillsController < ApplicationController
   load_and_authorize_resource
   
   def index
-    @required_skills = RequiredSkill.all
+    
+    @required_skills = RequiredSkill.paginate :page => params[:page], :per_page => 10
+
     @required_skill = RequiredSkill.new
   end
 

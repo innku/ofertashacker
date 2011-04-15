@@ -1,0 +1,30 @@
+		<div id="header" class="clear span-24 last">
+		  <ul class="topMenu span-21 prepend-3 last">
+          <% if current_company %>
+            <li><%= link_to "<span>Salir</span>".html_safe, destroy_company_session_path() %></li>
+            <li><%= link_to "<span>Perfil</span>".html_safe, company_path(current_company) %></li>
+            <li><%= link_to "<span>Publicar oferta</span>".html_safe,  new_job_path() %></li>
+            <li><%= link_to "<span>Ofertas</span>".html_safe, jobs_path() %></li>
+            <li><%= link_to "<span>Mis ofertas</span>".html_safe, my_jobs_company_path(current_company) %></li>
+            <%if can? :manage, RequiredSkill%>
+              <li><%= link_to "<span>Skills</span>".html_safe, required_skills_path %></li>
+            <%end%>
+          <% else %>
+            <li><%= link_to "<span>Entrar</span>".html_safe, new_company_session_path() %></li>
+            <li><%= link_to "<span>¿Empresa?, Regístrate</span>".html_safe, new_company_registration_path()%></li>
+            <li><%= link_to "<span>Ver ofertas</span>".html_safe, jobs_path() %></li>
+          <% end %>
+          <li><%= link_to "<span>Compañías</span>".html_safe, companies_path %></li>
+		  </ul>
+		  
+		  <div class="logo clear span-6">
+			  <%= link_to (image_tag "logo.png", :alt=>"Rubypros", :width=>"245", :height=>"150"), root_path %>
+		  </div>
+			<% unless needs_filter? request.path %>
+			  <%= render 'layouts/filter' %>
+			<% end%>
+				<a class="twitter" href="http://www.twitter.com/innku" target="_blank">
+				<span>
+				</span>
+			</a>
+		</div>

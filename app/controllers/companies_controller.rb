@@ -1,5 +1,7 @@
 class CompaniesController < ApplicationController
+
   load_and_authorize_resource 
+  layout :get_layout
 
   def index
     @companies = Company.all
@@ -35,5 +37,11 @@ class CompaniesController < ApplicationController
       format.html
       format.json {render :text => @jobs.to_json(:include => {:company => {:only => [:title], :methods => [:logo_url]}}) }
     end
+  end
+
+  private
+
+  def get_layout
+    (['my_jobs'].include? action_name) ? 'double_div' : 'application'
   end
 end
