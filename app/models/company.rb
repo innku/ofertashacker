@@ -3,7 +3,7 @@ class Company < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable
 
   has_many :jobs, :dependent => :destroy
   
@@ -71,6 +71,10 @@ class Company < ActiveRecord::Base
   
   def phone1?
     !self.phone1.blank?
+  end
+  
+  def latests_jobs
+    jobs.all(:limit => 4, :order=> "id desc")
   end
 
 end

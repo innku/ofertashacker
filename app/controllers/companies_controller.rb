@@ -7,11 +7,10 @@ class CompaniesController < ApplicationController
     @companies = Company.all
   end
   
-  def show    
+  def show
   end
   
   def edit
-    
   end
   
   def update

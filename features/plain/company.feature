@@ -11,7 +11,7 @@ Feature: Company Actions
     And I fill in "company_password_confirmation" with "mycompany"
     And I fill in "company_email" with "contact_me@best_company.com"
     And I fill in "company_password" with "mycompany"
-    And I press "Crear"
+    And I press "Registrar"
     Then I should see "Te has registrado correctamente"
     
   Scenario: Edit my company information

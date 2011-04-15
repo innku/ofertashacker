@@ -32,7 +32,7 @@ Feature: Job cycle
     And there is a company with name "INNKU" in city "Monterrey" and email "admin@innku.com"  
     And I am logged as a "admin@innku.com"
     And I am on the index job page
-    Then I should not see "Editar"
+    Then I should not see "Actualizar Oferta"
 
   Scenario: I can delete my own vacancies
     And there is a job vacancy with title "RoR" created by "admin@rubypros.com"

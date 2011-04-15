@@ -25,12 +25,6 @@ end
 
 Factory.define :required_skill do |rs|
   rs.skill_name           "Ruby"
-  rs.skill_category_id    1
-end
-
-
-Factory.define :skill_category do |c|
-  c.category              "Ruby"
 end
 
 Factory.define :job_for_seed, :class => Job do |j|

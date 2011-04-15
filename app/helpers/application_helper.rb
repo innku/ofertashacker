@@ -22,22 +22,6 @@ module ApplicationHelper
     classes.strip
   end
   
-  def check_path_for path
-    exceptions = ["/jobs","/",'edit','jobs/new','jobs/new','skill_categories/new',"companies","sign_up", "sign_in", "my_jobs"]
-    for e in exceptions do 
-       if path.to_s == e or path.to_s.ends_with?(e)
-         return false
-       end
-    end
-    regex = [/companies\/\d+/]
-    for r in regex do
-      unless r.match(path.to_s).nil?
-        return false
-      end
-    end
-    return true
-
-  end
   def needs_filter? path
     exceptions = ["/jobs","/"]
     for e in exceptions do 

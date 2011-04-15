@@ -67,6 +67,11 @@ table#skills td#buttons{text-align:right;}
 div.content{padding:30px 20px 20px 20px;}
 ul.form_checkboxes{width:600px;padding-left:0px;}
 ul.form_checkboxes li{width:20%;}
+
+div#job_list ul li{padding-bottom:6px;}
+div#job_list h4{padding-left:7px;}
+div#job_list ul{margin-left:-7px;}
+
 /*Flash and Errors*/
 #flash_notice, #flash_error, #flash_alert {
   padding: 5px 8px;

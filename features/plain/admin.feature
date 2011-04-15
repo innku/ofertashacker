@@ -49,15 +49,14 @@ Feature: Admin Actions
     And I should see "Javascript"
     When I follow "Editar"
     Then I fill in "required_skill_skill_name" with "Ruby on Rails"
-    And I press "Crear"    
+    And I press "Actualizar"
     Then I should see "La habilidad ha sido actualizada"    
     And I should see "Ruby on Rails"    
 
   Scenario: I can create a new required skill
-    And there is a skill category with name "Front end"
     And I am on the new required skill page
     Then I fill in "required_skill_skill_name" with "Ruby on Rails"
-    And I press "Crear"    
+    And I press "Actualizar"
     Then I should see "La habilidad ha sido creada"    
     And I should see "Ruby on Rails"    
 
@@ -66,51 +65,8 @@ Feature: Admin Actions
     And there is a required skill with name "Javascript"
     And I am on the required skill index page
     And I should see "Javascript"
-    When I follow "Borrar"
+    When I follow "X"
     Then I should see "La habilidad ha sido borrada"    
     And I should not see "Javascript"
  
 
- Scenario: I can see all skill categories
-    And there is a skill category with name "Front end"
-    And there is a skill category with name "Back end"
-    And I am on the skill category index page
-    And I should see "Front end"
-    And I should see "Back end"
-     
-  Scenario: I can delete a skill category
-    And there is a skill category with name "Back end"
-    And I am on the skill category index page
-    And I should see "Back end"
-    When I follow "X"
-    Then I should see "La categoria ha sido borrada"    
-    And I should not see "Back end"
- 
-  Scenario: I can create a new skill category
-    And I am on the new skill category page
-    Then I fill in "skill_category_category" with "Front end"
-    And I press "Crear"    
-    Then I should see "La categoría ha sido creada"    
-    And I should see "Front end"    
-
-  Scenario: I can edit a skill category
-    And there is a skill category with name "Front end"
-    And I am on the skill category index page
-    And I should see "Front end"
-    When I follow "Editar"
-    Then the "skill_category_category" field should contain "Front end"
-
-  Scenario: I can update a skill category
-    And there is a skill category with name "Front end"
-    And I am on the skill category index page
-    And I should see "Front end"
-    When I follow "Editar"
-    Then I fill in "skill_category_category" with "Back end"
-    And I press "Crear"    
-    Then I should see "La categoría ha sido actualizada"    
-    And I should see "Back end"
-    
-    
-    
-    
-    

@@ -1,5 +1,5 @@
 <div class="content" >
-<% custom_title @company.title%>
+  <% custom_title @company.title%>
   <div class = "nav-buttons">
     <% if current_company && current_company.admin? %>
       <%= link_to t('.company_index'), companies_path(), :class => "button"  %>
@@ -29,6 +29,17 @@
         <%= render :partial => 'contact_info', :locals => {:company => @company}%>
       </div>
       <%= image_tag "shadow.gif" %>
+      <% unless @company.jobs.blank? %>
+        <div id="job_list">
+          <br />
+          <h4>Estamos Buscando: </h3>
+          <ul>
+            <% @company.latests_jobs.each do |job|%>
+              <li><%= link_to truncate(job.title, :length => 35), job%></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
     </div>
     <div id="right">
       <h2><%= @company.title %></h2>
