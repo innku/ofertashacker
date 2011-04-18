@@ -3,24 +3,24 @@ require 'spec_helper'
 describe RequiredSkill do
   
   before(:each) do
-    @rs=RequiredSkill.new(
-      :skill_name => "Rails", 
-      :skill_category_id => "1"
-    )
+    @rs=Factory(:required_skill)
   end
 
-  it "is valid with valid attributes" do
-    @rs.should be_valid
+  context 'Validations' do
+    context 'Required Skill is valid' do
+      it "With all attributes" do
+        @rs.should be_valid
+      end
+    end
+    context 'Required Skill is not valid' do
+      it "Without a skill name" do
+        @rs.skill_name=nil
+        @rs.should_not be_valid
+      end
+      it 'With a duplicated skill name' do
+        Factory(:required_skill,:skill_name => "duplicated rs")
+        @rs.update_attributes(:skill_name => "duplicated rs").should be_false
+      end
+    end
   end
-
-  it "is not valid without skill_name" do
-    @rs.skill_name=nil
-    @rs.should_not be_valid
-  end
-
-  it "is not valid without a skill_category_id" do
-    @rs.skill_category_id=nil
-    @rs.should_not be_valid
-  end
-
 end

@@ -65,7 +65,39 @@ describe Job do
         end
       end
       context 'When filters are not blank' do
-        pending
+        before do
+          @full_time = Factory(:job, :full_time => true, :part_time => false, :flexible => false, :remote => false)
+          @part_time = Factory(:job, :full_time => false, :part_time => true, :flexible => false, :remote => false)
+          @flexible = Factory(:job, :full_time => false, :part_time => false, :flexible => true, :remote => false)
+          @remote = Factory(:job, :full_time => false, :part_time => false, :flexible => false, :remote => true)
+          @filters = {"full_time"=>"true", "flexible"=>"true", "part_time"=>"true", "remote"=>"true"}
+        end
+        
+        context 'When all filters are checked' do
+          it 'Returns all jobs' do
+            Job.filter_it(@filters).should == (Job.all)
+          end
+        end
+        context 'When full time is unchecked' do
+          before do
+            @filters.merge!({:full_time => false})
+          end
+          it 'Returns all jobs that does not have only full time' do
+            Job.filter_it(@filters).should
+          end
+        end
+        context 'When part time is unchecked' do
+          it 'Returns all jobs that does not have only part time'
+          
+        end
+        context 'When flexible is unchecked' do
+          it 'Returns all jobs that does not have only flexible'
+          
+        end
+        context 'When remote is unchecked' do
+          it 'Returns all jobs that does not have only remote'
+          
+        end
       end
     end
     
