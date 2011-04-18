@@ -24,6 +24,13 @@ module NavigationHelpers
       required_skills_path()  
     when /^the index job page$/i
       jobs_path()
+    when /^the show job page for "(.*)"$/i
+      @job = Job.find_by_title($1)
+      job_path(@job)
+    when /^the edit job page for "(.*)"$/i
+      debugger
+      @job = Job.find_by_title($1)
+      edit_job_path(@job)
     when /^the new company page$/i
       new_company_registration_path()
     when /^the company index$/i

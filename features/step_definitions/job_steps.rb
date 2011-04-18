@@ -1,6 +1,9 @@
-When /^(?:|I )simulateclick "([^"]*)"(?: within "([^"]*)")?$/ do |link, selector|
-  page.execute_script("$('#{selector}').click()")
+When /^I follow "([^"]*)" and click OK$/ do |text|
+  page.evaluate_script("window.alert = function(msg) { return true; }")
+  page.evaluate_script("window.confirm = function(msg) { return true; }")
+  When %{I follow "#{text}"}
 end
+
 
 Given /^there is a job vacancy with title "([^"]*)" created by "([^"]*)"$/ do |title, email|
   @company = Company.find_by_email(email)

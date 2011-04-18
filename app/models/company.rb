@@ -22,7 +22,7 @@ class Company < ActiveRecord::Base
 	metropoli_for :city, :as=>:city_name
   scope :members, where(:role => "member")
   
-  DEFAUL_LOGO_ROUTE = "/images/shareIcon.png"
+  DEFAULT_LOGO_ROUTE = "/images/shareIcon.png"
 
   has_attached_file :logo, :styles => {:medium => "200x100>", :thumb => "130x35>"},
                             :default_style => :thumb,
@@ -36,7 +36,7 @@ class Company < ActiveRecord::Base
                             :url => "../files/#{ENV['RAILS_ENV']}/:attachment/:id/:style/:basename.:extension",
                             :path => "public/files/#{Rails.env}/:attachment/:id/:style/:basename.:extension",
                             :bucket => 'rubypros',
-                            :default_url => DEFAUL_LOGO_ROUTE
+                            :default_url => DEFAULT_LOGO_ROUTE
                             
   def admin?
     self.role == "admin"
@@ -50,7 +50,7 @@ class Company < ActiveRecord::Base
     if Rails.env == 'production'
       self.logo.url
     else
-     self.logo.path.nil? ?  DEFAUL_LOGO_ROUTE : self.logo.path[6..-1]
+     self.logo.path.nil? ?  DEFAULT_LOGO_ROUTE : self.logo.path[6..-1]
     end
   end
  
