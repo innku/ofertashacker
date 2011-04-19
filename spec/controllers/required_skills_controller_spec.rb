@@ -4,7 +4,7 @@ describe RequiredSkillsController do
   
   before do
     @rs = Factory(:required_skill)
-    @company = Factory(:company)
+    @company = Factory(:company, :role => 'admin')
     controller.stub(:current_company).and_return(@company)
   end
 
@@ -79,11 +79,11 @@ describe RequiredSkillsController do
       let(:invalid_params){{:id => @rs.id, :required_skill => {:skill_name => nil}}}
       it 'Does not update the required skill' do
         put :update, invalid_params
-        assigns(:required_skill).should eql(@rs.skill_name)
+        RequiredSkill.last.skill_name.should eql(@rs.skill_name)
       end
       it 'Renders the new template' do
-        puts :update, invalid_params
-        response.should render_template('new ')
+        put :update, invalid_params
+        response.should render_template('new')
       end
     end
   end
