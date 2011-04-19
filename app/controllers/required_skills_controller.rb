@@ -1,5 +1,6 @@
 class RequiredSkillsController < ApplicationController
-  load_and_authorize_resource
+  #TODO volver a agregar a create
+  load_and_authorize_resource :except => [:create]
   
   def index
     @required_skills = RequiredSkill.paginate :page => params[:page], :per_page => 10
@@ -10,6 +11,8 @@ class RequiredSkillsController < ApplicationController
   end
   
   def create
+    #TODO volver a agregar load_and_authorize_resource
+    @required_skill = RequiredSkill.new(params[:required_skill])
     if @required_skill.save
       redirect_to required_skills_path, 
                   :notice => I18n.t("notice.required_skill.successfully_created")
@@ -19,6 +22,7 @@ class RequiredSkillsController < ApplicationController
   end
   
   def update
+    debugger
     if @required_skill.update_attributes(params[:required_skill])
       redirect_to required_skills_path, 
                   :notice => I18n.t("notice.required_skill.successfully_updated")

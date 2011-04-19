@@ -48,14 +48,40 @@ describe CompaniesController do
   end
 
   describe '#update' do
-    context 'Valid attribute params' do
-      it 'redirects to company profile'
-    end
 
+    it 'Gets the company' do
+      put :update, {:id => @company.id }
+      assigns(:company).should eql(@company)
+    end
+    
+    context 'Valid attribute params' do
+      let(:valid_params){{:id => @company.id, :company => {:title => 'Sample Company', :city => 'Mty'}}}
+      it 'Updates company attributes' do
+        put :update, valid_params
+        assigns(:company).title.should eql('Sample Company')
+        assigns(:company).city.should eql('Mty')
+      end
+
+      it 'Redirects to company profile' do
+        put :update, valid_params
+        response.should redirect_to(company_path(@company))
+      end
+      
+      it 'Renders a flash notice for success' do
+        put :update, valid_params
+        flash[:notice].should_not be_blank        
+      end
+    end
+    
     context 'Invalid attribute params' do
-      it 'returns to editing the company data'
+      let(:invalid_params){{:id => @company.id, :company => {:title => nil}}}
+      it 'Renders edit template' do
+        put :update, invalid_params
+        response.should render_template('edit')
+      end
     end
   end
+  
   describe '#destroy' do
     let(:valid_params){{:id => @company.id}}
     
