@@ -4,6 +4,24 @@ When /^I follow "([^"]*)" and click OK$/ do |text|
   When %{I follow "#{text}"}
 end
 
+Given /^there are "([^"]*)" job vacancies of each job type$/ do |number|
+  company = Factory(:company)
+  number.to_i.times do
+    Factory(:job, :full_time => true, :part_time => false, :flexible => false, :remote => false, :company => company, :title => "Trabajo de Tiempo Completo")
+    Factory(:job, :full_time => false, :part_time => true, :flexible => false, :remote => false, :company => company, :title => "Trabajo de Medio Tiempo")
+    Factory(:job, :full_time => false, :part_time => false, :flexible => false, :remote => true, :company => company, :title => "Trabajo Remoto")
+    Factory(:job, :full_time => false, :part_time => false, :flexible => true, :remote => false, :company => company, :title => "Trabajo de Horario Flexible")
+  end
+end
+
+Given /^there is a job vacancy of each job type$/ do
+  company = Factory(:company)
+  Factory(:job, :full_time => true, :part_time => false, :flexible => false, :remote => false, :company => company, :title => "Trabajo de Tiempo Completo")
+  Factory(:job, :full_time => false, :part_time => true, :flexible => false, :remote => false, :company => company, :title => "Trabajo de Medio Tiempo")
+  Factory(:job, :full_time => false, :part_time => false, :flexible => false, :remote => true, :company => company, :title => "Trabajo Remoto")
+  Factory(:job, :full_time => false, :part_time => false, :flexible => true, :remote => false, :company => company, :title => "Trabajo de Horario Flexible")
+end
+
 
 Given /^there is a job vacancy with title "([^"]*)" created by "([^"]*)"$/ do |title, email|
   @company = Company.find_by_email(email)

@@ -33,5 +33,14 @@ Then /^(?:|I )should not see "([^"]*)" within a li with class "([^"]*)"$/ do |te
   end
 end
 
+Then /^(?:|I )should see "([^"]*)" twice$/ do |text|
+  twice_text = Regexp.new(text + "(.+)" + text, Regexp::MULTILINE)
+  if page.respond_to? :should
+    page.should have_xpath('//*', :text => twice_text)
+  else
+    assert page.has_xpath?('//*', :text => twice_text)
+  end
+end
+
 
 
