@@ -34,8 +34,8 @@ div#contacto{
 #extra_skill{padding-left:40px;}
 table#skills{width:500px;}
 table#skills td{ padding-bottom:10px;}
-table#skills tr:hover,table#companies tr:hover{background:#ccc;}
-table#skills td, table#companies td{
+table#skills tr:hover{background:#ccc;}
+table#skills td{
   width:300px;
   border-bottom: 1px solid #ccc;
 }
@@ -44,6 +44,17 @@ table#skills td#buttons{text-align:right;}
   float:right;
   padding:10px;
   padding-right: 50px;
+}
+
+table #companies {
+  width:85%;
+}
+table #companies td#logo{
+  width:30%;
+}
+table #companies td#info{
+  width:60%;
+  background:white;
 }
 .buttons{float:right;}
 .nav-buttons{

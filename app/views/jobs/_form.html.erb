@@ -15,15 +15,15 @@
         </div>
       <% end %>   
 	    <div class="firstColumn span-9 prepend-1">
-		<h1><%=t('.title') + " *" %></h1>
+		<%= f.label t('.title') + " *" %>
         <%= f.text_field :title %></p>
         
-			  	<h1><%=t('.city') + " *" %></h1>	 
+			  	<%= f.label t('.city') + " *" %>	 
          <%=f.text_field :city, :class => 'city_autocomplete' %></p>
       </div>
       
 	    <div class="skills span-20 prepend-1">
-		    <h1><%= t('.job_type') + " *" %><span class="desc">selecciona por lo menos un tipo</span></h1>
+		    <%= f.label t('.job_type') + " *" %><span class="desc">selecciona por lo menos un tipo</span>
         <ul class="form_checkboxes">
 		      <li><%= f.check_box :full_time %> <%= f.label :full_time %> </li>
           <li><%= f.check_box :remote %> <%= f.label :remote %></li>
@@ -39,7 +39,7 @@
       <div class="part2 span-20 last">
         <div class="skills span-20 prepend-1">
           <div class="clear"></div>
-          <h1>Habilidades requeridas</h1>
+          <%= f.label "Habilidades requeridas" %>
             <ul class="form_checkboxes">
               <% for skill in RequiredSkill.all %>
                 <li><%= check_box_tag 'job[required_skill_ids][]', skill.id, @job.required_skill_ids.include?(skill.id) %> <%= label_tag truncate(skill.skill_name, :length => 18) %> </li>
@@ -48,7 +48,7 @@
         </div>
         <div class="clear"></div>
    			<div id="extra_skill">
-		      <h1><%=t('.extra_skill') %><span class="desc">  separados por comas ( 'AJAX', 'Experto en algoritmos')</span></h1>	 
+		      <%= f.label t('.extra_skill') %><span class="desc">  separados por comas ( 'AJAX', 'Experto en algoritmos')</span>	 
           <%=f.text_field :extra_skill,:maxlength => "140", :cols=>3%></p>
         </div>
       </div>
@@ -59,7 +59,7 @@
 	    </div>
 		  <div class="descriptionForm span-20 last">
 			  <div class="span-16 prepend-1">
-				  <h1>Oferta*</h1>
+          <%= f.label "Oferta *" %>
          	<a href="#" rel="#trigger">Guía para formatear textareas</a>
           <div class="overlay" id="trigger">  
 	            <h2 style="margin:0px">Guia para formato de text areas</h2> 

@@ -171,7 +171,18 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 }
 
 .mainContent label{
-	font-size:16px;
+  font-size:2.8em;
+  line-height:1;
+  margin-bottom:0.5em;
+  font-weight:bold;
+  display:block;
+  color: #333; 
+  font-family:'Arvo', arial, serif !important; 
+}
+.mainContent label.small_label{
+  font-size:16px;
+  display:inline;
+  font-family:arial, serif !important;
 }
 
 .mainContent a{
