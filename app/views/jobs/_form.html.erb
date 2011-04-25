@@ -23,7 +23,7 @@
       </div>
       
 	    <div class="skills span-20 prepend-1">
-		    <%= f.label t('.job_type') + " *" %><span class="desc">selecciona por lo menos un tipo</span>
+		    <%= f.label t('.job_type') + " *", :class => :non_block %><span class="desc">selecciona por lo menos un tipo</span>
         <ul class="form_checkboxes">
 		      <li><%= f.check_box :full_time %> <%= f.label :full_time %> </li>
           <li><%= f.check_box :remote %> <%= f.label :remote %></li>
@@ -48,7 +48,7 @@
         </div>
         <div class="clear"></div>
    			<div id="extra_skill">
-		      <%= f.label t('.extra_skill') %><span class="desc">  separados por comas ( 'AJAX', 'Experto en algoritmos')</span>	 
+		      <%= f.label t('.extra_skill'), :class => :non_block %><span class="desc">  separados por comas ( 'AJAX', 'Experto en algoritmos')</span>	 
           <%=f.text_field :extra_skill,:maxlength => "140", :cols=>3%></p>
         </div>
       </div>
@@ -59,7 +59,7 @@
 	    </div>
 		  <div class="descriptionForm span-20 last">
 			  <div class="span-16 prepend-1">
-          <%= f.label "Oferta *" %>
+          <%= f.label "Oferta *", :class => :non_block %>
          	<a href="#" rel="#trigger">Guía para formatear textareas</a>
           <div class="overlay" id="trigger">  
 	            <h2 style="margin:0px">Guia para formato de text areas</h2> 
