@@ -10,7 +10,6 @@ company = Company.find_or_initialize_by_role(
   :role => 'admin')
   company.save
   company.role='admin'
-  company.confirmed_at=Time.now
   company.save
 
 
@@ -22,7 +21,6 @@ company = Company.find_or_initialize_by_role(
     :password => "secret",
     :password_confirmation => "secret",
     :description => "Web solutions")
-    company.confirmed_at=Time.now
     company.save
 
     if RequiredSkill.count.zero?

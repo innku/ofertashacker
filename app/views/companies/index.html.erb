@@ -3,20 +3,21 @@
   <% custom_title "Compañías"%>
   <h1><%= t ('.companies') %></h1>
 
-  <table id="companies">
-    <% @companies.each do |company| %>
-      <tr id = "<%= cycle('par','non')%>">
-        <td id="logo" width="200px">
-          <% if company.logo? %>
-            <%= image_tag company.logo.url(:medium) %>
-          <% end %>
-        </td>
-        <td id="company_info">
-          <h2><%= link_to company.title, company_path(company) %></h2>
-          <%= company.city %>
-          <%= truncate(company.description, :length => 80) %>
-        </td>
-      </tr>
-    <% end %>
-  </table>
+  <% @companies.each do |company| %>
+    <div class="company_profile <%= cycle('par','non')%>">
+      <div class="logo">
+        <% if company.logo? %>
+          <%= image_tag company.logo.url(:medium) %>
+        <% end %>
+      </div>
+      <div class="company_info">
+        <h2><%= link_to company.title, company_path(company) %></h2>
+        Ciudad: <%= company.city %><br />
+        <div style="float:right;">
+          <h4>Ver Ofertas</h4>
+        </div>
+        </div>
+    <div class="clear"></div>
+    </div>
+  <% end %>
 </div>
