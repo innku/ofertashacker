@@ -9,11 +9,15 @@ $(document).ready(function() {
     });
 
   	//Hiding flashes after a bit
-	if($('#flash_notice') != null)
+	if($('#flash_notice') != null) {
+    $('#flash_notice').hide().slideDown();
 		setTimeout("$('#flash_notice').hide('blind',{},500);",4000);
+  }
 	if($('#flash_error') != null)
+    $('#flash_error').hide().slideDown();
 		setTimeout("$('#flash_error').hide('blind',{},500);",4000);
 	if($('#flash_alert') != null)
+    $('#flash_alert').hide().slideDown();
 		setTimeout("$('#flash_alert').hide('blind',{},500);",4000);
     
 });
