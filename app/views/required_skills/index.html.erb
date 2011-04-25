@@ -22,7 +22,7 @@
   <div class="new_skill" style="display:none">
     <%form_for @required_skill do |f|%>
       <p>
-      <%=f.text_field :skill_name, :required=>'required'%>
+      <%=f.text_field :skill_name%>
       <%=f.submit "Crear nueva habilidad"%>
       </p>
     <%end%>

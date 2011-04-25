@@ -20,14 +20,17 @@ module NavigationHelpers
     when /^the new job page$/i
       new_job_path()
       
-    when /^the new skill category page$/i
-      new_skill_category_path()
     when /^the required skill index page$/i
       required_skills_path()  
-    when /^the skill category index page$/i
-      skill_categories_path()  
     when /^the index job page$/i
       jobs_path()
+    when /^the show job page for "(.*)"$/i
+      @job = Job.find_by_title($1)
+      job_path(@job)
+    when /^the edit job page for "(.*)"$/i
+      debugger
+      @job = Job.find_by_title($1)
+      edit_job_path(@job)
     when /^the new company page$/i
       new_company_registration_path()
     when /^the company index$/i

@@ -4,10 +4,10 @@
   </div>
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
     <div class="generalForm span-12 prepend-1">
-      <h1><%= t('.email') %></h1>
+      <%= f.label t('.email') %>
       <%= f.text_field :email  %>
 
-      <h1><%= t('.password') %></h1>
+      <%= f.label t('.password') %>
       <%= f.password_field :password, :type => "password", :minlength => "6"%></p>
 
       <% if devise_mapping.rememberable? -%>
@@ -15,7 +15,7 @@
 			<%= f.submit "Ingresar" %>
 		</div>
         <p class='remember_me'>
-			<%= f.check_box :remember_me %> <%= f.label :remember_me, t('.remember_me') %>
+        <%= f.check_box :remember_me %> <%= f.label :remember_me, t('.remember_me'), :class => "small_label" %>
 		</p>
       <% end -%>
     </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110415155333) do
+ActiveRecord::Schema.define(:version => 20110420163947) do
 
   create_table "cities", :force => true do |t|
     t.integer "state_id"
@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(:version => 20110415155333) do
     t.integer  "city_id"
     t.string   "facebook"
     t.string   "twitter"
-    t.string   "linkedin"
     t.string   "phone1"
     t.string   "phone2"
     t.string   "contact_email"

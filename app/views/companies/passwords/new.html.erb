@@ -1,15 +1,20 @@
-<div class="content">
-  <% custom_title "Nueva cuenta"%>
-  <h2>¿Olvidaste tu contraseña?</h2>
+<div class="mainContent clear span-24">
+  <% custom_title "¿Olvidaste tu contraseña?"%>
+	<div class="infoCompany span-4">
+	  <p>¿Olvidaste tu contraseña?</p>
+	</div>
+	<div class="generalForm span-12 prepend-1">
+    	<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+		    <%= devise_error_messages! %>
 
-  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-    <%= devise_error_messages! %>
+		    <p><%= f.label :email, :requied=>'required' %>
+			<span class="desc">el correo con el cual est&aacute;s registrado</span>
+		    <%= f.text_field :email %></p>
 
-    <p><%= f.label :email, :requied=>'required' %><br />
-    <%= f.text_field :email %></p>
-
-    <p><%= f.submit "Enviar" %></p>
-  <% end %>
-
-  <%= render :partial => "companies/shared/links" %>
+		    <div class="calltoAction">
+          		<p><%= f.submit "Enviar" %></p>
+		    </div>
+		<% end %>
+		<%= render :partial => "companies/shared/links" %>
+ 	</div><!--/generalform -->
 </div>

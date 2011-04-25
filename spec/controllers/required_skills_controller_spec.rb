@@ -2,61 +2,156 @@ require 'spec_helper'
 
 describe RequiredSkillsController do
   
+  before do
+    @rs = Factory(:required_skill)
+    @company = Factory(:company, :role => 'admin')
+    controller.stub(:current_company).and_return(@company)
+  end
+
+  describe '#index' do
+    before do
+      11.times{ Factory(:required_skill) }
+      @required_skills = RequiredSkill.all(:limit => 10)
+      @last_rs = RequiredSkill.last
+    end
+    it 'Get the first 10 required skills' do
+      get :index
+      assigns(:required_skills).should eql(@required_skills)
+    end
+    it 'Does not get required skills after the first 10' do
+      get :index
+      assigns(:required_skills).should_not include(@last_rs)
+    end
+    
+    it 'Create a new required skill variable' do
+      get :index
+      assigns(:required_skill).should_not be_blank
+    end
+  end
+
   describe '#new' do
-    
-    context 'Valid params' do
-      it 'Gets all the skill categories'
-    end
-    
-    context 'Invalid params' do
-      it 'Does not get all the skill categories'
+    it 'Creates a new required skill variable' do
+      get :new
+      assigns(:required_skill).should_not be_blank
     end
   end
-    
+
   describe '#create' do
-  
-    context 'Valid params' do
-      it 'finds the skill category to create the required skill in'
-      it 'redirects to the skill category path'
-      it 'renders a flash notice for success'
-    end
     
-    context 'Invalid params' do
-      it 'does not find an existing skill category'
-      it 'redirects to new skill category'
+    it 'Create a required skill variable' do
+      post :create
+      assigns(:required_skill).should_not be_blank
+    end
+    context 'With valid params' do
+      let(:valid_params){{:required_skill => {:skill_name => 'AJAX'}}}
+      it 'Saves the required skill' do
+        lambda { post :create, valid_params }.should change(RequiredSkill, :count).by(1)
+      end
+      it 'Redirects to the required skills path' do
+        post :create, valid_params
+        response.should redirect_to(required_skills_path)
+      end
+      it 'Renders a flash notice for success' do
+        post :create, valid_params
+        flash[:notice].should_not be_blank
+      end
+    end
+
+    context 'With invalid params' do
+      let(:invalid_params){{:required_skill => {:skill_name => @rs.skill_name}}}
+      it 'Does not save the required skill' do
+        lambda { post :create, invalid_params }.should_not change(RequiredSkill, :count)
+      end
+      it 'Renders the new template' do
+        post :create, invalid_params
+        response.should render_template('new')
+      end
     end
   end
-  
-  describe '#index'
-  
+
   describe '#update' do
-    context 'Valid params' do
-      it 'finds the skill category of the required skill'
-      it 'redirects to the skill category path'  
-      it 'renders a flash notice for success'    
+
+      it 'Gets the required skill' do
+        put :update, {:id => @rs.id}
+        assigns(:required_skill).should eql(@rs)
+      end
+    context 'With valid params' do
+      let(:valid_params){{:id => @rs.id, :required_skill =>{:skill_name => 'New Skill Name'}}}
+      
+      it 'Updates required skill attributes' do
+        put :update, valid_params
+        assigns(:required_skill).skill_name.should eql('New Skill Name')
+      end
+      
+      it 'Redirects to the required skills path' do
+        put :update, valid_params
+        response.should redirect_to(required_skills_path)
+      end
+      
+      it 'Renders a flash notice for success' do
+        put :update, valid_params
+        flash[:notice].should_not be_blank
+      end
     end
-    
-    context 'Invalid params' do
-      it 'does not find an existing skill category'
-      it 'redirects to new skill category'
-    end
-  end
-  
-  describe '#edit' do
-    context 'Valid params' do
-      it 'Gets all the skill categories'
-      it 'finds a skill category by an id'
+
+    context 'With invalid params' do
+      let(:invalid_params){{:id => @rs.id, :required_skill => {:skill_name => nil}}}
+      it 'Does not update the required skill' do
+        put :update, invalid_params
+        RequiredSkill.last.skill_name.should eql(@rs.skill_name)
+      end
+      it 'Renders the new template' do
+        put :update, invalid_params
+        response.should render_template('new')
+      end
     end
   end
   
   describe '#destroy' do
-    context 'Valid params' do
-      it 'finds a skill category by an id'
-      it 'destroys the required skill'
-      it 'redirects to the skill category of the destroyed required skill'
-      it 'rends a flash notice for success in deleting the skill'
+  
+    let(:valid_params){{:id => @rs.id}}
+    
+    it 'Gets the required skill' do
+      delete :destroy, valid_params
+      assigns(:required_skill).should eql(@rs)
     end
     
+    it 'Destroys the required skill' do
+      lambda { delete :destroy, valid_params }.should change(RequiredSkill, :count).by(-1)
+    end
+    
+    context 'Response with an HTML request' do
+      it 'Redirects to the required skills path' do
+        delete :destroy, valid_params
+        response.should redirect_to(required_skills_path)
+      end
+      it 'Renders a flash notice for success in deleting the skill' do
+        delete :destroy, valid_params
+        flash[:notice].should_not be_blank
+      end
+    end
+    
+    context 'Response with an XML request' do
+      pending
+    end
+    
+  end
+
+  describe '#edit' do
+    context 'With valid params' do
+      let(:valid_params){{:id => @rs.id}}
+      it 'Gets the required skill' do
+        get :edit, valid_params
+        assigns(:required_skill).should eql(@rs)
+      end
+    end
+    
+    context 'With invalid params' do
+      let(:invalid_params){{:id => -1}}
+      it 'Does no get the required skill' do
+        lambda { get :edit, invalid_params }.should raise_error        
+      end
+    end
   end
 
 end

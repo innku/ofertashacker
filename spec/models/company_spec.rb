@@ -11,19 +11,34 @@ describe Company do
       it "With all attributes" do
         @company.should be_valid
       end
+      
+      context 'When there is a website' do
+        it 'With a valid website format' do
+          @company.website = "www.website.com"
+          @company.should be_valid
+        end
+      end
+      
     end
-
+      
     context 'Company is not valid' do
       it "Without title" do
         @company.title=nil
         @company.should_not be_valid
       end
 
-      it 'Without an emal' do
+      it 'Without an email' do
         @company.email = nil
         @company.should_not be_valid
       end 
-
+      
+      context 'When there is a website' do
+        it 'With an invalid website format' do
+          @company.website = "sn.sb.sdn.com"
+          @company.should_not be_valid
+        end
+          
+      end
     end
   end
   
@@ -55,7 +70,7 @@ describe Company do
     end
     
     describe '.member?' do
-      context 'When comany role is member' do
+      context 'When company role is member' do
         before do
           @company.role = 'member'
           @company.save
@@ -75,6 +90,36 @@ describe Company do
           @company.member?.should be_false
         end
       end
+    end
+    
+    describe '.logo_url' do
+        context 'When environment is production' do
+          before do
+            Rails.stub(:env).and_return("production")
+            @company.stub_chain(:logo, :url).and_return('www.a-website.com/image.jpg')
+          end          
+          it 'Returns the logo url' do
+            @company.logo_url.should eql('www.a-website.com/image.jpg')
+          end
+        end
+        
+        context 'When environment is not production' do
+          
+          context 'When there is no logo uploaded' do
+            it 'Returns the default logo route' do
+              @company.logo_url.should eql(Company::DEFAULT_LOGO_ROUTE)
+            end
+          end
+          
+          context 'When there is a logo uploaded' do
+            before do
+              @company.stub_chain(:logo, :path).and_return('public/the/path/image.jpg')
+            end
+            it 'Returns the logo path without the /public' do
+              @company.logo_url.should eql('/the/path/image.jpg')
+            end
+          end
+        end
     end
     
     describe '.facebook?' do
@@ -162,9 +207,29 @@ describe Company do
       end
     end
 
-
-    describe 'logo_url' do
-        pending
+    describe '.latests_jobs' do 
+      context 'When company has no jobs' do
+        it 'Returns an empty array' do
+          @company.latests_jobs.should be_blank
+        end
+      end
+      
+      context 'When company has jobs' do
+        before do
+          5.times { Factory(:job, :company => @company) }
+          @jobs = Job.ordered[0..3]
+          @job = Job.first
+        end
+        
+        it 'Returns the four latests jobs' do
+          @company.latests_jobs.should eql(@jobs) 
+        end
+        
+        it 'Does not return older jobs' do
+          @company.latests_jobs.should_not include(@job)
+        end
+      end
+      
     end
   end
 end

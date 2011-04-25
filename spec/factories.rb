@@ -1,5 +1,5 @@
 Factory.define :company do |f|
-  f.sequence(:email) {|n| "memver#{n}@mycompany.com" }
+  f.sequence(:email) {|n| "member#{n}@mycompany.com" }
   f.title                 "My Company"
   f.city                  "Monterrey"
   f.password              "secret"
@@ -24,7 +24,7 @@ Factory.define :job do |f|
 end
 
 Factory.define :required_skill do |rs|
-  rs.skill_name           "Ruby"
+  rs.sequence(:skill_name) { |n| "Ruby#{n}" }
 end
 
 Factory.define :job_for_seed, :class => Job do |j|

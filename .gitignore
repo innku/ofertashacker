@@ -33,6 +33,5 @@ capybara-*.html
 /coverage/
 /spec/tmp/*
 /public/files/*
-
 **.orig
 rerun.txt

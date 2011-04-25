@@ -4,7 +4,6 @@ class JobsController < ApplicationController
   layout :get_layout
 
   def new
-    @job.required_skills.build
   end
   
   def create
@@ -29,7 +28,6 @@ class JobsController < ApplicationController
   end
   
   def edit
-
   end
 
   

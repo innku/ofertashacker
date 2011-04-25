@@ -9,14 +9,14 @@
   <div class="generalForm span-12 prepend-1">
       <%= form_for @company, :html => { :multipart => true } do |f| %>
           <%= f.error_messages %>
-    			<h1><%=t('.title') + " *" %></h1>
+    			<%= f.label t('.title') + " *" %>
           <%= f.text_field :title %>
-    			<h1><%=t('.city') + " *" %></h1>
+    			<%= f.label t('.city') %>
           <%= f.text_field :city, :class => 'city_autocomplete'%>
-    			<h1><%=t('.email') + " *" %></h1>
+    			<%= f.label t('.email') + " *" %>
           <%= f.text_field :email%>
           
-    			<h1>Logo</h1>
+          <%= f.label "Logo" %>
           <%= f.file_field :logo %>
           <hr class="span-12">
           <%=image_tag @company.logo.url %>
@@ -29,7 +29,7 @@
 			    <p>Descripción de la empresa</p>
 		    </div>
 				<div class="descriptionForm span-16 prepend-1">
-        	<h1><%=t('.description') + " *" %></h1>
+        	<%= f.label t('.description'), :class => :non_block %>
          	<a href="#" rel="#trigger">Guía para formatear textareas</a>
           <div class="overlay" id="trigger">  
 	            <h2 style="margin:0px">Guia para formato de text areas</h2> 
@@ -48,29 +48,25 @@
 		      <p>Contacto</p>
 	      </div>
         <div id="contacto" class="span-16 prepend-1">
-          <h1>website *</h1>
+          <%= f.label "website" %>
           <p>http://
           <%= f.text_field :website %></p>
-          <h1>e-mail de contacto</h1>
+          <%= f.label "e-mail de contacto" %>
           <%= f.text_field :contact_email %>
-          <h1>facebook</h1>
+          <%= f.label "facebook" %>
           <p>http://facebook.com/
           <%= f.text_field :facebook %>
-          <h1>twitter</h1>
+          <%= f.label "twitter" %>
           <p>http://twitter.com/
           <%= f.text_field :twitter %></p>
-<!--           <p>LinkedIn
-          <%= f.text_field :linkedin %></p>
-           -->
-         
         </div>
     </div>
     <div class="divShadow span-24 buttons">
-			<div class="span-20 prepend-5 last">
-			  <div class="calltoAction">
-          <p><%= f.submit "Actualizar" %></p>
+		<div class="span-20 prepend-5 last">
+			<div class="calltoAction">
+          		<p><%= f.submit "Actualizar" %></p>
 		    </div>
-		  </div>
-		</div> 
+		</div>
+	</div> 
     <% end %>
 </div>

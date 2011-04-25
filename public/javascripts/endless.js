@@ -1,8 +1,6 @@
 var current_page=1; //current_page for pagination
 var changes;
-var can_get_jobs = false;
 function getJobsJSON(filter_info,remove){
-  can_get_jobs = true;
   $.getJSON(get_json_path(),{filters: { full_time:filter_info[0],
                                        part_time:filter_info[1],
                                        flexible:filter_info[2],
@@ -51,8 +49,6 @@ function getJobsJSON(filter_info,remove){
                   }
                 } 
             });
-        can_get_jobs = false;
-
 
 }
 function get_json_path(){
@@ -134,7 +130,7 @@ $(window).scroll(function(){
     if(isScrollBottom()){
         current_page++;
       var filter_info = get_checkbox_status("#mainMenu input");
-        (can_get_jobs==false) ? getJobsJSON(filter_info,false) : ''
+      getJobsJSON(filter_info,false) 
     }
 });
 //checks if scroll has reached the bottom

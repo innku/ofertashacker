@@ -7,16 +7,16 @@
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
     <div class="generalForm span-12 prepend-1">
       <%= devise_error_messages! %>
-      <h1><%= t('.title') %></h1> 
+      <%= f.label t('.title') %> 
       <%= f.text_field :title %>
 
-      <h1><%= t('.email') %></h1>
+      <%= f.label t('.email') %>
       <%= f.text_field :email %>
 
-      <h1><%= t('.password') %></h1>
+      <%= f.label t('.password') %>
       <%= f.password_field :password%>
 
-      <h1><%= t('.password_confirmation') %></h1>
+      <%= f.label t('.password_confirmation') %>
       <%= f.password_field :password_confirmation%>
 
       <div class='calltoAction'>
