@@ -1,6 +1,6 @@
 
 <div class="content">
-  <% custom_title "Compañías"%>
+  <% custom_title "Empresas"%>
   <h1><%= t ('.companies') %></h1>
 
   <% @companies.each do |company| %>
@@ -21,7 +21,7 @@
           <br />
         <%end%>
         <div class="ver_mas">
-          <h3><%=link_to "Ver Mas", jobs_path%></h4>
+          <h3><%=link_to "Ver ofertas", my_jobs_company_path(company)%></h4>
         </div>
         </div>
     <div class="clear"></div>

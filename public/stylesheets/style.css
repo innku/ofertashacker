@@ -25,6 +25,8 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 	font-size:110% !important;
 	display:block;
 	height:30px;
+  z-index:1000;
+  position:relative;
 }
 #header .topMenu li {
 	display:block;
