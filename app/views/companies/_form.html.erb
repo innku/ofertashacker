@@ -56,17 +56,26 @@
         <p>Contacto</p>
       </div>
       <div id="contacto" class="span-16 prepend-1">
-        <%= f.label "website" %>
-        <p>http://
-        <%= f.text_field :website %></p>
         <%= f.label "e-mail de contacto" %>
         <%= f.text_field :contact_email %>
-        <%= f.label "facebook" %>
-        <p>http://facebook.com/
-        <%= f.text_field :facebook %>
-        <%= f.label "twitter" %>
-        <p>http://twitter.com/
-        <%= f.text_field :twitter %></p>
+
+        <div class="span-10 ">
+          <%= f.label "facebook" %>
+          <p>http://facebook.com/
+          <%= f.text_field :facebook %></p>
+          <div class="clear"></div>
+
+          <%= f.label "twitter" %>
+          <p>http://twitter.com/
+          <%= f.text_field :twitter %></p>
+          <div class="clear"></div>
+
+          <%= f.label "website" %>
+          <p>http://
+          <%= f.text_field :website %></p>
+          <div class="clear"></div>
+        </div>
+
       </div>
     </div>
     <div class="divShadow span-24 buttons">

@@ -10,16 +10,25 @@ $(document).ready(function() {
 
   	//Hiding flashes after a bit
 	if($('#flash_notice') != null) {
+    $('#flash_notice').append("<span id=\"close_notice\">X<\/span>")
     $('#flash_notice').hide().slideDown();
 		setTimeout("$('#flash_notice').hide('blind',{},500);",4000);
   }
 	if($('#flash_error') != null)
+    $('#flash_error').append("<span id=\"close_notice\" >X<\/span>")
     $('#flash_error').hide().slideDown();
 		setTimeout("$('#flash_error').hide('blind',{},500);",4000);
 	if($('#flash_alert') != null)
+    $('#flash_alert').append("<span id=\"close_notice\">X<\/span>")
     $('#flash_alert').hide().slideDown();
 		setTimeout("$('#flash_alert').hide('blind',{},500);",4000);
     
+	$('#close_notice').click(function() {
+
+    $('#flash_notice').remove();
+    $('#flash_error').remove();
+    $('#flash_alert').remove();
+  });
 });
 //check whether a collection of checkboxes are checked or not
 function get_checkbox_status(selector){
