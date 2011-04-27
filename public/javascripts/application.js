@@ -34,10 +34,10 @@ $(document).ready(function() {
   }
 	$('#close_notice').click(function() {
 
-    $('#flash_notice').slideUp();
-    $('#flash_error').slideUp();
-    $('#flash_alert').slideUp();
-    $('#close_notice').slideUp();
+    $('#flash_notice').remove();
+    $('#flash_error').remove();
+    $('#flash_alert').remove();
+    $('#close_notice').remove();
   });
 });
 //check whether a collection of checkboxes are checked or not
