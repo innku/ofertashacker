@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  $('#job_extra_skill').tagsInput();
 
   $("#company_jobs").hide();
   $("#company_jobs_button").click(function(){
@@ -42,6 +41,7 @@ $(document).ready(function() {
     $('#close_notice').remove();
   });
 });
+
 //check whether a collection of checkboxes are checked or not
 function get_checkbox_status(selector){
     var str=[];
