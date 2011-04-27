@@ -9,7 +9,7 @@
   font-family: 'Arvo';
   font-style: normal;
   font-weight: bold;
-  src: local('Arvo Bold'), local('Arvo-Bold'), url('http://themes.googleusercontent.com/font?kit=F-uvpIj1hF17IDyvQvI50Q') format('truetype');
+  src: local('Arvo Bold'), local('Arvo-Bold'), url('http://themes.googleusercontent.com/font?kit=F-uvpIj1hF17IDyvQvI50Q') format('truetype');2px
 }
 div#contacto{
   padding-top:20px;
@@ -51,12 +51,11 @@ table#skills td#buttons{text-align:right;}
 div.company_profile{
   width:620px;
   -moz-box-shadow: 1px 2px 9px #000;
-  -webkit-box-shadow: 1px 2px 9px #000;
+  -webkit-box-shadow: 1px 1px 6px #000;
   margin-bottom: 10px;
   padding:10px;
 }
-/* div.company_profile.non{background:#fff;}*/
-/* div.company_profile.par{background:#fbffcc;}*/
+
 div.company_profile:hover{
   background:#fdffe8;
 }
@@ -89,29 +88,24 @@ div.company_info div.ver_mas {
 
 }
 div.company_info div.ver_mas a{font-size:0.9em;}
-/* div.company_profile h2 a{*/
-/*   font-size:1.1em;*/
-/*   line-height:1;*/
-/*   margin-bottom:0.5em;*/
-/*   font-weight:bold;*/
-/*   display:block;*/
-/*   text-decoration:none;*/
-/*   color: #333; */
-/*   font-family:'Arvo', arial, serif !important; */
-/* }*/
+
 .buttons{float:right;}
+
 .nav-buttons{
   position:absolute;
   top:30px;
   right:18px;
 }
+
 #company:hover{
   background-color:#eee;
 }
+
 #company img {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+
 #loader{position:fixed; top:100px;left:50%;margin-left:-30px;z-index:9999;display:none; }
 #loader img{position:relative; top:-25px;}
 #loader p{font-size:18px; color:#000;text-align:center;}

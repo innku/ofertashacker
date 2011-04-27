@@ -1,10 +1,7 @@
 var current_page=1; //current_page for pagination
 var changes;
-var available_for_request = true;
 
 function getJobsJSON(filter_info,remove){
-  if(available_for_request) {
-    available_for_request = false;
     $.getJSON(get_json_path(),{filters: { full_time:filter_info[0],
               part_time:filter_info[1],
               flexible:filter_info[2],
@@ -53,8 +50,6 @@ function getJobsJSON(filter_info,remove){
         }
       } 
     });
-    available_for_request = true;
-  }
 
 }
 function get_json_path(){
@@ -143,7 +138,7 @@ $(window).scroll(function(){
 function isScrollBottom() {
   var documentHeight = $(document).height();
   var scrollPosition = $(window).height() + $(window).scrollTop();
-  return (documentHeight <= (200 + scrollPosition));
+  return (documentHeight == scrollPosition));
 } 
 
 function countChecked(filter_info) {
