@@ -34,7 +34,7 @@ div#contacto p input{width:250px!important;padding-left:20px;}
   margin-top:10px;	
 }
 
-#extra_skill{padding-left:40px;}
+#extra_skill{padding-left:40px;margin-top:15px;}
 table#skills{width:500px;}
 table#skills td{ padding-bottom:10px;}
 table#skills tr:hover{background:#ccc;}
@@ -116,8 +116,12 @@ div.company_info div.ver_mas a{font-size:0.9em;}
 .mainContent ul.posts li{position:relative;}
 .mainContent ul.posts p{position:absolute; bottom:0px;}
 div.content{padding:30px 20px 20px 20px;}
-ul.form_checkboxes{width:600px;padding-left:0px;}
-ul.form_checkboxes li{width:20%;}
+ul.form_checkboxes{
+  width:600px;
+  margin-top:15px;
+  padding-left:0px;
+}
+ul.form_checkboxes li{width:21%;}
 
 div#job_list ul li{padding-bottom:6px;}
 div#job_list h4{padding-left:7px;}
@@ -184,4 +188,10 @@ input.input_floated {
     margin: 8px 0 0 10px;    
 }
 
+div.tagsinput { border:1px solid #CCC; background: #FFF; padding:5px; width:300px; height:100px; overflow-y: auto;}
+div.tagsinput span.tag { border: 1px solid #a5d24a; -moz-border-radius:2px; -webkit-border-radius:2px; display: block; float: left; padding: 5px; text-decoration:none; background: #cde69c; color: #638421; margin-right: 5px; margin-bottom:5px;font-family: helvetica;  font-size:13px;}
+div.tagsinput span.tag a { font-weight: bold; color: #82ad2b; text-decoration:none; font-size: 11px;  } 
+div.tagsinput input { width:80px; margin:0px; font-family: helvetica; font-size: 13px; border:1px solid transparent; padding:5px; background: transparent; color: #000; outline:0px;  margin-right:5px; margin-bottom:5px; }
+div.tagsinput div { display:block; float: left; } 
+.tags_clear { clear: both; width: 100%; height: 0px; }
 

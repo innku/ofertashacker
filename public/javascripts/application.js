@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  $('#job_extra_skill').tagsInput();
+
   $("#company_jobs").hide();
   $("#company_jobs_button").click(function(){
     $("#company_jobs").slideToggle("slow");
