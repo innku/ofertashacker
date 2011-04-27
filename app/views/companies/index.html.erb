@@ -1,20 +1,27 @@
 
 <div class="content">
-  <% custom_title "Compañías"%>
+  <% custom_title "Empresas"%>
   <h1><%= t ('.companies') %></h1>
 
   <% @companies.each do |company| %>
     <div class="company_profile <%= cycle('par','non')%>">
       <div class="logo">
         <% if company.logo? %>
-          <%= image_tag company.logo.url(:medium) %>
+          <%=link_to (image_tag company.logo.url(:medium)), company%>
         <% end %>
       </div>
       <div class="company_info">
-        <h2><%= link_to company.title, company_path(company) %></h2>
-        Ciudad: <%= company.city %><br />
-        <div style="float:right;">
-          <h4>Ver Ofertas</h4>
+        <h2><%= link_to truncate(company.title, :length =>  55), company_path(company) %></h2>
+        <% unless company.city.blank?%><%= "En #{company.city}" %><br /><%end%>
+        <% if company.twitter?%>
+           <%= link_to "@#{truncate(company.twitter, :length => 20)}", prepend_twitter(company.twitter), :target => :blank%><br />
+        <%end%>
+        <% if company.facebook?%>
+           <%= link_to "facebook.com/#{truncate(company.facebook, :length =>10)}", prepend_facebook(company.facebook), :target => :blank%> 
+          <br />
+        <%end%>
+        <div class="ver_mas">
+          <h3><%=link_to "Ver ofertas", my_jobs_company_path(company)%></h4>
         </div>
         </div>
     <div class="clear"></div>

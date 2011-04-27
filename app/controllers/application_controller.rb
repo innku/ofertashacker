@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   rescue_from CanCan::AccessDenied do |exception|
-    flash[:alert] = exception.message
+    flash[:alert] = 'No estas autorizado para ver esta página'
     redirect_to root_url
   end
   

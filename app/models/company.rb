@@ -17,7 +17,7 @@ class Company < ActiveRecord::Base
   
   attr_accessible :email, :password, :password_confirmation, 
                   :remember_me, :title, :city, :logo, :description,
-                  :phone1, :phone2, :contact_email, :linkedin, :facebook, :twitter, :website
+                  :phone1, :phone2, :contact_email, :linkedin, :facebook, :twitter, :website, :role
 
 	metropoli_for :city, :as=>:city_name
   scope :members, where(:role => "member")

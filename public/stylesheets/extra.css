@@ -15,6 +15,9 @@ div#contacto{
   padding-top:20px;
 
 }
+div#contacto p{float:right;padding:right:160px;}
+div#contacto input {width:370px;}
+div#contacto p input{width:250px!important;padding-left:20px;}
 
 .divShadow.span-24.buttons{height:80px;}
 
@@ -47,15 +50,17 @@ table#skills td#buttons{text-align:right;}
 }
 div.company_profile{
   width:620px;
-  margin-bottom: 1px;
-  border: 1px solid #fff;
+  -moz-box-shadow: 1px 2px 9px #000;
+  -webkit-box-shadow: 1px 2px 9px #000;
+  margin-bottom: 10px;
   padding:10px;
 }
-div.company_profile.non{background:#fff;}
-div.company_profile.par{background:#fdfef1;}
+/* div.company_profile.non{background:#fff;}*/
+/* div.company_profile.par{background:#fbffcc;}*/
 div.company_profile:hover{
-  border:1px solid #ccc;
+  background:#fdffe8;
 }
+
 div.company_profile div.logo {
   float: left;
   height:130px;
@@ -66,15 +71,24 @@ div.company_profile div.logo img {
 }
 div.company_profile div.company_info {
   width:400px;
+  position:relative;
   float: right;
   height:130px;
-  padding-left:10px;
+  padding-left:15px;
   border-left: 1px solid #ccc;
 }
+div.company_profile h2 a{ font-size: 1.2em; color:#333;}
 div.company_info a{
   text-decoration: none;
-  font-size:18px;
+  font-size:12px;
 }
+div.company_info div.ver_mas {
+  position:absolute;
+  bottom:10px;
+  right:10px;
+
+}
+div.company_info div.ver_mas a{font-size:0.9em;}
 /* div.company_profile h2 a{*/
 /*   font-size:1.1em;*/
 /*   line-height:1;*/
@@ -98,7 +112,7 @@ div.company_info a{
   margin-top: 15px;
   margin-bottom: 15px;
 }
-#loader{position:fixed; top:50%;left:50%;margin-left:-110px;z-index:9999;display:none; }
+#loader{position:fixed; top:100px;left:50%;margin-left:-30px;z-index:9999;display:none; }
 #loader img{position:relative; top:-25px;}
 #loader p{font-size:18px; color:#000;text-align:center;}
 .mainContent a div img {padding-left:13px;}
@@ -113,31 +127,36 @@ div#job_list h4{padding-left:7px;}
 div#job_list ul{margin-left:-7px;}
 
 /*Flash and Errors*/
+#flash_alert span, #flash_notice span, #flash_error span {
+  opacity:1;
+  z-index:10000;
+}
+
 #flash_notice, #flash_error, #flash_alert {
-  padding: 8px;
+  padding: 4px 0 4px 10px;
   color: #FFF;
-  opacity:0.5;
-  position: absolute;
+  z-index:1;
+  opacity:0.7;
+  position: fixed;
   top: 0px;
   left: 0px;
   width:100%;
-  font-size:1.1em;
+  font-size:1.5em;
 	
-}
-#remove_notice{
-  position: absolute;
-  top: 9px;
-  font-size:1.2em;
-  font-weight:bold;
-  color:white;
-  right: 20px;
 }
 #flash_notice {
   background: green;
 }
+#close_notice {
+  position:fixed;
+  top:-6px;
+  right:100px;
+  font-size:1.7em;
+  font-weight:bold;
+  cursor:pointer;
+}
 #flash_error, #flash_alert {
   background-color: #F00;
-  border: solid 1px #C66;
 }
 #error_explanation{
   color:red;

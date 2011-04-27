@@ -41,15 +41,15 @@ es:
         password_confirmation: "Confirmar contraseña"
         description:      "Descripción de la empresa" 
     index:
-      companies:          "Compañías en busca de Rubypros"
+      companies:          "Empresas en busca de Rubypros"
       city:               "Ciudad"
       description:        "Descripción"
       title:              "Nombre"
     show:
-      company_detail:     "Detalle de la compañía"
+      company_detail:     "Detalle de la empresa"
       city:               "Localizada en:"
       description:        "Detalles:"
-      company_index:      "Listado de compañías"
+      company_index:      "Listado de empresas"
       no_picture:         "Aún no tienes un logo"
     form:
         company_info:     "Datos de la empresa"

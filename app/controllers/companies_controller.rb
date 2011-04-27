@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
 
-  load_and_authorize_resource 
+  load_and_authorize_resource :exept => [:my_jobs]
   layout :get_layout
 
   def index
@@ -30,8 +30,8 @@ class CompaniesController < ApplicationController
   end
   
   def my_jobs
-    authorize! :my_jobs, current_company
-    @jobs = current_company.jobs.ordered.paginate :page => params[:page], :per_page => 8
+    @company = Company.find(params[:id])
+    @jobs = @company.jobs.ordered.paginate :page => params[:page], :per_page => 8
     respond_to do |format|
       format.html
       format.json {render :text => @jobs.to_json(:include => {:company => {:only => [:title], :methods => [:logo_url]}}) }
