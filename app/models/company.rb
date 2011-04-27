@@ -8,7 +8,7 @@ class Company < ActiveRecord::Base
   has_many :jobs, :dependent => :destroy
   
   validates :title, :presence => true
-  validates :email, :presence => true, :uniqueness => true
+  validates :email, :uniqueness => true
   validates_format_of :website, :with => /^(w{3}[.])\w+[.]\w{2,}/, :on => :update, :if => :website?
   
   validates_attachment_content_type :logo, 

@@ -1,9 +1,23 @@
-<%= form_for @required_skill do |f|%>
-    <p>
-      <%=f.label :skill_name, t('.skill_name')+ " *"%><br />
-      <%=f.text_field :skill_name %>
-    </p>
-    <%=f.submit "Actualizar"%>
-  <% end %>
-
-
+<div class="infoCompany span-4">
+  <p>Datos de la habilidad</p>
+</div>
+<div class="generalForm span-12 prepend-1">
+    <%= form_for @required_skill do |f|%>
+      <% if @required_skill.errors.any? %>
+        <div id="error_explanation">
+          <ul>
+            <% @required_skill.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <p>
+        <%=f.label :skill_name, t('.skill_name')+ " *"%><br />
+        <%=f.text_field :skill_name %>
+      </p>
+      <div class="calltoAction">
+          		<p><%= f.submit "Actualizar" %></p>
+      </div>
+    <% end %>
+</div>

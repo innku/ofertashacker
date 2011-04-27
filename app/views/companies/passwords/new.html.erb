@@ -5,9 +5,17 @@
 	</div>
 	<div class="generalForm span-12 prepend-1">
     	<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-		    <%= devise_error_messages! %>
+    	<% if resource.errors.any? %>
+        <div id="error_explanation">
+          <ul>
+            <% resource.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-		    <p><%= f.label :email, :requied=>'required' %>
+		    <p><%= f.label :email %>
 			<span class="desc">el correo con el cual est&aacute;s registrado</span>
 		    <%= f.text_field :email %></p>
 
