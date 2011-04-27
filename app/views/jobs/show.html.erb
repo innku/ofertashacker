@@ -8,7 +8,7 @@
     </div>
     <div id="left"><!--left-->
       <div id="logo">
-        <%= link_to (image_tag @job.company.logo.url(:medium)), company_path(@job.company), :style => 'float:right;', :id=>"company_logo" %>
+        <%= link_to (image_tag @job.company.logo.url(:medium)), company_path(@job.company), :id=>"company_logo" %>
       </div>
       <div class="clear"></div>
       <div id="info"> 

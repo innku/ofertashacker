@@ -50,8 +50,8 @@ table#skills td#buttons{text-align:right;}
 }
 div.company_profile{
   width:620px;
-  -moz-box-shadow: 1px 2px 9px #000;
-  -webkit-box-shadow: 1px 2px 9px #000;
+  -moz-box-shadow: 1px 1px 4px #333;
+  -webkit-box-shadow: 1px 1px 4px #333;
   margin-bottom: 10px;
   padding:10px;
 }
@@ -65,10 +65,7 @@ div.company_profile div.logo {
   float: left;
   height:130px;
 }
-div.company_profile div.logo img {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-}
+
 div.company_profile div.company_info {
   width:400px;
   position:relative;
@@ -177,6 +174,14 @@ a:hover {
 #job_wrapper a {
   text-decoration: none !important;
 
+}
+
+input.input_floated {
+    float: left;    
+}
+
+.skills_button {
+    margin: 8px 0 0 10px;    
 }
 
 

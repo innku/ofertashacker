@@ -11,14 +11,12 @@
   </div>
 
   <div id="logoperfil">
-    <% if @company.logo? %>
-      <p><%= image_tag @company.logo.url(:medium) %></p>
-    <% else %>
-      <p><%= t('.no_picture') %></p>
-    <% end %>
+    
   </div>
   <div class="generalForm">
     <div id="left">
+      <p><%= image_tag @company.logo.url(:medium) %></p>
+      <div class="clear"></div>
       <div id="info">
         <% unless @company.city.blank?%>
           <h2><%= t('.city') %></h2>
@@ -29,31 +27,24 @@
         <%= render :partial => 'contact_info', :locals => {:company => @company}%>
       </div>
       <%= image_tag "shadow.gif" %>
-      <% unless @company.jobs.blank? %>
-        <div id="job_list">
-          <br />
-          <h4>Estamos Buscando: </h3>
-          <ul>
-            <% @company.latests_jobs.each do |job|%>
-              <li><%= link_to truncate(job.title, :length => 35), job%></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
     </div>
     <div id="right">
-      <h2><%= @company.title %></h2>
+      <h1><%= @company.title %></h1>
       <p><%= @company.description ? RedCloth.new(@company.description).to_html.html_safe : "" %></p>
       <div class="clear"></div>
-    </div>
+      <% unless @company.jobs.blank? %>
+        <div id="job_list">
+            <br />
+            <h4>Estamos Buscando: </h3>
+            <ul>
+              <% @company.latests_jobs.each do |job|%>
+                <li><%= link_to truncate(job.title, :length => 50), job%></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+      </div>
     <div class="clear"></div>
   </div>
 </div>
-<!-- COMPLETO: Temporalmente desactivado - Boton que despliega las ofertas de la empresa en el perfil
-<%=link_to "Ver ofertas de #{@company.title}", '#', :style=> "float:right",:class => 'button', :id => "company_jobs_button"%>
-
-<div id="company_jobs">
-  <%=render :partial => 'jobs/jobs', :locals => {:jobs => @company.jobs}%>
-</div>
-Desplegar ofertas de la empresa dentro de su perfil -->
 
