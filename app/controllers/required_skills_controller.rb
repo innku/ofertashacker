@@ -2,7 +2,7 @@ class RequiredSkillsController < ApplicationController
   load_and_authorize_resource 
   
   def index
-    @required_skills = RequiredSkill.paginate :page => params[:page], :per_page => 10
+    @required_skills = RequiredSkill.find(:all).sort_by{|p| p.skill_name.downcase}
     @required_skill = RequiredSkill.new
   end
 

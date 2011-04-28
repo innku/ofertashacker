@@ -76,7 +76,6 @@ Feature: User Actions
     And I uncheck "part_time"
     And I uncheck "remote"
     And I uncheck "flexible"
-    And show me the page
     Then I should see "Trabajo de Tiempo Completo"
     And I should see "Trabajo de Medio Tiempo"
     And I should see "Trabajo de Horario Flexible"

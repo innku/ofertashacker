@@ -133,3 +133,5 @@ es:
         remote:           "Remoto"
         flexible:         "Horario Flexible"
         description:      "Oferta"
+      required_skill:
+        skill_name:       "Nombre"

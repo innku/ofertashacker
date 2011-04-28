@@ -5,8 +5,8 @@ $(document).ready(function() {
     $("#company_jobs").slideToggle("slow");
   });
   $("#new_skill_trigger").click(function() {
-    $('.new_skill').slideToggle("slow");
-    $('#new_skill_trigger').fadeOut();
+    $('#new_skill_trigger').remove();
+    $('.new_skill').fadeIn(1500);
     });
 
   	//Hiding flashes after a bit

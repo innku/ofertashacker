@@ -68,9 +68,6 @@ describe JobsController do
         response.should render_template('index')
       end
     end
-    context 'With a JSON response' do
-      pending 
-    end
   end
   
   describe '#show' do

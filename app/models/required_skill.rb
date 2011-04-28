@@ -4,4 +4,5 @@ class RequiredSkill < ActiveRecord::Base
   validates_uniqueness_of :skill_name
   validates_presence_of :skill_name
   
+	scope   :ordered, order('skill_name')
 end

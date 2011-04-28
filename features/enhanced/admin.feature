@@ -10,7 +10,7 @@ Feature: Admin Actions
     Given there is a company with name "Company 1" in city "Monterrey"
     And there is a company with name "Company 2" in city "Monterrey"
     And I am on the root page
-    When I follow "Compañías" 
+    When I follow "Empresas" 
     And I follow "Company 1"
     And I follow "Eliminar empresa" and click OK
     And I follow "Compañías"

@@ -38,20 +38,31 @@ div#contacto p input{width:250px!important;padding-left:20px;}
     padding-left:40px;
     margin:15px 0 30px 0;
 }
+ul#skills{width:900px;}
 
-table#skills{width:500px;}
-table#skills td{ padding-bottom:10px;}
-table#skills tr:hover{background:#ccc;}
-table#skills td{
-  width:300px;
-  border-bottom: 1px solid #ccc;
+ul#skills li {
+  -moz-box-shadow: 1px 1px 1px #999;
+  -webkit-box-shadow: 1px 1px 1px #999;
+  display:inline;
+  width:250px;
+  float:left;
+  margin:8px 10px 8px 10px;
+  padding:6px;
 }
-table#skills td#buttons{text-align:right;}
+
+a.button.skill {margin-left:24px;}
+
+ul#skills li:hover{background:#fdffd0;}
+
+ul#skills li span{float:right;padding-right:20px;}
+
 .job #company{
   float:right;
   padding:10px;
   padding-right: 50px;
 }
+
+
 div.company_profile{
   width:620px;
   -moz-box-shadow: 1px 1px 4px #333;
@@ -186,11 +197,16 @@ a:hover {
 
 input.input_floated {
     float: left;    
+    width:245px!important;
+    margin-left: 27px;
+    margin-top:-5px;
 }
 
 .skills_button {
-    margin: 8px 0 0 10px;    
+    margin: -5px 0 0 18px;    
+
 }
+.pagination {margin-left:27px;}
 
 div.tagsinput { 
 	border:1px solid #d9d9d9;
@@ -202,9 +218,8 @@ div.tagsinput {
     overflow-y: auto;
 }
 div.tagsinput span.tag { 
-    border: 1px solid #F1F1F1; 
-    -moz-border-radius:2px; 
-    -webkit-border-radius:2px; 
+    -moz-border-radius:5px; 
+    -webkit-border-radius:5px; 
     display: block; 
     float: left; 
     padding: 5px; 
@@ -224,7 +239,7 @@ div.tagsinput span.tag a {
 }
  
 div.tagsinput input { 
-    width:80px; 
+    width:300px; 
     margin:0px; 
     font-size: 13px; 
     border:1px solid transparent; 

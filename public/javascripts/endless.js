@@ -2,55 +2,55 @@ var current_page=1; //current_page for pagination
 var changes;
 var can_send = true;
 function getJobsJSON(filter_info,remove){
-    $.getJSON(get_json_path(),{filters: { full_time:filter_info[0],
-              part_time:filter_info[1],
-              flexible:filter_info[2],
-              remote:filter_info[3],
-    },page:current_page }, 
-    function(data) {
-      changes = false;
-      if(remove){
-        $(".posts").children(".job").each(function(){
-          if(should_be_deleted($(this).attr("id"),data)){
-            changes = true;
-            $(this).slideUp({complete:function(){$(this).remove();}});
-          }
-        });
-      }
-      var i=0;
-      $.each(data,function(){
-        if (is_even(i)) {
-          if(!remove || check_for_existance(this.job.id)){
-            changes = true;
-            $(".posts.even").append(job_template(this.job));
-            if(remove) {
-              $(".posts.even").children('.job').last().hide();
-              $(".posts.even").children('.job').last().slideDown(700).delay(200);
-            }
-          }
-        } else {
-          if(!remove || check_for_existance(this.job.id)){
-            changes = true;
-            $(".posts.odd").append(job_template(this.job)); 
-            if(remove) {
-              $(".posts.odd").children('.job').last().hide();
-              $(".posts.odd").children('.job').last().slideDown(700).delay(200);
-            }
-
-          }
+  $.getJSON(get_json_path(),{filters: { full_time:filter_info[0],
+            part_time:filter_info[1],
+            flexible:filter_info[2],
+            remote:filter_info[3],
+  },page:current_page }, 
+  function(data) {
+    changes = false;
+    if(remove){
+      $(".posts").children(".job").each(function(){
+        if(should_be_deleted($(this).attr("id"),data)){
+          changes = true;
+          $(this).slideUp({complete:function(){$(this).remove();}});
         }
-        i++;
       });
-      if(remove) {
-        calibrate();
-        if(!changes){
-          $(".posts").fadeTo(500,0.2);
-          $(".posts").fadeTo(500,1.0); 
+    }
+    var i=0;
+    $.each(data,function(){
+      if (is_even(i)) {
+        if(!remove || check_for_existance(this.job.id)){
+          changes = true;
+          $(".posts.even").append(job_template(this.job));
+          if(remove) {
+            $(".posts.even").children('.job').last().hide();
+            $(".posts.even").children('.job').last().slideDown(700).delay(200);
+          }
         }
       } else {
-        can_send = true;
+        if(!remove || check_for_existance(this.job.id)){
+          changes = true;
+          $(".posts.odd").append(job_template(this.job)); 
+          if(remove) {
+            $(".posts.odd").children('.job').last().hide();
+            $(".posts.odd").children('.job').last().slideDown(700).delay(200);
+          }
+
+        }
       }
+      i++;
     });
+    calibrate();
+    if(remove) {
+      if(!changes){
+        $(".posts").fadeTo(500,0.2);
+        $(".posts").fadeTo(500,1.0); 
+      }
+    } else {
+      can_send = true;
+    }
+  });
 }
 function get_json_path(){
   if($("#endless_path").val()=="my_jobs") 
@@ -125,15 +125,26 @@ function job_template(job) {
 function is_even(num){
   return num%2==0
 }
+
+//checks for the existance of scrollbar
+// (function($) {
+//   $.fn.hasScrollBar = function() {
+//     alert(document.documentElement.scrollHeight === document.documentElement.clientHeight);
+//     return (document.documentElement.scrollHeight === document.documentElement.clientHeight);
+//     // return (this.get(0).scrollHeight > this.height() && $(window).scrollTop() == 0 );
+//   }
+// })(jQuery);
+
+
 //renders new jobs when scroll reaches the bottom
 $(window).scroll(function(){
   var i=0;
-    if(isScrollBottom() && can_send){
-      can_send = false;
-      current_page++;
-      var filter_info = get_checkbox_status("#mainMenu input");
-      getJobsJSON(filter_info,false) 
-    }
+  if(isScrollBottom() && can_send){
+    can_send = false;
+    current_page++;
+    var filter_info = get_checkbox_status("#mainMenu input");
+    getJobsJSON(filter_info,false) 
+  }
 });
 //checks if scroll has reached the bottom
 function isScrollBottom() {
@@ -152,6 +163,14 @@ function countChecked(filter_info) {
 }
 
 $(document).ready(function() {
+
+  // if ($(window).hasScrollBar() && can_send){
+  //   can_send = false;
+  //   current_page++;
+  //   var filter_info = get_checkbox_status("#mainMenu input");
+  //   getJobsJSON(filter_info,false) 
+  // }
+
   $("body").append("<div id=\"loader\"><img alt=\"Loader\"src=\"/images/ajax-loader.gif\"  /></div>");
   $("#mainMenu input").click(function(){
     $('#loader').fadeIn();
