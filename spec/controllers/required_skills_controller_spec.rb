@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe RequiredSkillsController do
-  
+
   before do
     @rs = Factory(:required_skill)
     @company = Factory(:company, :role => 'admin')
@@ -10,19 +10,13 @@ describe RequiredSkillsController do
 
   describe '#index' do
     before do
-      11.times{ Factory(:required_skill) }
-      @required_skills = RequiredSkill.all(:limit => 10)
-      @last_rs = RequiredSkill.last
+      3.times{ Factory(:required_skill) }
     end
     it 'Get the first 10 required skills' do
       get :index
-      assigns(:required_skills).should eql(@required_skills)
+      assigns(:required_skills).should eql(RequiredSkill.all)
     end
-    it 'Does not get required skills after the first 10' do
-      get :index
-      assigns(:required_skills).should_not include(@last_rs)
-    end
-    
+
     it 'Create a new required skill variable' do
       get :index
       assigns(:required_skill).should_not be_blank
@@ -37,7 +31,7 @@ describe RequiredSkillsController do
   end
 
   describe '#create' do
-    
+
     it 'Create a required skill variable' do
       post :create
       assigns(:required_skill).should_not be_blank
@@ -71,23 +65,23 @@ describe RequiredSkillsController do
 
   describe '#update' do
 
-      it 'Gets the required skill' do
-        put :update, {:id => @rs.id}
-        assigns(:required_skill).should eql(@rs)
-      end
+    it 'Gets the required skill' do
+      put :update, {:id => @rs.id}
+      assigns(:required_skill).should eql(@rs)
+    end
     context 'With valid params' do
       let(:valid_params){{:id => @rs.id, :required_skill =>{:skill_name => 'New Skill Name'}}}
-      
+
       it 'Updates required skill attributes' do
         put :update, valid_params
         assigns(:required_skill).skill_name.should eql('New Skill Name')
       end
-      
+
       it 'Redirects to the required skills path' do
         put :update, valid_params
         response.should redirect_to(required_skills_path)
       end
-      
+
       it 'Renders a flash notice for success' do
         put :update, valid_params
         flash[:notice].should_not be_blank
@@ -106,20 +100,20 @@ describe RequiredSkillsController do
       end
     end
   end
-  
+
   describe '#destroy' do
-  
+
     let(:valid_params){{:id => @rs.id}}
-    
+
     it 'Gets the required skill' do
       delete :destroy, valid_params
       assigns(:required_skill).should eql(@rs)
     end
-    
+
     it 'Destroys the required skill' do
       lambda { delete :destroy, valid_params }.should change(RequiredSkill, :count).by(-1)
     end
-    
+
     context 'Response with an HTML request' do
       it 'Redirects to the required skills path' do
         delete :destroy, valid_params
@@ -130,11 +124,7 @@ describe RequiredSkillsController do
         flash[:notice].should_not be_blank
       end
     end
-    
-    context 'Response with an XML request' do
-      pending
-    end
-    
+
   end
 
   describe '#edit' do
@@ -145,7 +135,7 @@ describe RequiredSkillsController do
         assigns(:required_skill).should eql(@rs)
       end
     end
-    
+
     context 'With invalid params' do
       let(:invalid_params){{:id => -1}}
       it 'Does no get the required skill' do

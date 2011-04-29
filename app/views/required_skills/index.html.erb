@@ -2,30 +2,30 @@
   <% custom_title "Skills"%>
   <div id="skills">
     <h1>Habilidades</h1>
-    <%= will_paginate @required_skills %>
-    <br /> 
-    <table id = "skills">
+    <br />
+    <ul id='skills'>
       <% for skill in @required_skills do%>
-        <tr>
-          <td><%=skill.skill_name%></td>
-          <td id="buttons">
-            <% if can? :manage, RequiredSkill%>
-              <%= link_to "Editar", edit_required_skill_path(skill) %> |
-              <%= link_to "X", skill, :confirm => '¿Estas seguro de que deseas borrarlo?', :method => :delete %>
-            <% end %>
-          </td>
-        </tr>
+        <li>
+        <%=truncate(skill.skill_name, :length => 25)%>
+        <% if can? :manage, RequiredSkill%>
+          <span>
+            <%= link_to "Editar", edit_required_skill_path(skill) %> |
+            <%= link_to "X", skill, :confirm => '¿Estas seguro de que deseas borrarlo?', :method => :delete %>
+          </span>
+        <% end %>
+        </li>
       <% end %>
-    </table>
+    </ul>
   </div>
   <div class="clear"></div>
+  <br />
   <div class="new_skill" style="display:none">
     <%form_for @required_skill do |f|%>
       <%= f.text_field :skill_name, :class => :input_floated %>
-        <div class="calltoAction">
-        		<%= f.submit "Crear", :class => :skills_button %>
-        </div>
+      <div class="calltoAction">
+        <%= f.submit "Crear", :class => :skills_button %>
+      </div>
     <% end %>
   </div>
-  <%= link_to "Crear nueva habilidad", "#", :class => "button", :id => "new_skill_trigger" %>
+  <%= link_to "Crear nueva habilidad", "#", :class => "button skill", :id => "new_skill_trigger" %>
 </div>
