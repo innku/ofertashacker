@@ -135,5 +135,7 @@ es:
         at_least_one_type: "Tipo de empleo" 
         city:             "Ciudad" 
         description:      "Oferta"
+        city:             "Ciudad"
+        at_least_one_type: "Tipo de empleo"
       required_skill:
         skill_name:       "Nombre"
