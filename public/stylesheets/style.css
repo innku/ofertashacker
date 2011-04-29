@@ -611,7 +611,8 @@ div.clear{
 .overlay {
 	display:none;
 	background-image:url(/images/overlay/white.png);
-	width:440px;	
+	width:440px;
+
 	padding:35px;
 	font-size:11px;
 }
