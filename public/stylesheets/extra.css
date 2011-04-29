@@ -43,6 +43,7 @@ ul#skills{width:900px;}
 ul#skills li {
   font-size: 13px; 
   -moz-box-shadow: 1px 1px 1px #666;
+  box-shadow: 1px 1px 1px #666;
   -webkit-box-shadow: 1px 1px 1px #666;
   display:inline;
   width:250px;
@@ -81,6 +82,7 @@ ul#skills li span{float:right;padding-right:20px;}
 div.company_profile{
   width:620px;
   -moz-box-shadow: 1px 1px 4px #333;
+  box-shadow: 1px 1px 4px #333;
   -webkit-box-shadow: 1px 1px 4px #333;
   margin-bottom: 10px;
   padding:10px;

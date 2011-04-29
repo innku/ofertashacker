@@ -132,6 +132,8 @@ es:
         part_time:        "Medio tiempo"
         remote:           "Remoto"
         flexible:         "Horario Flexible"
+        at_least_one_type: "Tipo de empleo" 
+        city:             "Ciudad" 
         description:      "Oferta"
       required_skill:
         skill_name:       "Nombre"
