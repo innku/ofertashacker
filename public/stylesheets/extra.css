@@ -69,7 +69,12 @@ ul#skills li span{float:right;padding-right:20px;}
 }
 #job_description h3 {
   font-size:16px!important;
+  margin-bottom: 0.4em;
   color: #00575c;
+}
+#job_description  ul{
+  list-style: disc;
+  
 }
 
 .job #company{
