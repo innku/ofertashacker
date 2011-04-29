@@ -141,6 +141,21 @@ describe Job do
       end
     end
     
+    describe '.formated_description' do
+      before do
+        @job.update_attributes(:description => "h1. Title \n Description \n h2. Sub Title Even more description")
+      end
+      
+      it 'Converts h1 textile tags to h2' do
+        @job.formated_description.should_not include("h1.")
+      end
+
+      it 'Converts h2 textile tags to h3' do
+        @job.formated_description.should include("h2. Title")
+        @job.formated_description.should include("h3. Sub Title")
+        @job.formated_description.should_not include("h2. Sub Title")
+      end
+    end
   end
   
 end
