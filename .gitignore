@@ -28,7 +28,6 @@ capybara-*.html
 /vendor/bundle
 /log/*
 /tmp/*
-/config/*.yml
 /db/*.sqlite3
 /db/*.sqlite5
 /public/system/*
