@@ -3,4 +3,9 @@
   padding-top:11px!important;
   right:-22px!important;
 }
+.shadow {
+  background-color: #fff;
+  zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=300, Strength=3);
+}
 
