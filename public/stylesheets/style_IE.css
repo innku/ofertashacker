@@ -3,11 +3,5 @@
   padding-top:11px!important;
   right:-22px!important;
 }
-.shadow {
-	/* For IE 8 */
-	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
-	/* For IE 5.5 - 7 */
-	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
-}
 div.span-20.prepend-5.last .calltoAction input { margin-top:20px;}
 
