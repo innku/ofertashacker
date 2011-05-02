@@ -1,0 +1,6 @@
+/* For IE 7*/
+#header a.twitter span {
+  padding-top:11px!important;
+  right:-22px!important;
+}
+
