@@ -3,9 +3,5 @@
   padding-top:11px!important;
   right:-22px!important;
 }
-.shadow {
-  background-color: #fff;
-  zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=300, Strength=3);
-}
+.shadow {float:left; display:block; background:#000; margin:-5px -5px; filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4', MakeShadow='true', ShadowOpacity='0.60');}
 
