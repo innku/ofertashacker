@@ -4,9 +4,9 @@
   right:-22px!important;
 }
 .shadow {
-	text-shadow:#339966 0.1em 0.2em 0.2em;
-	filter: progid:DXImageTransform.Microsoft.Shadow(color="#339966", direction=150, strength=3, positive="true");
-	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color='#339966', direction=150, strength=3, positive='true')";
-	zoom:1;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
 }
 
