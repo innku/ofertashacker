@@ -54,7 +54,7 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
   top:-18px;
   z-index:9999;
 }
-#header .logo div{position:absolute;z-index:1000;}
+#header .logo div{z-index:1000;}
 #header a.twitter span {
   background:url("../images/icon_twitter.png") no-repeat 0 0;
   position:absolute;

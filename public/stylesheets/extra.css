@@ -144,7 +144,8 @@ div.company_info div.ver_mas a{font-size:0.9em;}
 #loader img{position:relative; top:-25px;}
 #loader p{font-size:18px; color:#000;text-align:center;}
 .mainContent a div img {padding-left:13px;}
-.mainContent ul.posts li{position:relative;}
+.mainContent ul{z-index:1;}
+.mainContent ul.posts li{position:relative;z-index:1;}
 .mainContent ul.posts p{position:absolute; bottom:0px;}
 div.content{padding:30px 20px 20px 20px;}
 ul.form_checkboxes{
