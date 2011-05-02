@@ -52,7 +52,7 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 #header .logo {
   position: relative;
   top:-18px;
-  z-index:1;
+  z-index:9;
 }
 
 #header a.twitter span {

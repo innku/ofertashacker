@@ -279,3 +279,6 @@ div.tagsinput div {
     height: 0px; 
 }
 
+ul#prueba li{display:inline;}
+ul#prueba li a{position: relative;}
+
