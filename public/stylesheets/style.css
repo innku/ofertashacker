@@ -63,15 +63,10 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
   bottom:-5px;
   right:-22px;	
 }
-/* For IE 7*/
-* #header a.twitter span {
-  padding-top:11px!important;
-  right:-22px!important;
-}
+
 #header a:hover.twitter span {	
   background-position:0 -49px;
 }
-
 #mainMenu {
   text-transform:lowercase;
   display:block;
