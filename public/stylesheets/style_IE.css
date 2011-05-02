@@ -3,7 +3,7 @@
   padding-top:11px!important;
   right:-22px!important;
 }
-.header a.textShadow {
+.shadow {
 	text-shadow:#339966 0.1em 0.2em 0.2em;
 	filter: progid:DXImageTransform.Microsoft.Shadow(color="#339966", direction=150, strength=3, positive="true");
 	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color='#339966', direction=150, strength=3, positive='true')";
