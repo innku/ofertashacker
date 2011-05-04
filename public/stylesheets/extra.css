@@ -60,7 +60,6 @@ ul#skills li span{float:right;padding-right:20px;}
   font-size:21px!important;
   line-height: 1;
   margin-bottom: 0.5em;
-  color: #CC6;
   font-weight: bold;
   color: #333;
   font-family: 'Arvo', arial, serif !important;
@@ -81,45 +80,72 @@ ul#skills li span{float:right;padding-right:20px;}
   padding-right: 50px;
 }
 
+div.companies_wrapper {
+	margin-top:30px;
+}
 
+div.company_profile img {position:absolute; top:0px; right:50px;}
 div.company_profile{
-  width:620px;
-  -moz-box-shadow: 1px 1px 4px #333;
-  box-shadow: 1px 1px 4px #333;
-  -webkit-box-shadow: 1px 1px 4px #333;
-  margin-bottom: 10px;
-  padding:10px;
+  width:573px;
+  height:110px;
+  font-size:13px;
+  line-height:15px;
+  position:relative;
+  background: url('/images/line.png') bottom no-repeat;
+  padding: 5px 0px 5px 10px;
 }
 
 div.company_profile:hover{
-  background:#fdffe8;
+  background:#fdffe8 url('/images/line.png') bottom no-repeat;
 }
 
 div.company_profile div.logo {
-  float: left;
-  height:130px;
-}
-
-div.company_profile div.company_info {
-  width:400px;
-  position:relative;
   float: right;
   height:130px;
-  padding-left:15px;
-  border-left: 1px solid #ccc;
 }
-div.company_profile h2 a{ font-size: 1.2em; color:#333;}
-div.company_info a{
+
+
+div.company_profile h2 a{ font-size: 1.2em; text-decoration:none; color:#333;line-height:1.2em;}
+div.company_profile a{
   text-decoration: none;
-  font-size:12px;
+  font-size:13px;
+  line-height:15px;
 }
-div.company_info div.ver_mas {
-  position:absolute;
-  bottom:10px;
-  right:10px;
+
+div.companies_sidebar {
+	width: 290px;
+	height: 385px;
+	float: right;
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: center;
+  
+}
+div.companies_sidebar p {
+	color: #333;
+	font-size:20px;
+  font-family: 'Arvo', arial, serif !important;
+	text-decoration:none;
+	padding: 30px 10px 0px 10px;
+	display: block;
+}
+div.companies_sidebar p span {
+	color: #2C89A0;
+	padding-top: 0px;
+}
+div.sidebar_top {
+	width: 100%;
+	height: 240px;
+	border-top: 2px dashed #2C89A0;
+	border-bottom: 2px dashed #2C89A0;
 
 }
-div.company_info div.ver_mas a{font-size:0.9em;}
+div.sidebar_bottom {
+	width: 100%;
+	height: 145px;
+	border-bottom: 2px dashed #2C89A0;
+	
+}
 
 .buttons{float:right;}
 

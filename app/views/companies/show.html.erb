@@ -37,7 +37,7 @@
       <% unless @company.jobs.blank? %>
         <div id="job_list">
             <br />
-            <h4>Estamos Buscando: </h3>
+            <h3>Estamos Buscando: </h3>
             <ul>
               <% @company.latests_jobs.each do |job|%>
                 <li><%= link_to truncate(job.title, :length => 50), job%></li>
