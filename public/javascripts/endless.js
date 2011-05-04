@@ -52,6 +52,7 @@ function getJobsJSON(filter_info,remove){
     }
   });
 }
+
 function get_json_path(){
   if($("#endless_path").val()=="my_jobs") 
     return ("/companies/"+ $("#endless_path").attr("company") +"/my_jobs.json");
@@ -75,6 +76,7 @@ function calibrate(){
     }
   }while((evens-1)!=odds && (odds-1)!=evens && evens!=odds);
 }
+
 function check_for_existance(id) {
   rtn = true;
   $(".posts").children(".job").each(function(){    
@@ -109,7 +111,7 @@ function condensed_info(job){
 
 //renders a job template 
 function job_template(job) {
-  var str="<li class=\"job\"" + " id=\"" + job.id +"\" >";
+  var str="<li class=\"job shadow\"" + " id=\"" + job.id +"\" >";
   str += "<a href=\"/jobs/"+job.id+"\">";
   str += "<div class=\"span-4 prepend-8 last\">";
   str += "<img alt=\""+job.company.title+"\" src="+job.company.logo_url+" /></div>";

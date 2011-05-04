@@ -9,7 +9,7 @@ class Company < ActiveRecord::Base
   
   validates :title, :presence => true
   validates :email, :uniqueness => true
-  validates_format_of :website, :with => /^(w{3}[.])\w+[.]\w{2,}/, :on => :update, :if => :website?
+  # validates_format_of :website, :with => /^(w{3}[.])\w+[.]\w{2,}/, :on => :update, :if => :website?
   
   validates_attachment_content_type :logo, 
                                     :content_type => ['image/jpg','image/jpeg', 
@@ -106,17 +106,10 @@ class Company < ActiveRecord::Base
   def formated_website
     start = 0
     if (self.website.match(/(^http:\/\/(www\.)?)website.com/))
-      start = self.website[7..-1].index('/') + self.website.index('/') + 3
+      return self.website
     elsif (self.website.match(/^(www\.)?website.com/) )
-      start = self.website.index('/') + 1
-    elsif (self.website.index('/')==0)
-      start = 1
-    elsif (!self.website.index('@').nil?)
-      start = 1
+      start = "http://#{self.website}"
     end
-    return "http://www.website.com/#{self.website[start..-1]}"
   end
-
-
 end
 

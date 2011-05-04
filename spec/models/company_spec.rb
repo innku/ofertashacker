@@ -320,7 +320,7 @@ describe Company do
       context 'With a website url without http://www.' do
         it 'returns the correct full url' do
           @company.website = "website.com"
-          @company.formated_website.should eql("http://www.website.com")
+          @company.formated_website.should eql("http://website.com")
         end
       end
     end

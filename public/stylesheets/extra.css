@@ -2,15 +2,15 @@
   font-family: 'Arvo';
   font-style: normal;
   font-weight: normal;
-  src: local('Arvo'), url('/stylesheets/Arvo-regular.woff') format('woff');
+  src: local('Arvo'), url('http://themes.googleusercontent.com/font?kit=MViwy4K6e56oHcyeMzjbCQ') format('truetype');
 }
+
 @font-face {
   font-family: 'Arvo';
   font-style: normal;
   font-weight: bold;
-  src: local('Arvo Bold'), local('Arvo-Bold'), url('/stylesheets/Arvo-bold.woff') format('woff');
+  src: local('Arvo Bold'), local('Arvo-Bold'), url('http://themes.googleusercontent.com/font?kit=F-uvpIj1hF17IDyvQvI50Q') format('truetype');2px
 }
-
 div#contacto{
   padding-top:20px;
 
