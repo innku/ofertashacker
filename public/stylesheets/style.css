@@ -52,10 +52,8 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 #header .logo {
   position: relative;
   top:-18px;
-  z-index:9999;
+  z-index:2;
 }
-#header .logo div{position:relative;z-index:1000;}
-#header .logo div img{position:relative;z-index:1000;}
 #header a.twitter span {
   background:url("../images/icon_twitter.png") no-repeat 0 0;
   position:absolute;
@@ -208,7 +206,6 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 .mainContent .generalForm {
   margin:26px 0px 20px 0;	
 }
-
 .mainContent input[type=text],.mainContent input[type=password]{
   width:349px;	
   height:35px;

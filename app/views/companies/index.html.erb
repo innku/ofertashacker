@@ -4,7 +4,7 @@
   <h1><%= t ('.companies') %></h1>
 
   <% @companies.each do |company| %>
-    <div class="company_profile <%= cycle('par','non')%>">
+    <div class="company_profile shadow <%= cycle('par','non')%>">
       <div class="logo">
           <%=link_to (image_tag company.logo.url(:medium)), company%>
       </div>

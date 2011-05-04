@@ -4,13 +4,14 @@
 <%= stylesheet_link_tag 'blueprint/screen', :media=>"screen, projection" %>
 <%= stylesheet_link_tag 'blueprint/print', :media=>"print" %>
 <%= stylesheet_link_tag 'style', :media=>"screen" %>
-<!--[if lt IE 8]>
-  <%= stylesheet_link_tag 'style_IE', :media=>"screen" %>
+<%= stylesheet_link_tag 'extra' %>
+<!--[if lte IE 7]>
+  <%= stylesheet_link_tag 'style_IElte7', :media=>"screen" %>
+<![endif]-->
+<!--[if IE 8]>
+  <%= stylesheet_link_tag 'style_IE8', :media=>"screen" %>
 <![endif]-->
 
-<%= stylesheet_link_tag 'extra' %>
-<link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Arvo:bold' rel='stylesheet' type='text/css'>
 <%= stylesheet_link_tag "jquery-ui" %>
 
 <%= javascript_include_tag :defaults,'jquery.infinitescroller' %>

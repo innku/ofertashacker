@@ -77,5 +77,46 @@ class Company < ActiveRecord::Base
     jobs.all(:limit => 4, :order=> "id desc")
   end
 
+  def formated_facebook
+    start = 0
+    if (self.facebook.match(/(^http:\/\/(www\.)?)facebook.com/))
+      start = self.facebook[7..-1].index('/') + self.facebook.index('/') + 3
+    elsif (self.facebook.match(/^(www\.)?facebook.com/) )
+      start = self.facebook.index('/') + 1
+    elsif (self.facebook.index('/')==0)
+      start = 1
+    end
+    return "http://www.facebook.com/#{self.facebook[start..-1]}"
+  end
+
+  def formated_twitter
+    start = 0
+    if (self.twitter.match(/(^http:\/\/(www\.)?)twitter.com/))
+      start = self.twitter[7..-1].index('/') + self.twitter.index('/') + 3
+    elsif (self.twitter.match(/^(www\.)?twitter.com/) )
+      start = self.twitter.index('/') + 1
+    elsif (self.twitter.index('/')==0)
+      start = 1
+    elsif (!self.twitter.index('@').nil?)
+      start = 1
+    end
+    return "http://www.twitter.com/#{self.twitter[start..-1]}"
+  end
+
+  def formated_website
+    start = 0
+    if (self.website.match(/(^http:\/\/(www\.)?)website.com/))
+      start = self.website[7..-1].index('/') + self.website.index('/') + 3
+    elsif (self.website.match(/^(www\.)?website.com/) )
+      start = self.website.index('/') + 1
+    elsif (self.website.index('/')==0)
+      start = 1
+    elsif (!self.website.index('@').nil?)
+      start = 1
+    end
+    return "http://www.website.com/#{self.website[start..-1]}"
+  end
+
+
 end
 

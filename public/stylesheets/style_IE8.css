@@ -1,0 +1,37 @@
+/* For IE **/
+.shadow.company_profile {
+  background: #FFF;
+    filter:
+        progid:DXImageTransform.Microsoft.Shadow(color=#999999,direction=300,strength=1)
+        progid:DXImageTransform.Microsoft.Shadow(color=#666666,direction=120,strength=3);
+}
+.shadow.job {
+  background: #FFF;
+  margin-bottom:4px!important;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=7, Direction=120, Color='#000000')"!important;
+}
+#skills li{
+  background: #FFF;
+  padding: 5px;
+    filter:
+        progid:DXImageTransform.Microsoft.Shadow(color=#666666,direction=120,strength=3);
+
+}
+
+
+div#contacto p span {position:relative;right:10px;bottom:40px;}
+
+#flash_notice, #flash_error, #flash_alert {
+      filter: alpha(opacity=50);
+}
+
+.mainContent.span-24, .mainContent.span-23 {
+  background:#fff;
+  margin-top: -5px;
+      filter:
+        progid:DXImageTransform.Microsoft.Shadow(color=#111111,direction=300,strength=2)      
+        progid:DXImageTransform.Microsoft.Shadow(color=#111111,direction=120,strength=6);
+
+}
+
+

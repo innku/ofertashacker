@@ -2,22 +2,21 @@
   font-family: 'Arvo';
   font-style: normal;
   font-weight: normal;
-  src: local('Arvo'), url('http://themes.googleusercontent.com/font?kit=MViwy4K6e56oHcyeMzjbCQ') format('truetype');
+  src: local('Arvo'), url('/stylesheets/Arvo-regular.woff') format('woff');
 }
-
 @font-face {
   font-family: 'Arvo';
   font-style: normal;
   font-weight: bold;
-  src: local('Arvo Bold'), local('Arvo-Bold'), url('http://themes.googleusercontent.com/font?kit=F-uvpIj1hF17IDyvQvI50Q') format('truetype');2px
+  src: local('Arvo Bold'), local('Arvo-Bold'), url('/stylesheets/Arvo-bold.woff') format('woff');
 }
+
 div#contacto{
   padding-top:20px;
 
 }
-div#contacto p{float:right;padding:right:160px;}
-div#contacto input {width:370px;}
-div#contacto p input{width:250px!important;padding-left:20px;}
+span#label_img label{display:inline;}
+span#label_img img{float:right;position:relative;top: 46px;left:10px;}
 .divShadow.span-24.buttons{height:80px;}
 
 .mainContent.span-23 {
@@ -167,7 +166,7 @@ div#job_list ul{margin-left:-7px;}
 #flash_notice, #flash_error, #flash_alert {
   padding: 4px 0 4px 10px;
   color: #FFF;
-  z-index:1;
+  z-index:10;
   opacity:0.7;
   position: fixed;
   top: 0px;

@@ -231,5 +231,98 @@ describe Company do
       end
       
     end
+
+    describe '.formated_facebook' do
+      context 'With a full facebook url' do
+        it 'Returns the correct full url' do
+          @company.facebook = "http://www.facebook.com/the_page"
+          @company.formated_facebook.should eql("http://www.facebook.com/the_page")
+        end
+      end
+      context 'With a facebook url without http://' do
+        it 'returns the correct full url' do
+          @company.facebook = "www.facebook.com/the_page"
+          @company.formated_facebook.should eql("http://www.facebook.com/the_page")
+        end
+      end
+      context 'With a facebook url without http://www.' do
+        it 'returns the correct full url' do
+          @company.facebook = "facebook.com/the_page"
+          @company.formated_facebook.should eql("http://www.facebook.com/the_page")
+        end
+      end
+      context 'With a facebook url with only the relative path ' do
+        it 'returns the correct full url' do
+          @company.facebook = "the_page"
+          @company.formated_facebook.should eql("http://www.facebook.com/the_page")
+        end
+      end
+      context 'With a facebook url with a relative path with slash' do
+        it 'returns the correct full url' do
+          @company.facebook = "/the_page"
+          @company.formated_facebook.should eql("http://www.facebook.com/the_page")
+        end
+      end
+    end
+    
+    describe '.formated_twitter' do
+      context 'With a full twitter url' do
+        it 'Returns the correct full url' do
+          @company.twitter = "http://www.twitter.com/the_page"
+          @company.formated_twitter.should eql("http://www.twitter.com/the_page")
+        end
+      end
+      context 'With a twitter url without http://' do
+        it 'returns the correct full url' do
+          @company.twitter = "www.twitter.com/the_page"
+          @company.formated_twitter.should eql("http://www.twitter.com/the_page")
+        end
+      end
+      context 'With a twitter url without http://www.' do
+        it 'returns the correct full url' do
+          @company.twitter = "twitter.com/the_page"
+          @company.formated_twitter.should eql("http://www.twitter.com/the_page")
+        end
+      end
+      context 'With a twitter url with only the relative path ' do
+        it 'returns the correct full url' do
+          @company.twitter = "the_page"
+          @company.formated_twitter.should eql("http://www.twitter.com/the_page")
+        end
+      end
+      context 'With a twitter url with a relative path with slash' do
+        it 'returns the correct full url' do
+          @company.twitter = "/the_page"
+          @company.formated_twitter.should eql("http://www.twitter.com/the_page")
+        end
+      end
+      context 'With a twitter url with a relative path with @' do
+        it 'returns the correct full url' do
+          @company.twitter = "@the_page"
+          @company.formated_twitter.should eql("http://www.twitter.com/the_page")
+        end
+      end
+    end
+
+    describe '.formated_website' do
+      context 'With a full website url' do
+        it 'Returns the correct full url' do
+          @company.website = "http://www.website.com"
+          @company.formated_website.should eql("http://www.website.com")
+        end
+      end
+      context 'With a website url without http://' do
+        it 'returns the correct full url' do
+          @company.website = "www.website.com"
+          @company.formated_website.should eql("http://www.website.com")
+        end
+      end
+      context 'With a website url without http://www.' do
+        it 'returns the correct full url' do
+          @company.website = "website.com"
+          @company.formated_website.should eql("http://www.website.com")
+        end
+      end
+    end
   end
 end

@@ -17,11 +17,9 @@
           <li><%= link_to "<span>Empresas</span>".html_safe, companies_path %></li>
 		  </ul>
 		  
-		  <div class="logo clear span-6">
-			  <div>
-        <%= link_to (image_tag "logo.png", :alt=>"Rubypros", :width=>"245", :height=>"150"), root_path %>
-			  </div>
-		  </div>
+        <div class="logo clear span-6">
+          <%= link_to (image_tag "logo.png", :alt=>"Rubypros", :width=>"245", :height=>"150"), root_path %>
+        </div>
 			<% unless needs_filter? request.path %>
 			  <%= render 'layouts/filter' %>
 			<% end%>			
