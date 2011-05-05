@@ -114,19 +114,20 @@ div.company_profile a{
 
 div.companies_sidebar {
 	width: 290px;
-	height: 385px;
+	height: 350px;
 	float: right;
 	margin-left: 10px;
 	margin-right: 10px;
 	text-align: center;
+	padding: 5px 2px 0px 2px;
   
 }
 div.companies_sidebar p {
 	color: #333;
 	font-size:20px;
-  font-family: 'Arvo', arial, serif !important;
+    font-family: 'Arvo', arial, serif !important;
 	text-decoration:none;
-	padding: 30px 10px 0px 10px;
+	padding: 0px 2px 0px 2px;
 	display: block;
 }
 div.companies_sidebar p span {
@@ -135,16 +136,21 @@ div.companies_sidebar p span {
 }
 div.sidebar_top {
 	width: 100%;
-	height: 240px;
+	height: 220px;
 	border-top: 2px dashed #2C89A0;
 	border-bottom: 2px dashed #2C89A0;
-
+	padding: 15px 0 0 0;
 }
 div.sidebar_bottom {
 	width: 100%;
-	height: 145px;
+	height: 130px;
 	border-bottom: 2px dashed #2C89A0;
-	
+	padding: 10px 0 0 0;
+}
+div.sidebar_bottom ul li {
+    display: inline;
+    padding: 2px 10px 2px 10px;
+    
 }
 
 .buttons{float:right;}

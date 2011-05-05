@@ -5,10 +5,16 @@
 		<div class="companies_sidebar">
 			<div class="sidebar_top">
 				<p>¿Tu empresa trabaja con Ruby y no est&aacute; en la lista?</p>
-				<p><span>Reg&iacute;strate ta!</span></p>
+				<p><span>¡Reg&iacute;strate ya!</span></p>
+				<%= link_to "Regístrarte ahora", new_company_registration_path(), :class => "button"  %>
 			</div>
 			<div class="sidebar_bottom">
 				<p>Mant&eacute;nte informado</p>
+				<ul>
+				  <li><%= link_to (image_tag "facebook.png", :alt => "FB Rubypros"), "http://www.facebook.com/rubypros" %></li>
+				  <li><%= mail_to ("rubypro@rubypros.mx", image_tag("mail.png"))  %></li>
+				  <li><%= link_to (image_tag "twitter.png", :alt => "Twitter"), "http://www.twitter.com/rubypros" %></li>
+				</ul>
 			</div>
 			
 		</div>
