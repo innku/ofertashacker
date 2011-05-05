@@ -7,9 +7,8 @@
 div.span-20.prepend-5.last .calltoAction input { margin-top:20px;}
 .shadow.company_profile {
   background: #FFF;
-    filter:
-        progid:DXImageTransform.Microsoft.Shadow(color=#999999,direction=300,strength=1)
-        progid:DXImageTransform.Microsoft.Shadow(color=#666666,direction=120,strength=3);
+  background: url('/images/line.png') no-repeat;
+  background-position:bottom;
 }
 .shadow.job {
   background: #FFF;

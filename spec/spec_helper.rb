@@ -25,4 +25,33 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 end
-  
+
+def check_contact_info(company,test_values, type)
+  if type == 'website'
+    test_values.each do |value|
+      company.website = value
+      unless company.valid?
+        return false
+      end
+    end
+    return true
+  elsif type == 'twitter'
+    test_values.each do |value|
+      company.twitter = value
+      unless company.valid?
+        return false
+      end
+    end
+    return true
+  elsif type == 'facebook'
+    test_values.each do |value|
+      company.facebook = value
+      unless company.valid?
+        return false
+      end
+    end
+    return true
+  else
+    false
+  end
+end

@@ -1,10 +1,25 @@
-/* For IE **/
+/* For IE 8*/
 .shadow.company_profile {
   background: #FFF;
-    filter:
-        progid:DXImageTransform.Microsoft.Shadow(color=#999999,direction=300,strength=1)
-        progid:DXImageTransform.Microsoft.Shadow(color=#666666,direction=120,strength=3);
+  background: url('/images/line.png') no-repeat;
+  background-position:bottom;
+  
 }
+
+@font-face {
+  font-family: Arvo;
+  font-style: normal;
+  font-weight: normal;
+  src: local(Arvo), url(http://themes.googleusercontent.com/font?kit=MViwy4K6e56oHcyeMzjbCQ) format(truetype);
+}
+
+@font-face {
+  font-family: Arvo;
+  font-style: normal;
+  font-weight: bold;
+  src: local(Arvo Bold), local(Arvo-Bold), url(http://themes.googleusercontent.com/font?kit=F-uvpIj1hF17IDyvQvI50Q) format(truetype);
+}
+
 .shadow.job {
   background: #FFF;
   margin-bottom:4px!important;

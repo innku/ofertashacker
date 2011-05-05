@@ -23,18 +23,18 @@
 	  <% @companies.each do |company| %>
 	    <div class="company_profile shadow">
 	        <span>
-	        	<h2><%= link_to truncate(company.title, :length =>  55), company_path(company) %></h2>
+	        	<h2><%= link_to truncate(company.title, :length =>  25), company_path(company) %></h2>
 		        <% unless company.city.blank?%><%= "En #{company.city}" %><br /><%end%>
 		        <% if company.twitter?%>
-		          <%= link_to "@#{truncate(company.twitter, :length => 20)}", (company.formated_twitter), :target => :blank%><br />
+		          <%= link_to "#{truncate(company.twitter_text, :length => 50)}", (company.formated_twitter), :target => :blank%><br />
 		        <%end%>
 		        <% if company.facebook?%>
-		          <%= link_to "facebook.com/#{truncate(company.facebook, :length =>10)}", (company.formated_facebook), :target => :blank%> 
+              <%= link_to "#{truncate(company.facebook_text, :length => 50)}", (company.formated_facebook), :target => :blank%> 
 		          <br />
 		        <%end%>
 	        </span>
 	        <%if company.logo?%>
-	        <%=link_to (image_tag company.logo.url(:medium)), company%>
+	        <%=link_to (image_tag company.logo.url(:list)), company%>
 	        <%end%>
 
 	      <div class="clear"></div>
