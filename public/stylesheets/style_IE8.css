@@ -6,18 +6,36 @@
   
 }
 
+#loader{position:absolute; top:100px;left:50%;margin-left:-30px;z-index:9;display:block;display:none; }
+#loader img{position:absolute; top:-25px;display:block;}
+#loader p{font-size:18px; color:#000;text-align:center;}
 @font-face {
-  font-family: Arvo;
-  font-style: normal;
-  font-weight: normal;
-  src: local(Arvo), url(http://themes.googleusercontent.com/font?kit=MViwy4K6e56oHcyeMzjbCQ) format(truetype);
+    font-family: 'Arvo';
+    src: url('Arvo-Regular-webfont.eot');
+    src: url('Arvo-Regular-webfont.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-@font-face {
-  font-family: Arvo;
-  font-style: normal;
-  font-weight: bold;
-  src: local(Arvo Bold), local(Arvo-Bold), url(http://themes.googleusercontent.com/font?kit=F-uvpIj1hF17IDyvQvI50Q) format(truetype);
+
+.mainContent input[type=text],.mainContent input[type=password]{
+  height:27px;
+  padding-top:8px;
+}
+.mainContent input[type=checkbox] {
+  position:relative;
+  top:4px;
+}
+#mainMenu input[type=checkbox] {
+  position:relative;
+  top:0px;
+}
+
+
+.descriptionForm textarea{
+  width:630px;
+  height:242px;
+  padding-top:8px;
 }
 
 .shadow.job {
@@ -32,8 +50,6 @@
         progid:DXImageTransform.Microsoft.Shadow(color=#666666,direction=120,strength=3);
 
 }
-
-
 div#contacto p span {position:relative;right:10px;bottom:40px;}
 
 #flash_notice, #flash_error, #flash_alert {

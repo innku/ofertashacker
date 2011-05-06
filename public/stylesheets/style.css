@@ -6,7 +6,7 @@ body {
   background:url("../images/bkg_line_pattern.png") repeat-x 0px 34px;
 }
 
-h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
+h1,h2,h3,h4,h5,h6 { color: #333; font-family:Arvo, arial, serif !important; }
 
 .mainContent ul li label{
   font-size:12px;
@@ -15,7 +15,7 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 }
 
 #header {
-  font-family: 'Arvo', arial, serif;
+  font-family: Arvo, arial, serif;
   height:144px;
   position:relative;
 }
@@ -179,7 +179,7 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
   font-weight:bold;
   display:block;
   color: #333; 
-  font-family:'Arvo', arial, serif !important; 
+  font-family:Arvo, arial, serif !important; 
 }
 .mainContent label.small_label{
   font-size:16px;

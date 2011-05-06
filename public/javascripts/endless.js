@@ -42,6 +42,7 @@ function getJobsJSON(filter_info,remove){
       i++;
     });
     calibrate();
+
     if(remove) {
       if(!changes){
         $(".posts").fadeTo(500,0.2);
@@ -173,7 +174,7 @@ $(document).ready(function() {
   //   getJobsJSON(filter_info,false) 
   // }
 
-  $("body").append("<div id=\"loader\"><img alt=\"Loader\"src=\"/images/ajax-loader.gif\"  /></div>");
+  $("#header").append("<div id=\"loader\"><img alt=\"Loader\"src=\"/images/ajax-loader.gif\"  /></div>");
   $("#mainMenu input").click(function(){
     $('#loader').fadeIn();
     current_page=1;
@@ -184,10 +185,9 @@ $(document).ready(function() {
       });
     }
     getJobsJSON(filter_info,true);
+    
     $("#loader").fadeOut();
+
   });
 
 });
-
-
-

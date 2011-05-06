@@ -4,6 +4,26 @@
   padding-top:10px!important;
   right:-22px!important;
 }
+.mainContent input[type=text],.mainContent input[type=password]{
+  height:27px;
+  padding-top:8px;
+}
+
+.descriptionForm textarea{
+  width:630px;
+  height:242px;
+  padding-top:8px;
+}
+
+
+.mainContent input[type=checkbox] {
+  position:relative;
+  top:0px;
+}
+#mainMenu input[type=checkbox] {
+  position:relative;
+  top:3px;
+}
 div.span-20.prepend-5.last .calltoAction input { margin-top:20px;}
 .shadow.company_profile {
   background: #FFF;

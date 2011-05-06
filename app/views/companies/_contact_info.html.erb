@@ -2,9 +2,6 @@
   <% if company.website? %>
     <li><%= link_to "#{truncate(company.website, :length => 20)}", (company.formated_website), :target => :blank%></li>
   <% end %>
-  <% if company.website? %>
-    <li> <%= truncate(company.phone1, :length=> 20)%> </li>
-  <% end %>
   <% if company.contact_email? %>
     <li> <%= mail_to truncate(company.contact_email, :length => 20)%> </li>
   <% end %>
