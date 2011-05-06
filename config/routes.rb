@@ -18,6 +18,5 @@ Rubypros::Application.routes.draw do
   match 'jobs/see/:id' => 'jobs#show'
   
   match 'about'=>'welcome#about', :as=>:about
-  match 'contact'=>'welcome#contact', :as=>:contact
  
 end
