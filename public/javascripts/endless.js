@@ -175,7 +175,9 @@ $(document).ready(function() {
   // }
 
   $("#header").append("<div id=\"loader\"><img alt=\"Loader\"src=\"/images/ajax-loader.gif\"  /></div>");
+	$("#loader").hide();
   $("#mainMenu input").click(function(){
+		
     $('#loader').fadeIn();
     current_page=1;
     var filter_info = get_checkbox_status("#mainMenu input");
@@ -185,9 +187,9 @@ $(document).ready(function() {
       });
     }
     getJobsJSON(filter_info,true);
-    
-    $("#loader").fadeOut();
 
+		$("#loader").fadeOut();
+		
   });
 
 });

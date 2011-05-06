@@ -1,15 +1,17 @@
 @font-face {
-  font-family: 'Arvo';
+  font-family: Arvo;
   font-style: normal;
   font-weight: normal;
-  src: local('Arvo'), url('http://themes.googleusercontent.com/font?kit=MViwy4K6e56oHcyeMzjbCQ') format('truetype');
+  src: local(Arvo), url(http://themes.googleusercontent.com/font?kit=MViwy4K6e56oHcyeMzjbCQ) format(truetype);
 }
+
 @font-face {
-  font-family: 'Arvo';
+  font-family: Arvo;
   font-style: normal;
   font-weight: bold;
-  src: local('Arvo Bold'), local('Arvo-Bold'), url('http://themes.googleusercontent.com/font?kit=F-uvpIj1hF17IDyvQvI50Q') format('truetype');
+  src: local(Arvo Bold), local(Arvo-Bold), url(http://themes.googleusercontent.com/font?kit=F-uvpIj1hF17IDyvQvI50Q) format(truetype);
 }
+
 
 div#contacto{
   padding-top:20px;
@@ -188,9 +190,8 @@ div.sidebar_bottom ul li {
   margin-bottom: 15px;
 }
 
-#loader{position:absolute; top:100px;left:50%;margin-left:-30px;z-index:9;display:block;display:none; }
-#loader img{position:relative; top:-25px;}
-#loader p{font-size:18px; color:#000;text-align:center;}
+#loader{position:absolute; top:80px;left:50%;margin-left:-30px;z-index:9; display:inline-block;}
+
 .mainContent a div img {padding-left:13px;}
 .mainContent ul{z-index:1;}
 .mainContent ul.posts li{position:relative;z-index:1;}
