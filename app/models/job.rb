@@ -37,5 +37,9 @@ class Job < ActiveRecord::Base
   def formated_description
     self.description.gsub(/^h2./,'h3.').gsub(/^h1./,'h2.')
   end
+  
+  def latest_required_skills
+    required_skills.all(:limit => 4, :order => "id desc" )
+  end
 
 end

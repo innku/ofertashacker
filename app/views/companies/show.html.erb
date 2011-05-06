@@ -35,15 +35,28 @@
       <p><%= @company.description ? RedCloth.new(@company.description).to_html.html_safe : "" %></p>
       <div class="clear"></div>
       <% unless @company.jobs.blank? %>
-        <div id="job_list">
+
             <br />
-            <h3>Estamos Buscando: </h3>
-            <ul>
-              <% @company.latests_jobs.each do |job|%>
-                <li><%= link_to truncate(job.title, :length => 50), job%></li>
-              <% end %>
-            </ul>
-          </div>
+            <h3>Estamos Buscando:</h3>
+            <% @company.latests_jobs.each do |job| %>
+              <div class="ofertacontenedor"><!--ofertacontenedor-->
+		            <div class="oferta">
+			            <%= link_to job.title, job_path(job) %>
+			            <h2>En <%=job.city%>
+                    <%= job.full_time ? ", de Tiempo Completo ".html_safe : nil%>
+                    <%= job.part_time ? ", de Medio Tiempo ".html_safe : nil%>
+                    <%= job.remote ? ", Remoto ".html_safe : nil%>
+                    <%= job.flexible ? ", Horario Flexible".html_safe : nil%>
+                  </h2>
+			            <ul>
+			              <% job.latest_required_skills.each do |rs| %>
+			                <li>- <%= rs.skill_name %></li>
+			              <% end %>
+			            </ul>  
+		            </div>
+		          <%= image_tag "sombra.png" %>
+		          </div><!--/ofertacontenedor-->
+            <% end %> 
       <% end %>
       </div>
     <div class="clear"></div>
