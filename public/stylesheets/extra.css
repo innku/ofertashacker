@@ -213,25 +213,27 @@ ul.form_checkboxes li{width:21%;}
 }
 
 #flash_notice, #flash_error, #flash_alert {
-  padding: 4px 0 4px 10px;
+  padding: 8px 0 8px 10px;
   color: #FFF;
   z-index:10;
   opacity:0.7;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width:100%;
-  font-size:1.5em;
+  position: absolute;
+  top: 35px;
+  font-family: Helvetica;
+  right: 0;
+  width:700px;
+  font-size:1.2em;
 	
 }
 #flash_notice {
-  background: green;
+  background: #0a0;
 }
 #close_notice {
-  position:fixed;
-  top:-6px;
-  right:100px;
-  font-size:1.7em;
+  display:none;
+  position:absolute;
+  top:5px;
+  right:20px;
+  font-size:1.4em;
   font-weight:bold;
   cursor:pointer;
 }

@@ -42,15 +42,16 @@ function getJobsJSON(filter_info,remove){
       i++;
     });
     calibrate();
-
     if(remove) {
       if(!changes){
+        // $(".posts").animate({opacity:'hide'}).animate({opacity:'100'});
         $(".posts").fadeTo(500,0.2);
         $(".posts").fadeTo(500,1.0); 
       }
     } else {
       can_send = true;
     }
+      $("#loader img").animate({opacity:'hide'});
   });
 }
 
@@ -174,11 +175,11 @@ $(document).ready(function() {
   //   getJobsJSON(filter_info,false) 
   // }
 
-  $("#header").append("<div id=\"loader\"><img alt=\"Loader\"src=\"/images/ajax-loader.gif\"  /></div>");
-	$("#loader").hide();
   $("#mainMenu input").click(function(){
-		
-    $('#loader').fadeIn();
+    $("#loader").remove();
+    $("#header").append("<div id=\"loader\"><img alt=\"Loader\"src=\"/images/ajax-loader.gif\"  /></div>");
+    $("#loader").hide().fadeIn();
+
     current_page=1;
     var filter_info = get_checkbox_status("#mainMenu input");
     if(countChecked(filter_info) == 4) {
@@ -188,8 +189,8 @@ $(document).ready(function() {
     }
     getJobsJSON(filter_info,true);
 
-		$("#loader").fadeOut();
-		
+    $("#loader").fadeOut();
+
   });
 
 });

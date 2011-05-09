@@ -11,34 +11,27 @@ $(document).ready(function() {
 
   	//Hiding flashes after a bit
 	if($('#flash_notice') != null) {
-    $('#flash_notice').append("<span id=\"close_notice\">X<\/span>")
-    $('#flash_notice').hide().slideDown();
-    $('#close_notice').hide().slideDown();
-		setTimeout("$('#flash_notice').hide('blind',{},500);",4000);
-		setTimeout("$('#close_notice').hide('blind',{},500);",4000);
+    $('#flash_notice').append("<span id=\"close_notice\">X<\/span>").appendTo("#header").hide().slideDown('2000');
+    $('#close_notice').hide().slideDown('500');
+		setTimeout("$('#flash_notice').slideUp('500');",4000);
 
   }
 	if($('#flash_error') != null) {
-    $('#flash_error').append("<span id=\"close_notice\" >X<\/span>")
-    $('#flash_error').hide().slideDown();
-    $('#close_notice').hide().slideDown();
-		setTimeout("$('#flash_error').hide('blind',{},500);",4000);
-		setTimeout("$('#close_notice').hide('blind',{},500);",4000);
+    $('#flash_error').append("<span id=\"close_notice\">X<\/span>").appendTo("#header").hide().slideDown('2000');
+    $('#close_notice').hide().slideDown('500');
+		setTimeout("$('#flash_error').slideUp('500');",4000);
   }
 
 	if($('#flash_alert') != null) {
-    $('#flash_alert').append("<span id=\"close_notice\">X<\/span>")
-    $('#flash_alert').hide().slideDown();
-    $('#close_notice').hide().slideDown();
-		setTimeout("$('#flash_alert').hide('blind',{},500);",4000);
-		setTimeout("$('#close_notice').hide('blind',{},500);",4000);
+    $('#flash_alert').append("<span id=\"close_notice\">X<\/span>").appendTo("#header").hide().slideDown('2000');
+    $('#close_notice').hide().slideDown('500');
+		setTimeout("$('#flash_alert').slideUp('500');",4000);
   }
 	$('#close_notice').click(function() {
-
-    $('#flash_notice').remove();
-    $('#flash_error').remove();
-    $('#flash_alert').remove();
-    $('#close_notice').remove();
+    $('#flash_notice').slideUp();
+    $('#flash_error').slideUp();
+    $('#flash_alert').slideUp();
+    $('#close_notice').slideUp();
   });
 });
 
