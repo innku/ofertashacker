@@ -11,28 +11,19 @@ $(document).ready(function() {
 
   	//Hiding flashes after a bit
 	if($('#flash_notice') != null) {
-    $('#flash_notice').append("<span id=\"close_notice\">X<\/span>").appendTo("#header").hide().slideDown('2000');
-    $('#close_notice').hide().slideDown('500');
-		setTimeout("$('#flash_notice').slideUp('500');",4000);
+    $('#flash_notice').appendTo("#header").hide().slideDown('2000');
+	setTimeout("$('#flash_notice').slideUp('500');",4000);
 
   }
 	if($('#flash_error') != null) {
-    $('#flash_error').append("<span id=\"close_notice\">X<\/span>").appendTo("#header").hide().slideDown('2000');
-    $('#close_notice').hide().slideDown('500');
-		setTimeout("$('#flash_error').slideUp('500');",4000);
+    $('#flash_error').appendTo("#header").hide().slideDown('2000');
+    setTimeout("$('#flash_error').slideUp('500');",4000);
   }
 
 	if($('#flash_alert') != null) {
-    $('#flash_alert').append("<span id=\"close_notice\">X<\/span>").appendTo("#header").hide().slideDown('2000');
-    $('#close_notice').hide().slideDown('500');
-		setTimeout("$('#flash_alert').slideUp('500');",4000);
+    $('#flash_alert').appendTo("#header").hide().slideDown('2000');
+    setTimeout("$('#flash_alert').slideUp('500');",4000);
   }
-	$('#close_notice').click(function() {
-    $('#flash_notice').slideUp();
-    $('#flash_error').slideUp();
-    $('#flash_alert').slideUp();
-    $('#close_notice').slideUp();
-  });
 });
 
 //check whether a collection of checkboxes are checked or not
