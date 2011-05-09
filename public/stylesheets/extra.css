@@ -58,6 +58,11 @@ ul#skills li:hover{background:#fdffb0;}
 
 ul#skills li span{float:right;padding-right:20px;}
 
+#job_description {
+    padding-right: 10px;
+    
+}
+
 #job_description h2 {
   font-size:21px!important;
   line-height: 1;

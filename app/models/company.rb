@@ -141,5 +141,9 @@ class Company < ActiveRecord::Base
       return false
     end
   end
+  
+  def formated_description
+    self.description.gsub(/^h2./,'h3.').gsub(/^h1./,'h2.')
+  end
 end
 

@@ -511,7 +511,9 @@ div.clear{
 
 #right{
   float: right;
-  width: 650px;
+  width: 635px;
+  padding-top: 15px;
+  padding-right: 15px;
 }
 
 #right h1{
@@ -537,6 +539,7 @@ div.clear{
 #left{
   float: left;
   padding-right: 20px;
+  padding-top: 15px;
 }
 
 .span-23{
