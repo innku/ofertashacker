@@ -9,6 +9,6 @@
     <li> <%= link_to "#{truncate(company.twitter_text, :length => 20)}", (company.formated_twitter), :target => :blank%> </li>
   <% end %>
   <% if company.facebook? %>
-    <li> <%= link_to "#{truncate(company.facebook_text, :length =>30)}", (company.formated_facebook), :target => :blank%> </li>
+    <li> <%= link_to "#{truncate(company.facebook_text, :length =>20)}", (company.formated_facebook), :target => :blank%> </li>
   <%end%>
 </ul>

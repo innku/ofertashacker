@@ -120,7 +120,7 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:Arvo, arial, serif !important; }
   margin:0px;
   padding:0px;
 }
-
+.mainContent ul.posts {float:left;}
 .mainContent ul.posts li {
   border-bottom:1px solid #132E43;
   -moz-box-shadow: 0px 3px 7px #000;
@@ -570,7 +570,24 @@ div.clear{
   margin-right: 10px;
   margin-bottom:10px
 }
-
+div.content.about{padding:40px;}
+div.content h1{font-size:3em;}
+div.content.about h3{
+  color:#2c89a0;
+  padding-bottom:20px;
+}
+div.content.about #slider {height: 300px; border:2px solid #2c89a0;}
+div.content.about #top div{padding-left:40px;}
+div.content.about #middle {border-left:3px dashed #2c89a0;border-right:3px dashed #2c89a0;}
+div.content.about #top div{
+  display:inline;
+  width:200px;
+  height:300px;
+  margin:10px;
+  
+  background:#FFF;
+  float:left;
+}
 div.clear{
   clear:both;
 }
@@ -580,7 +597,9 @@ div.clear{
   -webkit-border-radius: 2px;
   background-color: #FDFFE3;
   padding: 15px;
-  margin-top: 20px
+  margin-top: 20px;
+  width:175px;
+  height:143px;
 }
 
 #info ul{

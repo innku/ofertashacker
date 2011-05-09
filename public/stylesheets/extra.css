@@ -357,11 +357,12 @@ ul#prueba li a{position: relative;}
 	font-size: 18px;
 	font-weight: bold;
 	margin: 0;
-	color: #2C89A0;
+	color: #333;
 	text-decoration: none;
 }
 .oferta a:hover{
     text-decoration: underline;    
+    color: #2c89a0;
 }
 
 .oferta h2{
@@ -370,6 +371,7 @@ ul#prueba li a{position: relative;}
 	font-weight: normal;
 	margin: 0 !important;
 	color: #333;
+  padding-right:10px;
 }
 
 .oferta li{

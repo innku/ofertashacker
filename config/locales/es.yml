@@ -125,6 +125,7 @@ es:
         password_confirmation:  "Confirmar contraseña"
         logo:             "Logo"
         description:      "Descripción"
+        contact_email:    "Email de contacto"
       job:
         title:            "Título"
         state:            "Estado"
