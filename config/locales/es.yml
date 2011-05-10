@@ -110,6 +110,11 @@ es:
   #Active Record
   activerecord:
     errors:
+      models:
+        required_skill:
+          attributes:
+            skill_name:
+              taken:      "ya fue tomado."
       messages:
         record_invalid:   "es inválido"
         blank:            "no puede estar vacío" 

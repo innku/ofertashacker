@@ -246,8 +246,13 @@ ul.form_checkboxes li{width:21%;}
   background-color: #F00;
 }
 #error_explanation{
-  color:red;
-  margin-left: 0px;
+  border-top:2px double #f00;
+  border-bottom:2px double #f00;
+  width:365px;
+  padding-top:10px;
+  margin:10px 10px 10px 0px!important;
+  display:block;
+  color: #666;
 }
 
 /* LINKS *************/

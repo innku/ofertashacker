@@ -44,8 +44,10 @@ function getJobsJSON(filter_info,remove){
     if(remove) {
       setTimeout(function() {calibrate();}, 500);
       if(!changes){
-        $(".posts").fadeTo(500,0.2);
-        $(".posts").fadeTo(500,1.0); 
+        $(".posts").animate({opacity:'0.3'},500);
+        $(".posts").animate({opacity:'100'},5900);
+        // $(".posts").fadeTo(500,0.2);
+        // $(".posts").fadeTo(500,1.0); 
       }
     } else {
       calibrate();

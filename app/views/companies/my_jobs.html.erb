@@ -1,4 +1,5 @@
 <%javascript 'endless'%>
+<script> $("li#mis_ofertas a span").addClass("current")</script>
 <%=hidden_field_tag :endless_path, "my_jobs", :company=> "#{current_company.id}"%>
 <% if current_company && @jobs.empty? %>
   <div class="mainContent span-23">

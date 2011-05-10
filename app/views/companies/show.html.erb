@@ -1,12 +1,15 @@
 <div class="content" >
   <% custom_title @company.title%>
+  <script> $("li#perfil a span").addClass("current")</script>
   <div class = "nav-buttons">
     <ul id="prueba">
     <% if current_company && current_company.admin? %>
       <li><%= link_to t('.company_index'), companies_path(), :class => "button"  %></li>
     <% end %>
-    <% if can? :manage, @company %>
+    <% if can? :update, @company %>
       <li><%= link_to t(:edit), edit_company_path(@company), :class => "button" %></li>
+    <% end %>
+    <% if can? :manage, @company %>
       <li><%= link_to "Eliminar empresa", company_path(@company), :class => "button", :confirm => "¿Estás seguro de eliminar #{@company.title}?", :method => :delete %></li>
     <% end %>
     </ul>
@@ -43,14 +46,11 @@
             <% @company.latests_jobs.each do |job| %>
               <div class="ofertacontenedor"><!--ofertacontenedor-->
 		            <div class="oferta">
-			            <%= link_to job.title, job_path(job) %>
-			            <h2>En <%=job.city%>
-                    <%= job.full_time ? ", de Tiempo Completo ".html_safe : nil%>
-                    <%= job.part_time ? ", de Medio Tiempo ".html_safe : nil%>
-                    <%= job.remote ? ", Remoto ".html_safe : nil%>
-                    <%= job.flexible ? ", Horario Flexible".html_safe : nil%>
+                  <%= link_to truncate(job.title, :length => 29), job_path(job) %>
+                  <h2>
+                    <%= truncate(job_info(job),:length => 65) %> 
                   </h2>
-			            <ul>
+                  <ul>
 			              <% job.latest_required_skills.each do |rs| %>
 			                <li> - <%= rs.skill_name %></li>
 			              <% end %>

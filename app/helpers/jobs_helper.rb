@@ -28,10 +28,17 @@ module JobsHelper
     end
   end
   
+  def job_info(job)
+    str=""
+    job.city ? str+=" En #{job.city} " : ""
+    str+=get_job_type(job,true)
+    str
+  end
+
   def condensed_information(job)
     str=""
     job.company ? str+=job.company.title : ""
-    job.city ? str+=" in #{job.city} " : ""
+    job.city ? str+=" en #{job.city} " : ""
     str+=get_job_type(job,true)
     str
     

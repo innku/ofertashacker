@@ -17,7 +17,7 @@ class Ability
     elsif company.member?
       can :read, RequiredSkill
       can :read, Company
-      can :manage, Company do |c|
+      can :update, Company do |c|
         c == company
       end
       can :read, Job
