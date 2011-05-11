@@ -40,24 +40,23 @@
       </div>
       <div class="clear"></div>
       <% unless @company.jobs.blank? %>
-
             <br />
             <h3>Estamos Buscando:</h3>
             <% @company.latests_jobs.each do |job| %>
-              <div class="ofertacontenedor"><!--ofertacontenedor-->
+              <%= link_to(job_path(job), :class => 'ofertacontenedor')  do %>
 		            <div class="oferta">
-                  <%= link_to truncate(job.title, :length => 29), job_path(job) %>
-                  <h2>
+                  <h2><%= truncate(job.title, :length => 29) %></h2>
+                  <h3>
                     <%= truncate(job_info(job),:length => 65) %> 
-                  </h2>
+                  </h3>
                   <ul>
 			              <% job.latest_required_skills.each do |rs| %>
 			                <li> - <%= rs.skill_name %></li>
 			              <% end %>
 			            </ul>  
 		            </div>
-		          <%= image_tag "sombra.png" %>
-		          </div><!--/ofertacontenedor-->
+		            <%= image_tag "sombra.png" %>
+              <% end %>
             <% end %> 
       <% end %>
       </div>

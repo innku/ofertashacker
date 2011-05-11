@@ -9,9 +9,10 @@
     <%= form_for @company, :html => { :multipart => true } do |f| %>
       <% if @company.errors.any? %>
         <div id="error_explanation">
+          <h2>Revisa de nuevo porfa los siguientes detalles en la forma:</h2>
           <ul>
             <% @company.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
+              <li>- <%= msg %></li>
             <% end %>
           </ul>
         </div>

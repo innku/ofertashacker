@@ -5,9 +5,10 @@
     <%= form_for @required_skill do |f|%>
       <% if @required_skill.errors.any? %>
         <div id="error_explanation">
+          <h2>Revisa de nuevo porfa los siguientes detalles en la forma:</h2>
           <ul>
             <% @required_skill.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
+              <li>- <%= msg %></li>
             <% end %>
           </ul>
         </div>

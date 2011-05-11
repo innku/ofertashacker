@@ -3,18 +3,19 @@
     <p>Datos de la oferta</p>
   </div>
   <div class="generalForm span-12 last">
+    <div class="firstColumn span-9 prepend-1">
     <%= form_for @job do |f| %> 
       <% if @job.errors.any? %>
         <div id="error_explanation">
+          <h2>Revisa de nuevo porfa los siguientes detalles en la forma:</h2>
           <ul>
           <% @job.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
+            <li>- <%= msg %></li>
           <% end %>
           </ul>
         </div>
       <% end %>   
-	    <div class="firstColumn span-9 prepend-1">
-		<%= f.label t('.title') + " *" %>
+		  <%= f.label t('.title') + " *" %>
         <%= f.text_field :title %></p>
         
 			  	<%= f.label t('.city') + " *" %>	 

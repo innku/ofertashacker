@@ -254,6 +254,12 @@ ul.form_checkboxes li{width:21%;}
   display:block;
   color: #666;
 }
+#error_explanation h2 {
+    color: #333;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Arial!important;
+}
 
 /* LINKS *************/
 
@@ -345,38 +351,39 @@ ul#prueba li a{position: relative;}
 /* Ofertas del perfil de la compania */
 .ofertacontenedor {
     float: left;
-    margin: 15px 20px 5px 0px;
+    margin: 15px 25px 5px 0px;
+    text-decoration: none!important;
 
 }
 
-.oferta{
+.oferta {
 	width: 260px;
 	height: 160px;
 	padding: 10px 0 0 20px;
 	border: 5px solid #69A4A4;
     background: url('images/ofertaback.png')repeat-x;
 }
-
-.oferta a{
-	font-family: Helvetica Neue, Helvetica;
-	font-size: 18px;
-	font-weight: bold;
-	margin: 0;
-	color: #333;
-	text-decoration: none;
-}
-.oferta a:hover{
-    text-decoration: underline;    
+a:hover.ofertacontenedor h2{
     color: #2c89a0;
+    text-shadow:2px 2px 2px #FFF;
 }
 
 .oferta h2{
 	font-family: Helvetica Neue, Helvetica!important;
-	font-size: 15px!important;
-	font-weight: normal;
-	margin: 0 !important;
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 0!important;
+	margin-bottom: 3px;
 	color: #333;
-  padding-right:10px;
+	text-decoration: none;
+}
+
+.oferta h3{
+	font-family: Helvetica Neue, Helvetica!important;
+	font-size: 15px!important;
+	margin-bottom: 5px!important;
+	color: #333;
+    padding-right:10px;
 }
 
 .oferta li{
