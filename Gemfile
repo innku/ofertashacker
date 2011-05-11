@@ -13,6 +13,7 @@ gem 'metropoli', :git => 'git://github.com/adriancuadros/metropoli.git'
 gem "mocha", :group => :test
 gem 'RedCloth'
 gem "will_paginate", "~> 3.0.pre2"
+gem 'hoptoad_notifier'
 
 group :development, :test do 
   gem 'capybara'

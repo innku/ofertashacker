@@ -86,6 +86,9 @@ GEM
       rake (>= 0.8.7)
     gherkin (2.3.3)
       json (~> 1.4.6)
+    hoptoad_notifier (2.3.11)
+      activesupport
+      builder
     i18n (0.4.2)
     json (1.4.6)
     json_pure (1.4.6)
@@ -182,6 +185,7 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_girl_rails
+  hoptoad_notifier
   launchy
   metropoli!
   mocha
