@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-
+  before_filter :new_company?, :only=>[:create]
   load_and_authorize_resource :exept => [:my_jobs]
   layout :get_layout
 
@@ -42,5 +42,11 @@ class CompaniesController < ApplicationController
 
   def get_layout
     (['my_jobs'].include? action_name) ? 'double_div' : 'application'
+  end
+  
+  def new_company?
+    if params[:new_company]
+      redirect_to new_company_registration_path(:new_company => true)
+    end
   end
 end

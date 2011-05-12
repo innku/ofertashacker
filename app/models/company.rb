@@ -6,7 +6,7 @@ class Company < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :jobs, :dependent => :destroy
-  
+    
   validates :title, :presence => true
   validates :email, :uniqueness => true
   validates_format_of :website, :with => /^(http:\/\/(www\.)?|(www\.)?)\w+\.\D{2,5}.*$/i, :on => :update, :if => :website?
@@ -18,12 +18,13 @@ class Company < ActiveRecord::Base
                                     :content_type => ['image/jpg','image/jpeg', 
                                                       'image/png', 'image/gif']
   
-  attr_accessible :email, :password, :password_confirmation, 
+  attr_accessible :email, :password, :password_confirmation,
                   :remember_me, :title, :city, :logo, :description,
                   :phone1, :phone2, :contact_email, :linkedin, :facebook, :twitter, :website, :role
 
 	metropoli_for :city, :as=>:city_name
   scope :members, where(:role => "member")
+
   
   DEFAULT_LOGO_ROUTE = "/images/shareIcon.png"
 
@@ -41,6 +42,7 @@ class Company < ActiveRecord::Base
                             :bucket => 'rubypros',
                             :default_url => DEFAULT_LOGO_ROUTE
                             
+
   def admin?
     self.role == "admin"
   end

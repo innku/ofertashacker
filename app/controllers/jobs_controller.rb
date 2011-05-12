@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-
+  before_filter :new_company?, :only=>[:new]
   load_and_authorize_resource :through => :current_company, :except=>[:index,:show,:my_jobs]
   layout :get_layout
 
@@ -52,6 +52,12 @@ class JobsController < ApplicationController
 
   def get_layout
     (['index'].include? action_name) ? 'double_div' : 'application'
+  end
+
+  def new_company?
+    if params[:new_company]
+      redirect_to new_company_registration_path(:new_company => true)
+    end
   end
 
 end

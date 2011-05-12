@@ -34,7 +34,7 @@ es:
       new:
         company_info:     "Datos de la empresa"
         company_desc:     "Descripción"
-        title:            "Nombre" 
+        title:            "Empresa" 
         city:             "Ciudad"
         email:            "Correo electrónico"
         password:         "Contraseña"

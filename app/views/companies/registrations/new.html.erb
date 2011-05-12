@@ -1,37 +1,40 @@
-  <%= stylesheet_link_tag "jquery-ui" %>
-  <% custom_title "Registro"%>
-  <script> $("li#registrate a span").addClass("current")</script>
-  <div class="infoCompany span-4">
-    <p>Datos de la empresa</p>
-  </div>
-  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-    <div class="generalForm span-12 prepend-1">
+<%= stylesheet_link_tag "jquery-ui" %>
+<% custom_title "Registro"%>
+<script> $("li#registrate a span").addClass("current")</script>
+<div class="infoCompany span-4">
+  <p>Datos de la empresa</p>
+</div>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name, :new_company => true)) do |f| %>
+  <% if params[:new_company]%>
+    <div id="new_company"><h2>Antes de publicar tu oferta necesitamos tus datos.</h2></div>
+  <%end%>
+  <div class="generalForm span-12 prepend-1">
 
-      <% if resource.errors.any? %>
-        <div id="error_explanation">
-          <h2>Revisa de nuevo porfa los siguientes detalles en la forma:</h2>
-          <ul>
-            <% resource.errors.full_messages.each do |msg| %>
-              <li>- <%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>   
-      <%= f.label t('.title') %> 
-      <%= f.text_field :title %>
-
-      <%= f.label t('.email') %>
-      <%= f.text_field :email %>
-
-      <%= f.label t('.password') %>
-      <%= f.password_field :password %>
-
-      <%= f.label t('.password_confirmation') %>
-      <%= f.password_field :password_confirmation%>
-
-      <div class='calltoAction'>
-        <p><%= f.submit "Registrar" %></p>
+    <% if resource.errors.any? %>
+      <div id="error_explanation">
+        <h2>Revisa de nuevo porfa los siguientes detalles en la forma:</h2>
+        <ul>
+          <% resource.errors.full_messages.each do |msg| %>
+            <li>- <%= msg %></li>
+          <% end %>
+        </ul>
       </div>
+    <% end %>   
+    <%= f.label t('.title') %> 
+    <%= f.text_field :title %>
+
+    <%= f.label t('.email') %>
+    <%= f.text_field :email %>
+
+    <%= f.label t('.password') %>
+    <%= f.password_field :password %>
+
+    <%= f.label t('.password_confirmation') %>
+    <%= f.password_field :password_confirmation%>
+
+    <div class='calltoAction'>
+      <p><%= f.submit "Registrar" %></p>
     </div>
-  <% end %>
+  </div>
+<% end %>
 
