@@ -13,12 +13,12 @@
 
       <% if devise_mapping.rememberable? -%>
         <div class='calltoAction login'>
-			<%= f.submit "Ingresar" %>
-		</div>
+			    <%= f.submit "Ingresar" %>
+		    </div>
         <p class='remember_me'>
-        <%= f.check_box :remember_me %> <%= f.label :remember_me, t('.remember_me'), :class => "small_label" %>
-		</p>
-      <% end -%>
+          <%= f.check_box :remember_me %> <%= f.label :remember_me, t('.remember_me'), :class => "small_label" %>
+		    </p>
+      <% end %>
     </div>
   <% end %>
   <%= render :partial => 'companies/shared/links' %>

@@ -613,19 +613,12 @@ div.clear{
 }
 .overlay {
 
-    display:none;
-	
-	/* place overlay on top of other elements */
+  display:none;
 	z-index:10000;
-	
-	/* styling */
 	background-color:#FFF;
-	
 	width:440px;	
 	min-height:200px;
 	border:1px solid #666;
-	
-  /* CSS3 styling for latest browsers */
   -moz-box-shadow:0 0 20px 5px #666;
   -webkit-box-shadow: 0 0 20px #666;
   -moz-border-radius: 8px;

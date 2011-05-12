@@ -40,6 +40,7 @@ es:
         password:         "Contraseña"
         password_confirmation: "Confirmar contraseña"
         description:      "Descripción de la empresa" 
+        terms_of_service: "Términos de Uso"
     index:
       companies:          "Empresas en busca de Rubypros"
       city:               "Ciudad"
@@ -115,6 +116,10 @@ es:
           attributes:
             skill_name:
               taken:      "ya fue tomado."
+        company:
+          attributes:
+            terms_of_service:
+              accepted:   "deben ser aceptados"  
       messages:
         record_invalid:   "es inválido"
         blank:            "no puede estar vacío" 
@@ -131,6 +136,7 @@ es:
         logo:             "Logo"
         description:      "Descripción"
         contact_email:    "Email de contacto"
+        terms_of_service: "Términos de uso"
       job:
         title:            "Título"
         state:            "Estado"

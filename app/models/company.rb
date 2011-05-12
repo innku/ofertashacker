@@ -20,7 +20,9 @@ class Company < ActiveRecord::Base
   
   attr_accessible :email, :password, :password_confirmation,
                   :remember_me, :title, :city, :logo, :description,
-                  :phone1, :phone2, :contact_email, :linkedin, :facebook, :twitter, :website, :role
+                  :phone1, :phone2, :contact_email, :linkedin, :facebook, :twitter, :website, :role, :terms_of_service
+                  
+  validates_acceptance_of :terms_of_service
 
 	metropoli_for :city, :as=>:city_name
   scope :members, where(:role => "member")
