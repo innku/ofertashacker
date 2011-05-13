@@ -42,12 +42,15 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:Arvo, arial, serif !important; }
 #header .topMenu a span {
   padding:10px 10px 2px 15px;
 }
-#header .topMenu a:hover span, #header .topMenu a span.current {
+#header .topMenu a:hover span {
   background:url("../images/bkg_topMenu.png") repeat-x 0 0;
   /*background:transparent;
   -moz-box-shadow:inset 0 0 10px #000000;
   -webkit-box-shadow:inset 0 0 10px #000000;
   box-shadow:inset 0 0 10px #000000;*/
+}
+#header .topMenu a span.current {
+  background:url("../images/bkg_topMenu.png") repeat-x 0 0;
 }
 #header .logo {
   position: relative;

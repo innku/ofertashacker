@@ -30,7 +30,7 @@ class CompaniesController < ApplicationController
   end
   
   def my_jobs
-    @company = Company.find(params[:id])
+    @company = current_company
     @jobs = @company.jobs.ordered.paginate :page => params[:page], :per_page => 8
     respond_to do |format|
       format.html

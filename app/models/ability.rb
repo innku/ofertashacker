@@ -1,8 +1,10 @@
 class Ability
   include CanCan::Ability
-  
+
   def initialize(company)
     company ||=Company.new :role => 'guest'
+    alias_action [:my_jobs], :to => :my_jobs
+
     if company.admin?
       can :manage, Company do |c|
         c == company
@@ -17,6 +19,9 @@ class Ability
     elsif company.member?
       can :read, RequiredSkill
       can :read, Company
+      can :my_jobs, Company do |c|
+        c == company
+      end
       can :update, Company do |c|
         c == company
       end
@@ -30,5 +35,5 @@ class Ability
       can :read, Job
     end
   end
-  
+
 end

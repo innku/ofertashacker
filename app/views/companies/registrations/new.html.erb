@@ -6,7 +6,7 @@
   <p>Datos de la empresa</p>
 </div>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name, :new_company => true)) do |f| %>
-  <% if params[:new_company]%>
+  <% if params[:new_company] && !resource.errors.any?%>
     <div id="new_company"><h2>Antes de publicar tu oferta necesitamos tus datos.</h2></div>
   <%end%>
   <div class="generalForm span-12 prepend-1">
@@ -33,9 +33,9 @@
     <%= f.label t('.password_confirmation') %>
     <%= f.password_field :password_confirmation %>
     
-    <p class='remember_me'>
+    <p class=''>
       <%= f.check_box :terms_of_service %>
-      <a href="#" rel="#trigger">Términos de Uso</a>
+      <a href="#" rel="#trigger">Al registrarme acepto los términos de uso</a>
         <div class="overlay" id="trigger">  
           <h2 style="margin:0px">Términos de uso</h2> 
           <div id="formatting_guide">
