@@ -1,4 +1,7 @@
+require "twitter"
+
 class Job < ActiveRecord::Base
+  include ActionView::Helpers::TextHelper
 
   belongs_to :company
   has_and_belongs_to_many :required_skills
@@ -10,11 +13,22 @@ class Job < ActiveRecord::Base
   validate :extra_skill, :length => {:maximum => 140}
 
   FILTERS = %w{full_time part_time flexible remote}
+  after_create :post_twitter
 
   metropoli_for :city, :as => :city_name
 
   scope   :ordered, order('id DESC')
 
+  def post_twitter
+    if Rails.env == 'production'
+      url = $bitly.shorten("http://rubypros.heroku.com/jobs/#{self.id}")
+    else
+      url = $bitly.shorten("http://127.0.0.1:3000/jobs/#{self.id}")
+    end
+    tweet_message = truncate("#{self.company.title}: #{self.title}", :length => 115 )
+    Twitter.update("#{tweet_message} #{url.short_url}")
+  end
+  
   def self.filter_it(filters={}, company=nil)
     results = Job.includes(:company)
     unless filters.blank?
