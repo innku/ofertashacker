@@ -102,6 +102,10 @@ div.company_profile{
   padding: 5px 0px 5px 10px;
 }
 
+div.company_profile p{ 
+  margin-bottom:3px;
+}
+
 div.company_profile:hover{
   background:#fdffe8 url('/images/line.png') bottom no-repeat;
 }
@@ -116,7 +120,7 @@ div.company_profile h2 a{ font-size: 1.2em; text-decoration:none; color:#333;lin
 div.company_profile a{
   text-decoration: none;
   font-size:13px;
-  line-height:15px;
+  line-height:17px;
 }
 
 div.companies_sidebar {

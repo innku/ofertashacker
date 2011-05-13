@@ -15,11 +15,11 @@
 <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Arvo:bold' rel='stylesheet' type='text/css'>
 
-<%= stylesheet_link_tag "jquery-ui" %>
+<%= stylesheet_link_tag "jquery-ui", "uniform" %>
 
 <%= javascript_include_tag :defaults,'jquery.infinitescroller' %>
 <%= javascript_include_tag 'rails' %>
-<%= javascript_include_tag 'metropoli.jquery.ui' %>
+<%= javascript_include_tag 'metropoli.jquery.ui','uniform' %>
 <%= csrf_meta_tag %>
 <%= yield(:head) %>
 

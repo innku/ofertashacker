@@ -42,7 +42,7 @@
           <%= f.label "Habilidades requeridas" %>
             <ul class="form_checkboxes">
               <% for skill in RequiredSkill.all %>
-                <li><%= check_box_tag 'job[required_skill_ids][]', skill.id, @job.required_skill_ids.include?(skill.id) %> <%= label_tag truncate(skill.skill_name, :length => 18) %> </li>
+                <li><%= check_box_tag 'job[required_skill_ids][]', skill.id, @job.required_skill_ids.include?(skill.id) %> <%= label_tag truncate(skill.skill_name, :length => 15) %> </li>
               <% end %>
 	          </ul>
         </div>
