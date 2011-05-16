@@ -51,7 +51,7 @@
                   </h3>
                   <ul>
 			              <% job.latest_required_skills.each do |rs| %>
-			                <li> - <%= rs.skill_name %></li>
+			                <li> - <%= truncate(rs.skill_name) %></li>
 			              <% end %>
 			            </ul>  
 		            </div>
