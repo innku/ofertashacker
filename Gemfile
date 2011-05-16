@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.1'
 
 gem 'sqlite3'
+gem 'twitter'
 gem 'devise'
 gem 'cancan'
 gem "nifty-generators"
@@ -14,6 +15,7 @@ gem "mocha", :group => :test
 gem 'RedCloth'
 gem "will_paginate", "~> 3.0.pre2"
 gem 'hoptoad_notifier'
+gem 'bitly'
 
 group :development, :test do 
   gem 'capybara'

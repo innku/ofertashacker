@@ -2,83 +2,92 @@
   <% custom_title "About"%>
   <div id="about">
     <div id="welcome">
-      <div id="top"><%= image_tag 'ribbon1.png'%><h1>Bienvenidos a Ofertas Hacker</h1><%= image_tag 'ribbon2.png'%></div>
-      <div id="content">
+      <div id="top"><%= image_tag 'ribbon1.png'%><h1>Las mejores ofertas para los mejores desarrolladores</h1><%= image_tag 'ribbon2.png'%></div>
+      <div id="sub_titles">
       <h3>¿Qué es Ofertas Hacker?</h3>
-      <p>
-        Es un espacio abierto para publicar y encontrar oportunidades de trabajo para desarrolladores latinoamericanos.<br />
-        Es facil, sencillo y seguro, puedes comenzar publicando una oferta o bien buscanco una.
+      <p id="welcome_info">
+      Es un espacio para publicar y encontrar oportunidades de <br />
+      trabajo para desarrolladores latinoamericanos.<br />
       </p>
-      <%= link_to 'Publicar una Oferta', new_job_path(:new_company => "true"),:class=>'button'%><br />
-      <%= link_to 'Busca Ofertas', jobs_path, :id=>'search_offer'%>
+      <div class="link" id="link1">
+        <%= link_to new_job_path(:new_company => "true") do %>
+          <span class="big">Registrate</span><br />
+          <span>para publicar una ofreta</span>
+        <% end %>
+      </div>
+
+      <div class="link" id="link2">
+        <%= link_to jobs_path do %>
+          <span class="big">Busca una oferta</span><br />
+          <span>para desarrolladores </span>
+        <% end %>
+      </div>
       </div>
     </div>
-    <div id="middle-left">
+    <div id="middle">
       <h3>No, Nadie se quiere hacer rico a partir de este sitio.</h3>
       <p>
-        Es enserio, este sitio no tiene fines de lucro, por el momento es gratis <br />
-        para todos, y si llegamos a cobrar en algún punto será con el firme y <br />
-        único objetivo de mantener vivo este espacio.
+        Es enserio, este sitio no tiene fines de lucro, por el momento es gratis
+        para todos, y si llegamos a cobrar en algún <br />
+ 				punto será con el firme y único objetivo de mantener vivo este espacio.
       </p>
-    </div>
-    <div id="middle-right">
       <h3>¿Por qué?</h3>
       <p>
-      El objetivo de Ofertas Hacker es promover el desarrollo de software en <br />
-      países latinoamericanos y encontrar las mejores ofertas de trabajo para<br />
-      los mejores desarrolladores.
+      El objetivo de Ofertas Hacker es promover el desarrollo de software en
+      países latinoamericanos y encontrar las <br />
+			mejores ofertas de trabajo para los mejores desarrolladores.
       </p>
     </div>
-    <div id="middle-right"></div>
-    <div class="clear"></div>
-    <div id="bar">
-      <h3>¿Quieres aportar a este proyecto?</h3>
-      <p>Estamos abiertos a recibir apoyo</p>
-    </div>
     <div id="bottom">
-      <div><%=image_tag 'difusion.png'%></div>
-      <div id="content">
-        <h4>Ocupamos...</h4>
-        <p>
-          <h5>Difusión</h5>
-          Invita a las empresas que<br />
-          busquen desarrolladores a<br />
-          publicar sus vacantes.
-        </p>
+      <div id="title">
+        <h3>¿Quieres aportar a este proyecto?</h3>
+        <p>Estamos abiertos a recibir tu apoyo</p>
       </div>
-
-
-      <div><%=image_tag 'difusion.png'%></div>
-      <div id="content">
-        <h4>También necesitamos...</h4>
-        <p>
-          <h5>Difusión</h5>
-          Invita a las empresas que<br />
-          busquen desarrolladores a<br />
-          publicar sus vacantes.
-        </p>
-      </div>
+      <h4>Necesitamos</h4>
       
-      <div><%=image_tag 'difusion.png'%></div>
       <div id="content">
-        <h4>Aparte necesitamos...</h4>
-        <p>
-          <h5>Difusión</h5>
-          Invita a las empresas que<br />
-          busquen desarrolladores a<br />
-          publicar sus vacantes.
-        </p>
-      </div>
 
-      <div><%=image_tag 'mano.png'%></div>
-      <div id="content">
-        <h4>¿Algo más? Ah! si...</h4>
-        <p>
-          <h5>Difusión</h5>
-          Invita a las empresas que<br />
-          busquen desarrolladores a<br />
-          publicar sus vacantes.
-        </p>
+        <div id="box1">
+          <div class="box">
+            <%=image_tag "difusion.png"%>
+            <div class="info">
+              <h4>Difusión</h4>
+              <p>Invita a las empresas que busquen desarrolladores a publicar sus vacantes. </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="box2">
+          <div class="box">
+            <%=image_tag "difusion.png"%>
+            <div class="info">
+              <h4>Mucha Difusión</h4>
+              <p>Dile a los desarrolladores que esten al pendiente de las ofertas.</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="box3">
+          <div class="box">
+            <%=image_tag "difusion.png"%>
+            <div class="info">
+              <h4>Mas Difusión</h4>
+              <p>Como se te ocurra pero ayúdanos a hacer de este un gran espacio. </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="box4">
+          <div class="box">
+            <%=image_tag "mano.png"%>
+            <div class="info">
+              <h4>También Manos, mentes e ideas</h4>
+              <p>Dile a los desarrolladores que esten al pendiente de las ofertas.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
