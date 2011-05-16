@@ -5,12 +5,23 @@
       <div id="top"><%= image_tag 'ribbon1.png'%><h1>Las mejores ofertas para los mejores desarrolladores</h1><%= image_tag 'ribbon2.png'%></div>
       <div id="sub_titles">
       <h3>¿Qué es Ofertas Hacker?</h3>
-      <p>
+      <p id="welcome_info">
       Es un espacio para publicar y encontrar oportunidades de <br />
       trabajo para desarrolladores latinoamericanos.<br />
       </p>
-      <%= link_to "Registrate", new_job_path(:new_company => "true"),:class=>'button'%>
-      <%= link_to "Busca una Oferta", new_job_path(:new_company => "true"),:class=>'button'%><br />
+      <div class="link" id="link1">
+        <%= link_to new_job_path(:new_company => "true") do %>
+          <span class="big">Registrate</span><br />
+          <span>para publicar una ofreta</span>
+        <% end %>
+      </div>
+
+      <div class="link" id="link2">
+        <%= link_to jobs_path do %>
+          <span class="big">Busca una oferta</span><br />
+          <span>para desarrolladores </span>
+        <% end %>
+      </div>
       </div>
     </div>
     <div id="middle">
@@ -27,41 +38,57 @@
 			mejores ofertas de trabajo para los mejores desarrolladores.
       </p>
     </div>
-    <div id="colaborate">
-      <h3>¿Quieres aportar a este proyecto?</h3>
-      <p>Estamos abiertos a recibir apoyo</p>
-    	<div id="bottom">
-				<h4>Necesitamos</h4>
-				 <div><%=image_tag 'difusion.png'%></div>
-		      <div class="content">
-		        <h4>También necesitamos...</h4>
-		        <p>
-		          <h5>Difusión</h5>
-		          Invita a las empresas que busquen desarrolladores a<br />
-		          publicar sus vacantes.
-		        </p>
-		      </div>
-					 <div><%=image_tag 'difusion.png'%></div>
-			      <div class="content">
-			        <h4>También necesitamos...</h4>
-			        <p>
-			          <h5>Difusión</h5>
-			          Invita a las empresas que busquen desarrolladores a<br />
-			          publicar sus vacantes.
-			        </p>
-			      </div>     
-	 <div><%=image_tag 'difusion.png'%></div>
-	      <div class="content">
-	        <h4>También necesitamos...</h4>
-	        <p>
-	          <h5>Difusión</h5>
-	          Invita a las empresas que busquen desarrolladores a<br />
-	          publicar sus vacantes.
-	        </p>
-	      </div>
-			</div>
-			<div class="clear"></div>
-    </div>
+    <div id="bottom">
+      <div id="title">
+        <h3>¿Quieres aportar a este proyecto?</h3>
+        <p>Estamos abiertos a recibir tu apoyo</p>
+      </div>
+      <h4>Necesitamos</h4>
+      
+      <div id="content">
 
+        <div id="box1">
+          <div class="box">
+            <%=image_tag "difusion.png"%>
+            <div class="info">
+              <h4>Difusión</h4>
+              <p>Invita a las empresas que busquen desarrolladores a publicar sus vacantes. </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="box2">
+          <div class="box">
+            <%=image_tag "difusion.png"%>
+            <div class="info">
+              <h4>Mucha Difusión</h4>
+              <p>Dile a los desarrolladores que esten al pendiente de las ofertas.</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="box3">
+          <div class="box">
+            <%=image_tag "difusion.png"%>
+            <div class="info">
+              <h4>Mas Difusión</h4>
+              <p>Como se te ocurra pero ayúdanos a hacer de este un gran espacio. </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="box4">
+          <div class="box">
+            <%=image_tag "mano.png"%>
+            <div class="info">
+              <h4>También Manos, mentes e ideas</h4>
+              <p>Dile a los desarrolladores que esten al pendiente de las ofertas.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 </div>
