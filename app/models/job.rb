@@ -20,6 +20,7 @@ class Job < ActiveRecord::Base
   scope   :ordered, order('id DESC')
 
   def post_twitter
+    unless Rails.env == 'test'
     if Rails.env == 'production'
       url = $bitly.shorten("http://rubypros.heroku.com/jobs/#{self.id}")
     else
@@ -27,6 +28,7 @@ class Job < ActiveRecord::Base
     end
     tweet_message = truncate("#{self.company.title}: #{self.title}", :length => 115 )
     Twitter.update("#{tweet_message} #{url.short_url}")
+    end
   end
   
   def self.filter_it(filters={}, company=nil)
@@ -49,7 +51,7 @@ class Job < ActiveRecord::Base
   end
 
   def formated_description
-    self.description.gsub(/^h2./,'h3.').gsub(/^h1./,'h2.')
+    self.description.gsub(/^h2\./,'h3.').gsub(/^h1\./,'h2.')
   end
   
   def latest_required_skills

@@ -83,6 +83,9 @@ describe CompaniesController do
   end
   
   describe '#destroy' do
+    before do
+      @company.update_attribute('role', 'admin')
+    end
     let(:valid_params){{:id => @company.id}}
     
     it 'Gets the company' do
