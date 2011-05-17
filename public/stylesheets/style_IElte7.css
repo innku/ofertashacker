@@ -8,14 +8,36 @@
   height:27px;
   padding-top:8px;
 }
-
 .descriptionForm textarea{
   width:630px;
   height:242px;
   padding-top:8px;
 }
 
+div#about #welcome .link{
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#304F4F', endColorstr='#1C3030',GradientType=0 )!important;
+}
+div#about #welcome #top h1{
+  padding-top:9px;
+}
+div#about{
+  height:740px;
+}
+div#about #bottom_line{
+  bottom:33px;
+}
+.button{
+  display:inline-block;
+  zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#304F4F', endColorstr='#1C3030',GradientType=0 )!important;
+}
 
+
+div#about #bottom .box{background:#F3F8FA;}
+div#about #bottom #box3{
+  top:0;
+  background:#f3f8fa;
+}
 .mainContent input[type=checkbox] {
   position:relative;
   top:0px;

@@ -2,7 +2,6 @@ Feature: Company Actions
 
   As a company
   I want to update my company information
-  And I want to delete my company
 
   Background:
     Given there is a company with name "Company1" in city "Monterrey" and email "company1@mycompany.com"  
@@ -19,20 +18,6 @@ Feature: Company Actions
     And I should see "San Nicolas de los Garza"
     And I should see "The best company around the world"
 
-  Scenario: I can delete my company
-    And I am on the root page
-    And show me the page
-    When I follow "Perfil"
-    And I follow "Eliminar empresa" and click OK
-    And I am on the company index
-    Then I should not see "Sample Company"
-
-  Scenario: When I delete my company my job vacancies are also deleted
-    And there is a job vacancy with title "Rails Master" created by "company1@mycompany.com" 
-    When I am on the show company page for "company1@mycompany.com"
-    And I follow "Eliminar empresa" and click OK
-    And I am on the index job page
-    Then I should not see "Rails Master"
 
   Scenario: Publish a new job vacancy
     And I am on the new job page

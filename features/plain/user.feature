@@ -66,5 +66,5 @@ Feature: User Actions
     And I fill in "company_email" with "contact_me@best_company.com"
     And I fill in "company_password" with "mycompany"
     And I press "Registrar"
-    Then I should see "Te has registrado con éxito, agrega al perfil de tu empresa datos importantes sobre ella"
+    Then I should see "Te has registrado con éxito."
 
