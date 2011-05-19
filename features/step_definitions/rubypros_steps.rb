@@ -1,7 +1,7 @@
 Given /^I am logged as an admin$/ do
   @admin_company = Company.find_by_role("admin")
   if !@admin_company
-    @admin_company = Factory(:company, :role => "admin")
+    @admin_company = Factory(:company,:email=>'admin@company.com', :role => "admin")
   end
   visit new_company_session_path
   fill_in "company_email", :with => @admin_company.email
