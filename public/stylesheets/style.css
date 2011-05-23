@@ -54,7 +54,7 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:Arvo, arial, serif !important; }
 }
 #header .logo {
   position: relative;
-  top:-3px;
+  top:-4px;
   z-index:2;
 }
 #header a.twitter span {
@@ -626,7 +626,7 @@ div.clear{
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
 	
-  width:1040px;	
+  width:440px;	
   padding:10px;
   font-size:11px;
 }
