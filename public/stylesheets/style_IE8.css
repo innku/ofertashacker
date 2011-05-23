@@ -52,8 +52,6 @@ div#about #bottom_line{
   top:0px;
 }
 .button{
-  display:inline-block;
-  zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#304F4F', endColorstr='#1C3030',GradientType=0 )!important;
 }
 
