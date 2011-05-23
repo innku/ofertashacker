@@ -20,14 +20,10 @@ class Job < ActiveRecord::Base
   scope   :ordered, order('id DESC')
 
   def post_twitter
-    unless Rails.env == 'test'
     if Rails.env == 'production'
-      url = $bitly.shorten("http://rubypros.heroku.com/jobs/#{self.id}")
-    else
-      url = $bitly.shorten("http://127.0.0.1:3000/jobs/#{self.id}")
-    end
-    tweet_message = truncate("#{self.company.title}: #{self.title}", :length => 115 )
-    Twitter.update("#{tweet_message} #{url.short_url}")
+      url = $bitly.shorten("http://www.ofertashacker.com/jobs/#{self.id}")
+      tweet_message = truncate("#{self.company.title}: #{self.title}", :length => 115 )
+      Twitter.update("#{tweet_message} #{url.short_url}")
     end
   end
   
