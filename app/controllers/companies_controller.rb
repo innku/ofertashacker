@@ -38,6 +38,7 @@ class CompaniesController < ApplicationController
     end
   end
  
+
   private
 
   def get_layout

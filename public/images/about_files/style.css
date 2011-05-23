@@ -1,0 +1,703 @@
+html {
+  background:url("../images/bkg_pattern.png") repeat 0 0;
+}
+
+body {
+  background:url("../images/bkg_line_pattern.png") repeat-x 0px 34px;
+}
+
+h1,h2,h3,h4,h5,h6 { color: #333; font-family:Arvo, arial, serif !important; }
+
+.mainContent ul li label{
+  font-size:12px;
+  font-family:arial, serif !important;
+  display: inline;
+}
+
+#header {
+  font-family: Arvo, arial, serif;
+  height:144px;
+  position:relative;
+}
+#header .topMenu {
+  text-transform:uppercase;
+  color:#99BEC0;
+  font-size:110% !important;
+  display:block;
+  height:30px;
+  z-index:1000;
+  position:relative;
+}
+#header .topMenu li {
+  display:block;
+  border-right:1px solid #99BEC0;
+  padding-top:10px;
+  float:right;
+  margin:-1px 0 2px 0;
+}
+#header .topMenu a {
+  color:#99BEC0;
+  text-decoration:none;
+}
+#header .topMenu a span {
+  padding:10px 10px 2px 15px;
+}
+#header .topMenu a:hover span {
+  background:url("../images/bkg_topMenu.png") repeat-x 0 0;
+  /*background:transparent;
+  -moz-box-shadow:inset 0 0 10px #000000;
+  -webkit-box-shadow:inset 0 0 10px #000000;
+  box-shadow:inset 0 0 10px #000000;*/
+}
+#header .topMenu a span.current {
+  background:url("../images/bkg_topMenu.png") repeat-x 0 0;
+}
+#header .logo {
+  position: relative;
+  top:-4px;
+  z-index:2;
+}
+#header a.twitter span {
+  background:url("../images/icon_twitter.png") no-repeat 0 0;
+  position:absolute;
+
+  padding:24px;
+  bottom:-5px;
+  right:-22px;	
+}
+
+#header a:hover.twitter span {	
+  background-position:0 -49px;
+}
+#mainMenu {
+  text-transform:lowercase;
+  display:block;
+  margin:54px 0 0 0;
+  padding:0px 0px 0px 0px !important;
+}
+#mainMenu li {
+  text-transform:lowercase;
+  display:block;
+  float:left;
+  font-size:160%;
+  color:#99CC00;
+  margin-right:15px;
+}
+#mainMenu li label {
+  padding-top:4px;
+  margin-left: 4px;
+}
+
+
+
+/*================== HERE COMES THE CONTENT STYLES ====================*/
+#leftMenu {
+  padding:50px 0 0 0;
+}
+
+#leftMenu ul {
+  margin:0;
+  padding:15px 0px;
+  background:#DADADA;
+  display:block;
+  overflow:hidden;
+}
+
+#leftMenu ul li {
+  float:left;
+  width:80%;
+  background:#DADADA;
+  padding:5px 15px;
+}
+
+.mainContent {
+  background:#fff;
+  -moz-box-shadow: 1px 2px 9px #000;
+  -webkit-box-shadow: 1px 2px 9px #000;
+  box-shadow: 1px 2px 9px #000;
+  position:relative;
+}
+
+
+.mainContent ul.posts {
+  margin:0px;
+  padding:0px;
+}
+.mainContent ul.posts {float:left;}
+.mainContent ul.posts li {
+  border-bottom:1px solid #132E43;
+  -moz-box-shadow: 0px 3px 7px #000;
+  -webkit-box-shadow: 0px 3px 7px #000;
+  box-shadow: 0px 3px 7px #000;
+}
+
+.mainContent a h1 {
+  margin-bottom:0.2em !important;
+}
+
+.mainContent a:hover h1 {
+  color:#CC3333;
+  text-decoration: none;
+}
+
+.mainContent a h1, .mainContent a p {
+  display:block;
+  padding-left:26px;
+  text-decoration:none;
+}
+
+.mainContent a div img {
+  border-left:1px solid #132E43;
+  margin-bottom:15px;
+  padding:10px 0 0 0;
+}
+
+.mainContent a p {
+  color:#666;
+}
+
+.mainContent .infoCompany {
+  font-family: arial, serif;
+  padding-top:30px;
+  text-align:right;
+  border-right:1px solid #132E43;
+}
+
+.mainContent .infoCompany p{
+  font-family: arial, serif;
+  font-size:16px;
+  margin:20px 10px 5px 10px;	
+}
+
+.session_links{
+  font-family: georgia, helvetica neue;
+  margin-top:70px;
+  padding-right: 20px;
+}
+
+.mainContent label{
+  font-size:2.5em;
+  line-height:1;
+  margin-bottom:0.4em;
+  font-weight:bold;
+  display:block;
+  color: #333; 
+  font-family:Arvo, arial, serif !important; 
+}
+.mainContent label.small_label{
+  font-size:16px;
+  display:inline;
+  font-family:arial, serif !important;
+}
+
+.mainContent label.non_block{
+  display:inline;
+}
+
+
+.mainContent a{
+  color: #005B60;
+  font-size: 12px;
+  text-decoration: underline;
+  border-bottom:0px;	
+}
+
+.mainContent a:hover{
+  color: #2C89A0;
+}
+
+.mainContent .generalForm {
+  margin:26px 0px 20px 0;	
+}
+.mainContent input[type=text],.mainContent input[type=password]{
+  width:349px;	
+  height:35px;
+  background:#F1F1F1;
+  border:1px solid #d9d9d9;
+  margin-bottom:30px;
+  font-size:16px !important;
+  padding-left:15px;
+}
+
+.mainContent input[type=file] {
+  padding-right:15px;
+  color:green;
+}
+
+.firstColumn{
+  float:left;
+}
+
+.secondColumn input[type=checkbox],.firstColumn input[type=checkbox]  {
+  width:20px;
+  height:20px;
+  float:left;
+}
+
+.secondColumn ul, .job_type ul{
+  margin-top:30px;
+}
+
+.secondColumn ul li, .job_type ul li{
+  float:left;
+  margin:0 10px 15px 0;
+  width:145px;
+}
+
+.secondColumn label, .job_type ul li {
+  margin-left:10px;
+  float:left;
+}
+
+.topSpacing{
+  margin-bottom:0px !important;
+  padding-top: 35px;
+}
+
+.generalForm img {
+  float:left;
+}
+
+.generalButton{
+  float:left;
+  margin-right:15px;	
+}
+
+.generalButton a{
+  background:#CCCC00;
+  border-top:1px solid #B8B800;
+  border-left:1px solid #C3C300;
+  border-right:1px solid #C3C300;
+  font-size:16px;
+  color:#003300;
+  padding:5px 15px;
+}
+
+.generalButton a:hover{
+  background:#33CCFF;
+  border-top:1px solid #24A1CA;
+  border-left:1px solid #29B5E4;
+  border-right:1px solid #29B5E4;
+}
+
+.addRemove{
+  padding: 110px 0 0 40px;
+  text-align:center;
+}
+
+.addButton {
+  background:#333333;
+  border-top:1px solid #999999;
+  border-left:1px solid #CCCCCC;
+  border-right:1px solid #CCCCCC;
+  font-size:16px;
+  color:#D9D93F;
+  padding:3px 20px;
+  float:left;
+}
+
+.removeButton {
+  background:#CCCC00;
+  border-top:1px solid #B8B800;
+  border-left:1px solid #C3C300;
+  border-right:1px solid #C3C300;
+  font-size:16px;
+  color:#003300;
+  padding:3px 15px;
+  float:left;
+  margin-top:15px;
+}
+
+.addRemove .addbuton a:hover {
+  background:#33CCFF;
+  border-top:1px solid #24A1CA;
+  border-left:1px solid #29B5E4;
+  border-right:1px solid #29B5E4;
+}
+
+.cancelButton a{
+  float:left;
+  margin-right:15px;
+  text-decoration:underline;
+  color:#003300;
+  font-size:14px;
+}
+
+.calltoAction a{
+  background:#333333;
+  border-top:1px solid #999999;
+  border-left:1px solid #CCCCCC;
+  border-right:1px solid #CCCCCC;
+  font-size:16px;
+  color:#D9D93F;
+}
+
+.calltoAction input:hover{
+  background: #5B5B5B;
+  color: #EDED00;
+  cursor: pointer;
+}
+
+.calltoAction input{
+  background:#333333;
+  border-top:1px solid #999999;
+  border-left:1px solid #CCCCCC;
+  border-right:1px solid #CCCCCC;
+  font-size:22px;
+  color:#D9D93F;
+  cursor: pointer;
+  padding:5px 32px;
+  float: left;
+}
+
+.remember_me{
+  float:right;
+  margin-right:100px;
+}
+
+
+.buttons1{
+  right:33px;
+  margin:32px 0px 20px 721px;
+}
+
+.closeIcon{
+  float:left;
+  margin:8px !important;
+  width:13px;
+}
+
+.divShadow{
+  background:url("../images/shadow.png") repeat-x 0 0;
+}
+
+.part2{
+  margin-top:24px;
+}
+
+.skills li{
+  float:left;
+  margin:10px; 10px 15px 0;
+}
+
+.habilitiesList{
+  background:#EDEDED;
+  border:1px solid #D9D9D9;
+  height:220px;
+  margin-bottom:20px;
+}
+
+.habilitiesList ul li{
+  color:#666666;
+  font-size:16px;	
+}
+
+.profileList{
+  background:#EDEDED;
+  border:1px solid #D9D9D9;
+  height:220px;
+  margin-bottom:20px;
+}
+
+.profileList ul li{
+  color:#666666;
+  font-size:16px;	
+}
+
+.descriptionForm{
+  margin-top:49px;
+}
+
+.descriptionForm h1 {
+  display: inline; 
+
+}
+.descriptionForm a {
+  margin-left: 15px;
+}
+
+.descriptionForm textarea{
+  font-family: arial, serif;
+  width:630px;
+  height:250px;
+  background:#F1F1F1;
+  border:1px solid #d9d9d9;
+  margin: 20px 0 30px 0;
+  font-size:16px !important;
+  padding-left:15px;
+}
+
+/*================== HERE COMES THE FOOTER STYLES ====================*/
+#footer {
+  padding:12px 0 44px;
+}
+#footer ul {
+  padding:0;
+}
+#footer ul li {
+  float:left;
+  margin-right:20px;
+}
+#footer ul li a {
+  color:#CCCC00;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+#footer ul li a:hover {
+  text-decoration:underline;
+}
+
+/*================== PERFIL ====================*/			
+
+.button{
+  color: #FFF !important;
+  text-decoration: none !important;
+  padding: 10px;
+  background: #304F4F;
+  background: -moz-linear-gradient(top,  #304F4F, #1C3030);
+  background: -webkit-gradient(linear, left top, left bottom, from(#304F4F), to(#1C3030));
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 2px solid #122626;
+  margin-right: 10px;
+  cursor: pointer;
+
+}
+
+.button:active{
+  background: -moz-linear-gradient(top,  #1C3030, #304F4F);
+  background: -webkit-gradient(linear, left top, left bottom, from(#304F4F), to(#1C3030));
+  border: 2px solid #2A4646;
+
+}
+
+#buttons{
+  float: right;
+  margin-right: 10px;
+}
+
+#Localizacion{
+  float: left;
+  padding-right: 50px;
+  margin-right: 50px;
+  border-right: 3px solid #CC3333;
+}
+
+#logoperfil{
+  margin-top: 15px;
+}
+
+div.clear{
+  clear:both;
+}
+
+/*================== HERE COMES THE INFO STYLES ====================*/
+
+#right{
+  float: right;
+  width: 635px;
+  padding-top: 15px;
+  padding-right: 15px;
+}
+
+#right h1{
+  margin-bottom: 3px;
+}
+
+#right h2{
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+
+#right h4{
+  color: #888;
+  font-size: 13px;
+  font-style: italic;
+}
+
+#right p{
+  line-height: 20px;
+}
+
+#left{
+  float: left;
+  padding-right: 20px;
+  padding-top: 15px;
+}
+
+.span-23{
+  margin-bottom: 10px;
+  padding: 30px 20px 20px;
+}
+
+.generalForm .tag{
+  padding:4px 10px 0px 5px;
+  background:#EFF2DF url(/images/tag.gif) no-repeat right top;
+  float:left;
+  margin:0px 10px 10px 0px;
+  height:22px;
+}
+
+.generalForm .tag span{
+  color: #333333;
+}
+
+.generalForm span.desc, #extra_skill span.desc {
+  color: #888;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.tagimg{
+  margin-right: 10px;
+  margin-bottom:10px
+}
+div.content.about{padding:40px;}
+div.content h1{font-size:3em;}
+div.content.about h3{
+  color:#2c89a0;
+  padding-bottom:20px;
+}
+div.content.about #slider {height: 300px; border:2px solid #2c89a0;}
+div.content.about #top div{padding-left:40px;}
+div.content.about #middle {border-left:3px dashed #2c89a0;border-right:3px dashed #2c89a0;}
+div.content.about #top div{
+  display:inline;
+  width:200px;
+  height:300px;
+  margin:10px;
+  
+  background:#FFF;
+  float:left;
+}
+div.clear{
+  clear:both;
+}
+
+#info{
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  background-color: #FDFFE3;
+  padding: 15px;
+  margin-top: 20px;
+  width:175px;
+  height:143px;
+}
+
+#info ul{
+  margin: 0;
+}
+
+#info h2{
+  color: #005B60;
+  font-size: 16px;
+  margin-left: 15px;
+}
+
+#info li a{
+  font-family: georgia, helvetica neue;
+  color: #333333;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+#info li a:hover{
+  font-family: georgia, helvetica neue;
+  color: #005B60;
+  text-decoration: underline;
+}
+
+#trigger {
+  color:#fff;
+  padding:50px 70px;
+}
+.overlay {
+
+  display:none;
+	z-index:10000;
+	background-color:#FFF;
+	min-height:200px;
+	border:1px solid #666;
+  -moz-box-shadow:0 0 20px 5px #666;
+  -webkit-box-shadow: 0 0 20px #666;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+	
+  width:440px;	
+  padding:10px;
+  font-size:11px;
+}
+.overlay p{
+  color: #666;    
+}
+
+/* default close button positioned on upper right corner */
+a.close {
+  background-image:url(/images/overlay/close.png);
+  position:absolute; 
+  right:-15px;
+	top:-15px;
+  cursor:pointer;
+  height:35px;
+  width:35px;
+}
+
+div#terms_of_use textarea{
+  height:400px;
+  width:440px;
+}
+div#terms_of_use{
+  height:400px;
+}
+
+div#formatting_guide table {
+  margin: 15px 0 15px 0;
+  background: #fff;
+  color: #666;
+}
+
+div#formatting_guide table th {
+  text-align: left;
+  border: 1px solid #ddd;
+  padding: 5px;
+  font-weight: normal;
+  background: #304F4F;
+  color: #fff;
+}
+
+div#formatting_guide table td {
+  border: 1px solid #ddd;
+  font-size: 12px;
+  padding: 3px 5px;
+}
+
+div#formatting_guide table td ol,
+div#formatting_guide table td ul {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+div#formatting_guide table td blockquote {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+div#formatting_guide table td h1 {
+  font-size: 130%;
+}
+
+div#formatting_guide table td h2 {
+  font-size: 100%;
+}
+
+div#formatting_guide table td h3 {
+  font-size: 100%;
+}
+

@@ -17,7 +17,6 @@ class Ability
         j.company == company
       end
     elsif company.member?
-      can :read, RequiredSkill
       can :read, Company
       can :my_jobs, Company do |c|
         c == company

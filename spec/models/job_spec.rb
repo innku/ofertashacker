@@ -143,7 +143,7 @@ describe Job do
     
     describe '.formated_description' do
       before do
-        @job.update_attributes(:description => "h1. Title \n Description \n h2. Sub Title Even more description")
+        @job.update_attributes(:description => "h1. Title \n Description \n\nh2. Sub Title Even more description")
       end
       
       it 'Converts h1 textile tags to h2' do

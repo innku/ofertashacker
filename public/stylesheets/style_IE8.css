@@ -3,21 +3,39 @@
   background: #FFF;
   background: url('/images/line.png') no-repeat;
   background-position:bottom;
-  
+
 }
+
+
+div#about #welcome .link{
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#304F4F', endColorstr='#1C3030',GradientType=0 )!important;
+}
+
 div#about{
+  position:absolute;
+  left:2px;
+  width:950px;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EAF3F6', endColorstr='#FFFFFF',GradientType=0 );
 }
+
+div#about #welcome #top h1{
+  padding-top:10px;
+}
+
+div#about #bottom_line{
+  bottom:-200px;
+}
+
 .posts{position:relative!important;}
 #loader{position:absolute; top:100px;left:50%;margin-left:-30px;z-index:9;display:block;display:none; }
 #loader img{position:absolute; top:-25px;display:block;}
 #loader p{font-size:18px; color:#000;text-align:center;}
 @font-face {
-    font-family: 'Arvo';
-    src: url('Arvo-Regular-webfont.eot');
-    src: url('Arvo-Regular-webfont.eot?#iefix') format('embedded-opentype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Arvo';
+  src: url('Arvo-Regular-webfont.eot');
+  src: url('Arvo-Regular-webfont.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 
@@ -34,6 +52,8 @@ div#about{
   top:0px;
 }
 .button{
+  display:inline-block;
+  zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#304F4F', endColorstr='#1C3030',GradientType=0 )!important;
 }
 
@@ -46,27 +66,27 @@ div#about{
 .shadow.job {
   background: #FFF;
   margin-bottom:4px!important;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=7, Direction=120, Color='#000000')"!important;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=7, Direction=120, Color='#000000')"!important;
 }
 #skills li{
   background: #FFF;
   padding: 5px;
-    filter:
-        progid:DXImageTransform.Microsoft.Shadow(color=#666666,direction=120,strength=3);
+  filter:
+  progid:DXImageTransform.Microsoft.Shadow(color=#666666,direction=120,strength=3);
 
 }
 div#contacto p span {position:relative;right:10px;bottom:40px;}
 
 #flash_notice, #flash_error, #flash_alert {
-      filter: alpha(opacity=50);
+  filter: alpha(opacity=50);
 }
 
 .mainContent.span-24, .mainContent.span-23 {
   background:#fff;
   margin-top: -5px;
-      filter:
-        progid:DXImageTransform.Microsoft.Shadow(color=#111111,direction=300,strength=2)      
-        progid:DXImageTransform.Microsoft.Shadow(color=#111111,direction=120,strength=6);
+  filter:
+  progid:DXImageTransform.Microsoft.Shadow(color=#111111,direction=300,strength=2)      
+  progid:DXImageTransform.Microsoft.Shadow(color=#111111,direction=120,strength=6);
 
 }
 

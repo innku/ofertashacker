@@ -12,6 +12,18 @@
   src: local(Arvo Bold), local(Arvo-Bold), url(http://themes.googleusercontent.com/font?kit=F-uvpIj1hF17IDyvQvI50Q) format(truetype);
 }
 
+div.terms_of_use {
+  padding:70px;
+  font-size:1.1em;
+}
+div.terms_of_use li{
+  padding-top:10px;
+}
+
+div.terms_of_use h3{
+  padding: 20px 20px 20px 0;
+  font-weight:bold;
+}
 
 div#contacto{
   padding-top:20px;
@@ -216,13 +228,14 @@ ul.form_checkboxes li{width:21%;}
 /* About */
 
 div.about_wrapper{
-  height:975px;
+  height:750px;
+  position:relative;
 }
 div#about{
   width:100%;
   background: #EAF3F6;
-  background: -moz-linear-gradient(top,  #EAF3F6 0%, #FFFFFF 40%);
-  background: -webkit-linear-gradient(top, #EAF3F6 0%, #FFFFFF 20%);
+  background: -moz-linear-gradient(top,  #EAF3F6 0%, #FFFFFF 45%);
+  background: -webkit-linear-gradient(top, #EAF3F6 0%, #FFFFFF 45%);
   position:absolute;
   top:60px;
   left:0px;
@@ -255,9 +268,10 @@ div#about #welcome #sub_titles, div#about #welcome #top, div#about #welcome h3, 
   text-align:center
 }
 div#about #welcome #sub_titles{
-  width:700px;
-  padding-bottom:20px;
-  border-bottom: 1px solid #B1D3DC;
+  width:100%;
+  height:153px;
+  padding-bottom:25px;
+  background: url('/images/about_middle_line.png') bottom no-repeat;
 }
 
 div#about #welcome h3{
@@ -265,7 +279,7 @@ div#about #welcome h3{
   color:#00575B;
   margin-top:-10px;
 }
-div#about #welcome p{
+div#about #welcome p#welcome_info{
   padding-top: 10px;
   padding-border:5px;
   width: 720px;
@@ -273,19 +287,38 @@ div#about #welcome p{
   color:#333;
 }
 div#about #welcome a#search_offer{font-family: Arvo, serif!important;font-size:14px;}
-div#about #welcome a.button{
-  width:165px;
-}
-div#about #welcome a.button span{
-  width:165px;
-}
 
-div#about #middle h3{
-  font-size:1.45em;
+div#about #welcome .link{
+  background:#304F4F;
+  width:186px;
+  height:55px;
+  -webkit-border-radius:7px; 
+  -moz-border-radius:7px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#304F4F), to(#1C3030)); 
+  background: -moz-linear-gradient(top,  #304F4F, #1C3030);
 }
+div#about #welcome .link a{
+  display:block;
+  text-decoration:none;
+  color:#fff;
+  padding:5px 10px 10px 10px;
+}
+div#about #welcome .link span{
+  font-size:1em;
+  color:#ddd;
+  line-height:1.4em;
+}
+div#about #welcome .link span.big{
+  font-size:1.4em;
+  font-weight: bold;
+  color:#fff;
+}
+div#about #welcome #link1{position:absolute;left:250px;}
+div#about #welcome #link2{position:absolute;left:500px;}
+
 div#about #middle {
   width:70%;
-  padding:3px 10px 0px 10px;
+  padding:33px 10px 32px 10px;
 	margin: auto;
 	margin-bottom:40px;
 }
@@ -293,49 +326,67 @@ div#about #middle p {
   font-size:1.1em;
 }
 div#about #middle h3{
+  font-size:1.45em;
 	color: #00575B; 
 	margin-bottom:10px;
 }
 
-
-div#about #colaborate {
-  background:#EAF3F6;
-	width:785px;
-	padding:20px;
-	margin: auto auto;
-}
-div#about #colaborate h3{font-size:1.3em;padding-top:7px;}
-div#about #colaborate p{font-size:1.2em;margin-top:0px;padding-bottom:7px;color:#666;}
 div#about #bottom {
-	height:50px;
-  padding:20px 0 0 40px;
+  position:absolute;
+  top:450px;
+  left:85px;
+  height:240px;
+  width:735px;
+  background: #F3F8FA;
+  padding:10px 0 0 50px;
+
 }
-div#about #bottom h4{
-  font-family:sans-serif!important;
-  margin-bottom:10px;
+div#about #bottom_line{
+  display:block;
+  position:absolute;
+  bottom:-202px;
+  left:90px;
 }
-div#about #bottom h5{
-  font-family:sans-serif!important;
-  margin-bottom:-2px;
+div#about #bottom #content{
+  position:relative;
+  top:-7px;
+}
+
+div#about #bottom #title{
+  padding-top:10px;
+}
+
+div#about #bottom .box{
+  padding:0px;
+  width:310px;
+  position:relative;
+}
+
+div#about #bottom h3{
+  color:#00575b;
+  margin-bottom:8px;
+}
+
+div#about #bottom h4 {
+  font-family: Helvetica Neue, Helvetica!important;
+  color:#333;
+}
+div#about #bottom .box img{float:left;}
+div#about #bottom .box .info{
+  position:absolute;
+  left:40px;
+}
+div#about #bottom p{color:#666;}
+
+div#about #bottom .box h4 {
+  margin-bottom:0px;
   color:#666;
-}
-div#about #bottom div{
-  float:left;
-}
-div#about #bottom div img{
-padding: 37px 10px 0 0;
+  font-weight:bold;
 }
 
-div#about #bottom div.content{
-	width:36%;
-  padding-right:40px;
-	padding-bottom:20px;
-
-}
-div#about #bottom div p{
-  display:inline;
-}
-
+div#about #bottom #box2 {position:absolute;top:65px;}
+div#about #bottom #box3 {position:absolute;left:350px;}
+div#about #bottom #box4 {position:absolute;top:65px;left:350px;}
 
 #new_company{
   border-top:2px solid #0A0;

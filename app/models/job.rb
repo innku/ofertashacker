@@ -21,12 +21,10 @@ class Job < ActiveRecord::Base
 
   def post_twitter
     if Rails.env == 'production'
-      url = $bitly.shorten("http://rubypros.heroku.com/jobs/#{self.id}")
-    else
-      url = $bitly.shorten("http://127.0.0.1:3000/jobs/#{self.id}")
+      url = $bitly.shorten("http://www.ofertashacker.com/jobs/#{self.id}")
+      tweet_message = truncate("#{self.company.title}: #{self.title}", :length => 115 )
+      Twitter.update("#{tweet_message} #{url.short_url}")
     end
-    tweet_message = truncate("#{self.company.title}: #{self.title}", :length => 115 )
-    Twitter.update("#{tweet_message} #{url.short_url}")
   end
   
   def self.filter_it(filters={}, company=nil)
@@ -49,7 +47,7 @@ class Job < ActiveRecord::Base
   end
 
   def formated_description
-    self.description.gsub(/^h2./,'h3.').gsub(/^h1./,'h2.')
+    self.description.gsub(/^h2\./,'h3.').gsub(/^h1\./,'h2.')
   end
   
   def latest_required_skills
