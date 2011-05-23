@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  // $(".mainContent input:checkbox").uniform();
 
   $("#company_jobs").hide();
 

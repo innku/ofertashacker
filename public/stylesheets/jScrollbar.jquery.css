@@ -1,0 +1,220 @@
+.clr {
+	clear:both;
+	height:0
+}
+
+/***************/
+/** EXEMPLE 1 **/
+/***************/
+.jScrollbar { /* main container */
+	width:500px;
+	height:209px;
+	overflow:hidden;
+	position:relative;
+	border:1px solid #F0F0F0;
+	background-color:#F8F8F8;
+	padding:10px;
+}
+	.jScrollbar_mask { /* text container */
+		width:450px;
+		position:relative;
+		top:0;
+		float:left
+	}
+		.jScrollbar .jScrollbar_mask p { /* paragraphs */
+			margin:0;
+			padding:0;
+			color:#2B2B2B;
+			font-size:12px;
+		}
+	.jScrollbar_draggable { /* slider container */
+		float:left;
+		width:40px;
+		height:209px;
+		overflow:hidden;
+		background:transparent url('../images/bg_jScrollbar_draggable.jpg') repeat-y center top;
+		margin-left:10px;
+		position:relative
+	}
+	.jScrollbar_draggable a.draggable { /** draggable **/
+		position:relative;
+		background-color:#000;
+		display:block;
+		height:70px;
+		width:13px;
+		margin-left:14px;
+		cursor:s-resize
+	}
+	
+/***************/
+/** EXEMPLE 2 **/
+/***************/
+.jScrollbar2 {
+	width:500px;
+	height:209px;
+	overflow:hidden;
+	position:relative;
+	background-color:#3f6f7c;
+	padding:10px
+}
+	.jScrollbar2 .jScrollbar_mask {
+		width:450px;
+		position:relative;
+		top:0;
+		float:left
+	}
+		.jScrollbar2 .jScrollbar_mask p {
+			margin:0;
+			padding:0;
+			color:#FFF;
+			font-size:12px;
+		}
+	.jScrollbar2 .jScrollbar_draggable {
+		float:left;
+		width:13px;
+		height:209px;
+		overflow:hidden;
+		background:none;
+		background-color:#8ea9b0;
+		margin-left:25px;
+		position:relative
+	}
+	.jScrollbar2 .jScrollbar_draggable a.draggable {
+		position:relative;
+		background-color:#0a5060;
+		display:block;
+		height:45px;
+		width:13px;
+		margin-left:0;
+		cursor:s-resize
+	}
+	
+/***************/
+/** EXEMPLE 3 **/
+/***************/
+.jScrollbar3 {
+	width:500px;
+	height:209px;
+	overflow:hidden;
+	position:relative;
+	background-color:#d6d6d6;
+	padding:10px
+}
+	.jScrollbar3 .jScrollbar_mask {
+		width:450px;
+		position:relative;
+		top:0;
+		float:left
+	}
+		.jScrollbar3 .jScrollbar_mask p {
+			margin:0;
+			padding:0;
+			color:#242424;
+			font-size:12px;
+		}
+	.jScrollbar3 .jScrollbar_draggable {
+		float:left;
+		width:3px;
+		height:209px;
+		overflow:hidden;
+		background:none;
+		background-color:#FFF;
+		margin-left:30px;
+		position:relative
+	}
+	.jScrollbar3 .jScrollbar_draggable a.draggable {
+		position:relative;
+		background-color:#313131;
+		display:block;
+		height:44px;
+		width:3px;
+		margin-left:0;
+		cursor:s-resize
+	}
+	
+/***************/
+/** EXEMPLE 4 **/
+/***************/
+.jScrollbar4 {
+	width:500px;
+	height:209px;
+	overflow:hidden;
+	position:relative;
+	background-color:#454547;
+	padding:10px
+}
+	.jScrollbar4 .jScrollbar_mask {
+		width:460px;
+		position:relative;
+		top:0;
+		float:left
+	}
+		.jScrollbar4 .jScrollbar_mask p {
+			margin:0;
+			padding:0;
+			color:#FFF;
+			font-size:12px;
+		}
+	.jScrollbar4 .jScrollbar_draggable {
+		float:left;
+		width:13px;
+		height:209px;
+		overflow:hidden;
+		background:none;
+		background:transparent url('../images/bg_slider4.png') no-repeat;
+		margin-left:23px;
+		position:relative
+	}
+	.jScrollbar4 .jScrollbar_draggable a.draggable {
+		position:relative;
+		background:transparent url('../images/bg_draggable4.png') no-repeat;
+		display:block;
+		height:58px;
+		width:13px;
+		margin-left:0;
+		cursor:s-resize
+	}
+	
+/***************/
+/** EXEMPLE 5**/
+/***************/
+.jScrollbar5 {
+	width:500px;
+	height:209px;
+	overflow:hidden;
+	position:relative;
+	background-color:#313131;
+	padding:10px
+}
+	.jScrollbar5 .jScrollbar_mask {
+		width:460px;
+		position:relative;
+		top:0;
+		float:left
+	}
+		.jScrollbar5 .jScrollbar_mask p {
+			margin:0;
+			padding:0;
+			color:#FFF;
+			font-size:12px;
+		}
+	.jScrollbar5 .jScrollbar_draggable {
+		float:left;
+		width:12px;
+		height:209px;
+		overflow:hidden;
+		background:none;
+		background-color:#222222;
+		border:1px solid #000;
+		margin-left:23px;
+		position:relative
+	}
+	.jScrollbar5 .jScrollbar_draggable a.draggable {
+		position:relative;
+		background:transparent url('../images/bg_draggable5.png') no-repeat;
+		display:block;
+		height:52px;
+		width:12px;
+		margin-left:0;
+		cursor:s-resize
+	}

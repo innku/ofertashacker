@@ -15,7 +15,8 @@ Rubypros::Application.routes.draw do
   resources :jobs 
   resources :required_skills
   
-  match 'jobs/see/:id' => 'jobs#show'
+  match '/terminos' => 'welcome#terminos'
+  match '/privacidad' => 'welcome#privacidad'
   
   match 'about'=>'welcome#about', :as=>:about
  
