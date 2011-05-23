@@ -9,7 +9,7 @@ class Company < ActiveRecord::Base
     
   validates :title, :presence => true
   validates :email, :uniqueness => true
-  validates_format_of :website, :with => /^(http:\/\/(www\.)?|(www\.)?)\w+\.\D{2,5}.*$/i, :on => :update, :if => :website?
+  validates_format_of :website, :with => /^(http:\/\/(www\.)?|(www\.)?)\w+\.\D{2,}.*$/i, :on => :update, :if => :website?
   validates_format_of :contact_email, :with => /^\w(\w|[.-])+@\w+\.\w{2,}$/i, :on => :update, :if => :contact_email?
   validates_format_of :facebook, :with =>/^(\/?\w+|((http:\/\/(www\.)?|(www\.)?)facebook.com\/\w+))$/i, :on => :update, :if => :facebook?
   validates_format_of :twitter, :with => /^((\/|@)?\w+|((http:\/\/(www\.)?|(www\.)?)twitter.com\/\w+))$/i, :on => :update, :if => :twitter?
@@ -72,6 +72,7 @@ class Company < ActiveRecord::Base
   def twitter?
     !self.twitter.blank?
   end
+  
   def contact_email?
     !self.contact_email.blank?
   end
@@ -138,12 +139,12 @@ class Company < ActiveRecord::Base
 
   def formated_website
     start = 0
-    if (self.website.match(/(^http:\/\/(www\.)?)website.com/i))
+    if (self.website.match(/^http:\/\/(www\.)?\w+\.\w+.*/i))
       return self.website
-    elsif (self.website.match(/^(www\.)?website.com/i) )
-      start = "http://#{self.website}"
-    else 
-      return false
+    elsif (self.website.match(/^(www\.)?\w+\.\w+.*/i))
+      return "http://#{self.website}"
+    else
+      return self.website
     end
   end
   

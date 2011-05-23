@@ -25,22 +25,27 @@ module NavigationHelpers
     when /^the index job page$/i
       jobs_path()
     when /^the show job page for "(.*)"$/i
-      @job = Job.find_by_title($1)
-      job_path(@job)
+      job = Job.find_by_title($1)
+      job_path(job)
     when /^the edit job page for "(.*)"$/i
-      debugger
-      @job = Job.find_by_title($1)
-      edit_job_path(@job)
+      job = Job.find_by_title($1)
+      edit_job_path(job)
+    when /^the edit required skill page for "(.*)"$/i
+      rs = RequiredSkill.find_by_skill_name($1)
+      edit_required_skill_path(rs)
     when /^the new company page$/i
       new_company_registration_path()
+    when /^my jobs page for "(.*)"$/i
+      company = Company.find_by_email($1)
+      my_jobs_company_path(company)
     when /^the company index$/i
       companies_path()
     when /^the edit company page for "(.*)"$/i
-      @company = Company.find_by_email($1)
-      edit_company_path(@company)
+      company = Company.find_by_email($1)
+      edit_company_path(company)
     when /^the show company page for "(.*)"$/i
-      @company = Company.find_by_email($1)
-      company_path(@company)
+      company = Company.find_by_email($1)
+      company_path(company)
     else
       begin
         page_name =~ /the (.*) page/

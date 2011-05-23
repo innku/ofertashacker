@@ -1,6 +1,11 @@
 $(document).ready(function() {
-  
+  // $(".mainContent input:checkbox").uniform();
+    $(".jScrollbar").jScrollbar({
+      allowMouseWheel : true,
+      scrollStep : 10
+    });
   $("#company_jobs").hide();
+
   $("#company_jobs_button").click(function(){
     $("#company_jobs").slideToggle("slow");
   });
