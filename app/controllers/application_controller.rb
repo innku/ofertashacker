@@ -3,7 +3,11 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     flash[:alert] = 'No estas autorizado para ver esta página'
-    redirect_to new_company_session_path
+    if current_company 
+      redirect_to root_path
+    else
+      redirect_to new_company_session_path
+    end
   end
 
   def after_sign_in_path_for(resource)

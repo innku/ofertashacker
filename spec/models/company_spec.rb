@@ -424,20 +424,20 @@ describe Company do
     describe '.formated_website' do
       context 'With a full website url' do
         it 'Returns the correct full url' do
-          @company.website = "http://www.website.com"
-          @company.formated_website.should eql("http://www.website.com")
+          @company.website = "http://www.company.com"
+          @company.formated_website.should eql("http://www.company.com")
         end
       end
       context 'With a website url without http://' do
         it 'Returns the correct full url' do
-          @company.website = "www.website.com"
-          @company.formated_website.should eql("http://www.website.com")
+          @company.website = "www.company.com"
+          @company.formated_website.should eql("http://www.company.com")
         end
       end
       context 'With a website url without http://www.' do
         it 'Returns the correct full url' do
-          @company.website = "website.com"
-          @company.formated_website.should eql("http://website.com")
+          @company.website = "company.com"
+          @company.formated_website.should eql("http://company.com")
         end
       end
     end

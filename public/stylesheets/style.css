@@ -54,7 +54,7 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:Arvo, arial, serif !important; }
 }
 #header .logo {
   position: relative;
-  top:-18px;
+  top:-3px;
   z-index:2;
 }
 #header a.twitter span {
@@ -619,7 +619,6 @@ div.clear{
   display:none;
 	z-index:10000;
 	background-color:#FFF;
-	width:440px;	
 	min-height:200px;
 	border:1px solid #666;
   -moz-box-shadow:0 0 20px 5px #666;
@@ -646,6 +645,13 @@ a.close {
   width:35px;
 }
 
+div#terms_of_use textarea{
+  height:400px;
+  width:440px;
+}
+div#terms_of_use{
+  height:400px;
+}
 
 div#formatting_guide table {
   margin: 15px 0 15px 0;

@@ -6,7 +6,12 @@ class WelcomeController < ApplicationController
   end
   
   def about
-  
+  end
+
+  def terminos
+  end
+
+  def privacidad
   end
 
 end

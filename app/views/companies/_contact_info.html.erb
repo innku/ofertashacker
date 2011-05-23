@@ -1,14 +1,14 @@
 <ul>
   <% if company.website? %>
-    <li><%= link_to "#{truncate(company.website, :length => 20)}", (company.formated_website), :target => :blank%></li>
+    <li><%= link_to "#{truncate(company.website, :length => 20)}", (company.formated_website), :target => :_blank%></li>
   <% end %>
   <% if company.contact_email? %>
     <li> <%= mail_to truncate(company.contact_email, :length => 20)%> </li>
   <% end %>
   <% if company.twitter? %>
-    <li> <%= link_to "#{truncate(company.twitter_text, :length => 20)}", (company.formated_twitter), :target => :blank%> </li>
+    <li> <%= link_to "#{truncate(company.twitter_text, :length => 20)}", (company.formated_twitter), :target => :_blank%> </li>
   <% end %>
   <% if company.facebook? %>
-    <li> <%= link_to "#{truncate(company.facebook_text, :length =>20)}", (company.formated_facebook), :target => :blank%> </li>
+    <li> <%= link_to "#{truncate(company.facebook_text, :length =>20)}", (company.formated_facebook), :target => :_blank%> </li>
   <%end%>
 </ul>
