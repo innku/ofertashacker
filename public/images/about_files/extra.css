@@ -345,7 +345,7 @@ div#about #bottom {
 div#about #bottom_line{
   display:block;
   position:absolute;
-  bottom:-202px;
+  bottom:-206px;
   left:90px;
 }
 div#about #bottom #content{
@@ -365,7 +365,6 @@ div#about #bottom .box{
 
 div#about #bottom h3{
   color:#00575b;
-  margin-bottom:8px;
 }
 
 div#about #bottom h4 {
