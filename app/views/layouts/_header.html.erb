@@ -3,8 +3,8 @@
           <% if current_company %>
             <li id="salir"><%= link_to "<span>Salir</span>".html_safe, destroy_company_session_path() %></li>
             <li id="perfil"><%= link_to "<span>Perfil</span>".html_safe, company_path(current_company) %></li>
-            <li id="publicar"><%= link_to "<span>Publicar oferta</span>".html_safe,  new_job_path() %></li>
-            <li id="ofertas"><%= link_to "<span>Ofertas</span>".html_safe, jobs_path() %></li>
+            <li id="publicar"><%= link_to "<span>Publicar oferta</span>".html_safe,  nueva_oferta_path() %></li>
+            <li id="ofertas"><%= link_to "<span>Ofertas</span>".html_safe, ofertas_path() %></li>
             <% unless current_company.jobs.empty? %>
               <li id="mis_ofertas"><%= link_to "<span>Mis ofertas</span>".html_safe, my_jobs_company_path(current_company) %></li>
             <% end %>
@@ -14,9 +14,9 @@
           <% else %>
             <li id="entrar"><%= link_to "<span>Entrar</span>".html_safe, new_company_session_path() %></li>
             <li id="registrate"><%= link_to "<span>¿Empresa?, Regístrate</span>".html_safe, new_company_registration_path()%></li>
-            <li id="ofertas"><%= link_to "<span>Ver ofertas</span>".html_safe, jobs_path() %></li>
+            <li id="ofertas"><%= link_to "<span>Ver ofertas</span>".html_safe, ofertas_path %></li>
           <% end %>
-          <li id="empresas"><%= link_to "<span>Empresas</span>".html_safe, companies_path %></li>
+          <li id="empresas"><%= link_to "<span>Empresas</span>".html_safe, empresas_path %></li>
 		  </ul>
 		  
         <div class="logo clear span-6">

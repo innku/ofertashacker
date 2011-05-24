@@ -4,8 +4,15 @@ Rubypros::Application.routes.draw do
 
   metropoli_for :cities, :states, :countries
 
-  devise_for :companies
+  devise_for :companies, 
+    :path => '/',
+    :path_names => {
+      :sign_in  => 'entrar',
+      :sign_up  => 'registro',
+      :sign_out => 'salir' 
+    }
   
+
   resources :companies do
     member do
       get "my_jobs"
@@ -17,7 +24,11 @@ Rubypros::Application.routes.draw do
   
   match '/terminos' => 'welcome#terminos'
   match '/privacidad' => 'welcome#privacidad'
-  
-  match 'about'=>'welcome#about', :as=>:about
+  match '/ofertas' => 'jobs#index'
+  match '/empresas' => 'companies#index'
+  match '/registro' => 'devise#new'
+  match '/nueva_oferta' => 'jobs#new'
+
+  match '/acerca_de'=>'welcome#about'
  
 end

@@ -228,7 +228,7 @@ ul.form_checkboxes li{width:21%;}
 /* About */
 
 div.about_wrapper{
-  height:750px;
+  height:780px;
   position:relative;
 }
 div#about{
@@ -285,6 +285,7 @@ div#about #welcome p#welcome_info{
   width: 720px;
   text-align:center;
   color:#333;
+  font-size:1.3em;
 }
 div#about #welcome a#search_offer{font-family: Arvo, serif!important;font-size:14px;}
 
@@ -323,7 +324,7 @@ div#about #middle {
 	margin-bottom:40px;
 }
 div#about #middle p {
-  font-size:1.1em;
+  font-size:1.2em;
 }
 div#about #middle h3{
   font-size:1.45em;
@@ -335,7 +336,7 @@ div#about #bottom {
   position:absolute;
   top:450px;
   left:85px;
-  height:240px;
+  height:265px;
   width:735px;
   background: #F3F8FA;
   padding:10px 0 0 50px;
@@ -344,7 +345,7 @@ div#about #bottom {
 div#about #bottom_line{
   display:block;
   position:absolute;
-  bottom:-202px;
+  bottom:-216px;
   left:90px;
 }
 div#about #bottom #content{
@@ -370,6 +371,7 @@ div#about #bottom h3{
 div#about #bottom h4 {
   font-family: Helvetica Neue, Helvetica!important;
   color:#333;
+
 }
 div#about #bottom .box img{float:left;}
 div#about #bottom .box .info{
@@ -377,6 +379,7 @@ div#about #bottom .box .info{
   left:40px;
 }
 div#about #bottom p{color:#666;}
+div#about #bottom p#sub{font-size:1.2em;}
 
 div#about #bottom .box h4 {
   margin-bottom:0px;
