@@ -43,7 +43,7 @@ class JobsController < ApplicationController
   def destroy
     @job.destroy
     respond_to do |format|
-      format.html { redirect_to(jobs_url, :notice=>"La vacante fue eliminada correctamente") }
+      format.html { redirect_to(jobs_url, :notice=>"La oferta fue eliminada correctamente") }
       format.xml  { head :ok }
     end
   end

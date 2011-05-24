@@ -5,7 +5,9 @@
             <li id="perfil"><%= link_to "<span>Perfil</span>".html_safe, company_path(current_company) %></li>
             <li id="publicar"><%= link_to "<span>Publicar oferta</span>".html_safe,  new_job_path() %></li>
             <li id="ofertas"><%= link_to "<span>Ofertas</span>".html_safe, jobs_path() %></li>
-            <li id="mis_ofertas"><%= link_to "<span>Mis ofertas</span>".html_safe, my_jobs_company_path(current_company) %></li>
+            <% unless current_company.jobs.empty? %>
+              <li id="mis_ofertas"><%= link_to "<span>Mis ofertas</span>".html_safe, my_jobs_company_path(current_company) %></li>
+            <% end %>
             <%if can? :manage, RequiredSkill%>
               <li id="skills"><%= link_to "<span>Skills</span>".html_safe, required_skills_path %></li>
             <%end%>

@@ -7,7 +7,7 @@ class Company < ActiveRecord::Base
 
   has_many :jobs, :dependent => :destroy
     
-  validates :title, :presence => true
+  validates :title, :presence => true, :uniqueness => true
   validates :email, :uniqueness => true
   validates_format_of :website, :with => /^(http:\/\/(www\.)?|(www\.)?)\w+\.\D{2,}.*$/i, :on => :update, :if => :website?
   validates_format_of :contact_email, :with => /^\w(\w|[.-])+@\w+\.\w{2,}$/i, :on => :update, :if => :contact_email?
@@ -151,5 +151,11 @@ class Company < ActiveRecord::Base
   def formated_description
     self.description.gsub(/^h2./,'h3.').gsub(/^h1./,'h2.')
   end
+
+  def blank_profile?
+    #TODO Refactor this method
+    self.city.blank? && !self.logo.file?  && self.twitter.blank? && self.facebook.blank? && self.contact_email.blank?  && self.website.blank? && self.description.blank?
+  end
+
 end
 

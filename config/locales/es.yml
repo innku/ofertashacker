@@ -64,7 +64,7 @@ es:
   
   jobs: 
     available: 
-      vacancies:       "Vacantes más recientes de Ruby Pros"        
+      vacancies:       "Ofertas más recientes de Ofertas Hacker"
     jobs:
       in:                 "en"
       full_time:          "Tiempo completo"
@@ -84,7 +84,7 @@ es:
       skills:             "Habilidades"
       extra_skill:        "Habilidades Extra"
     index:
-      my_vacancies:       "Vacantes más recientes de "
+      my_vacancies:       "Ofertas más recientes de "
       in:                 "en"
       full_time:          "Tiempo completo"
       part_time:          "Medio tiempo"
@@ -118,6 +118,8 @@ es:
               taken:      "ya fue tomado."
         company:
           attributes:
+            title:
+              taken:       "ya fue tomado."
             terms_of_service:
               accepted:   "deben ser aceptados"  
       messages:

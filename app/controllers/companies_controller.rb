@@ -4,10 +4,14 @@ class CompaniesController < ApplicationController
   layout :get_layout
 
   def index
-    @companies = Company.all
+    @companies = Company.all.select{|c| !c.blank_profile?}
   end
   
   def show
+    if @company.blank_profile?
+      redirect_to edit_company_path @company, :new_company => true
+      return
+    end
   end
   
   def edit
