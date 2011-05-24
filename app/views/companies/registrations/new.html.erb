@@ -41,11 +41,17 @@
 	                <%= render '/welcome/terminos' %>
 	              </div> 
           </div>
+          <div class="overlay terms" id="privacy_trigger">
+    <h1>Aviso de Privacidad</h1>
+	              <div style="padding-left:13px;">
+	                <%= render '/welcome/privacidad' %>
+	              </div> 
+          </div>
     <p >
     <%= f.check_box :terms_of_service, :checked=>true%>
     Acepto los
-    <%= link_to "términos de uso", "#", :id => "text_trigger"%> y la
-    <%= link_to "política de privacidad", "#", :id => "text_trigger" %>
+    <%= link_to "términos de uso", "#", :rel=>"#terms_trigger" %> y la
+    <%= link_to "política de privacidad", "#" , :rel => "#privacy_trigger"%>
     </p>
     <div class='calltoAction'>
       <p><%= f.submit "Registrar" %></p>

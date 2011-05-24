@@ -614,6 +614,14 @@ div.clear{
   color:#fff;
   padding:50px 70px;
 }
+#terms_trigger {
+  color:#fff;
+  padding:50px 10px 80px 30px;
+}
+#privacy_trigger {
+  color;
+  padding:50px 10px 80px 30px;
+}
 .overlay {
 
   display:none;
@@ -631,7 +639,7 @@ div.clear{
   font-size:11px;
 }
 .overlay.terms { 
-  width:740px;
+  width:760px;
   height:400px;
 }
 .overlay.terms div{
