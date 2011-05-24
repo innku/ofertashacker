@@ -18,8 +18,8 @@ es:
       timeout: 'Tu sesión ha expirado, por favor accede de nuevo para continuar.'
       inactive: 'Tu cuenta no ha sido activada.'
     sessions:
-      signed_in: 'Has ingresado correctamente.'
-      signed_out: 'Has salido correctamente.'
+      signed_in: ''
+      signed_out: ''
 
     passwords:
       send_instructions: 'Recibirás un email con instrucciones para cambiar tu contraseña en poco minutos.'

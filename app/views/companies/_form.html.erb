@@ -5,9 +5,6 @@
   <div class="infoCompany span-4">
     <p>Datos de la empresa</p>
   </div>
-      <% if params[:new_company] && !@company.errors.any?%>
-        <div id="new_company"><h2>Antes de publicar tu oferta necesitamos tus datos.</h2></div>
-      <%end%>
   <div class="generalForm span-12 prepend-1">
     <%= form_for @company, :html => { :multipart => true } do |f| %>
       <% if @company.errors.any? %>

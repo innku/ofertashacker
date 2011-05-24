@@ -9,7 +9,7 @@ class CompaniesController < ApplicationController
   
   def show
     if @company.blank_profile?
-      redirect_to edit_company_path @company, :new_company => true
+      redirect_to edit_company_path @company
       return
     end
   end

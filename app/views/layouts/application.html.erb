@@ -14,7 +14,9 @@
       </div>
 
       <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+        <% unless msg.blank?%>
+          <%= content_tag :div, msg, :id => "flash_#{name}" %>
+        <% end%>
       <% end %>
 
       <%= content_tag :h1, yield(:title) if show_title? %>
@@ -23,13 +25,13 @@
         <%= yield %>
       </div>
 
-    <div id="footer" class="clear span-24 last">
-      <ul>
-        <li><%= link_to "ofertas", jobs_path %></li>
-        <li><%= link_to "publicar ofertas", new_job_path %></li>
-        <li><%= link_to "acerca de", about_path %></li>
-      </ul>
+      <div id="footer" class="clear span-24 last">
+        <ul>
+          <li><%= link_to "ofertas", jobs_path %></li>
+          <li><%= link_to "publicar ofertas", new_job_path %></li>
+          <li><%= link_to "acerca de", about_path %></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
