@@ -109,7 +109,7 @@ function condensed_info(job){
   (job.part_time) ? str+=", Medio tiempo" : "";
   (job.flexible) ? str+=", Flexible" : "";
   (job.remote) ? str+=", Remoto" : "";
-  if (str.length<=70)
+  if (str.length<= 70)
     return str;
   return str.substring(0,70) + "...";
 
@@ -120,7 +120,7 @@ function job_template(job) {
   var str="<li class=\"job shadow\"" + " id=\"" + job.id +"\" >";
   str += "<a href=\"/jobs/"+job.id+"\">";
   str += "<div class=\"span-4 prepend-8 last\">";
-  str += "<img alt=\""+job.company.title+"\" src="+job.company.logo_url+" /></div>";
+  str += "<img alt=\""+job.company.title+"\" src=\""+job.company.logo_url+"\" /></div>";
   if(job.title.length <= 40)
     str += "<h1>" + job.title + "</h1>";
   else
