@@ -100,6 +100,7 @@ ul#skills li span{float:right;padding-right:20px;}
 }
 
 div.companies_wrapper {
+  min-height:400px;
 	margin-top:30px;
 }
 
