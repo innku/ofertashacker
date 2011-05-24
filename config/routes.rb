@@ -5,7 +5,6 @@ Rubypros::Application.routes.draw do
   metropoli_for :cities, :states, :countries
 
   devise_for :companies, 
-    :path => '/',
     :path_names => {
       :sign_in  => 'entrar',
       :sign_up  => 'registro',
