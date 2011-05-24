@@ -35,12 +35,17 @@
 
     <%= f.label t('.password_confirmation') %>
     <%= f.password_field :password_confirmation %>
-
+          <div class="overlay terms" id="terms_trigger">
+              <h1>Términos de Uso</h1>
+	              <div>
+	                <%= render '/welcome/terminos' %>
+	              </div> 
+          </div>
     <p >
     <%= f.check_box :terms_of_service, :checked=>true%>
     Acepto los
-    <%= link_to "términos de uso", terminos_path, :target => :blank %> y la
-    <%= link_to "política de privacidad", privacidad_path , :target => :blank %>
+    <%= link_to "términos de uso", "#", :id => "text_trigger"%> y la
+    <%= link_to "política de privacidad", "#", :id => "text_trigger" %>
     </p>
     <div class='calltoAction'>
       <p><%= f.submit "Registrar" %></p>

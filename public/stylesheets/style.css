@@ -625,10 +625,18 @@ div.clear{
   -webkit-box-shadow: 0 0 20px #666;
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
-	
+  	
   width:440px;	
   padding:10px;
   font-size:11px;
+}
+.overlay.terms { 
+  width:740px;
+  height:400px;
+}
+.overlay.terms div{
+  overflow-y:auto;
+  height:400px;
 }
 .overlay p{
   color: #666;    
@@ -643,14 +651,6 @@ a.close {
   cursor:pointer;
   height:35px;
   width:35px;
-}
-
-div#terms_of_use textarea{
-  height:400px;
-  width:440px;
-}
-div#terms_of_use{
-  height:400px;
 }
 
 div#formatting_guide table {
