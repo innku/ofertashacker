@@ -4,7 +4,6 @@ class CompaniesController < ApplicationController
   layout :get_layout
 
   def index
-    raise "si trono"
     @companies = Company.all.select{|c| !c.blank_profile?}
   end
   
