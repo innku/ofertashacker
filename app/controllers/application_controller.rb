@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    params[:new_company] ? new_job_path : super
+    params[:new_company] ? new_job_path(:just_registered => true) : super
   end
 
   def current_ability

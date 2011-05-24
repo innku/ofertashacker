@@ -60,7 +60,7 @@ class Company < ActiveRecord::Base
      self.logo.path.nil? ?  DEFAULT_LOGO_ROUTE : self.logo.path[6..-1]
     end
   end
- 
+
   def facebook?
     !self.facebook.blank?
   end
