@@ -26,7 +26,6 @@ class Company < ActiveRecord::Base
 
 	metropoli_for :city, :as=>:city_name
   scope :members, where(:role => "member")
-
   
   DEFAULT_LOGO_ROUTE = "/images/shareIcon.png"
 

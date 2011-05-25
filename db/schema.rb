@@ -66,20 +66,20 @@ ActiveRecord::Schema.define(:version => 20110420163947) do
   add_index "countries", ["name"], :name => "index_countries_on_name"
 
   create_table "jobs", :force => true do |t|
-    t.integer   "company_id"
-    t.string    "title"
-    t.string    "state"
-    t.boolean   "full_time",   :default => false
-    t.boolean   "part_time",   :default => false
-    t.boolean   "remote",      :default => false
-    t.boolean   "flexible",    :default => false
-    t.text      "description"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.integer   "state_id"
-    t.string    "city"
-    t.integer   "city_id"
-    t.text      "extra_skill"
+    t.integer  "company_id"
+    t.string   "title"
+    t.string   "state"
+    t.boolean  "full_time",   :default => false
+    t.boolean  "part_time",   :default => false
+    t.boolean  "remote",      :default => false
+    t.boolean  "flexible",    :default => false
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "state_id"
+    t.string   "city"
+    t.integer  "city_id"
+    t.text     "extra_skill"
   end
 
   add_index "jobs", ["city_id"], :name => "index_jobs_on_city_id"
@@ -95,9 +95,9 @@ ActiveRecord::Schema.define(:version => 20110420163947) do
   add_index "jobs_required_skills", ["job_id", "required_skill_id"], :name => "index_jobs_required_skills_on_job_id_and_required_skill_id"
 
   create_table "required_skills", :force => true do |t|
-    t.string    "skill_name"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.string   "skill_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "required_skills", ["skill_name"], :name => "index_required_skills_on_skill_name", :unique => true

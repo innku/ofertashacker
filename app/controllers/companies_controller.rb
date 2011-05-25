@@ -2,9 +2,11 @@ class CompaniesController < ApplicationController
   before_filter :new_company?, :only=>[:create]
   load_and_authorize_resource :exept => [:my_jobs]
   layout :get_layout
-
+  
+  RANDOM = {'development' => 'RAND()', 'production' => 'random()'}[ENV['RACK_ENV']]
+  
   def index
-    @companies = Company.all.select{|c| !c.blank_profile?}
+    @companies = Company.all(:order => "RANDOM()").select{|c| !c.blank_profile?}
   end
   
   def show
