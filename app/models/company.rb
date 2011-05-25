@@ -45,6 +45,10 @@ class Company < ActiveRecord::Base
                             :default_url => DEFAULT_LOGO_ROUTE
                             
 
+  def to_param
+    "#{self.id}-#{self.title.parameterize}"
+  end
+
   def admin?
     self.role == "admin"
   end

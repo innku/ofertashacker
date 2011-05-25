@@ -37,6 +37,9 @@ class Job < ActiveRecord::Base
     results
   end
 
+  def to_param
+    "#{self.id}-#{self.title.parameterize}"
+  end
 
   def at_least_one_type
     full_time || part_time || remote || flexible
