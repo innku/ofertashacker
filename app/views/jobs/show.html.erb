@@ -13,10 +13,7 @@
       <div class="clear"></div>
       <div id="info"> 
         <% unless @job.company.city.blank?%>
-          <h2><%= t('.city') %></h2>
-          <ul>
-            <li><%= @job.company.city %></li>
-          </ul>
+            <h2><%= @job.company.city %></h2>
         <% end %>
         <%=render :partial =>'companies/contact_info', :locals => {:company => @job.company}%>
       </div>

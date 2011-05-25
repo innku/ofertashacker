@@ -590,10 +590,10 @@ div.clear{
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   background-color: #FDFFE3;
-  padding: 15px;
+  padding: 20px 5px 20px 5px;
   margin-top: 20px;
-  width:175px;
-  height:143px;
+  width:200px;
+  height:123px;
 }
 
 #info ul{
@@ -609,7 +609,9 @@ div.clear{
 #info li a{
   font-family: georgia, helvetica neue;
   color: #333333;
-  font-size: 14px;
+  font-size: 12px;
+  padding:10px 0;
+  line-height:20px;
   text-decoration: none;
 }
 
