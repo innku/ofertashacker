@@ -17,6 +17,9 @@ div.open_wrapper {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EAF3F6', endColorstr='#FFFFFF',GradientType=0 )!important;
 }
 div#about #welcome .link{
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99CC00', endColorstr='#5E8B00',GradientType=0 )!important;
+}
+div#about #welcome .link:hover{
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#304F4F', endColorstr='#1C3030',GradientType=0 )!important;
 }
 div#about #welcome #top h1{
@@ -32,6 +35,11 @@ div#about #bottom_line{
   display:inline-block;
   zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#304F4F', endColorstr='#1C3030',GradientType=0 )!important;
+}
+.button:hover{
+  display:inline-block;
+  zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99CC00', endColorstr='#5E8B00',GradientType=0 )!important;
 }
 
 #footer div{

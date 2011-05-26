@@ -15,6 +15,9 @@ div.open_wrapper {
 }
 
 div#about #welcome .link{
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99CC00', endColorstr='#5E8B00',GradientType=0 )!important;
+}
+div#about #welcome .link:hover{
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#304F4F', endColorstr='#1C3030',GradientType=0 )!important;
 }
 
@@ -58,8 +61,12 @@ div#about #bottom_line{
   position:relative;
   top:0px;
 }
+
 .button{
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#304F4F', endColorstr='#1C3030',GradientType=0 )!important;
+}
+.button:hover{
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99CC00', endColorstr='#5E8B00',GradientType=0 )!important;
 }
 
 .descriptionForm textarea{

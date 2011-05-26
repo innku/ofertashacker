@@ -481,7 +481,7 @@ img#nuevas_ofertas{
   padding: 10px;
   background: #304F4F;
   background: -moz-linear-gradient(top,  #304F4F, #1C3030);
-  background: -webkit-gradient(linear, left top, left bottom, from(#304F4F), to(#1C3030));
+  background: -webkit-gradient(linear, center top, center bottom, from(#304F4F), color-stop(50%,#1C3030));
   -moz-border-radius: 5px;
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -490,7 +490,12 @@ img#nuevas_ofertas{
   cursor: pointer;
 
 }
-
+.button:hover{
+  background: -moz-linear-gradient(top,  #99CC00, #5E8B00);
+  background: -webkit-gradient(linear, center top, center bottom, from(#EAF3F6), color-stop(50%,#5E8B00));
+  border: 2px solid #5E8B00;
+  border-bottom: 0 none;
+}
 .button:active{
   background: -moz-linear-gradient(top,  #1C3030, #304F4F);
   background: -webkit-gradient(linear, left top, left bottom, from(#304F4F), to(#1C3030));
@@ -548,6 +553,7 @@ div.clear{
 }
 
 #left{
+  max-width:230px;
   float: left;
   padding-right: 20px;
   padding-top: 15px;
@@ -637,7 +643,13 @@ div.clear{
   color: #005B60;
   text-decoration: underline;
 }
-
+.button.contact {
+  display:block;
+  margin:auto;
+  width:130px;
+  text-align:center;
+  font-size:1.3em;
+}
 #trigger {
   color:#fff;
   padding:50px 70px;

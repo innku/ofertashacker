@@ -11,13 +11,20 @@
         <%= link_to (image_tag @job.company.logo.url(:medium)), company_path(@job.company), :id=>"company_logo" %>
       </div>
       <div class="clear"></div>
+
       <div id="info"> 
         <% unless @job.company.city.blank?%>
-            <h2><%= @job.company.city %></h2>
+          <h2><%= @job.company.city %></h2>
         <% end %>
         <%=render :partial =>'companies/contact_info', :locals => {:company => @job.company}%>
       </div>
       <%= image_tag "shadow.gif" %>
+      <br />
+      <% if @job.company.contact_email%>
+        <%= mail_to @job.company.contact_email, "Contactar", :class => "button contact" %>
+      <% else %>
+        <%= mail_to @job.company.email, "Contactar", :class => "button contact" %>
+      <% end%>
     </div>
     <div id="right">
       <div style="width:100%;overflow:hidden;"><h1><%= @job.title%></h1></div>
