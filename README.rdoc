@@ -1,0 +1,92 @@
+= Ofertas Hacker
+
+Es un espacio para publicar y encontrar oportunidades de
+trabajo para desarrolladores latinoamericanos.
+
+El objetivo de Ofertas Hacker es promover el desarrollo de software en países latinoamericanos y encontrar las mejores ofertas de trabajo para los mejores desarrolladores.
+
+== Dependencias
+
+Las dependencias de Ofertas Hacker son las siguientes.
+
+* {Ruby 1.8.7}[http://www.ruby-lang.org/en/news/2008/05/31/ruby-1-8-7-has-been-released/]
+* {Ruby on Rails 3.0.1}[https://github.com/rails/rails.git]
+* {Bundler}[http://gembundler.com/]
+
+== Instrucciones de Instalación
+
+La instalación de Ofertas Hacker es bastante sencilla, solo se requieren los siguientes pasos.
+
+1. Clona la aplicación a tu un repositorio local.
+
+    git clone git@github.com:innku/ofertashacker.git
+
+2. Instala Ruby on Rails si aun no lo tienes instalado.
+
+    gem install rails
+
+3. Ejecuta el bundle para instalar todas las gemas y dependencias requeridas en Ofertas Hacker
+
+    bundle install
+
+4. Debes de hacer la migración la base de datos
+
+    rake db:migrate
+
+5. Si quieres crear una cuenta de administrador puedes correr
+
+    rake db:seed
+
+5. Si quieres cargar datos de prueba como trabajos, habilidades y compañias puedes correr
+
+    rake db:seed:sample
+
+Nota: Las compañías creadas por el seed tienen:
+
+* Email de administrador: "admin@sample.com"
+* Email de compañías de prueba: "company@sample.com" y "company2@sample.com"
+* Todas las contraseñs: "secret"
+
+== ¿Quienes somos?
+
+Este es un proyecto creado y mantenido por la comunidad de Ruby en Latinoamérica por el momento los participantes activos en este repositorio somos: 
+
+* {Juan Pablo Escobar}[https://github.com/juanpabloe]
+
+* {Rogelio Guzmán Huerta}[https://github.com/rogeliog]
+
+* {Marina}[https://github.com]
+
+* {Sebastián Gutiérrez}[http://github.com]
+
+== ¿Quieres contribuir en el proyecto?
+
+Nos encantaría que tu o tu empresa formen parte del desarrollo de este producto para mejorarlo cada vez más y más rápido.
+
+=== Si te gustaría contribuir puedes empezar con lo siguiente: 
+
+* Corre "rake cucumber" para correr el nuestras pruebas de integración, como verás aun nos faltan bastantes, así que escoge un feature y escríbelo!
+
+* Puedes ver alguno de los bugs, chores y features que se encuentran en {Pivotal Tracker}[https://www.pivotaltracker.com/projects/153065]. Escribe un spec par él de tal manera que sea sencillo para otros desarrolladores continuar con tu trabajo.
+
+* Tambien puedes aportar a {Ofertas Hacker en Get Satisfaction}[http://getsatisfaction.com/ofertashacker]
+
+=== Cuando contribuyas en Ofertas Hacker solo te pedimos lo siguiente:
+
+* Revisa el {Pivotal Tracker}[https://www.pivotaltracker.com/projects/153065] para ver lo que hace falta hacer, si trabajado en algo que no este en Pivotal Tracker solo háznoslo saber en el {Github Issue Tracker}[https://github.com/innku/ofertashacker/issues] para poder proveerte el feedback adecuado.
+
+* Todas las contribuciones en el código deben de estas probadas con {RSpec}[http://rspec.info/] y {Cucumber}[http://cukes.info/], según aplique el caso.
+
+
+Muchas gracias por ayudarnos a crear de este un mejor proyecto.
+
+
+== Contáctanos
+
+* Puedes mandarnos un correo a {ofertashacker@innku.com}[mailto:ofertashacker@innku.com]
+* Mantente informado de Ofertas Hacker en {@ofertashacker}[http://twitter.com/ofertashacker]
+
+== Licencia
+
+Ofertas hacker se encuentra bajo la licencia de código abierto de {GPL}[http://www.gnu.org/licenses/gpl.html]
+

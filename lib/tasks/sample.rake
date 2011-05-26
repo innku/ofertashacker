@@ -4,57 +4,30 @@ desc 'Seeds sample jobs and categories'
 namespace :db do
   namespace :seed do
     task :sample => :environment do 
-      
-      company = Company.create(
-        :email => "sample@company.com",
-        :title => "Sample Company",
-        :city => "Monterrey",
-        :website => 'www.innku.com',
-        :password => "secret",
-        :password_confirmation => "secret",
-        :description => "Web solutions")
-      company.confirmed_at=Time.now
-      company.save
-      
-      if SkillCategory.count.zero?
-        front = SkillCategory.create(:category =>'Front end')  
-        back = SkillCategory.create(:category =>'Back end')
+      if Company.count <= 1
+        company =  Factory(:company,  :email => "company@sample.com",  :title => "Sample Company 1")
+        company2 = Factory(:company, :email => "company2@sample.com", :title => "Sample Company 2")
       end
-          
+
       if RequiredSkill.count.zero?
-        RequiredSkill.create [
-          {:skill_name =>'Ajax', :skill_category => front },
-          {:skill_name =>'Javascript', :skill_category => front },
-          {:skill_name =>'CSS', :skill_category => front },
-          {:skill_name =>'JQuery', :skill_category => front },
-          {:skill_name =>'MySql', :skill_category => back },
-          {:skill_name =>'Sinatra', :skill_category => back },
-          {:skill_name =>'Ruby', :skill_category => back },
-          {:skill_name =>'Ruby on Rails', :skill_category => back }
-        ]
+        Factory(:required_skill, :skill_name => "Javascript")
+        Factory(:required_skill, :skill_name => "CSS")
+        Factory(:required_skill, :skill_name => "Ruby")
+        Factory(:required_skill, :skill_name => "Sinatra")
+        Factory(:required_skill, :skill_name => "PHP")
+        Factory(:required_skill, :skill_name => "Django")
+        Factory(:required_skill, :skill_name => "MySql")
       end
 
       if Job.count.zero?
-        Factory(:job_for_seed, :full_time=>true, :title=> "Buen rubyero", :company =>  Company.last)
-          Factory(:job_for_seed, :full_time=>true, :title=> "MySql Pro",:company =>  Company.last)
-          Factory(:job_for_seed, :part_time=>true, :title=> "Mister Ruby",:company =>  Company.first)
-          Factory(:job_for_seed, :part_time=>true, :title=> "Rails Lover",:company =>  Company.last)
-          Factory(:job_for_seed, :remote=>true, :title=> "Front end expert",:company =>  Company.first)
-          Factory(:job_for_seed, :remote=>true, :title=> "Sinatra master",:company =>  Company.last)
-          Factory(:job_for_seed, :flexible=>true, :title=> "Ruby developer",:company =>  Company.first)
-          Factory(:job_for_seed, :flexible=>true, :title=> "Excelente programador",:company =>  Company.last)
-          Factory(:job_for_seed, :full_time=>true, :title=> "Diseñador Web", :company =>  Company.last)
-          Factory(:job_for_seed, :full_time=>true, :title=> "API Developer",:company =>  Company.last)
-          Factory(:job_for_seed, :flexible=>true, :title=> "Test Driven engineer",:company =>  Company.first)
-          Factory(:job_for_seed, :flexible=>true, :title=> "Rails Ninja",:company =>  Company.last)
-          Factory(:job_for_seed, :full_time=>true, :title=> "Programador de Ruby", :company =>  Company.last)
-          Factory(:job_for_seed, :full_time=>true, :title=> "Ruby on Rails developer",:company =>  Company.last)
-          Factory(:job_for_seed, :part_time=>true, :title=> "BDD Tester",:company =>  Company.first)
-          Factory(:job_for_seed, :part_time=>true, :title=> "Web app developer",:company =>  Company.last)
-          Factory(:job_for_seed, :remote=>true, :title=> "Software engineer",:company =>  Company.first)
-          Factory(:job_for_seed, :remote=>true, :title=> "MySql GURU",:company =>  Company.last)
-          Factory(:job_for_seed, :flexible=>true, :title=> "Test Driven engineer",:company =>  Company.first)
-          Factory(:job_for_seed, :flexible=>true, :title=> "Rails Ninja",:company =>  Company.last)
+        Factory(:job, :full_time=>true, :title=> "MySql Pro",             :company =>  company,  :extra_skill => "Full time job")
+        Factory(:job, :part_time=>true, :title=> "Rails Lover",           :company =>  company,  :extra_skill => "Part time job")
+        Factory(:job, :remote=>true,    :title=> "Front end expert",      :company =>  company,  :extra_skill => "Remote job")
+        Factory(:job, :flexible=>true,  :title=> "Excelente programador", :company =>  company2, :extra_skill => "Flexible job")
+        Factory(:job, :full_time=>true, :title=> "API Developer",         :company =>  company2, :extra_skill => "Full time job")
+        Factory(:job, :flexible=>true,  :title=> "Rails Ninja",           :company =>  company2, :extra_skill => "Flexible job")
+        Factory(:job, :part_time=>true, :title=> "Web app developer",     :company =>  company,  :extra_skill => "Part time job")
+        Factory(:job, :remote=>true,    :title=> "Software engineer",     :company =>  company2, :extra_skill => "Remote job")
       end   
     end
   end

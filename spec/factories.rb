@@ -19,6 +19,7 @@ Factory.define :job do |f|
   f.part_time             false
   f.remote                false
   f.flexible              false
+  f.extra_skill           ""
   f.description           "We required 3 ruby programmers"
   f.association           :company, :factory => :company
 end
