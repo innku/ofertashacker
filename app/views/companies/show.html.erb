@@ -20,7 +20,13 @@
   </div>
   <div class="generalForm">
     <div id="left">
-      <p><%= image_tag @company.logo.url(:medium) %></p>
+        <%if @company.logo.file?%>
+          <%= link_to (image_tag @company.logo.url(:medium)), company_path(@company), :id=>"company_logo" %>
+        <%else%>
+          <%= link_to @company, :style=>"padding-bottom:10px;" do%>
+            <h3><%= @company.title%></h3>
+          <%end%>
+        <%end%>
       <div class="clear"></div>
       <div id="info">
         <% unless @company.city.blank?%>

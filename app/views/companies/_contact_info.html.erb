@@ -4,6 +4,8 @@
   <% end %>
   <% if company.contact_email? %>
     <li> <%= mail_to company.contact_email, truncate(company.contact_email, :length => 30)%> </li>
+  <% else %>
+    <li> <%= mail_to company.email, truncate(company.email, :length => 30)%> </li>
   <% end %>
   <% if company.twitter? %>
     <li> <%= link_to "#{truncate(company.twitter_text, :length => 30)}", (company.formated_twitter), :target => :_blank%> </li>

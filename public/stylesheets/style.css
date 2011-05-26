@@ -558,6 +558,13 @@ div.clear{
   padding-right: 20px;
   padding-top: 15px;
 }
+#left #logo{
+  overflow:hidden;
+  max-width:210px;
+}
+#left #logo h3{
+  padding-bottom:2px;
+}
 
 .span-23{
   margin-bottom: 10px;
@@ -646,9 +653,8 @@ div.clear{
 .button.contact {
   display:block;
   margin:auto;
-  width:130px;
   text-align:center;
-  font-size:1.3em;
+  font-size:1.5em;
 }
 #trigger {
   color:#fff;

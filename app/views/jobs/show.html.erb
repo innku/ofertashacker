@@ -8,7 +8,13 @@
     </div>
     <div id="left"><!--left-->
       <div id="logo">
-        <%= link_to (image_tag @job.company.logo.url(:medium)), company_path(@job.company), :id=>"company_logo" %>
+        <%if @job.company.logo.file?%>
+          <%= link_to (image_tag @job.company.logo.url(:medium)), company_path(@job.company), :id=>"company_logo" %>
+        <%else%>
+          <%= link_to @job.company, :style=>"padding-bottom:10px;" do%>
+            <h3><%= @job.company.title%></h3>
+          <%end%>
+        <%end%>
       </div>
       <div class="clear"></div>
 
