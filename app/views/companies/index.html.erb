@@ -12,7 +12,7 @@
 			<div class="sidebar_bottom">
 				<p>Mant&eacute;nte informado</p>
 				<ul>
-          <li><%= link_to (image_tag "facebook.png", :alt => "FB Rubypros",:onmouseout=>"this.src='/images/facebook.png'",:onmouseover=>"this.src='/images/facebook1.png'"), "http://www.facebook.com/pages/Ofertas-Hacker/212603935429745", :target=>:_blank %></li>
+          <li><%= link_to (image_tag "facebook.png", :alt => "FB Rubypros",:onmouseout=>"this.src='/images/facebook.png'",:onmouseover=>"this.src='/images/facebook1.png'"), "http://www.facebook.com/OfertasHacker", :target=>:_blank %></li>
 				  <li><%= mail_to ("ofertashacker@innku.com", image_tag("mail.png", :onmouseout=>"this.src='/images/mail.png'", :onmouseover=>"this.src='/images/mail1.png'")) %></li>
           <li><%= link_to (image_tag "twitter.png", :alt => "Twitter",:onmouseout=>"this.src='/images/twitter.png'", :onmouseover=>"this.src='/images/twitter1.png'"), "http://www.twitter.com/ofertashacker", :target =>:_blank %></li>
 				</ul>
@@ -23,6 +23,9 @@
 	        <span>
 	        	<h2><%= link_to truncate(company.title, :length =>  25), company_path(company) %></h2>
             <% unless company.city.blank?%><p><%= "En #{company.city}" %></p><%end%>
+            <% if company.website? %>
+              <%= link_to "#{truncate(company.website, :length => 50)}", (company.formated_website), :target => :_blank%>
+            <% end %><br />
 		        <% if company.twitter?%>
 		          <%= link_to "#{truncate(company.twitter_text, :length => 50)}", (company.formated_twitter), :target => :blank%><br />
 		        <%end%>
