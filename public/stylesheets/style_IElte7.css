@@ -13,7 +13,9 @@
   height:242px;
   padding-top:8px;
 }
-
+div.open_wrapper {
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EAF3F6', endColorstr='#FFFFFF',GradientType=0 )!important;
+}
 div#about #welcome .link{
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#304F4F', endColorstr='#1C3030',GradientType=0 )!important;
 }
@@ -32,6 +34,9 @@ div#about #bottom_line{
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#304F4F', endColorstr='#1C3030',GradientType=0 )!important;
 }
 
+#footer div{
+  width:970px;
+}
 
 div#about #bottom .box{background:#F3F8FA;}
 div#about #bottom #box3{

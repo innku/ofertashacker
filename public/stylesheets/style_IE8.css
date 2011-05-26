@@ -5,7 +5,14 @@
   background-position:bottom;
 
 }
+#footer div{
+  width:970px;
+}
+div.open_wrapper {
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EAF3F6', endColorstr='#FFFFFF',GradientType=0 )!important;
+  left:2px;
 
+}
 
 div#about #welcome .link{
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#304F4F', endColorstr='#1C3030',GradientType=0 )!important;
