@@ -218,7 +218,9 @@ div.sidebar_bottom ul li {
 .mainContent ul{z-index:1;}
 .mainContent ul.posts li{position:relative;z-index:1;}
 .mainContent ul.posts p{position:absolute; bottom:0px;}
+
 div.content{padding:30px 20px 20px 20px;}
+
 ul.form_checkboxes{
   width:600px;
   margin-top:15px;
@@ -226,6 +228,94 @@ ul.form_checkboxes{
 }
 ul.form_checkboxes li{width:21%;}
 
+/* Open Source */
+
+div.open_wrapper {
+  margin-top:35px;
+  background: #EAF3F6;
+  background: -moz-linear-gradient(top,  #EAF3F6 0%, #FFFFFF 50%);
+  background: -gradient(top, #EAF3F6 0%, #FFFFFF 50%);
+  background: -webkit-gradient(linear, center top, center bottom, from(#EAF3F6), color-stop(50%,#FFFFFF));
+  
+  position:relative;
+  padding:0px;
+}
+
+div.open_wrapper #top {
+  background: url('/images/line_about.png') top no-repeat;
+  width:100%;
+  font-size:1.2em;
+}
+div.open_wrapper #top #left_side{
+  padding:30px 0 0px 60px;
+  width:500px;
+}
+
+div.open_wrapper #top p{
+  margin-bottom:10px;
+}
+
+div.open_wrapper #top ul{
+  list-style: url('/images/bullet.png');
+  padding-left:40px;
+
+}
+
+div.open_wrapper  h1{
+  color:#00575B;
+  font-size:27px;
+  font-weight:normal;
+}
+div.open_wrapper  h2{
+  color:#00575B;
+  font-size:18px;
+}
+div.open_wrapper #top img{
+  display:block;
+  position:absolute;
+  top:22px;
+  right:55px;
+}
+div.open_wrapper #bottom{
+  width:100%;
+  background: url('/images/about_middle_line.png') top no-repeat;
+  padding-top:65px;
+}
+div.open_wrapper #bottom #licencia{
+  padding:20px 90px 30px 0;
+  float:right;
+}
+div.open_wrapper #bottom #content{
+  width:810px;
+  margin-left:50px;
+  padding:0px 10px 10px 10px;
+}
+div.open_wrapper #bottom #content div#middle{
+  border-bottom:1px solid #cccccc;
+  border-top:1px solid #cccccc;
+}
+div.open_wrapper #bottom #content div{
+  padding: 10px 0;
+  position:relative;
+}
+div.open_wrapper #bottom #content img {
+  position:relative;
+  padding-left:7px;
+  top:10px;
+}
+div.open_wrapper #bottom #content h2{
+  margin-bottom:-10px;
+}
+div.open_wrapper #bottom #content a{
+  text-align:center;
+  display:block;
+  width:110px;
+  padding:auto 3px;
+  font-size:1.2em;
+  position:absolute;
+  bottom:30px;
+  right:-10px;
+}
 /* About */
 
 div.about_wrapper{
@@ -237,6 +327,7 @@ div#about{
   background: #EAF3F6;
   background: -moz-linear-gradient(top,  #EAF3F6 0%, #FFFFFF 45%);
   background: -webkit-linear-gradient(top, #EAF3F6 0%, #FFFFFF 45%);
+  background: linear-gradient(top, #EAF3F6 0%, #FFFFFF 45%);
   position:absolute;
   top:60px;
   left:0px;

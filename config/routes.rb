@@ -29,5 +29,6 @@ Rubypros::Application.routes.draw do
   match '/nueva_oferta' => 'jobs#new'
 
   match '/acerca_de'=>'welcome#about'
+  match '/codigo'=>'welcome#codigo'
  
 end

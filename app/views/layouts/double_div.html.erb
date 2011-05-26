@@ -24,17 +24,8 @@
       <%= content_tag :h1, yield(:title) if show_title? %>
 
         <%= yield %>
-
-    <div id="footer" class="clear span-24 last">
-      <ul>
-        <li><%= link_to "ofertas", jobs_path %></li>
-        <li><%= link_to "publicar ofertas", new_job_path %></li>
-        <li><%= link_to "acerca de", acerca_de_path %></li>
-        <li><%= link_to "términos y condiciones", terminos_path %></li>
-        <li><%= link_to "política de privacidad", privacidad_path %></li>
-      </ul>
-    </div>
   </div>
+      <%= render 'layouts/footer'%>
 </body>
 </html>
 

@@ -1,0 +1,51 @@
+<div class="content open_wrapper">
+
+  <div id="top">
+    <div id="left_side">
+      <h1>Este es un proyecto de Código Abierto</h1>
+      <h2>¿Qué quiere decir?</h2>
+      <p>
+      Que quien sea puede colaborar, aportar, mejorar e intervenir en el proyecto. 
+      Es de todos para todos.
+      </p>
+
+      <ul>
+        <li>Está hecho con Ruby on Rails</li>
+        <li>El código está en Github</li>
+        <li>No es perfecto pero siempre estará en movimiento</li>
+      </ul>
+    </div>
+    <%= image_tag 'open_source.png', :alt => "Open Source" %>
+  </div>
+
+  <div id="bottom">
+    <div id="content">
+
+      <div>
+        <h2>¿Qué se ha hecho, qué estamos haciendo, qué sigue?</h2>
+        <%=link_to "Ver Proyecto", "#", :class=> "button"%>
+        <p>Puedes ver el avance del proyecto en nuestra cuenta de:
+        <%= image_tag "pivotal.png", :alt => "Pivotal Tracker"%>
+        </p>
+      </div>
+
+      <div id="middle">
+        <h2>¿Quieres dar ideas, quejarte o felicitarnos?</h2>
+        <%=link_to "Ir al Foro", "#", :class=> "button"%>
+        <p>Te invitamos a nuestro foro de discusión en:
+        <%= image_tag "get_satisfaction.png", :alt => "Get Satisfaction"%>
+        </p>
+      </div>
+
+      <div>
+        <h2>¿Quieres aportar con código y ayudarnos a avanzar?</h2>
+        <%=link_to "Ver Repositorio", "#", :class=> "button"%>
+        <p>“Fork me” en
+        <%= image_tag "github.png", :alt => "Github"%>
+        </p>
+      </div>
+
+    </div>
+    <div id="licencia">Este software libre está bajo la licencia GPL v3 <%= link_to "Ver términos", "http://www.gnu.org/licenses/gpl.html", :target => :_blank%></div>
+  </div>
+</div>

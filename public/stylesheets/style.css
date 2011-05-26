@@ -1,5 +1,6 @@
 html {
   background:url("../images/bkg_pattern.png") repeat 0 0;
+
 }
 
 body {
@@ -438,14 +439,30 @@ img#nuevas_ofertas{
 
 /*================== HERE COMES THE FOOTER STYLES ====================*/
 #footer {
-  padding:12px 0 44px;
+  margin-top:40px;
+  padding:0;
+  width:100%;
+  height:80px;
+  background: #1A2F2F url('/images/line_footer_outside.png') repeat-x right top;
+}
+#footer div{
+  background: url('/images/line_footer.png') no-repeat right top;
+  margin:auto;
+  width:955px;
+  height:40px;
+  padding:30px 0px 0px 0px;
 }
 #footer ul {
   padding:0;
+  margin:auto;
 }
 #footer ul li {
   float:left;
-  margin-right:20px;
+  margin-right:25px;
+}
+#footer ul#follow li {
+  margin-right:0px;
+  margin-left:10px;
 }
 #footer ul li a {
   color:#CCCC00;

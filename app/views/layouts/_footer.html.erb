@@ -1,0 +1,18 @@
+<div id="footer" class="clear span-24 last">
+  <div>
+    <ul>
+      <li><%= link_to "ofertas", jobs_path %></li>
+      <li><%= link_to "publicar ofertas", new_job_path %></li>
+      <li><%= link_to "acerca de", acerca_de_path %></li>
+      <li><%= link_to "términos y condiciones", terminos_path %></li>
+      <li><%= link_to "política de privacidad", privacidad_path %></li>
+      <li><%= link_to "código abierto", codigo_path %></li>
+    </ul>
+      
+    <ul id="follow">
+      <li><%= image_tag "siguenos.png", :alt=> "Siguenos"%></li>
+      <li><%= link_to (image_tag "facebook_footer.png", :alt => "FB Rubypros"), "http://www.facebook.com/OfertasHacker", :target=>:_blank %></li>
+      <li><%= link_to (image_tag "twitter_footer.png", :alt => "Twitter"), "http://www.twitter.com/ofertashacker", :target =>:_blank %></li>
+    </ul>
+  </div>
+</div>

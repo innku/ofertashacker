@@ -14,4 +14,6 @@ class WelcomeController < ApplicationController
   def privacidad
   end
 
+  def codigo
+  end
 end
