@@ -17,7 +17,7 @@ class Job < ActiveRecord::Base
 
   metropoli_for :city, :as => :city_name
 
-  scope   :ordered, order('id DESC')
+  scope   :ordered, order('RANDOM()')
 
   def post_twitter
     if Rails.env == 'production'
