@@ -2,6 +2,8 @@ class JobsController < ApplicationController
   before_filter :new_company?, :only=>[:new]
   load_and_authorize_resource :through => :current_company, :except=>[:index,:show,:my_jobs]
   layout :get_layout
+  RANDOM = {'development' => 'RAND()', 'production' => 'random()'}[ENV['RACK_ENV']]
+  
 
   def new
   end
@@ -15,7 +17,7 @@ class JobsController < ApplicationController
   end
   
   def index
-    @jobs =  Job.filter_it(params[:filters], current_company).ordered
+    @jobs =  Job.filter_it(params[:filters], current_company).order("RANDOM()")
     @jobs = @jobs.paginate :page => params[:page], :per_page => 8
     respond_to do |format|
       format.html {render :action => "index"}  
