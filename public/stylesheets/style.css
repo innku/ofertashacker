@@ -565,6 +565,8 @@ div.clear{
 #left #logo h3{
   padding-bottom:2px;
 }
+#left #logo a{ text-decoration:none;}
+#left #logo a:hover{ text-decoration:underline;}
 
 .span-23{
   margin-bottom: 10px;
