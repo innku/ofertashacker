@@ -118,9 +118,16 @@ function condensed_info(job){
 //renders a job template 
 function job_template(job) {
   var str="<li class=\"job shadow\"" + " id=\"" + job.id +"\" >";
-  str += "<a href=\"/jobs/"+job.id+"\">";
+  str += "<a href=\"/jobs/"+job.to_param +"\">";
   str += "<div class=\"span-4 prepend-8 last\">";
-  str += "<img alt=\""+job.company.title+"\" src=\""+job.company.logo_url+"\" /></div>";
+  if(job.company.has_logo)
+    str += "<img alt=\""+job.company.title+"\" src=\""+job.company.logo_url+"\" />";
+  else
+    if(job.company.title.length <= 25)
+      str += "<h4>" + job.company.title + "</h4>";
+    else
+      str += "<h4>" + job.company.title.substring(0,22) + "...</h4>";
+  str += "</div>";
   if(job.title.length <= 40)
     str += "<h1>" + job.title + "</h1>";
   else

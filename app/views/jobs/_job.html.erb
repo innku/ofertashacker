@@ -1,9 +1,19 @@
 <li class="job shadow" id = "<%= job.id%>">
   <%= link_to(job) do %>
     <div class="span-4 prepend-8 last" >
+      
+        <%if job.company.logo.file?%>
       <%=image_tag job.company.logo.url(:thumb), :style=> "display:block;"%>
+    <%else%>
+      <h4><%= truncate(job.company.title, :length => 25)%></h4>
+    <%end%>
     </div>
   <h1><%= truncate(job.title, :length => 40) %></h1>
   <p><%= truncate(condensed_information(job),:length => 70) %> </p>
   <% end %>
 </li>
+
+
+
+
+ 

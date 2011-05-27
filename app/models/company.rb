@@ -44,6 +44,10 @@ class Company < ActiveRecord::Base
                             :default_url => DEFAULT_LOGO_ROUTE
                             
 
+  def has_logo
+    self.logo.file?
+  end
+
   def to_param
     "#{self.id}-#{self.title.parameterize}"
   end

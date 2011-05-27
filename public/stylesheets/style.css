@@ -132,6 +132,7 @@ img#nuevas_ofertas{
 .mainContent ul.posts {
   margin:0px;
   padding:0px;
+  overflow:hidden;
 }
 .mainContent ul.posts {float:left;}
 .mainContent ul.posts li {
@@ -155,11 +156,17 @@ img#nuevas_ofertas{
   padding-left:26px;
   text-decoration:none;
 }
-
-.mainContent a div img {
+.mainContent a div img, .mainContent a div h4 {
   border-left:1px solid #132E43;
   margin-bottom:15px;
   padding:10px 0 0 0;
+}
+.mainContent a div h4 {
+  display:block;
+  padding-left:10px;
+  padding-right:10px;
+  min-height:35px;
+
 }
 
 .mainContent a p {

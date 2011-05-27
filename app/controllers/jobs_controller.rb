@@ -2,8 +2,8 @@ class JobsController < ApplicationController
   before_filter :new_company?, :only=>[:new]
   load_and_authorize_resource :through => :current_company, :except=>[:index,:show,:my_jobs]
   layout :get_layout
+
   RANDOM = {'development' => 'RAND()', 'production' => 'random()'}[ENV['RACK_ENV']]
-  
 
   def new
   end
@@ -21,7 +21,7 @@ class JobsController < ApplicationController
     @jobs = @jobs.paginate :page => params[:page], :per_page => 8
     respond_to do |format|
       format.html {render :action => "index"}  
-      format.json {render :text => @jobs.to_json(:include => {:company => {:only => [:title], :methods => [:logo_url]}}) }
+      format.json {render :text => @jobs.to_json(:methods =>[:to_param] ,:include => {:company => {:only => [:title], :methods => [:logo_url, :has_logo]}}) }
     end
   end
   
