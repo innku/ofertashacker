@@ -3,7 +3,6 @@ desc 'Seeds sample jobs and categories'
 namespace :db do
   namespace :seed do
     task :sample => :environment do 
-      require 'factory_girl'
       if Company.count <= 1
         company =  Factory(:company,  :email => "company@sample.com",  :title => "Sample Company 1")
         company2 = Factory(:company, :email => "company2@sample.com", :title => "Sample Company 2")
