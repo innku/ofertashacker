@@ -1,6 +1,6 @@
 Factory.define :company do |f|
   f.sequence(:email) {|n| "member#{n}@mycompany.com" }
-  f.title                 "My Company"
+  f.sequence(:title) {|n| "My Company#{n}" }
   f.city                  "Monterrey"
   f.password              "secret"
   f.password_confirmation "secret"

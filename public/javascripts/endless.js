@@ -1,12 +1,12 @@
-var current_page=1; //current_page for pagination
 var changes;
+var jobs_ids = []
 var can_send = true;
 function getJobsJSON(filter_info,remove){
   $.getJSON(get_json_path(),{filters: { full_time:filter_info[0],
             part_time:filter_info[1],
             flexible:filter_info[2],
             remote:filter_info[3],
-  },page:current_page }, 
+  },jobs_ids:jobs_ids }, 
   function(data) {
     changes = false;
     if(remove){
@@ -53,11 +53,16 @@ function getJobsJSON(filter_info,remove){
       calibrate();
       can_send = true;
     }
-
     $("#loader img").animate({opacity:'hide'});
   });
 }
-
+function get_jobs_ids(){
+  array=[];
+  $(".posts").children(".job").each(function(){
+    array.push($(this).attr('id'));
+  });
+  return array;
+}
 function get_json_path(){
   if($("#endless_path").val()=="my_jobs") 
     return ("/companies/"+ $("#endless_path").attr("company") +"/my_jobs.json");
@@ -156,7 +161,7 @@ $(window).scroll(function(){
   var i=0;
   if(isScrollBottom() && can_send){
     can_send = false;
-    current_page++;
+    jobs_ids = (get_jobs_ids());
     var filter_info = get_checkbox_status("#mainMenu input");
     getJobsJSON(filter_info,false) 
   }
@@ -178,20 +183,19 @@ function countChecked(filter_info) {
 }
 
 $(document).ready(function() {
-
+  jobs_ids = (get_jobs_ids());
   // if ($(window).hasScrollBar() && can_send){
   //   can_send = false;
-  //   current_page++;
   //   var filter_info = get_checkbox_status("#mainMenu input");
   //   getJobsJSON(filter_info,false) 
   // }
 
   $("#mainMenu input").click(function(){
+    jobs_ids = [-1];
     $("#loader").remove();
     $("#header").append("<div id=\"loader\"><img alt=\"Loader\"src=\"/images/ajax-loader.gif\"  /></div>");
     $("#loader").hide().fadeIn();
 
-    current_page=1;
     var filter_info = get_checkbox_status("#mainMenu input");
     if(countChecked(filter_info) == 4) {
       $("#mainMenu input").each(function() {

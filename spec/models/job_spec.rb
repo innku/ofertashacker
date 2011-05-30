@@ -109,6 +109,15 @@ describe Job do
       end
     end
     
+    describe '.to_param' do
+      before do
+        @job.update_attributes(:title => "Ruby Programmer Ninja")
+      end
+      it 'Returns the id and the title separated by dashes' do
+        @job.to_param.should eql("#{@job.id}-ruby-programmer-ninja")
+      end
+    end
+    
     describe '.at_least_one_type' do
       context 'Without any job type' do
         
@@ -154,6 +163,30 @@ describe Job do
         @job.formated_description.should include("h2. Title")
         @job.formated_description.should include("h3. Sub Title")
         @job.formated_description.should_not include("h2. Sub Title")
+      end
+    end
+  
+    describe '.no_repeat' do
+      before do
+        @job1 = Factory(:job)
+        @job2 = Factory(:job)
+        @job_array = [@job2.id, @job.id]
+      end
+      
+      context 'With an empty array' do
+        it 'Returns all the jobs' do
+          Job.no_repeat.should == Job.all 
+        end
+      end
+      
+      context 'With at least one job id' do
+        
+        it 'Does not return the jobs in the array' do
+          Job.no_repeat(@job_array).should_not include([@job2, @job])
+        end
+        it 'Return the jobs that are not in the array' do
+          Job.no_repeat(@job_array).should == ([@job1])
+        end
       end
     end
   end

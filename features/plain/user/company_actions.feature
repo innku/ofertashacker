@@ -17,7 +17,7 @@ Feature: User Actions
     Given there is a company with name "Sample Company" in city "Monterrey" and email "sample@company.com"
     And there is a job vacancy with title "Ruby on Rails" created by "sample@company.com"
     And I am on the show job page for "Ruby on Rails"
-    When I follow "company_logo"
+    When I follow "Sample Company"
     Then I should see the company details for "sample@company.com"
 
   Scenario: I can see a company detail
@@ -34,5 +34,5 @@ Feature: User Actions
     And I fill in "company_email" with "contact_me@best_company.com"
     And I fill in "company_password" with "mycompany"
     And I press "Registrar"
-    Then I should see "Te has registrado con éxito."
+    Then I should see "¡Listo! Tu empresa ya está registrada, ahora puedes publicar una oferta."
 

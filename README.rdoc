@@ -10,7 +10,7 @@ El objetivo de Ofertas Hacker es promover el desarrollo de software en países l
 Las dependencias de Ofertas Hacker son las siguientes.
 
 * {Ruby 1.8.7}[http://www.ruby-lang.org/en/news/2008/05/31/ruby-1-8-7-has-been-released/]
-* {Ruby on Rails 3.0.1}[https://github.com/rails/rails.git]
+* {Rails 3.0.1}[https://github.com/rails/rails.git]
 * {Bundler}[http://gembundler.com/]
 
 == Instrucciones de Instalación
@@ -55,7 +55,7 @@ Este es un proyecto creado y mantenido por la comunidad de Ruby en Latinoaméric
 
 * {Rogelio Guzmán Huerta}[https://github.com/rogeliog]
 
-* {Marina}[https://github.com]
+* {Marina Magaña}[https://github.com]
 
 * {Sebastián Gutiérrez}[http://github.com]
 
@@ -88,5 +88,12 @@ Muchas gracias por ayudarnos a crear de este un mejor proyecto.
 
 == Licencia
 
-Ofertas hacker se encuentra bajo la licencia de código abierto de {GPL}[http://www.gnu.org/licenses/gpl.html]
+* Copyright 2011 INNKU Solutions SA de CV {http://www.innku.com}[http://www.innku.com]
+{ofertashacker@innku.com}[mailto:ofertashacker@innku.com]
+
+* This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+* This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+* You should have received a copy of the GNU General Public License along with this program.  If not, see {http://www.gnu.org/licenses/}[http://www.gnu.org/licenses/].
 

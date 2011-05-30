@@ -16,4 +16,7 @@ class WelcomeController < ApplicationController
 
   def codigo
   end
+
+  def licencia
+  end
 end

@@ -17,8 +17,8 @@ class JobsController < ApplicationController
   end
   
   def index
-    @jobs =  Job.filter_it(params[:filters], current_company).order("RANDOM()")
-    @jobs = @jobs.paginate :page => params[:page], :per_page => 8
+    params[:jobs_ids] ||= []
+    @jobs =  Job.filter_it(params[:filters], current_company).order("RANDOM()").no_repeat(params[:jobs_ids]).limit(8)
     respond_to do |format|
       format.html {render :action => "index"}  
       format.json {render :text => @jobs.to_json(:methods =>[:to_param] ,:include => {:company => {:only => [:title], :methods => [:logo_url, :has_logo]}}) }

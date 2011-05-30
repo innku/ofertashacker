@@ -56,5 +56,9 @@ class Job < ActiveRecord::Base
   def latest_required_skills
     required_skills.all(:limit => 4, :order => "id desc" )
   end
+  
+  def self.no_repeat(jobs=[])
+    where(sanitize_sql("jobs.id NOT IN (#{jobs.join(',')})"))
+  end
 
 end

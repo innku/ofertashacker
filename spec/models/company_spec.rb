@@ -88,6 +88,35 @@ describe Company do
   
   context 'Instance methods' do
     
+    describe '.has_logo' do
+      
+      context 'When company has logo uploaded' do
+        before do
+          @company.stub_chain(:logo, :file?).and_return(true)
+        end
+        it 'Returns true' do
+          @company.has_logo.should eql(true)
+        end        
+      end
+      
+      context 'When company does not has logo uploaded'
+        before do
+          @company.stub_chain(:logo, :file?).and_return(false)
+        end
+        it 'Returns false' do
+          @company.has_logo.should eql(false)
+        end
+    end
+    
+    describe '.to_param' do
+      before do
+        @company.update_attributes(:title => "Sample Company Inc")
+      end
+      it 'Returns the id and the title separated by dashes' do
+        @company.to_param.should eql("#{@company.id}-sample-company-inc")
+      end
+    end
+    
     describe '.admin?' do
 
       context 'When comany role is admin' do

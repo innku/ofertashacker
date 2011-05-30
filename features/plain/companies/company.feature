@@ -48,5 +48,5 @@ Feature: Company Actions
     And I am on the index job page
     Then I follow "RoR"
     And I follow "Borrar"
-    Then I should see "La vacante fue eliminada correctamente"
+    Then I should see "La oferta fue eliminada correctamente"
 

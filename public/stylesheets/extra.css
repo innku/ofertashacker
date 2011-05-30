@@ -276,6 +276,9 @@ div.open_wrapper #top img{
   top:22px;
   right:55px;
 }
+div#licencia ol.alpha{
+list-style-type: upper-alpha
+}
 div.open_wrapper #bottom{
   width:100%;
   background: url('/images/about_middle_line.png') top no-repeat;

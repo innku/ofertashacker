@@ -30,5 +30,6 @@ Rubypros::Application.routes.draw do
 
   match '/acerca_de'=>'welcome#about'
   match '/codigo'=>'welcome#codigo'
+  match '/licencia'=>'welcome#licencia'
  
 end
