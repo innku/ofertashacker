@@ -58,7 +58,11 @@ class Job < ActiveRecord::Base
   end
   
   def self.no_repeat(jobs=[])
-    where(sanitize_sql("jobs.id NOT IN (#{jobs.join(',')})"))
+    if !jobs.blank? 
+      where(sanitize_sql("jobs.id NOT IN (#{jobs.join(',')})"))  
+    else
+      Job.all
+    end
   end
 
 end
