@@ -194,6 +194,12 @@ div.sidebar_bottom ul li {
     padding: 2px 10px 2px 24px;
     
 }
+#share_buttons{
+	padding-top:5px;
+}
+#share_buttons div{
+	margin-top:15px;
+}
 
 .buttons{float:right;}
 

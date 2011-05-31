@@ -13,59 +13,74 @@
         <%else%>
 
           <% if !@job.company.blank_profile?%>
-          <%= link_to @job.company, :style=>"padding-bottom:10px;" do%>
+            <%= link_to @job.company, :style=>"padding-bottom:10px;" do%>
+              <h3><%= @job.company.title%></h3>
+            <%end%>
+          <%else%>
             <h3><%= @job.company.title%></h3>
           <%end%>
-        <%else%>
-          <h3><%= @job.company.title%></h3>
         <%end%>
-      <%end%>
-    </div>
-    <div class="clear"></div>
-
-    <div id="info"> 
-      <% unless @job.company.city.blank?%>
-        <h2><%= @job.company.city %></h2>
-      <% end %>
-      <%=render :partial =>'companies/contact_info', :locals => {:company => @job.company}%>
-    </div>
-    <%= image_tag "shadow.gif" %>
-    <br />
-    <% if @job.company.contact_email%>
-      <%= mail_to @job.company.contact_email, "Contactar", :class => "button contact" %>
-    <% else %>
-      <%= mail_to @job.company.email, "Contactar", :class => "button contact" %>
-    <% end%>
-  </div>
-  <div id="right">
-    <div style="width:100%;overflow:hidden;"><h1><%= @job.title%></h1></div>
-    <h4>En <%=@job.city%>
-      <%= @job.full_time ? ", Tiempo Completo".html_safe : nil%>
-      <%= @job.part_time ? ", Medio Tiempo".html_safe : nil%>
-      <%= @job.remote ? ", Remoto".html_safe : nil%>
-      <%= @job.flexible ? ", Horario Flexible".html_safe : nil%>
-    </h4>
-    <% for skill in @job.required_skills %>
-      <div class="tag">
-        <span><%= skill.skill_name %></span>
       </div>
-    <% end %>
-    <%unless @job.extra_skill.blank?%>
-      <% for skill in @job.format_extra_skills%>
+      <div class="clear"></div>
+
+      <div id="info"> 
+        <% unless @job.company.city.blank?%>
+          <h2><%= @job.company.city %></h2>
+        <% end %>
+        <%=render :partial =>'companies/contact_info', :locals => {:company => @job.company}%>
+      </div>
+      <%= image_tag "shadow.gif" %>
+      <br />
+      <% if @job.company.contact_email%>
+        <%= mail_to @job.company.contact_email, "Contactar", :class => "button contact" %>
+      <% else %>
+        <%= mail_to @job.company.email, "Contactar", :class => "button contact" %>
+      <% end%>
+
+<div id="share_buttons">
+	
+	
+			<div>
+	<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="OfertasHacker" data-lang="es">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+	</div>
+			<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=170081829719593&amp;xfbml=1"></script><fb:like href="" send="false" layout="button_count" width="0" show_faces="true" action="recommend" font=""></fb:like>
+<div>
+	<script type="text/javascript" src="http://platform.linkedin.com/in.js"></script><script type="in/share" data-counter="right"></script>
+</div>
+</div>
+    </div>
+    <div id="right">
+      <div style="width:100%;overflow:hidden;"><h1><%= @job.title%></h1></div>
+      <h4>En <%=@job.city%>
+        <%= @job.full_time ? ", Tiempo Completo".html_safe : nil%>
+        <%= @job.part_time ? ", Medio Tiempo".html_safe : nil%>
+        <%= @job.remote ? ", Remoto".html_safe : nil%>
+        <%= @job.flexible ? ", Horario Flexible".html_safe : nil%>
+      </h4>
+      <% for skill in @job.required_skills %>
         <div class="tag">
-          <span><%= truncate(skill, :length => 110) %></span>
+          <span><%= skill.skill_name %></span>
         </div>
       <% end %>
-    <%end%>
+      <%unless @job.extra_skill.blank?%>
+        <% for skill in @job.format_extra_skills%>
+          <div class="tag">
+            <span><%= truncate(skill, :length => 110) %></span>
+          </div>
+        <% end %>
+      <%end%>
+
+      <div class="clear"></div>
+      <p>
+
+      <div id="job_description">
+        <p><%= RedCloth.new(@job.formated_description).to_html.html_safe %></p>
+      </div>
+
+    </div><!--/right-->
 
     <div class="clear"></div>
-    <p>
-
-    <div id="job_description">
-      <p><%= RedCloth.new(@job.formated_description).to_html.html_safe %></p>
-    </div>
-  </div><!--/right-->
-  <div class="clear"></div>
-</div>
+  </div>
 
 </div>
+
