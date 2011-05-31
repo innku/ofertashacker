@@ -34,6 +34,9 @@ capybara-*.html
 /coverage/
 /spec/tmp/*
 /public/files/*
+/config/initializers/twitter.rb 
+/config/initializers/bitly.rb 
+/config/initializers/hoptoad.rb 
 /config/*.yml
 **.orig
 rerun.txt
