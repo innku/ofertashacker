@@ -1,5 +1,7 @@
 Rubypros::Application.routes.draw do
 
+  devise_for :users
+
   root :to => 'jobs#index'
 
   metropoli_for :cities, :states, :countries
