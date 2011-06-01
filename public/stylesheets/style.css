@@ -706,6 +706,19 @@ div.clear{
   color: #666;    
 }
 
+.overlay.contact {
+    width: 760px;
+    height: 500px;
+}
+.overlay #side {
+    float:right;
+    padding:40px;
+}
+.overlay .overlay_form {
+    overflow-y: auto;
+    height: 500px;
+}
+
 /* default close button positioned on upper right corner */
 a.close {
   background-image:url(/images/overlay/close.png);

@@ -1,3 +1,4 @@
+<% javascript 'overlay', 'lightbox' %>
 <div class="content">
   <div class="generalForm">
     <div class="nav-buttons">
@@ -22,8 +23,7 @@
         <%end%>
       </div>
       <div class="clear"></div>
-
-      <div id="info"> 
+      <div id="info">
         <% unless @job.company.city.blank?%>
           <h2><%= @job.company.city %></h2>
         <% end %>
@@ -31,15 +31,18 @@
       </div>
       <%= image_tag "shadow.gif" %>
       <br />
-      <% if @job.company.contact_email%>
-        <%= mail_to @job.company.contact_email, "Contactar", :class => "button contact" %>
-      <% else %>
-        <%= mail_to @job.company.email, "Contactar", :class => "button contact" %>
-      <% end%>
-
+      <div class="overlay contact" id="contact_trigger">
+        <div>
+          <% if current_user %>
+            <%= render 'users/contact'%>
+          <% else %>
+            <%= render 'users/new_contact' %>
+          <% end %>
+        </div>
+      </div>
+      <%= link_to "Contactar", "#", :class => "button contact", :rel => "#contact_trigger" %>
+      
 <div id="share_buttons">
-	
-	
 			<div>
 	<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="OfertasHacker" data-lang="es">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 	</div>

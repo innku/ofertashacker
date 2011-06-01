@@ -1,0 +1,11 @@
+    
+<h2><%= current_user.name %></h2>
+<h3><%= current_user.email %></h3>
+
+<%= form_for @user, :url => user_registration_path do |f| %>
+
+<%= f.label :message %>
+<%= f.text_area :message %>
+
+<p><%= f.submit "Contactar" %></p>
+<% end %>

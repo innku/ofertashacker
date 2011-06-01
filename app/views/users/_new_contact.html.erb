@@ -1,0 +1,45 @@
+<div id="registration">
+  <div id="side">
+    <h2>¿Ya tienes cuenta?</h2>
+    <%= link_to "Entrar", "#", :class=> "button", :id=>"login" %>
+  </div>
+
+  <div class="overlay_form">
+    <%= form_for @user, :url => user_registration_path do |f| %>
+      
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :message %>
+      <%= f.text_area :message %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+
+      <p><%= f.submit "Contactar" %></p>
+    <% end %>
+  </div>
+</div>
+
+<div id="sign_in">
+    <h2>Sign in</h2>
+
+    <%= form_for @user, :url => user_session_path do |f| %>
+      <p><%= f.label :email %><br />
+      <%= f.text_field :email %></p>
+      <%=hidden_field_tag :job_id, params[:id].to_i%>
+
+      <p><%= f.label :password %><br />
+      <%= f.password_field :password %></p>
+
+      <p><%= f.submit "Ingresar" %></p>
+    <% end %>
+</div>
+
+
