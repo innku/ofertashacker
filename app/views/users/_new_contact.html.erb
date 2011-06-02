@@ -5,7 +5,7 @@
   </div>
 
   <div class="overlay_form">
-    <%= form_for @user, :url => user_registration_path do |f| %>
+    <%= form_for @user, :url => user_registration_path(:job => job) do |f| %>
       
       <%= f.label :name %>
       <%= f.text_field :name %>
@@ -28,6 +28,10 @@
 </div>
 
 <div id="sign_in">
+  <div id="side">
+    <h2>¿No tienes cuenta?</h2>
+    <%= link_to "Registrate", "#", :class=> "button", :id=>"register" %>
+  </div>
     <h2>Sign in</h2>
 
     <%= form_for @user, :url => user_session_path do |f| %>

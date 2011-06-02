@@ -34,9 +34,9 @@
       <div class="overlay contact" id="contact_trigger">
         <div>
           <% if current_user %>
-            <%= render 'users/contact'%>
+            <%= render :partial => 'users/contact', :locals=>{:job => @job}%>
           <% else %>
-            <%= render 'users/new_contact' %>
+            <%= render :partial => 'users/new_contact', :locals=>{:job => @job}%>
           <% end %>
         </div>
       </div>

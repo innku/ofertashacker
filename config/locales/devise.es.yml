@@ -28,6 +28,8 @@ es:
       send_instructions: 'Recibirás un email con instrucciones para confirmar tu cuenta en poco minutos.'
       confirmed: 'Tu cuenta ha sido confirmada. Ya has accedido a tu cuenta.'
     registrations:
+      user: 
+        contact_notice: 'Tu correo fue enviado a la empresa, espera su respuesta.'
       signed_up: '¡Listo! Tu empresa ya está registrada, ahora puedes publicar una oferta.'
       updated: 'Has actualizado tu cuenta correctamente.'
       destroyed: '!Adiós! Tu cuenta ha sido cancelada. Esperamos verte pronto.'

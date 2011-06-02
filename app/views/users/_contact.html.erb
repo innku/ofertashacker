@@ -1,11 +1,9 @@
-    
 <h2><%= current_user.name %></h2>
 <h3><%= current_user.email %></h3>
 
-<%= form_for @user, :url => user_registration_path do |f| %>
+<%= form_for @user,:method=>:post ,:url => contact_company_user_path(:job => job) do |f| %>
+  <%= f.label :message %>
+  <%= f.text_area :message %>
 
-<%= f.label :message %>
-<%= f.text_area :message %>
-
-<p><%= f.submit "Contactar" %></p>
+  <p><%= f.submit "Contactar" %></p>
 <% end %>
