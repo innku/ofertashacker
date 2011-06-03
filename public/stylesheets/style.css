@@ -212,6 +212,12 @@ img#nuevas_ofertas{
   display:inline;
 }
 
+.mainContent label.message{
+  font-size: 14px;
+	color: #d00;
+	font-weight: normal;
+	margin: -20px 0 25px 0px;
+}
 
 .mainContent a{
   color: #005B60;
@@ -434,7 +440,7 @@ img#nuevas_ofertas{
   margin-left: 15px;
 }
 
-.descriptionForm textarea{
+textarea{
   font-family: arial, serif;
   width:630px;
   height:250px;
@@ -724,6 +730,10 @@ div.clear{
     overflow-y: auto;
     width:450px;
     height: 500px;
+}
+
+.overlay textarea {
+	width: 345px;
 }
 
 /* default close button positioned on upper right corner */

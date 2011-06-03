@@ -16,6 +16,8 @@ gem "will_paginate", "~> 3.0.pre2"
 gem 'hoptoad_notifier'
 gem 'bitly'
 gem 'rack-recaptcha', :require => 'rack/recaptcha'
+gem 'client_side_validations'
+gem "rake", "0.8.7"
 
 group :development, :test do 
   gem 'capybara'

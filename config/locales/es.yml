@@ -61,6 +61,14 @@ es:
         password:         "Contraseña"
         password_confirmation: "Confirmar contraseña"
         description:      "Descripción" 
+        
+  users:
+    new_contact:
+      name:               "Nombre completo"
+      email:              "Correo electrónico"
+      message:            "Qué le quieres decir a la empresa?"
+      password:           "Contraseña"
+      password_confirmation: "Confirmar contraseña"
   
   jobs: 
     available: 
