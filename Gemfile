@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.1'
-
 gem 'sqlite3'
 gem 'twitter'
 gem 'devise'
@@ -16,6 +15,7 @@ gem 'RedCloth'
 gem "will_paginate", "~> 3.0.pre2"
 gem 'hoptoad_notifier'
 gem 'bitly'
+gem 'rack-recaptcha', :require => 'rack/recaptcha'
 
 group :development, :test do 
   gem 'capybara'

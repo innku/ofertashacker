@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+    include Rack::Recaptcha::Helpers
   protect_from_forgery
   before_filter :ensure_domain
 

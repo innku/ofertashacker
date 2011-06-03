@@ -6,10 +6,10 @@
 
   <div class="overlay_form">
     <%= form_for @user, :url => user_registration_path(:job => job) do |f| %>
-      
+
       <%= f.label :name %>
       <%= f.text_field :name %>
-      
+
       <%= f.label :email %>
       <%= f.text_field :email %>
 
@@ -22,6 +22,8 @@
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation %>
 
+      <div id="captcha"><%= raw (recaptcha_tag :challenge)%></div>
+
       <p><%= f.submit "Contactar" %></p>
     <% end %>
   </div>
@@ -32,18 +34,18 @@
     <h2>¿No tienes cuenta?</h2>
     <%= link_to "Registrate", "#", :class=> "button", :id=>"register" %>
   </div>
-    <h2>Sign in</h2>
+  <h2>Sign in</h2>
 
-    <%= form_for @user, :url => user_session_path do |f| %>
-      <p><%= f.label :email %><br />
-      <%= f.text_field :email %></p>
-      <%=hidden_field_tag :job_id, params[:id].to_i%>
+  <%= form_for @user, :url => user_session_path do |f| %>
+    <p><%= f.label :email %><br />
+    <%= f.text_field :email %></p>
+    <%=hidden_field_tag :job_id, params[:id].to_i%>
 
-      <p><%= f.label :password %><br />
-      <%= f.password_field :password %></p>
+    <p><%= f.label :password %><br />
+    <%= f.password_field :password %></p>
 
-      <p><%= f.submit "Ingresar" %></p>
-    <% end %>
+    <p><%= f.submit "Ingresar" %></p>
+  <% end %>
 </div>
 
 

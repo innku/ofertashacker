@@ -707,15 +707,22 @@ div.clear{
 }
 
 .overlay.contact {
-    width: 760px;
+    width: 780px;
     height: 500px;
+}
+.overlay.contact #captcha{
+  position:absolute;
+  top:150px;
+  right:20px;
 }
 .overlay #side {
     float:right;
-    padding:40px;
+    padding:40px 120px 0 0;
 }
+
 .overlay .overlay_form {
     overflow-y: auto;
+    width:450px;
     height: 500px;
 }
 

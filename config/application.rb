@@ -25,7 +25,6 @@ module Rubypros
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
-
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :es
@@ -38,5 +37,6 @@ module Rubypros
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    config.middleware.use Rack::Recaptcha, :public_key => '6LdU8MQSAAAAAJMdpG7-JZ3WWT9CTcvz5PCk-B0v', :private_key => '6LdU8MQSAAAAABho_5w8UjiH2y7xjq3PE4NWD_LJ'
   end
 end
