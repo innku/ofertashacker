@@ -40,6 +40,9 @@
           <% end %>
         </div>
       </div>
+      <% if params[:open_lightbox]%>
+        <%= hidden_field_tag "open_me" %>
+      <%end%>
       <%= link_to "Contactar", "#", :id => "contact_button", :class => "button contact", :rel => "#contact_trigger" %>
       
 <div id="share_buttons">

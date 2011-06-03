@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
     if params[:new_company] 
       new_job_path(:just_registered => true) 
     elsif params[:job_id]
-      job_path(Job.find(params[:job_id]))
+      job_path(Job.find(params[:job_id]), :open_lightbox => true )
     else
       super
     end

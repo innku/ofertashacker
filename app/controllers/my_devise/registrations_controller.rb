@@ -11,10 +11,10 @@ class MyDevise::RegistrationsController < Devise::RegistrationsController
         sign_in_and_redirect(resource_name, resource)
       else
         clean_up_passwords(resource)
-        render_with_scope :new
+        redirect_to job_path(job, :open_lightbox => true)
       end
     else
-      redirect_to job
+      redirect_to job_path(job, :open_lightbox => true)
     end
   end
 
