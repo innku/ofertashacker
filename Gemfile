@@ -17,7 +17,7 @@ gem 'hoptoad_notifier'
 gem 'bitly'
 gem 'rack-recaptcha', :require => 'rack/recaptcha'
 gem 'client_side_validations'
-gem "rake", "0.8.7"
+gem "rake", "0.9.2"
 
 group :development, :test do 
   gem 'capybara'
