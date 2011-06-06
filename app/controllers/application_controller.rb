@@ -21,9 +21,15 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def after_sign_out_path_for(resource_or_scope)
+    if params[:job_id]
+      job_path(Job.find(params[:job_id]), :open_lightbox => true )
+    else
+      super
+    end
+  end
+
   def after_sign_in_path_for(resource)
-    
-    
     if params[:new_company] 
       new_job_path(:just_registered => true) 
     elsif params[:job_id]

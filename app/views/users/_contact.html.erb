@@ -1,9 +1,8 @@
-<h2><%= current_user.name %></h2>
-<h3><%= current_user.email %></h3>
-
+<h3>Mensaje</h3>
+<div id="user_info"><%= current_user.email%>
+  <%=link_to "Estos no son mis datos", destroy_user_session_path(:job_id => job.id)%>
+</div>
 <%= form_for @user,:method=>:post ,:url => contact_company_user_path(:job => job) do |f| %>
-  <%= f.label :message %>
   <%= f.text_area :message %>
-
-  <p><%= f.submit "Contactar" %></p>
+  <%= f.submit "Contactar",:class=>"button" %>
 <% end %>

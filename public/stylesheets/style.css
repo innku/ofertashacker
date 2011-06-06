@@ -719,8 +719,11 @@ div.clear{
 }
 
 .overlay.contact {
-    width: 780px;
-    height: 500px;
+    padding:20px;
+    width: 380px;
+    height: 290px;
+    font-size:11px;
+    color:#666;
 }
 .overlay.contact #captcha{
   position:absolute;
@@ -729,17 +732,60 @@ div.clear{
 }
 .overlay #side {
     float:right;
+    width:200px;
     padding:40px 120px 0 0;
 }
 
 .overlay .overlay_form {
     overflow-y: auto;
-    width:450px;
-    height: 500px;
+    padding-top:20px;
+    width:380px;
+    height: 240px;
+}
+.overlay.contact h3 {
+  padding-top:5px;
+  font-size:20px;
+  color:#00575A;
+}
+.overlay.contact input[type=text], .overlay.contact input[type=password]{
+  height:30px;
+  width:363px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom:20px;
+}
+.overlay.contact label {
+  margin-top:22px;
+  font-size:18px;
+  margin-bottom:0px;
 }
 
 .overlay textarea {
-	width: 345px;
+  margin-top:13px;
+	width: 355px;
+  height: 160px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.overlay #user_submit {
+  position:absolute;
+  bottom:20px;
+  right:10px;
+  font-size:16px;
+}
+.overlay.contact #user_info a{float:right;}
+.overlay.contact #user_info{
+  padding-top:3px;
+
+}
+.overlay.contact .option{
+  position:absolute;
+  bottom:0px;
+  font-size:12px;
+  left:20px;
+  display:block;
 }
 
 /* default close button positioned on upper right corner */

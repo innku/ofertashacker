@@ -14,6 +14,7 @@ $(document).ready(function() {
 
   $("#registration #login").click(function(){
     $("#registration").fadeOut({complete:function(){$("#sign_in").fadeIn();}});
+
   });
 
   $("#sign_in #register").click(function(){

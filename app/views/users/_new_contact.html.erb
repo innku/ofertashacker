@@ -1,7 +1,8 @@
 <div id="registration">
-  <div id="side">
-    <h2>¿Ya tienes cuenta?</h2>
+  <div>
+    <h3>¿Ya tienes cuenta?</h3>
     <%= link_to "Entrar", "#", :class=> "button", :id=>"login" %>
+    <br />
   </div>
 
   <div class="overlay_form">
@@ -35,21 +36,17 @@
 </div>
 
 <div id="sign_in">
-  <div id="side">
-    <h2>¿No tienes cuenta?</h2>
-    <%= link_to "Registrate", "#", :class=> "button", :id=>"register" %>
-  </div>
-  <h2>Sign in</h2>
+  <h3>Iniciar sesión</h3>
 
   <%= form_for @user, :url => user_session_path do |f| %>
-    <p><%= f.label :email %><br />
-    <%= f.text_field :email %></p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
     <%=hidden_field_tag :job_id, params[:id].to_i%>
 
-    <p><%= f.label :password %><br />
-    <%= f.password_field :password %></p>
-
-    <p><%= f.submit "Ingresar" %></p>
+    <%= f.label t('.password') %>
+    <%= f.password_field :password %>
+    <p class="option">¿No tienes cuenta? <%=link_to "Regístrate", "#", :id=> "register"%></p>
+    <p><%= f.submit "Entrar", :class=>"button" %></p>
   <% end %>
 </div>
 
