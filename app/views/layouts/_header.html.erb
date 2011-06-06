@@ -1,5 +1,8 @@
 		<div id="header" class="clear span-24 last">
 		  <ul class="topMenu span-21 prepend-3 last">
+          <% if current_user %>
+            <li id="salir"><%= link_to "<span>Salir</span>".html_safe, destroy_user_session_path() %></li>
+          <% end %>
           <% if current_company %>
             <li id="salir"><%= link_to "<span>Salir</span>".html_safe, destroy_company_session_path() %></li>
             <li id="perfil"><%= link_to "<span>Perfil</span>".html_safe, company_path(current_company) %></li>

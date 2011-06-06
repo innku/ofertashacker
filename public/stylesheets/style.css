@@ -1,3 +1,4 @@
+@font-face { font-family: Adell Basic; src: url(/AdelleBasic_Bold.otf) format('opentype'); }
 html {
   background:url("../images/bkg_pattern.png") repeat 0 0;
 
@@ -7,7 +8,7 @@ body {
   background:url("../images/bkg_line_pattern.png") repeat-x 0px 34px;
 }
 
-h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
+h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Adell Basic', arial; font-weight:normal!important; }
 
 .mainContent ul li label{
   font-size:12px;
@@ -16,7 +17,7 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 }
 
 #header {
-  font-family: 'Podkova',Arvo, arial, serif;
+  font-family: Adell Basic, arial, serif;
   height:144px;
   position:relative;
 }
@@ -42,6 +43,7 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Arvo', arial, serif !important; }
 }
 #header .topMenu a span {
   padding:10px 10px 2px 15px;
+  font-weight:normal!important;
 }
 #header .topMenu a:hover span {
   background:url("../images/bkg_topMenu.png") repeat-x 0 0;
@@ -82,7 +84,7 @@ img#nuevas_ofertas{
 #mainMenu {
   text-transform:lowercase;
   display:block;
-  margin:54px 0 0 0;
+  margin:57px 0 0 20px;
   padding:0px 0px 0px 0px !important;
 }
 #mainMenu li {
@@ -96,6 +98,7 @@ img#nuevas_ofertas{
 #mainMenu li label {
   padding-top:4px;
   margin-left: 4px;
+  font-weight:normal;
 }
 
 
@@ -143,7 +146,8 @@ img#nuevas_ofertas{
 }
 
 .mainContent a h1 {
-  font-weight:bold;
+  font-weight:normal;
+  font-size:2.5em;
   margin-bottom:0.2em !important;
 }
 
@@ -197,10 +201,10 @@ img#nuevas_ofertas{
   font-size:2.5em;
   line-height:1;
   margin-bottom:0.4em;
-  font-weight:bold;
+  font-weight:normal;
   display:block;
   color: #333; 
-  font-family:Arvo, arial, serif !important; 
+  font-family:'Adelle Basic', arial, serif !important; 
 }
 .mainContent label.small_label{
   font-size:16px;
@@ -218,7 +222,9 @@ img#nuevas_ofertas{
 	font-weight: normal;
 	margin: -20px 0 25px 0px;
 }
-
+.mainContent label.message.captcha{
+  margin: 10px 0 25px 0px;
+}
 .mainContent a{
   color: #005B60;
   font-size: 12px;
@@ -691,8 +697,8 @@ div.clear{
 	background-color:#FFF;
 	min-height:200px;
 	border:1px solid #666;
-  -moz-box-shadow:0 0 20px 5px #666;
-  -webkit-box-shadow: 0 0 20px #666;
+  -moz-box-shadow:0 0 20px 5px #222;
+  -webkit-box-shadow: 0 0 20px #222;
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   	

@@ -5,7 +5,7 @@
   </div>
 
   <div class="overlay_form">
-    <%= form_for @user, :validate => :true, :url => user_registration_path(:job => job) do |f| %>
+    <%= form_for @user,:id =>"user_new", :validate => :true, :url => user_registration_path(:job => job) do |f| %>
       
       <%= f.label t('.name') + '*' %>
       <%= f.text_field :name %>
@@ -22,7 +22,12 @@
       <%= f.label t('.password_confirmation') + '*' %>
       <%= f.password_field :password_confirmation %>
 
-      <div ><%= raw (recaptcha_tag :challenge)%></div>
+      <div >
+        <%= raw (recaptcha_tag :challenge)%>
+        <% if params[:job]%>
+          <%= f.label t('.missing_catcha'), :class=>"message captcha"%>
+        <% end%>
+      </div>
 
       <p><%= f.submit "Contactar" %></p>
     <% end %>

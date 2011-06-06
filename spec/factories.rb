@@ -40,3 +40,11 @@ Factory.define :job_for_seed, :class => Job do |j|
   # j.required_skills {|rs|[rs.association :required_skill]}
 end
 
+Factory.define :user do |f|
+  f.sequence(:email) {|n| "member#{n}@mycompany.com" }
+  f.name                  "Foo Bar"
+  f.password              "secret"
+  f.password_confirmation "secret"
+  f.message               "This is my message"
+end
+

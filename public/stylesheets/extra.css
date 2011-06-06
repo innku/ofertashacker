@@ -1,17 +1,3 @@
-@font-face {
-  font-family: Arvo;
-  font-style: normal;
-  font-weight: normal;
-  src: local(Arvo), url(http://themes.googleusercontent.com/font?kit=MViwy4K6e56oHcyeMzjbCQ) format(truetype);
-}
-
-@font-face {
-  font-family: Arvo;
-  font-style: normal;
-  font-weight: bold;
-  src: local(Arvo Bold), local(Arvo-Bold), url(http://themes.googleusercontent.com/font?kit=F-uvpIj1hF17IDyvQvI50Q) format(truetype);
-}
-
 div.terms_of_use {
 
   font-size:1.1em;
@@ -22,7 +8,7 @@ div.terms_of_use li{
 
 div.terms_of_use h3{
   padding: 20px 20px 20px 0;
-  font-weight:bold;
+  font-weight:normal;
 }
 
 div#contacto{
@@ -79,9 +65,9 @@ ul#skills li span{float:right;padding-right:20px;}
   font-size:21px!important;
   line-height: 1;
   margin-bottom: 0.5em;
-  font-weight: bold;
+  font-weight: normal;
   color: #333;
-  font-family: Arvo, arial, serif !important;
+  font-family: 'Adelle Basic', arial, serif !important;
 }
 #job_description h3 {
   font-size:16px!important;
@@ -149,8 +135,9 @@ div.companies_sidebar {
 }
 div.companies_sidebar p {
 	color: #333;
-	font-size:20px;
-  font-family: Arvo, arial, serif !important;
+	font-size:19px;
+  font-family: 'Georgia', arial, serif !important;
+  /* font-weight:bold;*/
 	text-decoration:none;
 	padding: 0px 2px 0px 2px;
 	display: block;
@@ -159,6 +146,7 @@ div.companies_sidebar .sidebar_top p{padding-top:10px;}
 div.companies_sidebar p span {
 	color: #2C89A0;
   display:block;
+  font-weight: normal!important;
 	margin-top: -18px;
   padding-bottom:9px;
 }
@@ -354,10 +342,10 @@ div#about #welcome #top h1{
   color:white;
   font-size:2.3em;
   position:relative;
-  top:-22px;
+  top:-25px;
   border-top:1px solid #2c89a0;
   font-weight:normal;
-  padding:8px 10px 8px 10px;
+  padding:11px 10px;
   background:#00575B;
   display:inline;
 }
@@ -388,7 +376,7 @@ div#about #welcome p#welcome_info{
   color:#333;
   font-size:1.3em;
 }
-div#about #welcome a#search_offer{font-family: Arvo, serif!important;font-size:14px;}
+div#about #welcome a#search_offer{font-family: 'Adelle Basic', serif!important;font-size:14px;}
 
 div#about #welcome .link{
   background:#304F4F;
@@ -490,7 +478,7 @@ div#about #bottom p#sub{font-size:1.2em;}
 div#about #bottom .box h4 {
   margin-bottom:0px;
   color:#666;
-  font-weight:bold;
+  font-weight:normal;
 }
 
 div#about #bottom #box2 {position:absolute;top:65px;}
@@ -511,7 +499,7 @@ div#about #bottom #box4 {position:absolute;top:65px;left:350px;}
     color: #333;
     font-size: 12px;
     text-align:center;
-    font-weight: bold;
+    font-weight: normal;
     font-family: Arial!important;
 }
 /*Flash and Errors*/

@@ -1,6 +1,6 @@
 @filters
-Feature: User Actions
-  As an user
+Feature: Guest Actions
+  As an guest
   I want to filter the job vacancies
 
   Background:

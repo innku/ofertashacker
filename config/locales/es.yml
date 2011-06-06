@@ -69,7 +69,7 @@ es:
       message:            "Qué le quieres decir a la empresa?"
       password:           "Contraseña"
       password_confirmation: "Confirmar contraseña"
-  
+      missing_catcha:     "Ingresa correctamente el Captcha"
   jobs: 
     available: 
       vacancies:       "Ofertas más recientes de Ofertas Hacker"

@@ -2,7 +2,8 @@ Rubypros::Application.routes.draw do
 
   devise_for :users,
     :controllers  => {
-    :registrations => 'my_devise/registrations'
+    :registrations => 'my_devise/registrations',
+    :sessions => 'my_devise/sessions'
   }
 
   root :to => 'jobs#index'

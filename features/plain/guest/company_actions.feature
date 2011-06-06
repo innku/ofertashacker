@@ -1,6 +1,6 @@
-Feature: User Actions
+Feature: Guest Actions
 
-  As a user
+  As a guest
   I want to see all companies
   And also see the information of each company
 

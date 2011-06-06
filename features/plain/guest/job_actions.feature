@@ -1,7 +1,6 @@
-@user
-Feature: User Actions
+Feature: Guest Actions
 
-  As a user
+  As a guest
   I want to see all vacancies
   And also see the information of each vacancy
   
