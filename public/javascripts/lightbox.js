@@ -9,6 +9,10 @@ $(document).ready(function() {
   });
 
   $("#sign_in").hide();
+  if ($("#sign_me_in").length > 0) {
+      $("#registration").hide();
+      $("#sign_in").show();
+  }
   if ($("#open_me").length > 0)
       $("#contact_button").click();
 

@@ -1,4 +1,4 @@
-@font-face { font-family: Adell Basic; src: url(/AdelleBasic_Bold.otf) format('opentype'); }
+@font-face { font-family: Adelle Basic; src: url(/AdelleBasic_Bold.otf) format('opentype'); }
 html {
   background:url("../images/bkg_pattern.png") repeat 0 0;
 
@@ -8,7 +8,7 @@ body {
   background:url("../images/bkg_line_pattern.png") repeat-x 0px 34px;
 }
 
-h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Adell Basic', arial; font-weight:normal!important; }
+h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Adelle Basic', arial; font-weight:normal!important; }
 
 .mainContent ul li label{
   font-size:12px;
@@ -17,7 +17,7 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Adell Basic', arial; font-weight:n
 }
 
 #header {
-  font-family: Adell Basic, arial, serif;
+  font-family: Adelle Basic, arial, serif;
   height:144px;
   position:relative;
 }
@@ -222,6 +222,13 @@ img#nuevas_ofertas{
 	font-weight: normal;
 	margin: -20px 0 25px 0px;
 }
+.mainContent p.message {
+  font-size:15px;
+  color: #d00;
+  font-family: "Adelle Basic", arial, serif;
+  margin:10px 0 -10px 0;
+}
+
 .mainContent label.message.captcha{
   margin: 10px 0 25px 0px;
 }
