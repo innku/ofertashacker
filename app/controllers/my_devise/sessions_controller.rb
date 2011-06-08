@@ -2,7 +2,7 @@ class MyDevise::SessionsController < ApplicationController
   prepend_before_filter :require_no_authentication, :only => [ :new, :create ]
   include Devise::Controllers::InternalHelpers
 
-  after_filter :clear_flash, :only => [:new]
+  # after_filter :clear_flash
   # GET /resource/sign_in
   def new
     clean_up_passwords(build_resource)

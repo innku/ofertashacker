@@ -12,6 +12,7 @@ describe RequiredSkillsController do
     before do
       3.times{ Factory(:required_skill) }
     end
+
     it 'Get the first 10 required skills' do
       get :index
       assigns(:required_skills).should eql(RequiredSkill.all)
