@@ -69,6 +69,7 @@ es:
       message:            "Qué le quieres decir a la empresa?"
       password:           "Contraseña"
       password_confirmation: "Confirmar contraseña"
+      captcha:            "Eres humano?"
       missing_catcha:     "Ingresa correctamente el Captcha"
   jobs: 
     available: 

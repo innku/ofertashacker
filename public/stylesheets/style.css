@@ -730,7 +730,6 @@ div.clear{
 .overlay.contact {
     padding:20px;
     width: 780px;
-    height: 290px;
     font-size:11px;
     color:#666;
 }
@@ -744,13 +743,50 @@ div.clear{
     width:200px;
     padding:40px 120px 0 0;
 }
+.overlay #registration {
+    height: 460px;
+}
+.overlay #registration label {
+    margin-top: 10px;    
+}
+
+.overlay.new_user input[type=text], .overlay.new_user input[type=password]{
+  height:30px;
+  width:363px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom:5px!important;
+}
 
 .overlay .overlay_form {
-    overflow-y: auto;
-    padding-top:20px;
-    width:380px;
-    height: 240px;
+    width:780px;
 }
+.registration_left {
+    width: 380px;
+    float: left;    
+}
+.registration_right {
+    width: 380px;
+    float: right;    
+}
+.registration_right textarea {
+    height: 105px!important;
+}
+.registration_left p.desc {
+    color: #888;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.sign_in_box p{
+    float: right;
+    padding: 8px;
+    background-color: #E0EBEB;
+    margin-top: -23px;
+}
+
 .overlay.contact h3 {
   padding-top:5px;
   font-size:20px;

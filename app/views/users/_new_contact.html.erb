@@ -1,37 +1,39 @@
 <div id="registration">
-  <div>
-    <h3>¿Ya tienes cuenta?</h3>
-    <%= link_to "Entrar", "#", :class=> "button", :id=>"login" %>
-    <br />
-  </div>
-
+  <h3>Registro</h3>
   <div class="overlay_form">
-    <%= form_for @user,:id =>"user_new", :validate => :true, :url => user_registration_path(:job => job) do |f| %>
-      
-      <%= f.label t('.name') + '*' %>
-      <%= f.text_field :name %>
+    <div class="registration_left">
+      <div class="sign_in_box">
+        <p>¿Ya tienes cuenta? <%= link_to "Entrar", "#", :id=>"login" %></p>
+      </div>
+      <%= form_for @user,:id =>"user_new", :validate => :true, :url => user_registration_path(:job => job) do |f| %>
+        
+        <%= f.label t('.name') + '*' %>
+        <%= f.text_field :name %>
 
-      <%= f.label t('.email') + '*' %>
-      <%= f.text_field :email %>
+        <%= f.label t('.email') + '*' %>
+        <%= f.text_field :email %>
+        
+        <%= f.label t('.password') + '*' %>
+        <%= f.password_field :password %>
 
+        <%= f.label t('.password_confirmation') + '*' %>
+        <%= f.password_field :password_confirmation %>
+        <p class="desc">Le enviaremos el correo a la empresa y guardaremos tus datos para ahorrarte este paso la próxima vez que apliques a cualquier otra oferta.</p>
+    </div>
+    <div class="registration_right">
       <%= f.label t('.message') %>
       <%= f.text_area :message %>
+        <div>
+           <%= f.label t('.captcha') %>
+          <%= raw (recaptcha_tag :challenge)%>
+          <% if params[:job]%>
+            <%= f.label t('.missing_catcha'), :class=>"message captcha"%>
+          <% end%>
+        </div>
 
-      <%= f.label t('.password') + '*' %>
-      <%= f.password_field :password %>
-
-      <%= f.label t('.password_confirmation') + '*' %>
-      <%= f.password_field :password_confirmation %>
-
-      <div >
-        <%= raw (recaptcha_tag :challenge)%>
-        <% if params[:job]%>
-          <%= f.label t('.missing_catcha'), :class=>"message captcha"%>
-        <% end%>
-      </div>
-
-      <p><%= f.submit "Contactar" %></p>
+        <p><%= f.submit "Contactar", :class => "button"%></p>
     <% end %>
+    </div>
   </div>
 </div>
 
