@@ -19,17 +19,17 @@
         <%= f.label t('.password_confirmation') + '*' %>
         <%= f.password_field :password_confirmation %>
         <p class="desc">Le enviaremos el correo a la empresa y guardaremos tus datos para ahorrarte este paso la próxima vez que apliques a cualquier otra oferta.</p>
-    </div>
-    <div class="registration_right">
-      <%= f.label t('.message') %>
-      <%= f.text_area :message %>
-        <div>
+        <div id="captcha">
            <%= f.label t('.captcha') %>
           <%= raw (recaptcha_tag :challenge)%>
           <% if params[:job]%>
             <%= f.label t('.missing_catcha'), :class=>"message captcha"%>
           <% end%>
         </div>
+    </div>
+    <div class="registration_right">
+      <%= f.label t('.message') %>
+      <%= f.text_area :message %>
 
         <p><%= f.submit "Contactar", :class => "button"%></p>
     <% end %>

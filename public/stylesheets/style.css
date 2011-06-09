@@ -735,8 +735,8 @@ div.clear{
 }
 .overlay.contact #captcha{
   position:absolute;
-  top:150px;
-  right:20px;
+  top:230px;
+  right:85px;
 }
 .overlay #side {
     float:right;
