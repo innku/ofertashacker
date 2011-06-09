@@ -7,16 +7,16 @@ $(document).ready(function() {
     },
     closeOnClick: false
   });
-
+  $("#wizard").scrollable();
   $("#sign_in").hide();
-  
+
   if ($("#sign_me_in").length > 0) {
-     $(".overlay.contact").animate({'width':'380px', 'height': '290px','marginLeft':'200px'});
-      $("#registration").hide();
-      $("#sign_in").show();
+    $(".overlay.contact").animate({'width':'380px', 'height': '290px','marginLeft':'200px'});
+    $("#registration").hide();
+    $("#sign_in").show();
   }
   if ($("#open_me").length > 0)
-      $("#contact_button").click();
+    $("#contact_button").click();
 
   $("#registration #login").click(function(){
     $(".overlay.contact").animate({'width':'380px', 'height': '290px','marginLeft':'200px'});

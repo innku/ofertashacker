@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   validates_length_of :password, :minimum => 6
 
+  def want_to_register?
+    !self.password.blank? && !self.password_confirmation.blank?
+  end
+
 end
