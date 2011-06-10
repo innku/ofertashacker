@@ -726,7 +726,12 @@ div.clear{
 .overlay p{
   color: #666;    
 }
-
+.overlay .big{
+  display:block;
+  float:right;
+  padding:10px 30px;
+  margin-top:-10px;
+}
 .overlay.contact {
     padding:20px;
     width: 780px;
@@ -734,9 +739,9 @@ div.clear{
     color:#666;
 }
 .overlay.contact #captcha{
-  position:absolute;
-  top:230px;
-  right:85px;
+  position:relative;
+  top:-8px;
+  right:3px;
 }
 .overlay #side {
     float:right;
@@ -744,7 +749,9 @@ div.clear{
     padding:40px 120px 0 0;
 }
 .overlay #registration {
-    height: 460px;
+    position:relative;
+    top:-20px;
+    height: 405px;
 }
 .overlay #registration label {
     margin-top: 10px;    
@@ -771,24 +778,26 @@ div.clear{
     float: right;    
 }
 .registration_right textarea {
-    height: 105px!important;
+    height: 150px!important;
 }
-.registration_right p.desc {
-    color: #888;
-    font-size: 13px;
+.registration_left p.desc {
+    color: #666;
+    font-size: 11px;
+    padding-top:36px;
     font-style: italic;
     font-weight: normal;
 }
 
 .sign_in_box p{
-    float: right;
+    display:block;
+    width:200px;
     padding: 8px;
     background-color: #E0EBEB;
-    margin-top: -23px;
 }
 
 .overlay.contact h3 {
   padding-top:5px;
+  padding-bottom:19px;
   font-size:20px;
   color:#00575A;
 }
@@ -807,7 +816,7 @@ div.clear{
 }
 
 .overlay textarea {
-  margin-top:13px;
+  margin-top:0;
 	width: 355px;
   height: 160px;
   -moz-border-radius: 5px;
@@ -894,7 +903,7 @@ div#formatting_guide table td h3 {
 #wizard {	
 	background:#fff url(/img/global/gradient/h600.png) repeat scroll 0 0;
 	font-size:12px;
-	height:450px;
+	height:440px;
 	margin:20px auto;	
 	width:780px;
 	overflow:hidden;

@@ -4,9 +4,8 @@ class MyDevise::RegistrationsController < Devise::RegistrationsController
     build_resource
     resource.message = params[:user][:message]
     resource.name = params[:user][:name]
-
     if recaptcha_valid?
-      if resource.want_to_register?
+      if params[:register]
         if resource.save
           ContactMailer.contact(@job, resource).deliver 
           set_flash_message :notice, :contact_notice

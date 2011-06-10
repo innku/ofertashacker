@@ -7,7 +7,9 @@ $(document).ready(function() {
     },
     closeOnClick: false
   });
-  $("#wizard").scrollable();
+  var root = $("#wizard").scrollable();
+$("#registration form").validator();
+  
   $("#sign_in").hide();
 
   if ($("#sign_me_in").length > 0) {
@@ -28,5 +30,7 @@ $(document).ready(function() {
     $(".overlay.contact").animate({'width':'780px', 'height':'460px','marginLeft':'0'});
     $("#sign_in").fadeOut({complete:function(){$("#registration").fadeIn();}});
   });
+
+
 });
 

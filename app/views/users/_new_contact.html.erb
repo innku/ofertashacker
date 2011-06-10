@@ -6,24 +6,28 @@
         <!-- pages -->
         <div class="page">
           <div class="registration_left">
-                       
+            <h3>¿Qué le quieres decir a la empresa?</h3>
+
             <%= f.text_field :name, :placeholder => "#{t('.name')}"%>
             <%= f.text_field :email , :placeholder => "#{t('.email')}"%>
-            <%= text_field_tag :github ,nil, :placeholder => "Github"%>
-            <%= text_field_tag :linkedin , nil,:placeholder => "Linkedin"%>
-            <%= text_field_tag "Algo mas?", nil,  :placeholder => "Algo mas"%>
+            <%= text_field_tag :github ,nil, :placeholder => "URL Github"%>
+            <%= text_field_tag :linkedin , nil,:placeholder => "URL Linkedin"%>
+            <%= text_field_tag "Algo mas?", nil,  :placeholder => "URL Personal"%>
+            <p class="desc">Le enviaremos el correo a la empresa y guardaremos tus datos para ahorrarte este paso la próxima vez que apliques a cualquier otra oferta.</p>
           </div>
           <div class="registration_right">
+            <div class="sign_in_box">
+              <p>¿Ya tienes cuenta? <%= link_to "Entrar", "#", :id=>"login" %></p>
+            </div>
             <%= f.text_area :message, :placeholder => "#{t('.message')}"%>
-            <div id="catcha">
+            <div id="captcha">
               <%= raw (recaptcha_tag :challenge)%>
               <% if params[:job]%>
                 <%= f.label t('.missing_catcha'), :class=>"message captcha"%>
               <% end%>
             </div>
-            <p class="desc">Le enviaremos el correo a la empresa y guardaremos tus datos para ahorrarte este paso la próxima vez que apliques a cualquier otra oferta.</p>
             <br />
-            <button type="button" class="button next ">Siguiente »</button>
+            <%= link_to "Enviar Mensaje","#", :class=>"button big next"  %>
           </div>
         </div>
         <div class="page">
@@ -32,11 +36,11 @@
 
           <%= f.password_field :password_confirmation , :placeholder => "#{t('.password_confirmation')}"%>
           <br />
-          <%= f.submit "Contactar", :class => "button"%>
-          <button type="button" class="button prev" style="float:left">« Atras</button>
+            <%= link_to "Regresar","#", :class=>"button prev" %>
+            <%= f.submit "Contactar", :class => "button", :name=> "register"%>
+          <%= f.submit "No Registrarme", :class => "button", :name=>"no_register"%>
         </div>
 
-        <div class="page">[ Any HTML content ]</div>
 
       </div>
 
