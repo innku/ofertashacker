@@ -732,6 +732,9 @@ div.clear{
   padding:10px 30px;
   margin-top:-10px;
 }
+.overlay .center {
+  margin: 95px 0 0 200px;
+}
 .overlay.contact {
     padding:20px;
     width: 780px;

@@ -22,9 +22,6 @@
             <%= f.text_area :message, :placeholder => "#{t('.message')}"%>
             <div id="captcha">
               <%= raw (recaptcha_tag :challenge)%>
-              <% if params[:job]%>
-                <%= f.label t('.missing_catcha'), :class=>"message captcha"%>
-              <% end%>
             </div>
             <br />
             <%= link_to "Enviar Mensaje","#", :class=>"button big next"  %>
@@ -32,13 +29,27 @@
         </div>
         <div class="page">
 
-          <%= f.password_field :password , :placeholder => "#{t('.password')}"%><br />
+          <h3>Listo tenemos tu mensaje, quieres que guardemos tus datos</h3>
+          <p>
+          Si te registras en Ofertas Hacker ya no sera necesario que vuelvas a escribir tu nombre, 
+          correo y ligas de contacto cada vez que quieras contactar una empresa.
+          </p>
 
-          <%= f.password_field :password_confirmation , :placeholder => "#{t('.password_confirmation')}"%>
-          <br />
+          <p>
+          Nadamas faltaría que eligas una contraseña y estas dentro. Prometemos no enviarte spam,
+          vender tus datos ni cualquier otra cosa que te pudiera molestar.
+          </p>
+
+          <div class="center">
+            <%= f.password_field :password , :placeholder => "#{t('.password')}"%><br />
+
+            <%= f.password_field :password_confirmation , :placeholder => "#{t('.password_confirmation')}"%>
+            <br />
+
+            <%= f.submit "Registrarme", :class => "button", :name=> "register"%> o 
+            <%= f.submit "Sólo enviar el mensaje", :class => "as_link", :name=>"no_register"%>
+          </div>
             <%= link_to "Regresar","#", :class=>"button prev" %>
-            <%= f.submit "Contactar", :class => "button", :name=> "register"%>
-          <%= f.submit "No Registrarme", :class => "button", :name=>"no_register"%>
         </div>
 
 
@@ -52,14 +63,14 @@
 
 <div id="sign_in">
   <h3>Iniciar sesión</h3>
-  <% if params[:sign_in] %>
+  <% if params[:sign_in] == "error" %>
     <%= content_tag "p", "Contraseña o email inválido", :class => :message %>
   <% end %>
-  <%= form_for @user, :url => user_session_path(:job => job,:sign_in => true) do |f| %>
+  <%= form_for @user, :url => user_session_path(:job => job,:sign_in => "error") do |f| %>
 
     <%= f.label :email %>
     <%= f.text_field :email %>
-    <%=hidden_field_tag :job_id, params[:id].to_i%>
+    <%=hidden_field_tag :job_id, job.id%>
 
     <%= f.label t('.password') %>
     <%= f.password_field :password %>

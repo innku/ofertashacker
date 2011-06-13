@@ -2,7 +2,7 @@
 <div id="user_info">
   <%= current_user.name%><br />
   <%= current_user.email%>
-  <%=link_to "Estos no son mis datos", destroy_user_session_path(:job_id => job.id)%>
+  <%=link_to "Estos no son mis datos", destroy_user_session_path(:job_id => job.id, :sign_in => true)%>
 </div>
 <%= form_for @user,:method=>:post ,:url => contact_company_user_path(:job => job) do |f| %>
   <%= f.text_area :message %>

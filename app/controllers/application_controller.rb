@@ -22,7 +22,9 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_out_path_for(resource_or_scope)
-    if params[:job_id]
+    if params[:job_id] && params[:sign_in]
+      job_path(Job.find(params[:job_id]), :open_lightbox => true, :sign_in => true )
+    elsif params[:job_id]
       job_path(Job.find(params[:job_id]), :open_lightbox => true )
     else
       super

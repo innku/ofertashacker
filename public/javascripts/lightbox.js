@@ -28,7 +28,7 @@ $("#registration form").validator();
 
   $("#sign_in #register").click(function(){
     $(".overlay.contact").animate({'width':'780px', 'height':'460px','marginLeft':'0'});
-    $("#sign_in").fadeOut({complete:function(){$("#registration").fadeIn();}});
+    $("#sign_in").hide({complete:function(){$("#registration").fadeIn();}});
   });
 
 
