@@ -56,6 +56,10 @@ When /^I wait "([^"]*)" seconds$/ do |n|
   sleep(n.to_i)
 end
 
+When /^I wait a second$/ do
+  sleep(1)
+end
+
 When /^I fill in "([^"]*)" with "([^"]*)" and wait for the element$/ do |field, value|
   fill_in(field, :with => value, :wait_for => :element, :element => field)
 end

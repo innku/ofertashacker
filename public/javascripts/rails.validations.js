@@ -33,12 +33,17 @@
           .live('element:validate:fail',   function(eventData, message) {
             var element = $(this);
             clientSideValidations.callbacks.element.fail(element, message, function() {
+              //Added by me
+              // $(".button.next").fadeOut();
               addError(element, message);
             }, eventData) })
           .live('element:validate:pass',   function(eventData) {
             var element = $(this);
             clientSideValidations.callbacks.element.pass(element, function() {
               removeError(element);
+              //Added by me
+              // if ($("#registration label.message").length <= 0 )
+              //   $(".button.next").fadeIn();
             }, eventData) })
         // Checkboxes - Live events don't support filter
         .end().find('[data-validate]:checkbox')

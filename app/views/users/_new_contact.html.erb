@@ -1,5 +1,5 @@
 <div id="registration">
-  <%= form_for @user,:id =>"user_new", :url => user_registration_path(:job => job) do |f| %>
+  <%= form_for @user,:id =>"user_new", :validate =>true, :url => user_registration_path(:job => job) do |f| %>
     <div id="wizard">
       <!-- scrollable items -->
       <div class="items">
@@ -22,6 +22,9 @@
             <%= f.text_area :message, :placeholder => "#{t('.message')}"%>
             <div id="captcha">
               <%= raw (recaptcha_tag :challenge)%>
+               <% if params[:job]%>
+                 <%= f.label t('.missing_catcha'), :class=>"captcha"%>
+               <% end%>
             </div>
             <br />
             <%= link_to "Enviar Mensaje","#", :class=>"button big next"  %>
@@ -41,9 +44,9 @@
           </p>
 
           <div class="center">
-            <%= f.password_field :password , :placeholder => "#{t('.password')}"%><br />
+            <%= f.password_field :password , :validate => false, :placeholder => "#{t('.password')}"%><br />
 
-            <%= f.password_field :password_confirmation , :placeholder => "#{t('.password_confirmation')}"%>
+            <%= f.password_field :password_confirmation , :validate => false, :placeholder => "#{t('.password_confirmation')}"%>
             <br />
 
             <%= f.submit "Registrarme", :class => "button", :name=> "register"%> o 

@@ -8,8 +8,8 @@ $(document).ready(function() {
     closeOnClick: false
   });
   var root = $("#wizard").scrollable();
-$("#registration form").validator();
-  
+  $("#registration form").validator();
+
   $("#sign_in").hide();
 
   if ($("#sign_me_in").length > 0) {
@@ -29,6 +29,15 @@ $("#registration form").validator();
   $("#sign_in #register").click(function(){
     $(".overlay.contact").animate({'width':'780px', 'height':'460px','marginLeft':'0'});
     $("#sign_in").hide({complete:function(){$("#registration").fadeIn();}});
+  });
+
+  //Tab Hack for form
+  root.find(".button.next").keydown(function(e) {
+    if (e.keyCode == 9) {
+      // seeks to next tab by executing our validation routine
+      api.next();
+      e.preventDefault();
+    }
   });
 
 

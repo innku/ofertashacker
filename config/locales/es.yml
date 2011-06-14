@@ -121,6 +121,10 @@ es:
   activerecord:
     errors:
       models:
+        user:
+          attributes:
+            email:
+              taken:      "ya fue tomado."
         required_skill:
           attributes:
             skill_name:
