@@ -1,3 +1,4 @@
+
 <div id="registration">
   <%= form_for @user,:id =>"user_new", :validate =>true, :url => user_registration_path(:job => job) do |f| %>
     <div id="wizard">
@@ -8,8 +9,8 @@
           <div class="registration_left">
             <h3>¿Qué le quieres decir a la empresa?</h3>
 
-            <%= f.text_field :name, :placeholder => "#{t('.name')}"%>
-            <%= f.text_field :email , :placeholder => "#{t('.email')}"%>
+            <li class="required"><%= f.text_field :name, :placeholder => "#{t('.name')}"%></li>
+            <li class="required"><%= f.text_field :email , :placeholder => "#{t('.email')}"%></li>
             <%= text_field_tag :github ,nil, :placeholder => "URL Github"%>
             <%= text_field_tag :linkedin , nil,:placeholder => "URL Linkedin"%>
             <%= text_field_tag "Algo mas?", nil,  :placeholder => "URL Personal"%>
@@ -19,28 +20,22 @@
             <div class="sign_in_box">
               <p>¿Ya tienes cuenta? <%= link_to "Entrar", "#", :id=>"login" %></p>
             </div>
-            <%= f.text_area :message, :placeholder => "#{t('.message')}"%>
-            <div id="captcha">
-              <%= raw (recaptcha_tag :challenge)%>
-               <% if params[:job]%>
-                 <%= f.label t('.missing_catcha'), :class=>"captcha"%>
-               <% end%>
-            </div>
+            <li class="required"><%= f.text_area :message, :placeholder => "#{t('.message')}"%></li>
             <br />
             <%= link_to "Enviar Mensaje","#", :class=>"button big next"  %>
           </div>
         </div>
         <div class="page">
 
-          <h3>Listo tenemos tu mensaje, quieres que guardemos tus datos</h3>
+          <h3>Listo! tenemos tu mensaje, ¿quieres que guardemos tus datos?</h3>
           <p>
-          Si te registras en Ofertas Hacker ya no sera necesario que vuelvas a escribir tu nombre, 
-          correo y ligas de contacto cada vez que quieras contactar una empresa.
+          Si te registras en Ofertas Hacker ya no será necesario que vuelvas a escribir tu nombre, 
+          correo ni ligas de contacto cada vez que quieras contactar a otra empresa.
           </p>
 
           <p>
-          Nadamas faltaría que eligas una contraseña y estas dentro. Prometemos no enviarte spam,
-          vender tus datos ni cualquier otra cosa que te pudiera molestar.
+          Ahora solamente falta que elijas una contraseña y estás dentro. Prometemos no enviarte spam
+         ni cualquier otra cosa que te pudiera molestar.
           </p>
 
           <div class="center">

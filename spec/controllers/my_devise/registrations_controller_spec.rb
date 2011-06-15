@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe MyDevise::RegistrationsController do
   include Devise::TestHelpers
-  include Rack::Recaptcha::Helpers
 
   before do
     request.env["devise.mapping"] = Devise.mappings[:user]
@@ -12,10 +11,6 @@ describe MyDevise::RegistrationsController do
     before do
       @job = Factory(:job)
     end
-    context 'With a valid captcha' do
-      before do
-        controller.stub(:recaptcha_valid?).and_return(true)
-      end
       context 'When the user wants to register' do
         context 'With valid parameters' do
           let(:valid_params){{:job => @job.id, 
@@ -82,21 +77,5 @@ describe MyDevise::RegistrationsController do
 
       end
 
-    end
-    context 'With an invalid captcha' do
-      before do
-        controller.stub(:recaptcha_valid?).and_return(false)
-      end
-
-      let(:invalid_params){{:job => @job.id, 
-        :user=> Factory.build(:user).attributes.merge!({:password => 'secret', 
-                                                       :password_confirmation => 'not-secret', 
-                                                       :message => "The Message"}),
-                                                       :register=>true}}
-      it 'Renders the job show template' do
-        post :create, invalid_params
-        response.should render_template("jobs/show, layouts/application")
-      end
-    end
   end
 end

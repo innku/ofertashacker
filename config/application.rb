@@ -38,6 +38,5 @@ module Rubypros
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
-    config.middleware.use Rack::Recaptcha, :public_key => '6LdU8MQSAAAAAJMdpG7-JZ3WWT9CTcvz5PCk-B0v', :private_key => '6LdU8MQSAAAAABho_5w8UjiH2y7xjq3PE4NWD_LJ'
   end
 end

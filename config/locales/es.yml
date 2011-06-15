@@ -69,8 +69,6 @@ es:
       message:            "Escribe tu mensaje"
       password:           "Contraseña"
       password_confirmation: "Confirmar contraseña"
-      captcha:            "Eres humano?"
-      missing_catcha:     "Ingresa correctamente el Captcha"
   jobs: 
     available: 
       vacancies:       "Ofertas más recientes de Ofertas Hacker"

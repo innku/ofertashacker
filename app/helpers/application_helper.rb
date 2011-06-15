@@ -1,5 +1,4 @@
 module ApplicationHelper
-  include Rack::Recaptcha::Helpers
   
   def custom_title page_title
     @content_for_title = page_title + " - " 

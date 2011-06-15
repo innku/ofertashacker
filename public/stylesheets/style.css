@@ -216,23 +216,19 @@ img#nuevas_ofertas{
   display:inline;
 }
 
-.mainContent label.message, label.captcha{
+.mainContent label.message{
   font-size: 12px;
 	color: #d00;
   font-family: arial, serif!important;
   margin: -15px 0 0 0px;
   float:left;
 }
-label.captcha{margin-top:0px;}
 .mainContent p.message {
   font-size:15px;
   color: #d00;
   margin:10px 0 -10px 0;
 }
 
-.mainContent label.message.captcha{
-  margin: 10px 0 25px 0px;
-}
 .mainContent a{
   color: #005B60;
   font-size: 12px;
@@ -742,10 +738,6 @@ div.clear{
     font-size:11px;
     color:#666;
 }
-.overlay.contact #captcha{
-  position:relative;
-  right:3px;
-}
 .overlay #side {
     float:right;
     width:200px;
@@ -768,6 +760,10 @@ div.clear{
 
 .overlay .overlay_form {
     width:780px;
+}
+.placeholder{
+  font-size:12px;
+  color:#999;
 }
 .registration_left {
     width: 380px;
@@ -829,9 +825,9 @@ div.clear{
 }
 .overlay.contact .option{
   position:absolute;
-  bottom:0px;
+  bottom:5px;
   font-size:12px;
-  left:20px;
+  right: 25px;
   display:block;
 }
 
@@ -948,9 +944,9 @@ div#formatting_guide table td h3 {
 }
 
 #wizard li {
+  display:inline;
 	list-style-type:none;
 	list-style-image:none;
-	margin-bottom:25px;	
 }
 
 /* #wizard label {*/

@@ -42,15 +42,6 @@ Then /^(?:|I )should see "([^"]*)" twice$/ do |text|
   end
 end
 
-When /^I fill the correct captcha$/ do
-  Rack::Recaptcha.test_mode!
-end
-
-When /^I fill an incorrect captcha$/ do
-  Rack::Recaptcha.test_mode! :return => false
-end
-
-
 
 When /^I wait "([^"]*)" seconds$/ do |n|
   sleep(n.to_i)
