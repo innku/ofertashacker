@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110601161130) do
+ActiveRecord::Schema.define(:version => 20110615205939) do
 
   create_table "cities", :force => true do |t|
     t.integer "state_id"
@@ -127,6 +127,9 @@ ActiveRecord::Schema.define(:version => 20110601161130) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "github_url"
+    t.string   "linkedin_url"
+    t.string   "personal_url"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
