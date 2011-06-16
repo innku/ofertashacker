@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-				$('[placeholder]').placeholder();
+	$('[placeholder]').placeholder();
 
   $("a[rel]").overlay({
     mask: {
@@ -12,7 +12,12 @@ $(document).ready(function() {
   });
   var root = $("#wizard").scrollable();
   $("#registration form").validator();
-
+  
+$('.button.next').click(function(e) {
+  if ( placeholder_validation_needs_fix() ) {
+    // $('div.wizard').css({'left':'0'});
+  }
+});
 
   $("#sign_in").hide();
 
@@ -98,3 +103,23 @@ api.onBeforeSeek(function(event, i) {
 
 });
 
+function placeholder_validation_needs_fix(){
+  var error = false;
+  if ($("#user_email").attr("placeholder") == $("#user_email").val()) {
+    $("#user_email").addClass("error");
+    error=true;
+  } else {
+  
+  }
+
+  if ($("#user_name").attr("placeholder") == $("#user_name").val()) {
+    $("#user_name").addClass("error");
+    error=true;
+  }
+  
+  if ($("#user_message").attr("placeholder") == $("#user_message").val()) {
+    $("#user_message").addClass("error");
+    error=true;
+  }
+  return error;
+}
