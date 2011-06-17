@@ -10,7 +10,6 @@ class MyDevise::RegistrationsController < Devise::RegistrationsController
         set_flash_message :notice, :contact_notice
         sign_in_and_redirect(resource_name, resource)
       else
-        debugger
         clean_up_passwords(resource)
         render :template => 'jobs/show'
       end

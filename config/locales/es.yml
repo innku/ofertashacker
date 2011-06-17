@@ -72,6 +72,9 @@ es:
       github:             "Github URL"
       linkedin:           "LinkedIn URL"
       personal:           "Personal URL"
+    contact:
+      message:            "Escribe tu mensaje"
+      contact:            "Contactar"
   jobs: 
     available: 
       vacancies:       "Ofertas más recientes de Ofertas Hacker"

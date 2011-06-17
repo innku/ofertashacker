@@ -1,4 +1,4 @@
-<% javascript 'placeholder', 'lightbox' %>
+<% javascript 'lightbox' %>
 <div class="content">
   <div class="generalForm">
     <div class="nav-buttons">
@@ -31,65 +31,70 @@
       </div>
       <%= image_tag "shadow.gif" %>
       <br />
-      <div class="overlay contact" id="contact_trigger">
-        <div>
-          <% if current_user %>
-            <%= render :partial => 'users/contact', :locals=>{:job => @job}%>
-          <% else %>
-            <%= render :partial => 'users/new_contact', :locals=>{:job => @job}%>
+
+      <% if current_user %>
+          <div class="overlay contact signed_in" id="contact_trigger">
+        <% else %>
+        <div class="overlay contact" id="contact_trigger">
           <% end %>
+          <div>
+            <% if current_user %>
+              <%= render :partial => 'users/contact', :locals=>{:job => @job}%>
+            <% else %>
+              <%= render :partial => 'users/new_contact', :locals=>{:job => @job}%>
+            <% end %>
+          </div>
+        </div>
+        <% if params[:open_lightbox] || params[:job]%>
+          <% if params[:sign_in] %>
+            <%= hidden_field_tag "sign_me_in" %>
+          <% end %>
+          <%= hidden_field_tag "open_me" %>
+        <%end%>
+        <%= link_to "Contactar", "#", :id => "contact_button", :class => "button contact", :rel => "#contact_trigger" %>
+
+        <div id="share_buttons">
+          <div>
+            <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="OfertasHacker" data-lang="es">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+          </div>
+          <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=170081829719593&amp;xfbml=1"></script><fb:like href="" send="false" layout="button_count" width="0" show_faces="true" action="recommend" font=""></fb:like>
+          <div>
+            <script type="text/javascript" src="http://platform.linkedin.com/in.js"></script><script type="in/share" data-counter="right"></script>
+          </div>
         </div>
       </div>
-      <% if params[:open_lightbox] || params[:job]%>
-        <% if params[:sign_in] %>
-          <%= hidden_field_tag "sign_me_in" %>
-        <% end %>
-        <%= hidden_field_tag "open_me" %>
-      <%end%>
-      <%= link_to "Contactar", "#", :id => "contact_button", :class => "button contact", :rel => "#contact_trigger" %>
-      
-<div id="share_buttons">
-			<div>
-	<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="OfertasHacker" data-lang="es">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-	</div>
-			<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=170081829719593&amp;xfbml=1"></script><fb:like href="" send="false" layout="button_count" width="0" show_faces="true" action="recommend" font=""></fb:like>
-<div>
-	<script type="text/javascript" src="http://platform.linkedin.com/in.js"></script><script type="in/share" data-counter="right"></script>
-</div>
-</div>
-    </div>
-    <div id="right">
-      <div style="width:100%;overflow:hidden;"><h1><%= @job.title%></h1></div>
-      <h4>En <%=@job.city%>
-        <%= @job.full_time ? ", Tiempo Completo".html_safe : nil%>
-        <%= @job.part_time ? ", Medio Tiempo".html_safe : nil%>
-        <%= @job.remote ? ", Remoto".html_safe : nil%>
-        <%= @job.flexible ? ", Horario Flexible".html_safe : nil%>
-      </h4>
-      <% for skill in @job.required_skills %>
-        <div class="tag">
-          <span><%= skill.skill_name %></span>
-        </div>
-      <% end %>
-      <%unless @job.extra_skill.blank?%>
-        <% for skill in @job.format_extra_skills%>
+      <div id="right">
+        <div style="width:100%;overflow:hidden;"><h1><%= @job.title%></h1></div>
+        <h4>En <%=@job.city%>
+          <%= @job.full_time ? ", Tiempo Completo".html_safe : nil%>
+          <%= @job.part_time ? ", Medio Tiempo".html_safe : nil%>
+          <%= @job.remote ? ", Remoto".html_safe : nil%>
+          <%= @job.flexible ? ", Horario Flexible".html_safe : nil%>
+        </h4>
+        <% for skill in @job.required_skills %>
           <div class="tag">
-            <span><%= truncate(skill, :length => 110) %></span>
+            <span><%= skill.skill_name %></span>
           </div>
         <% end %>
-      <%end%>
+        <%unless @job.extra_skill.blank?%>
+          <% for skill in @job.format_extra_skills%>
+            <div class="tag">
+              <span><%= truncate(skill, :length => 110) %></span>
+            </div>
+          <% end %>
+        <%end%>
+
+        <div class="clear"></div>
+        <p>
+
+        <div id="job_description">
+          <p><%= RedCloth.new(@job.formated_description).to_html.html_safe %></p>
+        </div>
+
+      </div><!--/right-->
 
       <div class="clear"></div>
-      <p>
+    </div>
 
-      <div id="job_description">
-        <p><%= RedCloth.new(@job.formated_description).to_html.html_safe %></p>
-      </div>
-
-    </div><!--/right-->
-
-    <div class="clear"></div>
   </div>
-
-</div>
 
