@@ -1,0 +1,14 @@
+<div id="registration">
+  <%= form_for @user do |f| %>
+    <div class="registration_left">
+      <h3>Editar mis datos</h3>
+
+      <%= f.text_field :name, :placeholder => "#{t('.name')}"%>
+      <%= f.text_field :email , :placeholder => "#{t('.email')}"%>
+      <%= f.text_field :github_url, :placeholder => "#{t('.github')}" %>
+      <%= f.text_field :linkedin_url, :placeholder => "#{t('.linkedin')}" %>
+      <%= f.text_field :personal_url, :placeholder => "#{t('.personal')}" %>
+    </div>
+    <%= f.submit "Guardar", :class => "button", :name=> "guardar"%>
+  <% end %> 
+</div>

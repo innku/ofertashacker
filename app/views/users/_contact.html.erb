@@ -1,7 +1,10 @@
-<h3>Mensaje</h3>
+<h3>¿Qué le quieres decir a la empresa?</h3>
 <div id="user_info">
-  <%= current_user.name%><br />
-  <%= current_user.email%>
+  <%= current_user.name %><br />
+  <%= current_user.email %><br />
+  <%= current_user.github_url %><br />
+  <%= current_user.personal_url %><br />
+  <%=link_to "Editar", edit_user_path(current_user) %>
   <%=link_to "Estos no son mis datos", destroy_user_session_path(:job_id => job.id, :sign_in => true)%>
 </div>
 <%= form_for @user,:method=>:post ,:url => contact_company_user_path(:job => job) do |f| %>
