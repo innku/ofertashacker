@@ -61,7 +61,7 @@
 <div id="sign_in">
   <h3>Iniciar sesión</h3>
   <% if params[:sign_in] == "error" %>
-    <%= content_tag "p", "Contraseña o email inválido", :class => :message %>
+    <%= content_tag "p", "Contraseña o email inválido", :class => 'message inline' %>
   <% end %>
   <%= form_for @user, :url => user_session_path(:job => job,:sign_in => "error") do |f| %>
 

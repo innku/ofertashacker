@@ -224,9 +224,10 @@ img#nuevas_ofertas{
   float:left;
 }
 .mainContent p.message {
+  margin:0;
+  float:right;
   font-size:15px;
   color: #d00;
-  margin:10px 0 -10px 0;
 }
 
 .mainContent a{

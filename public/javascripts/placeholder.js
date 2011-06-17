@@ -4,7 +4,7 @@
 	Makes browsers that does not support HTML5 placeholder attribute, preform as a modern browser.
 	
 	Created by:
-		Lasse SÃ¸berg
+		Lasse SÃƒÂ¸berg
 		06.04.2011
 		
 **/
