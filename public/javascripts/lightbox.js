@@ -16,12 +16,12 @@ $(document).ready(function() {
         $('.button.prev').click();
       }
   });
-  
+  $(':text:first').focus();  
   
   $("#sign_in").hide();
 
   if ($("#sign_me_in").length > 0) {
-    $(".overlay.contact").animate({'width':'380px', 'height': '290px','marginLeft':'200px'});
+    $(".overlay.contact").animate({'width':'380px', 'height': '270px','marginLeft':'200px'});
     $("#registration").hide();
     $("#sign_in").show();
   }
@@ -29,7 +29,7 @@ $(document).ready(function() {
     $("#contact_button").click();
 
   $("#registration #login").click(function(){
-    $(".overlay.contact").animate({'width':'380px', 'height': '290px','marginLeft':'200px'});
+    $(".overlay.contact").animate({'width':'380px', 'height': '270px','marginLeft':'200px'});
     $("#registration").fadeOut({complete:function(){$("#sign_in").fadeIn();}});
 
   });

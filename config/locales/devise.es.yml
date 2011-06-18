@@ -41,8 +41,8 @@ es:
       failure: 'No has sido autorizado en la cuenta %{kind} porque "%{reason}".'
     mailer:
       confirmation_instructions:
-        subject: '[Rubypros] Instrucciones de confirmación'
+        subject: '[Ofertas Hacker] Instrucciones de confirmación'
       reset_password_instructions:
-        subject: '[Rubypros] Instrucciones para cambiar tu contraseña'
+        subject: '[Ofertas Hacker] Instrucciones para cambiar tu contraseña'
       unlock_instructions:
-        subject: '[Rubypros] Instrucciones para desbloquear tu cuenta'
+        subject: '[Ofertas Hacker] Instrucciones para desbloquear tu cuenta'

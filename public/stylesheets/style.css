@@ -845,9 +845,9 @@ p.desc {
 }
 .overlay.contact .option{
   position:absolute;
-  bottom:5px;
+  bottom: 20px;
   font-size:12px;
-  right: 25px;
+  left: 25px;
   display:block;
 }
 
