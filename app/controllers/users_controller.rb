@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     @user.message = params[:user][:message]
     @job = Job.find(params[:job])
     ContactMailer.contact(@job, @user).deliver if @user
-    redirect_to @job, :notice => t('.)
+    redirect_to @job, :notice => t('.')
   end
 
   def edit

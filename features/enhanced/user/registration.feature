@@ -30,6 +30,7 @@ Feature: User Actions
     And I fill in "user_password" with "secret"
     And I fill in "user_password_confirmation" with "secret"
     And I press "Registrarme"
+    And show me the page
     Then I should not see "Tu correo fue enviado a la empresa, espera su respuesta."
 
   Scenario: When I am on the Sign in lightbox I can go back to the Registration form
@@ -42,11 +43,13 @@ Feature: User Actions
 
   Scenario: I can't contact a company if I don't enter an email
     When I fill in "user_name" with "Foo bar"
+    When I fill in "user_email" with ""
     And I fill in "user_message" with "Foo bar"
     Then I should see "no puede estar vacío"
 
   Scenario: I can't contact a company if I don't enter an name
     When I fill in "user_email" with "foo@bar.com"
+    When I fill in "user_name" with ""
     And I fill in "user_message" with "Foo bar"
     Then I should see "no puede estar vacío"
 
@@ -54,9 +57,6 @@ Feature: User Actions
     When I fill in "user_name" with "Foo bar"
     And I fill in "user_email" with "foo@bar.com"
     And I follow "Enviar Mensaje"
-    And I fill in "user_password" with "secret"
-    And I fill in "user_password_confirmation" with "secret"
-    And I press "Registrarme"
     Then I should see "no puede estar vacío"
 
   Scenario: I can contact a company by simply filling in the name, email and message
@@ -64,7 +64,6 @@ Feature: User Actions
     And I fill in "user_message" with "Foo bar"
     And I fill in "user_email" with "foo@bar.com"
     And I follow "Enviar Mensaje"
-    And I fill in "user_password" with "secret"
-    And I fill in "user_password_confirmation" with "secret"
     And I press "Registrarme"
     Then I should see "Tu correo fue enviado a la empresa, espera su respuesta."
+    

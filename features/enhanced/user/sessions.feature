@@ -20,7 +20,7 @@ Feature: User Actions
     And I fill in "user_email" with "foo@bar.com" within "#sign_in"
     And I fill in "user_password" with "secret" within "#sign_in"
     And I press "Entrar"
-    Then I should see "Mensaje"
+    Then I should see "Escribe tu mensaje"
     And I should see "foo@bar.com"
     And I should see "Contactar"
 
@@ -30,6 +30,7 @@ Feature: User Actions
     And I follow "Ruby Sr Programmer"
     When I follow "Contactar" 
     And I follow "Estos no son mis datos"
+    And I wait "2" seconds
     Then I should see "Iniciar sesión"
     And I should see "Email"
     And I should see "Contraseña"
@@ -49,7 +50,7 @@ Feature: User Actions
     And I am on the root page
     And I follow "Ruby Sr Programmer"
     When I follow "Contactar"
-    Then I should see "Mensaje"
+    Then I should see "Escribe tu mensaje"
     And I should see "foo@bar.com"
     And I wait "2" seconds
     And I should see "Estos no son mis datos"

@@ -45,9 +45,11 @@
           </p>
 
           <div class="center">
-            <%= f.password_field :password , :validate => false, :placeholder => "#{t('.password')}"%><br />
+            <%= f.label :qpassword, t('.password') %>
+            <%= f.password_field :password , :validate => false%><br />
 
-            <%= f.password_field :password_confirmation , :validate => false, :placeholder => "#{t('.password_confirmation')}"%>
+            <%= f.label :qpassword_confirmation, t('.password_confirmation') %>
+            <%= f.password_field :password_confirmation , :validate => false %>
             <br />
 
             <%= f.submit "Registrarme", :class => "button", :name=> "register"%> o 
