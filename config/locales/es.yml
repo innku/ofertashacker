@@ -73,6 +73,11 @@ es:
       linkedin:           "LinkedIn URL"
       personal:           "Personal URL"
     contact:
+      name:               "Nombre completo"
+      email:              "Correo electrónico"
+      github:             "Github URL"
+      linkedin:           "LinkedIn URL"
+      personal:           "Personal URL"
       message:            "Escribe tu mensaje"
       contact:            "Contactar"
   jobs: 

@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    debugger
     if @user.update_attributes(params[:user])
       redirect_to root_path
     else

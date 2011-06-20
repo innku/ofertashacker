@@ -20,6 +20,7 @@ $(document).ready(function() {
   
   $("#sign_in").hide();
 
+  //No user logged in
   if ($("#sign_me_in").length > 0) {
     $(".overlay.contact").animate({'width':'380px', 'height': '270px','marginLeft':'200px'});
     $("#registration").hide();
@@ -33,10 +34,17 @@ $(document).ready(function() {
     $("#registration").fadeOut({complete:function(){$("#sign_in").fadeIn();}});
 
   });
-
+  
   $("#sign_in #register").click(function(){
     $(".overlay.contact").animate({'width':'780px', 'height':'425px','marginLeft':'0'});
     $("#sign_in").hide({complete:function(){$("#registration").fadeIn();}});
+  });
+
+  //User logged in
+  $("#edit_form").hide();
+
+  $("#message_form #edit_link").click(function(){
+    $("#message_form").fadeOut({complete:function(){$("#edit_form").fadeIn();}});
   });
 
   //Tab Hack for form
