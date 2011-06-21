@@ -9,8 +9,6 @@ class User < ActiveRecord::Base
                   :github_url, :linkedin_url, :personal_url
   attr_accessor :message
   
-  validates :name, :password, :password_confirmation, :message, :presence => true
-  validates_confirmation_of :password
-  validates_length_of :password, :minimum => 6
+  validates :name, :email, :message, :presence => true
 
 end

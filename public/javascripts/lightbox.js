@@ -43,9 +43,20 @@ $(document).ready(function() {
   //User logged in
   $("#edit_form").hide();
 
+
+  if ($("#edit_me").length > 0) {
+    $("#message_form").hide();
+    $("#edit_form").show();
+  }
+
   $("#message_form #edit_link").click(function(){
     $("#message_form").fadeOut({complete:function(){$("#edit_form").fadeIn();}});
   });
+
+  $("#edit_form #message_link").click(function(){
+    $("#edit_form").fadeOut({complete:function(){$("#message_form").fadeIn();}});
+  });
+
 
   //Tab Hack for form
   root.find(".button.next").keydown(function(e) {

@@ -12,12 +12,14 @@ class UsersController < ApplicationController
   end
 
   def update
+    @job = Job.find(params[:job])
     @user = User.find(params[:id])
-    debugger
+    @user.message = "default"
     if @user.update_attributes(params[:user])
-      redirect_to root_path
+      redirect_to job_path(@job, :open_lightbox => true)
     else
-      render :action => 'edit'
+      @user.message = ""
+      render :template=>'jobs/show'
     end
   end
 end

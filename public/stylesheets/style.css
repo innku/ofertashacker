@@ -757,6 +757,12 @@ font-size: 18px;
 margin-bottom: 0px;
 }
 
+.overlay.contact li {
+  display:inline;
+	list-style-type:none;
+	list-style-image:none;
+}
+
 .overlay #side {
     float:right;
     width:200px;
@@ -792,10 +798,6 @@ margin-bottom: 0px;
     width: 380px;
     float: right;    
 }
-.registration_right textarea {
-    height: 183px!important;
-}
-
 p.desc {
     color: #666;
     max-width: 200px;
@@ -830,7 +832,7 @@ p.desc {
 .overlay textarea {
   margin:7px auto 20px auto;
 	width: 355px;
-  height: 160px;
+  height: 183px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -961,12 +963,6 @@ div#formatting_guide table td h3 {
 #wizard ul {
 	padding:0px !important;
 	margin:0px !important;
-}
-
-#wizard li {
-  display:inline;
-	list-style-type:none;
-	list-style-image:none;
 }
 
 /* #wizard label {*/

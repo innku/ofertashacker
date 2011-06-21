@@ -12,15 +12,15 @@
     <% end %>
     <%=link_to "Editar", "#", :id=>"edit_link" %>
   </div>
-  <%= form_for @user,:method=>:post ,:url => contact_company_user_path(:job => job) do |f| %>
+  <%= form_for @user,:validate => true, :method=>:post ,:url => contact_company_user_path(:job => job) do |f| %>
     <%= f.label :message, t('.message') %>
-    <%= f.text_area :message %>
+    <li class="required textarea"><%= f.text_area :message %></li>
     <p class="desc left">Le enviaremos un correo a la empresa con tus datos</p>
     <%= f.submit t('.contact'), :class=>"button right" %>
   <% end %>
 </div>
 <div id="edit_form">
-  <%= form_for current_user,:validate=>true do |f| %>
+  <%= form_for current_user, :validate => true, :url => user_path(current_user, :job => job, :edit=>"error") do |f| %>
     <div class="registration_left">
       <h3>Editar mis datos</h3>
       <%= f.label :name, t('.name') %>
@@ -34,6 +34,7 @@
       <%= f.label :personal, t('.personal') %>
       <%= f.text_field :personal_url %>
     </div>
-    <%= f.submit "Guardar", :class => "button"%>
-  <% end %> 
+    <%= f.submit "Guardar", :class => "button right"%>
+    <%=link_to "Regresar al mensaje", "#", :id=>"message_link" %>
+  <% end %>  
 </div>

@@ -49,6 +49,9 @@
           <% if params[:sign_in] %>
             <%= hidden_field_tag "sign_me_in" %>
           <% end %>
+          <% if params[:edit] %>
+            <%= hidden_field_tag "edit_me" %>
+          <% end %>
           <%= hidden_field_tag "open_me" %>
         <%end%>
         <%= link_to "Contactar", "#", :id => "contact_button", :class => "button contact", :rel => "#contact_trigger" %>

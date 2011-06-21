@@ -5,6 +5,7 @@ Feature: User Actions
   As a user
   I want to contact a company
   And I sign in
+  And I should be able to edit my personal info before contacting a company
 
   Background:
     Given there is a company with name "Company1" in city "Monterrey" and email "company1@mycompany.com"  
@@ -18,7 +19,7 @@ Feature: User Actions
     And I follow "Entrar" within ".overlay"
     And I wait "2" seconds
     And I fill in "user_email" with "foo@bar.com" within "#sign_in"
-    And I fill in "user_password" with "secret" within "#sign_in"
+    And I fill in "user_password" with "secret" within "#sign_in" 
     And I press "Entrar"
     Then I should see "Escribe tu mensaje"
     And I should see "foo@bar.com"
@@ -54,3 +55,28 @@ Feature: User Actions
     And I should see "foo@bar.com"
     And I wait "2" seconds
     And I should see "Estos no son mis datos"
+
+  Scenario: I can edit my personal information before contact any company
+    Given there is a user signed in with email "foo@bar.com" and name "Foo Bar"
+    And I am on the root page
+    And I follow "Ruby Sr Programmer"
+    When I follow "Contactar"
+    And I follow "Editar" within ".overlay"
+    Then I should see "Editar mis datos"
+    And the "user_name" field should contain "Foo Bar"
+    And the "user_email" field should contain "foo@bar.com"
+
+  Scenario: I can update my user information
+    Given there is a user signed in with email "foo@bar.com" and name "Foo Bar"
+    And I am on the root page
+    And I follow "Ruby Sr Programmer"
+    And I follow "Contactar"
+    And I follow "Editar" within ".overlay"
+    When I fill in "user_name" with "Usuario"
+    And I fill in "user_email" with "usuario@sample.com"
+    And I press "Guardar"
+    Then I should see "¿Qué le quieres decir a la empresa?"
+    And I should see "Usuario"
+    And I should see "usuario@sample.com"
+    And I should see "Escribe tu mensaje"
+
