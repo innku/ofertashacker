@@ -9,5 +9,7 @@ $(document).ready(function() {
     closeOnClick: false
   });
 
+  $(".overlay.contact form").validate();
+
 });
 

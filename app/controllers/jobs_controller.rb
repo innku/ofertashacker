@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   before_filter :new_company?, :only=>[:new]
-  load_and_authorize_resource :through => :current_company, :except=>[:index,:show,:my_jobs]
+  load_and_authorize_resource :through => :current_company, :except=>[:index, :show, :my_jobs, :contact_company]
   layout :get_layout
 
   RANDOM = {'development' => 'RAND()', 'production' => 'random()'}[ENV['RACK_ENV']]
@@ -51,6 +51,14 @@ class JobsController < ApplicationController
     end
   end
 
+  def contact_company
+    @job = Job.find(params[:id])
+    cookies[:name] = { :value => params[:name], :expires => Time.now + 1.year }
+    cookies[:email] = { :value => params[:email], :expires => Time.now + 1.year }
+    ContactMailer.contact(@job, params[:name], params[:email], params[:message]).deliver
+    redirect_to(@job, :notice => "Tu mensaje fue enviado a #{@job.company.title} correctamente.")
+
+  end
   private
 
   def get_layout

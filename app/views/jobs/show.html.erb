@@ -1,4 +1,4 @@
-<% javascript 'lightbox' %>
+<% javascript 'jquery.validate.min', 'lightbox' %>
 <div class="content">
   <div class="generalForm">
     <div class="nav-buttons">
@@ -33,6 +33,7 @@
       <br />
 
         <div class="overlay contact" id="contact_trigger">
+          <%= render :partial => 'contact_company', :locals=>{:job=>@job}%>
          </div>
         <%= link_to "Contactar", "#", :id => "contact_button", :class => "button contact", :rel => "#contact_trigger" %>
 

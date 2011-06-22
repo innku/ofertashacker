@@ -71,6 +71,10 @@ es:
       remote:             "Remoto"
       flexible:           "Horario flexible"
       more:               "Ver más"      
+    contact_company:
+      name:               "Nombre completo"
+      email:              "Email"
+      message:            "Escribe tu mensaje"
     show:
       city:               "Localizada en:"
     form:

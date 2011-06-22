@@ -16,7 +16,12 @@ Rubypros::Application.routes.draw do
       get "my_jobs"
     end
   end
-  resources :jobs 
+  resources :jobs do
+    member do
+      post "contact_company"
+    end
+  end
+
   resources :required_skills
 
   match '/terminos' => 'welcome#terminos'
