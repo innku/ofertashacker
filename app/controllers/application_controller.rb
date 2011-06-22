@@ -31,6 +31,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
+    assure_single_resource(resource)
     if params[:new_company] 
       new_job_path(:just_registered => true) 
     elsif params[:job_id]
@@ -41,8 +42,21 @@ class ApplicationController < ActionController::Base
   end
 
   def current_ability
-    @current_ability ||= Ability.new(current_company)
+    if current_user
+      @current_ability ||= Ability.new(current_user)
+    else
+      @current_ability ||= Ability.new(current_company)
+    end
   end 
+
+  private
+  def assure_single_resource(resource)
+    if resource.class == User && current_company
+     sign_out(current_company)
+    elsif resource.class == Company && current_user
+      sign_out(current_user)
+    end
+  end
 end
 
 

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  load_and_authorize_resource
+
   def contact_company
     @user = current_user
     @user.message = params[:user][:message]

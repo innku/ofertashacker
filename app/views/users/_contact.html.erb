@@ -12,7 +12,7 @@
     <% end %>
     <%=link_to "Editar", "#", :id=>"edit_link" %>
   </div>
-  <%= form_for @user,:validate => true, :method=>:post ,:url => contact_company_user_path(:job => job) do |f| %>
+  <%= form_for @user,:validate => true, :method=>:post ,:url => contact_company_user_path(current_user, :job => job) do |f| %>
     <%= f.label :message, t('.message') %>
     <li class="required textarea"><%= f.text_area :message %></li>
     <p class="desc left">Le enviaremos un correo a la empresa con tus datos</p>
