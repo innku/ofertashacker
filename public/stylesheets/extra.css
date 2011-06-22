@@ -573,20 +573,11 @@ input.input_floated {
     margin-left: 27px;
     margin-top:-5px;
 }
-input.as_link {
-  color: #0000FF;
-  text-decoration:none;
-}
-input.as_link:hover {
-  text-decoration:none;
-}
-
 
 .skills_button {
     margin: -5px 0 0 18px;    
 
 }
-.pagination {margin-left:27px;}
 
 div.tagsinput { 
 	border:1px solid #d9d9d9;

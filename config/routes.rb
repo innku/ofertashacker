@@ -1,11 +1,5 @@
 Rubypros::Application.routes.draw do
 
-  devise_for :users,
-    :controllers  => {
-    :registrations => 'my_devise/registrations',
-    :sessions => 'my_devise/sessions'
-  }
-
   root :to => 'jobs#index'
 
   metropoli_for :cities, :states, :countries
@@ -17,17 +11,11 @@ Rubypros::Application.routes.draw do
     :sign_out => 'salir' 
   }
 
-
   resources :companies do
     member do
       get "my_jobs"
     end
   end
-  resources :users do
-    member do
-      post "contact_company"
-    end
-  end  
   resources :jobs 
   resources :required_skills
 

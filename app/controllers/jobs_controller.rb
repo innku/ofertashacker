@@ -28,7 +28,6 @@ class JobsController < ApplicationController
   
   def show
     @job = Job.find(params[:id])
-    @user = User.new
   end
   
   def edit

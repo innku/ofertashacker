@@ -750,53 +750,13 @@ div.clear{
     color:#666;
 }
 
-.overlay.contact.signed_in {width: 380px;}
 
 .overlay.contact label {
 font-size: 18px;
 margin-bottom: 0px;
 }
-
-.overlay.contact li {
-  display:inline;
-	list-style-type:none;
-	list-style-image:none;
-}
-
-.overlay #side {
-    float:right;
-    width:200px;
-    padding:40px 120px 0 0;
-}
-.overlay #registration {
-    position:relative;
-    top:-20px;
-    height: 405px;
-}
-
-.overlay.new_user input[type=text], .overlay.new_user input[type=password]{
-  height:30px;
-  width:363px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  margin-bottom:5px!important;
-}
-
 .overlay .overlay_form {
     width:780px;
-}
-.placeholder{
-  font-size:12px;
-  color:#999;
-}
-.registration_left {
-    width: 380px;
-    float: left;    
-}
-.registration_right {
-    width: 380px;
-    float: right;    
 }
 p.desc {
     color: #666;
@@ -806,21 +766,13 @@ p.desc {
     font-style: italic;
     font-weight: normal;
 }
-
-.sign_in_box p{
-    display:block;
-    width:200px;
-    padding: 8px;
-    background-color: #E0EBEB;
-}
-
 .overlay.contact h3 {
   padding-top:5px;
   padding-bottom:26px;
   font-size:20px;
   color:#00575A;
 }
-.overlay.contact input[type=text], .overlay.contact input[type=password]{
+.overlay.contact input[type=text] {
   height:30px;
   width:360px;
   -moz-border-radius: 5px;
@@ -837,22 +789,6 @@ p.desc {
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
-.overlay #user_submit {
-  font-size:16px;
-}
-.overlay.contact #user_info{
-  padding-top:3px;
-  margin-bottom: 10px;
-
-}
-.overlay.contact .option{
-  position:absolute;
-  bottom: 20px;
-  font-size:12px;
-  left: 25px;
-  display:block;
-}
-
 /* default close button positioned on upper right corner */
 a.close {
   background-image:url(/images/overlay/close.png);
@@ -911,209 +847,3 @@ div#formatting_guide table td h2 {
 div#formatting_guide table td h3 {
   font-size: 100%;
 }
-/*Scrol Wizard */
-
-/* scrollable root element */
-#wizard {	
-	background:#fff url(/img/global/gradient/h600.png) repeat scroll 0 0;
-	font-size:12px;
-	height:440px;
-	margin:20px auto;	
-	width:780px;
-	overflow:hidden;
-	position:relative;
-	
-	/* rounded corners for modern browsers */
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-}  
-
-/* scrollable items */
-#wizard .items {
-	width:20000em;	
-	clear:both;	
-	position:absolute;	
-}
-
-/* single item */
-#wizard .page {	
-	padding:2px;
-	width:780px;
-	float:left;	
-}
-
-/* title */
-#wizard h2 {
-	border-bottom:1px dotted #ccc;
-	font-size:22px;
-	font-weight:normal;
-	margin:10px 0 0 0;
-	padding-bottom:15px;		
-}
-
-#wizard h2 em {
-	display:block;
-	font-size:14px;
-	color:#666;
-	font-style:normal;
-	margin-top:5px;
-}
-
-/* input fields */
-#wizard ul {
-	padding:0px !important;
-	margin:0px !important;
-}
-
-/* #wizard label {*/
-/*   font-size:16px;	*/
-/*   display:block;*/
-/* }*/
-
-/* #wizard label strong {*/
-/*   color:#789;	*/
-/*   position:relative;*/
-/*   top:-1px;*/
-/* }*/
-
-/* #wizard label em {*/
-/*   font-size:11px;*/
-/*   color:#666;	*/
-/*   font-style:normal;*/
-/* }*/
-
-#wizard .text {
-	width:100%;
-	padding:5px;
-	border:1px solid #ccc;
-	color:#456;
-	letter-spacing:1px;
-}
-
-#wizard select {
-	border:1px solid #ccc;
-	width:94%;	
-	padding:4px;
-}
-
-#wizard label span {
-	color:#b8128f;
-	font-weight:bold;
-	position:relative;
-	top:4px;
-	font-size:20px;
-}
-
-#wizard .double label { 
-	width:50%;
-	float:left;
-}
-
-#wizard .double .text {
-	width:93%;	
-}
-
-#wizard .clearfix {
-	clear:left;
-	padding-top:10px;	
-}
-
-#wizard .right {
-	float:right;		
-}
-
-/* validation error message bar */
-#drawer {
-	background:#fff url(/img/global/gradient/h80.png) repeat-x scroll 0 0;
-	_background-color:#fff;
-	overflow:visible;
-	position:fixed;	
-	left:0;
-	top:0;
-	text-align:center;
-	padding:15px;
-	font-size:18px;
-	border-bottom:2px solid #789;
-	width:100%;
-	display:none;
-	z-index:2;
-}
-
-#wizard .error {
-	border:1px solid red;		
-}
-
-#wizard #status {
-	margin:0px !important;
-	height:35px;
-	background:#123 url(/img/global/gradient/h30.png) repeat-x;
-	padding-left:25px !important;
-	_background:#123;
-}
-
-#status li {
-	list-style-type:none;
-	list-style-image:none;
-	float:left;
-	color:#fff;
-	padding:10px 30px;
-}
-
-#status li.active {
-	background-color:#b8128f;
-	font-weight:normal;		
-}
-
-
-
-
-/* this makes it possible to add next button beside scrollable */
-.scrollable {
-	float:left;	
-}
-
-/* prev, next, prevPage and nextPage buttons */
-a.browse {
-  background:url(../img/scrollable/arrow/hori_large.png) no-repeat;
-	display:block;
-	width:30px;
-	height:30px;
-	float:left;
-	margin:40px 10px;
-	cursor:pointer;
-	font-size:1px;
-}
-
-/* right */
-a.right 				{ background-position: 0 -30px; clear:right; margin-right: 0px;}
-a.right:hover 		{ background-position:-30px -30px; }
-a.right:active 	{ background-position:-60px -30px; } 
-
-
-/* left */
-a.left				{ margin-left: 0px; } 
-a.left:hover  		{ background-position:-30px 0; }
-a.left:active  	{ background-position:-60px 0; }
-
-/* up and down */
-a.up, a.down		{ 
-	background:url(../img/scrollable/arrow/vert_large.png) no-repeat; 
-	float: none;
-	margin: 10px 50px;
-}
-
-/* up */
-a.up:hover  		{ background-position:-30px 0; }
-a.up:active  		{ background-position:-60px 0; }
-
-/* down */
-a.down 				{ background-position: 0 -30px; }
-a.down:hover  		{ background-position:-30px -30px; }
-a.down:active  	{ background-position:-60px -30px; } 
-
-
-/* disabled navigational button */
-a.disabled {
-	visibility:hidden !important;		
-} 	
-

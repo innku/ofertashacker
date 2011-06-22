@@ -61,25 +61,6 @@ es:
         password:         "Contraseña"
         password_confirmation: "Confirmar contraseña"
         description:      "Descripción" 
-        
-  users:
-    new_contact:
-      name:               "Nombre completo"
-      email:              "Correo electrónico"
-      message:            "Escribe tu mensaje"
-      password:           "Contraseña"
-      password_confirmation: "Confirmar contraseña"
-      github:             "Github URL"
-      linkedin:           "LinkedIn URL"
-      personal:           "Personal URL"
-    contact:
-      name:               "Nombre completo"
-      email:              "Correo electrónico"
-      github:             "Github URL"
-      linkedin:           "LinkedIn URL"
-      personal:           "Personal URL"
-      message:            "Escribe tu mensaje"
-      contact:            "Contactar"
   jobs: 
     available: 
       vacancies:       "Ofertas más recientes de Ofertas Hacker"
@@ -130,10 +111,6 @@ es:
   activerecord:
     errors:
       models:
-        user:
-          attributes:
-            email:
-              taken:      "ya fue tomado."
         required_skill:
           attributes:
             skill_name:

@@ -32,28 +32,8 @@
       <%= image_tag "shadow.gif" %>
       <br />
 
-      <% if current_user %>
-          <div class="overlay contact signed_in" id="contact_trigger">
-        <% else %>
         <div class="overlay contact" id="contact_trigger">
-          <% end %>
-          <div>
-            <% if current_user %>
-              <%= render :partial => 'users/contact', :locals=>{:job => @job}%>
-            <% else %>
-              <%= render :partial => 'users/new_contact', :locals=>{:job => @job}%>
-            <% end %>
-          </div>
-        </div>
-        <% if params[:open_lightbox] || params[:job]%>
-          <% if params[:sign_in] %>
-            <%= hidden_field_tag "sign_me_in" %>
-          <% end %>
-          <% if params[:edit] %>
-            <%= hidden_field_tag "edit_me" %>
-          <% end %>
-          <%= hidden_field_tag "open_me" %>
-        <%end%>
+         </div>
         <%= link_to "Contactar", "#", :id => "contact_button", :class => "button contact", :rel => "#contact_trigger" %>
 
         <div id="share_buttons">
