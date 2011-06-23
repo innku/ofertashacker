@@ -1,6 +1,6 @@
 <h3>¿Qué le quieres decir a la empresa?</h3>
 
-<%= form_tag contact_company_job_path(job) do %> 
+<%= form_tag contact_company_job_path(job), :multipart => true  do %> 
   <%= label_tag t('.name') %>
   <%= text_field_tag :name, nil, :class => "required", :value => cookies[:name] %>        
   <%= label_tag t('.email') %>	 
@@ -8,4 +8,8 @@
   <%= label_tag t('.message') %>
   <li class="textarea"><%= text_area_tag :message, nil, :class => "required" %></li>
   <%= submit_tag "Enviar mensaje", :class=>"button right"%>
+  <div class="left span-4">
+  <%= label_tag t('.resume') %>
+  <%= file_field_tag :file%>
+  </div>
 <% end %>

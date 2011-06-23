@@ -55,7 +55,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
     cookies[:name] = { :value => params[:name], :expires => Time.now + 1.year }
     cookies[:email] = { :value => params[:email], :expires => Time.now + 1.year }
-    ContactMailer.contact(@job, params[:name], params[:email], params[:message]).deliver
+    ContactMailer.contact(@job, params[:name], params[:email], params[:message], params[:file]).deliver
     redirect_to(@job, :notice => "Tu mensaje fue enviado a #{@job.company.title} correctamente.")
 
   end
