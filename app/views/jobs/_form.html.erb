@@ -4,7 +4,7 @@
   </div>
   <div class="generalForm span-12 last">
     <div class="firstColumn span-9 prepend-1">
-    <%= form_for @job, :validate => true do |f| %> 
+    <%= form_for @job do |f| %> 
       <% if @job.errors.any? %>
         <div id="error_explanation">
           <h2>Revisa de nuevo porfa los siguientes detalles en la forma:</h2>

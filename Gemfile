@@ -15,7 +15,6 @@ gem 'RedCloth'
 gem "will_paginate", "~> 3.0.pre2"
 gem 'hoptoad_notifier'
 gem 'bitly'
-gem 'client_side_validations'
 gem "rake", "0.9.2"
 
 group :development, :test do 
