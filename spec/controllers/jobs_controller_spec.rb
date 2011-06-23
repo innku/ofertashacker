@@ -1,20 +1,20 @@
 require 'spec_helper'
 
 describe JobsController do
-  
+
   before do
     @company = Factory(:company)
     controller.stub(:current_company).and_return(@company)
     @job = Factory(:job, :company => @company)
   end
-  
+
   describe '#new' do
     it 'Creates a new job variable' do
       get :new
       assigns(:job).should_not be_blank
     end
   end
-  
+
   describe '#create' do
     it 'Gets the job' do 
       post :create
@@ -45,23 +45,33 @@ describe JobsController do
       end
     end
   end
- 
+
   describe '#index' do
     before do
-      Job.delete_all
       9.times { Factory(:job, :company=> @company)}
-      @jobs = Job.ordered[0..7]
-      @older_job = Job.first
+      @jobs = Job.limit(8)
+      Job.stub_chain(:filter_it, :order).and_return(@jobs)
     end
-    it 'Get the latests 8 jobs ordered and filtered' do
+
+    it 'Get 8 jobs in random order and filtered' do
       get :index
-      assigns(:jobs).should eql(@jobs)
+      assigns(:jobs).should ==(@jobs)
     end
-    
-    it 'Does not get older jobs than the latests 8 jobs' do
-      get :index
-      assigns(:jobs).should_not include(@older_job)
+
+    context 'With a job_ids param' do
+      let(:params){{:jobs_ids=>["#{@jobs.first.id}, #{@jobs.last.id}"]}}
+
+      it 'Does not get the job_ids jobs' do
+        get :index, params
+        assigns(:jobs).should_not include([@jobs.last, @jobs.first])
+      end
+
+      it 'Gets the jobs that are not in the job_ids parmas ' do
+        get :index, params
+        assigns(:jobs).should include(@jobs.second)
+      end
     end
+
     context 'With an HTML response' do
       it 'Renders the index action' do
         get :index
@@ -69,7 +79,7 @@ describe JobsController do
       end
     end
   end
-  
+
   describe '#show' do
     context 'With valid params' do
       let(:valid_params){{ :id => @job.id}}
@@ -78,7 +88,7 @@ describe JobsController do
         assigns(:job).should eql(@job)
       end
     end
-    
+
     context 'With invalid params' do
       let(:invalid_params) {{ :id => -1 }}
       it 'Does not get the job' do
@@ -86,7 +96,7 @@ describe JobsController do
       end
     end
   end
-  
+
   describe '#update' do
     it 'Gets the job' do
       put :update, {:id => @job.id, :job => {}}
@@ -97,8 +107,8 @@ describe JobsController do
 
       context 'Without a required skills ids parameter' do
         it 'Job should not have any required skills' do
-            put :update, valid_params
-            assigns(:job).required_skills.should be_blank
+          put :update, valid_params
+          assigns(:job).required_skills.should be_blank
         end
       end
       it 'Updates the job' do
@@ -131,7 +141,7 @@ describe JobsController do
       end
     end
   end
-  
+
   describe '#edit' do
     context 'With valid params' do
       let(:valid_params){{ :id => @job.id}}
@@ -140,7 +150,7 @@ describe JobsController do
         assigns(:job).should eql(@job)
       end
     end
-    
+
     context 'With invalid params' do
       let(:invalid_params) {{ :id => -1 }}
       it 'Does not get the job' do
@@ -148,25 +158,56 @@ describe JobsController do
       end
     end
   end 
-  
+
   describe '#destroy' do
     let(:params){{:id => @job.id}}
     it 'Gets the job' do
       delete :destroy, params 
       assigns(:job).should eql(@job)
     end
-    
+
     it 'Destroys the job' do
       lambda { delete :destroy, params }.should change(Job, :count).by(-1)
     end
-    
+
     it 'Redirects to jobs path' do
       delete :destroy, params
       response.should redirect_to(jobs_path)
     end
-    
+
     it 'Renders a flash notice for success' do
       delete :destroy, params
+      flash[:notice].should_not be_blank
+    end
+  end
+
+  describe '#contact_company' do
+    before do
+      ContactMailer.stub_chain(:contact, :deliver).and_return(true)
+    end
+    let(:params) {{:id => @job.id, :email => "user@sample.com", :name => "Sample User", :message => "Quiero trabajar"}}
+    it 'Gets the job' do
+      post :contact_company, params
+      assigns(:job).should eql(@job)
+    end 
+    it 'Saves the name value in a cookie' do
+      post :contact_company, params
+      cookies["name"].should eql(params[:name])
+    end
+    it 'Saves the email value in a cookie' do
+      post :contact_company, params
+      cookies["email"].should eql(params[:email])
+    end
+    it 'Delivers the message to the job\'s company' do
+      post :contact_company, params
+      ContactMailer.contact(@job, params[:name], params[:email], params[:message]).deliver.should eql(true)
+    end
+    it 'Redirects to the job path' do
+      post :contact_company, params
+      response.should redirect_to(@job)
+    end
+    it 'Renders a flash notice for success' do
+      post :contact_company, params
       flash[:notice].should_not be_blank
     end
   end

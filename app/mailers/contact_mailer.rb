@@ -1,10 +1,21 @@
 class ContactMailer < ActionMailer::Base
   def contact(job, name, email, message, file=nil)
+    to = get_to(job.company.email, email)
     @job = job
     @name = name
     @email = email
     @message = message
     (attachments[file.original_filename] = File.read file.path) if file
-    mail(:to=>"chinog9@gmail.com",:from=>job.company.email, :subject=>"[#{email}] Prueba" )
+    mail(:to=>to,:from=>@email, :subject=>"[OfertasHacker] Nuevo contacto" )
+  end
+
+  private
+
+  def get_to company_email, user_email
+    if Rails.env.production?
+      company_email
+    else
+      user_email
+    end
   end
 end
