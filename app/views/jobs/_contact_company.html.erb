@@ -7,9 +7,11 @@
   <%= text_field_tag :email, nil, :class => "required email", :value => cookies[:email] %>
   <%= label_tag t('.message') %>
   <li class="textarea"><%= text_area_tag :message, nil, :class => "required" %></li>
-  <%= submit_tag "Enviar mensaje", :class=>"button right"%>
-  <div class="left span-4">
-  <%= label_tag t('.resume') %>
-  <%= file_field_tag :file%>
+  <div>
+  <span class="act_as_label">
+    CV 
+    <%= file_field_tag :file, :style=>"padding-left:10px;"%>
+  </span>
   </div>
+  <%= submit_tag "Enviar mensaje", :class=>"button right prepend-top"%>
 <% end %>
