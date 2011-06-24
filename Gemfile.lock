@@ -64,8 +64,6 @@ GEM
     celerity (0.8.6)
     childprocess (0.1.6)
       ffi (~> 0.6.3)
-    client_side_validations (3.0.4)
-      activesupport (~> 3.0.0)
     columnize (0.3.2)
     configuration (1.2.0)
     crack (0.1.8)
@@ -215,7 +213,6 @@ DEPENDENCIES
   bitly
   cancan
   capybara
-  client_side_validations
   cucumber
   cucumber-rails
   database_cleaner
