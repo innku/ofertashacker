@@ -75,7 +75,7 @@ es:
       name:               "Nombre completo"
       email:              "Email"
       message:            "Escribe tu mensaje"
-      resume:             "Curriculum"
+      resume:             "CV"
     show:
       city:               "Localizada en:"
     form:

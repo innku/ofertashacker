@@ -1,4 +1,17 @@
-@font-face { font-family: Adelle Basic; src: url(/AdelleBasic_Bold.otf) format('opentype'); }
+
+@font-face {
+    font-family: 'Adelle Basic';
+    src: url('/adellebasic-bold-webfont.eot');
+    src: url('/adellebasic-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/adellebasic-bold-webfont.woff') format('woff'),
+         url('/adellebasic-bold-webfont.ttf') format('truetype'),
+         url('/adellebasic-bold-webfont.svg#AdelleBasicBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
 html {
   background:url("../images/bkg_pattern.png") repeat 0 0;
 
@@ -206,6 +219,15 @@ img#nuevas_ofertas{
   color: #333; 
   font-family:'Adelle Basic', arial, serif !important; 
 }
+.act_as_label{
+  font-size:18px;
+  line-height:1;
+  margin-bottom:0.4em;
+  font-weight:normal;
+  display:block;
+  color: #333; 
+  font-family:'Adelle Basic', arial, serif !important; 
+}
 .mainContent label.small_label{
   font-size:16px;
   display:inline;
@@ -221,7 +243,7 @@ img#nuevas_ofertas{
   list-style: none;
 }
 .mainContent .overlay .textarea label.error{
-  margin-top:-244px; 
+  margin-top:-181px; 
   margin-right:3px; 
 }
 .mainContent .overlay label.error{
@@ -790,7 +812,7 @@ p.desc {
 .overlay textarea {
   margin:7px auto 20px auto;
 	width: 355px;
-  height: 183px;
+  height: 120px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;

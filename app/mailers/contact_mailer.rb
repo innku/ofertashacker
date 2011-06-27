@@ -6,7 +6,8 @@ class ContactMailer < ActionMailer::Base
     @email = email
     @message = message
     (attachments[file.original_filename] = File.read file.path) if file
-    mail(:to=>to,:from=>@email, :subject=>"[OfertasHacker] Nuevo contacto" )
+    mail(:to=>to,:from=>"OfertasHacker@ofertashacker.com", :reply_to => @email, :subject=>"#{name} está interesado(a) en tu vacante" )
+  
   end
 
   private
