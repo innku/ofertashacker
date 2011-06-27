@@ -8,7 +8,6 @@ class Company < ActiveRecord::Base
   has_many :jobs, :dependent => :destroy
     
   validates :title, :presence => true, :uniqueness => true
-  validates :email, :uniqueness => true
   validates_format_of :website, :with => /^(http:\/\/(www\.)?|(www\.)?)\w+\.\D{2,}.*$/i, :on => :update, :if => :website?
   validates_format_of :contact_email, :with => /^\w(\w|[.-])+@\w+\.\w{2,}$/i, :on => :update, :if => :contact_email?
   validates_format_of :facebook, :with =>/^(\/?\w+|((http:\/\/(www\.)?|(www\.)?)facebook.com\/\w+))$/i, :on => :update, :if => :facebook?

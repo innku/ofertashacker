@@ -119,11 +119,13 @@ es:
         required_skill:
           attributes:
             skill_name:
-              taken:      "ya fue tomado."
+              taken:      "ya fue tomado"
         company:
           attributes:
+            email:
+              taken:      "ya fue tomado"
             title:
-              taken:       "ya fue tomado."
+              taken:       "ya fue tomado"
             terms_of_service:
               accepted:   "deben ser aceptados"  
             password:
