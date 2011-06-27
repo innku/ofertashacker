@@ -1,15 +1,16 @@
-<div style="background:#304F4F;padding:10px;">
-  <%= image_tag "http://ofertashacker.com/images/logo.png" %>
-</div>
-  <h1><%= @job.title%></h1>
-  <h2>Alguien esta interesado tu oferta</h2>
+  <h2>¡Saludos <%=@job.company.title%>!</h2>
+  <h3>
+  <span style="color:#00575A;"><%= @name%></span> está interesado en tu vacante <span style="color:#00575A;"><%= @job.title%></span>.<br />
+  Su correo es <strong><%=@email%></strong>. <br />
+  </h3>
   <p>
-  <strong>Nombre: </strong><%= @name%><br />
-  <strong>Email: </strong><%= @email %>
-  <p>
-  <p><%= RedCloth.new(@message).to_html.html_safe %></p>
+  <strong>El mensaje que te dejó es:</strong>
   </p>
+  <p><%= RedCloth.new(@message).to_html.html_safe %></p>
   <hr />
-  <p>Gracias por publicar tus ofertas y seguir creciendo con nosotros. Saludos! </p>
+  Para contactarlo responde este correo.
+  <p>Gracias por publicar tus ofertas y seguir creciendo con nosotros. <br />¡Hasta pronto! </p>
   <strong>Equipo de Ofertas Hacker</strong>
   </p>
+  <br />
+  <%= image_tag "http://localhost:3000/images/logo_email.png" %>

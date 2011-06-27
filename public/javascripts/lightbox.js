@@ -10,6 +10,16 @@ $(document).ready(function() {
   });
 
   $(".overlay.contact form").validate();
+  $("#contact_submit").click(function(){
+    $("#form_loader").fadeOut();
+  });
+  $("#loader_contact").hide();
+  $(".contact.overlay form").submit(function(){
+    setTimeout(function() {
+      if(!$("label.error").is(":visible"))
+        $("#loader_contact").fadeIn();
+    }, 200);
+  });
 
 });
 

@@ -1,2 +1,8 @@
-El correo si funciona
-<%= @message%>
+<%= @job.title%>
+<%= @name%> esta interesado en tu vacante <%= @job.title%>. <%=@email%>.
+  El mensaje que te dejo es:
+  <%= RedCloth.new(@message).to_html.html_safe %>
+  Para contactarlo responde este correo.
+  Gracias por publicar tus ofertas y seguir creciendo con nosotros. ¡Saludos!
+  Equipo de Ofertas Hacker
+  <%= image_tag "http://ofertashacker.com/images/logo.png" %>
