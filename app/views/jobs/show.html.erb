@@ -72,7 +72,7 @@
         <p>
 
         <div id="job_description">
-          <p><%= RedCloth.new(@job.formated_description).to_html.html_safe %></p>
+          <p><%= RedCloth.new(@job.formated_description,[:filter_html]).to_html.html_safe %></p>
         </div>
 
       </div><!--/right-->
