@@ -15,16 +15,12 @@ describe ContactMailer do
     it 'Should be sent to the job\'s company' do
       @mail.to.should eql([@email])
     end
-    it 'Should be sent by the user' do
-      @mail.from.should eql([@email])
+    it 'Should be sent by ofertas hacker' do
+      @mail.from.should eql(["OfertasHacker@ofertashacker.com"])
     end
 
     it 'Should send the correct subject' do
-      @mail.subject.should eql("[OfertasHacker] Nuevo contacto")
+      @mail.subject.should eql("User name está interesado(a) en tu vacante")
     end
-
-    it 'Should have the user\'s message'
-    it 'Should have the user\'s  name'
-
   end
 end
