@@ -1,9 +1,9 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.10'
-gem 'sqlite3'
+gem 'rails', '3.1.0'
+gem 'sqlite3', '1.3.4'
 gem 'twitter'
-gem 'devise'
+gem 'devise', '1.5.3'
 gem 'cancan'
 gem "nifty-generators"
 gem 'paperclip'
@@ -18,14 +18,14 @@ gem 'bitly'
 gem "rake", "0.9.2"
 
 group :development, :test do 
-  gem 'capybara'
+  gem 'capybara', '1.1.1'
   gem 'database_cleaner'
-  gem 'cucumber-rails'
-  gem 'cucumber'
-  gem 'rspec-rails'
+  gem 'cucumber-rails', '1.2.0'
+  gem 'cucumber', '1.1.4'
+  gem 'rspec-rails', '2.8.1'
   gem 'spork'
   gem 'factory_girl_rails'
   gem 'launchy'
   gem "ruby-debug"
-  gem "selenium-client"
+  gem "selenium-webdriver"
 end
