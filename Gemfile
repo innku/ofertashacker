@@ -8,7 +8,6 @@ gem 'cancan'
 gem "nifty-generators"
 gem 'paperclip'
 gem 'aws-s3', :require => 'aws/s3'
-gem 'ruby-debug'
 gem 'metropoli', :git => 'git://github.com/adriancuadros/metropoli.git'
 gem "mocha", :group => :test
 gem 'RedCloth'
@@ -33,6 +32,6 @@ group :development, :test do
   gem 'spork'
   gem 'factory_girl_rails'
   gem 'launchy'
-  gem "ruby-debug"
+  gem "debugger"
   gem "selenium-webdriver"
 end
