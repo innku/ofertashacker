@@ -16,6 +16,13 @@ gem "will_paginate", "~> 3.0.pre2"
 gem 'hoptoad_notifier'
 gem 'bitly'
 gem "rake", "0.9.2"
+gem 'jquery-rails'
+
+group :assets do
+  gem 'sass-rails', "  ~> 3.1.0"
+  gem 'coffee-rails', "~> 3.1.0"
+  gem 'uglifier'
+end  
 
 group :development, :test do 
   gem 'capybara', '1.1.1'

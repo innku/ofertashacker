@@ -41,3 +41,4 @@ capybara-*.html
 **.orig
 rerun.txt
 .rvmrc
+.sass-cache/
