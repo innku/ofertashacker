@@ -16,6 +16,7 @@ gem 'hoptoad_notifier'
 gem 'bitly'
 gem "rake", "0.9.2"
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
