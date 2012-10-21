@@ -8,7 +8,7 @@ gem 'cancan'
 gem "nifty-generators"
 gem 'paperclip'
 gem 'aws-s3', :require => 'aws/s3'
-gem 'metropoli', :git => 'git://github.com/adriancuadros/metropoli.git'
+gem 'metropoli', :github => 'innku/metropoli'
 gem "mocha", :group => :test
 gem 'RedCloth'
 gem "will_paginate", "~> 3.0.pre2"
