@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   rescue_from CanCan::AccessDenied do |exception|
-    flash[:alert] = 'No estas autorizado para ver esta página'
+    flash[:alert] = I18n.t('flash.alert.access_denied')
     if current_company 
       redirect_to root_path
     else

@@ -22,6 +22,10 @@ es:
       all_vacancies:      "Ofertas disponibles"
       required_skills:    "Ver Habilidades"
       skill_category:     "Ver Categorias"
+
+  flash:
+    alert:
+      access_denied: 'No estas autorizado para ver esta página' 
       
   #Models
   companies:
