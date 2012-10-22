@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', '3.1.8'
 gem 'twitter'
 gem 'devise', '1.5.3'
 gem 'cancan'
