@@ -28,6 +28,10 @@ group :production, :staging do
   gem 'pg'
 end
 
+group :development, :test, :staging do 
+  gem 'factory_girl_rails'
+end
+
 group :development, :test do 
   gem 'capybara', '1.1.1'
   gem 'database_cleaner'
@@ -35,7 +39,6 @@ group :development, :test do
   gem 'cucumber', '1.1.4'
   gem 'rspec-rails', '2.8.1'
   gem 'spork'
-  gem 'factory_girl_rails'
   gem 'launchy'
   gem "debugger"
   gem "selenium-webdriver"
