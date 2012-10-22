@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
-gem 'sqlite3', '1.3.4'
 gem 'twitter'
 gem 'devise', '1.5.3'
 gem 'cancan'
@@ -40,4 +39,5 @@ group :development, :test do
   gem 'launchy'
   gem "debugger"
   gem "selenium-webdriver"
+  gem 'sqlite3', '1.3.4'
 end
