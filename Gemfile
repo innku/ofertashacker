@@ -17,12 +17,17 @@ gem 'bitly'
 gem "rake", "0.9.2"
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'thin'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
-end  
+end
+
+group :production, :staging do
+  gem 'pg'
+end
 
 group :development, :test do 
   gem 'capybara', '1.1.1'
