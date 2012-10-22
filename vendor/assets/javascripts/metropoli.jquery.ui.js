@@ -9,8 +9,8 @@ $(document).ready(function(){
 						success: function(data) {
 							response($.map(data, function(item) {
 								return {
-									label: item.to_s,
-									value: item.to_s
+									label: item.city_model.to_s,
+									value: item.city_model.to_s
 								}
 							}));
 						}
@@ -33,8 +33,8 @@ $(document).ready(function(){
 						success: function(data) {
 							response($.map(data, function(item) {
 								return {
-									label: item.to_s,
-									value: item.to_s
+									label: item.state_model.to_s,
+									value: item.state_model.to_s
 								}
 							}));
 						}
@@ -57,8 +57,8 @@ $(document).ready(function(){
 						success: function(data) {
 							response($.map(data, function(item) {
 								return {
-									label: item.to_s,
-									value: item.to_s
+									label: item.country_model.to_s,
+									value: item.country_model.to_s
 								}
 							}));
 						}

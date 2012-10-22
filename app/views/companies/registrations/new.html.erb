@@ -46,8 +46,8 @@
     <p >
     <%= f.check_box :terms_of_service, :checked=>true%>
     Acepto los
-    <%= link_to "términos de uso", "#", :rel=>"#terms_trigger" %> y la
-    <%= link_to "política de privacidad", "#" , :rel => "#privacy_trigger"%>
+    <%= link_to "términos de uso", "#", :class => 'overlay_fade', :rel=>"#terms_trigger" %> y la
+    <%= link_to "política de privacidad", "#" , :class => 'overlay_fade', :rel => "#privacy_trigger"%>
     </p>
     <div class='calltoAction'>
       <p><%= f.submit "Registrar" %></p>

@@ -1,3 +1,5 @@
+#encoding: utf-8;
+
 class ContactMailer < ActionMailer::Base
   def contact(job, name, email, message, file=nil)
     to = get_to(job.company.email, email)
