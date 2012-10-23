@@ -9,8 +9,8 @@ El objetivo de Ofertas Hacker es promover el desarrollo de software en países l
 
 Las dependencias de Ofertas Hacker son las siguientes.
 
-* {Ruby 1.8.7}[http://www.ruby-lang.org/en/news/2008/05/31/ruby-1-8-7-has-been-released/]
-* {Rails 3.0.1}[https://github.com/rails/rails.git]
+* {Ruby 1.9.2}[http://www.ruby-lang.org/en/news/2012/04/21/ruby-1-9-2-p320-is-released/]
+* {Rails 3.1.8}[https://github.com/rails/rails/tree/v3.1.8]
 * {Bundler}[http://gembundler.com/]
 
 == Instrucciones de Instalación
