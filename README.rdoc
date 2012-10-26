@@ -55,7 +55,7 @@ Este es un proyecto creado y mantenido por la comunidad de Ruby en Latinoaméric
 
 * {Rogelio Guzmán Huerta}[https://github.com/rogeliog]
 
-* {Marina Magaña}[https://github.com]
+* {Elías Matheus}[https://github.com/e3matheus]
 
 * {Sebastián Gutiérrez}[http://github.com]
 
