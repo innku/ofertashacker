@@ -174,8 +174,8 @@ describe Job do
       end
       
       context 'With an empty array' do
-        it 'Returns all the jobs' do
-          Job.no_repeat.should == Job.all 
+        it 'Returns nil with an empty array' do
+          Job.no_repeat.should be_nil
         end
       end
       

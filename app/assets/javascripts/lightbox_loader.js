@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $("a[rel]").overlay({
+  $("a.overlay_fade[rel]").overlay({
     mask: {
       color: '#333',
       loadSpeed: 150,

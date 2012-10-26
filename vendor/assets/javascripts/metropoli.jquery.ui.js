@@ -3,14 +3,14 @@ $(document).ready(function(){
 	$(".city_autocomplete").autocomplete({
 		source: function(request, response) {
 					$.ajax({
-						url: "/cities.json",
+						url: "/metropoli/cities.json",
 						dataType: "json",
 						data: {	q: request.term	},
 						success: function(data) {
 							response($.map(data, function(item) {
 								return {
-									label: item.city.to_s,
-									value: item.city.to_s
+									label: item.city_model.to_s,
+									value: item.city_model.to_s
 								}
 							}));
 						}
@@ -27,14 +27,14 @@ $(document).ready(function(){
 	$(".state_autocomplete").autocomplete({
 		source: function(request, response) {
 					$.ajax({
-						url: "/states.json",
+						url: "/metropoli/states.json",
 						dataType: "json",
 						data: {	q: request.term	},
 						success: function(data) {
 							response($.map(data, function(item) {
 								return {
-									label: item.state.to_s,
-									value: item.state.to_s
+									label: item.state_model.to_s,
+									value: item.state_model.to_s
 								}
 							}));
 						}
@@ -51,14 +51,14 @@ $(document).ready(function(){
 	$(".country_autocomplete").autocomplete({
 		source: function(request, response) {
 					$.ajax({
-						url: "/countries.json",
+						url: "/metropoli/countries.json",
 						dataType: "json",
 						data: {	q: request.term	},
 						success: function(data) {
 							response($.map(data, function(item) {
 								return {
-									label: item.country.to_s,
-									value: item.country.to_s
+									label: item.country_model.to_s,
+									value: item.country_model.to_s
 								}
 							}));
 						}

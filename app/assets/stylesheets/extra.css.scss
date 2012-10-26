@@ -97,7 +97,7 @@ div.company_profile{
   font-size:13px;
   line-height:15px;
   position:relative;
-  background: url('/images/line.png') bottom no-repeat;
+  background: image-url('line.png') bottom no-repeat;
   padding: 5px 0px 5px 10px;
 }
 
@@ -106,7 +106,7 @@ div.company_profile p{
 }
 
 div.company_profile:hover{
-  background:#fdffe8 url('/images/line.png') bottom no-repeat;
+  background:#fdffe8 image-url('line.png') bottom no-repeat;
 }
 
 div.company_profile div.logo {
@@ -236,7 +236,7 @@ div.open_wrapper {
 }
 
 div.open_wrapper #top {
-  background: url('/images/line_about.png') top no-repeat;
+  background: image-url('line_about.png') top no-repeat;
   width:100%;
   font-size:1.2em;
 }
@@ -250,7 +250,7 @@ div.open_wrapper #top p{
 }
 
 div.open_wrapper #top ul{
-  list-style: url('/images/bullet.png');
+  list-style: image-url('bullet.png');
   padding-left:40px;
 
 }
@@ -275,7 +275,7 @@ list-style-type: upper-alpha
 }
 div.open_wrapper #bottom{
   width:100%;
-  background: url('/images/about_middle_line.png') top no-repeat;
+  background: image-url('about_middle_line.png') top no-repeat;
   padding-top:65px;
 }
 div.open_wrapper #bottom #licencia{
@@ -331,7 +331,7 @@ div#about{
 }
 div#about #welcome {
   height:225px;
-  background: url('/images/line_about.png') top no-repeat;
+  background: image-url('line_about.png') top no-repeat;
 }
 div#about #welcome #top{
   width:900px;
@@ -360,7 +360,7 @@ div#about #welcome #sub_titles{
   width:100%;
   height:153px;
   padding-bottom:25px;
-  background: url('/images/about_middle_line.png') bottom no-repeat;
+  background: image-url('about_middle_line.png') bottom no-repeat;
 }
 
 div#about #welcome h3{
@@ -650,8 +650,9 @@ ul#prueba li a{position: relative;}
 	height: 160px;
 	padding: 10px 0 0 20px;
 	border: 5px solid #69A4A4;
-    background: url('images/ofertaback.png')repeat-x;
+  background: image-url('ofertaback.png') repeat-x;
 }
+
 a:hover.ofertacontenedor h2{
     color: #2c89a0;
     text-shadow:2px 2px 2px #FFF;

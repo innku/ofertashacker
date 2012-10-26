@@ -21,7 +21,7 @@
   <div class="clear"></div>
   <br />
   <div class="new_skill" style="display:none">
-    <%form_for @required_skill do |f|%>
+   <%= form_for @required_skill do |f|%>
       <%= f.text_field :skill_name, :class => :input_floated %>
       <div class="calltoAction">
         <%= f.submit "Crear", :class => :skills_button %>

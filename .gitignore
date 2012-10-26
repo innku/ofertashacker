@@ -40,3 +40,5 @@ capybara-*.html
 /config/*.yml
 **.orig
 rerun.txt
+.rvmrc
+.sass-cache/

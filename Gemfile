@@ -1,31 +1,46 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.1'
-gem 'sqlite3'
+gem 'rails', '3.1.8'
 gem 'twitter'
-gem 'devise'
+gem 'devise', '1.5.3'
 gem 'cancan'
 gem "nifty-generators"
 gem 'paperclip'
 gem 'aws-s3', :require => 'aws/s3'
-gem 'ruby-debug'
-gem 'metropoli', :git => 'git://github.com/adriancuadros/metropoli.git'
+gem 'metropoli', :git => 'git://github.com/innku/metropoli.git'
 gem "mocha", :group => :test
 gem 'RedCloth'
 gem "will_paginate", "~> 3.0.pre2"
 gem 'hoptoad_notifier'
 gem 'bitly'
 gem "rake", "0.9.2"
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'thin'
+
+group :assets do
+  gem 'sass-rails', "  ~> 3.1.0"
+  gem 'coffee-rails', "~> 3.1.0"
+  gem 'uglifier'
+end
+
+group :production, :staging do
+  gem 'pg'
+end
+
+group :development, :test, :staging do 
+  gem 'factory_girl_rails'
+end
 
 group :development, :test do 
-  gem 'capybara'
+  gem 'capybara', '1.1.1'
   gem 'database_cleaner'
-  gem 'cucumber-rails'
-  gem 'cucumber'
-  gem 'rspec-rails'
+  gem 'cucumber-rails', '1.2.0'
+  gem 'cucumber', '1.1.4'
+  gem 'rspec-rails', '2.8.1'
   gem 'spork'
-  gem 'factory_girl_rails'
   gem 'launchy'
-  gem "ruby-debug"
-  gem "selenium-client"
+  gem "debugger"
+  gem "selenium-webdriver"
+  gem 'sqlite3', '1.3.4'
 end

@@ -193,7 +193,7 @@ $(document).ready(function() {
   $("#mainMenu input").click(function(){
     jobs_ids = [-1];
     $("#loader").remove();
-    $("#header").append("<div id=\"loader\"><img alt=\"Loader\"src=\"/images/ajax-loader.gif\"  /></div>");
+    $("#header").append("<div id=\"loader\"><img alt=\"Loader\"src=\"/assets/ajax-loader.gif\"  /></div>");
     $("#loader").hide().fadeIn();
 
     var filter_info = get_checkbox_status("#mainMenu input");

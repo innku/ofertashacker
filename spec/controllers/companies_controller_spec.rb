@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe CompaniesController do
-
   before do
     @company = Factory(:company)
     controller.stub(:current_company).and_return(@company)
@@ -60,11 +59,6 @@ describe CompaniesController do
         put :update, valid_params
         assigns(:company).title.should eql('Sample Company')
         assigns(:company).city.should eql('Mty')
-      end
-
-      it 'Redirects to company profile' do
-        put :update, valid_params
-        response.should redirect_to(company_path(@company))
       end
       
       it 'Renders a flash notice for success' do

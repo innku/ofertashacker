@@ -11,14 +11,13 @@
 
 }
 
-
 html {
-  background:url("../images/bkg_pattern.png") repeat 0 0;
+  background:image-url("bkg_pattern.png") repeat 0 0;
 
 }
 
 body {
-  background:url("../images/bkg_line_pattern.png") repeat-x 0px 34px;
+  background:image-url("bkg_line_pattern.png") repeat-x 0px 34px;
 }
 
 h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Adelle Basic', arial; font-weight:normal!important; }
@@ -59,14 +58,14 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Adelle Basic', arial; font-weight:
   font-weight:normal!important;
 }
 #header .topMenu a:hover span {
-  background:url("../images/bkg_topMenu.png") repeat-x 0 0;
+  background:image-url("bkg_topMenu.png") repeat-x 0 0;
   /*background:transparent;
   -moz-box-shadow:inset 0 0 10px #000000;
   -webkit-box-shadow:inset 0 0 10px #000000;
   box-shadow:inset 0 0 10px #000000;*/
 }
 #header .topMenu a span.current {
-  background:url("../images/bkg_topMenu.png") repeat-x 0 0;
+  background:image-url("bkg_topMenu.png") repeat-x 0 0;
 }
 #header .logo {
   position: relative;
@@ -83,7 +82,7 @@ img#nuevas_ofertas{
 }
 
 #header a.twitter span {
-  background:url("../images/icon_twitter.png") no-repeat 0 0;
+  background:image-url("icon_twitter.png") no-repeat 0 0;
   position:absolute;
 
   padding:24px;
@@ -434,7 +433,7 @@ img#nuevas_ofertas{
 }
 
 .divShadow{
-  background:url("../images/shadow.png") repeat-x 0 0;
+  background:image-url("shadow.png") repeat-x 0 0;
 }
 
 .part2{
@@ -443,7 +442,7 @@ img#nuevas_ofertas{
 
 .skills li{
   float:left;
-  margin:10px; 10px 15px 0;
+  margin:10px 10px 15px 0;
 }
 
 .habilitiesList{
@@ -499,10 +498,10 @@ textarea{
   padding:0;
   width:100%;
   height:80px;
-  background: #1A2F2F url('/images/line_footer_outside.png') repeat-x right top;
+  background: #1A2F2F image-url('line_footer_outside.png') repeat-x right top;
 }
 #footer div{
-  background: url('/images/line_footer.png') no-repeat right top;
+  background: image-url('line_footer.png') no-repeat right top;
   margin:auto;
   width:955px;
   height:40px;
@@ -642,7 +641,7 @@ div.clear{
 
 .generalForm .tag{
   padding:4px 10px 0px 5px;
-  background:#EFF2DF url(/images/tag.gif) no-repeat right top;
+  background:#EFF2DF image-url('tag.gif') no-repeat right top;
   float:left;
   margin:0px 10px 10px 0px;
   height:22px;
@@ -734,7 +733,6 @@ div.clear{
   padding:50px 10px 80px 30px;
 }
 #privacy_trigger {
-  color;
   padding:50px 10px 80px 30px;
 }
 .overlay {
@@ -819,7 +817,7 @@ p.desc {
 }
 /* default close button positioned on upper right corner */
 a.close {
-  background-image:url(/images/overlay/close.png);
+  background-image:image-url('overlay/close.png');
   position:absolute; 
   right:-15px;
 	top:-15px;
@@ -875,3 +873,5 @@ div#formatting_guide table td h2 {
 div#formatting_guide table td h3 {
   font-size: 100%;
 }
+
+.ui-autocomplete-loading { background: image-url('ui-anim_basic_16x16.gif') right center no-repeat !important; }
