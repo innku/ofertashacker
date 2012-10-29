@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -23,7 +24,6 @@ ActiveRecord::Schema.define(:version => 20110622151244) do
   create_table "companies", :force => true do |t|
     t.string   "email",                               :default => "",       :null => false
     t.string   "encrypted_password",   :limit => 128, :default => "",       :null => false
-    t.string   "password_salt",                       :default => "",       :null => false
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
