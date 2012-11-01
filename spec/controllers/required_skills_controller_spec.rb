@@ -3,14 +3,14 @@ require 'spec_helper'
 describe RequiredSkillsController do
 
   before do
-    @rs = Factory(:required_skill)
-    @company = Factory(:company, :role => 'admin')
+    @rs = FactoryGirl.create(:required_skill)
+    @company = FactoryGirl.create(:company, :role => 'admin')
     controller.stub(:current_company).and_return(@company)
   end
 
   describe '#index' do
     before do
-      3.times{ Factory(:required_skill) }
+      3.times{ FactoryGirl.create(:required_skill) }
     end
 
     it 'Get the first 10 required skills' do

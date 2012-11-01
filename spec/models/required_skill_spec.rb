@@ -3,7 +3,7 @@ require 'spec_helper'
 describe RequiredSkill do
   
   before(:each) do
-    @rs=Factory(:required_skill)
+    @rs=FactoryGirl.create(:required_skill)
   end
 
   context 'Validations' do
@@ -18,7 +18,7 @@ describe RequiredSkill do
         @rs.should_not be_valid
       end
       it 'With a duplicated skill name' do
-        Factory(:required_skill,:skill_name => "duplicated rs")
+        FactoryGirl.create(:required_skill,:skill_name => "duplicated rs")
         @rs.update_attributes(:skill_name => "duplicated rs").should be_false
       end
     end

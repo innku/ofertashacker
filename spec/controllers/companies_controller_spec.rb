@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe CompaniesController do
   before do
-    @company = Factory(:company)
+    @company = FactoryGirl.create(:company)
     controller.stub(:current_company).and_return(@company)
   end
 

@@ -7,11 +7,11 @@ Given /^I am logged as a "([^"]*)"$/ do |email|
 end
 
 Given /^there is a company with name "([^"]*)" in city "([^"]*)"$/ do |name, city|
-  company = Factory(:company, :title => name, :city => city)
+  company = FactoryGirl.create(:company, :title => name, :city => city)
 end
 
 Given /^there is a company with name "([^"]*)" in city "([^"]*)" and email "([^"]*)"$/ do |name, city, email|
-  company = Factory(:company, :title => name, :city => city, :email => email)
+  company = FactoryGirl.create(:company, :title => name, :city => city, :email => email)
 end
 
 Then /^I should see the company details for "([^"]*)"$/ do |email|
