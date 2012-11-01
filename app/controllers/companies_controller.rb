@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class CompaniesController < ApplicationController
   before_filter :new_company?, :only=>[:create]
   load_and_authorize_resource :except => [:my_jobs]
@@ -12,6 +13,7 @@ class CompaniesController < ApplicationController
       redirect_to edit_company_path @company
       return
     end
+    Innsights.report('Ver perfil compañia', group: @company).run
   end
   
   def edit

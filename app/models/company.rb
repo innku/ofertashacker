@@ -41,10 +41,13 @@ class Company < ActiveRecord::Base
                             :path => "public/files/#{Rails.env}/:attachment/:id/:style/:basename.:extension",
                             :bucket => 'rubypros',
                             :default_url => DEFAULT_LOGO_ROUTE
-                            
 
   def has_logo
     self.logo.file?
+  end
+
+  def to_s
+    title
   end
 
   def to_param
