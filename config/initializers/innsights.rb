@@ -15,6 +15,7 @@ Innsights.setup do
   watch Job do
     report 'Nueva oferta'
     user :company
+    group :city
   end
 
   config :test do
