@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe JobsController do
+  let!(:city) { FactoryGirl.create(:city) } 
 
   before do
     @company = FactoryGirl.create(:company)
@@ -16,12 +17,14 @@ describe JobsController do
   end
 
   describe '#create' do
+
     it 'Gets the job' do 
       post :create
       assigns(:job).should_not be_blank
     end
+
     context 'With valid params' do
-      let(:valid_params){{:job => FactoryGirl.attributes_for(:job)}}
+      let(:valid_params){{:job => FactoryGirl.attributes_for(:job).merge(:city_name => city.name)}}
       it 'Saves the job' do
         lambda { post :create, valid_params }.should change(Job, :count).by(1)
       end
@@ -103,7 +106,8 @@ describe JobsController do
       assigns(:job).should eql(@job)
     end
     context 'With valid parametes' do
-      let(:valid_params){{:id => @job.id, :job => {:title =>  'New Title', :city => 'New City'}}}
+      let!(:another_city) { FactoryGirl.create(:city, :name => 'New City')}
+      let(:valid_params){{:id => @job.id, :job => {:title =>  'New Title', :city_name => another_city.name}}}
 
       context 'Without a required skills ids parameter' do
         it 'Job should not have any required skills' do
@@ -114,7 +118,7 @@ describe JobsController do
       it 'Updates the job' do
         put :update, valid_params
         assigns(:job).title.should eql("New Title")
-        assigns(:job).city.should eql("New City")
+        assigns(:job).city_name.should eql("New City")
       end
       it 'Redirects to the job path' do
         put :update, valid_params
@@ -126,7 +130,7 @@ describe JobsController do
       end
     end
     context 'With invalid parameters' do
-      let(:invalid_params){{:id => @job.id, :job => FactoryGirl.attributes_for(:job, :title =>  nil, :city => 'New City')}}
+      let(:invalid_params){{:id => @job.id, :job => FactoryGirl.attributes_for(:job, :title =>  nil)}}
       before do
         @job.update_attributes({:title => "Expected Title"})
       end

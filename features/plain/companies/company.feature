@@ -17,7 +17,7 @@ Feature: Company Actions
   Scenario: I can edit my company information
     And I am on the edit company page for "sample@company.com"
     Then the "company_title" field should contain "Sample Company"
-    And the "company_city" field should contain "Monterrey"
+    And the "company_city_name" field should contain "Monterrey, Nuevo León, MX"
     And the "company_description" field should contain "This is my company"
     And the "company_contact_email" field should contain "foo@bar.com"
     And the "company_website" field should contain "www.foobar.com"

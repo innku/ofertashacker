@@ -6,12 +6,17 @@ Given /^I am logged as a "([^"]*)"$/ do |email|
   click_button "company_submit"
 end
 
-Given /^there is a company with name "([^"]*)" in city "([^"]*)"$/ do |name, city|
-  company = FactoryGirl.create(:company, :title => name, :city_name => city)
+Given /^there is a company with name "([^"]*)" in city "([^"]*)"$/ do |name, city_name|
+  city = Metropoli::CityModel.find_by_name(city_name)
+  if city.blank?
+    city = FactoryGirl.create(:city, :name => city_name)
+  end
+  company = FactoryGirl.create(:company, :title => name, :city => city)
 end
 
-Given /^there is a company with name "([^"]*)" in city "([^"]*)" and email "([^"]*)"$/ do |name, city, email|
-  company = FactoryGirl.create(:company, :title => name, :city_name=> city, :email => email)
+Given /^there is a company with name "([^"]*)" in city "([^"]*)" and email "([^"]*)"$/ do |name, city_name, email|
+  city = FactoryGirl.create(:city, :name => city_name)
+  company = FactoryGirl.create(:company, :title => name, :city => city, :email => email)
 end
 
 Then /^I should see the company details for "([^"]*)"$/ do |email|

@@ -54,11 +54,12 @@ describe CompaniesController do
     end
     
     context 'Valid attribute params' do
-      let(:valid_params){{:id => @company.id, :company => {:title => 'Sample Company', :city => 'Mty'}}}
+      let!(:city) { FactoryGirl.create(:city, :name => 'Mty') }
+      let(:valid_params){{:id => @company.id, :company => {:title => 'Sample Company', :city_name => city.name}}}
       it 'Updates company attributes' do
         put :update, valid_params
         assigns(:company).title.should eql('Sample Company')
-        assigns(:company).city.should eql('Mty')
+        assigns(:company).city_name.should eql('Mty')
       end
       
       it 'Renders a flash notice for success' do
