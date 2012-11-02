@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Job do
 
   before do
-    @job = Factory(:job)
+    @job = FactoryGirl.create(:job)
   end
 
   context 'Validations' do
@@ -57,10 +57,10 @@ describe Job do
       context 'When filters are not blank' do
         before do
           Job.delete_all
-          @full_time = Factory(:job, :full_time => true, :part_time => false, :flexible => false, :remote => false, :company => Company.last)
-          @part_time = Factory(:job, :full_time => false, :part_time => true, :flexible => false, :remote => false, :company => Company.last)
-          @flexible = Factory(:job, :full_time => false, :part_time => false, :flexible => true, :remote => false, :company => Company.last)
-          @remote = Factory(:job, :full_time => false, :part_time => false, :flexible => false, :remote => true, :company => Company.last)
+          @full_time = FactoryGirl.create(:job, :full_time => true, :part_time => false, :flexible => false, :remote => false, :company => Company.last)
+          @part_time = FactoryGirl.create(:job, :full_time => false, :part_time => true, :flexible => false, :remote => false, :company => Company.last)
+          @flexible = FactoryGirl.create(:job, :full_time => false, :part_time => false, :flexible => true, :remote => false, :company => Company.last)
+          @remote = FactoryGirl.create(:job, :full_time => false, :part_time => false, :flexible => false, :remote => true, :company => Company.last)
           @filters = {:full_time=>"true", :flexible=>"true", :part_time=>"true", :remote=>"true"}
         end
         
@@ -168,8 +168,8 @@ describe Job do
   
     describe '.no_repeat' do
       before do
-        @job1 = Factory(:job)
-        @job2 = Factory(:job)
+        @job1 = FactoryGirl.create(:job)
+        @job2 = FactoryGirl.create(:job)
         @job_array = [@job2.id, @job.id]
       end
       

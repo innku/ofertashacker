@@ -15,7 +15,7 @@ class Job < ActiveRecord::Base
   FILTERS = %w{full_time part_time flexible remote}
   after_create :post_twitter
 
-  metropoli_for :city, :as => :city_name
+  metropoli_for :city
 
   scope   :ordered, order('id DESC')
 
@@ -61,6 +61,10 @@ class Job < ActiveRecord::Base
     unless jobs.blank? 
       where(sanitize_sql("jobs.id NOT IN (#{jobs.join(',')})"))
     end
+  end
+
+  def to_s
+    title
   end
 
 end

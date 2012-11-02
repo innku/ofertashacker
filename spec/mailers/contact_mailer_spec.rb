@@ -7,7 +7,7 @@ describe ContactMailer do
   describe '.contact' do
 
     before do
-      @job = Factory(:job)
+      @job = FactoryGirl.create(:job)
       @name = "User name"
       @email = "user@email.com"
       @message = "The message"

@@ -1,43 +1,60 @@
-Factory.define :company do |f|
-  f.sequence(:email) {|n| "member#{n}@mycompany.com" }
-  f.sequence(:title) {|n| "My Company#{n}" }
-  f.city                  "Monterrey"
-  f.password              "secret"
-  f.password_confirmation "secret"
-  f.description           "This is my company"
-  f.role                  "member"
-  f.website               "www.foobar.com"
-  f.facebook              "foobar"
-  f.twitter               "foobar"
-  f.contact_email         "foo@bar.com"
+#encoding: utf-8
+FactoryGirl.define do
+  factory :company do
+    sequence(:email) {|n| "member#{n}@mycompany.com" }
+    sequence(:title) {|n| "My Company#{n}" }
+    password              "secret"
+    password_confirmation "secret"
+    description           "This is my company"
+    role                  "member"
+    website               "www.foobar.com"
+    facebook              "foobar"
+    twitter               "foobar"
+    contact_email         "foo@bar.com"
+    city
+  end
+
+  factory :job do
+    title                 "Ruby Programmer"
+    full_time             true
+    part_time             false
+    remote                false
+    flexible              false
+    extra_skill           ""
+    description           "We required 3 ruby programmers"
+    association           :company, :factory => :company
+    city
+  end
+
+  factory :required_skill do
+    sequence(:skill_name) { |n| "Ruby#{n}" }
+  end
+
+  factory :job_for_seed do
+    title                 "Ruby Programmer"
+    full_time             false
+    part_time             false
+    remote                false
+    flexible              false
+    description           "Faltan required skills!"
+    association           :company, :factory => :company
+    city
+  end
+
+  factory :city, class: Metropoli::CityModel do
+    sequence(:name) { |n| "Monterrey#{n}" }
+    association           :state
+  end
+
+  factory :state, class: Metropoli::StateModel do
+    name      "Nuevo León"
+    abbr      "NL"
+    association           :country
+  end
+
+  factory :country, class: Metropoli::CountryModel do
+    name      "México"
+    abbr      "MX"
+  end
+
 end
-
-Factory.define :job do |f|
-  f.title                 "Ruby Programmer"
-  f.city                  "Monterrey"
-  f.full_time             true
-  f.part_time             false
-  f.remote                false
-  f.flexible              false
-  f.extra_skill           ""
-  f.description           "We required 3 ruby programmers"
-  f.association           :company, :factory => :company
-end
-
-Factory.define :required_skill do |rs|
-  rs.sequence(:skill_name) { |n| "Ruby#{n}" }
-end
-
-Factory.define :job_for_seed, :class => Job do |j|
-  j.title                 "Ruby Programmer"
-  j.city                  "Monterrey"
-  j.full_time             false
-  j.part_time             false
-  j.remote                false
-  j.flexible              false
-  j.description           "Faltan required skills!"
-  j.association           :company, :factory => :company
-  # j.required_skills {|rs|[rs.association :required_skill]}
-end
-
-

@@ -1,4 +1,6 @@
+# encoding: UTF-8
 class JobsController < ApplicationController
+
   before_filter :new_company?, :only=>[:new]
   load_and_authorize_resource :through => :current_company, :except=>[:index, :show, :my_jobs, :contact_company]
   layout :get_layout
@@ -7,7 +9,7 @@ class JobsController < ApplicationController
 
   def new
   end
-  
+
   def create
     if @job.save
       redirect_to jobs_path, :notice => I18n.t("notice.job.successfully_created")
@@ -15,7 +17,7 @@ class JobsController < ApplicationController
       render :action => "new"
     end
   end
-  
+
   def index
     @jobs =  Job.filter_it(params[:filters], current_company).order("RANDOM()")
     if params[:jobs_ids] then @jobs = @jobs.no_repeat(params[:jobs_ids]) end
@@ -25,15 +27,15 @@ class JobsController < ApplicationController
       format.json {render :text => @jobs.to_json(:methods =>[:to_param] ,:include => {:company => {:only => [:title], :methods => [:logo_url, :has_logo]}}) }
     end
   end
-  
+
   def show
     @job = Job.find(params[:id])
+    Innsights.report('Ver oferta', group: @job).run
   end
-  
+
   def edit
   end
 
-  
   def update
     params[:job][:required_skill_ids] = [] if params[:job][:required_skill_ids].nil?
     if @job.update_attributes(params[:job])
@@ -42,7 +44,7 @@ class JobsController < ApplicationController
       render :action => "new"
     end
   end
-  
+
   def destroy
     @job.destroy
     respond_to do |format|
@@ -56,9 +58,11 @@ class JobsController < ApplicationController
     cookies[:name] = { :value => params[:name], :expires => Time.now + 1.year }
     cookies[:email] = { :value => params[:email], :expires => Time.now + 1.year }
     ContactMailer.contact(@job, params[:name], params[:email], params[:message], params[:file]).deliver
+    Innsights.report('Compañia contactada', user: @job.company, group: @job).run
     redirect_to(@job, :notice => "Tu mensaje fue enviado a #{@job.company.title} correctamente.")
 
   end
+
   private
 
   def get_layout

@@ -16,11 +16,10 @@
       <% end %>   
 		  <%= f.label t('.title') + " *" %>
         <%= f.text_field :title %></p>
-        
-			  	<%= f.label t('.city') + " *" %>	 
-         <%=f.text_field :city, :class => 'city_autocomplete' %></p>
+        <%= f.label t('.city') + " *" %>	 
+        <%=f.text_field :city_name, :class => 'city_autocomplete' %></p>
       </div>
-      
+
 	    <div class="skills span-20 prepend-1">
 		    <%= f.label t('.job_type') + " *", :class => :non_block %><span class="desc">selecciona por lo menos un tipo</span>
         <ul class="form_checkboxes">

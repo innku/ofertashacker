@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110622151244) do
+ActiveRecord::Schema.define(:version => 20121101225420) do
 
   create_table "cities", :force => true do |t|
     t.integer "state_id"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20110622151244) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "title"
-    t.string   "city"
+    t.string   "city2"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(:version => 20110622151244) do
     t.string   "website"
   end
 
-  add_index "companies", ["city"], :name => "index_companies_on_city"
+  add_index "companies", ["city2"], :name => "index_companies_on_city"
   add_index "companies", ["city_id"], :name => "index_companies_on_city_id"
   add_index "companies", ["email"], :name => "index_companies_on_email", :unique => true
   add_index "companies", ["reset_password_token"], :name => "index_companies_on_reset_password_token", :unique => true
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(:version => 20110622151244) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "state_id"
-    t.string   "city"
+    t.string   "city2"
     t.integer  "city_id"
     t.text     "extra_skill"
   end

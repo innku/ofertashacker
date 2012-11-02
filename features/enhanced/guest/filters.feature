@@ -79,7 +79,6 @@ Feature: Guest Actions
     Then I should see "Trabajo de Tiempo Completo"
     And I should see "Trabajo de Medio Tiempo"
     And I should see "Trabajo de Horario Flexible"
-    And I should see "Trabajo Remoto"
 
   Scenario: I uncheck all job types, and the four job type checkboxes should be checked again
     And I am on the index job page

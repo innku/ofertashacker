@@ -3,9 +3,9 @@ require 'spec_helper'
 describe JobsController do
 
   before do
-    @company = Factory(:company)
+    @company = FactoryGirl.create(:company)
     controller.stub(:current_company).and_return(@company)
-    @job = Factory(:job, :company => @company)
+    @job = FactoryGirl.create(:job, :company => @company)
   end
 
   describe '#new' do
@@ -21,7 +21,7 @@ describe JobsController do
       assigns(:job).should_not be_blank
     end
     context 'With valid params' do
-      let(:valid_params){{:job => Factory.attributes_for(:job)}}
+      let(:valid_params){{:job => FactoryGirl.attributes_for(:job)}}
       it 'Saves the job' do
         lambda { post :create, valid_params }.should change(Job, :count).by(1)
       end
@@ -35,7 +35,7 @@ describe JobsController do
       end
     end
     context 'With invalid params' do
-      let(:invalid_params){{ :job => Factory.attributes_for(:job).merge({:title => nil}) }}
+      let(:invalid_params){{ :job => FactoryGirl.attributes_for(:job).merge({:title => nil}) }}
       it 'Does not save the job' do
         lambda { post :create, invalid_params }.should_not change(Job, :count)        
       end
@@ -48,7 +48,7 @@ describe JobsController do
 
   describe '#index' do
     before do
-      9.times { Factory(:job, :company=> @company)}
+      9.times { FactoryGirl.create(:job, :company=> @company)}
       @jobs = Job.limit(8)
       Job.stub_chain(:filter_it, :order).and_return(@jobs)
     end
@@ -126,7 +126,7 @@ describe JobsController do
       end
     end
     context 'With invalid parameters' do
-      let(:invalid_params){{:id => @job.id, :job => Factory.attributes_for(:job, :title =>  nil, :city => 'New City')}}
+      let(:invalid_params){{:id => @job.id, :job => FactoryGirl.attributes_for(:job, :title =>  nil, :city => 'New City')}}
       before do
         @job.update_attributes({:title => "Expected Title"})
       end

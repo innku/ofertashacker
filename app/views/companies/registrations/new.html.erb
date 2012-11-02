@@ -6,7 +6,7 @@
 </div>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name, :new_company => true)) do |f| %>
   <% if params[:new_company] && !resource.errors.any?%>
-    <div id="new_company"><h2>Antes de publicar tu oferta necesitamos tus datos.</h2></div>
+    <div id="new_company_blockquote"><h2>Antes de publicar tu oferta necesitamos tus datos.</h2></div>
   <%end%>
   <div class="generalForm span-12 prepend-1">
 

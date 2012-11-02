@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Company do
 
   before(:each) do
-    @company = Factory(:company)
+    @company = FactoryGirl.create(:company)
   end
   
   context 'Validations' do
@@ -289,7 +289,7 @@ describe Company do
       
       context 'When company has jobs' do
         before do
-          5.times { Factory(:job, :company => @company) }
+          5.times { FactoryGirl.create(:job, :company => @company) }
           @jobs = Job.ordered[0..3]
           @job = Job.first
         end
