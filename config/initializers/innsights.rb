@@ -16,4 +16,8 @@ Innsights.setup do
     user :company
   end
 
+  config :test do
+    enable false
+  end
+
 end

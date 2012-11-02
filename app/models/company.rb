@@ -12,18 +12,18 @@ class Company < ActiveRecord::Base
   validates_format_of :contact_email, :with => /^\w(\w|[.-])+@\w+\.\w{2,}$/i, :on => :update, :if => :contact_email?
   validates_format_of :facebook, :with =>/^(\/?\w+|((http:\/\/(www\.)?|(www\.)?)facebook.com\/\w+))$/i, :on => :update, :if => :facebook?
   validates_format_of :twitter, :with => /^((\/|@)?\w+|((http:\/\/(www\.)?|(www\.)?)twitter.com\/\w+))$/i, :on => :update, :if => :twitter?
-  
+
   validates_attachment_content_type :logo, 
                                     :content_type => ['image/jpg','image/jpeg', 
                                                       'image/png', 'image/gif']
-  
+
   attr_accessible :email, :password, :password_confirmation,
-                  :remember_me, :title, :city, :logo, :description,
+                  :remember_me, :title, :city_name, :logo, :description,
                   :phone1, :phone2, :contact_email, :linkedin, :facebook, :twitter, :website, :role, :terms_of_service
-                  
+
   validates_acceptance_of :terms_of_service
 
-	metropoli_for :city, :as=>:city_name
+	metropoli_for :city
   scope :members, where(:role => "member")
   
   DEFAULT_LOGO_ROUTE = "/images/shareIcon.png"
