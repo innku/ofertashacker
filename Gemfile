@@ -7,7 +7,7 @@ gem 'devise', '1.5.3'
 gem 'cancan'
 gem "nifty-generators"
 gem 'paperclip'
-gem 'aws-s3', :require => 'aws/s3'
+gem 'aws-sdk'
 gem 'metropoli', :git => 'git://github.com/innku/metropoli.git'
 gem "mocha", :group => :test
 gem 'RedCloth'
