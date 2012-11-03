@@ -24,7 +24,7 @@ class JobsController < ApplicationController
     @jobs = @jobs.limit(8)
     respond_to do |format|
       format.html {render :action => "index"}  
-      format.json {render :text => @jobs.to_json(:methods =>[:to_param] ,:include => {:company => {:only => [:title], :methods => [:logo_url, :has_logo]}}) }
+      format.json {render :text => @jobs.to_json(:methods =>[:to_param, :origin] ,:include => {:company => {:only => [:title], :methods => [:logo_url, :has_logo]}}) }
     end
   end
 

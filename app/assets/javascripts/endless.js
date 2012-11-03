@@ -108,8 +108,7 @@ function should_be_deleted(job_id,data) {
 }
 //renders a job template 
 function condensed_info(job){
-
-  str = job.company.title + " en " + job.city ;
+  str = job.company.title + " en " + job.origin ;
   (job.full_time) ? str+=", Tiempo completo" : "";
   (job.part_time) ? str+=", Medio tiempo" : "";
   (job.flexible) ? str+=", Flexible" : "";
