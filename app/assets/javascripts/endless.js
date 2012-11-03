@@ -124,8 +124,8 @@ function job_template(job) {
   var str="<li class=\"job shadow\"" + " id=\"" + job.id +"\" >";
   str += "<a href=\"/jobs/"+job.to_param +"\">";
   str += "<div class=\"span-4 prepend-8 last\">";
-  if(job.company.has_logo)
-    str += "<img alt=\""+job.company.title+"\" src=\""+job.company.logo_url+"\" />";
+  if(job.has_logo)
+    str += "<img alt=\""+job.company.title+"\" src=\""+job.logo_url+"\" />";
   else
     if(job.company.title.length <= 25)
       str += "<h4>" + job.company.title + "</h4>";

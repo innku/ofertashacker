@@ -2,8 +2,8 @@
   <%= link_to(job) do %>
     <div class="span-4 prepend-8 last" >
       
-        <%if job.company.logo.file?%>
-      <%=image_tag job.company.logo.url(:thumb), :style=> "display:block;"%>
+    <%if job.has_logo %>
+      <%=image_tag job.logo_url, :style=> "display:block;"%>
     <%else%>
       <h4><%= truncate(job.company.title, :length => 25)%></h4>
     <%end%>

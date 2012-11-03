@@ -74,4 +74,19 @@ class Job < ActiveRecord::Base
       city2
     end
   end
+  
+  def has_logo
+    logo.file?
+  end
+
+  def logo_url
+    logo.url(:thumb)
+  end
+  
+  private
+
+  def logo
+    company.logo
+  end
+
 end
