@@ -29,4 +29,10 @@ Feature: Guest Actions
     And I am on the root page
     When I follow "Ruby on Rails"
     Then I should see the job vacancy details for "Ruby on Rails"
-  
+
+  Scenario: I can see a fallback of the job city
+    Given there is an old job vacancy with title "Ruby on Rails" created by "admin@rubypros.com" in city "weird city"
+    And I am on the root page
+    Then I should see "weird city"
+    When I follow "Ruby on Rails"
+    Then I should see "weird city"

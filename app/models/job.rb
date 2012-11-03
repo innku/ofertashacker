@@ -67,4 +67,11 @@ class Job < ActiveRecord::Base
     title
   end
 
+  def origin
+    if city.present?
+      city_name 
+    else
+      city2
+    end
+  end
 end

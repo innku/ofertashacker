@@ -31,3 +31,7 @@ Then /^I should see the company details for "([^"]*)"$/ do |email|
   page.should have_content(company.contact_email) unless company.contact_email.blank?
 end
 
+Given /^there is an old company with name "(.*?)" in a city "(.*?)"$/ do |title, city|
+  company = FactoryGirl.build(:company, :title => title, :city2 => city, city: nil)
+  company.save(:validate => false)
+end

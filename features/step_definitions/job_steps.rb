@@ -62,3 +62,11 @@ Then /^I should see the job vacancy details for "([^"]*)"$/ do |job_name|
   page.should have_content("Remoto") unless job.remote.blank?
 end
 
+Given /^there is an old job vacancy with title "(.*?)" created by "(.*?)" in city "(.*?)"$/ do |title, email, city|
+  j = Job.new(:title => title, :full_time => true, :description => 'elias', company: FactoryGirl.create(:company), city2: city)
+  @company = Company.find_by_email(email)
+  if !@company
+    @company = FactoryGirl.create(:company, :email => email)
+  end
+  j.save(:validate => false)
+end

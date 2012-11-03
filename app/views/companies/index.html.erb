@@ -22,7 +22,7 @@
 	    <div class="company_profile shadow">
 	        <span>
 	        	<h2><%= link_to truncate(company.title, :length =>  25), company_path(company) %></h2>
-            <% unless company.city.blank?%><p><%= "En #{company.city}" %></p><%end%>
+            <% unless company.origin.blank?%><p><%= "En #{company.origin}" %></p><%end%>
             <% if company.website? %>
               <%= link_to "#{truncate(company.website, :length => 50)}", (company.formated_website), :target => :_blank%>
             <% end %><br />

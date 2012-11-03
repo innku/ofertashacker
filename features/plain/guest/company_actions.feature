@@ -36,3 +36,9 @@ Feature: Guest Actions
     And I press "Registrar"
     Then I should see "¡Listo! Tu empresa ya está registrada, ahora puedes publicar una oferta."
 
+  Scenario: I can see a fallback of the company city
+    Given there is an old company with name "My First Company" in a city "weird city"
+    And I am on the company index
+    Then I should see "weird city"
+    When I follow "My First Company"
+    Then I should see "weird city"

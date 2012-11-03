@@ -27,8 +27,8 @@
         <%end%>
       <div class="clear"></div>
       <div id="info">
-        <% unless @company.city.blank?%>
-          <h2><%= @company.city %></h2>
+        <% unless @company.origin.blank?%>
+          <h2><%= @company.origin %></h2>
         <% end %>
         <%= render :partial => 'contact_info', :locals => {:company => @company}%>
       </div>

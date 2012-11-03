@@ -48,7 +48,7 @@
       </div>
       <div id="right">
         <div style="width:100%;overflow:hidden;"><h1><%= @job.title%></h1></div>
-        <h4>En <%=@job.city%>
+        <h4>En <%= @job.origin %>
           <%= @job.full_time ? ", Tiempo Completo".html_safe : nil%>
           <%= @job.part_time ? ", Medio Tiempo".html_safe : nil%>
           <%= @job.remote ? ", Remoto".html_safe : nil%>

@@ -38,7 +38,7 @@ module JobsHelper
   def condensed_information(job)
     str=""
     job.company ? str+=job.company.title : ""
-    job.city ? str+=" en #{job.city} " : ""
+    job.origin ? str+=" en #{job.origin} " : ""
     str+=get_job_type(job,true)
     str
     

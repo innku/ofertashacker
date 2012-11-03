@@ -166,5 +166,13 @@ class Company < ActiveRecord::Base
     self.city.blank? && !self.logo.file?  && self.twitter.blank? && self.facebook.blank? && self.contact_email.blank?  && self.website.blank? && self.description.blank?
   end
 
+  def origin
+    if city.present?
+      city_name 
+    else
+      city2
+    end
+  end
+
 end
 
