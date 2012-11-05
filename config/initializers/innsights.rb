@@ -9,6 +9,7 @@ Innsights.setup do
 
   watch Company do
     report 'Nueva Compañia'
+    user lambda { |company| company }
   end
 
   watch Job do
