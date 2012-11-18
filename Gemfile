@@ -8,7 +8,7 @@ gem 'cancan'
 gem "nifty-generators"
 gem 'paperclip'
 gem 'aws-sdk'
-gem 'metropoli', :git => 'git://github.com/innku/metropoli.git'
+gem 'metropoli', :path => '../../metropoli'
 gem "mocha", :group => :test
 gem 'RedCloth'
 gem "will_paginate"

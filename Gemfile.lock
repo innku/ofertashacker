@@ -11,12 +11,12 @@ GIT
       rest-client
       ruby-progressbar (~> 0.0.10)
 
-GIT
-  remote: git://github.com/innku/metropoli.git
-  revision: 74f85cfa8700bdc0d8bbdf7fdbc48fc834e1a93a
+PATH
+  remote: ../../metropoli
   specs:
     metropoli (0.0.0)
       json (~> 1.4.6)
+      metropoli
       sinatra (>= 1.0)
 
 GEM
