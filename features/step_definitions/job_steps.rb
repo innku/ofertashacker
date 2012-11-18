@@ -1,3 +1,5 @@
+# encoding: utf-8;
+
 When /^I follow "([^"]*)" and click OK$/ do |text|
   page.evaluate_script("window.alert = function(msg) { return true; }")
   page.evaluate_script("window.confirm = function(msg) { return true; }")
@@ -69,4 +71,24 @@ Given /^there is an old job vacancy with title "(.*?)" created by "(.*?)" in cit
     @company = FactoryGirl.create(:company, :email => email)
   end
   j.save(:validate => false)
+end
+
+Given /^some jobs exists in Mexico and Brazil$/ do
+  brazil = FactoryGirl.create(:country, :name => 'Brazil')
+  brazil_state = FactoryGirl.create(:state, :country => brazil)
+  brazil_city = FactoryGirl.create(:city, :state => brazil_state)
+
+  FactoryGirl.create(:job, :title => 'Monterrey 1')
+  FactoryGirl.create(:job, :title => 'Monterrey 2')
+  FactoryGirl.create(:job, :title => 'Sao Paolo', :city => brazil_city)
+end
+
+When /^I search for Mexico$/ do
+  fill_in 'En:', :with => 'México'
+end
+
+Then /^I should only see the jobs from Mexico$/ do
+  page.should have_content('Monterrey 1')
+  page.should have_content('Monterrey 2')
+  page.should_not have_content('Sao Paolo')
 end

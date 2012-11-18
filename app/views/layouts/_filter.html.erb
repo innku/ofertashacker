@@ -1,10 +1,14 @@
 <div  class="span-18 last">
-  <%= form_tag('jobs') do%>
-  <ul id="mainMenu">
-    <li><input type="checkbox" id="full_time" checked="true"><label for="full_time">tiempo completo</label></li>
-    <li><input type="checkbox" id="part_time" checked="true"><label for="part_time">medio tiempo</label></li>
-    <li><input type="checkbox" id="flexible" checked="true"><label for="flexible">horario flexible</label></li>
-    <li><input type="checkbox" id="remote" checked="true"><label for="remote">remoto</label></li>
-  </ul>
+  <%= form_tag('jobs', :class => 'search_form') do%>
+    <%= label_tag 'location', "En:" %>
+    <%= text_field_tag 'location' %>
+    <%= submit_tag 'Buscar' %>
+
+    <ul id="mainMenu">
+      <li><input type="checkbox" id="full_time" checked="true"><label for="full_time">tiempo completo</label></li>
+      <li><input type="checkbox" id="part_time" checked="true"><label for="part_time">medio tiempo</label></li>
+      <li><input type="checkbox" id="flexible" checked="true"><label for="flexible">horario flexible</label></li>
+      <li><input type="checkbox" id="remote" checked="true"><label for="remote">remoto</label></li>
+    </ul>
   <% end %>
 </div>
