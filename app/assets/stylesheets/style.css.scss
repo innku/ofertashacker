@@ -889,4 +889,7 @@ div#formatting_guide table td h3 {
   font-size: 100%;
 }
 
-.ui-autocomplete-loading { background: image-url('ui-anim_basic_16x16.gif') right center no-repeat !important; }
+.ui-autocomplete-loading { 
+  background: white image-url('ui-anim_basic_16x16.gif') right center no-repeat !important; 
+}
+
