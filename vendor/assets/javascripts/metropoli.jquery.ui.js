@@ -81,10 +81,10 @@ $(document).ready(function(){
                    data: {	q: request.term	},
                    success: function(data) {
                      cities = $.map( data['cities'], function( item ) {
-                       return { label: item.city_model.to_s, value: item.city_model.to_s, category: 'Cities', type: 'city', id: item.city_model.id }
+                       return { label: item.city_model.to_s, value: item.city_model.to_s, category: 'Ciudades', type: 'city', id: item.city_model.id }
                      });
                      countries = $.map( data['countries'], function( item ) {
-                       return { label: item.country_model.to_s, value: item.country_model.to_s, category: 'Countries', type: 'country', id: item.country_model.id }
+                       return { label: item.country_model.to_s, value: item.country_model.to_s, category: 'Países', type: 'country', id: item.country_model.id }
                      });
                      
                      response(cities.concat(countries));
