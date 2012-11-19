@@ -19,10 +19,7 @@ class JobsController < ApplicationController
   end
 
   def index
-    @jobs =  Job.filter_it(params[:filters]).order("RANDOM()")
-    if params[:jobs_ids] then @jobs = @jobs.no_repeat(params[:jobs_ids]) end
-    @jobs = @jobs.limit(8)
-
+    @jobs = Fetchers::JobFetcher.search(params)
     respond_to do |format|
       format.html {render :action => "index"}  
       format.json {render :json => @jobs }
