@@ -27,7 +27,7 @@ class Job < ActiveRecord::Base
     end
   end
 
-  def self.filter_it(filters={}, company=nil)
+  def self.filter_it(filters={})
     results = Job.includes(:company)
     unless filters.blank?
       results = results.where(FILTERS.collect do |filter|
