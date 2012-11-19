@@ -113,9 +113,8 @@ describe Job do
           brazil_state = FactoryGirl.create(:state, :country => brazil)
           brazil_city = FactoryGirl.create(:city, :state => brazil_state)
 
-          mx_job  = FactoryGirl.create(:job, :title => 'Monterrey 1')
-          mx_job2 = FactoryGirl.create(:job, :title => 'Monterrey 2')
-          bz_job = FactoryGirl.create(:job, :title => 'Sao Paolo', :city => brazil_city)
+          mx_job  = FactoryGirl.create(:job)
+          bz_job = FactoryGirl.create(:job, :city => brazil_city)
 
           Job.from_country(brazil.id).should == [bz_job]
         end
