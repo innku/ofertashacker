@@ -96,6 +96,7 @@ $(document).ready(function(){
                 form.find('input[id$=location_id]').val(ui.item.id);
                 form.find('input[id$=location_type]').val(ui.item.type);
               }
+
     });
   });
 

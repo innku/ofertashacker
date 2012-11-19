@@ -5,7 +5,7 @@ module Fetchers
       if params[:jobs_ids] 
         jobs = jobs.no_repeat(params[:jobs_ids]) 
       end
-      if params[:location_type] 
+      if params[:location_type].present? 
         jobs = from_location(jobs, params[:location_id], params[:location_type])
       end
       jobs.limit(8)

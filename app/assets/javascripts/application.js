@@ -6,4 +6,5 @@
 //= require jquery.validate.min
 //= require metropoli.jquery.ui
 //= require tags
+//= require utilities
 //= require_tree .
