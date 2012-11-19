@@ -120,6 +120,18 @@ describe Job do
           Job.from_country(brazil.id).should == [bz_job]
         end
       end
+
+      describe '.from_city' do
+        it 'returns all the jobs from a city' do
+          eddie_city = FactoryGirl.create(:city, :name => 'Eddie town')
+          chino_city = FactoryGirl.create(:city, :name => 'Chino town')
+
+          eddie_job = FactoryGirl.create(:job, :city => eddie_city)
+          chino_job = FactoryGirl.create(:job, :city => chino_city)
+
+          Job.from_city(eddie_city.id).should == [eddie_job]
+        end
+      end
     end
  
     describe '.no_repeat' do
