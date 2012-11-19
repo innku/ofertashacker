@@ -6,9 +6,15 @@ module Fetchers
         jobs = jobs.no_repeat(params[:jobs_ids]) 
       end
       if params[:location_type] 
-        jobs = jobs.send("from_#{params[:location_type]}", params[:location_id])
+        jobs = from_location(jobs, params[:location_id], params[:location_type])
       end
       jobs.limit(8)
+    end
+
+    private
+
+    def self.from_location(jobs, id, type)
+      jobs.send("from_#{type}", id)
     end
   end
 end
