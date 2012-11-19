@@ -45,8 +45,7 @@ describe Job do
     
   end
  
-  context 'Instance methods' do
-    
+  context 'Class methods' do
     describe '.filter_it' do
       context 'When filters are blank' do
         it 'Returns all the jobs' do
@@ -108,8 +107,34 @@ describe Job do
         end
       end
     end
-    
-    describe '.to_param' do
+ 
+    describe '.no_repeat' do
+      before do
+        @job1 = FactoryGirl.create(:job)
+        @job2 = FactoryGirl.create(:job)
+        @job_array = [@job2.id, @job.id]
+      end
+      
+      context 'With an empty array' do
+        it 'Returns nil with an empty array' do
+          Job.no_repeat.should be_nil
+        end
+      end
+      
+      context 'With at least one job id' do
+        
+        it 'Does not return the jobs in the array' do
+          Job.no_repeat(@job_array).should_not include([@job2, @job])
+        end
+        it 'Return the jobs that are not in the array' do
+          Job.no_repeat(@job_array).should == ([@job1])
+        end
+      end
+    end
+  end
+
+  context 'Instance methods' do
+     describe '.to_param' do
       before do
         @job.update_attributes(:title => "Ruby Programmer Ninja")
       end
@@ -163,30 +188,6 @@ describe Job do
         @job.formated_description.should include("h2. Title")
         @job.formated_description.should include("h3. Sub Title")
         @job.formated_description.should_not include("h2. Sub Title")
-      end
-    end
-  
-    describe '.no_repeat' do
-      before do
-        @job1 = FactoryGirl.create(:job)
-        @job2 = FactoryGirl.create(:job)
-        @job_array = [@job2.id, @job.id]
-      end
-      
-      context 'With an empty array' do
-        it 'Returns nil with an empty array' do
-          Job.no_repeat.should be_nil
-        end
-      end
-      
-      context 'With at least one job id' do
-        
-        it 'Does not return the jobs in the array' do
-          Job.no_repeat(@job_array).should_not include([@job2, @job])
-        end
-        it 'Return the jobs that are not in the array' do
-          Job.no_repeat(@job_array).should == ([@job1])
-        end
       end
     end
   end
