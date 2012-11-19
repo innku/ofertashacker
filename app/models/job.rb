@@ -19,14 +19,6 @@ class Job < ActiveRecord::Base
 
   scope   :ordered, order('id DESC')
 
-  def post_twitter
-    if Rails.env == 'production'
-      url = $bitly.shorten("http://www.ofertashacker.com/jobs/#{self.id}")
-      tweet_message = truncate("#{self.company.title}: #{self.title}", :length => 115 )
-      Twitter.update("#{tweet_message} #{url.short_url}")
-    end
-  end
-
   def self.filter_it(filters={})
     results = Job.includes(:company)
     unless filters.blank?
@@ -35,6 +27,20 @@ class Job < ActiveRecord::Base
       end.compact.join(' OR '))
     end
     results
+  end
+
+  def self.no_repeat(jobs=[])
+    unless jobs.blank? 
+      where(sanitize_sql("jobs.id NOT IN (#{jobs.join(',')})"))
+    end
+  end
+
+  def post_twitter
+    if Rails.env == 'production'
+      url = $bitly.shorten("http://www.ofertashacker.com/jobs/#{self.id}")
+      tweet_message = truncate("#{self.company.title}: #{self.title}", :length => 115 )
+      Twitter.update("#{tweet_message} #{url.short_url}")
+    end
   end
 
   def to_param
@@ -57,12 +63,6 @@ class Job < ActiveRecord::Base
     required_skills.all(:limit => 4, :order => "id desc" )
   end
   
-  def self.no_repeat(jobs=[])
-    unless jobs.blank? 
-      where(sanitize_sql("jobs.id NOT IN (#{jobs.join(',')})"))
-    end
-  end
-
   def to_s
     title
   end
