@@ -2,7 +2,7 @@ Rubypros::Application.routes.draw do
 
   root :to => 'jobs#index'
 
-  metropoli_for :cities, :states, :countries
+  metropoli_for :cities, :states, :countries, :cities_and_countries
 
   devise_for :companies, 
     :path_names => {

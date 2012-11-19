@@ -25,11 +25,7 @@ Metropoli.setup do |config|
   
   
   ## Changes autocomplete limit default 
-  ## 
-  ## Example config.autocomplete_limit = 10
-  
-  # config.autocomplete_limit = 20
-  
+  config.autocomplete_limit = 5
   
   ## Extra methods to include in the JSON render
   ##
