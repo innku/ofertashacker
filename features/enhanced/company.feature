@@ -19,13 +19,9 @@ Feature: Company Actions
     And I should see "San Nicolas de los Garza"
     And I should see "The best company around the world"
 
-
+    @mytest
   Scenario: Publish a new job vacancy
-    And I am on the new job page
-    When I fill in "job_description" with "We need 2 ruby programmers"
-    And I fill in "job_title" with "Ruby Sr Programmer"
-    And I fill in "job_city_name" with "Monterrey, Nuevo León, MX"
-    And I check "job_full_time"
-    And I press "Publicar oferta"
-    Then I should see "Tu oferta ha sido publicada"  
-    And I should see "Ruby Sr Programmer"
+    Given I am on the new job page
+    And I fill the job information
+    When I press "Publicar oferta"
+    Then the job should be created

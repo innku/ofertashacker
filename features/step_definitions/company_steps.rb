@@ -1,3 +1,5 @@
+#encoding: utf-8;
+
 Given /^I am logged as a "([^"]*)"$/ do |email|
   company = Company.find_by_email(email)
   visit new_company_session_path
@@ -35,3 +37,20 @@ Given /^there is an old company with name "(.*?)" in a city "(.*?)"$/ do |title,
   company = FactoryGirl.build(:company, :title => title, :city2 => city, city: nil)
   company.save(:validate => false)
 end
+
+Given /^I fill the job information$/ do
+  steps %Q{
+    When I fill in "job_description" with "We need 2 ruby programmers"
+    And I fill in "job_title" with "Ruby Sr Programmer"
+    And I fill in "job_city_name" with "Monterrey, Nuevo León, MX"
+    And I check "job_full_time"
+  } 
+end
+
+Then /^the job should be created$/ do
+  steps %Q{
+    Then I should see "Tu oferta ha sido publicada"  
+    And I should see "Ruby Sr Programmer"
+  } 
+end
+
