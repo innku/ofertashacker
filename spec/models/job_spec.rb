@@ -106,6 +106,20 @@ describe Job do
           
         end
       end
+
+      describe '.from_country' do
+        it 'returns all the jobs from a country' do
+          brazil = FactoryGirl.create(:country, :name => 'Brazil')
+          brazil_state = FactoryGirl.create(:state, :country => brazil)
+          brazil_city = FactoryGirl.create(:city, :state => brazil_state)
+
+          mx_job  = FactoryGirl.create(:job, :title => 'Monterrey 1')
+          mx_job2 = FactoryGirl.create(:job, :title => 'Monterrey 2')
+          bz_job = FactoryGirl.create(:job, :title => 'Sao Paolo', :city => brazil_city)
+
+          Job.from_country(brazil.id).should == [bz_job]
+        end
+      end
     end
  
     describe '.no_repeat' do

@@ -35,6 +35,10 @@ class Job < ActiveRecord::Base
     end
   end
 
+  def self.from_country(id)
+    joins(:city => { :state => :country }).where('countries.id = ?', id)
+  end
+
   def post_twitter
     if Rails.env == 'production'
       url = $bitly.shorten("http://www.ofertashacker.com/jobs/#{self.id}")
