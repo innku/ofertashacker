@@ -95,8 +95,12 @@ $(document).ready(function(){
                 var form = $(this).closest('form');
                 form.find('input[id$=location_id]').val(ui.item.id);
                 form.find('input[id$=location_type]').val(ui.item.type);
+              },
+      open : function() {
+                var form = $(this).closest('form');
+                form.find('input[id$=location_id]').val('');
+                form.find('input[id$=location_type]').val('');
               }
-
     });
   });
 
