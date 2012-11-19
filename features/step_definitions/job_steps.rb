@@ -85,6 +85,7 @@ end
 
 When /^I search for Mexico$/ do
   fill_in 'En:', :with => 'México'
+  click_button 'Buscar'
 end
 
 Then /^I should only see the jobs from Mexico$/ do

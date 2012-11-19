@@ -1,5 +1,5 @@
 <div  class="span-18 last">
-  <%= form_tag('jobs', :class => 'search_form') do%>
+  <%= form_tag('jobs', :method => :get, :class => 'search_form') do%>
     <%= label_tag 'location', "En:" %>
     <%= text_field_tag 'location' %>
     <%= submit_tag 'Buscar' %>
