@@ -6,7 +6,7 @@ function getJobsJSON(filter_info,remove){
             part_time:filter_info[1],
             flexible:filter_info[2],
             remote:filter_info[3],
-  },jobs_ids:jobs_ids }, 
+  },jobs_ids:jobs_ids, location_id: $.urlParam('location_id'), location_type: $.urlParam('location_type')}, 
   function(data) {
     changes = false;
     if(remove){

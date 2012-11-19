@@ -19,15 +19,7 @@ class Job < ActiveRecord::Base
 
   scope   :ordered, order('id DESC')
 
-  def post_twitter
-    if Rails.env == 'production'
-      url = $bitly.shorten("http://www.ofertashacker.com/jobs/#{self.id}")
-      tweet_message = truncate("#{self.company.title}: #{self.title}", :length => 115 )
-      Twitter.update("#{tweet_message} #{url.short_url}")
-    end
-  end
-
-  def self.filter_it(filters={}, company=nil)
+  def self.filter_it(filters={})
     results = Job.includes(:company)
     unless filters.blank?
       results = results.where(FILTERS.collect do |filter|
@@ -35,6 +27,28 @@ class Job < ActiveRecord::Base
       end.compact.join(' OR '))
     end
     results
+  end
+
+  def self.no_repeat(jobs=[])
+    unless jobs.blank? 
+      where(sanitize_sql("jobs.id NOT IN (#{jobs.join(',')})"))
+    end
+  end
+
+  def self.from_country(id)
+    joins(:city => { :state => :country }).where('countries.id = ?', id)
+  end
+
+  def self.from_city(id)
+    joins(:city).where('cities.id = ?', id)
+  end
+
+  def post_twitter
+    if Rails.env == 'production'
+      url = $bitly.shorten("http://www.ofertashacker.com/jobs/#{self.id}")
+      tweet_message = truncate("#{self.company.title}: #{self.title}", :length => 115 )
+      Twitter.update("#{tweet_message} #{url.short_url}")
+    end
   end
 
   def to_param
@@ -57,12 +71,6 @@ class Job < ActiveRecord::Base
     required_skills.all(:limit => 4, :order => "id desc" )
   end
   
-  def self.no_repeat(jobs=[])
-    unless jobs.blank? 
-      where(sanitize_sql("jobs.id NOT IN (#{jobs.join(',')})"))
-    end
-  end
-
   def to_s
     title
   end
@@ -81,6 +89,11 @@ class Job < ActiveRecord::Base
 
   def logo_url
     logo.url(:thumb)
+  end
+  
+  def as_json(args={})
+    args ||= {}
+    super(args.merge!(:methods =>[:to_param, :origin, :logo_url, :has_logo] ,:include => {:company => {:only => [:title]}}))
   end
   
   private

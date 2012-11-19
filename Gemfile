@@ -8,7 +8,7 @@ gem 'cancan'
 gem "nifty-generators"
 gem 'paperclip'
 gem 'aws-sdk'
-gem 'metropoli', :git => 'git://github.com/innku/metropoli.git'
+gem 'metropoli', :github => 'e3matheus/metropoli', :branch => 'feature_country_and_cities_autocomplete'
 gem "mocha", :group => :test
 gem 'RedCloth'
 gem "will_paginate"

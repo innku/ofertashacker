@@ -93,24 +93,29 @@ img#nuevas_ofertas{
 #header a:hover.twitter span {	
   background-position:0 -49px;
 }
-#mainMenu {
-  text-transform:lowercase;
-  display:block;
-  margin:57px 0 0 20px;
-  padding:0px 0px 0px 0px !important;
-}
-#mainMenu li {
-  text-transform:lowercase;
-  display:block;
-  float:left;
-  font-size:160%;
-  color:#99CC00;
-  margin-right:15px;
-}
-#mainMenu li label {
-  padding-top:4px;
-  margin-left: 4px;
-  font-weight:normal;
+
+.search_form {
+  margin:37px 0 0 20px;
+  label {
+    color:#99CC00;
+  }
+  #mainMenu {
+    text-transform:lowercase;
+    display:block;
+    padding:0px !important;
+  }
+  #mainMenu li {
+    text-transform:lowercase;
+    display:block;
+    float:left;
+    font-size:160%;
+    margin-right:15px;
+  }
+  #mainMenu li label {
+    padding-top:4px;
+    margin-left: 4px;
+    font-weight:normal;
+  }
 }
 
 
@@ -884,4 +889,7 @@ div#formatting_guide table td h3 {
   font-size: 100%;
 }
 
-.ui-autocomplete-loading { background: image-url('ui-anim_basic_16x16.gif') right center no-repeat !important; }
+.ui-autocomplete-loading { 
+  background: white image-url('ui-anim_basic_16x16.gif') right center no-repeat !important; 
+}
+

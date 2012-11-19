@@ -50,36 +50,9 @@ describe JobsController do
   end
 
   describe '#index' do
-    before do
-      9.times { FactoryGirl.create(:job, :company=> @company)}
-      @jobs = Job.limit(8)
-      Job.stub_chain(:filter_it, :order).and_return(@jobs)
-    end
-
-    it 'Get 8 jobs in random order and filtered' do
+    it 'Renders the index action' do
       get :index
-      assigns(:jobs).should ==(@jobs)
-    end
-
-    context 'With a job_ids param' do
-      let(:params){{:jobs_ids=>["#{@jobs.first.id}, #{@jobs.last.id}"]}}
-
-      it 'Does not get the job_ids jobs' do
-        get :index, params
-        assigns(:jobs).should_not include([@jobs.last, @jobs.first])
-      end
-
-      it 'Gets the jobs that are not in the job_ids parmas ' do
-        get :index, params
-        assigns(:jobs).should include(@jobs.second)
-      end
-    end
-
-    context 'With an HTML response' do
-      it 'Renders the index action' do
-        get :index
-        response.should render_template('index')
-      end
+      response.should render_template('index')
     end
   end
 
