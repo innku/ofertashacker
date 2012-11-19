@@ -1,10 +1,10 @@
 <div  class="span-18 last">
   <%= form_tag('jobs', :method => :get, :class => 'search_form') do%>
     <%= label_tag 'location', "En:" %>
-    <%= text_field_tag 'location', "", :class => 'full_autocomplete' %>
+    <%= text_field_tag 'location', @location, :class => 'full_autocomplete' %>
 
-    <%= hidden_field_tag 'location_id' %>
-    <%= hidden_field_tag 'location_type' %>
+    <%= hidden_field_tag 'location_id', params[:location_id] %>
+    <%= hidden_field_tag 'location_type',  params[:location_type] %>
 
     <%= submit_tag 'Buscar' %>
 

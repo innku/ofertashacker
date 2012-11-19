@@ -20,6 +20,7 @@ class JobsController < ApplicationController
 
   def index
     @jobs = Fetchers::JobFetcher.search(params)
+    @location = params[:location]
     respond_to do |format|
       format.html {render :action => "index"}  
       format.json {render :json => @jobs }
