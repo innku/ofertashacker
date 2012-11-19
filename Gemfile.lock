@@ -1,4 +1,14 @@
 GIT
+  remote: git://github.com/e3matheus/metropoli.git
+  revision: 4966ac9ea4800d6226fa4c74ca0caef532238942
+  branch: feature_country_and_cities_autocomplete
+  specs:
+    metropoli (0.0.0)
+      json (~> 1.4.6)
+      metropoli
+      sinatra (>= 1.0)
+
+GIT
   remote: git://github.com/innku/innsights-gem.git
   revision: 349ec807b95935a0c9588235f526edf680e12911
   specs:
@@ -10,14 +20,6 @@ GIT
       resque
       rest-client
       ruby-progressbar (~> 0.0.10)
-
-PATH
-  remote: ../../metropoli
-  specs:
-    metropoli (0.0.0)
-      json (~> 1.4.6)
-      metropoli
-      sinatra (>= 1.0)
 
 GEM
   remote: http://rubygems.org/
