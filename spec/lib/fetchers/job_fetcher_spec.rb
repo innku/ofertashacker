@@ -13,6 +13,12 @@ describe 'JobFetcher' do
 
       Fetchers::JobFetcher.search(:filters => [], :jobs_ids => [1,2])
     end
+    
+    it 'searchs for 8 jobs with the filters specified at a country if location_type is cpuntry' do
+      Job.stub_chain(:filter_it, :order, :from_country, :limit)
+
+      Fetchers::JobFetcher.search(:filters => [], :location_id => '2', :location_type => 'country')
+    end
   end
 end
 
