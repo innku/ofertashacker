@@ -25,7 +25,7 @@ class JobsController < ApplicationController
 
     respond_to do |format|
       format.html {render :action => "index"}  
-      format.json {render :text => @jobs.to_json(:methods =>[:to_param, :origin, :logo_url, :has_logo] ,:include => {:company => {:only => [:title]}}) }
+      format.json {render :json => @jobs }
     end
   end
 

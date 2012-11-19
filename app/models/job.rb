@@ -83,6 +83,11 @@ class Job < ActiveRecord::Base
     logo.url(:thumb)
   end
   
+  def as_json(args={})
+    args ||= {}
+    super(args.merge!(:methods =>[:to_param, :origin, :logo_url, :has_logo] ,:include => {:company => {:only => [:title]}}))
+  end
+  
   private
 
   def logo
