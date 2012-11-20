@@ -1,10 +1,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
-//= require jquery.infinitescroller
-//= require jquery.tools.min
-//= require jquery.validate.min
-//= require metropoli.jquery.ui
-//= require tags
 //= require utilities
+//= require plugins
 //= require_tree .
