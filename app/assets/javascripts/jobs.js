@@ -14,7 +14,7 @@ $(document).ready(function(){
   $(".country_with_city").on("autocompleteselect", show_or_hide_input_button);
   $(".country_with_city").on("autocompletechange", clean_input);
 
-  $(".restricted_city").autocomplete({ 
+  $(".restricted_city.city_autocomplete").autocomplete({ 
       source: function(request, response) {
                 var country_name = $('.country_with_city');
                 var search_term = request.term;                                                                                     
