@@ -161,6 +161,7 @@ es:
         flexible:         "Horario Flexible"
         at_least_one_type: "Tipo de empleo" 
         city:             "Ciudad" 
+        country:          "País"
         description:      "Oferta"
         city:             "Ciudad"
         at_least_one_type: "Tipo de empleo"
