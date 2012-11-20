@@ -83,6 +83,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.4.0)
+    colorize (0.5.8)
     columnize (0.3.6)
     crack (0.3.1)
     cucumber (1.2.1)
@@ -144,6 +145,12 @@ GEM
     json (1.4.6)
     jwt (0.1.5)
       multi_json (>= 1.0)
+    konacha (2.1.0)
+      actionpack (~> 3.1)
+      capybara
+      colorize
+      railties (~> 3.1)
+      sprockets
     launchy (2.1.2)
       addressable (~> 2.3)
     libwebsocket (0.1.5)
@@ -295,6 +302,7 @@ DEPENDENCIES
   innsights!
   jquery-rails
   jquery-ui-rails
+  konacha
   launchy
   metropoli!
   mocha

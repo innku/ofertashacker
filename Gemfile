@@ -44,6 +44,7 @@ group :development, :test do
   gem "debugger"
   gem "selenium-webdriver"
   gem 'sqlite3'
+  gem 'konacha'
 end
 
 group :test do
