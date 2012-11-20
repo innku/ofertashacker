@@ -1,5 +1,5 @@
 show_or_hide_input_button = function( event, ui ) {
-                              if (ui.item.value == 'México' || ui.item.value == 'Estados Unidos')
+                              if (ui.item.value == 'Mexico' || ui.item.value == 'United States')
                                 $(this).parent().siblings('.city_info').show();
                               else
                                 $(this).parent().siblings('.city_info').hide();
