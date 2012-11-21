@@ -7,8 +7,7 @@ class window.LocationInputsApp
     @elem
 
 class window.CountryInputView
-  constructor: (@country_name, @city_name, @country_autocomplete_options=country_autocomplete_defaults) ->
-    @elem = $("<p></p>")
+  constructor: (@country_name, @city_name, @elem = $("<p></p>"), @autocomplete_options=country_autocomplete_defaults) ->
   
   render: ->
     @elem.append(@template())
@@ -41,7 +40,7 @@ class window.CountryInputView
       @remove_city()
 
   attach_events: ->
-    @country_input().autocomplete @country_options()
+    @country_input().autocomplete @autocomplete_options
     @country_input().on("autocompleteselect", @toggle_city)
     @country_input().on("autocompletechange", @remove_city_if_necessary)
     

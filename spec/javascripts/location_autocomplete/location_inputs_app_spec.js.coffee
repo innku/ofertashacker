@@ -41,16 +41,20 @@ describe 'LocationInputsApp', ->
       html.find("#job_city_name").val().should.equal('Mty')
 
 describe 'CountryInputView', ->
+  beforeEach ->
+    @country_elem = $('<div></div>')
+    @autocomplete_attributes = { source: ['Mexico', 'Venezuela'], appendTo: @country_elem } 
+
   describe 'when someone selects a country', ->
     it 'creates the city input if the country has registered citites', ->
-      app = new CountryInputView('', '', { source: ['Mexico', 'Venezuela'] } )
+      app = new CountryInputView('', '', @country_elem, @autocomplete_attributes)
       html = app.render()
       html.find("#job_country_name").autocomplete('search', 'M')
       html.find('.ui-menu-item a:contains("Mexico")').trigger("mouseenter").click()
       html.find("input.ui-autocomplete-input").length.should.equal(2)
     
     it 'removes the hidden input if the country has registered cities and a hidden city input existed', ->
-      app = new CountryInputView('', '', { source: ['Mexico', 'Venezuela'] } )
+      app = new CountryInputView('', '', @country_elem, @autocomplete_attributes )
       html = app.render()
       html.find("#job_country_name").autocomplete('search', 'V')
       html.find('.ui-menu-item a:contains("Venezuela")').trigger("mouseenter").click()
@@ -59,7 +63,7 @@ describe 'CountryInputView', ->
       html.find("input#hidden_city_name").length.should.equal(0)
 
     it 'removes the city and creates a hidden input if the country has no registered cities', ->
-      app = new CountryInputView('Mexico', '', { source: ['Mexico', 'Venezuela'] } )
+      app = new CountryInputView('Mexico', '', @country_elem, @autocomplete_attributes)
       html = app.render()
       html.find("#job_country_name").autocomplete('search', 'Venezuela')
       html.find('.ui-menu-item a:contains("Venezuela")').trigger("mouseenter").click()
@@ -67,7 +71,7 @@ describe 'CountryInputView', ->
       html.find("input#hidden_city_name").val().should.equal('')
   
     it 'removes the hidden city if a hidden city exists', ->
-      app = new CountryInputView('Mexico', '', { source: ['Mexico', 'Venezuela'] } )
+      app = new CountryInputView('Mexico', '', @country_elem, @autocomplete_attributes)
       html = app.render()
       html.find("#job_country_name").autocomplete('search', 'Venezuela')
       html.find('.ui-menu-item a:contains("Venezuela")').trigger("mouseenter").click()
@@ -75,7 +79,7 @@ describe 'CountryInputView', ->
 
   describe 'when someone changes the country value', ->
     it 'deletes the city input', ->
-      app = new CountryInputView('Mexico', '', { source: ['Mexico', 'Venezuela'] } )
+      app = new CountryInputView('Mexico', '', @country_elem, @autocomplete_attributes)
       html = app.render()
       html.find("#job_country_name").data("autocomplete")._trigger("change")
       html.find("input.ui-autocomplete-input").length.should.equal(1)
