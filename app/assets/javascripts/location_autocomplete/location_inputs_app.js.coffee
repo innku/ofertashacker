@@ -19,31 +19,15 @@ class window.CountryInputView
     if @country_has_registered_cities()
       @render_city(@city_name)
 
-  render_city: (city_name = '') ->
-    @city_input_view = new RestrictedCityInputView(@country_input(), city_name)
-    @elem.append(@city_input_view.render())
-
-  render_hidden_input: ->
-    @hidden_city_input = new HiddenCityInput()
-    @elem.append(@hidden_city_input.render())
-
-  remove_city: ->
-    @city_input_view.destroy()
-    @city_input_view = null
-
-  remove_hidden_input: ->
-    @hidden_city_input.destroy()
-    @hidden_city_input = null
-
-  remove_city_if_necessary: (event, ui) =>
-    if (!ui.item || !ui.item.value)
-      @remove_city()
-
   attach_events: ->
     @country_input().autocomplete @autocomplete_options
     @country_input().on("autocompleteselect", @toggle_city)
     @country_input().on("autocompletechange", @remove_city_if_necessary)
     
+  render_city: (city_name = '') ->
+    @city_input_view = new RestrictedCityInputView(@country_input(), city_name)
+    @elem.append(@city_input_view.render())
+
   toggle_city: ( event, ui ) =>
     @remove_city() if @city_input_view?
     if @country_has_registered_cities(ui.item.value)
@@ -52,8 +36,21 @@ class window.CountryInputView
     else
       @render_hidden_input()
 
-  country_options: ->
-    jQuery.extend(@country_autocomplete_options, {appendTo: @elem})
+  remove_city: ->
+    @city_input_view.destroy()
+    @city_input_view = null
+
+  render_hidden_input: ->
+    @hidden_city_input = new HiddenCityInput()
+    @elem.append(@hidden_city_input.render())
+
+  remove_hidden_input: ->
+    @hidden_city_input.destroy()
+    @hidden_city_input = null
+
+  remove_city_if_necessary: (event, ui) =>
+    if (!ui.item || !ui.item.value)
+      @remove_city()
 
   country_has_registered_cities: (country=@country_name) ->
     for registered_country in ['Mexico', 'United States']
