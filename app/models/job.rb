@@ -2,6 +2,7 @@ require "twitter"
 
 class Job < ActiveRecord::Base
   include ActionView::Helpers::TextHelper
+  extend Helpers::Statement
 
   belongs_to :company
   has_and_belongs_to_many :required_skills
@@ -45,6 +46,8 @@ class Job < ActiveRecord::Base
   end
 
   def self.with_keywords(keywords)
+    search_fields = %w{jobs.title companies.title required_skills.skill_name}
+    includes(:company, :required_skills).where(like_statement(search_fields, keywords))
   end
 
   def post_twitter

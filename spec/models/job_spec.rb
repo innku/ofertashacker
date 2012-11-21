@@ -156,6 +156,17 @@ describe Job do
         end
       end
     end
+
+    describe '.with_keywords' do
+      it 'does a case insensitive search inside the title, skills and companies fields' do
+        job1 = FactoryGirl.create(:job, :title => 'Python job')
+        job2 = FactoryGirl.create(:job)
+        job2.required_skills << FactoryGirl.create(:required_skill, skill_name: 'Python')
+        job3 = FactoryGirl.create(:job, :company => FactoryGirl.create(:company, :title => 'Top Python Company'))
+
+        Job.with_keywords('python').should =~ [job1, job2, job3]
+      end
+    end
   end
 
   context 'Instance methods' do
