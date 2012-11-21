@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$(".country_autocomplete").autocomplete({
+	window.country_autocomplete_defaults = {
 		source: function(request, response) {
 					$.ajax({
 						url: "/metropoli/countries.json",
@@ -21,5 +21,7 @@ $(document).ready(function(){
 		close: function() {
 			$(this).removeClass("ui-corner-top").addClass("ui-corner-all");
 		}
-	})
+	}
+
+  $(".country_autocomplete").autocomplete(country_autocomplete_defaults)
 });
