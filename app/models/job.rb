@@ -77,11 +77,7 @@ class Job < ActiveRecord::Base
   end
 
   def origin
-    if city.present?
-      city_name 
-    else
-      city2
-    end
+    city_name || country_name || city2
   end
   
   def has_logo
