@@ -8,7 +8,6 @@ Feature: Search job
     Given there are "3" job vacancies with required skill "Ruby"
     And there is a job vacancy with title "Python developer" and required skill "Python"
 
-    @mytest
   Scenario: I search Ruby from the searchbox
     And I am on the index job page
     When I fill in "Busco:" with "Ruby"

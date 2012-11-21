@@ -19,7 +19,6 @@ Feature: Company Actions
     And I should see "San Nicolas de los Garza"
     And I should see "The best company around the world"
 
-    @mytest
   Scenario: Publish a new job vacancy
     Given I am on the new job page
     And I fill the job information
