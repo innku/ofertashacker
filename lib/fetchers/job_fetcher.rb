@@ -8,6 +8,9 @@ module Fetchers
       if params[:location_type].present? 
         jobs = from_location(jobs, params[:location_id], params[:location_type])
       end
+      if params[:keywords].present? 
+        jobs = jobs.with_keywords(params[:keywords]) 
+      end
       jobs.limit(8)
     end
 

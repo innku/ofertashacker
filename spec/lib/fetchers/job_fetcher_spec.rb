@@ -1,4 +1,5 @@
 require 'fetchers/job_fetcher'
+require 'active_support/all' 
 require 'unit/spec_helper'
 
 describe 'JobFetcher' do
@@ -18,6 +19,12 @@ describe 'JobFetcher' do
       Job.stub_chain(:filter_it, :order, :from_country, :limit)
 
       Fetchers::JobFetcher.search(:filters => [], :location_id => '2', :location_type => 'country')
+    end
+    
+    it 'searchs for 8 unrepeated jobs with the keywords specified if keywords are specified' do
+      Job.stub_chain(:filter_it, :order, :with_keywords, :limit)
+
+      Fetchers::JobFetcher.search(:filters => [], :keywords => "elias")
     end
   end
 end
