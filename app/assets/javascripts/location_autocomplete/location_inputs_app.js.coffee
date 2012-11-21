@@ -62,7 +62,7 @@ class window.CountryInputView
 
   template: ->
     """
-      <label for='job_country_name'>País</label>
+      <label for='job_country_name'>País *</label>
       <input id='job_country_name' name="job[country_name]" type='text' value='#{@country_name}'>
     """
 
