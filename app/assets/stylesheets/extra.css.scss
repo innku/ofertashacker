@@ -688,3 +688,50 @@ a:hover.ofertacontenedor h2{
 	padding-left: 10px;
 }
 
+#back-top {
+	position: fixed;
+	bottom: 85px;
+  right: 60px;
+	margin-left: -150px;
+}
+
+#back-top a {
+	width: 80px;
+	display: block;
+	text-align: center;
+	font: 11px/100% Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #bbb;
+
+	/* transition */
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+}
+#back-top a:hover {
+	color: #000;
+}
+
+/* arrow icon (span tag) */
+#back-top span {
+	width: 80px;
+	height: 50px;
+	display: block;
+	margin-bottom: 7px;
+	background: #1A2F2F url(up-arrow.png) no-repeat center center;
+
+	/* rounded corners */
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+
+	/* transition */
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+}
+#back-top a:hover span {
+	background-color: #005C61;
+}
+
