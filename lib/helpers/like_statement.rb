@@ -1,14 +1,21 @@
 module Helpers
-  module Statement
-    def like_statement(fields, string, include_nulls=false)
-      values = string.split(' ')
+  class LikeStatement
+    attr_reader :fields, :query, :include_nulls
+    def initialize(fields, query, include_nulls=false)
+      @fields = fields
+      @query = query
+      @include_nulls = include_nulls
+    end
+
+    def to_array
+      values = query.split(' ')
       vals = values.map { |value| like_values(value, 1) }.flatten * fields.size
-      (where_clause(fields, values, include_nulls) << vals).flatten
+      (where_clause(values) << vals).flatten
     end
   
     private
 
-    def where_clause(fields, values, include_nulls)
+    def where_clause(values)
       if include_nulls
         [fields.map{|field| 
           [like_field(field), null_field(field)] * values.size 
