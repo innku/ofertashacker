@@ -18,23 +18,27 @@ module Helpers
     end
 
     def tags_with_like_operator
-      tags.map { |value| like_value(value) } * fields.size
+      tags.map { |value| like_values(value, fields.size) }.flatten
     end
 
     def where_clause
+      [(["(#{query_for_one_value})"] * tags.size()).join(' AND ')]
+    end
+
+    def query_for_one_value
       if include_nulls
-        [fields.map{|field| 
-          [like_field(field), null_field(field)] * tags.size 
-        }.flatten.join(' OR ')]
+        fields.map{|field| 
+          [like_field(field), null_field(field)]
+        }.flatten.join(' OR ')
       else
-        [fields.map{|field| 
-          [like_field(field)] * tags.size }.join(' OR ')
-        ]
+        fields.map{|field| 
+          [like_field(field)] 
+        }.join(' OR ')
       end
     end
   
-    def like_value(value)
-      "%#{value}%"
+    def like_values(value, repetition)
+      repetition.times.map { "%#{value}%" }
     end
   
     def like_field(field)
