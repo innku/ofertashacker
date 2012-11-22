@@ -2,11 +2,26 @@ class window.NoJobAppender
   constructor: (@container) ->
 
   toggle: ->
-    if @container.find('.job').length == 0
-      $(@template()).hide().prependTo(@container).slideDown('fast') if @container.find('.no_job_message').length == 0
+    if @no_jobs()
+      if @no_job_message_exists()
+        @attach_no_job_message()
     else
-      @container.find('.no_job_message').slideUp('fast', ->
-        $(@).remove())
+      @remove_no_job_message()
+
+  remove_no_job_message: ->
+    @no_job_message().slideUp('fast', -> $(@).remove())
+
+  attach_no_job_message: ->
+    $(@template()).hide().prependTo(@container).slideDown('fast')
+
+  no_job_message_exists: ->
+    @no_job_message().length == 0
+
+  no_jobs: ->
+    @container.find('.job').length == 0
+
+  no_job_message: ->
+    @container.find('.no_job_message')
 
   template: ->
     """
