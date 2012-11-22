@@ -8,29 +8,33 @@ module Helpers
     end
 
     def to_array
-      values = query.split(' ')
-      vals = values.map { |value| like_values(value, 1) }.flatten * fields.size
-      (where_clause(values) << vals).flatten
+      (where_clause << tags_with_like_operator).flatten
     end
   
     private
 
-    def where_clause(values)
+    def tags
+      query.split(' ')
+    end
+
+    def tags_with_like_operator
+      tags.map { |value| like_value(value) } * fields.size
+    end
+
+    def where_clause
       if include_nulls
         [fields.map{|field| 
-          [like_field(field), null_field(field)] * values.size 
+          [like_field(field), null_field(field)] * tags.size 
         }.flatten.join(' OR ')]
       else
         [fields.map{|field| 
-          [like_field(field)] * values.size }.join(' OR ')
+          [like_field(field)] * tags.size }.join(' OR ')
         ]
       end
     end
   
-    def like_values(value, repetitions)
-      values = []
-      repetitions.times{ values << "%#{value}%"}
-      values
+    def like_value(value)
+      "%#{value}%"
     end
   
     def like_field(field)
