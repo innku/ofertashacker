@@ -2,7 +2,7 @@
 class JobsController < ApplicationController
 
   before_filter :new_company?, :only=>[:new]
-  load_and_authorize_resource :through => :current_company, :except=>[:index, :show, :my_jobs, :contact_company]
+  load_and_authorize_resource :through => :current_company, :except=>[:index, :search, :show, :my_jobs, :contact_company]
   layout :get_layout
 
   RANDOM = {'development' => 'RAND()', 'production' => 'random()'}[ENV['RACK_ENV']]
@@ -25,6 +25,10 @@ class JobsController < ApplicationController
       format.html {render :action => "index"}  
       format.json {render :json => @jobs }
     end
+  end
+
+  def search
+    @jobs = Fetchers::JobFetcher.search(params)
   end
 
   def show
@@ -65,7 +69,7 @@ class JobsController < ApplicationController
   private
 
   def get_layout
-    (['index'].include? action_name) ? 'double_div' : 'application'
+    (['index', 'search'].include? action_name) ? 'double_div' : 'application'
   end
 
   def new_company?

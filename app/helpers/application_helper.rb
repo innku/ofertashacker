@@ -22,7 +22,7 @@ module ApplicationHelper
   end
   
   def needs_filter? path
-    exceptions = ["/jobs","/", "/ofertas"]
+    exceptions = ["/jobs","/", "/ofertas", '/busqueda']
     for e in exceptions do 
        return false if path.to_s == e
     end

@@ -20,6 +20,7 @@ Rubypros::Application.routes.draw do
     member do
       post "contact_company"
     end
+    
   end
 
   resources :required_skills
@@ -30,6 +31,7 @@ Rubypros::Application.routes.draw do
   match '/empresas' => 'companies#index'
   match '/registro' => 'devise#new'
   match '/nueva_oferta' => 'jobs#new'
+  match '/busqueda' => 'jobs#search', :as => 'job_search'
 
   match '/acerca_de'=>'welcome#about'
   match '/codigo'=>'welcome#codigo'
