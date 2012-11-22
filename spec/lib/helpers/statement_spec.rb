@@ -18,6 +18,10 @@ describe 'Statement' do
       it.like_statement(['title', 'description'], 'JP').should == ['title LIKE ? OR description LIKE ?', '%JP%', '%JP%']
     end
 
+    it 'if passed an array of values it returns a case insensitive search for each of the values passed' do
+      it.like_statement(['title', 'description'], 'JP company').should == ['title LIKE ? OR title LIKE ? OR description LIKE ? OR description LIKE ?', '%JP%', '%company%','%JP%','%company%']
+    end
+
     it 'if passed a include null flag, for each of the fields passed, it returns a case insensitive query and a null value' do
       it.like_statement(['title'], 'JP', true).should == ['title LIKE ? OR title IS NULL', '%JP%']
     end

@@ -1,16 +1,22 @@
 module Helpers
   module Statement
-    def like_statement(fields, value, include_nulls=false)
-      (where_clause(fields, include_nulls) << like_values(value, fields.size)).flatten
+    def like_statement(fields, string, include_nulls=false)
+      values = string.split(' ')
+      vals = values.map { |value| like_values(value, 1) }.flatten * fields.size
+      (where_clause(fields, values, include_nulls) << vals).flatten
     end
   
     private
 
-    def where_clause(fields, include_nulls)
+    def where_clause(fields, values, include_nulls)
       if include_nulls
-        [fields.map{|field| [like_field(field), null_field(field)] }.flatten.join(' OR ')]
+        [fields.map{|field| 
+          [like_field(field), null_field(field)] * values.size 
+        }.flatten.join(' OR ')]
       else
-        [fields.map{|field| like_field(field) }.join(' OR ')]
+        [fields.map{|field| 
+          [like_field(field)] * values.size }.join(' OR ')
+        ]
       end
     end
   
