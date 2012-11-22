@@ -46,7 +46,10 @@ function getJobsJSON(filter_info,remove){
       i++;
     });
     if(remove) {
-      setTimeout(function() {calibrate();}, 500);
+      setTimeout(function() { 
+        calibrate();
+        new NoJobAppender($('#skill_main')).toggle();
+      }, 500);
       if(!changes){
         $(".posts").animate({opacity:'0.3'},500);
         $(".posts").animate({opacity:'100'},5900);
@@ -56,7 +59,7 @@ function getJobsJSON(filter_info,remove){
     } else {
       calibrate();
       can_send = true;
-    }
+    };
     $("#loader img").animate({opacity:'hide'});
   });
 }
