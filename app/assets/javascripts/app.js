@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $('input[placeholder]').placeholder();
 
   $("#company_jobs").hide();
 
