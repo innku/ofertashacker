@@ -43,7 +43,13 @@ html {
 }
 
 body {
-  background:image-url("bkg_line_pattern_with_filters.png") repeat-x 0px 34px;
+  background:image-url("bkg_line_pattern.png") repeat-x 0px 34px;
+  &.with_filters {
+    background:image-url("bkg_line_pattern_with_filters.png") repeat-x 0px 34px;
+    #header {
+      height:204px;
+    }
+  }
 }
 
 h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Adelle Basic', arial; font-weight:normal!important; }
@@ -62,7 +68,7 @@ input[type=submit] {
 
 #header {
   font-family: Adelle Basic, arial, serif;
-  height:204px;
+  height:164px;
   position:relative;
 }
 #header .topMenu {
