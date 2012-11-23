@@ -12,7 +12,7 @@
   background: -o-linear-gradient(top, #c8787d 0%,#8e0000 100%,#7db9e8 100%); /* Opera 11.10+ */
   background: -ms-linear-gradient(top, #c8787d 0%,#8e0000 100%,#7db9e8 100%); /* IE10+ */
   background: linear-gradient(to bottom, #c8787d 0%,#8e0000 100%,#7db9e8 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c8787d', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c8787d', endColorstr='#8e0000',GradientType=0 ); /* IE6-9 */
 }
 
 @mixin inverse_red_linear_gradient(){
@@ -23,7 +23,7 @@
   background: -o-linear-gradient(top, #8e0000 0%,#c8787d 100%,#7db9e8 100%); /* Opera 11.10+ */
   background: -ms-linear-gradient(top, #8e0000 0%,#c8787d 100%,#7db9e8 100%); /* IE10+ */
   background: linear-gradient(to bottom, #8e0000 0%,#c8787d 100%,#7db9e8 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8e0000', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8e0000', endColorstr='#c8787d',GradientType=0 ); /* IE6-9 */
 }
 
 @font-face {
@@ -157,12 +157,17 @@ img#nuevas_ofertas{
     padding:2px 20px;
     font-size:18px;
     text-shadow:2px 2px 1px #620606;
+    line-height:32px;
+    height:36px;
+    border:none;
     @include red_linear_gradient();
+    @include rounded(3px);
     &:active {
       @include inverse_red_linear_gradient();
     }
   }
-  input {
+  input[type='text'] {
+    height:32px;
     line-height:32px;
     padding-left:7px;
     font-size:15px;
