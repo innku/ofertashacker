@@ -15,6 +15,17 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c8787d', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
 }
 
+@mixin inverse_red_linear_gradient(){
+  background: #8e0000; /* Old browsers */
+  background: -moz-linear-gradient(top, #8e0000 0%, #c8787d 100%, #7db9e8 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8e0000), color-stop(100%,#c8787d), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #8e0000 0%,#c8787d 100%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #8e0000 0%,#c8787d 100%,#7db9e8 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #8e0000 0%,#c8787d 100%,#7db9e8 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #8e0000 0%,#c8787d 100%,#7db9e8 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8e0000', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+}
+
 @font-face {
     font-family: 'Adelle Basic';
     src: url('/adellebasic-bold-webfont.eot');
@@ -41,6 +52,10 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Adelle Basic', arial; font-weight:
   font-size:12px;
   font-family:arial, serif !important;
   display: inline;
+}
+
+input[type=submit] {
+  cursor:pointer;
 }
 
 .placeholder { color: #999; }
@@ -136,6 +151,9 @@ img#nuevas_ofertas{
     padding:2px 20px;
     font-size:18px;
     @include red_linear_gradient();
+    &:active {
+      @include inverse_red_linear_gradient();
+    }
   }
   input {
     line-height:32px;
