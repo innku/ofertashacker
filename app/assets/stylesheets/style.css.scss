@@ -1,3 +1,19 @@
+@mixin rounded($radius: 7px) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@mixin red_linear_gradient(){
+  background: #c8787d; /* Old browsers */
+  background: -moz-linear-gradient(top, #c8787d 0%, #8e0000 100%, #7db9e8 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c8787d), color-stop(100%,#8e0000), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #c8787d 0%,#8e0000 100%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #c8787d 0%,#8e0000 100%,#7db9e8 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #c8787d 0%,#8e0000 100%,#7db9e8 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #c8787d 0%,#8e0000 100%,#7db9e8 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c8787d', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+}
 
 @font-face {
     font-family: 'Adelle Basic';
@@ -8,7 +24,6 @@
          url('/adellebasic-bold-webfont.svg#AdelleBasicBold') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
 html {
@@ -17,7 +32,7 @@ html {
 }
 
 body {
-  background:image-url("bkg_line_pattern.png") repeat-x 0px 34px;
+  background:image-url("bkg_line_pattern_with_filters.png") repeat-x 0px 34px;
 }
 
 h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Adelle Basic', arial; font-weight:normal!important; }
@@ -30,7 +45,7 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Adelle Basic', arial; font-weight:
 
 #header {
   font-family: Adelle Basic, arial, serif;
-  height:144px;
+  height:204px;
   position:relative;
 }
 #header .topMenu {
@@ -69,7 +84,7 @@ h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Adelle Basic', arial; font-weight:
 }
 #header .logo {
   position: relative;
-  top:-4px;
+  top:4px;
   z-index:2;
 }
 
@@ -95,26 +110,69 @@ img#nuevas_ofertas{
 }
 
 .search_form {
-  margin:37px 0 0 20px;
+  margin-top:70px;
   label {
-    color:#99CC00;
+    font-size:18px;
+    color:white;
   }
-  #mainMenu {
-    text-transform:lowercase;
-    display:block;
-    padding:0px !important;
+  .main_row {
+    text-align:right;
+    .row {
+      display:inline-block;
+      *display:inline;
+      *zoom:1;
+      padding-right: 25px;
+      label {
+        padding:0 8px;
+      }
+    }
   }
-  #mainMenu li {
-    text-transform:lowercase;
-    display:block;
-    float:left;
-    font-size:160%;
-    margin-right:15px;
+  .big_button {
+    color:white;
+    border:none;
+    font-weight:bold;
+    padding:2px 20px;
+    font-size:18px;
+    @include red_linear_gradient();
   }
-  #mainMenu li label {
-    padding-top:4px;
-    margin-left: 4px;
-    font-weight:normal;
+  input {
+    line-height:32px;
+    padding-left:7px;
+    font-size:15px;
+    @include rounded(3px);
+    &.large {
+      width:230px;
+    }
+    &.medium {
+      width:180px;
+    }
+  }
+  .filters {
+    text-shadow: 1px 1px 1px #67311E;
+    padding-top:20px;
+    label {
+      font-size:16px;
+    }
+    .description {
+      vertical-align:top;
+    }
+    #mainMenu {
+      display:inline-block;
+      padding:0px !important;
+      float:right;
+      margin-right:0;
+    }
+    #mainMenu li {
+      display:block;
+      float:left;
+      font-size:160%;
+      margin-left:50px;
+    }
+    #mainMenu li label {
+      padding-top:4px;
+      margin-left:10px;
+      font-weight:normal;
+    }
   }
 }
 
