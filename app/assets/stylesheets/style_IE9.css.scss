@@ -1,0 +1,10 @@
+.ie9 {
+  .search_form {
+    .big_button {
+      background: #8E0000 image-url('big_button_bg.png') repeat-x; 
+      &:active {
+        background: #C8787D image-url('big_button_hover_bg.png') repeat-x; 
+      }
+    }
+  }
+}
