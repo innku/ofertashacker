@@ -156,6 +156,7 @@ img#nuevas_ofertas{
     font-weight:bold;
     padding:2px 20px;
     font-size:18px;
+    text-shadow:2px 2px 1px #620606;
     @include red_linear_gradient();
     &:active {
       @include inverse_red_linear_gradient();
