@@ -5,7 +5,7 @@
         <%= text_field_tag 'keywords', params[:keywords], :class => 'large', :placeholder => 'Oferta, Compañia o Habilidad' %>
 
         <%= label_tag 'location', "en" %>
-        <%= text_field_tag 'location', params[:location], :class => 'full_autocomplete medium', :placeholder => 'Monterrey Nuevo León' %>
+        <%= text_field_tag 'location', params[:location], :class => 'full_autocomplete medium', :placeholder => 'Ciudad o País' %>
 
         <%= hidden_field_tag 'location_id', params[:location_id] %>
         <%= hidden_field_tag 'location_type',  params[:location_type] %>
