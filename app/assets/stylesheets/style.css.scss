@@ -161,7 +161,7 @@ img#nuevas_ofertas{
   text-shadow: 1px 1px 1px #67311E;
   padding:3px;
   position:relative;
-  z-index:100;
+  z-index:1;
   @include box-shadow(0,3px,10px, #464646);
 
   label {
@@ -966,3 +966,8 @@ div#formatting_guide table td h3 {
   background: white image-url('ui-anim_basic_16x16.gif') right center no-repeat !important; 
 }
 
+.ui-autocomplete-category { 
+  font-weight: bold;
+  padding-left:5px;
+  color: #444;
+}
