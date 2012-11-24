@@ -1,26 +1,11 @@
-  <%= form_tag(job_search_path, :method => :get, :class => 'search_form') do%>
-    <div class='main_row'>
-      <div class='row'>
-        <%= label_tag 'keywords', "Busco" %>
-        <%= text_field_tag 'keywords', params[:keywords], :class => 'large', :placeholder => 'Oferta, Compañia o Habilidad' %>
-
-        <%= label_tag 'location', "en" %>
-        <%= text_field_tag 'location', params[:location], :class => 'full_autocomplete medium', :placeholder => 'Ciudad o País' %>
-
-        <%= hidden_field_tag 'location_id', params[:location_id] %>
-        <%= hidden_field_tag 'location_type',  params[:location_type] %>
-      </div>
-
-      <%= submit_tag 'Buscar', :class => 'big_button' %>
+<div class='filters full'>
+  <div class='container'>
+  <%= label_tag  '', 'Filtra tu búsqueda por: ', :class => 'description' %>
+  <ul id="mainMenu">
+    <li><input type="checkbox" id="full_time" checked="true"><label for="full_time">Tiempo completo</label></li>
+    <li><input type="checkbox" id="part_time" checked="true"><label for="part_time">Medio tiempo</label></li>
+    <li><input type="checkbox" id="flexible" checked="true"><label for="flexible">Horario flexible</label></li>
+    <li><input type="checkbox" id="remote" checked="true"><label for="remote">Remoto</label></li>
+  </ul>
     </div>
-
-    <div class='filters'>
-      <%= label_tag  '', 'Filtra tu búsqueda por: ', :class => 'description' %>
-      <ul id="mainMenu">
-        <li><input type="checkbox" id="full_time" checked="true"><label for="full_time">Tiempo completo</label></li>
-        <li><input type="checkbox" id="part_time" checked="true"><label for="part_time">Medio tiempo</label></li>
-        <li><input type="checkbox" id="flexible" checked="true"><label for="flexible">Horario flexible</label></li>
-        <li><input type="checkbox" id="remote" checked="true"><label for="remote">Remoto</label></li>
-      </ul>
-    </div>
-  <% end %>
+</div>
