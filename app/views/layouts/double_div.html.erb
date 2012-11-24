@@ -8,25 +8,22 @@
   </head>
 
   <body class='with_filters'>
-    <div class="container">
-      <!-- header starts -->
-      <div id="header" class="clear span-24 last">
-        <%= render 'layouts/header'%>
-        <a class="twitter" href="http://www.twitter.com/innku" target="_blank">
-        </a>
+      <%= render 'layouts/header'%>
+
+      <div class='container'>
+        <% flash.each do |name, msg| %>
+          <% unless msg.blank?%>
+            <%= content_tag :div, msg, :id => "flash_#{name}" %>
+          <% end%>
+        <% end %>
+
+        <%= content_tag :h1, yield(:title) if show_title? %>
+
+        <div id='content' class="job_search">
+          <%= yield %>
+        </div>
       </div>
-
-      <% flash.each do |name, msg| %>
-        <% unless msg.blank?%>
-          <%= content_tag :div, msg, :id => "flash_#{name}" %>
-        <% end%>
-      <% end %>
-
-      <%= content_tag :h1, yield(:title) if show_title? %>
-
-        <%= yield %>
-  </div>
-      <%= render 'layouts/footer'%>
-</body>
+    <%= render 'layouts/footer'%>
+  </body>
 </html>
 

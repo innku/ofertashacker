@@ -1,18 +1,7 @@
 @import 'mixins';
 
-html {
-  background:image-url("bkg_pattern.png") repeat 0 0;
-
-}
-
 body {
-  background:image-url("bkg_line_pattern.png") repeat-x 0px 34px;
-  &.with_filters {
-    background:image-url("bkg_line_pattern_with_filters.png") repeat-x 0px 34px;
-    #header {
-      height:200px;
-    }
-  }
+  background:image-url("bkg_pattern.png") repeat 0 0;
 }
 
 h1,h2,h3,h4,h5,h6 { color: #333; font-family:'Adelle Basic', arial; font-weight:normal!important; }
@@ -32,6 +21,10 @@ input[type=submit] {
   cursor:pointer;
 }
 
+.full {
+  width:100%;
+}
+
 .mainContent ul li label{
   font-size:12px;
   font-family:arial, serif !important;
@@ -42,17 +35,16 @@ input[type=submit] {
 
 #header {
   font-family: Adelle Basic, arial, serif;
-  height:164px;
-  position:relative;
 }
 #header .topMenu {
   text-transform:uppercase;
   color:#99BEC0;
   font-size:110% !important;
   display:block;
-  height:30px;
-  z-index:1000;
-  position:relative;
+  padding-bottom:2px;
+  ul {
+    margin:0;
+  }
 }
 #header .topMenu li {
   display:block;
@@ -79,11 +71,6 @@ input[type=submit] {
 #header .topMenu a span.current {
   background:image-url("bkg_topMenu.png") repeat-x 0 0;
 }
-#header .logo {
-  position: relative;
-  top:4px;
-  z-index:2;
-}
 
 img#nuevas_ofertas{
   display:block;
@@ -106,84 +93,95 @@ img#nuevas_ofertas{
   background-position:0 -49px;
 }
 
-.search_form {
-  margin-top:70px;
-  label {
-    font-size:18px;
-    color:white;
+.main_header {
+  padding:18px 0;
+  background:image-url("bkg_line_pattern.png") repeat-x;
+  .container {
+    position:relative;
   }
-  .main_row {
-    text-align:right;
-    .row {
-      display:inline-block;
-      *display:inline;
-      *zoom:1;
-      padding-right: 25px;
-      label {
-        padding:0 8px;
+  .search_form {
+    position:absolute;
+    bottom:0;
+    right:0;
+    label {
+      font-size:18px;
+      color:white;
+    }
+    .main_row {
+      text-align:right;
+      .row {
+        display:inline-block;
+        *display:inline;
+        *zoom:1;
+        padding-right: 25px;
+        label {
+          padding:0 8px;
+        }
       }
     }
-  }
-  .big_button {
-    color:white;
-    border:none;
-    font-weight:bold;
-    padding:2px 20px;
-    font-size:18px;
-    text-shadow:2px 2px 1px #620606;
-    line-height:32px;
-    height:36px;
-    border:none;
-    @include red_linear_gradient();
-    @include rounded(3px);
-    &:active {
-      @include inverse_red_linear_gradient();
+    .big_button {
+      color:white;
+      border:none;
+      font-weight:bold;
+      padding:2px 20px;
+      font-size:18px;
+      text-shadow:2px 2px 1px #620606;
+      line-height:32px;
+      height:36px;
+      border:none;
+      @include red_linear_gradient();
+      @include rounded(3px);
+      &:active {
+        @include inverse_red_linear_gradient();
+      }
     }
-  }
-  input[type='text'] {
-    height:32px;
-    line-height:32px;
-    padding-left:7px;
-    font-size:15px;
-    @include rounded(3px);
-    &.large {
-      width:230px;
-    }
-    &.medium {
-      width:180px;
-    }
-  }
-  .filters {
-    text-shadow: 1px 1px 1px #67311E;
-    padding-top:20px;
-    label {
-      font-size:16px;
-      font-weight:normal;
-      font-family: 'Arial';
-    }
-    .description {
-      vertical-align:top;
-    }
-    #mainMenu {
-      display:inline-block;
-      padding:0px !important;
-      float:right;
-      margin-right:0;
-    }
-    #mainMenu li {
-      display:block;
-      float:left;
-      font-size:160%;
-      margin-left:70px;
-    }
-    #mainMenu li label {
-      padding-top:4px;
-      margin-left:10px;
-      font-weight:normal;
+    input[type='text'] {
+      height:32px;
+      line-height:32px;
+      padding-left:7px;
+      font-size:15px;
+      @include rounded(3px);
+      &.large {
+        width:230px;
+      }
+      &.medium {
+        width:180px;
+      }
     }
   }
 }
 
+.filters {
+  background:image-url('filter_pattern.png') repeat-x;
+  text-shadow: 1px 1px 1px #67311E;
+  padding:3px;
+  label {
+    color:white;
+    font-size:16px;
+    font-weight:normal;
+    font-family: 'Arial';
+  }
+  .description {
+    vertical-align:top;
+  }
+  ul#mainMenu {
+    display:inline-block;
+    padding:0px !important;
+    float:right;
+    margin:0;
+  }
+  #mainMenu li {
+    display:block;
+    float:left;
+    font-size:160%;
+    margin-left:70px;
+  }
+  #mainMenu li label {
+    padding-top:4px;
+    margin-left:10px;
+    font-weight:normal;
+  }
+}
 
 
 /*================== HERE COMES THE CONTENT STYLES ====================*/
@@ -206,14 +204,20 @@ img#nuevas_ofertas{
   padding:5px 15px;
 }
 
+#content {
+  margin-bottom:90px;
+}
+
 .mainContent {
   background:#fff;
   -moz-box-shadow: 1px 2px 9px #000;
   -webkit-box-shadow: 1px 2px 9px #000;
   box-shadow: 1px 2px 9px #000;
   position:relative;
+  &#content {
+    top:-7px;
+  }
 }
-
 
 .mainContent ul.posts {
   margin:0px;
@@ -552,10 +556,9 @@ img#nuevas_ofertas{
   margin-left: 15px;
 }
 
-
-.container{
-  margin-bottom:90px;
-}
+// .container{
+//   margin-bottom:90px;
+// }
 
 /*================== HERE COMES THE FOOTER STYLES ====================*/
 #footer {
