@@ -129,10 +129,15 @@ img#nuevas_ofertas{
       line-height:32px;
       height:36px;
       border:none;
-      @include red_linear_gradient();
+      @include linear_gradient(#c8787d, #8e0000);
       @include rounded(3px);
+      &:hover {
+        @include linear_gradient(#D56C6C, #8e0000);
+      }
       &:active {
-        @include inverse_red_linear_gradient();
+        @include linear_gradient(#8e0000, #C35050);
+        box-shadow: inset 1px 1px 3px #000000;
+        border-bottom:1px solid #2C4A4C;
       }
     }
     input[type='text'] {
