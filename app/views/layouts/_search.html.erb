@@ -1,0 +1,18 @@
+<%= form_tag(job_search_path, :method => :get, :class => 'search_form') do%>
+  <div class='main_row'>
+    <div class='row'>
+      <%= label_tag 'keywords', "Busco" %>
+      <%= text_field_tag 'keywords', params[:keywords], :class => 'large', :placeholder => 'Oferta, Compañia o Habilidad' %>
+
+      <%= label_tag 'location', "en" %>
+      <%= text_field_tag 'location', params[:location], :class => 'full_autocomplete medium', :placeholder => 'Ciudad o País' %>
+
+      <%= hidden_field_tag 'location_id', params[:location_id] %>
+      <%= hidden_field_tag 'location_type',  params[:location_type] %>
+    </div>
+
+    <%= submit_tag 'Buscar', :class => 'big_button' %>
+  </div>
+<% end %>
+
+
