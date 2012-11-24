@@ -155,6 +155,10 @@ img#nuevas_ofertas{
   background:image-url('filter_pattern.png') repeat-x;
   text-shadow: 1px 1px 1px #67311E;
   padding:3px;
+  position:relative;
+  z-index:100;
+  @include box-shadow(0,3px,10px, #464646);
+
   label {
     color:white;
     font-size:16px;
@@ -205,6 +209,7 @@ img#nuevas_ofertas{
 }
 
 #content {
+  z-index:1;
   margin-bottom:90px;
 }
 

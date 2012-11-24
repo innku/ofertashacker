@@ -37,3 +37,8 @@
     font-style: normal;
 }
 
+@mixin box-shadow($hoffset, $voffset, $blur_radius, $color){
+  box-shadow:$hoffset $voffset $blur_radius $color;
+  -moz-box-shadow:$hoffset $voffset $blur_radius $color;
+  -webkit-box-shadow:$hoffset $voffset $blur_radius $color;
+}
