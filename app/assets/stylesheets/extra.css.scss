@@ -1,3 +1,18 @@
+@mixin slow-transition {
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+}
+
+@mixin button-rounded-corners {
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+
+$light-green: #005C61;
+$primary-green: #1A2F2F;
+
 div.terms_of_use {
 
   font-size:1.1em;
@@ -704,10 +719,7 @@ a:hover.ofertacontenedor h2{
 	text-decoration: none;
 	color: #bbb;
 
-	/* transition */
-	-webkit-transition: 1s;
-	-moz-transition: 1s;
-	transition: 1s;
+  @include slow-transition;
 }
 #back-top a:hover {
 	color: #000;
@@ -719,19 +731,12 @@ a:hover.ofertacontenedor h2{
 	height: 50px;
 	display: block;
 	margin-bottom: 7px;
-	background: #1A2F2F url(up-arrow.png) no-repeat center center;
+	background: $primary-green url(up-arrow.png) no-repeat center center;
 
-	/* rounded corners */
-	-webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
-	border-radius: 15px;
-
-	/* transition */
-	-webkit-transition: 1s;
-	-moz-transition: 1s;
-	transition: 1s;
+  @include button-rounded-corners;
+  @include slow-transition;
 }
 #back-top a:hover span {
-	background-color: #005C61;
+	background-color: $light-green;
 }
 
