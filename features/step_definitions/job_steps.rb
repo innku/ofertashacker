@@ -27,30 +27,30 @@ end
 
 Given /^there is a job vacancy with title "([^"]*)" created by "([^"]*)"$/ do |title, email|
   @company = Company.find_by_email(email)
-  if !@company
-    @company = FactoryGirl.create(:company, :email => email)
-  end
+  @company = FactoryGirl.create(:company, :email => email) unless @company
   @job = FactoryGirl.create(:job, :company => @company, :title => title)
-end
-
-Given /^there is a job vacancy with title "([^"]*)" created by "([^"]*)" with required skill "([^"]*)"$/ do |title, email, rs|
-  @company = Company.find_by_email(email)
-  @rsa = FactoryGirl.create(:required_skill, :skill_name => rs)
-  if !@company
-    @company = FactoryGirl.create(:company, :email => email)
-  end
-  @job = FactoryGirl.create(:job, :company => @company, :title => title)
-  @job.required_skill_ids_string="#{@rsa.id}"
 end
 
 Given /^there is a job vacancy with title "([^"]*)" created by "([^"]*)" and description "([^"]*)"$/ do |title, email, description|
   @company = Company.find_by_email(email)
-  if !@company
-    @company = FactoryGirl.create(:company, :email => email)
-  end
+  @company = FactoryGirl.create(:company, :email => email) unless @company
   @job = FactoryGirl.create(:job, :company => @company, :title => title, :description => description)
 end
 
+Given /^there is a job vacancy with title "([^"]*)" and required skill "([^"]*)"$/ do |title, rs|
+  @rsa = FactoryGirl.create(:required_skill, :skill_name => rs)
+  @job = FactoryGirl.create(:job, :title => title)
+  @job.required_skills << @rsa
+end
+
+Given /^there are "([^"]*)" job vacancies with required skill "([^"]*)"$/ do |number, rs|
+  n = number.to_i
+  rsa = FactoryGirl.create(:required_skill, skill_name: rs)
+  n.times do |i|
+    job = FactoryGirl.create(:job, title: "Developer #{i+1} #{rs}")
+    job.required_skills << rsa
+  end
+end
 
 Then /^I should see the job vacancy details for "([^"]*)"$/ do |job_name|
   job = Job.find_by_title(job_name)
