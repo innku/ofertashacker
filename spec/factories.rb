@@ -24,6 +24,7 @@ FactoryGirl.define do
     description           "We required 3 ruby programmers"
     association           :company, :factory => :company
     city
+    country
   end
 
   factory :required_skill do

@@ -8,7 +8,7 @@ class Job < ActiveRecord::Base
 
   accepts_nested_attributes_for :required_skills
 
-  validates_presence_of :company_id, :title, :description, :city
+  validates_presence_of :company_id, :title, :description, :country
   validates_presence_of :at_least_one_type
   validate :extra_skill, :length => {:maximum => 140}
 

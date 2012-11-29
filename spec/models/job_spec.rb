@@ -25,8 +25,8 @@ describe Job do
         @job.should_not be_valid
       end
 
-      it "Without a city" do
-        @job.city=nil
+      it "Without a country" do
+        @job.country=nil
         @job.should_not be_valid
       end
 
