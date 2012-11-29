@@ -16,6 +16,7 @@ class Job < ActiveRecord::Base
   after_create :post_twitter
 
   metropoli_for :city
+  metropoli_for :country
 
   scope   :ordered, order('id DESC')
 
