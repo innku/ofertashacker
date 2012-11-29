@@ -38,13 +38,20 @@ Given /^there is an old company with name "(.*?)" in a city "(.*?)"$/ do |title,
   company.save(:validate => false)
 end
 
+Given /^I select a job country from autocomplete field/ do
+  selector = '.ui-menu-item a:contains(\"México\")'
+  fill_in 'job_country_name', :with => 'México'
+  sleep(3)
+  page.execute_script " $('#{selector}').  trigger(\"mouseenter\").click();"
+end
+
 Given /^I fill the job information$/ do
   steps %Q{
     When I fill in "job_description" with "We need 2 ruby programmers"
     And I fill in "job_title" with "Ruby Sr Programmer"
-    And I fill in "job_city_name" with "Monterrey, Nuevo León, MX"
+    And I select a job country from autocomplete field
     And I check "job_full_time"
-  } 
+  }
 end
 
 Then /^the job should be created$/ do

@@ -85,6 +85,7 @@ es:
     form:
       title:              "Nombre"  
       city:               "Ciudad"
+      country:            "País"
       job_detail:         "Datos de la Oferta"
       job_type:           "Tipo de Empleo"
       required_profile:   "Perfil requerido"
