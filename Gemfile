@@ -19,6 +19,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'thin'
 gem 'innsights', :github => "innku/innsights-gem"
+gem 'koala'
 
 group :assets do
   gem 'sass-rails',  "~> 3.2.3"

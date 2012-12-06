@@ -13,7 +13,8 @@ class Job < ActiveRecord::Base
   validate :extra_skill, :length => {:maximum => 140}
 
   FILTERS = %w{full_time part_time flexible remote}
-  after_create :post_twitter
+
+  after_create :update_social_networks
 
   metropoli_for :city
   metropoli_for :country
@@ -49,11 +50,9 @@ class Job < ActiveRecord::Base
     includes(:company, :required_skills).where(Helpers::LikeStatement.new(search_fields, keywords).to_array)
   end
 
-  def post_twitter
-    if Rails.env == 'production'
-      url = $bitly.shorten("http://www.ofertashacker.com/jobs/#{self.id}")
-      tweet_message = truncate("#{self.company.title}: #{self.title}", :length => 115 )
-      Twitter.update("#{tweet_message} #{url.short_url}")
+  def update_social_networks
+    if Rails.env == 'production' or Rails.env == 'staging'
+      Services::SocialNetworks::Updater.new(self.company.title, self.id, self.title).post_all
     end
   end
 
