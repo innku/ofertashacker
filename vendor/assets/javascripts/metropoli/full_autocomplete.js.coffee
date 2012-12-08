@@ -1,6 +1,8 @@
 $(document).ready ->
   $ ->
     $(".full_autocomplete").FullAutocomplete
+      minLength: 0
+
       source: (request, response) ->
         $.ajax
           url: "metropoli/cities_and_countries.json"
@@ -30,7 +32,7 @@ $(document).ready ->
         form.find("input[id$=location_id]").val ui.item.id
         form.find("input[id$=location_type]").val ui.item.type
 
-      change: ->
+      search: ->
         form = $(this).closest("form")
         form.find("input[id$=location_id]").val ""
         form.find("input[id$=location_type]").val ""
