@@ -2,7 +2,7 @@ var changes;
 var jobs_ids = []
 var can_send = true;
 function getJobsJSON(filter_info,remove){
-  spinner = new SpinnerApp($('#back-top'));
+  spinner = new SpinnerApp($('#content'));
 
   $.ajax({
     url: get_json_path(), 
