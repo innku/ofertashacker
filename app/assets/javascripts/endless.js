@@ -53,8 +53,6 @@ function getJobsJSON(filter_info,remove){
       if(!changes){
         $(".posts").animate({opacity:'0.3'},500);
         $(".posts").animate({opacity:'100'},5900);
-        // $(".posts").fadeTo(500,0.2);
-        // $(".posts").fadeTo(500,1.0); 
       }
     } else {
       calibrate();
@@ -152,16 +150,6 @@ function is_even(num){
   return num%2==0
 }
 
-//checks for the existance of scrollbar
-// (function($) {
-//   $.fn.hasScrollBar = function() {
-//     alert(document.documentElement.scrollHeight === document.documentElement.clientHeight);
-//     return (document.documentElement.scrollHeight === document.documentElement.clientHeight);
-//     // return (this.get(0).scrollHeight > this.height() && $(window).scrollTop() == 0 );
-//   }
-// })(jQuery);
-
-
 //renders new jobs when scroll reaches the bottom
 $(window).scroll(function(){
   var i=0;
@@ -190,11 +178,6 @@ function countChecked(filter_info) {
 
 $(document).ready(function() {
   jobs_ids = (get_jobs_ids());
-  // if ($(window).hasScrollBar() && can_send){
-  //   can_send = false;
-  //   var filter_info = get_checkbox_status("#mainMenu input");
-  //   getJobsJSON(filter_info,false) 
-  // }
 
   $("#mainMenu input").click(function(){
     jobs_ids = [-1];
