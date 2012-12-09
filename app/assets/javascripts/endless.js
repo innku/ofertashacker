@@ -2,63 +2,74 @@ var changes;
 var jobs_ids = []
 var can_send = true;
 function getJobsJSON(filter_info,remove){
-  $.ajax(get_json_path(),{filters: { full_time:filter_info[0],
-            part_time:filter_info[1],
-            flexible:filter_info[2],
-            remote:filter_info[3],
-  }, jobs_ids:jobs_ids, 
-     location_id: $.urlParam('location_id'), 
-     location_type: $.urlParam('location_type'),
-     keywords: $.urlParam('keywords')
-  }, 
-  function(data) {
-    changes = false;
-    if(remove){
-      $(".posts").children(".job").each(function(){
-        if(should_be_deleted($(this).attr("id"),data)){
-          changes = true;
-          $(this).slideUp({complete:function(){$(this).remove();}});
-        }
-      });
-    }
-    var i=0;
-    $.each(data,function(){
-      if (is_even(i)) {
-        if(!remove || check_for_existance(this.job.id)){
-          changes = true;
-          $(".posts.even").append(job_template(this.job));
-          if(remove) {
-            $(".posts.even").children('.job').last().hide();
-            $(".posts.even").children('.job').last().slideDown(700).delay(200);
+  spinner = new SpinnerApp($('#back-top'));
+
+  $.ajax({
+    url: get_json_path(), 
+    dataType: 'json',
+    data: { 
+      filters: { 
+        full_time:filter_info[0],
+        part_time:filter_info[1],
+        flexible:filter_info[2],
+        remote:filter_info[3]
+      }, 
+      jobs_ids:jobs_ids, 
+      location_id: $.urlParam('location_id'), 
+      location_type: $.urlParam('location_type'),
+      keywords: $.urlParam('keywords')
+    }, 
+    beforeSend: function() { spinner.rise() },
+    complete:   function() { spinner.hide() },
+    success: function(data) {
+      changes = false;
+      if(remove){
+        $(".posts").children(".job").each(function(){
+          if(should_be_deleted($(this).attr("id"),data)){
+            changes = true;
+            $(this).slideUp({complete:function(){$(this).remove();}});
           }
+        });
+      }
+      var i=0;
+      $.each(data,function(){
+        if (is_even(i)) {
+          if(!remove || check_for_existance(this.job.id)){
+            changes = true;
+            $(".posts.even").append(job_template(this.job));
+            if(remove) {
+              $(".posts.even").children('.job').last().hide();
+              $(".posts.even").children('.job').last().slideDown(700).delay(200);
+            }
+          }
+        } else {
+          if(!remove || check_for_existance(this.job.id)){
+            changes = true;
+            $(".posts.odd").append(job_template(this.job)); 
+            if(remove) {
+              $(".posts.odd").children('.job').last().hide();
+              $(".posts.odd").children('.job').last().slideDown(700).delay(200);
+            }
+
+          }
+        }
+        i++;
+      });
+      if(remove) {
+        setTimeout(function() { 
+          calibrate();
+          new NoJobAppender($('#skill_main')).toggle();
+        }, 500);
+        if(!changes){
+          $(".posts").animate({opacity:'0.3'},500);
+          $(".posts").animate({opacity:'100'},5900);
         }
       } else {
-        if(!remove || check_for_existance(this.job.id)){
-          changes = true;
-          $(".posts.odd").append(job_template(this.job)); 
-          if(remove) {
-            $(".posts.odd").children('.job').last().hide();
-            $(".posts.odd").children('.job').last().slideDown(700).delay(200);
-          }
-
-        }
-      }
-      i++;
-    });
-    if(remove) {
-      setTimeout(function() { 
         calibrate();
-        new NoJobAppender($('#skill_main')).toggle();
-      }, 500);
-      if(!changes){
-        $(".posts").animate({opacity:'0.3'},500);
-        $(".posts").animate({opacity:'100'},5900);
-      }
-    } else {
-      calibrate();
-      can_send = true;
-    };
-    $("#loader img").animate({opacity:'hide'});
+        can_send = true;
+      };
+      $("#loader img").animate({opacity:'hide'});
+    }
   });
 }
 function get_jobs_ids(){
