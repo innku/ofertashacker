@@ -2,7 +2,7 @@ var changes;
 var jobs_ids = []
 var can_send = true;
 function getJobsJSON(filter_info,remove){
-  $.getJSON(get_json_path(),{filters: { full_time:filter_info[0],
+  $.ajax(get_json_path(),{filters: { full_time:filter_info[0],
             part_time:filter_info[1],
             flexible:filter_info[2],
             remote:filter_info[3],
