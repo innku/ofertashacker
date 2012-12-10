@@ -19,7 +19,7 @@ function getJobsJSON(filter_info,remove){
       location_type: $.urlParam('location_type'),
       keywords: $.urlParam('keywords')
     }, 
-    beforeSend: function() { spinner.rise() },
+    beforeSend: function() { if (!remove) { spinner.rise() } },
     complete:   function() { spinner.hide() },
     success: function(data) {
       changes = false;
