@@ -10,7 +10,7 @@ class window.SpinnerApp
   hide: () ->
     setTimeout( (() => 
       @spinner().fadeOut('slow', -> $(@).remove())
-    ), 1000)
+    ), 500)
 
   spinner_options: -> {
     lines: 9
