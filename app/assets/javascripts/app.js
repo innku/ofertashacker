@@ -26,28 +26,6 @@ $(document).ready(function() {
     $('#flash_alert').appendTo("#header").hide().slideDown('2000');
     setTimeout("$('#flash_alert').slideUp('500');",4000);
   }
-
-  // hide #back-top first
-	$("#back-top").hide();
-	
-	// fade in #back-top
-	$(function () {
-		$(window).scroll(function () {
-			if ($(this).scrollTop() > 100) {
-				$('#back-top').fadeIn();
-			} else {
-				$('#back-top').fadeOut();
-			}
-		});
-
-		// scroll body to 0px on click
-		$('#back-top a').click(function () {
-			$('body,html').animate({
-				scrollTop: 0
-			}, 800);
-			return false;
-		});
-	});
 });
 
 //check whether a collection of checkboxes are checked or not

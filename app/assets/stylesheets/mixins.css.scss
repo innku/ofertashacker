@@ -1,3 +1,9 @@
+@mixin slow-transition {
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+}
+
 @mixin rounded($radius: 7px) {
   border-radius: $radius;
   -moz-border-radius: $radius;

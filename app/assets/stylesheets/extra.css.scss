@@ -1,17 +1,10 @@
-@mixin slow-transition {
-	-webkit-transition: 1s;
-	-moz-transition: 1s;
-	transition: 1s;
-}
+@import 'mixins';
 
-@mixin button-rounded-corners {
-	-webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
-	border-radius: 15px;
-}
-
-$light-green: #005C61;
+$light-green: #009dA5;
 $primary-green: #1A2F2F;
+$almost_black: #041818;
+$dark-grey: #041818;
+$pretty-light-green: #3d7878;
 
 div.terms_of_use {
 
@@ -703,6 +696,14 @@ a:hover.ofertacontenedor h2{
 	padding-left: 10px;
 }
 
+.spinner_wrapper {
+  position:fixed;
+  bottom: 170px;
+  width: 30px;
+  height:30px;
+  right: 95px;
+}
+
 #back-top {
 	position: fixed;
 	bottom: 85px;
@@ -728,16 +729,18 @@ a:hover.ofertacontenedor h2{
 
 /* arrow icon (span tag) */
 #back-top span {
-	width: 80px;
-	height: 50px;
+	width: 60px;
+	height: 55px;
 	display: block;
 	margin-bottom: 7px;
-	background: $primary-green url(up-arrow.png) no-repeat center center;
+	background: $almost_black url(up-arrow.png) no-repeat center center;
+  border:1px solid $dark-grey;
 
-  @include button-rounded-corners;
+  @include rounded(15px);
   @include slow-transition;
 }
 #back-top a:hover span {
 	background-color: $light-green;
+  border:1px solid $pretty-light-green;
 }
 
