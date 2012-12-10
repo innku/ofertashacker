@@ -38,11 +38,11 @@ class Job < ActiveRecord::Base
   end
 
   def self.from_country(id)
-    joins(:city => { :state => :country }).where('countries.id = ?', id)
+    where('country_id = ?', id)
   end
 
   def self.from_city(id)
-    joins(:city).where('cities.id = ?', id)
+    where('city_id = ?', id)
   end
 
   def self.with_keywords(keywords)

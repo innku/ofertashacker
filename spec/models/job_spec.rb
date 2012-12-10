@@ -110,11 +110,9 @@ describe Job do
       describe '.from_country' do
         it 'returns all the jobs from a country' do
           brazil = FactoryGirl.create(:country, :name => 'Brazil')
-          brazil_state = FactoryGirl.create(:state, :country => brazil)
-          brazil_city = FactoryGirl.create(:city, :state => brazil_state)
 
           mx_job  = FactoryGirl.create(:job)
-          bz_job = FactoryGirl.create(:job, :city => brazil_city)
+          bz_job = FactoryGirl.create(:job, :country => brazil)
 
           Job.from_country(brazil.id).should == [bz_job]
         end
