@@ -12,18 +12,20 @@ $(document).ready(function() {
     });
 
   	//Hiding flashes after a bit
+  var main_header_container = $("#header .main_header .container");
+
 	if($('#flash_notice') != null) {
-    $('#flash_notice').appendTo("#header").hide().slideDown('2000');
-	setTimeout("$('#flash_notice').slideUp('500');",4000);
+    $('#flash_notice').appendTo(main_header_container).hide().slideDown('2000');
+	  setTimeout("$('#flash_notice').slideUp('500');",4000);
 
   }
 	if($('#flash_error') != null) {
-    $('#flash_error').appendTo("#header").hide().slideDown('2000');
+    $('#flash_error').appendTo(main_header_container).hide().slideDown('2000');
     setTimeout("$('#flash_error').slideUp('500');",4000);
   }
 
 	if($('#flash_alert') != null) {
-    $('#flash_alert').appendTo("#header").hide().slideDown('2000');
+    $('#flash_alert').appendTo(main_header_container).hide().slideDown('2000');
     setTimeout("$('#flash_alert').slideUp('500');",4000);
   }
 });

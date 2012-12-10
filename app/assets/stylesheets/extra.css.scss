@@ -5,6 +5,11 @@ $primary-green: #1A2F2F;
 $almost_black: #041818;
 $dark-grey: #041818;
 $pretty-light-green: #3d7878;
+$flash-alert: #790000;
+$flash-alert-bg: #B75D5D;
+$flash-notice: #85A092;
+$flash-notice-bg: #E3F3E3;
+
 
 div.terms_of_use {
 
@@ -517,20 +522,27 @@ div#about #bottom #box4 {position:absolute;top:65px;left:350px;}
 }
 
 #flash_notice, #flash_error, #flash_alert {
-  padding: 8px 0 8px 10px;
-  color: #FFF;
-  z-index:10;
-  opacity:0.7;
+  width: 665px;
+  padding: 5px 0px 5px 5px;
   position: absolute;
-  top: 35px;
-  font-family: Helvetica;
+  top: 3px;
   right: 0;
-  width:700px;
-  font-size:1.2em;
-	
+  font-family: Helvetica;
+  font-size: 1.25em;
+  font-weight: 500;
+  font-style: italic;
+
+  @include rounded(7px);
 }
 #flash_notice {
-  background: #0a0;
+  background-color: $flash-notice-bg;
+  color: $flash-notice;
+  border: 2px solid $flash-notice;
+}
+#flash_error, #flash_alert {
+  background-color: $flash-alert-bg;
+  color: $flash-alert;
+  border: 2px solid $flash-alert;
 }
 #close_notice {
   display:none;
@@ -540,9 +552,6 @@ div#about #bottom #box4 {position:absolute;top:65px;left:350px;}
   font-size:1.4em;
   font-weight:bold;
   cursor:pointer;
-}
-#flash_error, #flash_alert {
-  background-color: #F00;
 }
 #error_explanation{
   border-top:2px double #f00;
