@@ -8,7 +8,9 @@ class window.SpinnerApp
       new Spinner(@spinner_options()).spin(@spinner()[0])
 
   hide: () ->
-    setTimeout( (() => @spinner().remove()), 200)
+    setTimeout( (() => 
+      @spinner().fadeOut('slow', -> $(@).remove())
+    ), 1000)
 
   spinner_options: -> {
     lines: 9
@@ -18,7 +20,7 @@ class window.SpinnerApp
     corners: 1
     rotate: 0
     trail: 60
-    speed: 1
+    speed: 2
     color: '#FFF'
   }
     
