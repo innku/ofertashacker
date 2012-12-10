@@ -10,8 +10,11 @@
 	border-radius: 15px;
 }
 
-$light-green: #005C61;
+$light-green: #009dA5;
 $primary-green: #1A2F2F;
+$almost_black: #041818;
+$dark-grey: #041818;
+$pretty-light-green: #3d7878;
 
 div.terms_of_use {
 
@@ -728,16 +731,18 @@ a:hover.ofertacontenedor h2{
 
 /* arrow icon (span tag) */
 #back-top span {
-	width: 80px;
-	height: 50px;
+	width: 60px;
+	height: 55px;
 	display: block;
 	margin-bottom: 7px;
-	background: $primary-green url(up-arrow.png) no-repeat center center;
+	background: $almost_black url(up-arrow.png) no-repeat center center;
+  border:1px solid $dark-grey;
 
   @include button-rounded-corners;
   @include slow-transition;
 }
 #back-top a:hover span {
 	background-color: $light-green;
+  border:1px solid $pretty-light-green;
 }
 
