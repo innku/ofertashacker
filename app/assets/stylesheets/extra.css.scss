@@ -698,10 +698,11 @@ a:hover.ofertacontenedor h2{
 
 .spinner_wrapper {
   position:fixed;
-  bottom: 170px;
+  bottom: 15px;
   width: 30px;
   height:30px;
   right: 95px;
+  z-index:20;
 }
 
 #back-top {
