@@ -42,7 +42,7 @@ class Job < ActiveRecord::Base
   end
 
   def self.from_city(id)
-    joins(:city).where('cities.id = ?', id)
+    where('city_id = ?', id)
   end
 
   def self.with_keywords(keywords)
