@@ -50,6 +50,11 @@ class Job < ActiveRecord::Base
     includes(:company, :required_skills).where(Helpers::LikeStatement.new(search_fields, keywords).to_array)
   end
 
+  def self.random(limit)
+    ids = scoped.map(&:id).sample(limit)
+    where(:id => ids)
+  end
+
   def update_social_networks
     if Rails.env == 'production' or Rails.env == 'staging'
       Services::SocialNetworks::Updater.new(self.company.title, self.id, self.title).post_all
