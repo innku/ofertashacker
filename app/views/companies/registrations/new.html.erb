@@ -31,18 +31,6 @@
 
     <%= f.label t('.password_confirmation') %>
     <%= f.password_field :password_confirmation %>
-          <div class="overlay terms" id="terms_trigger">
-              <h1>Términos de Uso</h1>
-	              <div>
-	                <%= render '/welcome/terminos' %>
-	              </div> 
-          </div>
-          <div class="overlay terms" id="privacy_trigger">
-    <h1>Aviso de Privacidad</h1>
-	              <div style="padding-left:13px;">
-	                <%= render '/welcome/privacidad' %>
-	              </div> 
-          </div>
     <p >
     <%= f.check_box :terms_of_service, :checked=>true%>
     Acepto los
@@ -55,3 +43,17 @@
   </div>
 <% end %>
 
+<% content_for :bottom do %>
+          <div class="overlay terms" id="terms_trigger">
+              <h1>Términos de Uso</h1>
+	              <div>
+	                <%= render '/welcome/terminos' %>
+	              </div> 
+          </div>
+          <div class="overlay terms" id="privacy_trigger">
+    <h1>Aviso de Privacidad</h1>
+	              <div style="padding-left:13px;">
+	                <%= render '/welcome/privacidad' %>
+	              </div> 
+          </div>
+<% end %>

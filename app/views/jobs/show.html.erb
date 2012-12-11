@@ -31,9 +31,6 @@
       <%= image_tag "shadow.gif" %>
       <br />
 
-        <div class="overlay contact" id="contact_trigger">
-          <%= render :partial => 'contact_company', :locals=>{:job=>@job}%>
-         </div>
         <%= link_to "Contactar", "#", :id => "contact_button", :class => "button contact overlay_fade", :rel => "#contact_trigger" %>
 
         <div id="share_buttons">
@@ -85,3 +82,9 @@
     </div>
 
   </div>
+       
+<% content_for :bottom do %>
+	<div class="overlay contact" id="contact_trigger">
+	  <%= render :partial => 'contact_company', :locals=>{:job=>@job}%>
+	</div>
+<% end %>
