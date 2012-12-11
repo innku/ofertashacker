@@ -19,7 +19,6 @@ Feature: Admin Actions
     
   Scenario: I can delete my company
     And I am on the root page
-    And show me the page
     When I follow "Perfil"
     And I follow "Eliminar empresa" and click OK
     And I am on the company index
