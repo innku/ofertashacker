@@ -10,7 +10,7 @@ Feature: Search job
 
   Scenario: I search Ruby from the searchbox
     And I am on the index job page
-    When I fill in "Busco:" with "Ruby"
+    When I fill in "Busco" with "Ruby"
     And I press "Buscar"
     Then I should see "Developer 1 Ruby"
     And I should see "Developer 2 Ruby"
