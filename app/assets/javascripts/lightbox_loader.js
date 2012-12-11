@@ -6,7 +6,8 @@ $(document).ready(function() {
       loadSpeed: 150,
       opacity: 0.9
     },
-    closeOnClick: false
+    closeOnClick: false,
+    top: '8%'
   });
 
   $(".overlay.contact form").validate();
