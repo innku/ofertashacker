@@ -17,7 +17,7 @@ Metropoli.setup do |config|
   ##
   ## Example. config.city_autocomplete_fields = 'name, capital_name, ascii_name'
   
-  # config.city_autocomplete_fields = 'name'
+  config.city_autocomplete_fields = 'name, alternate_names'
   
   # config.state_autocomplete_fields = 'name, abbr'
   
