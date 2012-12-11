@@ -1,7 +1,7 @@
 module Fetchers
   class JobFetcher
     def self.search(params)
-      jobs = Job.filter_it(params[:filters]).order("RANDOM()")
+      jobs = Job.filter_it(params[:filters])
       if params[:jobs_ids] 
         jobs = jobs.no_repeat(params[:jobs_ids]) 
       end
@@ -11,7 +11,7 @@ module Fetchers
       if params[:keywords].present? 
         jobs = jobs.with_keywords(params[:keywords]) 
       end
-      jobs.limit(8)
+      jobs.random(8)
     end
 
     private
