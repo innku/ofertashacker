@@ -295,28 +295,28 @@ div.open_wrapper #bottom #licencia{
   padding:20px 90px 30px 0;
   float:right;
 }
-div.open_wrapper #bottom #content{
+div.open_wrapper #bottom #boxes{
   width:810px;
   margin-left:50px;
   padding:0px 10px 10px 10px;
 }
-div.open_wrapper #bottom #content div#middle{
+div.open_wrapper #bottom #boxes div#middle{
   border-bottom:1px solid #cccccc;
   border-top:1px solid #cccccc;
 }
-div.open_wrapper #bottom #content div{
+div.open_wrapper #bottom #boxes div{
   padding: 10px 0;
   position:relative;
 }
-div.open_wrapper #bottom #content img {
+div.open_wrapper #bottom #boxes img {
   position:relative;
   padding-left:7px;
   top:10px;
 }
-div.open_wrapper #bottom #content h2{
+div.open_wrapper #bottom #boxes h2{
   margin-bottom:-10px;
 }
-div.open_wrapper #bottom #content a{
+div.open_wrapper #bottom #boxes a{
   text-align:center;
   display:block;
   width:110px;
@@ -455,7 +455,7 @@ div#about #bottom_line{
   bottom:-216px;
   left:90px;
 }
-div#about #bottom #content{
+div#about #bottom #boxes{
   position:relative;
   top:-7px;
 }
