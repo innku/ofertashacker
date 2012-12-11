@@ -1,6 +1,10 @@
 # encoding: UTF-8
 # Extensive Docs at http://github.com/innku/innsights-gem
 
+if Rails.env.development? || Rails.env.test?
+  Innsights.credentials({ app: 'app', token: 'sometoken' })
+end
+
 Innsights.setup do
 
   user Company do
@@ -22,4 +26,7 @@ Innsights.setup do
     enable false
   end
 
+  config :development do
+    enable false
+  end
 end
