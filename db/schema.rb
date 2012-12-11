@@ -11,13 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121119171013) do
+ActiveRecord::Schema.define(:version => 20121211092053) do
 
   create_table "cities", :force => true do |t|
     t.integer "state_id"
     t.string  "name"
+    t.string  "alternate_names"
   end
 
+  add_index "cities", ["alternate_names"], :name => "index_cities_on_alternate_names"
   add_index "cities", ["name"], :name => "index_cities_on_name"
   add_index "cities", ["state_id"], :name => "index_cities_on_state_id"
 
