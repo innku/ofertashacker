@@ -68,8 +68,6 @@ es:
   jobs: 
     available: 
       vacancies:       "Ofertas más recientes de Ofertas Hacker"
-    job:
-      created_at:         "Fecha de publicación"
     jobs:
       in:                 "en"
       full_time:          "Tiempo completo"
@@ -84,7 +82,7 @@ es:
       resume:             "CV"
     show:
       city:               "Localizada en:"
-      created_at:         "Fecha de publicación"
+      created_at:         "Publicado el"
     form:
       title:              "Nombre"  
       city:               "Ciudad"

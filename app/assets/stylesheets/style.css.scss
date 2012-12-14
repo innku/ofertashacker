@@ -254,7 +254,7 @@ img#nuevas_ofertas{
   text-decoration: none;
 }
 
-.mainContent a h1, .mainContent a p, .created_at {
+.mainContent a h1, .mainContent a p {
   display:block;
   padding-left:26px;
   text-decoration:none;
@@ -707,7 +707,12 @@ div.clear{
 }
 
 #right .created_at{
-  padding: 0;
+  margin: 5px 0px 0px 0px;
+  font-family: 'Adelle basic';
+  color: #1A2F2F;
+  font-weight: 00;
+  letter-spacing: 1px;
+  font-style: italic;
 }
 
 #right p{

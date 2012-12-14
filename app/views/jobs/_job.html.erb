@@ -9,7 +9,6 @@
     <%end%>
     </div>
   <h1><%= truncate(job.title, :length => 40) %></h1>
-  <div class="created_at"><%=t '.created_at' %> <%=l job.created_at.to_date %></div>
   <p><%= truncate(condensed_information(job),:length => 70) %> </p>
   <% end %>
 </li>
