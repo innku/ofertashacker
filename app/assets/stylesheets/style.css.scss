@@ -254,7 +254,7 @@ img#nuevas_ofertas{
   text-decoration: none;
 }
 
-.mainContent a h1, .mainContent a p {
+.mainContent a h1, .mainContent a p, .created_at {
   display:block;
   padding-left:26px;
   text-decoration:none;
@@ -704,6 +704,10 @@ div.clear{
   color: #888;
   font-size: 13px;
   font-style: italic;
+}
+
+#right .created_at{
+  padding: 0;
 }
 
 #right p{

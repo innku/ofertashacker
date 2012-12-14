@@ -68,6 +68,8 @@ es:
   jobs: 
     available: 
       vacancies:       "Ofertas más recientes de Ofertas Hacker"
+    job:
+      created_at:         "Fecha de publicación"
     jobs:
       in:                 "en"
       full_time:          "Tiempo completo"
@@ -82,6 +84,7 @@ es:
       resume:             "CV"
     show:
       city:               "Localizada en:"
+      created_at:         "Fecha de publicación"
     form:
       title:              "Nombre"  
       city:               "Ciudad"
@@ -167,3 +170,57 @@ es:
         at_least_one_type: "Tipo de empleo"
       required_skill:
         skill_name:       "Nombre"
+
+  date:
+      abbr_day_names:
+      - dom
+      - lun
+      - mar
+      - mié
+      - jue
+      - vie
+      - sáb
+      abbr_month_names:
+      - 
+      - ene
+      - feb
+      - mar
+      - abr
+      - may
+      - jun
+      - jul
+      - ago
+      - sep
+      - oct
+      - nov
+      - dic
+      day_names:
+      - domingo
+      - lunes
+      - martes
+      - miércoles
+      - jueves
+      - viernes
+      - sábado
+      formats:
+        default: ! '%d/%m/%Y'
+        long: ! '%A, %d de %B de %Y'
+        short: ! '%d de %b'
+      month_names:
+      - 
+      - enero
+      - febrero
+      - marzo
+      - abril
+      - mayo
+      - junio
+      - julio
+      - agosto
+      - septiembre
+      - octubre
+      - noviembre
+      - diciembre
+      order:
+      - :day
+      - :month
+      - :year
