@@ -16,3 +16,8 @@ Feature: Search job
     And I should see "Developer 2 Ruby"
     And I should see "Developer 3 Ruby"
     And I should not see "Python developer"
+
+  Scenario: I can search with a shortcut of the countries name
+    Given there is a venezuelan job vacancy 
+    And I visit ofertashacker.com/ve
+    And i should see all the job vacancies of venezuela

@@ -72,3 +72,18 @@ Given /^there is an old job vacancy with title "(.*?)" created by "(.*?)" in cit
   end
   j.save(:validate => false)
 end
+
+
+Given /^there is a venezuelan job vacancy$/ do
+  ve = FactoryGirl.create(:country, :name => 'Venezuela', :abbr => 'VE')
+  job = FactoryGirl.create(:job, :title => 'Venezuelan job', :country_name => ve.name)
+end
+
+Given /^I visit ofertashacker\.com\/ve$/ do
+  visit '/ve'
+end
+
+Given /^i should see all the job vacancies of venezuela$/ do
+   page.should have_content "Venezuelan job"
+end
+
