@@ -18,7 +18,7 @@
 		    <p><%= f.label t('.title') + " *" %>
         <%= f.text_field :title %></p>
 
-        <div id='location_info'>
+        <div id='location_info' data-countries_with_cities="<%= installed_countries_with_cities %>">
           <script type='text/javascript'>
             jQuery(function(){
               new LocationInputsApp(<%= location_info_for(f.object) %>).render();

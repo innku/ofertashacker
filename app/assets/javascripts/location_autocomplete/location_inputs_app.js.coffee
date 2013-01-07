@@ -1,13 +1,16 @@
 class window.LocationInputsApp
   constructor: (@info, @elem = $('#location_info')) ->
-    @country_input = new CountryInputView(@info['country_name'], @info['city_name'])
+    @country_input = new CountryInputView(@info['country_name'], @info['city_name'], @countries_with_cities())
     
   render: ->
     @elem.prepend @country_input.render()
     @elem
 
+  countries_with_cities: ->
+    @elem.data 'countries_with_cities'
+
 class window.CountryInputView
-  constructor: (@country_name, @city_name, @elem = $("<p></p>"), @autocomplete_options=country_autocomplete_defaults) ->
+  constructor: (@country_name, @city_name, @countries_with_cities, @elem = $("<p></p>"),  @autocomplete_options=country_autocomplete_defaults) ->
   
   render: ->
     @elem.append(@template())
@@ -53,7 +56,7 @@ class window.CountryInputView
       @remove_city()
 
   country_has_registered_cities: (country=@country_name) ->
-    for registered_country in ['Mexico', 'United States']
+    for registered_country in @countries_with_cities
       return true if (registered_country is country)
     false
 
