@@ -1,7 +1,5 @@
 class CountryModelDecorator < Metropoli::CountryModel
-  scope :with_cities, joins(:states => :cities).group('countries.name')
-
-  def self.extract_names
-    scoped.map(&:name)
+  def self.names_of_countries_with_cities
+    select('countries.name').joins(:states => :cities).group('countries.name').map(&:name)
   end
 end

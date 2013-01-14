@@ -1,7 +1,7 @@
 module JobsHelper
 
   def installed_countries_with_cities
-    CountryModelDecorator.with_cities.extract_names
+    CountryModelDecorator.names_of_countries_with_cities
   end
 
   def get_job_type(job, text_only=false)
