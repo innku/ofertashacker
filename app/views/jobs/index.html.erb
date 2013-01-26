@@ -9,7 +9,7 @@
       </div>
     <% else %>
       <%=hidden_field_tag :endless_path, "all_jobs"%>
-      <%= render :partial =>'jobs', :locals => {:jobs => @jobs} %>
+      <%= render 'jobs/jobs', :jobs => @jobs %>
     <% end %>
 
   </div>
