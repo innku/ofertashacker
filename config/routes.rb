@@ -36,6 +36,6 @@ Rubypros::Application.routes.draw do
   match '/acerca_de'=>'welcome#about'
   match '/codigo'=>'welcome#codigo'
   match '/licencia'=>'welcome#licencia'
-  match '/:country'=>'redirecter#check_valid_country'
+  match '/:country'=>'redirecter#check_valid_country', as: 'country_jobs'
 
 end

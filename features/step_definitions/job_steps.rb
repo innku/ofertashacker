@@ -76,14 +76,24 @@ end
 
 Given /^there is a venezuelan job vacancy$/ do
   ve = FactoryGirl.create(:country, :name => 'Venezuela', :abbr => 'VE')
-  job = FactoryGirl.create(:job, :title => 'Venezuelan job', :country_name => ve.name)
+  ve_state = FactoryGirl.create(:state, country: ve)
+  ve_city = FactoryGirl.create(:city, state: ve_state)
+
+  job = FactoryGirl.create(:job, :title => 'Venezuelan job', country_name: ve.name, city_name: ve_city.name)
 end
 
 Given /^I visit ofertashacker\.com\/ve$/ do
   visit '/ve'
 end
 
-Given /^i should see all the job vacancies of venezuela$/ do
+Given /^I should only see the job vacancies from venezuela$/ do
    page.should have_content "Venezuelan job"
+   page.should_not have_content "Developer 1 Ruby"
+   page.should_not have_content "Developer 2 Ruby"
+   page.should_not have_content "Developer 3 Ruby"
+   page.should_not have_content "Python developer"
 end
 
+Given /^I click the venezuelan flag link$/ do
+  find("img[@alt='ve_flag']").click
+end

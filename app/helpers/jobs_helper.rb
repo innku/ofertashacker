@@ -1,7 +1,16 @@
 module JobsHelper
 
-  def installed_countries_with_cities
+  def installed_countries_names_with_cities
     CountryModelDecorator.names_of_countries_with_cities
+  end
+
+  def installed_countries_abbreviations
+    CountryModelDecorator.abbr_of_countries_with_cities
+  end
+
+  def country_image(country_abbr)
+    abbr = country_abbr.downcase
+    "<img alt='#{abbr}_flag'  src='/#{abbr}.png'/>".html_safe
   end
 
   def get_job_type(job, text_only=false)

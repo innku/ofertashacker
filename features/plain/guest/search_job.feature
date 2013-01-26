@@ -20,4 +20,4 @@ Feature: Search job
   Scenario: I can search with a shortcut of the countries name
     Given there is a venezuelan job vacancy 
     And I visit ofertashacker.com/ve
-    And i should see all the job vacancies of venezuela
+    And I should only see the job vacancies from venezuela

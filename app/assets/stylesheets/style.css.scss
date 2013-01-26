@@ -192,6 +192,19 @@ img#nuevas_ofertas{
   }
 }
 
+.flags {
+  line-height:37px; 
+  display:inline-block; 
+  margin:0;
+  padding:0;
+  li {
+    display:inline; 
+    a {
+      vertical-align:middle; 
+      display:inline-block
+    }
+  }
+}
 
 /*================== HERE COMES THE CONTENT STYLES ====================*/
 #leftMenu {
