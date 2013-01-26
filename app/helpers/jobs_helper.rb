@@ -5,11 +5,10 @@ module JobsHelper
   end
 
   def installed_countries_abbreviations
-    CountryModelDecorator.abbr_of_countries_with_cities
+    CountryModelDecorator.abbr_of_countries_with_cities.map(&:downcase)
   end
 
-  def country_image(country_abbr)
-    abbr = country_abbr.downcase
+  def country_image(abbr)
     "<img alt='#{abbr}_flag'  src='/#{abbr}.png'/>".html_safe
   end
 
