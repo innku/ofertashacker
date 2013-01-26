@@ -20,13 +20,4 @@ module ApplicationHelper
     end
     classes.strip
   end
-  
-  def needs_filter? path
-    exceptions = ["/jobs","/", "/ofertas", '/busqueda']
-    for e in exceptions do 
-       return false if path.to_s == e
-    end
-    return true
-  end
-  
 end

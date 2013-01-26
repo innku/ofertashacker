@@ -39,13 +39,9 @@
         <%= link_to (image_tag "logo.png", :alt=>"Rubypros"), root_path %>
       </div>
 
-      <% unless needs_filter? request.path %>
-        <%= render 'layouts/search' %>
-      <% end%>
+      <%= yield :search_form %>
     </div>
   </div>
 
-  <% unless needs_filter? request.path %>
-    <%= render 'layouts/filter' %>
-  <% end%>
+  <%= yield :search_filters %>
 </div>

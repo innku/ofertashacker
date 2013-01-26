@@ -15,9 +15,9 @@ function getJobsJSON(filter_info,remove){
         remote:filter_info[3]
       }, 
       jobs_ids:jobs_ids, 
-      location_id: $.urlParam('location_id'), 
-      location_type: $.urlParam('location_type'),
-      keywords: $.urlParam('keywords')
+      location_id: $.hiddenParam('old_location_id'), 
+      location_type: $.hiddenParam('old_location_type'),
+      keywords: $.hiddenParam('old_keywords')
     }, 
     beforeSend: function() { if (!remove) { spinner.rise() } },
     complete:   function() { spinner.hide() },
