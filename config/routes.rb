@@ -20,7 +20,6 @@ Rubypros::Application.routes.draw do
     member do
       post "contact_company"
     end
-    
   end
 
   resources :required_skills
