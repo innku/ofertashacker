@@ -35,6 +35,7 @@ La instalación de Ofertas Hacker es bastante sencilla, solo se requieren los si
 
 5. Si quieres crear una cuenta de administrador puedes correr
 
+    rake metropoli:seed
     rake db:seed
 
 5. Si quieres cargar datos de prueba como trabajos, habilidades y compañias puedes correr
@@ -66,6 +67,8 @@ Nos encantaría que tu o tu empresa formen parte del desarrollo de este producto
 === Si te gustaría contribuir puedes empezar con lo siguiente: 
 
 * Corre "rake cucumber" para correr nuestras pruebas de integración del backend. Para probar javascript, usamos {mocha}[https://github.com/jfirebaugh/konacha]. Como verás aun nos faltan bastantes, así que escoge un feature y escríbelo!
+
+* Corre "rake cucumber -p plain" o "rake cucumber -p enhanced" para correr las pruebas que no usan javascript y las que si usan.
 
 * Puedes ver alguno de los bugs, chores y features que se encuentran en {Pivotal Tracker}[https://www.pivotaltracker.com/projects/153065]. Escribe un spec par él de tal manera que sea sencillo para otros desarrolladores continuar con tu trabajo.
 
