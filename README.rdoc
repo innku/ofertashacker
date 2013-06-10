@@ -66,9 +66,7 @@ Nos encantaría que tu o tu empresa formen parte del desarrollo de este producto
 
 === Si te gustaría contribuir puedes empezar con lo siguiente: 
 
-* Corre "rake cucumber" para correr nuestras pruebas de integración del backend. Para probar javascript, usamos {mocha}[https://github.com/jfirebaugh/konacha]. Como verás aun nos faltan bastantes, así que escoge un feature y escríbelo!
-
-* Corre "rake cucumber -p plain" o "rake cucumber -p enhanced" para correr las pruebas que no usan javascript y las que si usan.
+Corre "cucumber -p plain" para correr las pruebas de integración que no usan javascript o "cucumber -p enhanced" para correr las pruebas de integración que si los usan. Para las pruebas unitarias de javascript, usamos {mocha}[https://github.com/jfirebaugh/konacha].
 
 * Puedes ver alguno de los bugs, chores y features que se encuentran en {Pivotal Tracker}[https://www.pivotaltracker.com/projects/153065]. Escribe un spec par él de tal manera que sea sencillo para otros desarrolladores continuar con tu trabajo.
 
