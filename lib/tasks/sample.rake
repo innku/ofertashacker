@@ -2,7 +2,10 @@
 desc 'Seeds sample jobs and categories'
 namespace :db do
   namespace :seed do
-    task :sample => :environment do 
+    task :sample => :environment do
+      Rake::Task["metropoli:cleanup"].invoke
+      Rake::Task["metropoli:seed"].invoke
+
       if Company.count <= 1
         company =  FactoryGirl.create(:company,  :email => "company@sample.com",  :title => "Sample Company 1")
         company2 = FactoryGirl.create(:company, :email => "company2@sample.com", :title => "Sample Company 2")
@@ -27,7 +30,7 @@ namespace :db do
         FactoryGirl.create(:job, :flexible=>true,  :title=> "Rails Ninja",           :company =>  company2, :extra_skill => "Flexible job")
         FactoryGirl.create(:job, :part_time=>true, :title=> "Web app developer",     :company =>  company,  :extra_skill => "Part time job")
         FactoryGirl.create(:job, :remote=>true,    :title=> "Software engineer",     :company =>  company2, :extra_skill => "Remote job")
-      end   
+      end
     end
   end
 end

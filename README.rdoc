@@ -35,10 +35,9 @@ La instalación de Ofertas Hacker es bastante sencilla, solo se requieren los si
 
 5. Si quieres crear una cuenta de administrador puedes correr
 
-    rake metropoli:seed
     rake db:seed
 
-5. Si quieres cargar datos de prueba como trabajos, habilidades y compañias puedes correr
+6. Si quieres cargar datos de prueba como trabajos, habilidades y compañias puedes correr
 
     rake db:seed:sample
 
@@ -47,6 +46,12 @@ Nota: Las compañías creadas por el seed tienen:
 * Email de administrador: "admin@sample.com"
 * Email de compañías de prueba: "company@sample.com" y "company2@sample.com"
 * Todas las contraseñs: "secret"
+
+7. Si quieres crear un trabajo nuevo con la forma, necesitas correr
+
+    rake metropoli:seed
+
+Nota: este paso no es necesario si corres paso 6.
 
 == ¿Quienes somos?
 
