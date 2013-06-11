@@ -33,12 +33,9 @@ La instalación de Ofertas Hacker es bastante sencilla, solo se requieren los si
 
     rake db:migrate
 
-5. Si quieres crear una cuenta de administrador puedes correr
+5. Si quieres crear una cuenta de administrador puedes correr:
 
     rake db:seed
-
-6. Si quieres cargar datos de prueba como trabajos, habilidades y compañias puedes correr
-
     rake db:seed:sample
 
 Nota: Las compañías creadas por el seed tienen:
@@ -46,12 +43,6 @@ Nota: Las compañías creadas por el seed tienen:
 * Email de administrador: "admin@sample.com"
 * Email de compañías de prueba: "company@sample.com" y "company2@sample.com"
 * Todas las contraseñs: "secret"
-
-7. Si quieres crear un trabajo nuevo con la forma, necesitas correr
-
-    rake metropoli:seed
-
-Nota: este paso no es necesario si corres paso 6.
 
 == ¿Quienes somos?
 
@@ -69,7 +60,7 @@ Este es un proyecto creado y mantenido por la comunidad de Ruby en Latinoaméric
 
 Nos encantaría que tu o tu empresa formen parte del desarrollo de este producto para mejorarlo cada vez más y más rápido.
 
-=== Si te gustaría contribuir puedes empezar con lo siguiente: 
+=== Si te gustaría contribuir puedes empezar con lo siguiente:
 
 Corre "cucumber -p plain" para correr las pruebas de integración que no usan javascript o "cucumber -p enhanced" para correr las pruebas de integración que si los usan. Para las pruebas unitarias de javascript, usamos {mocha}[https://github.com/jfirebaugh/konacha].
 
