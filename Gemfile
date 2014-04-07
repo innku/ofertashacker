@@ -37,13 +37,13 @@ group :development, :test, :staging do
 end
 
 group :development, :test do 
-  gem 'capybara', '1.1.1'
+  gem 'capybara'
   gem 'database_cleaner'
   gem 'rspec-rails', '2.8.1'
   gem 'spork'
   gem 'launchy'
   gem "debugger"
-  gem "selenium-webdriver"
+  gem "selenium-webdriver", "~> 2.38.0"
   gem 'sqlite3'
   gem 'konacha'
 end

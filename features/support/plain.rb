@@ -5,4 +5,5 @@ DatabaseCleaner.strategy = :transaction
 
 Before do
   DatabaseCleaner.clean_with(:truncation)
+  page.driver.browser.manage.window.maximize
 end

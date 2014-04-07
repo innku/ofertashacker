@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(:version => 20121211092053) do
   create_table "companies", :force => true do |t|
     t.string   "email",                               :default => "",       :null => false
     t.string   "encrypted_password",   :limit => 128, :default => "",       :null => false
-    t.string   "password_salt",                       :default => "",       :null => false
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
@@ -38,8 +37,8 @@ ActiveRecord::Schema.define(:version => 20121211092053) do
     t.string   "title"
     t.string   "city2"
     t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                                :null => false
+    t.datetime "updated_at",                                                :null => false
     t.string   "logo_file_name"
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
@@ -77,8 +76,8 @@ ActiveRecord::Schema.define(:version => 20121211092053) do
     t.boolean  "remote",      :default => false
     t.boolean  "flexible",    :default => false
     t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.integer  "state_id"
     t.string   "city2"
     t.integer  "city_id"
@@ -100,8 +99,8 @@ ActiveRecord::Schema.define(:version => 20121211092053) do
 
   create_table "required_skills", :force => true do |t|
     t.string   "skill_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "required_skills", ["skill_name"], :name => "index_required_skills_on_skill_name", :unique => true

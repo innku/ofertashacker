@@ -13,7 +13,7 @@ es:
   more:               		"Ver más"
   create:                 "Crear"
 
-  
+
   layouts:
     application: 
       new_job:            "Publicar Oferta"
@@ -26,7 +26,6 @@ es:
   flash:
     alert:
       access_denied: 'No estas autorizado para ver esta página' 
-      
   #Models
   companies:
     sessions:
