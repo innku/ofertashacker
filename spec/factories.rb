@@ -22,6 +22,7 @@ FactoryGirl.define do
     flexible              false
     extra_skill           ""
     description           "We required 3 ruby programmers"
+    expiration_date       60.days.from_now
     association           :company, :factory => :company
     city
     country

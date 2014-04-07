@@ -116,7 +116,9 @@ es:
     job:
       successfully_created: "Tu oferta ha sido publicada"
       successfully_updated: "Tu oferta ha sido actualizada"
-  
+  mailers:
+    job:
+      expiration_subject: "Expiración de la vacante:"
   #Active Record
   activerecord:
     errors:
@@ -192,13 +194,13 @@ es:
       - nov
       - dic
       day_names:
-      - domingo
-      - lunes
-      - martes
-      - miércoles
-      - jueves
-      - viernes
-      - sábado
+      - Domingo
+      - Lunes
+      - Martes
+      - Miércoles
+      - Jueves
+      - Viernes
+      - Sábado
       formats:
         default: ! '%d/%m/%Y'
         long: ! '%A, %d de %B de %Y'

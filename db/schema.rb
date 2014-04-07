@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121211092053) do
+ActiveRecord::Schema.define(:version => 20140407211556) do
 
   create_table "cities", :force => true do |t|
     t.integer "state_id"
@@ -71,18 +71,19 @@ ActiveRecord::Schema.define(:version => 20121211092053) do
     t.integer  "company_id"
     t.string   "title"
     t.string   "state"
-    t.boolean  "full_time",   :default => false
-    t.boolean  "part_time",   :default => false
-    t.boolean  "remote",      :default => false
-    t.boolean  "flexible",    :default => false
+    t.boolean  "full_time",       :default => false
+    t.boolean  "part_time",       :default => false
+    t.boolean  "remote",          :default => false
+    t.boolean  "flexible",        :default => false
     t.text     "description"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.integer  "state_id"
     t.string   "city2"
     t.integer  "city_id"
     t.text     "extra_skill"
     t.integer  "country_id"
+    t.datetime "expiration_date"
   end
 
   add_index "jobs", ["city_id"], :name => "index_jobs_on_city_id"
