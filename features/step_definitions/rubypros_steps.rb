@@ -54,3 +54,7 @@ end
 When /^I fill in "([^"]*)" with "([^"]*)" and wait for the element$/ do |field, value|
   fill_in(field, :with => value, :wait_for => :element, :element => field)
 end
+
+Then /^I confirm the alert message$/ do
+  page.driver.browser.switch_to.alert.accept
+end

@@ -47,6 +47,7 @@ Feature: Admin Actions
     And I am on the required skill index page
     And I should see "Javascript"
     When I follow "X"
+    Then I confirm the alert message
     Then I should see "La habilidad ha sido borrada"    
     And I should not see "Javascript"
   

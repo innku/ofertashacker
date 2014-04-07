@@ -48,5 +48,6 @@ Feature: Company Actions
     And I am on the index job page
     Then I follow "RoR"
     And I follow "Borrar"
+    Then I confirm the alert message
     Then I should see "La oferta fue eliminada correctamente"
 
