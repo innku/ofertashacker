@@ -20,6 +20,8 @@ class Job < ActiveRecord::Base
   metropoli_for :country
 
   scope   :ordered, order('id DESC')
+  scope   :date_sorted, order("created_at DESC")
+  scope   :not_expired, where("expiration_date > CURRENT_DATE")
 
   def self.filter_it(filters={})
     results = Job.includes(:company)
@@ -29,12 +31,6 @@ class Job < ActiveRecord::Base
       end.compact.join(' OR '))
     end
     results
-  end
-
-  def self.no_repeat(jobs=[])
-    unless jobs.blank? 
-      where(sanitize_sql("jobs.id NOT IN (#{jobs.join(',')})"))
-    end
   end
 
   def self.from_country(id)
@@ -50,9 +46,8 @@ class Job < ActiveRecord::Base
     includes(:company, :required_skills).where(Helpers::LikeStatement.new(search_fields, keywords).to_array)
   end
 
-  def self.random(limit)
-    ids = scoped.map(&:id).sample(limit)
-    where(:id => ids)
+  def self.next_jobs_batch(batch_size, last_date=DateTime.now)
+    date_sorted.limit(batch_size).where("created_at < ?", last_date)
   end
 
   def update_social_networks

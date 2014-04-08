@@ -131,26 +131,28 @@ describe Job do
       end
     end
  
-    describe '.no_repeat' do
+    describe '.next_jobs_batch' do
       before do
         @job1 = FactoryGirl.create(:job)
         @job2 = FactoryGirl.create(:job)
-        @job_array = [@job2.id, @job.id]
+        @job_array = [@job2.id, @job1.id]
       end
       
-      context 'With an empty array' do
-        it 'Returns nil with an empty array' do
-          Job.no_repeat.should be_nil
+      context 'With an empty last_date' do
+        it 'Returns an array with both jobs' do
+          sleep 1.seconds
+          Job.next_jobs_batch(2).map(&:id).should == @job_array
         end
       end
       
-      context 'With at least one job id' do
+      context 'With a last_date' do
         
         it 'Does not return the jobs in the array' do
-          Job.no_repeat(@job_array).should_not include([@job2, @job])
+          Job.next_jobs_batch(3, @job.created_at).should == []
         end
-        it 'Return the jobs that are not in the array' do
-          Job.no_repeat(@job_array).should == ([@job1])
+        it 'Return the jobs that were created before job1 and job2' do
+          @job.update_attribute(:created_at, (@job1.created_at - 1.day))
+          Job.next_jobs_batch(2, @job1.created_at).should == [@job]
         end
       end
     end
@@ -168,7 +170,7 @@ describe Job do
   end
 
   context 'Instance methods' do
-     describe '.to_param' do
+    describe '.to_param' do
       before do
         @job.update_attributes(:title => "Ruby Programmer Ninja")
       end

@@ -25,7 +25,7 @@ FactoryGirl.define do
     expiration_date       60.days.from_now
     association           :company, :factory => :company
     city
-    country
+    association           :country, :factory => :country
   end
 
   factory :required_skill do
