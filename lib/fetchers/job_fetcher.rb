@@ -9,7 +9,7 @@ module Fetchers
         jobs = jobs.with_keywords(params[:keywords]) 
       end
       if params[:last_date].present?
-        jobs.next_jobs_batch(20, params[:last_date])
+        jobs.next_jobs_batch(20, DateTime.parse(params[:last_date]))
       else
         jobs.next_jobs_batch(20)
       end

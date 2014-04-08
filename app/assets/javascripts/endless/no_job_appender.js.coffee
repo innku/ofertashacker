@@ -1,5 +1,5 @@
 class window.NoJobAppender
-  constructor: (@container) ->
+  constructor: (@container, @jobs) ->
 
   toggle: ->
     if @no_jobs()
@@ -18,7 +18,7 @@ class window.NoJobAppender
     @no_job_message().length == 0
 
   no_jobs: ->
-    @container.find('.job').length == 0
+    @jobs == 0
 
   no_job_message: ->
     @container.find('.no_job_message')

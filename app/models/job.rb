@@ -20,7 +20,7 @@ class Job < ActiveRecord::Base
   metropoli_for :country
 
   scope   :ordered, order('id DESC')
-  scope   :date_sorted, order("created_at DESC")
+  scope   :date_sorted, order("jobs.created_at DESC")
   scope   :not_expired, where("expiration_date > CURRENT_DATE")
 
   def self.filter_it(filters={})
@@ -47,7 +47,7 @@ class Job < ActiveRecord::Base
   end
 
   def self.next_jobs_batch(batch_size, last_date=DateTime.now)
-    date_sorted.limit(batch_size).where("created_at < ?", last_date)
+    date_sorted.limit(batch_size).where("jobs.created_at < ?", last_date)
   end
 
   def update_social_networks

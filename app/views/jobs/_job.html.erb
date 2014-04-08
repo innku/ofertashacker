@@ -1,4 +1,5 @@
 <li class="job shadow" id = "<%= job.id%>">
+  <%= hidden_field_tag "publish_date", job.created_at%>
   <%= link_to(job) do %>
     <div class="span-4 prepend-8 last" >
       

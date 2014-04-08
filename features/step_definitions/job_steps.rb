@@ -65,7 +65,7 @@ Then /^I should see the job vacancy details for "([^"]*)"$/ do |job_name|
 end
 
 Given /^there is an old job vacancy with title "(.*?)" created by "(.*?)" in city "(.*?)"$/ do |title, email, city|
-  j = Job.new(:title => title, :full_time => true, :description => 'elias', company: FactoryGirl.create(:company), city2: city)
+  j = Job.new(:title => title, :full_time => true, :expiration_date => 60.days.from_now, :description => 'elias', company: FactoryGirl.create(:company), city2: city)
   @company = Company.find_by_email(email)
   if !@company
     @company = FactoryGirl.create(:company, :email => email)
