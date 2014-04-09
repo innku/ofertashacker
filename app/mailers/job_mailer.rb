@@ -1,5 +1,5 @@
 #encoding: utf-8;
-class OfferMailer < ActionMailer::Base
+class JobMailer < ActionMailer::Base
 
   def notificate_future_expiration(job)
     to = job.company.email

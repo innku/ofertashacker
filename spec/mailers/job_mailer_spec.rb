@@ -1,13 +1,14 @@
+
 #encoding: utf-8;
 
 require "spec_helper"
 
-describe OfferMailer do
+describe JobMailer do
   describe '.notificate_future_expiration' do
     before do
       @company = FactoryGirl.create(:company, :email => "company@mail.com")
       @job = FactoryGirl.create(:job, :company => @company)
-      @mail = OfferMailer.notificate_future_expiration(@job)
+      @mail = JobMailer.notificate_future_expiration(@job)
     end
 
     it "should be sent to the job\'s company" do
