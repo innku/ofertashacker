@@ -56,7 +56,7 @@ end
 
 Then /^the job should be created$/ do
   steps %Q{
-    Then I should see "Tu oferta ha sido publicada"  
+    Then I should see "Tu oferta ha sido publicada y expirará dentro de 60 días"
     And I should see "Ruby Sr Programmer"
   } 
 end

@@ -114,7 +114,7 @@ es:
     company:
       successfully_updated: "Tu información ha sido actualizada"
     job:
-      successfully_created: "Tu oferta ha sido publicada"
+      successfully_created: "Tu oferta ha sido publicada y expirará dentro de 60 días"
       successfully_updated: "Tu oferta ha sido actualizada"
   mailers:
     job:

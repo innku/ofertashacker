@@ -15,6 +15,7 @@ class Job < ActiveRecord::Base
   FILTERS = %w{full_time part_time flexible remote}
 
   after_create :update_social_networks
+  before_create :set_missing_dates
 
   metropoli_for :city
   metropoli_for :country
@@ -46,7 +47,7 @@ class Job < ActiveRecord::Base
     includes(:company, :required_skills).where(Helpers::LikeStatement.new(search_fields, keywords).to_array)
   end
 
-  def self.next_jobs_batch(batch_size, last_date=DateTime.now)
+  def self.next_jobs_batch(batch_size, last_date=DateTime.now + 1.second) # "1.second" is added for jobs that have just been created
     date_sorted.limit(batch_size).where("jobs.created_at < ?", last_date)
   end
 
@@ -54,6 +55,11 @@ class Job < ActiveRecord::Base
     if Rails.env == 'production' or Rails.env == 'staging'
       Services::SocialNetworks::Updater.new(self.company.title, self.id, self.title).post_all
     end
+  end
+
+  def set_missing_dates
+    self.expiration_date = 60.days.from_now
+    # TODO publish date
   end
 
   def to_param
