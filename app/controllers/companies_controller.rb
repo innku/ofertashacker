@@ -37,7 +37,11 @@ class CompaniesController < ApplicationController
   
   def my_jobs
     @company = current_company
-    @jobs = @company.jobs.ordered.paginate :page => params[:page], :per_page => 8
+    if initial_batch?
+      @jobs = @company.jobs.next_jobs_batch(20, DateTime.parse(params[:last_date]))
+    else
+      @jobs = @company.jobs.next_jobs_batch(20)
+    end
     respond_to do |format|
       format.html
       format.json {render :text => @jobs.to_json(:methods =>[:to_param], :include => {:company => {:only => [:title], :methods => [:logo_url]}}) }
@@ -46,6 +50,10 @@ class CompaniesController < ApplicationController
  
 
   private
+
+  def initial_batch?
+    params[:last_date].present?
+  end
 
   def get_layout
     (['my_jobs'].include? action_name) ? 'double_div' : 'application'
