@@ -65,6 +65,15 @@ class JobsController < ApplicationController
 
   end
 
+  def expire
+    @job = Job.find(params[:id])
+    if (@job.expire!)
+      redirect_to my_jobs_company_path(@job.company), :notice=> I18n.t("notice.job.successfully_expired")
+    else
+      redirect_to job_path(@job), :notice=> I18n.t("notice.job.not_expired")
+    end
+  end
+
   private
 
   def get_layout

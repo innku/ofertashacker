@@ -117,6 +117,8 @@ es:
     job:
       successfully_created: "Tu oferta ha sido publicada y expirará dentro de 60 días"
       successfully_updated: "Tu oferta ha sido actualizada"
+      successfully_expired: "La oferta fue expirada correctamente"
+      not_expired: "Hubo un error al expirar la oferta"
   mailers:
     job:
       future_expiration_subject: "Expiración de la vacante:"

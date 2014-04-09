@@ -62,6 +62,11 @@ class Job < ActiveRecord::Base
     self.expiration_date = 60.days.from_now.beginning_of_day
   end
 
+  def expire!
+    self.expiration_date = DateTime.now.beginning_of_day
+    self.save
+  end
+
   def to_param
     "#{self.id}-#{self.title.parameterize}"
   end

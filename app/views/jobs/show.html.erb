@@ -3,6 +3,7 @@
     <div class="nav-buttons">
       <% if can? :manage, @job%>
         <%=link_to "Editar", edit_job_path(@job), :class => "button"%>
+        <%= link_to 'Sacar de publicación', expire_job_path(@job.id), :confirm => '¿Estas Seguro que deseas sacar de publicación la oferta?', :class => "button" %>
         <%= link_to 'Borrar', @job, :confirm => '¿Estas Seguro que deseas borrar la oferta?', :method => :delete, :class => "button" %>
       <% end%>
     </div>

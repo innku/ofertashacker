@@ -43,6 +43,15 @@ Feature: Company Actions
     When I follow "Editar"
     Then I should see "Datos de la oferta"
 
+  Scenario: I can expire one of my own vacancies
+    And there is a job vacancy with title "Ruby on Rails" created by "sample@company.com"
+    And I am on the index job page
+    And I follow "Ruby on Rails"
+    Then I should see "Sacar de publicación"
+    Then I follow "Sacar de publicación"
+    Then I confirm the alert message
+    Then I should see "La oferta fue expirada correctamente"
+
   Scenario: I can delete my own vacancies
     And there is a job vacancy with title "RoR" created by "sample@company.com"
     And I am on the index job page

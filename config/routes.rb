@@ -19,6 +19,7 @@ Rubypros::Application.routes.draw do
   resources :jobs do
     member do
       post "contact_company"
+      get "expire"
     end
   end
 
