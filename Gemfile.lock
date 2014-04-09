@@ -73,6 +73,9 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 0.1.4)
+    capybara-email (1.0.2)
+      capybara (~> 1.0)
+      mail
     childprocess (0.5.2)
       ffi (~> 1.0, >= 1.0.11)
     cocaine (0.4.2)
@@ -295,6 +298,7 @@ DEPENDENCIES
   bitly
   cancan
   capybara
+  capybara-email
   coffee-rails (~> 3.2.1)
   cucumber-rails
   database_cleaner

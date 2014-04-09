@@ -81,7 +81,8 @@ es:
       resume:             "CV"
     show:
       city:               "Localizada en:"
-      created_at:         "Publicado el"
+      created_at:         "Creado el"
+      publish_date:       "Publicado el"
     form:
       title:              "Nombre"  
       city:               "Ciudad"
@@ -118,7 +119,8 @@ es:
       successfully_updated: "Tu oferta ha sido actualizada"
   mailers:
     job:
-      expiration_subject: "Expiración de la vacante:"
+      future_expiration_subject: "Expiración de la vacante:"
+      expiration_subject: "Expiró la vacante:"
   #Active Record
   activerecord:
     errors:

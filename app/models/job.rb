@@ -15,14 +15,15 @@ class Job < ActiveRecord::Base
   FILTERS = %w{full_time part_time flexible remote}
 
   after_create :update_social_networks
-  before_create :set_missing_dates
+  before_create :set_expiration_date
 
   metropoli_for :city
   metropoli_for :country
 
   scope   :ordered, order('id DESC')
-  scope   :date_sorted, order("jobs.created_at DESC")
+  scope   :date_sorted, order("jobs.publish_date DESC")
   scope   :not_expired, where("expiration_date > CURRENT_DATE")
+  scope   :expire_today, where("Date(expiration_date) == CURRENT_DATE ")
 
   def self.filter_it(filters={})
     results = Job.includes(:company)
@@ -48,7 +49,7 @@ class Job < ActiveRecord::Base
   end
 
   def self.next_jobs_batch(batch_size, last_date=DateTime.now + 1.second) # "1.second" is added for jobs that have just been created
-    date_sorted.limit(batch_size).where("jobs.created_at < ?", last_date)
+    date_sorted.limit(batch_size).where("jobs.publish_date < ?", last_date)
   end
 
   def update_social_networks
@@ -57,9 +58,8 @@ class Job < ActiveRecord::Base
     end
   end
 
-  def set_missing_dates
-    self.expiration_date = 60.days.from_now
-    # TODO publish date
+  def set_expiration_date
+    self.expiration_date = 60.days.from_now.beginning_of_day
   end
 
   def to_param

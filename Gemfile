@@ -50,4 +50,5 @@ end
 
 group :test do
   gem 'cucumber-rails'
+  gem 'capybara-email'
 end

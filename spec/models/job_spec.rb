@@ -135,12 +135,14 @@ describe Job do
       before do
         @job1 = FactoryGirl.create(:job)
         @job2 = FactoryGirl.create(:job)
+        @job.update_attribute(:publish_date, @job.publish_date - 3.second)
+        @job1.update_attribute(:publish_date, @job1.publish_date - 2.second)
+        @job2.update_attribute(:publish_date, @job2.publish_date - 1.second)
         @job_array = [@job2.id, @job1.id]
       end
       
       context 'With an empty last_date' do
         it 'Returns an array with both jobs' do
-          sleep 1.seconds
           Job.next_jobs_batch(2).map(&:id).should == @job_array
         end
       end
@@ -148,11 +150,11 @@ describe Job do
       context 'With a last_date' do
         
         it 'Does not return the jobs in the array' do
-          Job.next_jobs_batch(3, @job.created_at).should == []
+          Job.next_jobs_batch(3, @job.publish_date).should == []
         end
         it 'Return the jobs that were created before job1 and job2' do
-          @job.update_attribute(:created_at, (@job1.created_at - 1.day))
-          Job.next_jobs_batch(2, @job1.created_at).should == [@job]
+          @job.update_attribute(:publish_date, (@job1.publish_date - 1.day))
+          Job.next_jobs_batch(2, @job1.publish_date).should == [@job]
         end
       end
     end

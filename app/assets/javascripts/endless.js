@@ -77,7 +77,7 @@ function condensed_info(job){
 //renders a job template 
 function job_template(job) {
   var str="<li class=\"job shadow\"" + " id=\"" + job.id +"\" >";
-  str += "<input type='hidden' name='publish_date' value=" + job.created_at + ">";
+  str += "<input type='hidden' name='publish_date' value=" + job.publish_date + ">";
   str += "<a href=\"/jobs/"+job.to_param +"\">";
   str += "<div class=\"span-4 prepend-8 last\">";
   if(job.has_logo)

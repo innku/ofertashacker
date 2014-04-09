@@ -1,0 +1,9 @@
+<h3>Estimado <%=@job.company.title%>,</h3>
+<p>
+  La vacante <span style="color:#00575A;"><%= @job.title%></span> expirará dentro de 60 días (<%= I18n.l(@job.expiration_date.to_date, :format => :long) %>).
+</p>
+<p>Si desea expirar la vacante en este momento de click <%= link_to "aquí", job_url(@job) %></p>
+<strong>Equipo de Ofertas Hacker</strong>
+</p>
+<br />
+<%= image_tag 'logo_email.png' %>
