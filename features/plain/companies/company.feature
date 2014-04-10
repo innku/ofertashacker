@@ -51,6 +51,21 @@ Feature: Company Actions
     Then I follow "Sacar de publicación"
     Then I confirm the alert message
     Then I should see "La oferta fue expirada correctamente"
+    Then I am on the index job page
+    And I should not see "Ruby on Rails"
+
+  Scenario: I can republish one of my own vacancies
+    And there is an expired job vacancy with title "Ruby on Rails_expire" created by "sample@company.com"
+    And I am on the index job page
+    And I should not see "Ruby on Rails_expire"
+    Then I follow "Mis ofertas"
+    Then I follow "Ruby on Rails_expire"
+    Then I should see a button called "Publicar"
+    And I should not see "Sacar de publicación"
+    Then I follow "Publicar"
+    Then I confirm the alert message
+    Then I should see "Tu oferta ha sido publicada y expirará dentro de 60 días"
+    And I should see "Ruby on Rails_expire"
 
   Scenario: I can delete my own vacancies
     And there is a job vacancy with title "RoR" created by "sample@company.com"

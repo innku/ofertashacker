@@ -20,6 +20,7 @@ Rubypros::Application.routes.draw do
     member do
       post "contact_company"
       get "expire"
+      get "publish"
     end
   end
 

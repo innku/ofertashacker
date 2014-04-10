@@ -55,6 +55,10 @@ module JobsHelper
     
   end
   
+  def expired?(job)
+    job.expiration_date < DateTime.now
+  end
+
   def location_info_for(job)
     {:city_name => job.city_name.to_s, :country_name => job.country_name.to_s }.to_json.html_safe
   end

@@ -83,6 +83,9 @@ es:
       city:               "Localizada en:"
       created_at:         "Creado el"
       publish_date:       "Publicado el"
+      publish_confirmation: "¿Estás seguro que deseas publicar la oferta?"
+      destroy_confirmation: "¿Estás seguro que deseas borrar la oferta?"
+      expire_confirmation: "¿Estás seguro que deseas sacar de publicación la oferta?"
     form:
       title:              "Nombre"  
       city:               "Ciudad"
@@ -119,6 +122,7 @@ es:
       successfully_updated: "Tu oferta ha sido actualizada"
       successfully_expired: "La oferta fue expirada correctamente"
       not_expired: "Hubo un error al expirar la oferta"
+      not_published: "Hubo un error al publicar la oferta"
   mailers:
     job:
       future_expiration_subject: "Expiración de la vacante:"

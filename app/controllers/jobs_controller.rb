@@ -74,6 +74,15 @@ class JobsController < ApplicationController
     end
   end
 
+  def publish
+    @job = Job.find(params[:id])
+    if (@job.publish!)
+      redirect_to jobs_path, :notice=> I18n.t("notice.job.successfully_created")
+    else
+      redirect_to job_path(@job), :notice=> I18n.t("notice.job.not_published")
+    end
+  end
+
   private
 
   def get_layout

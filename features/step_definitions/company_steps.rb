@@ -16,6 +16,14 @@ Given /^there is a company with name "([^"]*)" in city "([^"]*)"$/ do |name, cit
   company = FactoryGirl.create(:company, :title => name, :city => city)
 end
 
+Given /^there is an expired job vacancy with title "(.*?)" created by "(.*?)"$/ do |title, company_email|
+  company = Company.find_by_email(company_email)
+  company = FactoryGirl.create(:company, :email => company_email, :city => "Monterrey") unless company
+  job = FactoryGirl.create(:job, :title => title, :company => company)
+  job.expire!
+end
+
+
 Given /^there is a company with name "([^"]*)" in city "([^"]*)" and email "([^"]*)"$/ do |name, city_name, email|
   city = FactoryGirl.create(:city, :name => city_name)
   company = FactoryGirl.create(:company, :title => name, :city => city, :email => email)
@@ -37,6 +45,13 @@ Given /^there is an old company with name "(.*?)" in a city "(.*?)"$/ do |title,
   company = FactoryGirl.build(:company, :title => title, :city2 => city, city: nil)
   company.save(:validate => false)
 end
+
+Then /^I should see a button called "(.*?)"$/ do |button_name|
+  within('div.nav-buttons') do
+    page.should have_link('Publicar')
+  end
+end
+
 
 Given /^I select a job country from autocomplete field/ do
   selector = '.ui-menu-item a:contains(\"México\")'

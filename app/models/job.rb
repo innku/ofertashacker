@@ -22,7 +22,7 @@ class Job < ActiveRecord::Base
 
   scope   :ordered, order('id DESC')
   scope   :date_sorted, order("jobs.publish_date DESC")
-  scope   :not_expired, where("expiration_date > CURRENT_DATE")
+  scope   :not_expired, where("expiration_date > CURRENT_TIMESTAMP")
   scope   :expire_today, where("Date(expiration_date) == CURRENT_DATE ")
 
   def self.filter_it(filters={})
@@ -64,6 +64,12 @@ class Job < ActiveRecord::Base
 
   def expire!
     self.expiration_date = DateTime.now.beginning_of_day
+    self.save
+  end
+
+  def publish!
+    set_expiration_date
+    self.publish_date = DateTime.now
     self.save
   end
 
