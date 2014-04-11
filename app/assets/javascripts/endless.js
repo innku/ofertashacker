@@ -79,7 +79,7 @@ function job_template(job) {
   var str="<li class=\"job shadow\"" + " id=\"" + job.id +"\" >";
   str += "<input type='hidden' name='publish_date' value=" + job.publish_date + ">";
   str += "<a href=\"/jobs/"+job.to_param +"\">";
-  str += "<div class=\"span-4 prepend-8 last\">";
+  str += "<div class=\"span-4\">";
   if(job.has_logo)
     str += "<img alt=\""+job.company.title+"\" src=\""+job.logo_url+"\" />";
   else
@@ -88,6 +88,9 @@ function job_template(job) {
     else
       str += "<h4>" + job.company.title.substring(0,22) + "...</h4>";
   str += "</div>";
+  str += "<div class='prepend-3 span-5 last'>";
+  str += "<span class='small-tag'>Hace " + job.formatted_publish_date + "</span>";
+  str += "</div>"
   if(job.title.length <= 40)
     str += "<h1>" + job.title + "</h1>";
   else

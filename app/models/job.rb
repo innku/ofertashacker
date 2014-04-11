@@ -1,7 +1,9 @@
+# encoding: UTF-8
 require "twitter"
 
 class Job < ActiveRecord::Base
   include ActionView::Helpers::TextHelper
+  include ActionView::Helpers::DateHelper
 
   belongs_to :company
   has_and_belongs_to_many :required_skills
@@ -110,10 +112,14 @@ class Job < ActiveRecord::Base
   def logo_url
     logo.url(:thumb)
   end
+
+  def formatted_publish_date
+    time_ago_in_words(publish_date)
+  end
   
   def as_json(args={})
     args ||= {}
-    super(args.merge!(:methods =>[:to_param, :origin, :logo_url, :has_logo] ,:include => {:company => {:only => [:title]}}))
+    super(args.merge!(:methods =>[:formatted_publish_date, :to_param, :origin, :logo_url, :has_logo] ,:include => {:company => {:only => [:title]}}))
   end
   
   private

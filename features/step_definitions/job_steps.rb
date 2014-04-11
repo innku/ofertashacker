@@ -97,3 +97,10 @@ end
 Given /^I click the venezuelan flag link$/ do
   find("img[@alt='ve_flag']").click
 end
+
+Given /^there is a job vacancy with title "(.*?)" published (\d+) days ago and created by "(.*?)"$/ do |title, time_ago, company_email|
+  city = FactoryGirl.create(:city, :name => "Monterrey")
+  company = Company.find_by_email(company_email)
+  company = FactoryGirl.create(:company, :email => company_email, :city => city) unless company
+  job = FactoryGirl.create(:job, :publish_date => time_ago.to_i.days.ago, :title => title, :company => company)
+end

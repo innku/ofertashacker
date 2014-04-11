@@ -177,6 +177,43 @@ es:
         at_least_one_type: "Tipo de empleo"
       required_skill:
         skill_name:       "Nombre"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: alrededor de 1 hora
+        other: alrededor de %{count} horas
+      about_x_months:
+        one: alrededor de 1 mes
+        other: alrededor de %{count} meses
+      about_x_years:
+        one: alrededor de 1 año
+        other: alrededor de %{count} años
+      almost_x_years:
+        one: casi 1 año
+        other: casi %{count} años
+      half_a_minute: medio minuto
+      less_than_x_minutes:
+        one: menos de 1 minuto
+        other: menos de %{count} minutos
+      less_than_x_seconds:
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
+      over_x_years:
+        one: más de 1 año
+        other: más de %{count} años
+      x_days:
+        one: un día
+        other: ! '%{count} días'
+      x_minutes:
+        one: un minuto
+        other: ! '%{count} minutos'
+      x_months:
+        one: un mes
+        other: ! '%{count} meses'
+      x_seconds:
+        one: un segundo
+        other: ! '%{count} segundos'
+
 
   date:
       abbr_day_names:

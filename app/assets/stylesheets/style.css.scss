@@ -243,6 +243,15 @@ img#nuevas_ofertas{
   }
 }
 
+.mainContent .small-tag {
+  color: #a0a0a0;
+  display: block;
+  font-size: 13px;
+  min-height: 35px;
+  padding: 15px 30px 15px 0;
+  text-align: right;
+}
+
 .mainContent ul.posts {
   margin:0px;
   padding:0px;
@@ -268,14 +277,13 @@ img#nuevas_ofertas{
 }
 
 .mainContent a h1, .mainContent a p {
-  display:block;
-  padding-left:26px;
-  text-decoration:none;
+  display: block;
+  padding-left: 26px;
+  text-decoration: none;
 }
 .mainContent a div img, .mainContent a div h4 {
-  border-left:1px solid #132E43;
-  margin-bottom:15px;
-  padding:10px 0 0 0;
+  margin-bottom: 15px;
+  padding: 10px 0 0 0;
 }
 .mainContent a div h4 {
   display:block;

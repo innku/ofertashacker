@@ -36,3 +36,8 @@ Feature: Guest Actions
     Then I should see "weird city"
     When I follow "Ruby on Rails"
     Then I should see "weird city"
+
+  Scenario: I can see a vacancy publish date detail through the root page
+    Given there is a job vacancy with title "Ruby on Rails" published 3 days ago and created by "admin@rubypros.com"
+    And I am on the root page
+    Then I should see "Hace 3 días"
