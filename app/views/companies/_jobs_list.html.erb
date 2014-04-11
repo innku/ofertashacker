@@ -1,0 +1,19 @@
+<% jobs.each do |job| %>  
+  <li class="<%=item_class%>">
+    <%= link_to(job_path(job), :class => 'item')  do %>
+        <div class="item_wrapper">
+          <div class="title">
+            <%= job.title %>
+          </div>
+          <div class="details">
+            <%= get_job_type(job, true) %>
+          </div>
+        </div>
+    <% end %>
+    <% if expired?(job) %>
+      <%= link_to 'Publicar', publish_job_path(job.id), :confirm => t('jobs.show.publish_confirmation'), :class => "button" %>  
+    <% else %>
+      <%= link_to 'Expirar', expire_job_path(job.id), :confirm => t('jobs.show.expire_confirmation'), :class => "button" %>
+    <% end %>
+  </li>
+<% end %> 

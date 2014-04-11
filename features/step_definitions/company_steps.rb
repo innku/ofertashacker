@@ -29,6 +29,14 @@ Given /^there is a company with name "([^"]*)" in city "([^"]*)" and email "([^"
   company = FactoryGirl.create(:company, :title => name, :city => city, :email => email)
 end
 
+Then /^I should see "(.*?)" with the button "(.*?)"$/ do |job_name, button_name|
+  within('ul#jobs_list li.expired') do
+    page.should have_content(job_name)
+    page.should have_link(button_name)
+  end
+end
+
+
 Then /^I should see the company details for "([^"]*)"$/ do |email|
   company = Company.find_by_email(email)
 

@@ -636,9 +636,9 @@ img#nuevas_ofertas{
 
 /*================== PERFIL ====================*/			
 
-.button{
+.mainContent .button {
   font-family: Helvetica;
-  color: #FFF !important;
+  color: #FFF;
   text-decoration: none !important;
   padding: 10px;
   background: #304F4F;
@@ -653,13 +653,14 @@ img#nuevas_ofertas{
   border-bottom: 0 none;
 
 }
-.button:hover{
+.mainContent .button:hover{
   background: -moz-linear-gradient(top,  #99CC00, #5E8B00);
   background: -webkit-gradient(linear, center top, center bottom, from(#99CC00), color-stop(50%,#5E8B00));
   border: 2px solid #5E8B00;
   border-bottom: 0 none;
+  color: #FFF;
 }
-.button:active{
+.mainContent .button:active{
   background: -moz-linear-gradient(top,  #1C3030, #304F4F);
   background: -webkit-gradient(linear, left top, left bottom, from(#304F4F), to(#1C3030));
   border: 2px solid #2A4646;
@@ -678,19 +679,87 @@ img#nuevas_ofertas{
   float: left;
 }
 
-#Localizacion{
+#Localizacion {
   float: left;
   padding-right: 50px;
   margin-right: 50px;
   border-right: 3px solid #CC3333;
 }
 
-#logoperfil{
+#logoperfil {
   margin-top: 15px;
 }
 
-div.clear{
+div.clear {
   clear:both;
+}
+
+.admin-list {
+  margin-top: 15px;
+  padding: 0;
+
+  .button {
+    margin: 0 0 0 5px;
+    border: none;
+  }
+
+  .not-expired .button {
+    background: #ECB3B6;
+    color: #995457;
+    padding: 5px 8px;
+  }
+
+  .expired .button {
+    background: #EDEDBF;
+    color: #666666;
+    padding: 5px;
+  }
+
+  .not-expired {
+    background-color: #FBFBFB;
+  }
+
+  .not-expired:hover {
+    background-color: #F7F7F7;
+  }
+
+  .expired {
+    background-color: #FFF4FF;
+  }
+
+  .expired:hover {
+    background-color: #FBF0FB;
+  }
+
+  .item_wrapper{
+    width: 88%;
+    display: inline-block;
+  }
+
+  .title {
+    display: inline-block;
+    color: #005B60;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .details {
+    color: #666666;
+    font-size: 13px;
+    font-style: italic;
+    float: right;
+    padding-right: 4px;
+    padding-top: 4px
+  }
+
+  a, a:hover{
+    text-decoration: none;
+  }
+
+  li {
+    border-bottom: 1px dotted #F3F3F3;
+    padding: 4px 10px;
+  }
 }
 
 /*================== HERE COMES THE INFO STYLES ====================*/

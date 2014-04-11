@@ -21,8 +21,10 @@ class Job < ActiveRecord::Base
   metropoli_for :country
 
   scope   :ordered, order('id DESC')
+  scope   :title_sorted, order("jobs.title ASC")
   scope   :date_sorted, order("jobs.publish_date DESC")
   scope   :not_expired, where("expiration_date > CURRENT_TIMESTAMP")
+  scope   :expired, where("expiration_date <= CURRENT_TIMESTAMP")
   scope   :expire_today, where("Date(expiration_date) == CURRENT_DATE ")
 
   def self.filter_it(filters={})

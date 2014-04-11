@@ -77,9 +77,9 @@ class JobsController < ApplicationController
   def publish
     @job = Job.find(params[:id])
     if (@job.publish!)
-      redirect_to jobs_path, :notice=> I18n.t("notice.job.successfully_created")
+      redirect_to get_redirect_to_path, :notice=> I18n.t("notice.job.successfully_created")
     else
-      redirect_to job_path(@job), :notice=> I18n.t("notice.job.not_published")
+      redirect_to :back, :notice=> I18n.t("notice.job.not_published")
     end
   end
 
@@ -95,4 +95,11 @@ class JobsController < ApplicationController
     end
   end
 
+  def get_redirect_to_path
+    if request.referer.include?('jobs')
+      jobs_path
+    elsif request.referer.include?('companies')
+      company_path(@job.company.id)
+    end
+  end
 end

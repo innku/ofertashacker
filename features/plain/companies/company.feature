@@ -29,6 +29,13 @@ Feature: Company Actions
     And follow "Perfil"
     Then I should not see "Eliminar empresa"
 
+  Scenario: See list of my jobs organized in tabs("Publicados| No publicados") on my perfil page
+    And there is an expired job vacancy with title "Ruby Sr Programmer" created by "sample@company.com"
+    And there is a job vacancy with title "Web Design" created by "sample@company.com"
+    Then I follow "Perfil"
+    And I should see "Web Design"
+    Then I should see "Ruby Sr Programmer" with the button "Publicar"
+
   Scenario: See all my vacancies
     And there is a job vacancy with title "Ruby Sr Programmer" created by "sample@company.com"
     And there is a job vacancy with title "Web Design" created by "sample@company.com"
