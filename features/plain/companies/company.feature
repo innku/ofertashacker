@@ -34,7 +34,19 @@ Feature: Company Actions
     And there is a job vacancy with title "Web Design" created by "sample@company.com"
     Then I follow "Perfil"
     And I should see "Web Design"
-    Then I should see "Ruby Sr Programmer" with the button "Publicar"
+    Then I should see "Ruby Sr Programmer" with the button "Publicar" in ".expired" list
+
+  Scenario: Can expire and publish vacancies from jobs list on my perfil page
+    And there is an expired job vacancy with title "Ruby Sr Programmer" created by "sample@company.com"
+    Then I follow "Perfil"
+    And I should see "Ruby Sr Programmer" with the button "Publicar" in ".expired" list
+    Then I follow "Publicar"
+    Then I confirm the alert message
+    And I should see "Ruby Sr Programmer" with the button "Expirar" in ".not-expired" list
+    Then I follow "Expirar"
+    Then I confirm the alert message
+    And I should see "Ruby Sr Programmer" with the button "Publicar" in ".expired" list
+
 
   Scenario: See all my vacancies
     And there is a job vacancy with title "Ruby Sr Programmer" created by "sample@company.com"

@@ -29,8 +29,8 @@ Given /^there is a company with name "([^"]*)" in city "([^"]*)" and email "([^"
   company = FactoryGirl.create(:company, :title => name, :city => city, :email => email)
 end
 
-Then /^I should see "(.*?)" with the button "(.*?)"$/ do |job_name, button_name|
-  within('ul#jobs_list li.expired') do
+Then /^I should see "(.*?)" with the button "(.*?)" in "(.*?)" list$/ do |job_name, button_name, list_class|
+  within("ul#jobs_list li#{list_class}") do
     page.should have_content(job_name)
     page.should have_link(button_name)
   end
