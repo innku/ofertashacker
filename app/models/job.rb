@@ -27,7 +27,7 @@ class Job < ActiveRecord::Base
   scope   :date_sorted, order("jobs.publish_date DESC")
   scope   :not_expired, where("expiration_date > CURRENT_TIMESTAMP")
   scope   :expired, where("expiration_date <= CURRENT_TIMESTAMP")
-  scope   :expire_today, where("Date(expiration_date) == CURRENT_DATE ")
+  scope   :expire_today, where("Date(expiration_date) = CURRENT_DATE ")
 
   def self.filter_it(filters={})
     results = Job.includes(:company)
