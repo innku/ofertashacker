@@ -13,7 +13,6 @@ class CompaniesController < ApplicationController
       redirect_to edit_company_path @company
       return
     end
-    Innsights.report('Ver perfil compañia', group: @company).run
   end
   
   def edit

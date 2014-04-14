@@ -9,7 +9,6 @@ class WelcomeController < ApplicationController
   end
 
   def codigo
-    Innsights.report('Ver OpenSource').run
   end
 
   def licencia

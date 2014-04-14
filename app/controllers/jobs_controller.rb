@@ -32,7 +32,6 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
-    Innsights.report('Ver oferta', group: @job).run
   end
 
   def edit
@@ -60,9 +59,7 @@ class JobsController < ApplicationController
     cookies[:name] = { :value => params[:name], :expires => Time.now + 1.year }
     cookies[:email] = { :value => params[:email], :expires => Time.now + 1.year }
     ContactMailer.contact(@job, params[:name], params[:email], params[:message], params[:file]).deliver
-    Innsights.report('Compañia contactada', user: @job.company, group: @job).run
     redirect_to(@job, :notice => "Tu mensaje fue enviado a #{@job.company.title} correctamente.")
-
   end
 
   def expire
