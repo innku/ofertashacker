@@ -12,6 +12,7 @@ class JobsController < ApplicationController
 
   def create
     if @job.save
+      JobMailer.notificate_expiration(@job).deliver
       redirect_to jobs_path, :notice => I18n.t("notice.job.successfully_created")
     else
       render :action => "new"
