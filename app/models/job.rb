@@ -17,7 +17,7 @@ class Job < ActiveRecord::Base
   FILTERS = %w{full_time part_time flexible remote}
 
   after_create :update_social_networks
-  before_create :set_expiration_date
+  before_create :set_expiration_date, :set_publish_date
 
   metropoli_for :city
   metropoli_for :country
@@ -64,6 +64,10 @@ class Job < ActiveRecord::Base
 
   def set_expiration_date
     self.expiration_date = 60.days.from_now.beginning_of_day
+  end
+
+  def set_publish_date
+    self.publish_date = DateTime.now
   end
 
   def expire!

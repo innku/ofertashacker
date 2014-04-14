@@ -76,15 +76,15 @@ ActiveRecord::Schema.define(:version => 20140409172607) do
     t.boolean  "remote",          :default => false
     t.boolean  "flexible",        :default => false
     t.text     "description"
-    t.datetime "created_at",                                         :null => false
-    t.datetime "updated_at",                                         :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.integer  "state_id"
     t.string   "city2"
     t.integer  "city_id"
     t.text     "extra_skill"
     t.integer  "country_id"
     t.datetime "expiration_date"
-    t.datetime "publish_date",    :default => '2014-04-09 17:20:31'
+    t.datetime "publish_date"
   end
 
   add_index "jobs", ["city_id"], :name => "index_jobs_on_city_id"
