@@ -12,8 +12,7 @@ class JobsController < ApplicationController
 
   def create
     if @job.save
-      JobMailer.notificate_future_expiration(@job).deliver
-      redirect_to jobs_path, :notice => I18n.t("notice.job.successfully_created")
+      redirect_to @job, :notice => I18n.t("notice.job.successfully_created")
     else
       render :action => "new"
     end
@@ -41,7 +40,7 @@ class JobsController < ApplicationController
   def update
     params[:job][:required_skill_ids] = [] if params[:job][:required_skill_ids].nil?
     if @job.update_attributes(params[:job])
-      redirect_to jobs_path, :notice => I18n.t("notice.job.successfully_updated")
+      redirect_to @job, :notice => I18n.t("notice.job.successfully_updated")
     else
       render :action => "new"
     end
@@ -75,7 +74,7 @@ class JobsController < ApplicationController
   def publish
     @job = Job.find(params[:id])
     if (@job.publish!)
-      redirect_to get_redirect_to_path, :notice=> I18n.t("notice.job.successfully_created")
+      redirect_to @job, :notice=> I18n.t("notice.job.successfully_created")
     else
       redirect_to :back, :notice=> I18n.t("notice.job.not_published")
     end

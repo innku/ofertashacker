@@ -102,5 +102,6 @@ Given /^there is a job vacancy with title "(.*?)" published (\d+) days ago and c
   city = FactoryGirl.create(:city, :name => "Monterrey")
   company = Company.find_by_email(company_email)
   company = FactoryGirl.create(:company, :email => company_email, :city => city) unless company
-  job = FactoryGirl.create(:job, :publish_date => time_ago.to_i.days.ago, :title => title, :company => company)
+  job = FactoryGirl.create(:job, :title => title, :company => company)
+  job.update_attribute(:publish_date, time_ago.to_i.days.ago)
 end

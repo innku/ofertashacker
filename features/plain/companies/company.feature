@@ -42,10 +42,11 @@ Feature: Company Actions
     And I should see "Ruby Sr Programmer" with the button "Publicar" in ".expired" list
     Then I follow "Publicar"
     Then I confirm the alert message
-    And I should see "Ruby Sr Programmer" with the button "Expirar" in ".not-expired" list
-    Then I follow "Expirar"
+    And I should see "Ruby Sr Programmer"
+    And I should see "Sacar de publicación"
+    Then I follow "Sacar de publicación"
     Then I confirm the alert message
-    And I should see "Ruby Sr Programmer" with the button "Publicar" in ".expired" list
+    And I should not see "Ruby Sr Programmer"
 
 
   Scenario: See all my vacancies
@@ -83,7 +84,8 @@ Feature: Company Actions
     And I should not see "Sacar de publicación"
     Then I follow "Publicar"
     Then I confirm the alert message
-    Then I should see "Tu oferta ha sido publicada y expirará dentro de 60 días"
+    And I should see "Tu oferta ha sido publicada y expirará dentro de 60 días"
+    And I should see "Sacar de publicación"
     And I should see "Ruby on Rails_expire"
 
   Scenario: I can delete my own vacancies

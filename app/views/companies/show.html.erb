@@ -45,6 +45,9 @@
             <h3>Estamos Buscando:</h3>
             <ul id="jobs_list" class="admin-list">
               <%= render "jobs_list", :jobs => @company.jobs.not_expired.title_sorted, :item_class => "not-expired"%>
+            </ul>
+            <h3>Ofertas expiradas:</h3>
+            <ul id="jobs_list" class="admin-list">
               <%= render "jobs_list", :jobs => @company.jobs.expired.title_sorted, :item_class => "expired"%> 
             </ul>
       <% end %>
