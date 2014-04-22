@@ -2,7 +2,6 @@
 class CompaniesController < ApplicationController
   before_filter :new_company?, :only=>[:create]
   load_and_authorize_resource :except => [:my_jobs]
-  layout :get_layout
     
   def index
     @companies = Company.all(:order => "RANDOM()").select{|c| !c.blank_profile?}
@@ -34,30 +33,12 @@ class CompaniesController < ApplicationController
     end
   end
   
-  def my_jobs
-    @company = current_company
-    if initial_batch?
-      @jobs = @company.jobs.next_jobs_batch(20, DateTime.parse(params[:last_date]))
-    else
-      @jobs = @company.jobs.next_jobs_batch(20)
-    end
-    respond_to do |format|
-      format.html
-      format.json {render :text => @jobs.to_json(:methods =>[:to_param], :include => {:company => {:only => [:title], :methods => [:logo_url]}}) }
-    end
-  end
- 
-
   private
 
   def initial_batch?
     params[:last_date].present?
   end
 
-  def get_layout
-    (['my_jobs'].include? action_name) ? 'double_div' : 'application'
-  end
-  
   def new_company?
     if params[:new_company]
       redirect_to new_company_registration_path(:new_company => true)

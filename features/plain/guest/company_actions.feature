@@ -28,7 +28,7 @@ Feature: Guest Actions
     
   Scenario: I can register a company
     Given I am on the root page
-    And I follow "¿Empresa?, Regístrate"
+    And I follow "¿Empresa? Regístrate"
     When I fill in "company_title" with "Best Company"
     And I fill in "company_password_confirmation" with "mycompany"
     And I fill in "company_email" with "contact_me@best_company.com"

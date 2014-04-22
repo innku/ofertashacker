@@ -19,7 +19,7 @@ Feature: Admin Actions
     
   Scenario: I can delete my company
     And I am on the root page
-    When I follow "Perfil"
+    When I follow "Mi empresa"
     And I follow "Eliminar empresa" and click OK
     And I am on the company index
     Then I should not see "Sample Company"

@@ -11,7 +11,7 @@ Feature: Company Actions
     And I am logged as a "sample@company.com"
 
   Scenario: I can view my company information
-    When I follow "Perfil"
+    When I follow "Mi empresa"
     Then I should see the company details for "sample@company.com"
 
   Scenario: I can edit my company information
@@ -26,19 +26,19 @@ Feature: Company Actions
 
 
   Scenario: I can not delete my company
-    And follow "Perfil"
+    And follow "Mi empresa"
     Then I should not see "Eliminar empresa"
 
   Scenario: See list of my jobs organized in tabs("Publicados| No publicados") on my perfil page
     And there is an expired job vacancy with title "Ruby Sr Programmer" created by "sample@company.com"
     And there is a job vacancy with title "Web Design" created by "sample@company.com"
-    Then I follow "Perfil"
+    Then I follow "Mi empresa"
     And I should see "Web Design"
     Then I should see "Ruby Sr Programmer" with the button "Publicar" in ".expired" list
 
   Scenario: Can expire and publish vacancies from jobs list on my perfil page
     And there is an expired job vacancy with title "Ruby Sr Programmer" created by "sample@company.com"
-    Then I follow "Perfil"
+    Then I follow "Mi empresa"
     And I should see "Ruby Sr Programmer" with the button "Publicar" in ".expired" list
     Then I follow "Publicar"
     Then I confirm the alert message
@@ -52,13 +52,13 @@ Feature: Company Actions
   Scenario: See all my vacancies
     And there is a job vacancy with title "Ruby Sr Programmer" created by "sample@company.com"
     And there is a job vacancy with title "Web Design" created by "sample@company.com"
-    And I am on my jobs page for "sample@company.com"
+    Then I follow "Mi empresa"
     Then I should see "Ruby Sr Programmer"
     And I should see "Web Design"
 
   Scenario: I can edit my own vacancies
     And there is a job vacancy with title "Ruby on Rails" created by "sample@company.com"
-    And I am on the index job page
+    Then I follow "Mi empresa"
     And I follow "Ruby on Rails"
     When I follow "Editar"
     Then I should see "Datos de la oferta"
@@ -78,7 +78,7 @@ Feature: Company Actions
     And there is an expired job vacancy with title "Ruby on Rails_expire" created by "sample@company.com"
     And I am on the index job page
     And I should not see "Ruby on Rails_expire"
-    Then I follow "Mis ofertas"
+    Then I follow "Mi empresa"
     Then I follow "Ruby on Rails_expire"
     Then I should see a button called "Publicar"
     And I should not see "Sacar de publicación"

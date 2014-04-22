@@ -11,11 +11,7 @@ Rubypros::Application.routes.draw do
     :sign_out => 'salir' 
   }
 
-  resources :companies do
-    member do
-      get "my_jobs"
-    end
-  end
+  resources :companies 
   resources :jobs do
     member do
       post "contact_company"
