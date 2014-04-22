@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_filter :store_location
   protect_from_forgery
   before_filter :ensure_domain
 
@@ -32,8 +33,27 @@ class ApplicationController < ActionController::Base
 
   def current_ability
     @current_ability ||= Ability.new(current_company)
-  end 
+  end
 
+  def store_location
+    # store last url - this is needed for post-login redirect to whatever the user last visited.
+    if (request.fullpath != "/companies/entrar" &&
+        request.fullpath != "/companies/salir" &&
+        request.fullpath != "/companies/password")
+      if request.format == "text/html" || request.content_type == "text/html"
+        session[:previous_url] = request.fullpath
+        session[:last_request_time] = Time.now.utc.to_i
+      end
+    end
+  end
+
+  def after_sign_in_path_for(resource)
+    if session[:previous_url] && session[:last_request_time] && session[:last_request_time] > 15.minutes.ago.utc.to_i
+        session[:previous_url]
+    else
+      root_path
+    end
+  end
 end
 
 
