@@ -85,7 +85,7 @@ es:
       publish_date:       "Publicado el"
       publish_confirmation: "¿Estás seguro que deseas publicar la oferta?"
       destroy_confirmation: "¿Estás seguro que deseas borrar la oferta?"
-      expire_confirmation: "¿Estás seguro que deseas sacar de publicación la oferta?"
+      expire_confirmation: "¿Estás seguro que deseas expirar la oferta?"
     form:
       title:              "Nombre"  
       city:               "Ciudad"

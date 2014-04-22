@@ -6,7 +6,7 @@
         <% if expired?(@job)%>
           <%= link_to 'Publicar', publish_job_path(@job.id), :confirm => t('.publish_confirmation'), :class => "button" %>
         <% else %>
-          <%= link_to 'Sacar de publicación', expire_job_path(@job.id), :confirm => t('.expire_confirmation'), :class => "button" %>
+          <%= link_to 'Expirar', expire_job_path(@job.id), :confirm => t('.expire_confirmation'), :class => "button" %>
         <% end %>
         <%= link_to 'Borrar', @job, :confirm => t('.destroy_confirmation'), :method => :delete, :class => "button" %>
       <% end%>

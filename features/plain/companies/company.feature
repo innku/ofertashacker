@@ -43,8 +43,8 @@ Feature: Company Actions
     Then I follow "Publicar"
     Then I confirm the alert message
     And I should see "Ruby Sr Programmer"
-    And I should see "Sacar de publicación"
-    Then I follow "Sacar de publicación"
+    And I should see "Expirar"
+    Then I follow "Expirar"
     Then I confirm the alert message
     And I should not see "Ruby Sr Programmer"
 
@@ -67,8 +67,8 @@ Feature: Company Actions
     And there is a job vacancy with title "Ruby on Rails" created by "sample@company.com"
     And I am on the index job page
     And I follow "Ruby on Rails"
-    Then I should see "Sacar de publicación"
-    Then I follow "Sacar de publicación"
+    Then I should see "Expirar"
+    Then I follow "Expirar"
     Then I confirm the alert message
     Then I should see "La oferta fue expirada correctamente"
     Then I am on the index job page
@@ -81,11 +81,11 @@ Feature: Company Actions
     Then I follow "Mi empresa"
     Then I follow "Ruby on Rails_expire"
     Then I should see a button called "Publicar"
-    And I should not see "Sacar de publicación"
+    And I should not see "Expirar"
     Then I follow "Publicar"
     Then I confirm the alert message
     And I should see "Tu oferta ha sido publicada y expirará dentro de 60 días"
-    And I should see "Sacar de publicación"
+    And I should see "Expirar"
     And I should see "Ruby on Rails_expire"
 
   Scenario: I can delete my own vacancies
