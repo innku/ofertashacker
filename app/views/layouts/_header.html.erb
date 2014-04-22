@@ -11,23 +11,21 @@
 
       <div class="span-18 last topMenu">
         <ul>
-           <% if current_company %>
-              <li id="salir"><%= link_to "<span>Salir</span>".html_safe, destroy_company_session_path() %></li>
-              <li id="perfil"><%= link_to "<span>Perfil</span>".html_safe, company_path(current_company) %></li>
-              <li id="publicar"><%= link_to "<span>Publicar oferta</span>".html_safe,  nueva_oferta_path() %></li>
-              <li id="ofertas"><%= link_to "<span>Ofertas</span>".html_safe, ofertas_path() %></li>
-              <% unless current_company.jobs.empty? %>
-                <li id="mis_ofertas"><%= link_to "<span>Mis ofertas</span>".html_safe, my_jobs_company_path(current_company) %></li>
-              <% end %>
-              <%if can? :manage, RequiredSkill%>
-                <li id="skills"><%= link_to "<span>Skills</span>".html_safe, required_skills_path %></li>
-              <%end%>
-            <% else %>
-              <li id="entrar"><%= link_to "<span>Entrar</span>".html_safe, new_company_session_path() %></li>
-              <li id="registrate"><%= link_to "<span>¿Empresa?, Regístrate</span>".html_safe, new_company_registration_path()%></li>
-              <li id="ofertas"><%= link_to "<span>Ver ofertas</span>".html_safe, ofertas_path %></li>
-            <% end %>
-            <li id="empresas"><%= link_to "<span>Empresas</span>".html_safe, empresas_path %></li>
+          <% if current_company %>
+            <li id="ofertas" class="left"><%= link_to "<span>Ofertas</span>".html_safe, ofertas_path() %></li>
+            <li id="empresas" class="left"><%= link_to "<span>Empresas</span>".html_safe, empresas_path %></li>
+            <li id="salir" class="right"><%= link_to "<span>Salir</span>".html_safe, destroy_company_session_path() %></li>
+            <li id="perfil" class="right"><%= link_to "<span>Mi empresa</span>".html_safe, company_path(current_company) %></li>
+            <li id="publicar" class="right"><%= link_to "<span>Publicar oferta</span>".html_safe,  nueva_oferta_path() %></li>
+            <%if can? :manage, RequiredSkill%>
+              <li id="skills" class="left"><%= link_to "<span>Habilidades</span>".html_safe, required_skills_path %></li>
+            <%end%>
+          <% else %>
+            <li id="entrar" class="right"><%= link_to "<span>Iniciar sesión</span>".html_safe, new_company_session_path() %></li>
+            <li id="registrate" class="right"><%= link_to "<span>¿Empresa? Regístrate</span>".html_safe, new_company_registration_path()%></li>
+            <li id="empresas" class="right"><%= link_to "<span>Empresas</span>".html_safe, empresas_path %></li>
+            <li id="ofertas" class="right"><%= link_to "<span>Ofertas</span>".html_safe, ofertas_path() %></li>
+          <% end %>
         </ul>
       </div>
     </div>
