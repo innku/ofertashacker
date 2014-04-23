@@ -20,4 +20,8 @@ module ApplicationHelper
     end
     classes.strip
   end
+
+  def full_image_url(image)
+    URI.join(root_url, image_path(image))
+  end
 end

@@ -20,18 +20,15 @@
 <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Arvo:bold' rel='stylesheet' type='text/css'>
 
-
+<link rel="icon" type="image/x-icon" href="<%= full_image_url('favicon.ico') %>">
 <%= javascript_include_tag 'application' %>
 <%= stylesheet_link_tag "application" %>
 
 <%= csrf_meta_tag %>
 
-<div id="getsat-widget-3202"></div>
 <script type="text/javascript" src="https://loader.engage.gsfn.us/loader.js"></script>
 <script type="text/javascript">
 if (typeof GSFN !== "undefined") { GSFN.loadWidget(3202,{"containerId":"getsat-widget-3202"}); }
 </script>
-
-<link rel="icon" type="image/png" href="<%= image_path('favicon.ico') %>">
 
 <%= yield(:head) %>

@@ -8,23 +8,24 @@
   </head>
 
   <body>
-      <%= render 'layouts/header'%>
+    <div id="getsat-widget-3202"></div>
+    <%= render 'layouts/header'%>
 
-      <div class='container'>
-        <% flash.each do |name, msg| %>
-          <% unless msg.blank?%>
-            <%= content_tag :div, msg, :id => "flash_#{name}" %>
-          <% end%>
-        <% end %>
+    <div class='container'>
+      <% flash.each do |name, msg| %>
+        <% unless msg.blank?%>
+          <%= content_tag :div, msg, :id => "flash_#{name}" %>
+        <% end%>
+      <% end %>
 
-        <%= content_tag :h1, yield(:title) if show_title? %>
+      <%= content_tag :h1, yield(:title) if show_title? %>
 
-        <div id='content' class="mainContent clear span-24">
-          <%= yield %>
-        </div>
+      <div id='content' class="mainContent clear span-24">
+        <%= yield %>
       </div>
+    </div>
 
-      <%= render 'layouts/footer'%>
-      <%= yield :bottom %>
+    <%= render 'layouts/footer'%>
+    <%= yield :bottom %>
   </body>
 </html>

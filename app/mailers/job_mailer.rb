@@ -1,5 +1,6 @@
 #encoding: utf-8;
 class JobMailer < ActionMailer::Base
+  add_template_helper(ApplicationHelper)
 
   def notificate_future_expiration(job)
     to = job.company.email
