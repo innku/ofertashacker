@@ -42,3 +42,13 @@ Feature: Guest Actions
     Then I should see "weird city"
     When I follow "My First Company"
     Then I should see "weird city"
+
+  Scenario: I can't see a company's expired vacancies
+    Given there is a company with name "Sample Company" in city "Monterrey" and email "sample@company.com"
+    And there is an expired job vacancy with title "Ruby Sr Programmer" created by "sample@company.com"
+    And there is a job vacancy with title "Ruby on Rails" created by "sample@company.com"
+    And I am on the company index
+    When I follow "Sample Company"
+    Then I should not see "Ruby Sr Programmer"
+    And I should see "Ruby on Rails"
+    Then I should not see "Ruby on Rails" with the button "Expirar" in ".not-expired" list

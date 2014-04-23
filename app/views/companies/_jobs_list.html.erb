@@ -10,10 +10,12 @@
           </div>
         </div>
     <% end %>
-    <% if expired?(job) %>
-      <%= link_to 'Publicar', publish_job_path(job.id), :confirm => t('jobs.show.publish_confirmation'), :class => "button" %>  
-    <% else %>
-      <%= link_to 'Expirar', expire_job_path(job.id), :confirm => t('jobs.show.expire_confirmation'), :class => "button" %>
+    <% if current_company == company %>
+      <% if expired?(job) %>
+        <%= link_to 'Publicar', publish_job_path(job.id), :confirm => t('jobs.show.publish_confirmation'), :class => "button" %>
+      <% else %>
+        <%= link_to 'Expirar', expire_job_path(job.id), :confirm => t('jobs.show.expire_confirmation'), :class => "button" %>
+      <% end %>
     <% end %>
   </li>
 <% end %> 

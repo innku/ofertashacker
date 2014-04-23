@@ -30,12 +30,18 @@ Given /^there is a company with name "([^"]*)" in city "([^"]*)" and email "([^"
 end
 
 Then /^I should see "(.*?)" with the button "(.*?)" in "(.*?)" list$/ do |job_name, button_name, list_class|
-  within("ul#jobs_list li#{list_class}") do
+  within("ul li#{list_class}") do
     page.should have_content(job_name)
     page.should have_link(button_name)
   end
 end
 
+Then /^I should not see "(.*?)" with the button "(.*?)" in "(.*?)" list$/ do |job_name, button_name, list_class|
+  within("ul li#{list_class}") do
+    page.should have_content(job_name)
+    page.should_not have_link(button_name)
+  end
+end
 
 Then /^I should see the company details for "([^"]*)"$/ do |email|
   company = Company.find_by_email(email)
@@ -56,10 +62,15 @@ end
 
 Then /^I should see a button called "(.*?)"$/ do |button_name|
   within('div.nav-buttons') do
-    page.should have_link('Publicar')
+    page.should have_link(button_name)
   end
 end
 
+Then /^I should not see a button called "(.*?)"$/ do |button_name|
+  within('div.nav-buttons') do
+    page.should_not have_link(button_name)
+  end
+end
 
 Given /^I select a job country from autocomplete field/ do
   selector = '.ui-menu-item a:contains(\"México\")'
