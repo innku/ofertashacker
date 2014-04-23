@@ -37,13 +37,9 @@ class ApplicationController < ActionController::Base
 
   def store_location
     # store last url - this is needed for post-login redirect to whatever the user last visited.
-    if (request.fullpath != "/companies/entrar" &&
-        request.fullpath != "/companies/salir" &&
-        request.fullpath != "/companies/password")
-      if request.format == "text/html" || request.content_type == "text/html"
-        session[:previous_url] = request.fullpath
-        session[:last_request_time] = Time.now.utc.to_i
-      end
+    if custom_request?
+      session[:previous_url] = request.fullpath
+      session[:last_request_time] = Time.now.utc.to_i
     end
   end
 
@@ -54,6 +50,13 @@ class ApplicationController < ActionController::Base
       root_path
     end
   end
+
+  private
+
+  def custom_request?
+    request.fullpath != "/companies/entrar" &&
+    request.fullpath != "/companies/salir" &&
+    request.fullpath != "/companies/password" &&
+    (request.format == "text/html" || request.content_type == "text/html")
+  end
 end
-
-
