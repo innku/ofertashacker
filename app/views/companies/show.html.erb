@@ -20,14 +20,14 @@
   </div>
   <div class="generalForm">
     <div id="left">
-        <%if @company.logo.file?%>
-          <%= link_to (image_tag @company.logo.url(:medium)), company_path(@company), :id=>"company_logo" %>
-        <%else%>
-            <h3><%= @company.title%></h3>
-        <%end%>
+      <%if @company.logo.file?%>
+        <%= link_to (image_tag @company.logo.url(:medium)), company_path(@company), :id=>"company_logo" %>
+      <%else%>
+          <h3><%= @company.title%></h3>
+      <%end%>
       <div class="clear"></div>
       <div id="info">
-        <% unless @company.origin.blank?%>
+        <% if @company.origin.present?%>
           <h2><%= @company.origin %></h2>
         <% end %>
         <%= render :partial => 'contact_info', :locals => {:company => @company}%>
@@ -40,18 +40,18 @@
         <p><%= @company.description ? RedCloth.new(@company.formated_description).to_html.html_safe : "" %></p>
       </div>
       <div class="clear"></div>
-      <% unless @company.jobs.blank? %>
-            <br />
-            <h3>Estamos Buscando:</h3>
-            <ul id="jobs_list" class="admin-list">
-              <%= render "jobs_list", :jobs => @company.jobs.not_expired.title_sorted, :item_class => "not-expired"%>
-            </ul>
-            <h3>Ofertas expiradas:</h3>
-            <ul id="expired_jobs_list" class="admin-list">
-              <%= render "jobs_list", :jobs => @company.jobs.expired.title_sorted, :item_class => "expired"%> 
-            </ul>
+      <% if @company.jobs.present? %>
+        <br />
+        <h3>Estamos Buscando:</h3>
+        <ul id="jobs_list" class="admin-list">
+          <%= render "jobs_list", :jobs => @company.jobs.not_expired.title_sorted, :item_class => "not-expired"%>
+        </ul>
+        <h3>Ofertas expiradas:</h3>
+        <ul id="expired_jobs_list" class="admin-list">
+          <%= render "jobs_list", :jobs => @company.jobs.expired.title_sorted, :item_class => "expired"%>
+        </ul>
       <% end %>
-      </div>
+    </div>
     <div class="clear"></div>
   </div>
 </div>

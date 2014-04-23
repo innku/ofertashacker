@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if session[:previous_url] && session[:last_request_time] && session[:last_request_time] > 15.minutes.ago.utc.to_i
-        session[:previous_url]
+      session[:previous_url]
     else
       root_path
     end
