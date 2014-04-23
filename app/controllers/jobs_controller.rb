@@ -93,9 +93,7 @@ class JobsController < ApplicationController
   end
 
   def get_redirect_to_path
-    if request.referer.blank?
-      job_path(@job)
-    elsif request.referer.include?('companies')
+    if request.referer.blank? || request.referer.include?('companies')
       company_path(@job.company.id)
     else
       job_path(@job)
