@@ -42,15 +42,21 @@
       <div class="clear"></div>
       <% if @company.jobs.present? %>
         <br />
-        <h3>Estamos Buscando:</h3>
-        <ul id="jobs_list" class="admin-list">
-          <%= render "jobs_list", :jobs => @company.jobs.not_expired.title_sorted, :item_class => "not-expired", :company => @company %>
-        </ul>
-        <% if current_company == @company %>
-          <h3>Ofertas expiradas:</h3>
-          <ul id="expired_jobs_list" class="admin-list">
-            <%= render "jobs_list", :jobs => @company.jobs.expired.title_sorted, :item_class => "expired", :company => @company %>
+
+        <% if @available_jobs.any? %>
+          <h3>Estamos Buscando:</h3>
+          <ul id="jobs_list" class="admin-list">
+            <%= render "jobs_list", :jobs => @available_jobs, :item_class => "not-expired", :company => @company %>
           </ul>
+        <% end %>
+
+        <% if @expired_jobs.any? %>
+          <% if current_company == @company %>
+            <h3>Ofertas expiradas:</h3>
+            <ul id="expired_jobs_list" class="admin-list">
+              <%= render "jobs_list", :jobs => @expired_jobs, :item_class => "expired", :company => @company %>
+            </ul>
+          <% end %>
         <% end %>
       <% end %>
     </div>

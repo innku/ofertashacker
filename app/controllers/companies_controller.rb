@@ -11,6 +11,9 @@ class CompaniesController < ApplicationController
     if @company.blank_profile?
       redirect_to edit_company_path @company
       return
+    else
+      @available_jobs = @company.jobs.not_expired.title_sorted
+      @expired_jobs = @company.jobs.expired.title_sorted
     end
   end
   
