@@ -2,7 +2,7 @@
 <p>
 	La vacante <strong style="color:#00575A;"><%= @job.title%></strong> expirará dentro de 60 días (<%= I18n.l(@job.expiration_date.to_date, :format => :long) %>).
 	<br />
-	Si desea expirar la vacante en este momento de click <%= link_to "aquí", expire_job_url(@job) %>
+	Si desea expirar la vacante en este momento, da click <%= link_to "aquí", expire_job_url(@job) %>
 </p>
 <p>
   <strong>Equipo de Ofertas Hacker</strong>
