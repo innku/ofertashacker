@@ -17,9 +17,9 @@ gem 'bitly'
 gem "rake", "0.9.2"
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'thin'
 gem 'innsights', :github => "innku/innsights-gem"
 gem 'koala'
+gem 'unicorn'
 
 group :assets do
   gem 'sass-rails',  "~> 3.2.3"
