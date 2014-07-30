@@ -30,3 +30,12 @@ Feature: Admin Actions
     And I follow "Eliminar empresa" and click OK
     And I am on the index job page
     Then I should not see "Rails Master"
+
+  Scenario: I can delete a required skill
+    And there is a required skill with name "Javascript"
+    And I am on the required skill index page
+    And I should see "Javascript"
+    When I follow "X"
+    Then I confirm the alert message
+    Then I should see "La habilidad ha sido borrada"
+    And I should not see "Javascript"

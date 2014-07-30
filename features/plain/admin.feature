@@ -42,13 +42,3 @@ Feature: Admin Actions
     Then I should see "La habilidad ha sido creada"    
     And I should see "Ruby on Rails"    
 
-  Scenario: I can delete a required skill
-    And there is a required skill with name "Javascript"
-    And I am on the required skill index page
-    And I should see "Javascript"
-    When I follow "X"
-    Then I confirm the alert message
-    Then I should see "La habilidad ha sido borrada"    
-    And I should not see "Javascript"
-  
-

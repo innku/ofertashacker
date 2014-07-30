@@ -18,7 +18,8 @@ end
 
 Given /^there is an expired job vacancy with title "(.*?)" created by "(.*?)"$/ do |title, company_email|
   company = Company.find_by_email(company_email)
-  company = FactoryGirl.create(:company, :email => company_email, :city => "Monterrey") unless company
+  city = FactoryGirl.create(:city, :name => "Monterrey")
+  company = FactoryGirl.create(:company, :email => company_email, :city => city) unless company
   job = FactoryGirl.create(:job, :title => title, :company => company)
   job.expire!
 end

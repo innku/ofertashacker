@@ -28,10 +28,6 @@ describe JobsController do
       it 'Saves the job' do
         lambda { post :create, valid_params }.should change(Job, :count).by(1)
       end
-      it 'Redirects to jobs path' do
-        post :create, valid_params
-        response.should redirect_to(jobs_path)
-      end
       it 'Renders a flash notice for success' do
         post :create, valid_params
         flash[:notice].should_not be_blank
@@ -92,10 +88,6 @@ describe JobsController do
         put :update, valid_params
         assigns(:job).title.should eql("New Title")
         assigns(:job).country_name.should eql("New country")
-      end
-      it 'Redirects to the job path' do
-        put :update, valid_params
-        response.should redirect_to(jobs_path)
       end
       it 'Renders a flash notice' do
         put :update, valid_params
