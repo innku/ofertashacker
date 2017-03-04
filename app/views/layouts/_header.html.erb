@@ -1,15 +1,7 @@
 <div id="header" class="clear full" style='position:static'>
   <div class='full'>
     <div class='container'>
-      <div class="span-6">
-        <ul class='flags'>
-          <% installed_countries_abbreviations.each do |abbr| %>
-            <li><%= link_to country_image(abbr), country_jobs_path(country: abbr) %></li>
-          <% end %>
-        </ul>
-      </div>
-
-      <div class="span-18 last topMenu">
+      <div class="span-24 topMenu">
         <ul>
           <% if current_company %>
             <li id="ofertas" class="left"><%= link_to "<span>Ofertas</span>".html_safe, ofertas_path() %></li>
