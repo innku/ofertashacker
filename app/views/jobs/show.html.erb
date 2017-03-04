@@ -1,3 +1,18 @@
+<% content_for :head do %>
+  <meta name="description" content="<%= @job.company.title %> está buscando un <%= @job.title %> en Ofertas Hacker. Lee más acerca del puesto en Ofertas Hacker.">
+
+  <meta property="og:title" content="<%= meta_title_for(@job)  %>">
+  <meta property="og:description" content="<%= meta_description_for(@job) %>">
+  <meta property="og:image" content="<%= meta_image_for(@job) %>">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@ofertashacker">
+  <meta name="twitter:domain" content="Ofertas Hacker">
+  <meta name="twitter:title" content="<%= meta_title_for(@job) %>">
+  <meta name="twitter:description" content="<%= meta_description_for(@job) %>">
+  <meta name="twitter:image" content="<%= meta_image_for(@job) %>">
+<% end %>
+
 <div class="content">
   <div class="generalForm">
     <div class="nav-buttons">

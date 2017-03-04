@@ -1,4 +1,20 @@
 module JobsHelper
+  def meta_title_for job
+    "#{job.title} en #{job.company.title}"
+  end
+
+  def meta_description_for job
+    result = "#{job.company.title} esta en busca de un #{job.title} en #{job.origin}. "
+    if job.required_skills.any?
+      result += "Algunas habilidades requeridas son #{job.required_skills.map(&:skill_name).to_sentence}. "
+    end
+    result += "Conoce mas acerca de esta oferta de trabajo en Ofertas Hacker"
+    result
+  end
+
+  def meta_image_for job
+    "https://image.ibb.co/moNZrF/oh_logo.png"
+  end
 
   def installed_countries_names_with_cities
     CountryModelDecorator.names_of_countries_with_cities

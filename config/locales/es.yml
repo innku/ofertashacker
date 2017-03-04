@@ -12,7 +12,10 @@ es:
   flexible:          		  "Horario flexible"
   more:               		"Ver más"
   create:                 "Crear"
-
+  support:
+    array:
+      words_connector: ', '
+      last_word_connector: ' y '
 
   layouts:
     application: 
